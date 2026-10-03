@@ -1,0 +1,228 @@
+{
+ "title": "PROCESS FLOW DIAGRAM",
+ "subtitle": "H-100 NATURAL-DRAFT FIRED HEATER — FEED PREHEAT AND HEATING TO V-200",
+ "project": "NATURAL DRAFT FIRED HEATER VER 1 · OPERATOR TRAINING SIMULATOR",
+ "drawing_no": "PFD-100",
+ "rev": "0",
+ "sheet": "1 OF 1",
+ "scale": "NTS",
+ "drawn_by": "Apinan Soottitantawat",
+ "date": "2026-09-28",
+ "notes": [
+  "Flows in kg/h; temperatures in °C; pressures in kPa gauge.",
+  "Design case: feed 6.8 L/s (0.80 kg/L), duty 2.31 MW absorbed, efficiency 81.5 % (LHV).",
+  "Natural draft: no fan. Air drawn in through intake screen F-100 by stack draft.",
+  "Only the control valves that define the process are shown; see the P&ID tab for the rest."
+ ],
+ "panels": [
+  {
+   "title": "COMBUSTION",
+   "lines": [
+    "Fuel oil ~CH1.8, LHV 42 MJ/kg",
+    "Air ratio 1.11 (11 % excess), O2 ~2 %",
+    "Fired 2.84 MW; stack loss 17 %"
+   ]
+  }
+ ],
+ "flag_order": [
+  "m",
+  "t",
+  "p"
+ ],
+ "flag_units": {
+  "m": "Mass Flow (kg/h)",
+  "t": "Temperature (°C)",
+  "p": "Pressure (kPa g)"
+ },
+ "equipment": [
+  {
+   "tag": "TK-101",
+   "name": "Feed Tank",
+   "type": "tank",
+   "x": 42,
+   "y": 78,
+   "real": {
+    "h": 8,
+    "d": 6
+   }
+  },
+  {
+   "tag": "P-100 A/B",
+   "name": "Feed Pumps",
+   "type": "pump",
+   "x": 74,
+   "y": 112
+  },
+  {
+   "tag": "E-100",
+   "name": "Feed Preheater",
+   "type": "hx",
+   "x": 118,
+   "y": 112,
+   "opts": {
+    "utility": "hot fluid"
+   }
+  },
+  {
+   "tag": "H-100",
+   "name": "Natural-Draft Fired Heater",
+   "type": "fired_heater",
+   "x": 196,
+   "y": 88,
+   "real": {
+    "d": 2.6,
+    "h": 16
+   }
+  },
+  {
+   "tag": "F-100",
+   "name": "Air Intake Screen",
+   "type": "filter",
+   "x": 150,
+   "y": 146,
+   "size": "S"
+  }
+ ],
+ "terminals": [
+  {
+   "id": "HFIN",
+   "label": "Hot Fluid from Unit A",
+   "x": 118,
+   "y": 88,
+   "dir": "S",
+   "label_pos": "left"
+  },
+  {
+   "id": "HFOUT",
+   "label": "to Unit A",
+   "x": 118,
+   "y": 138,
+   "dir": "N",
+   "label_pos": "left"
+  },
+  {
+   "id": "V200",
+   "kind": "offpage",
+   "ref": "V-200",
+   "label": "to Reactor V-200",
+   "x": "right",
+   "y": 93,
+   "dir": "W"
+  },
+  {
+   "id": "FUEL",
+   "label": "Fuel Oil",
+   "x": "right",
+   "y": 146,
+   "dir": "W"
+  },
+  {
+   "id": "AIR",
+   "label": "Air",
+   "x": "left",
+   "y": 146,
+   "dir": "E"
+  },
+  {
+   "id": "STACK",
+   "label": "Flue Gas to Atmosphere",
+   "x": "right",
+   "y": 30,
+   "dir": "W"
+  },
+  {
+   "id": "FEED",
+   "label": "Hydrocarbon Feed",
+   "x": "left",
+   "y": 80,
+   "dir": "E"
+  }
+ ],
+ "streams": [
+  {
+   "from": "FEED",
+   "to": "TK-101:W@0.6",
+   "n": 1
+  },
+  {
+   "n": 2,
+   "from": "TK-101:S@0.5",
+   "to": "P-100 A/B:W",
+   "flags": {
+    "m": 19584,
+    "t": 40,
+    "p": 50
+   }
+  },
+  {
+   "n": 3,
+   "from": "P-100 A/B:E",
+   "to": "E-100:W",
+   "flags": {
+    "p": 1030
+   }
+  },
+  {
+   "n": 4,
+   "from": "E-100:E",
+   "to": "H-100:W@0.86",
+   "control_valve": 0.35,
+   "flags": {
+    "m": 19584,
+    "t": 180
+   }
+  },
+  {
+   "n": 5,
+   "from": "H-100:E@0.62",
+   "to": "V200",
+   "flags": {
+    "t": 350,
+    "p": 545
+   }
+  },
+  {
+   "n": 6,
+   "from": "FUEL",
+   "to": "H-100:S@0.72",
+   "control_valve": 0.3,
+   "flags": {
+    "m": 243
+   }
+  },
+  {
+   "n": 7,
+   "from": "AIR",
+   "to": "F-100:W"
+  },
+  {
+   "n": 8,
+   "from": "F-100:E",
+   "to": "H-100:S@0.28",
+   "control_valve": 0.4,
+   "flags": {
+    "m": 3892,
+    "t": 20
+   }
+  },
+  {
+   "n": 9,
+   "from": "H-100:N",
+   "to": "STACK",
+   "flags": {
+    "m": 4380,
+    "t": 400
+   }
+  },
+  {
+   "from": "HFIN",
+   "to": "E-100:N",
+   "kind": "utility"
+  },
+  {
+   "from": "E-100:S",
+   "to": "HFOUT",
+   "kind": "utility"
+  }
+ ]
+}
