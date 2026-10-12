@@ -1,0 +1,550 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1654 1169" font-family="Arial, Helvetica, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse" markerUnits="strokeWidth"><path d="M0 0L10 5L0 10z" fill="#000"/></marker></defs>
+<rect width="1654" height="1169" fill="#fff"/>
+<rect x="20" y="20" width="1614" height="1129" fill="none" stroke="#000000" stroke-width="3.1"/>
+<rect x="35" y="35" width="1584" height="1099" fill="none" stroke="#000000" stroke-width="1.2"/>
+<rect x="100" y="300" width="70" height="160" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M115 325L155 345L115 365L155 385L115 405L155 425" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="180" y="364" font-size="9.7" font-weight="bold">HE-101</text>
+<text x="180" y="376.2" font-size="6.7">HOT-OIL HEATER</text>
+<text x="180" y="385.8" font-size="6.2">12 kW ELECTRIC, ELEMENT STEPS TBC</text>
+<text x="180" y="395.8" font-size="6.2">DESIGN OUTPUT 4.04 kW (33.7 %)</text>
+<line x1="135" y1="300" x2="135" y2="200" stroke="#000000" stroke-width="2.1"/>
+<line x1="135" y1="200" x2="740" y2="200" stroke="#000000" stroke-width="2.1" marker-end="url(#ah)"/>
+<text x="740" y="213.4" font-size="6.9" font-weight="bold" text-anchor="end">TO D-102 TUBE SIDE</text>
+<text x="740" y="222.9" font-size="6.4" text-anchor="end">ON VBD-PID-001</text>
+<text x="142" y="251.2" font-size="6.7">DN25-HO-116</text>
+<ellipse cx="180" cy="200" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="180" y1="200" x2="180" y2="176" stroke="#000000" stroke-width="1"/>
+<ellipse cx="180" cy="158" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="180" y="155.9" font-size="6.9" font-weight="bold" text-anchor="middle">TT</text>
+<text x="180" y="164.2" font-size="6.9" font-weight="bold" text-anchor="middle">107</text>
+<line x1="180" y1="140" x2="180" y2="129" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<ellipse cx="180" cy="108" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="180" y="105.9" font-size="6.9" font-weight="bold" text-anchor="middle">TIC</text>
+<text x="180" y="114.2" font-size="6.9" font-weight="bold" text-anchor="middle">107</text>
+<line x1="162" y1="108" x2="198" y2="108" stroke="#000000" stroke-width="1"/>
+<ellipse cx="225" cy="200" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="225" y1="200" x2="225" y2="176" stroke="#000000" stroke-width="1"/>
+<ellipse cx="225" cy="158" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="225" y="155.9" font-size="6.9" font-weight="bold" text-anchor="middle">TT</text>
+<text x="225" y="164.2" font-size="6.9" font-weight="bold" text-anchor="middle">107B</text>
+<line x1="225" y1="140" x2="225" y2="129" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<rect x="204" y="87" width="42" height="42" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="225" cy="108" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="225" y="106.2" font-size="6.1" font-weight="bold" text-anchor="middle">TSHH</text>
+<text x="225" y="113.5" font-size="6.1" font-weight="bold" text-anchor="middle">107</text>
+<line x1="207" y1="108" x2="243" y2="108" stroke="#000000" stroke-width="1"/>
+<text x="247" y="185.5" font-size="6">TE-107B</text>
+<path d="M250 192.5L274 207.5L274 192.5L250 207.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="262" y="218.8" font-size="7.4" font-weight="bold" text-anchor="middle">V-104</text>
+<path d="M291 212L285 224L315 224L309 212Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<ellipse cx="300" cy="200" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M292 192L310 200L292 208" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="300" y="235" font-size="8.6" font-weight="bold" text-anchor="middle">P-101</text>
+<text x="300" y="245.2" font-size="6.7" text-anchor="middle">HOT-OIL PUMP</text>
+<path d="M328 191.6L346.6 200L328 208.4Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="346.6" y1="191.6" x2="346.6" y2="208.4" stroke="#000000" stroke-width="1.5"/>
+<text x="340" y="217.8" font-size="7.4" font-weight="bold" text-anchor="middle">NRV-101</text>
+<path d="M360 192.5L384 207.5L384 192.5L360 207.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="372" y="218.8" font-size="7.4" font-weight="bold" text-anchor="middle">V-105</text>
+<path d="M399 191.5L425 208.5L425 191.5L399 208.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="412" y1="191.5" x2="412" y2="180" stroke="#000000" stroke-width="1"/>
+<rect x="404" y="168" width="16" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="412" y="176.1" font-size="6.9" font-weight="bold" text-anchor="middle">S</text>
+<text x="424" y="173.4" font-size="6.9" font-weight="bold">FC</text>
+<text x="412" y="217.8" font-size="7.4" font-weight="bold" text-anchor="middle">XV-101</text>
+<ellipse cx="445" cy="200" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="585" cy="200" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<path d="M458 192.5L482 207.5L482 192.5L458 207.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="470" y="218.8" font-size="7.4" font-weight="bold" text-anchor="middle">V-106</text>
+<path d="M502 191.5L528 208.5L528 191.5L502 208.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="515" y1="191.5" x2="515" y2="178" stroke="#000000" stroke-width="1"/>
+<path d="M502 178L502.8 173.9L505 170.3L508.5 167.6L512.7 166.2L517.3 166.2L521.5 167.6L525 170.3L527.2 173.9L528 178Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="530" y="170.4" font-size="6.9" font-weight="bold">FC</text>
+<text x="515" y="217.8" font-size="7.4" font-weight="bold" text-anchor="middle">TV-101</text>
+<path d="M548 192.5L572 207.5L572 192.5L548 207.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="560" y="218.8" font-size="7.4" font-weight="bold" text-anchor="middle">V-107</text>
+<line x1="445" y1="200" x2="445" y2="255" stroke="#000000" stroke-width="1.4"/>
+<line x1="445" y1="255" x2="585" y2="255" stroke="#000000" stroke-width="1.4"/>
+<line x1="585" y1="255" x2="585" y2="200" stroke="#000000" stroke-width="1.4"/>
+<path d="M505 248.5L525 261.5L525 248.5L505 261.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<ellipse cx="515" cy="255" rx="2.5" ry="2.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="515" y="270.8" font-size="7.4" font-weight="bold" text-anchor="middle">V-108</text>
+<text x="452" y="247.7" font-size="6.1">BYPASS</text>
+<line x1="632" y1="189" x2="632" y2="211" stroke="#000000" stroke-width="1.9"/>
+<line x1="638" y1="189" x2="638" y2="211" stroke="#000000" stroke-width="1.9"/>
+<ellipse cx="635" cy="189" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="635" y1="189" x2="635" y2="176" stroke="#000000" stroke-width="1"/>
+<ellipse cx="635" cy="158" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="635" y="155.9" font-size="6.9" font-weight="bold" text-anchor="middle">FT</text>
+<text x="635" y="164.2" font-size="6.9" font-weight="bold" text-anchor="middle">101</text>
+<text x="655" y="167.5" font-size="6">NEW TAG</text>
+<ellipse cx="515" cy="108" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="515" y="105.9" font-size="6.9" font-weight="bold" text-anchor="middle">JIC</text>
+<text x="515" y="114.2" font-size="6.9" font-weight="bold" text-anchor="middle">101</text>
+<line x1="497" y1="108" x2="533" y2="108" stroke="#000000" stroke-width="1"/>
+<line x1="515" y1="126" x2="515" y2="166" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<line x1="635" y1="140" x2="635" y2="108" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="635" y1="108" x2="533" y2="108" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<text x="536" y="85.8" font-size="6.2">Q = FT-101 × cp × (TT-107 − TT-108)</text>
+<text x="536" y="94.8" font-size="6.2">SP 3.0 kW (DESIGN)</text>
+<ellipse cx="690" cy="200" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="690" y1="200" x2="690" y2="180" stroke="#000000" stroke-width="1.4" stroke-dasharray="5.6 4.2"/>
+<line x1="690" y1="180" x2="690" y2="160" stroke="#000000" stroke-width="1.4" stroke-dasharray="5.6 4.2"/>
+<path d="M682 160L698 160L690 147Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<path d="M690 147L703 155L703 139Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<line x1="690" y1="147" x2="690" y2="133" stroke="#000000" stroke-width="1"/>
+<line x1="685" y1="133" x2="695" y2="133" stroke="#000000" stroke-width="1"/>
+<line x1="703" y1="147" x2="730" y2="147" stroke="#000000" stroke-width="1.4" stroke-dasharray="5.6 4.2" marker-end="url(#ah)"/>
+<text x="705" y="113.9" font-size="6.4" font-weight="bold">TSV-101 REC. (HOLD)</text>
+<text x="705" y="123.7" font-size="6.1">TO TK-102, SET TBC</text>
+<line x1="162" y1="108" x2="80" y2="108" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="80" y1="108" x2="80" y2="355" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="80" y1="355" x2="100" y2="355" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<text x="84" y="345.5" font-size="6">POWER</text>
+<rect x="295" y="62" width="70" height="30" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="330" y="79.5" font-size="8.3" font-weight="bold" text-anchor="middle">SIS-100</text>
+<line x1="295" y1="80" x2="65" y2="80" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="65" y1="80" x2="65" y2="405" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="65" y1="405" x2="100" y2="405" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<text x="69" y="415.5" font-size="6">CONTACTOR</text>
+<text x="69" y="424.5" font-size="6">TRIP</text>
+<line x1="246" y1="108" x2="305" y2="108" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="305" y1="108" x2="305" y2="92" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<line x1="365" y1="77" x2="412" y2="77" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="412" y1="77" x2="412" y2="168" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<rect x="319" y="119" width="42" height="42" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="340" cy="140" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="340" y="137.9" font-size="6.9" font-weight="bold" text-anchor="middle">HS</text>
+<text x="340" y="146.2" font-size="6.9" font-weight="bold" text-anchor="middle">100</text>
+<line x1="322" y1="140" x2="358" y2="140" stroke="#000000" stroke-width="1"/>
+<line x1="340" y1="119" x2="340" y2="92" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<text x="363" y="140.9" font-size="6.4" font-weight="bold">ESD</text>
+<text x="370" y="50.7" font-size="6.1">INPUTS ALSO FROM VBD-PID-001: TSHH-101, PSHH-102, LSLL-101</text>
+<text x="370" y="59.7" font-size="6.1">OUTPUTS ALSO (SOFTWARE): JIC-101 / TIC-107 / TIC-101 → MAN, XV-107 → CLOSED</text>
+<line x1="755" y1="540" x2="135" y2="540" stroke="#000000" stroke-width="2.1"/>
+<line x1="135" y1="540" x2="135" y2="460" stroke="#000000" stroke-width="2.1" marker-end="url(#ah)"/>
+<line x1="755" y1="540" x2="720" y2="540" stroke="#000000" stroke-width="2.1" marker-end="url(#ah)"/>
+<text x="762" y="534.4" font-size="6.9" font-weight="bold">FROM D-102 TUBE SIDE</text>
+<text x="762" y="543.9" font-size="6.4">ON VBD-PID-001</text>
+<text x="595" y="552.2" font-size="6.7">DN25-HO-117</text>
+<ellipse cx="680" cy="540" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="680" y1="540" x2="680" y2="516" stroke="#000000" stroke-width="1"/>
+<ellipse cx="680" cy="498" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="680" y="495.9" font-size="6.9" font-weight="bold" text-anchor="middle">TT</text>
+<text x="680" y="504.2" font-size="6.9" font-weight="bold" text-anchor="middle">108</text>
+<line x1="662" y1="498" x2="652" y2="498" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<ellipse cx="634" cy="498" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="634" y="495.9" font-size="6.9" font-weight="bold" text-anchor="middle">TI</text>
+<text x="634" y="504.2" font-size="6.9" font-weight="bold" text-anchor="middle">108</text>
+<line x1="616" y1="498" x2="652" y2="498" stroke="#000000" stroke-width="1"/>
+<text x="680" y="467.7" font-size="6.1" text-anchor="middle">RETURN 255.6 °C</text>
+<ellipse cx="450" cy="540" rx="22" ry="22" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M428 540L437 529L446 551L455 529L464 551L472 540" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="450" y="496" font-size="8.6" font-weight="bold" text-anchor="middle">E-104</text>
+<text x="450" y="505.8" font-size="6.2" text-anchor="middle">HOT-OIL COOLER (COOL-DOWN)</text>
+<line x1="440" y1="608" x2="440" y2="561" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="460" y1="561" x2="460" y2="608" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M433.5 575L446.5 595L433.5 595L446.5 575Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="429" y="586.8" font-size="7.4" font-weight="bold" text-anchor="end">HV-104</text>
+<text x="440" y="615.9" font-size="6.4" text-anchor="middle">CWS</text>
+<text x="462" y="615.9" font-size="6.4">CWR</text>
+<text x="468" y="586.2" font-size="6.7">DN15-CW-120</text>
+<line x1="330" y1="540" x2="330" y2="585" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M323.5 552.5L336.5 572.5L323.5 572.5L336.5 552.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="339" y="564.3" font-size="7.4" font-weight="bold">V-109</text>
+<text x="330" y="592.9" font-size="6.4" text-anchor="middle">DR</text>
+<line x1="135" y1="505" x2="90" y2="505" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M102.5 498.5L122.5 511.5L122.5 498.5L102.5 511.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="112.5" y="520.8" font-size="7.4" font-weight="bold" text-anchor="middle">V-118</text>
+<text x="86" y="505.2" font-size="6.7" text-anchor="end">DR</text>
+<rect x="230" y="430" width="75" height="45" fill="none" stroke="#000000" stroke-width="1.5" stroke-dasharray="6.1 4.6"/>
+<text x="267.5" y="443.2" font-size="7.8" font-weight="bold" text-anchor="middle">TK-102</text>
+<text x="267.5" y="454.7" font-size="6.1" text-anchor="middle">EXP. TANK</text>
+<text x="267.5" y="463.7" font-size="6.1" text-anchor="middle">REC. (HOLD)</text>
+<line x1="267.5" y1="475" x2="267.5" y2="540" stroke="#000000" stroke-width="1.4" stroke-dasharray="5.6 4.2"/>
+<ellipse cx="267.5" cy="540" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="295" y1="430" x2="295" y2="400" stroke="#000000" stroke-width="1.4" stroke-dasharray="5.6 4.2" marker-end="url(#ah)"/>
+<text x="300" y="403.7" font-size="6.1">VENT / N₂ BLANKET</text>
+<text x="230" y="423.5" font-size="6">SIZE FOR 30 → 330 °C</text>
+<rect x="1145" y="140" width="120" height="210" fill="none" stroke="#000000" stroke-width="1.5" stroke-dasharray="6.1 4.6"/>
+<text x="1205" y="208.9" font-size="7.5" font-weight="bold" text-anchor="middle">TEMPERED-</text>
+<text x="1205" y="219.9" font-size="7.5" font-weight="bold" text-anchor="middle">WATER UNIT</text>
+<text x="1205" y="232.8" font-size="6.2" text-anchor="middle">60 °C, TCV INCL.</text>
+<text x="1205" y="242.8" font-size="6.2" text-anchor="middle">PACKAGE BY</text>
+<text x="1205" y="251.8" font-size="6.2" text-anchor="middle">OTHERS (TBC)</text>
+<line x1="1145" y1="180" x2="810" y2="180" stroke="#000000" stroke-width="2.1" marker-end="url(#ah)"/>
+<text x="805" y="156.4" font-size="6.9" font-weight="bold" text-anchor="end">TO E-103</text>
+<text x="805" y="165.9" font-size="6.4" text-anchor="end">ON VBD-PID-001</text>
+<text x="922" y="193.2" font-size="6.7">DN25-TW-118</text>
+<path d="M1108 172.5L1132 187.5L1132 172.5L1108 187.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="1120" y="198.8" font-size="7.4" font-weight="bold" text-anchor="middle">V-119</text>
+<path d="M1076 192L1070 204L1100 204L1094 192Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<ellipse cx="1085" cy="180" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M1093 172L1075 180L1093 188" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1085" y="215" font-size="8.6" font-weight="bold" text-anchor="middle">P-108</text>
+<text x="1085" y="225.2" font-size="6.7" text-anchor="middle">TEMPERED-WATER PUMP</text>
+<path d="M1060 171.6L1041.4 180L1060 188.4Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="1041.4" y1="171.6" x2="1041.4" y2="188.4" stroke="#000000" stroke-width="1.5"/>
+<text x="1048" y="197.8" font-size="7.4" font-weight="bold" text-anchor="middle">NRV-108</text>
+<path d="M1008 172.5L1032 187.5L1032 172.5L1008 187.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="1020" y="198.8" font-size="7.4" font-weight="bold" text-anchor="middle">V-120</text>
+<line x1="967" y1="169" x2="967" y2="191" stroke="#000000" stroke-width="1.9"/>
+<line x1="973" y1="169" x2="973" y2="191" stroke="#000000" stroke-width="1.9"/>
+<ellipse cx="970" cy="169" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="970" y1="169" x2="970" y2="148" stroke="#000000" stroke-width="1"/>
+<ellipse cx="970" cy="130" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="970" y="127.9" font-size="6.9" font-weight="bold" text-anchor="middle">FT</text>
+<text x="970" y="136.2" font-size="6.9" font-weight="bold" text-anchor="middle">108</text>
+<line x1="970" y1="112" x2="970" y2="103" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<ellipse cx="970" cy="85" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="970" y="82.9" font-size="6.9" font-weight="bold" text-anchor="middle">FI</text>
+<text x="970" y="91.2" font-size="6.9" font-weight="bold" text-anchor="middle">108</text>
+<line x1="952" y1="85" x2="988" y2="85" stroke="#000000" stroke-width="1"/>
+<line x1="988" y1="130" x2="1015" y2="130" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="1015" y1="130" x2="1015" y2="106" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<rect x="994" y="64" width="42" height="42" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="1015" cy="85" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1015" y="83.2" font-size="6.1" font-weight="bold" text-anchor="middle">FSLL</text>
+<text x="1015" y="90.5" font-size="6.1" font-weight="bold" text-anchor="middle">108</text>
+<line x1="997" y1="85" x2="1033" y2="85" stroke="#000000" stroke-width="1"/>
+<text x="1042" y="85.8" font-size="6.2" font-weight="bold">→ SIS-100</text>
+<ellipse cx="915" cy="180" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="915" y1="180" x2="915" y2="148" stroke="#000000" stroke-width="1"/>
+<ellipse cx="915" cy="130" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="915" y="127.9" font-size="6.9" font-weight="bold" text-anchor="middle">TT</text>
+<text x="915" y="136.2" font-size="6.9" font-weight="bold" text-anchor="middle">109</text>
+<line x1="915" y1="112" x2="915" y2="103" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<ellipse cx="915" cy="85" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="915" y="82.9" font-size="6.9" font-weight="bold" text-anchor="middle">TI</text>
+<text x="915" y="91.2" font-size="6.9" font-weight="bold" text-anchor="middle">109</text>
+<line x1="897" y1="85" x2="933" y2="85" stroke="#000000" stroke-width="1"/>
+<path d="M842 171.5L868 188.5L868 171.5L842 188.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="855" y1="171.5" x2="855" y2="158" stroke="#000000" stroke-width="1"/>
+<path d="M842 158L842.8 153.9L845 150.3L848.5 147.6L852.7 146.2L857.3 146.2L861.5 147.6L865 150.3L867.2 153.9L868 158Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="870" y="150.4" font-size="6.9" font-weight="bold">FO*</text>
+<text x="855" y="197.8" font-size="7.4" font-weight="bold" text-anchor="middle">HV-105</text>
+<ellipse cx="855" cy="102" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="855" y="99.9" font-size="6.9" font-weight="bold" text-anchor="middle">HIC</text>
+<text x="855" y="108.2" font-size="6.9" font-weight="bold" text-anchor="middle">105</text>
+<line x1="837" y1="102" x2="873" y2="102" stroke="#000000" stroke-width="1"/>
+<line x1="855" y1="120" x2="855" y2="146" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<ellipse cx="995" cy="180" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="995" y1="180" x2="995" y2="212" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<ellipse cx="995" cy="230" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-dasharray="6.1 4.6"/>
+<text x="995" y="227.9" font-size="6.9" font-weight="bold" text-anchor="middle">FT</text>
+<text x="995" y="236.2" font-size="6.9" font-weight="bold" text-anchor="middle">108B</text>
+<text x="975" y="232.5" font-size="6" text-anchor="end">REC. (HOLD): OWN SENSOR</text>
+<text x="975" y="241.5" font-size="6" text-anchor="end">FOR FSLL-108</text>
+<line x1="810" y1="320" x2="1145" y2="320" stroke="#000000" stroke-width="2.1" marker-end="url(#ah)"/>
+<text x="805" y="314.4" font-size="6.9" font-weight="bold" text-anchor="end">FROM E-103</text>
+<text x="805" y="323.9" font-size="6.4" text-anchor="end">ON VBD-PID-001</text>
+<text x="815" y="332.2" font-size="6.7">DN25-TW-119</text>
+<line x1="960" y1="320" x2="960" y2="360" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M953.5 330L966.5 350L953.5 350L966.5 330Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="969" y="341.8" font-size="7.4" font-weight="bold">V-121</text>
+<text x="960" y="367.9" font-size="6.4" text-anchor="middle">DR</text>
+<line x1="1060" y1="320" x2="1060" y2="285" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M1053.5 292.5L1066.5 312.5L1053.5 312.5L1066.5 292.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1069" y="304.3" font-size="7.4" font-weight="bold">V-122</text>
+<text x="1060" y="280.9" font-size="6.4" text-anchor="middle">VENT</text>
+<text x="855" y="215.5" font-size="6" text-anchor="middle">* FAIL POSITION ASSUMED (TBC)</text>
+<text x="980" y="380.7" font-size="6.1" text-anchor="middle">E-103 WATER SIDE: TSV-103 RECOMMENDED IF IT CAN BE BLOCKED IN (SAFETY-LAYERS TAB, NOT DRAWN)</text>
+<text x="62" y="645" font-size="9.7" font-weight="bold">INTERLOCK SCHEDULE · SIS-100 AND P-104 PUMP INTERLOCK (FROM THE OTS MODEL)</text>
+<text x="62" y="661.2" font-size="6.7">X = ACTION ON TRIP. SETTINGS FROM K.trip*; DELAYS FROM sisStep [5, 5, 10, 5, 5] s; ACTIONS FROM sisTrip.</text>
+<line x1="62" y1="672" x2="1250" y2="672" stroke="#000000" stroke-width="1"/>
+<text x="82" y="693.9" font-size="6.4" font-weight="bold" text-anchor="middle">ITEM</text>
+<text x="133" y="693.9" font-size="6.4" font-weight="bold" text-anchor="middle">TAG</text>
+<text x="229" y="693.9" font-size="6.4" font-weight="bold" text-anchor="middle">SENSOR</text>
+<text x="396.5" y="693.9" font-size="6.4" font-weight="bold" text-anchor="middle">CAUSE</text>
+<text x="532" y="693.9" font-size="6.4" font-weight="bold" text-anchor="middle">SETTING</text>
+<text x="585" y="693.9" font-size="6.4" font-weight="bold" text-anchor="middle">DELAY</text>
+<text x="645" y="693.9" font-size="6.4" font-weight="bold" text-anchor="middle">ACTIVE</text>
+<text x="716" y="686.3" font-size="6.4" font-weight="bold" text-anchor="middle">TV-101 SHUT</text>
+<text x="716" y="693.9" font-size="6.4" font-weight="bold" text-anchor="middle">(JIC-101</text>
+<text x="716" y="701.6" font-size="6.4" font-weight="bold" text-anchor="middle">MAN 0 %)</text>
+<text x="778" y="686.3" font-size="6.4" font-weight="bold" text-anchor="middle">HE-101 OFF</text>
+<text x="778" y="693.9" font-size="6.4" font-weight="bold" text-anchor="middle">(TIC-107</text>
+<text x="778" y="701.6" font-size="6.4" font-weight="bold" text-anchor="middle">MAN 0 %)</text>
+<text x="835" y="690.1" font-size="6.4" font-weight="bold" text-anchor="middle">XV-101</text>
+<text x="835" y="697.7" font-size="6.4" font-weight="bold" text-anchor="middle">CLOSED</text>
+<text x="887" y="690.1" font-size="6.4" font-weight="bold" text-anchor="middle">TIC-101</text>
+<text x="887" y="697.7" font-size="6.4" font-weight="bold" text-anchor="middle">→ MAN</text>
+<text x="944" y="686.3" font-size="6.4" font-weight="bold" text-anchor="middle">XV-107 →</text>
+<text x="944" y="693.9" font-size="6.4" font-weight="bold" text-anchor="middle">CLOSED</text>
+<text x="944" y="701.6" font-size="6.4" font-weight="bold" text-anchor="middle">(TOT. REFL.)</text>
+<text x="997" y="690.1" font-size="6.4" font-weight="bold" text-anchor="middle">P-104</text>
+<text x="997" y="697.7" font-size="6.4" font-weight="bold" text-anchor="middle">STOP</text>
+<text x="1048" y="690.1" font-size="6.4" font-weight="bold" text-anchor="middle">FIRST-OUT</text>
+<text x="1048" y="697.7" font-size="6.4" font-weight="bold" text-anchor="middle">+ ALARM</text>
+<text x="1163.5" y="693.9" font-size="6.4" font-weight="bold" text-anchor="middle">RESET</text>
+<line x1="62" y1="712" x2="1250" y2="712" stroke="#000000" stroke-width="1"/>
+<text x="82" y="723.9" font-size="6.4" font-weight="bold" text-anchor="middle">I-1</text>
+<text x="133" y="723.9" font-size="6.4" text-anchor="middle">TSHH-101</text>
+<text x="167" y="723.9" font-size="6.4">TE-101B / TT-101B (OWN)</text>
+<text x="297" y="723.9" font-size="6.4">POT D-101 TEMPERATURE HIGH-HIGH</text>
+<text x="532" y="723.9" font-size="6.4" text-anchor="middle">&gt; 290 °C</text>
+<text x="585" y="723.9" font-size="6.4" text-anchor="middle">5 s</text>
+<text x="608" y="723.9" font-size="6.4">ALWAYS</text>
+<text x="716" y="723.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="778" y="723.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="835" y="723.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="887" y="723.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="944" y="723.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1048" y="723.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1080" y="723.9" font-size="6.4">BLOCKED UNTIL POT &lt; 290 °C</text>
+<line x1="62" y1="732" x2="1250" y2="732" stroke="#000000" stroke-width="1"/>
+<text x="82" y="743.9" font-size="6.4" font-weight="bold" text-anchor="middle">I-2</text>
+<text x="133" y="743.9" font-size="6.4" text-anchor="middle">PSHH-102</text>
+<text x="167" y="743.9" font-size="6.4">PT-102 (SHARED, PIC-102)</text>
+<text x="297" y="743.9" font-size="6.4">COLUMN TOP PRESSURE HIGH-HIGH</text>
+<text x="532" y="743.9" font-size="6.4" text-anchor="middle">&gt; 300 mbar</text>
+<text x="585" y="743.9" font-size="6.4" text-anchor="middle">5 s</text>
+<text x="608" y="743.9" font-size="6.4">HEATING ARMED</text>
+<text x="716" y="743.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="778" y="743.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="835" y="743.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="887" y="743.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="944" y="743.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1048" y="743.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1080" y="743.9" font-size="6.4">ANY TIME; RE-ARM NEEDS PERMISSIVES</text>
+<line x1="62" y1="752" x2="1250" y2="752" stroke="#000000" stroke-width="1"/>
+<text x="82" y="763.9" font-size="6.4" font-weight="bold" text-anchor="middle">I-3</text>
+<text x="133" y="763.9" font-size="6.4" text-anchor="middle">FSLL-108</text>
+<text x="167" y="763.9" font-size="6.4">FT-108 (SHARED, FI-108)</text>
+<text x="297" y="763.9" font-size="6.4">TEMPERED WATER TO E-103 LOW-LOW</text>
+<text x="532" y="763.9" font-size="6.4" text-anchor="middle">&lt; 0.36 m³/h</text>
+<text x="585" y="763.9" font-size="6.4" text-anchor="middle">10 s</text>
+<text x="608" y="763.9" font-size="6.4">HEATING ARMED</text>
+<text x="716" y="763.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="778" y="763.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="835" y="763.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="887" y="763.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="944" y="763.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1048" y="763.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1080" y="763.9" font-size="6.4">ANY TIME; RE-ARM NEEDS PERMISSIVES</text>
+<line x1="62" y1="772" x2="1250" y2="772" stroke="#000000" stroke-width="1"/>
+<text x="82" y="783.9" font-size="6.4" font-weight="bold" text-anchor="middle">I-4</text>
+<text x="133" y="783.9" font-size="6.4" text-anchor="middle">LSLL-101</text>
+<text x="167" y="783.9" font-size="6.4">LT-101 (SHARED, LI-101)</text>
+<text x="297" y="783.9" font-size="6.4">POT D-101 LEVEL LOW-LOW</text>
+<text x="532" y="783.9" font-size="6.4" text-anchor="middle">&lt; 20 %</text>
+<text x="585" y="783.9" font-size="6.4" text-anchor="middle">5 s</text>
+<text x="608" y="783.9" font-size="6.4">HEATING ARMED</text>
+<text x="716" y="783.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="778" y="783.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="835" y="783.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="887" y="783.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="944" y="783.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1048" y="783.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1080" y="783.9" font-size="6.4">ANY TIME; RE-ARM NEEDS PERMISSIVES</text>
+<line x1="62" y1="792" x2="1250" y2="792" stroke="#000000" stroke-width="1"/>
+<text x="82" y="803.9" font-size="6.4" font-weight="bold" text-anchor="middle">I-5</text>
+<text x="133" y="803.9" font-size="6.4" text-anchor="middle">TSHH-107</text>
+<text x="167" y="803.9" font-size="6.4">TE-107B / TT-107B (OWN)</text>
+<text x="297" y="803.9" font-size="6.4">HOT-OIL SUPPLY TEMPERATURE HIGH-HIGH</text>
+<text x="532" y="803.9" font-size="6.4" text-anchor="middle">&gt; 330 °C</text>
+<text x="585" y="803.9" font-size="6.4" text-anchor="middle">5 s</text>
+<text x="608" y="803.9" font-size="6.4">ALWAYS</text>
+<text x="716" y="803.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="778" y="803.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="835" y="803.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="887" y="803.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="944" y="803.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1048" y="803.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1080" y="803.9" font-size="6.4">BLOCKED UNTIL OIL &lt; 330 °C</text>
+<line x1="62" y1="812" x2="1250" y2="812" stroke="#000000" stroke-width="1"/>
+<text x="82" y="823.9" font-size="6.4" font-weight="bold" text-anchor="middle">I-6</text>
+<text x="133" y="823.9" font-size="6.4" text-anchor="middle">HS-100</text>
+<text x="167" y="823.9" font-size="6.4">PUSH-BUTTON (DCS / SIS)</text>
+<text x="297" y="823.9" font-size="6.4">MANUAL EMERGENCY STOP</text>
+<text x="532" y="823.9" font-size="6.4" text-anchor="middle">PUSH</text>
+<text x="585" y="823.9" font-size="6.4" text-anchor="middle">0 s</text>
+<text x="608" y="823.9" font-size="6.4">ALWAYS</text>
+<text x="716" y="823.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="778" y="823.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="835" y="823.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="887" y="823.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="944" y="823.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1048" y="823.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1080" y="823.9" font-size="6.4">RESET, THEN RE-ARM</text>
+<line x1="62" y1="832" x2="1250" y2="832" stroke="#000000" stroke-width="1"/>
+<text x="82" y="843.9" font-size="6.4" font-weight="bold" text-anchor="middle">I-7</text>
+<text x="133" y="843.9" font-size="6.4" text-anchor="middle">LSLL-104</text>
+<text x="167" y="843.9" font-size="6.4">LT-104 (SHARED, LIC-104)</text>
+<text x="297" y="843.9" font-size="6.4">REFLUX DRUM LEVEL LOW-LOW (BPCS, NOT A SIF)</text>
+<text x="532" y="843.9" font-size="6.4" text-anchor="middle">&lt; 5 %</text>
+<text x="585" y="843.9" font-size="6.4" text-anchor="middle">5 s</text>
+<text x="608" y="843.9" font-size="6.4">P-104 RUNNING</text>
+<text x="997" y="843.9" font-size="6.4" text-anchor="middle">X</text>
+<text x="1048" y="843.9" font-size="6.4" text-anchor="middle">ALARM</text>
+<text x="1080" y="843.9" font-size="6.4">RESTART P-104 IN THE FIELD</text>
+<line x1="62" y1="852" x2="1250" y2="852" stroke="#000000" stroke-width="1"/>
+<text x="82" y="863.9" font-size="6.4" font-weight="bold" text-anchor="middle">REC.</text>
+<text x="133" y="863.9" font-size="6.4" text-anchor="middle">TZ-110</text>
+<text x="167" y="863.9" font-size="6.4">TT-101B (REC., HOLD)</text>
+<text x="297" y="863.9" font-size="6.4">N₂ VACUUM BREAK HV-110 WITH POT &gt; 150 °C</text>
+<text x="532" y="863.9" font-size="6.4" text-anchor="middle">&gt; 150 °C</text>
+<text x="585" y="863.9" font-size="6.4" text-anchor="middle">—</text>
+<text x="608" y="863.9" font-size="6.4">ALWAYS</text>
+<text x="1080" y="863.9" font-size="6.4">BLOCKS HV-110 (NOT IN MODEL)</text>
+<line x1="62" y1="872" x2="1250" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="62" y1="672" x2="62" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="102" y1="672" x2="102" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="164" y1="672" x2="164" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="294" y1="672" x2="294" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="499" y1="672" x2="499" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="565" y1="672" x2="565" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="605" y1="672" x2="605" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="685" y1="672" x2="685" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="747" y1="672" x2="747" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="809" y1="672" x2="809" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="861" y1="672" x2="861" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="913" y1="672" x2="913" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="975" y1="672" x2="975" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="1019" y1="672" x2="1019" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="1077" y1="672" x2="1077" y2="872" stroke="#000000" stroke-width="1"/>
+<line x1="1250" y1="672" x2="1250" y2="872" stroke="#000000" stroke-width="1"/>
+<text x="62" y="885.4" font-size="6.9" font-weight="bold">PERMISSIVES TO ARM HEATING (armPermissives, ALL REQUIRED): VP-101 RUNNING AND PIC-102 &lt; 250 mbar · P-108 RUNNING AND FI-108 ≥ 0.6 m³/h · LI-101 &gt; 30 % ·</text>
+<text x="62" y="895.4" font-size="6.9" font-weight="bold">P-101 RUNNING · TIC-107 &lt; 320 °C · HV-110 CLOSED.   ARMING OPENS XV-101 AND ENABLES HE-101. OPERATOR DISARM: XV-101 CLOSED, HE-101 OFF.</text>
+<text x="62" y="908.4" font-size="6.9">VP-101, P-108, P-101 AND P-104 KEEP RUNNING ON A SIS TRIP: VACUUM, CONDENSER AND REFLUX STAY ON SO THE COLUMN COOLS UNDER TOTAL REFLUX.</text>
+<rect x="1295" y="55" width="315" height="875" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="1452.5" y="70.3" font-size="11.1" font-weight="bold" text-anchor="middle">LEGEND</text>
+<line x1="1305" y1="95" x2="1355" y2="95" stroke="#000000" stroke-width="2.1"/>
+<path d="M1318 87.5L1342 102.5L1342 87.5L1318 102.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="1367" y="95.4" font-size="6.9">HAND VALVE (BLOCK / DRAIN), V-1nn</text>
+<line x1="1305" y1="124.5" x2="1355" y2="124.5" stroke="#000000" stroke-width="2.1"/>
+<path d="M1318 116.1L1336.6 124.5L1318 132.9Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="1336.6" y1="116.1" x2="1336.6" y2="132.9" stroke="#000000" stroke-width="1.5"/>
+<text x="1367" y="124.9" font-size="6.9">CHECK VALVE, FLOW →, NRV-1nn</text>
+<line x1="1305" y1="160" x2="1355" y2="160" stroke="#000000" stroke-width="2.1"/>
+<path d="M1320 153.5L1340 166.5L1340 153.5L1320 166.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<ellipse cx="1330" cy="160" rx="2.5" ry="2.5" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="1367" y="154.4" font-size="6.9">GLOBE (BYPASS) VALVE</text>
+<line x1="1305" y1="195.5" x2="1355" y2="195.5" stroke="#000000" stroke-width="2.1"/>
+<path d="M1317 187L1343 204L1343 187L1317 204Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="1330" y1="187" x2="1330" y2="180.5" stroke="#000000" stroke-width="1"/>
+<path d="M1317 180.5L1317.8 176.4L1320 172.8L1323.5 170.1L1327.7 168.7L1332.3 168.7L1336.5 170.1L1340 172.8L1342.2 176.4L1343 180.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1367" y="189.9" font-size="6.9">CONTROL VALVE, DIAPHRAGM; FO / FC = FAIL OPEN / CLOSED</text>
+<line x1="1305" y1="236" x2="1355" y2="236" stroke="#000000" stroke-width="2.1"/>
+<path d="M1317 227.5L1343 244.5L1343 227.5L1317 244.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="1330" y1="227.5" x2="1330" y2="222" stroke="#000000" stroke-width="1"/>
+<rect x="1323" y="211" width="14" height="11" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="1367" y="229.4" font-size="6.9">ON/OFF VALVE, SOLENOID-PNEUMATIC (S)</text>
+<line x1="1305" y1="262.5" x2="1355" y2="262.5" stroke="#000000" stroke-width="2.1"/>
+<path d="M1317 254L1343 271L1343 254L1317 271Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M1330 262.5L1322.5 275.5L1337.5 275.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="1367" y="262.9" font-size="6.9">THREE-WAY DIVERTER VALVE</text>
+<path d="M1323 306L1337 306L1330 295Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<path d="M1330 295L1342 302L1342 288Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<line x1="1330" y1="295" x2="1330" y2="285" stroke="#000000" stroke-width="1"/>
+<line x1="1330" y1="306" x2="1330" y2="311" stroke="#000000" stroke-width="1.4" stroke-dasharray="5.6 4.2"/>
+<line x1="1342" y1="295" x2="1355" y2="295" stroke="#000000" stroke-width="1.4" stroke-dasharray="5.6 4.2" marker-end="url(#ah)"/>
+<text x="1367" y="298.4" font-size="6.9">RELIEF VALVE (DASHED = RECOMMENDED, HOLD)</text>
+<line x1="1305" y1="327.5" x2="1355" y2="327.5" stroke="#000000" stroke-width="2.1"/>
+<line x1="1327" y1="316.5" x2="1327" y2="338.5" stroke="#000000" stroke-width="1.9"/>
+<line x1="1333" y1="316.5" x2="1333" y2="338.5" stroke="#000000" stroke-width="1.9"/>
+<text x="1367" y="327.9" font-size="6.9">ORIFICE FLOW ELEMENT</text>
+<line x1="1305" y1="357" x2="1355" y2="357" stroke="#000000" stroke-width="2.1"/>
+<path d="M1324 365L1319 372L1341 372L1336 365Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<ellipse cx="1330" cy="357" rx="12" ry="12" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M1324 351L1338 357L1324 363" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1367" y="357.4" font-size="6.9">CENTRIFUGAL PUMP (MOTOR NOT SHOWN)</text>
+<ellipse cx="1330" cy="386.5" rx="12" ry="12" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1367" y="386.9" font-size="6.9">FIELD INSTRUMENT (TRANSMITTER / ELEMENT)</text>
+<ellipse cx="1330" cy="416" rx="12" ry="12" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="1318" y1="416" x2="1342" y2="416" stroke="#000000" stroke-width="1"/>
+<text x="1367" y="416.4" font-size="6.9">DCS FUNCTION (SHARED DISPLAY / CONTROL)</text>
+<rect x="1315" y="430.5" width="30" height="30" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="1330" cy="445.5" rx="12" ry="12" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="1318" y1="445.5" x2="1342" y2="445.5" stroke="#000000" stroke-width="1"/>
+<text x="1367" y="445.9" font-size="6.9">SIS-100 FUNCTION (TRIP)</text>
+<ellipse cx="1330" cy="475" rx="12" ry="12" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-dasharray="6.1 4.6"/>
+<text x="1367" y="475.4" font-size="6.9">RECOMMENDED INSTRUMENT (DASHED, HOLD)</text>
+<path d="M1330 492.5L1342 504.5L1330 516.5L1318 504.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1367" y="504.9" font-size="6.9">INTERLOCK LOGIC (DIAMOND)</text>
+<line x1="1305" y1="534" x2="1355" y2="534" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<text x="1367" y="534.4" font-size="6.9">INSTRUMENT SIGNAL (ELECTRIC / SOFTWARE)</text>
+<line x1="1305" y1="563.5" x2="1355" y2="563.5" stroke="#000000" stroke-width="2.1" marker-end="url(#ah)"/>
+<text x="1367" y="563.9" font-size="6.9">PROCESS LINE, FLOW DIRECTION</text>
+<line x1="1305" y1="593" x2="1355" y2="593" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="1367" y="593.4" font-size="6.9">UTILITY / DRAIN / VENT LINE</text>
+<line x1="1305" y1="622.5" x2="1355" y2="622.5" stroke="#000000" stroke-width="2.1"/>
+<ellipse cx="1330" cy="622.5" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<text x="1367" y="622.9" font-size="6.9">CONNECTION (TEE)</text>
+<text x="1307" y="653.9" font-size="7.5" font-weight="bold">LINE NUMBER  DNxx-SVC-1nn  (SIZES PRELIMINARY, TBC)</text>
+<text x="1307" y="666.3" font-size="6.8">PV PROCESS VAPOUR · PL PROCESS LIQUID · VG VACUUM GAS</text>
+<text x="1307" y="677.3" font-size="6.8">NG NITROGEN · HO HOT OIL · TW TEMPERED WATER · CW COOLING WATER</text>
+<text x="1307" y="701.2" font-size="7.8" font-weight="bold">RECOMMENDED ADDITIONS (DASHED, NOT EXISTING, HOLD)</text>
+<text x="1307" y="716.2" font-size="6.7">PSV-101 C-101 TOP · RD-102 + PSV-102 POT (PID-001)</text>
+<text x="1307" y="728.2" font-size="6.7">TSV-101 HOT-OIL SIDE OF D-102 → TK-102 (PID-002)</text>
+<text x="1307" y="740.2" font-size="6.7">TK-102 HOT-OIL EXPANSION TANK, N₂ BLANKET (PID-002)</text>
+<text x="1307" y="752.2" font-size="6.7">PT-102B, LT-101B (PID-001), FT-108B (PID-002):</text>
+<text x="1307" y="764.2" font-size="6.7">   OWN SENSORS FOR PSHH-102, LSLL-101, FSLL-108</text>
+<text x="1307" y="776.2" font-size="6.7">TZ-110 HV-110 INTERLOCK, POT &gt; 150 °C (PID-001)</text>
+<text x="1307" y="788.2" font-size="6.7">SOURCE: HAZOP R02/R03/R13 AND SAFETY-LAYERS REGISTER</text>
+<line x1="35" y1="940" x2="1280" y2="940" stroke="#000000" stroke-width="1"/>
+<text x="50" y="954.2" font-size="6.9" font-weight="bold">NOTES (HOT OIL AND TEMPERED WATER)</text>
+<text x="50" y="962.6" font-size="6.9">1. PART OF THE ALTERNATIVE VERSION (EPC STANDARD). GENERAL NOTES, EQUIPMENT LIST AND PROCESS SIDE: VBD-PID-001.</text>
+<text x="50" y="970.9" font-size="6.9">2. HOT OIL: SUPPLY 290 °C (TIC-107), RETURN 255.6 °C (ΔT 34.4 K). TV-101 36.7 % OPEN GIVES mcp 0.087 kW/K = 125 kg/h AT cp 2.5 kJ/kg K (ASSUMED);</text>
+<text x="50" y="979.3" font-size="6.9">    TV-101 WIDE OPEN ≈ 1080 kg/h. HE-101 4.04 kW = POT DUTY 3.00 kW + LOOP LOSS 1.04 kW (BALANCE CLOSES TO 0.000 kW).</text>
+<text x="50" y="987.6" font-size="6.9">3. OIL GRADE, FLASH POINT, LOOP VOLUME, P-101 HEAD, HE-101 ELEMENT STEPS: TBC. HE-101 HAS POWER ONLY WITH P-101 RUNNING (MODEL; CONFIRM).</text>
+<text x="50" y="995.9" font-size="6.9">4. JIC-101 DUTY = FT-101 × cp × (TT-107 − TT-108). FT-101 IS A NEW TAG FOR THE FLOW THE MODEL USES; METER TYPE AND RANGE TBC.</text>
+<text x="50" y="1004.3" font-size="6.9">5. TEMPERED WATER 60 °C, 1.2 m³/h; ΔT ACROSS E-103 1.7 K AT 2.37 kW. KEEP SUPPLY ABOVE 45 °C (TI-109 L ALARM): ESTERS FREEZE AT 30–38 °C.</text>
+<text x="50" y="1012.6" font-size="6.9">6. E-104 / HV-104 ONLY FOR COOL-DOWN (SHUTDOWN PROCEDURE). COOLING-WATER CONDITIONS TBC.</text>
+<text x="50" y="1020.9" font-size="6.9">7. DCS ALARMS (OTS): TIC-107 H 315 °C · JIC-101 H 5.0 kW · FI-108 L 0.6 m³/h · TI-109 L 45 / H 80 °C · TIC-101 H 280 °C.</text>
+<text x="50" y="1029.3" font-size="6.9">8. LINE SIZES PRELIMINARY (TBC): HOT OIL DN25 = 0.72 m/s AT 1080 kg/h (ρ 750 ASSUMED); TEMPERED WATER DN25 = 0.60 m/s.</text>
+<text x="670" y="954.2" font-size="6.9" font-weight="bold">INTERLOCK NOTES</text>
+<text x="670" y="962.6" font-size="6.9">9. A TRIP SETS JIC-101 AND TIC-107 TO MAN 0 % (TV-101 SHUT, HE-101 OFF), TIC-101 TO MAN, XV-107 TO CLOSED; SIS-100 LEAVES RUN SO XV-101 CLOSES.</text>
+<text x="670" y="970.9" font-size="6.9">10. PSHH-102, FSLL-108 AND LSLL-101 ACT ONLY WHILE HEATING IS ARMED. TSHH-101 AND TSHH-107 ACT ALWAYS AND BLOCK THE RESET WHILE ABOVE THE SETTING.</text>
+<text x="670" y="979.3" font-size="6.9">11. SIS-100 DE-ENERGISES TO TRIP; XV-101 AND TV-101 FAIL CLOSED; HE-101 CONTACTOR OPENS. FIRST-OUT SHOWN ON THE SIS FACEPLATE.</text>
+<text x="670" y="987.6" font-size="6.9">12. SHARED SENSORS (SAFETY-LAYERS TAB GAPS): PT-102, FT-108, LT-101 SERVE CONTROL / ALARM AND TRIP. OWN SENSORS ARE RECOMMENDED (HOLD).</text>
+<text x="670" y="995.9" font-size="6.9">13. AIR INGRESS (HIGH RISK IN THE HAZOP) HAS NO SIF: TZ-110 AND AN O₂ ANALYSER AT-102 ARE RECOMMENDED (HOLD).</text>
+<text x="670" y="1004.3" font-size="6.9">14. SIL TARGETS, PROOF TESTS AND RESPONSE TIMES: SRS OF SIF TAB. CAUSE AND EFFECT: C&amp;E MATRIX VBD-IN-CE-001.</text>
+<line x1="1285" y1="945" x2="1619" y2="945" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="964" x2="1619" y2="964" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="983" x2="1619" y2="983" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="1002" x2="1619" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="945" x2="1285" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1320" y1="945" x2="1320" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1534" y1="945" x2="1534" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1619" y1="945" x2="1619" y2="1002" stroke="#000000" stroke-width="1"/>
+<text x="1302.5" y="956.8" font-size="7.6" font-weight="bold" text-anchor="middle">REV</text>
+<text x="1427" y="956.8" font-size="7.6" font-weight="bold" text-anchor="middle">DESCRIPTION</text>
+<text x="1576.5" y="956.8" font-size="7.6" font-weight="bold" text-anchor="middle">DATE</text>
+<text x="1302.5" y="975.8" font-size="7.6" text-anchor="middle">—</text>
+<text x="1427" y="975.8" font-size="7.6" text-anchor="middle">VBD-V1-PID-001 A (SCREEN): CURRENT, DCS/DECKS</text>
+<text x="1576.5" y="975.8" font-size="7.6" text-anchor="middle">—</text>
+<text x="1302.5" y="994.8" font-size="7.6" text-anchor="middle">A</text>
+<text x="1427" y="994.8" font-size="7.6" text-anchor="middle">ALTERNATIVE VERSION, EPC STANDARD</text>
+<text x="1576.5" y="994.8" font-size="7.6" text-anchor="middle">12-OCT-26</text>
+<rect x="1285" y="1002" width="334" height="132" fill="#FFFFFF" stroke="#000000" stroke-width="1.9"/>
+<line x1="1285" y1="1036" x2="1619" y2="1036" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="1072" x2="1619" y2="1072" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="1102" x2="1619" y2="1102" stroke="#000000" stroke-width="1"/>
+<text x="1452" y="1012" font-size="7.8" font-weight="bold" text-anchor="middle">CLIENT: DEPARTMENT OF CHEMICAL ENGINEERING,</text>
+<text x="1452" y="1021.3" font-size="7.8" font-weight="bold" text-anchor="middle">FACULTY OF ENGINEERING, CHULALONGKORN UNIVERSITY</text>
+<text x="1452" y="1030.7" font-size="7.8" font-weight="bold" text-anchor="middle">VACUUM BATCH DISTILLATION VER 1 · OTS</text>
+<text x="1452" y="1050.2" font-size="12.5" font-weight="bold" text-anchor="middle">P&amp;ID — VACUUM BATCH DISTILLATION C-101</text>
+<text x="1452" y="1065.2" font-size="12.5" font-weight="bold" text-anchor="middle">· ALTERNATIVE VERSION</text>
+<line x1="1368.5" y1="1072" x2="1368.5" y2="1134" stroke="#000000" stroke-width="1"/>
+<line x1="1452" y1="1072" x2="1452" y2="1134" stroke="#000000" stroke-width="1"/>
+<line x1="1535.5" y1="1072" x2="1535.5" y2="1134" stroke="#000000" stroke-width="1"/>
+<text x="1326.8" y="1085.2" font-size="6.1" text-anchor="middle">DRAWN: </text>
+<text x="1326.8" y="1092.5" font-size="6.1" text-anchor="middle">Apinan Soottitantawat</text>
+<text x="1410.2" y="1089.3" font-size="7.6" text-anchor="middle">CHK&#x27;D: --</text>
+<text x="1493.8" y="1089.3" font-size="7.6" text-anchor="middle">APP&#x27;D: --</text>
+<text x="1577.2" y="1089.3" font-size="7.6" text-anchor="middle">DATE: 12-OCT-26</text>
+<text x="1326.8" y="1115.7" font-size="7.6" font-weight="bold" text-anchor="middle">DWG NO.</text>
+<text x="1326.8" y="1124.9" font-size="7.6" font-weight="bold" text-anchor="middle">VBD-PID-002</text>
+<text x="1410.2" y="1115.7" font-size="7.6" text-anchor="middle">REV</text>
+<text x="1410.2" y="1124.9" font-size="7.6" text-anchor="middle">A</text>
+<text x="1493.8" y="1115.7" font-size="7.6" text-anchor="middle">SCALE</text>
+<text x="1493.8" y="1124.9" font-size="7.6" text-anchor="middle">N.T.S.</text>
+<text x="1577.2" y="1115.7" font-size="7.6" text-anchor="middle">SHEET</text>
+<text x="1577.2" y="1124.9" font-size="7.6" text-anchor="middle">2 OF 2</text>
+<text x="55" y="56" font-size="9.7" font-weight="bold">ALTERNATIVE VERSION · EPC STANDARD</text>
+<text x="55" y="68.4" font-size="6.9">REFERENCE: SCREEN P&amp;ID VBD-V1-PID-001</text>
+<text x="1270" y="931.7" font-size="7.2" font-weight="bold" text-anchor="end">SHEET 2 OF 2 · HOT-OIL SKID, TEMPERED WATER, SIS-100, INTERLOCK SCHEDULE</text>
+</svg>
