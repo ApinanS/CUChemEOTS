@@ -1,0 +1,795 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="pidDwg2" viewBox="0 0 1654 1169" font-family="Arial, Helvetica, sans-serif">
+<defs><marker id="pidDwg2ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#000"/></marker></defs>
+<rect width="1654" height="1169" fill="#fff"/>
+<rect x="20" y="20" width="1614" height="1129" fill="none" stroke="#000000" stroke-width="3.1"/>
+<rect x="35" y="35" width="1584" height="1099" fill="none" stroke="#000000" stroke-width="1.2"/>
+<line x1="60" y1="445" x2="535" y2="445" stroke="#000000" stroke-width="2.1"/>
+<line x1="60" y1="445" x2="95" y2="445" stroke="#000000" stroke-width="2.1" marker-end="url(#pidDwg2ah)"/>
+<text x="60" y="430.3" text-anchor="start" style="font-size:6.4px;font-weight:bold">FROM F-601 · SHT 1</text>
+<text x="60" y="460.3" text-anchor="start" style="font-size:6.4px;font-style:italic">1/2&quot;-PM-603-IH</text>
+<rect x="210" y="423" width="120" height="44" rx="22" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="230" y1="423" x2="230" y2="467" stroke="#000000" stroke-width="1"/>
+<line x1="310" y1="423" x2="310" y2="467" stroke="#000000" stroke-width="1"/>
+<text x="270" y="456" text-anchor="middle" style="font-size:8.3px;font-weight:bold">E-602</text>
+<text x="270" y="438.9" text-anchor="middle" style="font-size:5.3px">TUBE: PROCESS</text>
+<line x1="280" y1="423" x2="280" y2="343" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="280" cy="413" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="280" y1="413" x2="355" y2="413" stroke="#000000" stroke-width="1.4"/>
+<line x1="355" y1="413" x2="355" y2="328" stroke="#000000" stroke-width="1.4"/>
+<path d="M273 376L287 398L273 398L287 376Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="280" cy="387" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="291" y="389.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-623 LO</text>
+<path d="M272.5 343L287.5 343L280 328Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M295 320.5L295 335.5L280 328Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M280 328L285 321.5L275 318L285 314.5L275 311L285 307.5L280 304" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="272" y="296.3" text-anchor="end" style="font-size:6.9px;font-weight:bold">PSV-602</text><text x="272" y="304.7" text-anchor="end" style="font-size:6.9px;font-weight:bold">SET 4 barg</text>
+<path d="M348 379L362 401L348 401L362 379Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="366" y="392.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-622 NC</text>
+<path d="M348 347L362 369L348 369L362 347Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="362" y1="358" x2="370" y2="358" stroke="#000000" stroke-width="1"/>
+<line x1="370" y1="353" x2="370" y2="363" stroke="#000000" stroke-width="1"/>
+<text x="377" y="360.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">NV-602</text>
+<line x1="295" y1="328" x2="355" y2="328" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="355" cy="328" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="355" y1="328" x2="400" y2="328" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="404" y="330.4" text-anchor="start" style="font-size:6.7px;font-weight:bold">TO SAFE LOC.</text>
+<line x1="240" y1="423" x2="240" y2="381" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M233 393.1L247 415.1L233 415.1L247 393.1Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="229" y="406.6" text-anchor="end" style="font-size:6.9px;font-weight:bold">BV-614 NC</text>
+<text x="246" y="387.2" text-anchor="start" style="font-size:6.2px;font-weight:bold">VENT</text>
+<ellipse cx="240" cy="423" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="255" y1="467" x2="255" y2="509" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M248 474.9L262 496.9L248 496.9L262 474.9Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="266" y="488.4" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-615 NC</text>
+<text x="249" y="507.2" text-anchor="end" style="font-size:6.2px;font-weight:bold">DR</text>
+<ellipse cx="255" cy="467" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="395" cy="445" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="395" y1="445" x2="395" y2="483" stroke="#000000" stroke-width="1"/>
+<ellipse cx="395" cy="500" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="395" y="498.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">TT</text><text x="395" y="506.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">609</text>
+<line x1="395" y1="517" x2="395" y2="533" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<ellipse cx="395" cy="550" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="395" y="548.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">TI</text><text x="395" y="556.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">609</text>
+<line x1="378" y1="550" x2="412" y2="550" stroke="#000000" stroke-width="1"/>
+<text x="374" y="548.5" text-anchor="end" style="font-size:6.4px;font-weight:bold">H</text><text x="374" y="556.1" text-anchor="end" style="font-size:6.4px;font-weight:bold">L</text>
+<line x1="412" y1="550" x2="425" y2="550" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<rect x="425" y="530" width="40" height="40" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="445" cy="550" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="445" y="548.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">TZ</text><text x="445" y="556.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">609</text>
+<line x1="428" y1="550" x2="462" y2="550" stroke="#000000" stroke-width="1"/>
+<text x="445" y="581.3" text-anchor="middle" style="font-size:6.4px;font-weight:bold">HH</text>
+<text x="415" y="435.3" text-anchor="start" style="font-size:6.4px;font-style:italic">1/2&quot;-PM-604</text>
+<rect x="60" y="655" width="85" height="80" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="102" y="687.7" text-anchor="middle" style="font-size:7.6px;font-weight:bold">CHILLER</text>
+<text x="102" y="702.3" text-anchor="middle" style="font-size:6.4px">PKG 15 °C</text>
+<line x1="145" y1="675" x2="225" y2="675" stroke="#000000" stroke-width="1.4"/>
+<line x1="225" y1="675" x2="225" y2="467" stroke="#000000" stroke-width="1.4"/>
+<line x1="310" y1="467" x2="310" y2="725" stroke="#000000" stroke-width="1.4"/>
+<line x1="310" y1="725" x2="145" y2="725" stroke="#000000" stroke-width="1.4"/>
+<rect x="218" y="569" width="14" height="18" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="225" y="580" text-anchor="middle" style="font-size:5.6px;font-weight:bold">FE</text>
+<line x1="218" y1="578" x2="192" y2="578" stroke="#000000" stroke-width="1"/>
+<ellipse cx="175" cy="578" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="175" y="576.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">FT</text><text x="175" y="584.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">701</text>
+<line x1="158" y1="578" x2="142" y2="578" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<ellipse cx="125" cy="578" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="125" y="576.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">FI</text><text x="125" y="584.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">701</text>
+<line x1="108" y1="578" x2="142" y2="578" stroke="#000000" stroke-width="1"/>
+<text x="125" y="554.3" text-anchor="middle" style="font-size:6.4px;font-weight:bold">L</text>
+<line x1="108" y1="578" x2="100" y2="578" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<rect x="60" y="558" width="40" height="40" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="80" cy="578" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="80" y="576.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">FZ</text><text x="80" y="584.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">701</text>
+<line x1="63" y1="578" x2="97" y2="578" stroke="#000000" stroke-width="1"/>
+<text x="80" y="551.3" text-anchor="middle" style="font-size:6.4px;font-weight:bold">LL</text>
+<path d="M218 519L232 541L218 541L232 519Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="225" cy="530" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="236" y="532.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-703 LO</text>
+<line x1="185" y1="675" x2="185" y2="711" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M178 680.2L192 702.2L178 702.2L192 680.2Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="196" y="693.7" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-702 NC</text>
+<text x="179" y="709.2" text-anchor="end" style="font-size:6.2px;font-weight:bold">DR</text>
+<ellipse cx="185" cy="675" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<path d="M303 524L317 546L303 546L317 524Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="310" cy="535" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<text x="321" y="537.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">GV-701</text>
+<line x1="310" y1="585" x2="350" y2="585" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M317 578L339 592L339 578L317 592Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="328" y="572.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">BV-705 NC</text>
+<text x="354" y="587.2" text-anchor="start" style="font-size:6.2px;font-weight:bold">VENT</text>
+<ellipse cx="310" cy="585" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="310" y1="640" x2="350" y2="640" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M317 633L339 647L339 633L317 647Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="328" y="627.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">BV-704 NC</text>
+<text x="354" y="642.2" text-anchor="start" style="font-size:6.2px;font-weight:bold">DR</text>
+<ellipse cx="310" cy="640" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<text x="150" y="667.3" text-anchor="start" style="font-size:6.4px;font-style:italic">1&quot;-CHS-701</text>
+<text x="150" y="739.3" text-anchor="start" style="font-size:6.4px;font-style:italic">1&quot;-CHR-701</text>
+<line x1="55" y1="630" x2="100" y2="630" stroke="#000000" stroke-width="1.4"/>
+<line x1="100" y1="630" x2="100" y2="655" stroke="#000000" stroke-width="1.4"/>
+<path d="M64 623L86 637L86 623L64 637Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="75" cy="630" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="75" y="617.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">BV-701</text>
+<text x="55" y="644.2" text-anchor="start" style="font-size:6.1px;font-weight:bold">WATER</text>
+<rect x="55" y="813" width="62" height="44" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="86" y="831.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">AIR</text>
+<text x="86" y="845.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">COMP.</text>
+<line x1="117" y1="835" x2="485" y2="835" stroke="#000000" stroke-width="1.4"/>
+<path d="M139 828L161 842L161 828L139 842Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="150" y1="828" x2="150" y2="815" stroke="#000000" stroke-width="1"/>
+<ellipse cx="150" cy="806" rx="9" ry="9" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<line x1="159" y1="806" x2="166" y2="813" stroke="#000000" stroke-width="1"/>
+<text x="150" y="848.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">PR-901</text><text x="150" y="856.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">7→4.5</text>
+<line x1="185" y1="835" x2="185" y2="875" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M178 842L192 864L178 864L192 842Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="196" y="855.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-905 NC</text>
+<text x="179" y="873.2" text-anchor="end" style="font-size:6.2px;font-weight:bold">TEST</text>
+<ellipse cx="185" cy="835" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="245" cy="835" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="245" y1="835" x2="245" y2="868" stroke="#000000" stroke-width="1"/>
+<path d="M240 842L250 858L240 858L250 842Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="245" cy="850" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="253" y="854.2" text-anchor="start" style="font-size:6.1px;font-weight:bold">BV-906</text>
+<ellipse cx="245" cy="885" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="245" y="883.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">PT</text><text x="245" y="891.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">902</text>
+<line x1="262" y1="885" x2="278" y2="885" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<ellipse cx="295" cy="885" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="295" y="883.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">PI</text><text x="295" y="891.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">902</text>
+<line x1="278" y1="885" x2="312" y2="885" stroke="#000000" stroke-width="1"/>
+<text x="295" y="913.3" text-anchor="middle" style="font-size:6.4px;font-weight:bold">H L</text>
+<line x1="312" y1="885" x2="325" y2="885" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<rect x="325" y="865" width="40" height="40" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="345" cy="885" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="345" y="883.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">PZ</text><text x="345" y="891.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">902</text>
+<line x1="328" y1="885" x2="362" y2="885" stroke="#000000" stroke-width="1"/>
+<text x="345" y="916.3" text-anchor="middle" style="font-size:6.4px;font-weight:bold">HH LL</text>
+<ellipse cx="385" cy="835" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="385" y1="835" x2="385" y2="795" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M378 804L392 826L378 826L392 804Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="385" cy="815" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="396" y="817.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-901</text>
+<ellipse cx="427" cy="835" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="427" y1="835" x2="427" y2="795" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M420 804L434 826L420 826L434 804Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="427" cy="815" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="438" y="817.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-902</text>
+<ellipse cx="469" cy="835" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="469" y1="835" x2="469" y2="795" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M462 804L476 826L462 826L476 804Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="469" cy="815" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="480" y="817.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-903</text>
+<text x="480" y="794.2" text-anchor="start" style="font-size:6.1px;font-weight:bold">TO IA USERS</text>
+<line x1="485" y1="835" x2="510" y2="835" stroke="#000000" stroke-width="1.4"/>
+<path d="M489 828L511 842L511 828L489 842Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="500" cy="835" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="500" y="852.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">BV-904</text>
+<line x1="515" y1="835" x2="540" y2="835" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="544" y="837.4" text-anchor="start" style="font-size:6.7px;font-weight:bold">IA TO P-302</text>
+<text x="380" y="850.3" text-anchor="start" style="font-size:6.4px;font-style:italic">1/2&quot;-IA-901</text>
+<rect x="535" y="395" width="50" height="180" rx="25" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="560" y="493" text-anchor="middle" style="font-size:8.3px;font-weight:bold">D-601</text>
+<text x="560" y="507.2" text-anchor="middle" style="font-size:6.1px">HP SEP.</text>
+<text x="560" y="519" text-anchor="middle" style="font-size:5.6px">36 barg</text>
+<text x="560" y="529" text-anchor="middle" style="font-size:5.6px">75 °C</text>
+<line x1="585" y1="445" x2="598" y2="445" stroke="#000000" stroke-width="1"/>
+<ellipse cx="615" cy="445" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="615" y="443.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">LS</text><text x="615" y="451.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">605</text>
+<line x1="632" y1="445" x2="645" y2="445" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<rect x="645" y="425" width="40" height="40" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="665" cy="445" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="665" y="443.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">LZ</text><text x="665" y="451.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">605</text>
+<line x1="648" y1="445" x2="682" y2="445" stroke="#000000" stroke-width="1"/>
+<text x="689" y="447.3" text-anchor="start" style="font-size:6.4px;font-weight:bold">HH</text>
+<line x1="585" y1="520" x2="598" y2="520" stroke="#000000" stroke-width="1"/>
+<ellipse cx="615" cy="520" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="615" y="518.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">LT</text><text x="615" y="526.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">601</text>
+<line x1="632" y1="520" x2="648" y2="520" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<ellipse cx="665" cy="520" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="665" y="518.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">LIC</text><text x="665" y="526.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">601</text>
+<line x1="648" y1="520" x2="682" y2="520" stroke="#000000" stroke-width="1"/>
+<text x="665" y="496.3" text-anchor="middle" style="font-size:6.4px;font-weight:bold">H L</text>
+<line x1="615" y1="537" x2="615" y2="572" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<line x1="615" y1="572" x2="645" y2="572" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<rect x="645" y="552" width="40" height="40" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="665" cy="572" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="665" y="570.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">LZ</text><text x="665" y="578.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">601</text>
+<line x1="648" y1="572" x2="682" y2="572" stroke="#000000" stroke-width="1"/>
+<text x="689" y="570.5" text-anchor="start" style="font-size:6.4px;font-weight:bold">HH</text><text x="689" y="578.1" text-anchor="start" style="font-size:6.4px;font-weight:bold">LL</text>
+<line x1="682" y1="520" x2="715" y2="520" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<line x1="715" y1="520" x2="715" y2="603" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<text x="720" y="534" text-anchor="start" style="font-size:5.6px;font-weight:bold">ON/OFF</text>
+<line x1="560" y1="575" x2="560" y2="635" stroke="#000000" stroke-width="2.1"/>
+<line x1="560" y1="635" x2="795" y2="635" stroke="#000000" stroke-width="2.1"/>
+<line x1="795" y1="635" x2="795" y2="590" stroke="#000000" stroke-width="2.1"/>
+<line x1="795" y1="590" x2="825" y2="590" stroke="#000000" stroke-width="2.1"/>
+<path d="M553 586L567 608L553 608L567 586Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="560" cy="597" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="549" y="599.5" text-anchor="end" style="font-size:6.9px;font-weight:bold">BV-632 LO</text>
+<line x1="560" y1="617" x2="518" y2="617" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M530.1 610L552.1 624L552.1 610L530.1 624Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="541.1" y="634.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">BV-633 NC</text>
+<text x="514" y="619.2" text-anchor="end" style="font-size:6.2px;font-weight:bold">DR</text>
+<ellipse cx="560" cy="617" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<path d="M704 628L726 642L726 628L704 642Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="715" y1="628" x2="715" y2="615" stroke="#000000" stroke-width="1"/>
+<rect x="707.5" y="603" width="15" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="715" y="654.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">XV-601 FC</text>
+<path d="M747 628L769 642L769 628L747 642Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="758" y1="628" x2="758" y2="620" stroke="#000000" stroke-width="1"/>
+<line x1="753" y1="620" x2="763" y2="620" stroke="#000000" stroke-width="1"/>
+<text x="758" y="652.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">NV-609</text>
+<text x="620" y="650.3" text-anchor="start" style="font-size:6.4px;font-style:italic">1/2&quot;-PL-601</text>
+<line x1="560" y1="395" x2="560" y2="85" stroke="#000000" stroke-width="2.1"/>
+<path d="M553 361L567 383L553 383L567 361Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="560" cy="372" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="549" y="374.5" text-anchor="end" style="font-size:6.9px;font-weight:bold">BV-601 LO</text>
+<rect x="553" y="329" width="14" height="18" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="560" y="340" text-anchor="middle" style="font-size:5.6px;font-weight:bold">FE</text>
+<line x1="567" y1="338" x2="593" y2="338" stroke="#000000" stroke-width="1"/>
+<ellipse cx="610" cy="338" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="610" y="336.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">FT</text><text x="610" y="344.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">603</text>
+<line x1="627" y1="338" x2="643" y2="338" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<ellipse cx="660" cy="338" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="660" y="336.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">FI</text><text x="660" y="344.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">603</text>
+<line x1="643" y1="338" x2="677" y2="338" stroke="#000000" stroke-width="1"/>
+<text x="550" y="340.1" text-anchor="end" style="font-size:5.8px;font-weight:bold">FG-602</text>
+<text x="566" y="374.3" text-anchor="start" style="font-size:6.4px;font-style:italic">1/2&quot;-VG-602</text>
+<ellipse cx="560" cy="308" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="560" y1="308" x2="495" y2="308" stroke="#000000" stroke-width="1.4"/>
+<line x1="495" y1="308" x2="495" y2="228" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="495" cy="298" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="495" y1="298" x2="453" y2="298" stroke="#000000" stroke-width="1.4"/>
+<line x1="453" y1="298" x2="453" y2="213" stroke="#000000" stroke-width="1.4"/>
+<path d="M488 261L502 283L488 283L502 261Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="495" cy="272" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="506" y="274.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-624 LO</text>
+<path d="M487.5 228L502.5 228L495 213Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M480 205.5L480 220.5L495 213Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M495 213L500 206.5L490 203L500 199.5L490 196L500 192.5L495 189" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="505" y="206.3" text-anchor="start" style="font-size:6.9px;font-weight:bold">PSV-603</text><text x="505" y="214.7" text-anchor="start" style="font-size:6.9px;font-weight:bold">SET 36 barg</text>
+<path d="M446 264L460 286L446 286L460 264Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="442" y="277.5" text-anchor="end" style="font-size:6.9px;font-weight:bold">BV-625 NC</text>
+<path d="M446 232L460 254L446 254L460 232Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="460" y1="243" x2="468" y2="243" stroke="#000000" stroke-width="1"/>
+<line x1="468" y1="238" x2="468" y2="248" stroke="#000000" stroke-width="1"/>
+<text x="431" y="245.5" text-anchor="end" style="font-size:6.9px;font-weight:bold">NV-603</text>
+<line x1="480" y1="213" x2="453" y2="213" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="453" cy="213" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="453" y1="213" x2="408" y2="213" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="404" y="215.4" text-anchor="end" style="font-size:6.7px;font-weight:bold">TO CV</text>
+<line x1="560" y1="85" x2="790" y2="85" stroke="#000000" stroke-width="1.4"/>
+<path d="M584 78L606 92L606 78L584 92Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="595" cy="85" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="595" y="102.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">BV-645</text>
+<path d="M629 78L651 92L651 78L629 92Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="640" y1="78" x2="640" y2="65" stroke="#000000" stroke-width="1"/>
+<ellipse cx="640" cy="56" rx="9" ry="9" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<line x1="649" y1="56" x2="656" y2="63" stroke="#000000" stroke-width="1"/>
+<text x="640" y="98.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">PR-601</text><text x="640" y="106.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">30→5</text>
+<ellipse cx="690" cy="85" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<path d="M711 78L733 92L733 78L711 92Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="722" cy="85" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="722" y="102.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">BV-617</text>
+<path d="M747 78L769 92L769 78L747 92Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="758" y1="92" x2="758" y2="100" stroke="#000000" stroke-width="1"/>
+<line x1="753" y1="100" x2="763" y2="100" stroke="#000000" stroke-width="1"/>
+<text x="758" y="71.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">NV-608</text>
+<rect x="790" y="62" width="62" height="46" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="5.9 4.4"/>
+<text x="821" y="79.7" text-anchor="middle" style="font-size:7.6px;font-weight:bold">GC</text>
+<text x="821" y="94.3" text-anchor="middle" style="font-size:6.4px;font-weight:bold">AT-610</text>
+<line x1="840" y1="108" x2="840" y2="145" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="840" cy="145" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="885" cy="85" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="885" y="83.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">AI</text><text x="885" y="91.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">610</text>
+<line x1="868" y1="85" x2="902" y2="85" stroke="#000000" stroke-width="1"/>
+<text x="885" y="112.2" text-anchor="middle" style="font-size:6.1px;font-weight:bold">H₂</text>
+<ellipse cx="930" cy="85" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="930" y="83.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">AI</text><text x="930" y="91.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">611</text>
+<line x1="913" y1="85" x2="947" y2="85" stroke="#000000" stroke-width="1"/>
+<text x="930" y="112.2" text-anchor="middle" style="font-size:6.1px;font-weight:bold">CO₂</text>
+<ellipse cx="975" cy="85" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="975" y="83.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">AI</text><text x="975" y="91.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">612</text>
+<line x1="958" y1="85" x2="992" y2="85" stroke="#000000" stroke-width="1"/>
+<text x="975" y="112.2" text-anchor="middle" style="font-size:6.1px;font-weight:bold">CO</text>
+<ellipse cx="1020" cy="85" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1020" y="83.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">AI</text><text x="1020" y="91.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">613</text>
+<line x1="1003" y1="85" x2="1037" y2="85" stroke="#000000" stroke-width="1"/>
+<text x="1020" y="112.2" text-anchor="middle" style="font-size:6.1px;font-weight:bold">N₂</text>
+<line x1="852" y1="85" x2="868" y2="85" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<line x1="902" y1="85" x2="913" y2="85" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<line x1="947" y1="85" x2="958" y2="85" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<line x1="992" y1="85" x2="1003" y2="85" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<line x1="690" y1="85" x2="690" y2="145" stroke="#000000" stroke-width="1.4"/>
+<line x1="690" y1="145" x2="1170" y2="145" stroke="#000000" stroke-width="1.4"/>
+<path d="M711 138L733 152L733 138L711 152Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="722" cy="145" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="722" y="162.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">BV-621</text>
+<path d="M764 138L786 152L786 138L764 152Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="775" y1="138" x2="775" y2="125" stroke="#000000" stroke-width="1"/>
+<rect x="767.5" y="113" width="15" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="775" y="164.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">XV-603 FO</text>
+<text x="900" y="136.3" text-anchor="start" style="font-size:6.4px;font-style:italic">1/2&quot;-VG-603</text>
+<ellipse cx="560" cy="215" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="560" y1="215" x2="1170" y2="215" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="610" cy="215" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="610" y1="215" x2="610" y2="245" stroke="#000000" stroke-width="1"/>
+<path d="M605 222L615 238L605 238L615 222Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="610" cy="230" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="602" y="232.2" text-anchor="end" style="font-size:6.1px;font-weight:bold">BV-637</text>
+<ellipse cx="610" cy="262" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="610" y="260.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">PT</text><text x="610" y="268.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">608</text>
+<line x1="627" y1="262" x2="643" y2="262" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<ellipse cx="660" cy="262" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="660" y="260.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">PI</text><text x="660" y="268.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">608</text>
+<line x1="643" y1="262" x2="677" y2="262" stroke="#000000" stroke-width="1"/>
+<text x="660" y="290.3" text-anchor="middle" style="font-size:6.4px;font-weight:bold">H</text>
+<line x1="677" y1="262" x2="690" y2="262" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<rect x="690" y="242" width="40" height="40" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="710" cy="262" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="710" y="260.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">PZ</text><text x="710" y="268.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">608</text>
+<line x1="693" y1="262" x2="727" y2="262" stroke="#000000" stroke-width="1"/>
+<text x="710" y="293.3" text-anchor="middle" style="font-size:6.4px;font-weight:bold">HH</text>
+<ellipse cx="755" cy="215" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="755" y1="215" x2="755" y2="245" stroke="#000000" stroke-width="1"/>
+<path d="M750 222L760 238L750 238L760 222Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="755" cy="230" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="763" y="232.2" text-anchor="start" style="font-size:6.1px;font-weight:bold">BV-636</text>
+<ellipse cx="755" cy="262" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="755" y="260.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">PG</text><text x="755" y="268.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">607</text>
+<ellipse cx="795" cy="215" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="865" cy="215" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="795" y1="215" x2="795" y2="250" stroke="#000000" stroke-width="1.4"/>
+<line x1="795" y1="250" x2="865" y2="250" stroke="#000000" stroke-width="1.4"/>
+<line x1="865" y1="250" x2="865" y2="215" stroke="#000000" stroke-width="1.4"/>
+<path d="M819 243L841 257L841 243L819 257Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="830" y1="257" x2="830" y2="265" stroke="#000000" stroke-width="1"/>
+<line x1="825" y1="265" x2="835" y2="265" stroke="#000000" stroke-width="1"/>
+<text x="830" y="278.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">NV-607</text>
+<path d="M819 208L841 222L841 208L819 222Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="830" y1="208" x2="830" y2="195" stroke="#000000" stroke-width="1"/>
+<ellipse cx="830" cy="186" rx="9" ry="9" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<line x1="839" y1="186" x2="846" y2="193" stroke="#000000" stroke-width="1"/>
+<text x="845" y="183.3" text-anchor="start" style="font-size:6.9px;font-weight:bold">BPV-601</text><text x="845" y="191.7" text-anchor="start" style="font-size:6.9px;font-weight:bold">SET 30 barg</text>
+<text x="940" y="206.3" text-anchor="start" style="font-size:6.4px;font-style:italic">1/2&quot;-VG-604</text>
+<rect x="825" y="460" width="50" height="160" rx="25" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="850" y="538" text-anchor="middle" style="font-size:8.3px;font-weight:bold">D-602</text>
+<text x="850" y="552.1" text-anchor="middle" style="font-size:5.8px">LP FLASH</text>
+<text x="850" y="564" text-anchor="middle" style="font-size:5.6px">6 barg</text>
+<line x1="850" y1="460" x2="850" y2="445" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="850" cy="445" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="850" y1="445" x2="1170" y2="445" stroke="#000000" stroke-width="1.4"/>
+<line x1="850" y1="445" x2="850" y2="365" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="850" cy="435" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="850" y1="435" x2="808" y2="435" stroke="#000000" stroke-width="1.4"/>
+<line x1="808" y1="435" x2="808" y2="350" stroke="#000000" stroke-width="1.4"/>
+<path d="M843 398L857 420L843 420L857 398Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="850" cy="409" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="861" y="411.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-626 LO</text>
+<path d="M842.5 365L857.5 365L850 350Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M835 342.5L835 357.5L850 350Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M850 350L855 343.5L845 340L855 336.5L845 333L855 329.5L850 326" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="860" y="343.3" text-anchor="start" style="font-size:6.9px;font-weight:bold">PSV-606</text><text x="860" y="351.7" text-anchor="start" style="font-size:6.9px;font-weight:bold">SET 2 barg</text>
+<path d="M801 401L815 423L801 423L815 401Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="797" y="414.5" text-anchor="end" style="font-size:6.9px;font-weight:bold">BV-646 NC</text>
+<path d="M801 369L815 391L801 391L815 369Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="815" y1="380" x2="823" y2="380" stroke="#000000" stroke-width="1"/>
+<line x1="823" y1="375" x2="823" y2="385" stroke="#000000" stroke-width="1"/>
+<text x="786" y="382.5" text-anchor="end" style="font-size:6.9px;font-weight:bold">NV-611</text>
+<line x1="835" y1="350" x2="808" y2="350" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="808" cy="350" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="808" y1="350" x2="763" y2="350" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="759" y="352.4" text-anchor="end" style="font-size:6.7px;font-weight:bold">TO CV</text>
+<path d="M909 438L931 452L931 438L909 452Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="920" y1="438" x2="920" y2="425" stroke="#000000" stroke-width="1"/>
+<ellipse cx="920" cy="416" rx="9" ry="9" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<line x1="929" y1="416" x2="936" y2="423" stroke="#000000" stroke-width="1"/>
+<text x="936" y="413.3" text-anchor="start" style="font-size:6.9px;font-weight:bold">BPV-602</text><text x="936" y="421.7" text-anchor="start" style="font-size:6.9px;font-weight:bold">SET 0.2 barg</text>
+<ellipse cx="890" cy="445" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="955" cy="445" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="890" y1="445" x2="890" y2="480" stroke="#000000" stroke-width="1.4"/>
+<line x1="890" y1="480" x2="955" y2="480" stroke="#000000" stroke-width="1.4"/>
+<line x1="955" y1="480" x2="955" y2="445" stroke="#000000" stroke-width="1.4"/>
+<path d="M893 473L915 487L915 473L893 487Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="904" y1="487" x2="904" y2="495" stroke="#000000" stroke-width="1"/>
+<line x1="899" y1="495" x2="909" y2="495" stroke="#000000" stroke-width="1"/>
+<text x="902" y="508.3" text-anchor="middle" style="font-size:6.4px;font-weight:bold">NV-604</text>
+<path d="M927 473L949 487L949 473L927 487Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="942" y="508.3" text-anchor="start" style="font-size:6.4px;font-weight:bold">BV-627 NC</text>
+<text x="980" y="436.3" text-anchor="start" style="font-size:6.4px;font-style:italic">1/2&quot;-VG-605</text>
+<line x1="875" y1="570" x2="903" y2="570" stroke="#000000" stroke-width="1"/>
+<ellipse cx="920" cy="570" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="920" y="568.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">LT</text><text x="920" y="576.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">602</text>
+<line x1="937" y1="570" x2="953" y2="570" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<ellipse cx="970" cy="570" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="970" y="568.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">LIC</text><text x="970" y="576.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">602</text>
+<line x1="953" y1="570" x2="987" y2="570" stroke="#000000" stroke-width="1"/>
+<text x="970" y="546.3" text-anchor="middle" style="font-size:6.4px;font-weight:bold">H L</text>
+<line x1="920" y1="587" x2="920" y2="600" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<rect x="900" y="600" width="40" height="40" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="920" cy="620" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="920" y="618.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">LZ</text><text x="920" y="626.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">602</text>
+<line x1="903" y1="620" x2="937" y2="620" stroke="#000000" stroke-width="1"/>
+<text x="896" y="618.5" text-anchor="end" style="font-size:6.4px;font-weight:bold">HH</text><text x="896" y="626.1" text-anchor="end" style="font-size:6.4px;font-weight:bold">LL</text>
+<line x1="970" y1="587" x2="970" y2="708" stroke="#000000" stroke-width="0.8" stroke-dasharray="5.3 4"/>
+<text x="976" y="642" text-anchor="start" style="font-size:5.6px;font-weight:bold">ON/OFF</text>
+<line x1="850" y1="620" x2="850" y2="740" stroke="#000000" stroke-width="2.1"/>
+<line x1="850" y1="740" x2="1040" y2="740" stroke="#000000" stroke-width="2.1"/>
+<path d="M843 632L857 654L843 654L857 632Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="850" cy="643" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="839" y="645.5" text-anchor="end" style="font-size:6.9px;font-weight:bold">BV-634 LO</text>
+<line x1="850" y1="672" x2="808" y2="672" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M820.1 665L842.1 679L842.1 665L820.1 679Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="831.1" y="689.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">BV-635 NC</text>
+<text x="804" y="674.2" text-anchor="end" style="font-size:6.2px;font-weight:bold">SAMPLE PT</text>
+<ellipse cx="850" cy="672" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<rect x="916" y="733" width="18" height="14" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="925" y="742" text-anchor="middle" style="font-size:5.6px;font-weight:bold">FE</text>
+<line x1="925" y1="747" x2="925" y2="768" stroke="#000000" stroke-width="1"/>
+<ellipse cx="925" cy="785" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="925" y="783.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">FIQ</text><text x="925" y="791.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">602</text>
+<path d="M959 733L981 747L981 733L959 747Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="970" y1="733" x2="970" y2="720" stroke="#000000" stroke-width="1"/>
+<rect x="962.5" y="708" width="15" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="970" y="759.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">XV-602 FC</text>
+<path d="M999 733L1021 747L1021 733L999 747Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="1010" cy="740" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="1010" y="725.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">BV-628</text>
+<text x="862" y="755.3" text-anchor="start" style="font-size:6.4px;font-style:italic">1/2&quot;-PL-602</text>
+<rect x="1040" y="710" width="140" height="60" rx="30" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1110" y="739.2" text-anchor="middle" style="font-size:9px;font-weight:bold">T-601</text>
+<text x="1110" y="754" text-anchor="middle" style="font-size:5.6px">PRODUCT TANK (2 SHELLS)</text>
+<line x1="1085" y1="710" x2="1085" y2="630" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="1085" cy="700" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="1085" y1="700" x2="1165" y2="700" stroke="#000000" stroke-width="1.4"/>
+<line x1="1165" y1="700" x2="1165" y2="615" stroke="#000000" stroke-width="1.4"/>
+<path d="M1078 663L1092 685L1078 685L1092 663Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="1085" cy="674" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="1096" y="676.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-640 LO</text>
+<path d="M1077.5 630L1092.5 630L1085 615Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M1100 607.5L1100 622.5L1085 615Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M1085 615L1090 608.5L1080 605L1090 601.5L1080 598L1090 594.5L1085 591" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="1077" y="583.3" text-anchor="end" style="font-size:6.9px;font-weight:bold">PSV-604</text><text x="1077" y="591.7" text-anchor="end" style="font-size:6.9px;font-weight:bold">SET 2 barg</text>
+<path d="M1158 666L1172 688L1158 688L1172 666Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="1176" y="679.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-631 NC</text>
+<path d="M1158 634L1172 656L1158 656L1172 634Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="1172" y1="645" x2="1180" y2="645" stroke="#000000" stroke-width="1"/>
+<line x1="1180" y1="640" x2="1180" y2="650" stroke="#000000" stroke-width="1"/>
+<text x="1187" y="647.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">NV-605</text>
+<line x1="1100" y1="615" x2="1165" y2="615" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="1165" cy="615" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="1165" y1="615" x2="1195" y2="615" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="1199" y="617.4" text-anchor="start" style="font-size:6.7px;font-weight:bold">TO CV</text>
+<line x1="1055" y1="710" x2="1055" y2="672" stroke="#000000" stroke-width="1.4"/>
+<rect x="1049" y="650" width="12" height="22" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<line x1="1055" y1="650" x2="1055" y2="628" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="1055" y="622.2" text-anchor="middle" style="font-size:6.1px;font-weight:bold">ATM</text>
+<text x="1045" y="663.2" text-anchor="end" style="font-size:6.1px;font-weight:bold">BDV-601</text>
+<ellipse cx="1055" cy="690" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="1000" y1="690" x2="1055" y2="690" stroke="#000000" stroke-width="1.4"/>
+<line x1="998" y1="690" x2="1030" y2="690" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="1000" y="682.1" text-anchor="start" style="font-size:5.8px;font-weight:bold">N₂ LP · SHT 1</text>
+<line x1="1176" y1="722" x2="1198" y2="722" stroke="#000000" stroke-width="1"/>
+<ellipse cx="1215" cy="722" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1215" y="720.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">LS</text><text x="1215" y="728.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">603</text>
+<text x="1236" y="724.3" text-anchor="start" style="font-size:6.4px;font-weight:bold">H</text>
+<line x1="1176" y1="760" x2="1198" y2="760" stroke="#000000" stroke-width="1"/>
+<ellipse cx="1215" cy="760" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1215" y="758.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">LS</text><text x="1215" y="766.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">604</text>
+<text x="1236" y="762.3" text-anchor="start" style="font-size:6.4px;font-weight:bold">L</text>
+<line x1="1085" y1="770" x2="1085" y2="810" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<path d="M1078 777L1092 799L1078 799L1092 777Z" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="1074" y="790.5" text-anchor="end" style="font-size:6.9px;font-weight:bold">BV-643 NC</text>
+<text x="1091" y="808.2" text-anchor="start" style="font-size:6.2px;font-weight:bold">DR</text>
+<ellipse cx="1085" cy="770" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="1140" y1="770" x2="1140" y2="855" stroke="#000000" stroke-width="1.4"/>
+<path d="M1133 784L1147 806L1133 806L1147 784Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="1140" cy="795" rx="3" ry="3" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="1151" y="797.5" text-anchor="start" style="font-size:6.9px;font-weight:bold">BV-629</text>
+<ellipse cx="1140" cy="873" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1140" y="875.2" text-anchor="middle" style="font-size:6.1px;font-weight:bold">P-302</text>
+<line x1="1158" y1="873" x2="1180" y2="873" stroke="#000000" stroke-width="1.4"/>
+<rect x="1180" y="830" width="55" height="85" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1207" y="864.5" text-anchor="middle" style="font-size:6.9px;font-weight:bold">T-602</text>
+<text x="1207" y="878" text-anchor="middle" style="font-size:5.6px">WASTE IBC</text>
+<line x1="1140" y1="920" x2="1140" y2="891" stroke="#000000" stroke-width="1" marker-end="url(#pidDwg2ah)"/>
+<text x="1133" y="914.1" text-anchor="end" style="font-size:5.8px;font-weight:bold">IA (BV-904A)</text>
+<line x1="1170" y1="445" x2="1170" y2="75" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="1164" y="70.5" text-anchor="end" style="font-size:6.4px;font-weight:bold">COLD VENT VS-601</text><text x="1164" y="78.1" text-anchor="end" style="font-size:6.4px;font-weight:bold">TO SAFE LOCATION</text>
+<ellipse cx="1170" cy="145" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="1170" cy="215" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="1170" cy="445" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="1095" y1="260" x2="1170" y2="260" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="1090" y="262.2" text-anchor="end" style="font-size:6.1px;font-weight:bold">FROM PSV-601 (SHT 1)</text>
+<line x1="1095" y1="290" x2="1170" y2="290" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="1090" y="292.2" text-anchor="end" style="font-size:6.1px;font-weight:bold">FROM PSV-301 + NV-101/201/401 (SHT 1)</text>
+<line x1="1095" y1="320" x2="1170" y2="320" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="1090" y="322.2" text-anchor="end" style="font-size:6.1px;font-weight:bold">FROM PSV-603</text>
+<line x1="1095" y1="350" x2="1170" y2="350" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="1090" y="352.2" text-anchor="end" style="font-size:6.1px;font-weight:bold">FROM PSV-606</text>
+<line x1="1095" y1="380" x2="1170" y2="380" stroke="#000000" stroke-width="1.4" marker-end="url(#pidDwg2ah)"/>
+<text x="1090" y="382.2" text-anchor="end" style="font-size:6.1px;font-weight:bold">FROM PSV-604</text>
+<text x="1176" y="393.5" text-anchor="start" style="font-size:6.1px;font-style:italic">1&quot;-VG-610</text><text x="1176" y="400.9" text-anchor="start" style="font-size:6.1px;font-style:italic">(HOLD)</text>
+<rect x="1255" y="55" width="355" height="870" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="1432.5" y="71.8" text-anchor="middle" style="font-size:7.8px;font-weight:bold">INTERLOCK SCHEDULE (SIS ON THE PLC · C&amp;E 2407-IN-CE-001 A2)</text>
+<line x1="1255" y1="83" x2="1610" y2="83" stroke="#000000" stroke-width="1"/>
+<text x="1288" y="94.8" text-anchor="middle" style="font-size:6.4px;font-weight:bold">TRIP</text>
+<text x="1325" y="94.8" text-anchor="start" style="font-size:6.4px;font-weight:bold">CAUSE</text>
+<text x="1489" y="94.8" text-anchor="middle" style="font-size:6.4px;font-weight:bold">SET</text>
+<text x="1527" y="94.8" text-anchor="middle" style="font-size:6.4px;font-weight:bold">s</text>
+<text x="1554" y="94.8" text-anchor="middle" style="font-size:6.4px;font-weight:bold">ARM</text>
+<text x="1589.5" y="94.8" text-anchor="middle" style="font-size:6.4px;font-weight:bold">XV 601/2/3</text>
+<text x="1288" y="113.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PALL-203</text>
+<text x="1325" y="113.7" text-anchor="start" style="font-size:6.1px">H₂ SUPPLY PRESS. LOW-LOW</text>
+<text x="1489" y="113.7" text-anchor="middle" style="font-size:6.1px">24 barg</text>
+<text x="1527" y="113.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1554" y="113.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="113.7" text-anchor="middle" style="font-size:6.1px">C C -</text>
+<text x="1288" y="132.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PALL-103</text>
+<text x="1325" y="132.7" text-anchor="start" style="font-size:6.1px">CO₂ SUPPLY PRESS. LOW-LOW</text>
+<text x="1489" y="132.7" text-anchor="middle" style="font-size:6.1px">24 barg</text>
+<text x="1527" y="132.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1554" y="132.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="132.7" text-anchor="middle" style="font-size:6.1px">C C O</text>
+<text x="1288" y="151.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PAHH-301</text>
+<text x="1325" y="151.7" text-anchor="start" style="font-size:6.1px">ETHANOL SUPPLY PRESS. HIGH-HIGH</text>
+<text x="1489" y="151.7" text-anchor="middle" style="font-size:6.1px">62 barg</text>
+<text x="1527" y="151.7" text-anchor="middle" style="font-size:6.1px">1</text>
+<text x="1554" y="151.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="151.7" text-anchor="middle" style="font-size:6.1px">C C O</text>
+<text x="1288" y="170.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PALL-301</text>
+<text x="1325" y="170.7" text-anchor="start" style="font-size:6.1px">ETHANOL SUPPLY PRESS. LOW-LOW</text>
+<text x="1489" y="170.7" text-anchor="middle" style="font-size:6.1px">50 barg</text>
+<text x="1527" y="170.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1554" y="170.7" text-anchor="middle" style="font-size:6.1px">R</text>
+<text x="1589.5" y="170.7" text-anchor="middle" style="font-size:6.1px">C C -</text>
+<text x="1288" y="189.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PALL-601</text>
+<text x="1325" y="189.7" text-anchor="start" style="font-size:6.1px">R-601 INLET PRESS. LOW-LOW</text>
+<text x="1489" y="189.7" text-anchor="middle" style="font-size:6.1px">27 barg</text>
+<text x="1527" y="189.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1554" y="189.7" text-anchor="middle" style="font-size:6.1px">R</text>
+<text x="1589.5" y="189.7" text-anchor="middle" style="font-size:6.1px">C C -</text>
+<text x="1288" y="208.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PAHH-601</text>
+<text x="1325" y="208.7" text-anchor="start" style="font-size:6.1px">R-601 INLET PRESS. HIGH-HIGH</text>
+<text x="1489" y="208.7" text-anchor="middle" style="font-size:6.1px">33 barg</text>
+<text x="1527" y="208.7" text-anchor="middle" style="font-size:6.1px">1</text>
+<text x="1554" y="208.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="208.7" text-anchor="middle" style="font-size:6.1px">C C O</text>
+<text x="1288" y="227.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PAHH-608</text>
+<text x="1325" y="227.7" text-anchor="start" style="font-size:6.1px">D-601 PRESS. HIGH-HIGH</text>
+<text x="1489" y="227.7" text-anchor="middle" style="font-size:6.1px">33 barg</text>
+<text x="1527" y="227.7" text-anchor="middle" style="font-size:6.1px">1</text>
+<text x="1554" y="227.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="227.7" text-anchor="middle" style="font-size:6.1px">C C O</text>
+<text x="1288" y="246.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">TAHH-601</text>
+<text x="1325" y="246.7" text-anchor="start" style="font-size:6.1px">E-601 TEMP. HIGH-HIGH</text>
+<text x="1489" y="246.7" text-anchor="middle" style="font-size:6.1px">167 °C</text>
+<text x="1527" y="246.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1554" y="246.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="246.7" text-anchor="middle" style="font-size:6.1px">C C O</text>
+<text x="1288" y="265.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">TAHH-602</text>
+<text x="1325" y="265.7" text-anchor="start" style="font-size:6.1px">R-601 INLET TEMP. HIGH-HIGH</text>
+<text x="1489" y="265.7" text-anchor="middle" style="font-size:6.1px">167 °C</text>
+<text x="1527" y="265.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1554" y="265.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="265.7" text-anchor="middle" style="font-size:6.1px">C C O</text>
+<text x="1288" y="284.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">TAHH-605</text>
+<text x="1325" y="284.7" text-anchor="start" style="font-size:6.1px">R-601 OUTLET TEMP. HIGH-HIGH</text>
+<text x="1489" y="284.7" text-anchor="middle" style="font-size:6.1px">167 °C</text>
+<text x="1527" y="284.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1554" y="284.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="284.7" text-anchor="middle" style="font-size:6.1px">C C O</text>
+<text x="1288" y="303.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">LALL-601</text>
+<text x="1325" y="303.7" text-anchor="start" style="font-size:6.1px">D-601 LEVEL LOW-LOW</text>
+<text x="1489" y="303.7" text-anchor="middle" style="font-size:6.1px">10 %</text>
+<text x="1527" y="303.7" text-anchor="middle" style="font-size:6.1px">5</text>
+<text x="1554" y="303.7" text-anchor="middle" style="font-size:6.1px">R</text>
+<text x="1589.5" y="303.7" text-anchor="middle" style="font-size:6.1px">C C O</text>
+<text x="1288" y="322.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">LAHH-601</text>
+<text x="1325" y="322.7" text-anchor="start" style="font-size:6.1px">D-601 LEVEL HIGH-HIGH</text>
+<text x="1489" y="322.7" text-anchor="middle" style="font-size:6.1px">80 %</text>
+<text x="1527" y="322.7" text-anchor="middle" style="font-size:6.1px">5</text>
+<text x="1554" y="322.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="322.7" text-anchor="middle" style="font-size:6.1px">O O O</text>
+<text x="1288" y="341.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">LAHH-605</text>
+<text x="1325" y="341.7" text-anchor="start" style="font-size:6.1px">LS-605 D-601 LEVEL HIGH-HIGH</text>
+<text x="1489" y="341.7" text-anchor="middle" style="font-size:6.1px">85 %</text>
+<text x="1527" y="341.7" text-anchor="middle" style="font-size:6.1px">5</text>
+<text x="1554" y="341.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="341.7" text-anchor="middle" style="font-size:6.1px">O O O</text>
+<text x="1288" y="360.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">LALL-602</text>
+<text x="1325" y="360.7" text-anchor="start" style="font-size:6.1px">D-602 LEVEL LOW-LOW</text>
+<text x="1489" y="360.7" text-anchor="middle" style="font-size:6.1px">10 %</text>
+<text x="1527" y="360.7" text-anchor="middle" style="font-size:6.1px">5</text>
+<text x="1554" y="360.7" text-anchor="middle" style="font-size:6.1px">R</text>
+<text x="1589.5" y="360.7" text-anchor="middle" style="font-size:6.1px">C C -</text>
+<text x="1288" y="379.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">LAHH-602</text>
+<text x="1325" y="379.7" text-anchor="start" style="font-size:6.1px">D-602 LEVEL HIGH-HIGH</text>
+<text x="1489" y="379.7" text-anchor="middle" style="font-size:6.1px">80 %</text>
+<text x="1527" y="379.7" text-anchor="middle" style="font-size:6.1px">5</text>
+<text x="1554" y="379.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="379.7" text-anchor="middle" style="font-size:6.1px">C O -</text>
+<text x="1288" y="398.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">FALL-701</text>
+<text x="1325" y="398.7" text-anchor="start" style="font-size:6.1px">CHILLED WATER FLOW LOW-LOW</text>
+<text x="1489" y="398.7" text-anchor="middle" style="font-size:6.1px">60.3 L/min</text>
+<text x="1527" y="398.7" text-anchor="middle" style="font-size:6.1px">5</text>
+<text x="1554" y="398.7" text-anchor="middle" style="font-size:6.1px">R</text>
+<text x="1589.5" y="398.7" text-anchor="middle" style="font-size:6.1px">C C O</text>
+<text x="1288" y="417.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">TAHH-609</text>
+<text x="1325" y="417.7" text-anchor="start" style="font-size:6.1px">E-602 OUTLET TEMP. HIGH-HIGH</text>
+<text x="1489" y="417.7" text-anchor="middle" style="font-size:6.1px">34 °C</text>
+<text x="1527" y="417.7" text-anchor="middle" style="font-size:6.1px">5</text>
+<text x="1554" y="417.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="417.7" text-anchor="middle" style="font-size:6.1px">C C O</text>
+<text x="1288" y="436.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PALL-902</text>
+<text x="1325" y="436.7" text-anchor="start" style="font-size:6.1px">INSTR. AIR HEADER LOW-LOW</text>
+<text x="1489" y="436.7" text-anchor="middle" style="font-size:6.1px">0.9 barg</text>
+<text x="1527" y="436.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1554" y="436.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="436.7" text-anchor="middle" style="font-size:6.1px">- - -</text>
+<text x="1288" y="455.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PAHH-902</text>
+<text x="1325" y="455.7" text-anchor="start" style="font-size:6.1px">INSTR. AIR HEADER HIGH-HIGH</text>
+<text x="1489" y="455.7" text-anchor="middle" style="font-size:6.1px">5.1 barg</text>
+<text x="1527" y="455.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1554" y="455.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="455.7" text-anchor="middle" style="font-size:6.1px">- - -</text>
+<text x="1288" y="474.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">ESD-SW</text>
+<text x="1325" y="474.7" text-anchor="start" style="font-size:6.1px">OPERATOR EMERGENCY SHUTDOWN</text>
+<text x="1489" y="474.7" text-anchor="middle" style="font-size:6.1px">—</text>
+<text x="1527" y="474.7" text-anchor="middle" style="font-size:6.1px">0</text>
+<text x="1554" y="474.7" text-anchor="middle" style="font-size:6.1px">A</text>
+<text x="1589.5" y="474.7" text-anchor="middle" style="font-size:6.1px">C C O</text>
+<line x1="1255" y1="83" x2="1610" y2="83" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="102" x2="1610" y2="102" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="121" x2="1610" y2="121" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="140" x2="1610" y2="140" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="159" x2="1610" y2="159" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="178" x2="1610" y2="178" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="197" x2="1610" y2="197" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="216" x2="1610" y2="216" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="235" x2="1610" y2="235" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="254" x2="1610" y2="254" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="273" x2="1610" y2="273" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="292" x2="1610" y2="292" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="311" x2="1610" y2="311" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="330" x2="1610" y2="330" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="349" x2="1610" y2="349" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="368" x2="1610" y2="368" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="387" x2="1610" y2="387" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="406" x2="1610" y2="406" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="425" x2="1610" y2="425" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="444" x2="1610" y2="444" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="463" x2="1610" y2="463" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="482" x2="1610" y2="482" stroke="#000000" stroke-width="1"/>
+<line x1="1321" y1="83" x2="1321" y2="482" stroke="#000000" stroke-width="1"/>
+<line x1="1463" y1="83" x2="1463" y2="482" stroke="#000000" stroke-width="1"/>
+<line x1="1515" y1="83" x2="1515" y2="482" stroke="#000000" stroke-width="1"/>
+<line x1="1539" y1="83" x2="1539" y2="482" stroke="#000000" stroke-width="1"/>
+<line x1="1569" y1="83" x2="1569" y2="482" stroke="#000000" stroke-width="1"/>
+<text x="1261" y="498.2" text-anchor="start" style="font-size:6.2px;font-weight:bold">ON ANY TRIP (COMMON SHUTDOWN, OTS sisTrip):</text>
+<text x="1261" y="510.7" text-anchor="start" style="font-size:6.2px"> CLOSE XV-101, XV-201, XV-301 · FV-101 / FV-201 TO 0 % · STOP P-301</text>
+<text x="1261" y="523.2" text-anchor="start" style="font-size:6.2px"> OPEN XV-401 AND FV-401 100 % (N₂ PURGE) · E-601 AND E1/E2/E3 OFF*</text>
+<text x="1261" y="535.7" text-anchor="start" style="font-size:6.2px"> ALL FIC/TIC TO MAN, OUTPUT 0 · XV-601/602 PER COLUMN: C CLOSE,</text>
+<text x="1261" y="548.2" text-anchor="start" style="font-size:6.2px"> O OPEN, - NO ACTION · XV-603: O = OPEN (DEPRESSURE TO CV).</text>
+<text x="1261" y="560.7" text-anchor="start" style="font-size:6.2px;font-weight:bold">ARM: A = ALWAYS · R = RUN ONLY (BYPASSED IN READY FOR START-UP).</text>
+<text x="1261" y="573.2" text-anchor="start" style="font-size:6.2px;font-weight:bold">RESET: TRIPPED → READY BY OPERATOR WHEN NO &quot;A&quot; TRIP IS ACTIVE;</text>
+<text x="1261" y="585.7" text-anchor="start" style="font-size:6.2px"> READY → RUN (&quot;ARM&quot;) ONLY WITH ALL PERMISSIVES:</text>
+<text x="1261" y="598.2" text-anchor="start" style="font-size:6.2px"> · R-601 INLET PRESSURE PT-601 &gt;= 29 barg</text>
+<text x="1261" y="610.7" text-anchor="start" style="font-size:6.2px"> · P-301 RUNNING, PT-301 &gt;= 53 barg</text>
+<text x="1261" y="623.2" text-anchor="start" style="font-size:6.2px"> · CHILLED WATER FT-701 &gt;= 63.7 L/min</text>
+<text x="1261" y="635.7" text-anchor="start" style="font-size:6.2px"> · D-601 LEVEL LT-601 &gt;= 20 %</text>
+<text x="1261" y="648.2" text-anchor="start" style="font-size:6.2px"> · D-602 LEVEL LT-602 &gt;= 20 %</text>
+<text x="1261" y="660.7" text-anchor="start" style="font-size:6.2px"> · H₂ AND CO₂ SUPPLY &gt;= 27 barg</text>
+<text x="1261" y="673.2" text-anchor="start" style="font-size:6.2px"> · XV-603 DEPRESSURE VALVE CLOSED</text>
+<text x="1261" y="685.7" text-anchor="start" style="font-size:6.2px;font-weight:bold">XV-603 CLOSE BLOCKED BELOW 2 barg AIR (FAILS OPEN).</text>
+<line x1="1255" y1="706" x2="1610" y2="706" stroke="#000000" stroke-width="1"/>
+<text x="1432.5" y="722.8" text-anchor="middle" style="font-size:7.8px;font-weight:bold">RELIEF VALVE SCHEDULE (RLB 2407-PE-RLB-001 A3)</text>
+<text x="1286" y="745.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PSV</text>
+<text x="1357" y="745.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PROTECTS</text>
+<text x="1422" y="745.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">SET barg</text>
+<text x="1498.5" y="745.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">GOVERNING CASE</text>
+<text x="1580" y="745.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">kg/h</text>
+<text x="1286" y="764.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PSV-301</text>
+<text x="1357" y="764.7" text-anchor="middle" style="font-size:6.1px">T-301</text>
+<text x="1422" y="764.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1498.5" y="764.7" text-anchor="middle" style="font-size:6.1px">FIRE</text>
+<text x="1580" y="764.7" text-anchor="middle" style="font-size:6.1px">543</text>
+<text x="1286" y="783.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PSV-302</text>
+<text x="1357" y="783.7" text-anchor="middle" style="font-size:6.1px">P-301 DISCH.</text>
+<text x="1422" y="783.7" text-anchor="middle" style="font-size:6.1px">36 (HOLD)</text>
+<text x="1498.5" y="783.7" text-anchor="middle" style="font-size:6.1px">BLOCKED OUTLET</text>
+<text x="1580" y="783.7" text-anchor="middle" style="font-size:6.1px">14.4</text>
+<text x="1286" y="802.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PSV-601</text>
+<text x="1357" y="802.7" text-anchor="middle" style="font-size:6.1px">E-601 / R-601</text>
+<text x="1422" y="802.7" text-anchor="middle" style="font-size:6.1px">36</text>
+<text x="1498.5" y="802.7" text-anchor="middle" style="font-size:6.1px">FIRE, GAS EXP.</text>
+<text x="1580" y="802.7" text-anchor="middle" style="font-size:6.1px">400.1</text>
+<text x="1286" y="821.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PSV-602</text>
+<text x="1357" y="821.7" text-anchor="middle" style="font-size:6.1px">E-602 SHELL</text>
+<text x="1422" y="821.7" text-anchor="middle" style="font-size:6.1px">4</text>
+<text x="1498.5" y="821.7" text-anchor="middle" style="font-size:6.1px">TUBE RUPTURE</text>
+<text x="1580" y="821.7" text-anchor="middle" style="font-size:6.1px">VENDOR</text>
+<text x="1286" y="840.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PSV-603</text>
+<text x="1357" y="840.7" text-anchor="middle" style="font-size:6.1px">D-601</text>
+<text x="1422" y="840.7" text-anchor="middle" style="font-size:6.1px">36</text>
+<text x="1498.5" y="840.7" text-anchor="middle" style="font-size:6.1px">FIRE, GAS EXP.</text>
+<text x="1580" y="840.7" text-anchor="middle" style="font-size:6.1px">294.4</text>
+<text x="1286" y="859.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PSV-604</text>
+<text x="1357" y="859.7" text-anchor="middle" style="font-size:6.1px">T-601</text>
+<text x="1422" y="859.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1498.5" y="859.7" text-anchor="middle" style="font-size:6.1px">FIRE</text>
+<text x="1580" y="859.7" text-anchor="middle" style="font-size:6.1px">179.8</text>
+<text x="1286" y="878.7" text-anchor="middle" style="font-size:6.1px;font-weight:bold">PSV-606</text>
+<text x="1357" y="878.7" text-anchor="middle" style="font-size:6.1px">D-602</text>
+<text x="1422" y="878.7" text-anchor="middle" style="font-size:6.1px">2</text>
+<text x="1498.5" y="878.7" text-anchor="middle" style="font-size:6.1px">FIRE (BLOW-BY 22.7)</text>
+<text x="1580" y="878.7" text-anchor="middle" style="font-size:6.1px">189.1</text>
+<line x1="1255" y1="734" x2="1610" y2="734" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="753" x2="1610" y2="753" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="772" x2="1610" y2="772" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="791" x2="1610" y2="791" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="810" x2="1610" y2="810" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="829" x2="1610" y2="829" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="848" x2="1610" y2="848" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="867" x2="1610" y2="867" stroke="#000000" stroke-width="1"/>
+<line x1="1255" y1="886" x2="1610" y2="886" stroke="#000000" stroke-width="1"/>
+<line x1="1317" y1="734" x2="1317" y2="886" stroke="#000000" stroke-width="1"/>
+<line x1="1397" y1="734" x2="1397" y2="886" stroke="#000000" stroke-width="1"/>
+<line x1="1447" y1="734" x2="1447" y2="886" stroke="#000000" stroke-width="1"/>
+<line x1="1550" y1="734" x2="1550" y2="886" stroke="#000000" stroke-width="1"/>
+<text x="1261" y="900.2" text-anchor="start" style="font-size:6.1px">ALL PSVs: INLET BV LO; BYPASS BV NC + NV; NO OUTLET ISOLATION (NOTE 14, SHT 1).</text>
+<text x="55" y="954.8" text-anchor="start" style="font-size:7.8px;font-weight:bold">NOTES (SHEET 1 NOTES 1-19 APPLY)</text>
+<text x="55" y="967.4" text-anchor="start" style="font-size:6.9px">20. AT DESIGN: E-602 OUTLET TT-609 30.4 °C, DUTY 1.06 kW OF 5.3 kW RATED; CHILLED WATER 67.0 L/min</text>
+<text x="55" y="977.3" text-anchor="start" style="font-size:6.9px">    AT 15 °C (dT 0.23 K). D-601 PT-608 30.09 barg; VENT FT-603 37.4 NL/min (H₂ 84.4, CO₂ 14.9, CO 0.66 %);</text>
+<text x="55" y="987.1" text-anchor="start" style="font-size:6.9px">    LIQUID TO T-601 69.3 mL/min (MeOH 1.69 wt%). OTS ALARM LIMITS FROM ALM; TRIP SETTINGS FROM TRIPS / K.</text>
+<text x="55" y="997" text-anchor="start" style="font-size:6.9px">21. LIC-601 / LIC-602 ARE ON/OFF: XV-601 OPENS AT 50 %, CLOSES AT 40 %; XV-602 OPENS AT 50 %,</text>
+<text x="55" y="1006.9" text-anchor="start" style="font-size:6.9px">    CLOSES AT 25 %. XV-601 IS ALSO THE LALL-601 TRIP VALVE (SHARED FINAL ELEMENT): HOLD.</text>
+<text x="55" y="1016.8" text-anchor="start" style="font-size:6.9px">22. LALL/LAHH-601 AND -602 USE THE CONTROL TRANSMITTERS LT-601/602; TAHH-601 USES TT-601</text>
+<text x="55" y="1026.7" text-anchor="start" style="font-size:6.9px">    (TIC-601 PV). LAHH-605 (LS-605) IS INDEPENDENT. SEPARATE SIS SENSORS: HOLD (NOTE 5).</text>
+<text x="55" y="1036.5" text-anchor="start" style="font-size:6.9px">23. XV-603 DEPRESSURES THROUGH BV-645 / PR-601 / BV-621 AS ON P&amp;ID A6; THE OTS VENTS DIRECT: TBC.</text>
+<text x="640" y="967.4" text-anchor="start" style="font-size:6.9px">24. E-602 TUBE (PROCESS) DESIGN 33 barg (EQL A1) IS BELOW THE 36 barg SET OF PSV-601/603</text>
+<text x="640" y="977.3" text-anchor="start" style="font-size:6.9px">    AND EQUAL TO PAHH-601/608 (33 barg): HOLD.</text>
+<text x="640" y="987.1" text-anchor="start" style="font-size:6.9px">25. BV-622 APPEARS TWICE IN INL R4 (PSV-602 AND PSV-606 BYPASS); THE BPV-602 BYPASS VALVE</text>
+<text x="640" y="997" text-anchor="start" style="font-size:6.9px">    IS BV-627 AND THE PSV-606 BYPASS IS BV-646 / NV-611 (NEW NUMBERS): HOLD.</text>
+<text x="640" y="1006.9" text-anchor="start" style="font-size:6.9px">26. GC AT-610 WITH AI-610…613 (H₂, CO₂, CO, N₂ DRY %%) AS IN THE OTS; GC CYCLE 4 min (ASSUMED).</text>
+<text x="640" y="1016.8" text-anchor="start" style="font-size:6.9px">27. T-601: 2 SHELLS (EQL); LG-601 C/W BV-641/642 NOT SHOWN. T-601 DESIGN ATM vs PSV-604 2 barg: TBC.</text>
+<text x="640" y="1026.7" text-anchor="start" style="font-size:6.9px">28. COLD-VENT HEADER / VS-601 SIZE HOLD (RELIEF LOADS IN THE SCHEDULE); NO GAS DETECTION OR</text>
+<text x="640" y="1036.5" text-anchor="start" style="font-size:6.9px">    FLAME ARRESTER IN THE DOCUMENTS: TBC. SEAL-POT DRAIN BV-644 (P&amp;ID A6) NOT SHOWN.</text>
+<text x="640" y="1046.4" text-anchor="start" style="font-size:6.9px">29. FAIL POSITIONS ON LOSS OF AIR (PT-902 &lt; 2 barg): XV-601/602 CLOSE, XV-603 OPENS. FT-701 TYPE TBD.</text>
+<line x1="35" y1="940" x2="1270" y2="940" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="945" x2="1619" y2="945" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="964" x2="1619" y2="964" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="983" x2="1619" y2="983" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="1002" x2="1619" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="945" x2="1285" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1320" y1="945" x2="1320" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1534" y1="945" x2="1534" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1619" y1="945" x2="1619" y2="1002" stroke="#000000" stroke-width="1"/>
+<text x="1302.5" y="957.2" text-anchor="middle" style="font-size:7.6px;font-weight:bold">REV</text>
+<text x="1427" y="957.2" text-anchor="middle" style="font-size:7.6px;font-weight:bold">DESCRIPTION</text>
+<text x="1576.5" y="957.2" text-anchor="middle" style="font-size:7.6px;font-weight:bold">DATE</text>
+<text x="1302.5" y="976.2" text-anchor="middle" style="font-size:7.6px">REF</text>
+<text x="1427" y="976.2" text-anchor="middle" style="font-size:7.6px">MTJA-OTS-PID-001 rev A · used in the OTS displays</text>
+<text x="1576.5" y="976.2" text-anchor="middle" style="font-size:7.6px">IN PAGE</text>
+<text x="1302.5" y="995.2" text-anchor="middle" style="font-size:7.6px">A</text>
+<text x="1427" y="995.2" text-anchor="middle" style="font-size:7.6px">ALTERNATIVE VERSION, EPC STANDARD</text>
+<text x="1576.5" y="995.2" text-anchor="middle" style="font-size:7.6px">24-OCT-26</text>
+<rect x="1285" y="1002" width="334" height="132" fill="#FFFFFF" stroke="#000000" stroke-width="1.9"/>
+<line x1="1285" y1="1036" x2="1619" y2="1036" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="1072" x2="1619" y2="1072" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="1102" x2="1619" y2="1102" stroke="#000000" stroke-width="1"/>
+<text x="1452" y="1014.8" text-anchor="middle" style="font-size:7.8px;font-weight:bold">CHULALONGKORN UNIVERSITY · CHEMICAL ENGINEERING</text>
+<text x="1452" y="1028.3" text-anchor="middle" style="font-size:6.4px">MTJA CO₂-METHANOL PILOT · TEACHING RE-DRAWING (NOT FOR CONSTRUCTION)</text>
+<text x="1452" y="1050.2" text-anchor="middle" style="font-size:8.9px;font-weight:bold">P&amp;ID — R-601 PILOT TRICKLE-BED REACTOR</text>
+<text x="1452" y="1064.6" text-anchor="middle" style="font-size:7.2px;font-weight:bold">ALTERNATIVE VERSION · SEPARATION · VENT · UTILITIES</text>
+<line x1="1368.5" y1="1072" x2="1368.5" y2="1134" stroke="#000000" stroke-width="1"/>
+<line x1="1452" y1="1072" x2="1452" y2="1134" stroke="#000000" stroke-width="1"/>
+<line x1="1535.5" y1="1072" x2="1535.5" y2="1134" stroke="#000000" stroke-width="1"/>
+<text x="1326.7" y="1085.5" text-anchor="middle" style="font-size:6.1px;font-weight:bold">DRAWN</text><text x="1326.7" y="1092.9" text-anchor="middle" style="font-size:6.1px;font-weight:bold">Apinan Soottitantawat</text>
+<text x="1410.2" y="1085.5" text-anchor="middle" style="font-size:6.1px">CHK&#x27;D</text><text x="1410.2" y="1092.9" text-anchor="middle" style="font-size:6.1px">--</text>
+<text x="1493.7" y="1085.5" text-anchor="middle" style="font-size:6.1px">APP&#x27;D</text><text x="1493.7" y="1092.9" text-anchor="middle" style="font-size:6.1px">--</text>
+<text x="1577.2" y="1085.5" text-anchor="middle" style="font-size:6.1px">DATE</text><text x="1577.2" y="1092.9" text-anchor="middle" style="font-size:6.1px">24-OCT-26</text>
+<text x="1326.7" y="1116.3" text-anchor="middle" style="font-size:6.9px;font-weight:bold">DWG NO.</text><text x="1326.7" y="1124.7" text-anchor="middle" style="font-size:6.9px;font-weight:bold">R601-PID-001</text>
+<text x="1410.2" y="1116.3" text-anchor="middle" style="font-size:6.9px">REV</text><text x="1410.2" y="1124.7" text-anchor="middle" style="font-size:6.9px">A</text>
+<text x="1493.8" y="1116.3" text-anchor="middle" style="font-size:6.9px">SCALE</text><text x="1493.8" y="1124.7" text-anchor="middle" style="font-size:6.9px">N.T.S.</text>
+<text x="1577.2" y="1116.3" text-anchor="middle" style="font-size:6.9px">SHEET</text><text x="1577.2" y="1124.7" text-anchor="middle" style="font-size:6.9px">2 OF 2</text>
+</svg>
