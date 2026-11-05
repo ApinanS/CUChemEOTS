@@ -1,0 +1,385 @@
+{
+ "title": "PROCESS FLOW DIAGRAM",
+ "subtitle": "MEA CO2 CAPTURE UNIT — ABSORBER T-101 / STRIPPER T-102",
+ "project": "MEA CO2 CAPTURE OTS VER 1 · CHEM ENG CHULALONGKORN UNIVERSITY",
+ "drawing_no": "MEA-PFD-001",
+ "rev": "0",
+ "sheet": "1 OF 1",
+ "scale": "NTS",
+ "drawn_by": "Apinan Soottitantawat",
+ "checked_by": "",
+ "date": "2026-10-28",
+ "notes": [
+  "Rev 0 — issued for teaching. Flows t/h; temperatures °C; pressures kPa a.",
+  "Flag numbers come from the OTS simulator model at its design point (noise off). Training values, not a vendor design.",
+  "Flags only on streams the model calculates. Utilities: cw 30 °C, lps 3.5 bar a (assumed, TBC).",
+  "Tags as P&ID CC-PID-101. Only the process-defining control valves are shown. Sizes indicative."
+ ],
+ "panels": [
+  {
+   "title": "DESIGN POINT (MODEL)",
+   "lines": [
+    "Capture 90.0 % · CO2 product 12.7 t/h (wet) · SRD 3.94 GJ/t",
+    "E-101 18.4 MW · E-102 13.7 MW · E-103 4.1 MW · E-105 5.8 MW",
+    "K-101 313 kW · lps 22.94 t/h, 138.9 °C, 350 kPa a"
+   ]
+  }
+ ],
+ "flag_order": [
+  "m",
+  "t",
+  "p"
+ ],
+ "flag_units": {
+  "m": "Mass Flow (t/h)",
+  "t": "Temperature (°C)",
+  "p": "Pressure (kPa a)"
+ },
+ "equipment": [
+  {
+   "tag": "K-101",
+   "name": "Flue Gas Blower",
+   "type": "blower",
+   "x": 36,
+   "y": 128
+  },
+  {
+   "tag": "E-105",
+   "name": "Wash Water Cooler",
+   "type": "cooler",
+   "x": 42,
+   "y": 46,
+   "opts": {
+    "utility": "cw"
+   },
+   "size": "S"
+  },
+  {
+   "tag": "P-104",
+   "name": "Wash Water Pump",
+   "type": "pump",
+   "x": 58,
+   "y": 72,
+   "opts": {
+    "discharge": "W"
+   },
+   "size": "S"
+  },
+  {
+   "tag": "T-101",
+   "name": "Absorber + Water Wash",
+   "type": "absorber",
+   "x": 84,
+   "y": 92,
+   "w": 24,
+   "h": 96,
+   "opts": {
+    "beds": 3,
+    "side_draw": true
+   }
+  },
+  {
+   "tag": "P-101",
+   "name": "Rich Amine Pump",
+   "type": "pump",
+   "x": 106,
+   "y": 150,
+   "size": "S"
+  },
+  {
+   "tag": "E-104",
+   "name": "Lean Amine Cooler",
+   "type": "cooler",
+   "x": 124,
+   "y": 66,
+   "opts": {
+    "utility": "cw"
+   }
+  },
+  {
+   "tag": "E-101",
+   "name": "Lean/Rich Exchanger",
+   "type": "hx",
+   "x": 146,
+   "y": 124,
+   "opts": {
+    "free_axis": true
+   }
+  },
+  {
+   "tag": "T-102",
+   "name": "Stripper",
+   "type": "packed_column",
+   "x": 196,
+   "y": 86,
+   "w": 16,
+   "h": 70,
+   "opts": {
+    "beds": 1,
+    "side_draw": true
+   }
+  },
+  {
+   "tag": "E-103",
+   "name": "Overhead Condenser",
+   "type": "condenser",
+   "x": 226,
+   "y": 32,
+   "opts": {
+    "utility": "cw"
+   }
+  },
+  {
+   "tag": "V-101",
+   "name": "Reflux Drum",
+   "type": "drum_h",
+   "x": 250,
+   "y": 54,
+   "real": {
+    "l": 4.0,
+    "d": 1.6
+   }
+  },
+  {
+   "tag": "P-103",
+   "name": "Reflux Pump",
+   "type": "pump",
+   "x": 236,
+   "y": 80,
+   "opts": {
+    "discharge": "W"
+   },
+   "size": "S"
+  },
+  {
+   "tag": "E-102",
+   "name": "Kettle Reboiler",
+   "type": "reboiler",
+   "x": 234,
+   "y": 124,
+   "opts": {
+    "utility": "lps"
+   }
+  },
+  {
+   "tag": "P-102",
+   "name": "Lean Amine Pump",
+   "type": "pump",
+   "x": 220,
+   "y": 148,
+   "opts": {
+    "discharge": "W"
+   },
+   "size": "S"
+  }
+ ],
+ "terminals": [
+  {
+   "id": "FG",
+   "label": "Flue Gas from DCC",
+   "x": "left",
+   "y": 128,
+   "dir": "E"
+  },
+  {
+   "id": "STACK",
+   "label": "Treated Gas to Stack",
+   "x": 84,
+   "y": "top",
+   "dir": "S"
+  },
+  {
+   "id": "CO2",
+   "label": "CO2 to Compression",
+   "x": "right",
+   "y": 40,
+   "dir": "W"
+  },
+  {
+   "id": "MU",
+   "label": "Make-up Water",
+   "x": 176,
+   "y": "bottom",
+   "dir": "N"
+  },
+  {
+   "id": "LPS",
+   "label": "LP Steam",
+   "x": "right",
+   "y": 104,
+   "dir": "W"
+  }
+ ],
+ "streams": [
+  {
+   "n": 1,
+   "from": "FG",
+   "to": "K-101:W"
+  },
+  {
+   "n": 2,
+   "from": "K-101:E",
+   "to": "T-101:W@0.88",
+   "flags": {
+    "m": 224.8,
+    "t": 40,
+    "p": 107
+   }
+  },
+  {
+   "n": 3,
+   "from": "T-101:W@0.34",
+   "to": "P-104:E"
+  },
+  {
+   "n": 4,
+   "from": "P-104:W",
+   "to": "E-105:W"
+  },
+  {
+   "n": 5,
+   "from": "E-105:E",
+   "to": "T-101:W@0.12"
+  },
+  {
+   "n": 6,
+   "from": "T-101:N",
+   "to": "STACK",
+   "flags": {
+    "m": 212.4,
+    "t": 40.0,
+    "p": 103
+   }
+  },
+  {
+   "n": 7,
+   "from": "E-104:W",
+   "to": "T-101:E@0.38",
+   "control_valve": 0.45,
+   "flags": {
+    "m": 269.7,
+    "t": 40.0,
+    "p": 403
+   }
+  },
+  {
+   "n": 8,
+   "from": "T-101:S",
+   "to": "P-101:W",
+   "flags": {
+    "m": 282.2,
+    "t": 43.6,
+    "p": 122
+   }
+  },
+  {
+   "n": 9,
+   "from": "P-101:E",
+   "to": "E-101:W",
+   "control_valve": 0.35
+  },
+  {
+   "n": 10,
+   "from": "E-101:N",
+   "to": "E-104:E",
+   "flags": {
+    "m": 269.7,
+    "t": 51.6,
+    "p": 453
+   }
+  },
+  {
+   "n": 11,
+   "from": "E-101:E",
+   "to": "T-102:W@0.15",
+   "flags": {
+    "m": 282.2,
+    "t": 109.0,
+    "p": 295
+   }
+  },
+  {
+   "n": 12,
+   "from": "P-102:W",
+   "to": "E-101:S"
+  },
+  {
+   "n": 13,
+   "from": "T-102:N",
+   "to": "E-103:W",
+   "flags": {
+    "m": 18.27,
+    "t": 103.1,
+    "p": 181
+   }
+  },
+  {
+   "n": 14,
+   "from": "E-103:E",
+   "to": "V-101:N"
+  },
+  {
+   "n": 15,
+   "from": "V-101:E",
+   "to": "CO2",
+   "control_valve": 0.5,
+   "flags": {
+    "m": 12.73,
+    "t": 40.0,
+    "p": 175
+   }
+  },
+  {
+   "n": 16,
+   "from": "V-101:S",
+   "to": "P-103:E"
+  },
+  {
+   "n": 17,
+   "from": "P-103:W",
+   "to": "T-102:E@0.12",
+   "control_valve": 0.5,
+   "flags": {
+    "m": 5.54,
+    "t": 40.0,
+    "p": 325
+   }
+  },
+  {
+   "n": 18,
+   "from": "MU",
+   "to": "T-102:W@0.86",
+   "control_valve": 0.5,
+   "flags": {
+    "m": 0.25,
+    "t": 35,
+    "p": 400
+   }
+  },
+  {
+   "n": 19,
+   "from": "T-102:S",
+   "to": "E-102:W"
+  },
+  {
+   "n": 20,
+   "from": "E-102:E@0.3",
+   "to": "T-102:E@0.8"
+  },
+  {
+   "n": 21,
+   "from": "E-102:E@0.75",
+   "to": "P-102:E",
+   "flags": {
+    "m": 269.7,
+    "t": 120.0,
+    "p": 182
+   }
+  },
+  {
+   "from": "LPS",
+   "to": "E-102:N",
+   "kind": "utility"
+  }
+ ]
+}
