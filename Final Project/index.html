@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2105412 Final Project — Case Draw</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14213d;--mut:#5b6478;--line:#e3e7ef;--bg:#f5f7fb;--red:#c8102e;--ok:#0f8a5f;--warn:#b45309;
+--mea:#0e7490;--cyc:#7c3aed;--so3:#b45309;--pvc:#be185d;--f:Montserrat,Prompt,system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--f);color:var(--ink);background:var(--bg);line-height:1.45}
+.th{font-family:Prompt,Montserrat,system-ui,sans-serif;font-weight:400;color:var(--mut)}
+header{background:var(--ink);color:#fff;border-top:6px solid var(--red)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px;flex-wrap:wrap}
+header h1{margin:0;font-size:22px;font-weight:800}
+header p{margin:2px 0 0;font-size:13px;opacity:.9}
+header .th{color:#cfd6e4}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+.dot{width:9px;height:9px;border-radius:50%;background:#22c55e}.dot.closed{background:#ef4444}
+#demo{display:none;background:#fff7e6;color:#7a4b00;border-bottom:1px solid #f3d9a4;font-size:13px;padding:8px 0}
+main{padding:28px 0 60px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+.flow{max-width:620px;margin:0 auto}
+.stepper{display:flex;gap:8px;margin-bottom:16px}
+.stepper div{flex:1;height:6px;border-radius:6px;background:#e3e7ef}
+.stepper div.on{background:var(--red)}
+.k{font-size:13px;text-transform:uppercase;letter-spacing:.8px;color:var(--red);font-weight:700;margin:0}
+h2{margin:4px 0 2px;font-size:24px}
+label{font-size:13px;font-weight:600;display:block;margin:16px 0 6px}
+input[type=text],input[type=password]{width:100%;font:600 19px var(--f);padding:12px 14px;border:1.5px solid var(--line);border-radius:10px}
+input:focus{outline:none;border-color:var(--ink)}
+button{font:600 15px var(--f);border:0;border-radius:10px;padding:12px 18px;cursor:pointer;background:var(--ink);color:#fff}
+button.ghost{background:#eef1f6;color:var(--ink)}
+button.red{background:var(--red)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.row{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.msg{margin-top:12px;font-size:14px;padding:10px 12px;border-radius:8px;display:none}
+.msg.err{display:block;background:#fdecee;color:#8a1020}
+.hint{font-size:13px;color:var(--mut);margin-top:8px}
+.idchip{display:inline-block;background:#f1f5ff;border-radius:8px;padding:4px 10px;font-weight:700;letter-spacing:1px}
+.step{display:none}.step.on{display:block}
+/* draw */
+.slot{margin:18px 0 6px;border-radius:14px;color:#fff;padding:22px;min-height:150px;transition:background .15s}
+.slot .o{font-size:14px;font-weight:600;opacity:.9}
+.slot .t{font-size:34px;font-weight:800;margin:4px 0}
+.slot .s{font-size:17px}
+.slot.done{box-shadow:0 10px 30px rgba(20,33,61,.25);animation:pop .45s ease}
+@keyframes pop{0%{transform:scale(.96)}60%{transform:scale(1.03)}100%{transform:scale(1)}}
+.res a{color:var(--ok);font-weight:700}
+.note{background:#e9f8f1;border:1.5px solid #9fdcc2;border-radius:10px;padding:12px 14px;font-size:14px;margin-top:12px}
+.pool{margin-top:26px}
+.pool summary{cursor:pointer;font-weight:700;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.ots{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:12.5px}
+.ots .hd{color:#fff;padding:9px 12px;font-weight:700;font-size:13px}
+.ots .hd a{color:#fff;font-weight:600;font-size:11.5px}
+.ots ul{margin:0;padding:8px 12px 10px 12px;list-style:none}.ots li{padding:3px 0;border-bottom:1px dashed #eef1f6}.ots li b{display:inline-block;min-width:44px}
+/* admin */
+#admin{display:none}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+table{border-collapse:collapse;width:100%;font-size:13px;margin-top:10px}
+th,td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left}
+th{background:#f6f8fc;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+tr.crit td:first-child{border-left:4px solid var(--warn)}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
+.stat{background:#f6f8fc;border-radius:10px;padding:10px 14px;font-size:12px;color:var(--mut)}.stat b{display:block;font-size:20px;color:var(--ink)}
+.chk{font-size:13px;margin:10px 0;padding:10px 12px;border-radius:8px}.chk.good{background:#e9f8f1;color:#0b6b49}.chk.bad{background:#fdecee;color:#8a1020}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 18px;border-radius:10px;font-size:14px;display:none;z-index:30;max-width:92vw}.toast.err{background:#8a1020}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div><h1>2105412 Final Project — Case Draw</h1>
+  <p>Process Problem Solving · Each student gets one Trouble Exercise (TE) from the CU ChemE OTS, drawn at random · <span class="th">สุ่มหัวข้อโปรเจกต์ปลายภาค คนละ 1 Case ไม่ซ้ำกัน</span></p></div>
+  <div class="pill"><span class="dot" id="opendot"></span><span id="openlbl">Loading…</span> · <span id="cnt">–</span></div>
+</div></header>
+<div id="demo"><div class="wrap">Demo mode — draws are saved in this browser only. Set <code>API_URL</code> (or open with <code>?api=…/exec</code>) to run the real class draw.</div></div>
+
+<main><div class="wrap">
+<section id="student">
+ <div class="card flow">
+  <div class="stepper"><div id="b1" class="on"></div><div id="b2"></div><div id="b3"></div></div>
+
+  <div class="step on" id="s1">
+    <p class="k">Step 1 of 3</p><h2>Your student ID</h2>
+    <div class="th">ใส่รหัสนิสิต 10 หลัก</div>
+    <label for="sid">Student ID</label>
+    <input id="sid" type="text" inputmode="numeric" maxlength="10" placeholder="66xxxxxx21" autocomplete="off">
+    <div class="msg" id="m1"></div>
+    <div class="row"><button id="go1">Next →</button></div>
+  </div>
+
+  <div class="step" id="s2">
+    <p class="k">Step 2 of 3</p><h2>Your name in English</h2>
+    <div class="th">พิมพ์ชื่อ-นามสกุลภาษาอังกฤษ ไม่ต้องใส่ Mr. / Miss</div>
+    <div class="hint">Student ID <span class="idchip" id="idshow"></span></div>
+    <label for="nm">First name and last name</label>
+    <input id="nm" type="text" placeholder="e.g. Somchai Jaidee" autocomplete="off" autocapitalize="words">
+    <div class="hint">As in the class roster. Capital letters do not matter.</div>
+    <div class="msg" id="m2"></div>
+    <div class="row"><button class="ghost" id="back2">← Back</button><button class="red" id="go2">🎲 Draw my case</button></div>
+  </div>
+
+  <div class="step" id="s3">
+    <p class="k">Step 3 of 3</p><h2 id="hello">Your final project case</h2>
+    <div class="slot" id="slot"><div class="o" id="so">Drawing…</div><div class="t" id="st">TE-?</div><div class="s" id="ss"> </div></div>
+    <div class="res" id="res" style="display:none">
+      <div class="note" id="rnote"></div>
+      <div class="row"><a id="olink" target="_blank" rel="noopener"><button>Open the OTS ↗</button></a><button class="ghost" id="again">Done</button></div>
+    </div>
+  </div>
+ </div>
+
+ <details class="pool flow" style="max-width:none"><summary>Cases in the draw — 4 OTS, 39 TEs <span class="th">(หัวข้อทั้งหมดที่อาจสุ่มได้)</span></summary><div class="grid" id="pool"></div></details>
+</section>
+
+<section id="admin" class="card">
+  <div class="top"><h2 style="margin:0">Instructor view</h2>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <input id="akey" type="password" placeholder="Instructor key" style="width:190px;font-size:14px;padding:9px">
+      <button id="aload">Load</button>
+      <button class="ghost" id="aall" disabled>Draw for all remaining</button>
+      <button class="ghost" id="atoggle" disabled>Close draw</button>
+      <button class="ghost" id="acsv" disabled>Download CSV</button>
+    </div></div>
+  <div class="stats" id="astats"></div>
+  <div id="acheck"></div>
+  <table><thead><tr><th>#</th><th>Student ID</th><th>Name</th><th>OTS</th><th>TE</th><th>Symptom</th><th>Time</th><th></th></tr></thead><tbody id="atbody"></tbody></table>
+</section>
+</div></main>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== CONFIG: paste the Apps Script Web-app /exec URL here ===== */
+var API_URL = "https://script.google.com/macros/s/AKfycbzWqK00WRZDkdQRpto8IkEhl3ZG2MC25I8qYmBge9KLxKMo05kJmQPO52SKSvZcfeqQRw/exec";
+/* ================================================================ */
+var DATA = {"ots": [{"key": "mea", "name": "MEA CO₂ Capture", "url": "https://apinans.github.io/CUChemEOTS/MEA%20CO2%20Capture%20Ver%201/MEA-OTS_student/index.html", "tes": [{"te": "TE-2", "title": "Steam valve wide open, reboiler cooling"}, {"te": "TE-3", "title": "Capture looks excellent, the compressor disagrees"}, {"te": "TE-4", "title": "SRD creeping up over the week"}, {"te": "TE-5", "title": "Lean loading up, TIC on set point"}, {"te": "TE-6", "title": "ΔP jumping, level erratic, make-up water running"}, {"te": "TE-7", "title": "MEA getting stronger on a hot day"}, {"te": "TE-8", "title": "Capture falling, loadings look fine"}, {"te": "TE-9", "title": "Capacity lost over weeks"}, {"te": "TE-10", "title": "Reflux drum high, sump low, MEA stronger"}]}, {"key": "cyc", "name": "Batch Reactor of Cyclohexane", "url": "https://apinans.github.io/CUChemEOTS/Cyclohexane%20Reactor%20Ver%201/Cyclohexane_Reactor_Ver1_student_pages/index.html", "tes": [{"te": "TE-2", "title": "LP steam export falling with the same feed"}, {"te": "TE-3", "title": "R-101 cannot hold temperature"}, {"te": "TE-4", "title": "PV-105 keeps opening"}, {"te": "TE-6", "title": "Recycle purity falling fast"}, {"te": "TE-7", "title": "MCP rising, temperatures look normal"}, {"te": "TE-8", "title": "Pump-around flow keeps climbing"}, {"te": "TE-9", "title": "Pump-around flow up, steam drum pressure up"}, {"te": "TE-10", "title": "R-102 level climbing"}, {"te": "TE-11", "title": "Condenser vent warm on a hot afternoon"}, {"te": "TE-12", "title": "R-102 will not hold 160 °C"}]}, {"key": "so3", "name": "SO₃ Converter", "url": "https://apinans.github.io/CUChemEOTS/SO3%20Converter%20Ver%201/SO3-Converter-V1-student/index.html", "tes": [{"te": "TE-2", "title": "The air valves keep opening"}, {"te": "TE-3", "title": "Bed 1 is running hot"}, {"te": "TE-4", "title": "The hot zone is moving down bed 1"}, {"te": "TE-6", "title": "Bed 2 inlet will not settle"}, {"te": "TE-7", "title": "Two temperature loops at their limits"}, {"te": "TE-8", "title": "Production falling although the sulfur valve opens"}, {"te": "TE-9", "title": "Bed 3 is doing less work"}, {"te": "TE-10", "title": "Gas to the IPA is too hot"}, {"te": "TE-11", "title": "Bed 1 and bed 2 running cooler"}, {"te": "TE-12", "title": "Second pass fading"}]}, {"key": "pvc", "name": "PVC Suspension Reactor", "url": "https://apinans.github.io/CUChemEOTS/PVC%20Suspension%20Reactor%20Ver%201/PVC_OTS_student_rev4/index.html", "tes": [{"te": "TE-2", "title": "E-101 needs more and more water"}, {"te": "TE-3", "title": "A slow batch"}, {"te": "TE-4", "title": "The level keeps rising"}, {"te": "TE-6", "title": "The end point never comes"}, {"te": "TE-7", "title": "Agitator power drops"}, {"te": "TE-8", "title": "E-101 water is normal, E-101 duty is not"}, {"te": "TE-9", "title": "Jacket needs more water than usual"}, {"te": "TE-10", "title": "Lumps on the sieve"}, {"te": "TE-11", "title": "Degassing will not go"}, {"te": "TE-12", "title": "Cooling margin shrinking"}]}], "criteria": ["6630181621", "6630323421", "6632018421", "6632059121"], "students": [{"id": "6630067821", "h": "746043cd03775873af4cc46fe72bcb4dc400a0eac88d4b5fb080c5e1e35f85fb"}, {"id": "6630087321", "h": "cafaec6b386d9bc065827f483b3a1d9c22e8cf033c5d4bd4c6ac710925b6edcc"}, {"id": "6630112321", "h": "8f11774122207f4e04b3ef2bcd40e6c77d19c5e5ab30c3b1ad3106e5c227cefb"}, {"id": "6630181621", "h": "6ba0a984ab1160b1ee34886cac49cc1abdfd16dbd23ea235b137c4cb6a4fa74e"}, {"id": "6630239421", "h": "b92b2ba3462c006ed94e2034cb576d9547462b2872150d26df4b52a10f5199d5"}, {"id": "6630246821", "h": "eb4016f17dd2b67960743cc6a7c1709bfbe6af7a2ab27a63c7ca51b07d83663a"}, {"id": "6630286921", "h": "712d695bf3d1fb021fc985e7e6797faa2b887aa04e9ac337446431ba131111ee"}, {"id": "6630322821", "h": "1f1fa51312098a202b29c67ec721ce85cbef15f5462f08dd5e9873a86dd29a64"}, {"id": "6630323421", "h": "0b744539cfa93dc6fb9d6b77efc9a94dc6ea7bd5e7b0d0136cedb8e07c0dbbd0"}, {"id": "6630337221", "h": "6a850d67021fb3c7beb4bb13d68453b2ef3d82d40fea543fbf568cb27c6d8a4d"}, {"id": "6632005221", "h": "2ff3792e18cdd71b3e76713b01c68179d5b7dfb0500782b989e285ea5dc64f59"}, {"id": "6632018421", "h": "b34c5790e890a5ead68e86dd75e3c5961348dfaecb3e79f92d677d1b3009b84d"}, {"id": "6632023521", "h": "bed873c879fa47bdffc66c3b72146b46ccc557706d44241a4bb31768dda290f0"}, {"id": "6632044721", "h": "6542f417dbfd4a23494a029af8ff54b810336adcd65e146dbd91d6bf9b0c8de5"}, {"id": "6632059121", "h": "ff8acb57df31689e012de73e70c9a405fce443d4991893341cc389ee4107a56e"}, {"id": "6632079721", "h": "f72cfb413881178bc1d99fd99fdf8db34e71c1c342521a3c66145a203dc04b95"}, {"id": "6632115621", "h": "662c6257049c3901954e73bb6e86e6f3416e93b6542245a1035b2bfc6c3ab1ed"}, {"id": "6632117921", "h": "f6f4805fdc6b71b0acbc94b25ab4760d0e413f678df2d286ef7e57db6d46388a"}, {"id": "6632131621", "h": "2942fbdd9c400b333278dcadcfd4eb5763035ded2f3d4befc9f5ec323c0b6b4d"}, {"id": "6632142521", "h": "997581dc9c1440b4bdb0255a99e2b5dff0b1b3732f917278ef2ca1721dc01cd2"}, {"id": "6632183221", "h": "6b8a5fff5161f2e5282586c7585def45ab3aa64acea685cff8d81a41feb4b627"}, {"id": "6632185521", "h": "94f64b7cd75b1df104d8ac1683bf78b91a14583b182ca76166df57ccdfaf4856"}, {"id": "6632193521", "h": "aa141d95fa9a7aca74c76a5582c998cdd9528e9a2ecb2865e4fa3e01c9f75c06"}, {"id": "6632211121", "h": "97d4192918a9225f99dd0cfd20313f0e1a10af1d95efbc25fcfeb674cdd3c9ec"}, {"id": "6632212821", "h": "2d4644cb7762fe5413f91c41d09c9c4e6c6b8a20a506c0debccbd2b7a4ca1958"}, {"id": "6632232321", "h": "050bfea18e80b13bab49266be35be84ec3ddb0ef41f2fe3090ee54e7b397508e"}, {"id": "6632240321", "h": "00917c0cbe9a366d58309cf42ca93878c547c6de87cd5b90fc1388ef744dd440"}, {"id": "6632249021", "h": "379cbf86733369aa5f5f26c97f00ff8c2a0d20780c7bf151ab80d003061be545"}, {"id": "6632255821", "h": "2778299f37e84153ae766a773a23731bed01a83bd74d6bb28b36dc30b07efa3f"}, {"id": "6632258721", "h": "f9dec5edf7c62d705e297ff2d3218f18b454978c5f62c486741019407e27349f"}, {"id": "6632259321", "h": "78265a296490880ce7bc97192387db7b079743b55ba3e1611f92632541452ab0"}, {"id": "3815261", "h": "55720520cd3ec77c91a15fb92d401b7cc784c5c6af1b56a82099af660665cc9e"}, {"id": "6630094721", "h": "dbf3ebf3570e42a6ac67e550d0dd25291ec89dbbe603eb06e157a2448be8a3b7"}, {"id": "6632116221", "h": "1c5deee4756f10437d7e4827e546828114f01c5acd7562a9da45feed35dcdab9"}]};   // OTS + TE list; roster names are NOT in this page (the server checks them)
+// ---- shared rules (identical in Code.gs and index.html) ----
+function normName(s) {
+  s = String(s || '').toLowerCase().replace(/^\s*(mr|mrs|miss|ms|dr)\.?\s+/, '');
+  return s.replace(/[^a-z]/g, '');
+}
+function ruleCheck(DATA, assigns, sid, otsKey, te) {
+  var i, o = null, ok = false;
+  for (i = 0; i < assigns.length; i++) if (assigns[i].sid === sid) return 'already';
+  for (i = 0; i < DATA.ots.length; i++) if (DATA.ots[i].key === otsKey) o = DATA.ots[i];
+  if (!o) return 'unknown OTS';
+  for (i = 0; i < o.tes.length; i++) if (o.tes[i].te === te) ok = true;
+  if (!ok) return 'unknown TE';
+  for (i = 0; i < assigns.length; i++) if (assigns[i].ots === otsKey && assigns[i].te === te) return 'taken';
+  if (DATA.criteria.indexOf(sid) >= 0) for (i = 0; i < assigns.length; i++)
+    if (assigns[i].ots === otsKey && DATA.criteria.indexOf(assigns[i].sid) >= 0) return 'group';
+  if (!critFeasible(DATA, assigns.concat([{ sid: sid, ots: otsKey, te: te }]))) return 'reserved';
+  return null;
+}
+// every criteria student still unassigned must still find a free TE in an OTS no criteria student holds
+function critFeasible(DATA, assigns) {
+  var used = {}, done = {}, i, j, rem = 0, freeOts = 0;
+  for (i = 0; i < assigns.length; i++) if (DATA.criteria.indexOf(assigns[i].sid) >= 0) { used[assigns[i].ots] = 1; done[assigns[i].sid] = 1; }
+  for (i = 0; i < DATA.criteria.length; i++) if (!done[DATA.criteria[i]]) rem++;
+  for (i = 0; i < DATA.ots.length; i++) {
+    var o = DATA.ots[i]; if (used[o.key]) continue;
+    var taken = 0; for (j = 0; j < assigns.length; j++) if (assigns[j].ots === o.key) taken++;
+    if (o.tes.length - taken > 0) freeOts++;
+  }
+  return freeOts >= rem;
+}
+// draw one case at random from every TE the rules allow for this student
+function drawCase(DATA, assigns, sid, rnd) {
+  var opts = [];
+  for (var i = 0; i < DATA.ots.length; i++) for (var j = 0; j < DATA.ots[i].tes.length; j++) {
+    var o = DATA.ots[i].key, t = DATA.ots[i].tes[j].te;
+    if (!ruleCheck(DATA, assigns, sid, o, t)) opts.push({ ots: o, te: t });
+  }
+  if (!opts.length) return null;
+  return opts[Math.floor((rnd || Math.random)() * opts.length)];
+}
+// ---- end shared rules ----
+
+(function(){
+var qs=new URLSearchParams(location.search);
+if(qs.get('api'))API_URL=qs.get('api');
+var ADMIN=qs.has('admin'), DEMO=!API_URL;
+var COL={mea:'#0e7490',cyc:'#7c3aed',so3:'#b45309',pvc:'#be185d'};
+var $=function(id){return document.getElementById(id);};
+function otsOf(k){for(var i=0;i<DATA.ots.length;i++)if(DATA.ots[i].key===k)return DATA.ots[i];}
+function teOf(o,t){for(var i=0;i<o.tes.length;i++)if(o.tes[i].te===t)return o.tes[i];}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function toast(m,err){var t=$('toast');t.textContent=m;t.className='toast'+(err?' err':'');t.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(function(){t.style.display='none';},err?6000:3500);}
+
+/* ---------- backend: Apps Script, or localStorage in demo ---------- */
+var LS='te-draw-2105412',mem={rows:[],open:true};
+function lsLoad(){try{var v=localStorage.getItem(LS);if(v)mem=JSON.parse(v);}catch(e){}return mem;}
+function lsSave(){try{localStorage.setItem(LS,JSON.stringify(mem));}catch(e){}}
+function sha(s){if(!(window.crypto&&crypto.subtle))return Promise.resolve(null);
+  return crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)).then(function(b){return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0');}).join('');});}
+function rosterHas(id){return DATA.students.some(function(s){return s.id===id;});}
+function titleCase(n){return String(n).trim().replace(/\s+/g,' ').replace(/\b[a-z]/g,function(c){return c.toUpperCase();});}
+var api=DEMO?{
+  status:function(){lsLoad();return Promise.resolve({ok:true,open:mem.open,assigned:mem.rows.length,total:DATA.students.length});},
+  check:function(id){return Promise.resolve({ok:rosterHas(id)});},
+  draw:function(id,name){lsLoad();
+    var s=DATA.students.filter(function(x){return x.id===id;})[0];
+    if(!s)return Promise.resolve({ok:false,error:'Student ID not in the roster / ไม่พบรหัสนิสิต'});
+    return sha(id+'|'+normName(name)).then(function(h){
+      if(h&&h!==s.h)return{ok:false,error:'Name does not match this student ID. Type your first and last name in English. / ชื่อไม่ตรงกับรหัสนิสิต'};
+      var have=mem.rows.filter(function(r){return r.sid===id;})[0];
+      if(have)return{ok:true,already:true,ots:have.ots,te:have.te,name:have.name};
+      if(!mem.open)return{ok:false,error:'The draw is closed / ปิดการสุ่มแล้ว'};
+      var c=drawCase(DATA,mem.rows,id);if(!c)return{ok:false,error:'No case left'};
+      mem.rows.push({sid:id,name:titleCase(name),ots:c.ots,te:c.te,ts:new Date().toISOString()});lsSave();
+      return{ok:true,already:false,ots:c.ots,te:c.te,name:titleCase(name)};});},
+  admin:function(){lsLoad();return Promise.resolve({ok:true,open:mem.open,rows:mem.rows});},
+  release:function(k,id){lsLoad();mem.rows=mem.rows.filter(function(r){return r.sid!==id;});lsSave();return Promise.resolve({ok:true});},
+  drawAll:function(){lsLoad();var have={},n=0;mem.rows.forEach(function(r){have[r.sid]=1;});
+    DATA.students.forEach(function(s){if(have[s.id])return;var c=drawCase(DATA,mem.rows,s.id);if(!c)return;mem.rows.push({sid:s.id,name:'(drawn by instructor)',ots:c.ots,te:c.te,ts:new Date().toISOString()});n++;});
+    lsSave();return Promise.resolve({ok:true,drawn:n});},
+  setOpen:function(k,v){lsLoad();mem.open=v;lsSave();return Promise.resolve({ok:true});}
+}:{
+  status:function(){return get({});},
+  check:function(id){return post({action:'check',sid:id});},
+  draw:function(id,name){return post({action:'draw',sid:id,name:name});},
+  admin:function(k){return get({action:'admin',key:k});},
+  release:function(k,id){return post({action:'release',key:k,sid:id});},
+  drawAll:function(k){return post({action:'drawAll',key:k});},
+  setOpen:function(k,v){return post({action:'setOpen',key:k,open:v});}
+};
+function get(p){return fetch(API_URL+'?'+new URLSearchParams(p)+'&_='+Date.now()).then(function(r){return r.json();});}
+function post(b){return fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(b)}).then(function(r){return r.json();});}
+
+function status(){api.status().then(function(r){if(!r.ok)return;
+  $('opendot').className='dot'+(r.open?'':' closed');$('openlbl').textContent=r.open?'Draw open':'Draw closed';
+  $('cnt').textContent=r.assigned+' / '+r.total+' drawn';}).catch(function(){$('openlbl').textContent='Offline';});}
+
+/* ---------- student flow ---------- */
+var sid='';
+function show(n){[1,2,3].forEach(function(i){$('s'+i).className='step'+(i===n?' on':'');$('b'+i).className=i<=n?'on':'';});}
+function err(id,m){var e=$(id);e.className='msg err';e.innerHTML=m;}
+function clr(id){$(id).className='msg';}
+$('sid').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'');clr('m1');});
+$('sid').addEventListener('keydown',function(e){if(e.key==='Enter')$('go1').click();});
+$('go1').onclick=function(){
+  var v=$('sid').value.trim();if(v.length<7){err('m1','Enter your full student ID. <span class="th">ใส่รหัสนิสิตให้ครบ</span>');return;}
+  var b=this;b.disabled=true;
+  api.check(v).then(function(r){
+    if(!r.ok){err('m1','This ID is not in the 2105412 roster. <span class="th">ไม่พบรหัสนิสิตนี้ในรายชื่อ</span>');return;}
+    sid=v;$('idshow').textContent=v;$('nm').value='';clr('m2');show(2);setTimeout(function(){$('nm').focus();},50);
+  }).catch(function(e){err('m1','Cannot reach the server: '+esc(e.message));}).then(function(){b.disabled=false;});
+};
+$('back2').onclick=function(){show(1);};
+$('nm').addEventListener('keydown',function(e){if(e.key==='Enter')$('go2').click();});
+$('nm').addEventListener('input',function(){clr('m2');});
+$('go2').onclick=function(){
+  var n=$('nm').value.trim();
+  if(n.split(/\s+/).length<2){err('m2','Type both first name and last name. <span class="th">พิมพ์ทั้งชื่อและนามสกุล</span>');return;}
+  var b=this;b.disabled=true;b.textContent='Checking…';
+  api.draw(sid,n).then(function(r){
+    if(!r.ok){err('m2',esc(r.error));return;}
+    show(3);reveal(r);status();
+  }).catch(function(e){err('m2','Network problem — try again. Your case is never drawn twice. '+esc(e.message));})
+  .then(function(){b.disabled=false;b.textContent='🎲 Draw my case';});
+};
+function setSlot(o,t){var s=$('slot');s.style.background=COL[o.key];$('so').textContent=o.name;$('st').textContent=t.te;$('ss').textContent=t.title;}
+function reveal(r){
+  var o=otsOf(r.ots),t=teOf(o,r.te),slot=$('slot');
+  $('hello').textContent=r.already?'Your case (already drawn)':'Your final project case';
+  $('res').style.display='none';slot.className='slot';
+  var all=[];DATA.ots.forEach(function(x){x.tes.forEach(function(y){all.push([x,y]);});});
+  var steps=r.already?0:26,i=0,tok=reveal.tok=(reveal.tok||0)+1;
+  (function spin(){
+    if(tok!==reveal.tok)return;
+    if(i<steps){var p=all[Math.floor(Math.random()*all.length)];setSlot(p[0],p[1]);i++;setTimeout(spin,40+i*i*0.25);return;}
+    setSlot(o,t);slot.className='slot done';
+    $('rnote').innerHTML='<b>'+esc(r.name)+'</b> — your final project is <b>'+esc(o.name)+' '+t.te+'</b>.<br>Saved. Write it down and open the OTS to start. <span class="th">บันทึกแล้ว · สุ่มได้ครั้งเดียว ถ้ามีปัญหาให้ติดต่ออาจารย์</span>';
+    $('olink').href=o.url;$('res').style.display='block';
+  })();
+}
+$('again').onclick=function(){reveal.tok=(reveal.tok||0)+1;sid='';$('sid').value='';$('nm').value='';show(1);};
+// pool
+var ph='';DATA.ots.forEach(function(o){ph+='<div class="ots"><div class="hd" style="background:'+COL[o.key]+'">'+esc(o.name)+' · <a href="'+o.url+'" target="_blank" rel="noopener">Open ↗</a></div><ul>'+o.tes.map(function(t){return '<li><b>'+t.te+'</b>'+esc(t.title)+'</li>';}).join('')+'</ul></div>';});
+$('pool').innerHTML=ph;
+
+/* ---------- instructor view (?admin) ---------- */
+var arows=[],aopen=true;
+function aload(){
+  api.admin($('akey').value).then(function(r){
+    if(!r.ok){toast(r.error,true);return;}
+    arows=r.rows;aopen=r.open;status();
+    ['aall','atoggle','acsv'].forEach(function(i){$(i).disabled=false;});$('atoggle').textContent=r.open?'Close draw':'Re-open draw';
+    var have={};arows.forEach(function(x){have[x.sid]=1;});
+    var miss=DATA.students.filter(function(s){return!have[s.id];});
+    var st='<div class="stat"><b>'+arows.length+' / '+DATA.students.length+'</b>drawn</div>';
+    DATA.ots.forEach(function(o){st+='<div class="stat"><b>'+arows.filter(function(x){return x.ots===o.key;}).length+' / '+o.tes.length+'</b>'+esc(o.name)+'</div>';});
+    $('astats').innerHTML=st;
+    var seen={},dup=[];arows.forEach(function(x){var k=x.ots+' '+x.te;if(seen[k])dup.push(k);seen[k]=1;});
+    var co={},clash=[];arows.forEach(function(x){if(DATA.criteria.indexOf(x.sid)>=0){if(co[x.ots])clash.push(x.ots);co[x.ots]=1;}});
+    var good=!dup.length&&!clash.length;
+    $('acheck').innerHTML='<div class="chk '+(good?'good':'bad')+'">'+(good?'✓ Every case is unique and the four Criteria students are on different OTS.':'✗ Duplicate: '+dup.join(', ')+' · Criteria clash: '+clash.join(', '))+'</div>'+
+      (miss.length?'<div class="chk" style="background:#f6f8fc"><b>Not drawn yet ('+miss.length+'):</b> '+miss.map(function(s){return s.id;}).join(' · ')+'</div>':'');
+    var h='';
+    arows.slice().sort(function(a,b){return a.ots<b.ots?-1:a.ots>b.ots?1:parseInt(a.te.slice(3))-parseInt(b.te.slice(3));}).forEach(function(x,i){
+      var o=otsOf(x.ots),t=teOf(o,x.te);
+      h+='<tr class="'+(DATA.criteria.indexOf(x.sid)>=0?'crit':'')+'"><td>'+(i+1)+'</td><td>'+x.sid+'</td><td>'+esc(x.name||'')+'</td><td>'+esc(o.name)+'</td><td><b>'+x.te+'</b></td><td>'+esc(t.title)+'</td><td>'+(x.ts?new Date(x.ts).toLocaleString('en-GB'):'')+'</td><td><button class="ghost" data-rel="'+x.sid+'" style="padding:5px 10px;font-size:12px">Release</button></td></tr>';});
+    $('atbody').innerHTML=h||'<tr><td colspan="8" style="color:var(--mut)">No draws yet.</td></tr>';
+  }).catch(function(e){toast('Server error: '+e.message,true);});
+}
+if(ADMIN){
+  $('student').style.display='none';$('admin').style.display='block';
+  $('aload').onclick=aload;$('akey').addEventListener('keydown',function(e){if(e.key==='Enter')aload();});
+  $('atbody').addEventListener('click',function(e){var b=e.target.closest('[data-rel]');if(!b)return;
+    if(!confirm('Release the case of '+b.dataset.rel+'? The student can then draw again.'))return;
+    api.release($('akey').value,b.dataset.rel).then(function(r){if(!r.ok)toast(r.error,true);else{toast('Released');aload();}});});
+  $('aall').onclick=function(){if(!confirm('Draw a case now for every student who has not drawn?'))return;
+    api.drawAll($('akey').value).then(function(r){if(!r.ok)toast(r.error,true);else{toast(r.drawn+' students drawn');aload();}});};
+  $('atoggle').onclick=function(){api.setOpen($('akey').value,!aopen).then(function(r){if(!r.ok)toast(r.error,true);aload();});};
+  $('acsv').onclick=function(){
+    var L=[['Student ID','Name','OTS','TE','TE symptom','Criteria group','Time']],have={};arows.forEach(function(x){have[x.sid]=x;});
+    DATA.students.forEach(function(s){var x=have[s.id],o=x&&otsOf(x.ots);L.push([s.id,x?x.name:'',o?o.name:'',x?x.te:'',x?teOf(o,x.te).title:'',DATA.criteria.indexOf(s.id)>=0?'yes':'',x&&x.ts?new Date(x.ts).toISOString():'']);});
+    var csv='﻿'+L.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"';}).join(',');}).join('\r\n');
+    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='2105412_final_case_draw.csv';a.click();};
+  if(DEMO)$('akey').value='demo';
+}
+if(DEMO)$('demo').style.display='block';
+status();setInterval(function(){if(!document.hidden)status();},20000);
+})();
+</script>
+</body>
+</html>
