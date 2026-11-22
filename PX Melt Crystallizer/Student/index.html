@@ -3817,8 +3817,8 @@ table.cem{min-width:1100px}
   <div class="deckbox hzsbar" id="hzsBar"><b>PHA Studio</b>
    <button class="btn small" id="hzsFull">Full screen</button>
    <a class="btn small" href="hazop-studio.html" target="_blank" rel="noopener">Open in its own window ↗</a>
-   
-   
+   <a class="btn small" href="../../PHA%20Studio/Student/PX%20Melt%20Crystallizer%20Ver%201/PHA_Studio_PX-MC_Simple.html" target="_blank" rel="noopener">Standalone PHA Studio · Simple ↗</a>
+   <a class="btn small" href="../../PHA%20Studio/Student/PX%20Melt%20Crystallizer%20Ver%201/PHA_Studio_PX-MC_Full.html" target="_blank" rel="noopener">Standalone PHA Studio · Full ↗</a>
    <a class="btn small" href="PHA_Studio_PX-MC_Simple.html" download>⬇ Download HTML · Simple</a>
    <a class="btn small" href="PHA_Studio_PX-MC_Full.html" download>⬇ Download HTML · Full</a>
    <a class="btn small" href="PHA_Studio_PX-MC_example_N6.json" download>⬇ Download example</a>
@@ -14442,7 +14442,7 @@ window.SPS_BRIDGE={
   run(t0,t1,title){if(!trend.length)return null;const text=spsRunCsv(t0,t1,title);return text?{name:`PX-MC-v1_run-data_${spsStamp()}.csv`,text}:null;},
   snap(title){return {name:`PX-MC-v1_unit-snapshot_${spsStamp()}.csv`,text:spsSnapCsv(title||`${UNIT} OTS · unit snapshot at ${spsHms(sim.t)} (DCS readings against the design point)`)};},
   log(){if(!logArr.length)return null;return {name:`PX-MC-v1_event-log_${spsStamp()}.csv`,text:buildLogCsv()};}};
-var SPS_LINKS={standalone:'https://claude.ai/artifact/4pVT4rwUuFAG4ejBKa47zN',deck:'TSWorkbook_PX-MC_deck.html',deckUrl:'https://claude.ai/artifact/2svFWTgEUaj4fxqaVftuEZ'};
+var SPS_LINKS={standalone:'../../TSWorkbook%20Studio/Student/',deck:'TSWorkbook_PX-MC_deck.html',deckUrl:'https://claude.ai/artifact/2svFWTgEUaj4fxqaVftuEZ'};
 function spsBuild(){const doc=$('#spsDoc'),L=SPS_LINKS;
   doc.innerHTML=`<h2>Systematic problem solving · the six-stage troubleshooting workbook</h2>
   <div class="spsbar small"><a class="btn small" href="ts-workbook.html" target="_blank" rel="noopener">Open the workbook in its own window ↗</a><a class="btn small" href="ts-workbook.html?mode=full" target="_blank" rel="noopener">· Full mode ↗</a><a class="btn small" href="${L.standalone}" target="_blank" rel="noopener">Standalone workbook (link to share) ↗</a><a class="btn small" href="TSWorkbook_PX-MC.html" download>⬇ Download HTML</a>${L.deckUrl?`<a class="btn small" href="${L.deckUrl}" target="_blank" rel="noopener">Slide deck ↗</a><a class="btn small" href="${L.deck}" download>⬇ Deck HTML</a>`:''}<span class="muted">The HTML file works offline on any computer; save your work with Save (.woods.json).</span></div>
