@@ -1,0 +1,887 @@
+{
+ "v": 2,
+ "unit": "cr_201",
+ "meta": {
+  "title": "HAZOP and LOPA of the CR-201 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "CR-201",
+  "pid": "",
+  "scope": "From the saturator battery limit (P-101, FV-101, XV-101) through the fines circulation P-301 and the fines-dissolving heater E-301 (TV-301, XV-301, LP steam), the DTB crystallizer CR-201 with draft tube, baffle and propeller M-201, the elutriation leg and product withdrawal (FV-303, P-202, FV-204) to the centrifuge, the vapour line, condenser E-401 (cooling water) and the steam ejector J-401 with air bleed PV-202, and the seed system P-205; utilities: LP steam, CW, instrument air, power.",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "Design case: 26.4 t/h feed at 52 wt% ammonium sulphate and 120 °C; CR-201 boiling at 13.5 kPa a and about 60 °C; product D50 about 2.8 mm. CR-201 is designed for full vacuum and 1 bar g; its relief device is on HOLD (R01). Trained operators. Risk matrix and target event frequencies are those of the OTS HAZOP and LOPA tabs (teaching values).",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Runs the sessions and keeps to the method (IEC 61882); not from the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every meaningful deviation in the worksheet (full recording)",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, the heat and material balance (AS-PE-HMB-001), supersaturation, fines dissolving and elutriation, the operating windows",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the unit is really run: start-up with seeding, propeller restart on a settled bed, steam-out, the DCS and Field tabs",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Control loops and fail positions, alarms, the SIS (I-1 XV-101, I-2 XV-301), the C&E matrix AS-IN-CE-001 and the SRS",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety engineer",
+   "name": "",
+   "duty": "Risk matrix, consequence analysis (vessel overpressure and implosion, hot liquor spray), relief cases, follow-up to LOPA",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Mechanical (full-vacuum rating, 1 bar g design), propeller / VFD vendor, ejector vendor, utilities (LP steam, CW)",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "PFD DTB-V1-PFD-201 (AS-PFD-201)",
+   "where": "PFD tab (Process & Design)",
+   "use": "Design intent, streams, node boundaries"
+  },
+  {
+   "ref": "P&ID AS-PID-201 rev B (2 sheets)",
+   "where": "P&ID tab (Process & Design; also Operate)",
+   "use": "Tags, valves, fail positions, trips I-1 and I-2"
+  },
+  {
+   "ref": "Heat and material balance AS-PE-HMB-001",
+   "where": "Process engineering tab (Engineering)",
+   "use": "Flows, temperatures and concentrations of the design case"
+  },
+  {
+   "ref": "Relief load basis AS-PE-RLB-001",
+   "where": "Relief tab (Engineering)",
+   "use": "Relief cases: tube rupture, blocked outlet (relief device on HOLD)"
+  },
+  {
+   "ref": "Instrument list AS-IN-INL-001 and C&E AS-IN-CE-001",
+   "where": "Instrumentation & control and C&E matrix tabs",
+   "use": "Alarm and trip settings, cause and effect"
+  },
+  {
+   "ref": "Equipment list AS-ME-EQL-001",
+   "where": "Mechanical tab (Engineering)",
+   "use": "Design pressure (full vacuum / 1 bar g) and temperatures"
+  },
+  {
+   "ref": "HAZID register",
+   "where": "HAZID tab (Safety)",
+   "use": "Major-accident hazards H01–H30 to carry into the HAZOP"
+  },
+  {
+   "ref": "HAZOP report AS-SA-HZP-001 rev A",
+   "where": "HAZOP tab (Safety)",
+   "use": "The existing study: revalidation baseline, R01–R23, dynamic checks D1–D10"
+  },
+  {
+   "ref": "Consequence analysis",
+   "where": "Consequence analysis tab (Safety)",
+   "use": "Severity: physical explosion of CR-201, hot liquor spray, magma pool"
+  },
+  {
+   "ref": "Safety layers, LOPA and SRS",
+   "where": "Safety layers, LOPA and SRS of SIF tabs",
+   "use": "Independent protection layers, SIF PFDs, target frequencies"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP and Exercises tabs",
+   "use": "Start-up with seeding, shutdown, restart, steam-out"
+  },
+  {
+   "ref": "Incident cases",
+   "where": "Incident cases tab",
+   "use": "Lessons (U.S. Sugar 1993, steam-out collapses, Loy-Lange 2017) used in the deviations"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No feed to the crystallizer",
+    "causes": "P-101 trips\nFV-101 fails closed (instrument-air failure)\nXV-101 closed by I-1\nfeed line plugged with crystals",
+    "events": "",
+    "grp": [],
+    "cons": "The level falls as vapour and product keep leaving; LIC-201 output saturates; with the product still running the draft-tube top can be uncovered (circulation short-circuits); production stops",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R01"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "Feed above the level controller's demand",
+    "causes": "FV-101 positioner fault (opens)\nFIC-101 left in MAN at a high output\nFT-101 reads low",
+    "events": "",
+    "grp": [],
+    "cons": "Dynamic check D6 (FIC-101 in MAN at 100 %): feed 50 t/h, the level rises from 50 to 71 % in 30 min and S to 1.027; LIC-201 HI comes only at 21:34; left longer the body overfills and liquor goes into the vapour line",
+    "cat": "PER",
+    "sg": [
+     "S004",
+     "S005",
+     "S006"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example\nLOPA (worked example): values from the OTS LOPA tab, scenario L3 (overfill), for the cause \"FV-101 fails open\" only. Credited: the LIC-201 HI alarm with operator response (PFD 0.1; the level rises over tens of minutes, D6) and I-1 on LSHH-201, its own switch independent of LT-201 (PFD 0.02). Not credited: FIC-101 HI (same BPCS as the cause). f_mit = 0.6 × 0.1 × 0.02 = 1.20e-03 per year against TEL 0.01 for S3. For the \"LT-201 reads low\" cause the alarm shares the transmitter and cannot be credited: that is why the OTS LOPA tab adds R13.",
+    "lopa": {
+     "on": true,
+     "ie": [
+      {
+       "d": "FV-101 fails open (OTS LOPA tab, scenario L3; course: control valve 0.6 /yr)",
+       "f": "0.6"
+      }
+     ],
+     "en": [],
+     "cm": [],
+     "ipl": [
+      "S005",
+      "S006"
+     ]
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Feed below the demand",
+    "causes": "Strainer partly blocked\ncrystals building up in the line\nP-101 worn",
+    "events": "",
+    "grp": [],
+    "cons": "The level falls slowly and production is cut; a slow line cools further and plugs",
+    "cat": "PER",
+    "sg": [
+     "S002",
+     "S001"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Temperature",
+    "gw": "LESS",
+    "dev": "Feed colder than 120 °C",
+    "causes": "Saturator cooler\nheat tracing or insulation damaged\nlong residence at low flow",
+    "events": "",
+    "grp": [],
+    "cons": "Below its saturation temperature the feed crystallizes in the line (plugging) and brings less heat: boil-up falls",
+    "cat": "PER",
+    "sg": [
+     "S007"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Composition",
+    "gw": "LESS",
+    "dev": "Feed more dilute than 52 wt %",
+    "causes": "Saturator upset\nwash water left open",
+    "events": "",
+    "grp": [],
+    "cons": "More water to evaporate per tonne of crystals: production falls, S falls",
+    "cat": "PER",
+    "sg": [
+     "S008"
+    ],
+    "S": "1",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Impurities in the feed (Al³⁺, Fe³⁺, free acid or ammonia)",
+    "causes": "Saturator upset\ncorrosion products\nwrong acid or ammonia ratio upstream",
+    "events": "",
+    "grp": [],
+    "cons": "Growth slows (k_ad falls) and the product gets finer; free ammonia goes out with the vapour and the vent; free acid attacks carbon-steel parts",
+    "cat": "PER",
+    "sg": [
+     "S009",
+     "S010"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Hot liquor blocked in the feed line",
+    "causes": "XV-101 and the P-101 discharge valve closed with liquor in the line\ntracing left on",
+    "events": "",
+    "grp": [],
+    "cons": "Thermal expansion of trapped 120 °C liquor: gasket leak and a spray of hot liquor at a person in the area",
+    "cat": "PER",
+    "sg": [
+     "S011"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "LIC-201 LO 35 %",
+   "tag": "LIC-201",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S002",
+   "text": "FIC-101 LO 15 t/h",
+   "tag": "FIC-101",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S003",
+   "text": "operator cuts FIC-204",
+   "tag": "FIC-204",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "FIC-101 HI 40 t/h (0:07 in D6)",
+   "tag": "FIC-101",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S005",
+   "text": "LIC-201 HI 65 %",
+   "tag": "LIC-201",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S006",
+   "text": "LSHH-201 90 % → I-1 closes XV-101",
+   "tag": "LSHH-201",
+   "type": "Interlock (SIS)",
+   "pfd": "0.02"
+  },
+  {
+   "id": "S007",
+   "text": "TI-102 LO 110 °C (10 °C below saturation)",
+   "tag": "TI-102",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S008",
+   "text": "DIT-103 LO 50.5 wt %",
+   "tag": "DIT-103",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S009",
+   "text": "AIT-206 LO 2.2 mm (hours later)",
+   "tag": "AIT-206",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S010",
+   "text": "laboratory analysis",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "Operating procedure",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Add a low-low level (LSLL-201) action that stops product withdrawal (P-202) before the draft-tube top is uncovered.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Fit a second, independent level measurement on CR-201 with a deviation alarm against LT-201 (foam makes the radar read low).",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Heat-trace and insulate the feed line with a tracing-failure alarm; raise TI-102 LO toward the 120 °C saturation temperature (110 °C is already 10 °C into crystallization); drain or keep circulating a blocked-in hot line.",
+   "by": "Process / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Analyse the feed for free acid, free ammonia and Al/Fe on a schedule with action limits; tie the results to the growth-rate trend.",
+   "by": "Operations / Laboratory",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "P-101 trips",
+   "FV-101 fails closed (instrument-air failure)",
+   "XV-101 closed by I-1",
+   "feed line plugged with crystals",
+   "FV-101 positioner fault (opens)",
+   "FIC-101 left in MAN at a high output",
+   "FT-101 reads low",
+   "Strainer partly blocked",
+   "crystals building up in the line",
+   "P-101 worn",
+   "Saturator cooler",
+   "heat tracing or insulation damaged",
+   "long residence at low flow",
+   "Saturator upset",
+   "wash water left open",
+   "corrosion products",
+   "wrong acid or ammonia ratio upstream",
+   "XV-101 and the P-101 discharge valve closed with liquor in the line",
+   "tracing left on"
+  ],
+  "cons": [
+   "The level falls as vapour and product keep leaving",
+   "LIC-201 output saturates",
+   "with the product still running the draft-tube top can be uncovered (circulation short-circuits)",
+   "production stops",
+   "Dynamic check D6 (FIC-101 in MAN at 100 %): feed 50 t/h, the level rises from 50 to 71 % in 30 min and S to 1.027",
+   "LIC-201 HI comes only at 21:34",
+   "left longer the body overfills and liquor goes into the vapour line",
+   "The level falls slowly and production is cut",
+   "a slow line cools further and plugs",
+   "Below its saturation temperature the feed crystallizes in the line (plugging) and brings less heat: boil-up falls",
+   "More water to evaporate per tonne of crystals: production falls, S falls",
+   "Growth slows (k_ad falls) and the product gets finer",
+   "free ammonia goes out with the vapour and the vent",
+   "free acid attacks carbon-steel parts",
+   "Thermal expansion of trapped 120 °C liquor: gasket leak and a spray of hot liquor at a person in the area"
+  ],
+  "safe": [
+   "FIC-101 LO alarm 15 (fresh feed)",
+   "FIC-101 HI alarm 40 (fresh feed)",
+   "TI-102 LO alarm 110 (feed temperature low (crystallizes in the line))",
+   "DIT-103 LO alarm 50.5 (feed concentration low)",
+   "LIC-201 LO alarm 35 (magma level)",
+   "LIC-201 HI alarm 65 (magma level)",
+   "PIC-202 LO alarm 12.5 (crystallizer pressure)",
+   "PIC-202 HI alarm 14.5 (crystallizer pressure)",
+   "TI-203 LO alarm 58.5 (magma temperature)",
+   "TI-203 HI alarm 61.5 (magma temperature)",
+   "AY-205 LO alarm 1.008 (supersaturation S (calc))",
+   "AY-205 HI alarm 1.05 (supersaturation S (calc))",
+   "AIT-206 LO alarm 2.2 (product D50)",
+   "AIT-206 HI alarm 3.4 (product D50)",
+   "DIT-204 LO alarm 38 (product magma solids)",
+   "DIT-204 HI alarm 52 (product magma solids)",
+   "DIT-206 LO alarm 6 (suspension density)",
+   "DIT-206 HI alarm 25 (suspension density)",
+   "SIC-201 LO alarm 50 (propeller speed low)",
+   "JI-201 LO alarm 35 (propeller motor current)",
+   "JI-201 HI alarm 110 (propeller motor current)",
+   "TIC-301 LO alarm 63 (heater outlet TFc)",
+   "TIC-301 HI alarm 70 (heater outlet TFc)",
+   "FIC-302 LO alarm 700 (circulation flow low)",
+   "FIC-303 LO alarm 15 (elutriation liquor low)",
+   "FIC-204 LO alarm 14 (product withdrawal low)",
+   "TI-404 HI alarm 52 (condensing temperature high)",
+   "PI-403 HI alarm 6 (non-condensables high)",
+   "TI-402 HI alarm 45 (cW return high)",
+   "LIC-201: Magma level (LT-201, radar on the head) (SP 50 %)",
+   "FIC-101: Fresh feed flow (SP from LIC-201 (≈ 26.4 t/h))",
+   "PIC-202: Crystallizer pressure (vapour line) (SP 13.5 kPa a)",
+   "TIC-301: Heater outlet TFc (TT-301) (SP 66 °C)",
+   "FIC-302: Fines circulation Rout (FT-302) (SP 900 t/h)",
+   "FIC-303: Elutriation liquor Rin (SP 21.4 t/h)",
+   "FIC-204: Product slurry (SP 19.44 t/h)",
+   "FIC-205: Seed slurry (upgrade) (MAN 0 kg/h)",
+   "SIC-201: Propeller M-201 speed (VFD) (SP 60.6 rpm)",
+   "HIC-401: Cooling water to E-401 (OUT 70 %)",
+   "FV-101: Feed control valve (FC)",
+   "TV-301: LP steam control valve (FC)",
+   "PV-202: Air bleed to the ejector suction (FO)",
+   "FV-302: Circulation control valve (FO)",
+   "FV-303: Elutriation control valve (FO)",
+   "FV-204: Product control valve (FC)",
+   "FV-205: Seed control valve (FC)",
+   "HV-401: Cooling-water hand valve (70 %)",
+   "TI-102: Feed temperature (120 °C)",
+   "DIT-103: Feed concentration (52 wt %)",
+   "TI-203: Magma temperature (60 °C)",
+   "AY-205: Supersaturation S (DCS calculation) (1.02)",
+   "DIT-206: Suspension density (12.8 wt %)",
+   "TI-303: Mixed liquor temperature (61.7 °C)",
+   "FI-304: LP steam flow (inferred) (5.2 t/h)",
+   "JI-201: Propeller motor current (70 A)",
+   "DIT-204: Product magma solids (45 wt %)",
+   "AIT-206: Product D50 (on-line PSD) (2.5 mm)",
+   "TI-404: Condensing temperature (45 °C)",
+   "FI-401: Condensate (boil-up) (6.9 t/h)",
+   "TI-401: CW supply temperature (30 °C)",
+   "TI-402: CW return temperature (40 °C)",
+   "PI-403: Non-condensables at the ejector suction (3.6 kPa)",
+   "LSHH-201: Magma level high-high (own switch) (90 %, 5 s)",
+   "SSLL-201: Propeller stopped (speed switch) (stopped > 600 s)",
+   "TSHH-301: Heater outlet high-high (TT-301) (75 °C, 5 s)",
+   "FSLL-302: Circulation low-low (FT-302) (300 t/h, 5 s)",
+   "HS-ESD: Emergency shutdown push-button (manual)",
+   "SIS-LS: SIS logic solver I-1 / I-2 (de-energise to trip)",
+   "XV-101: Feed shut-off valve (spring-close)",
+   "XV-301: LP steam shut-off valve (spring-close)",
+   "CR-201 FV: CR-201 designed for full vacuum / 1 bar g (AS-PID-201 note 4) (FV / 1 bar g (TBC))",
+   "COND-RET: Closed condensate return from E-301 and E-401",
+   "VENT: J-401 vent to a safe location",
+   "LIC-201 LO 35 %",
+   "FIC-101 LO 15 t/h",
+   "operator cuts FIC-204",
+   "FIC-101 HI 40 t/h (0:07 in D6)",
+   "LIC-201 HI 65 %",
+   "LSHH-201 90 % → I-1 closes XV-101",
+   "TI-102 LO 110 °C (10 °C below saturation)",
+   "DIT-103 LO 50.5 wt %",
+   "AIT-206 LO 2.2 mm (hours later)",
+   "laboratory analysis",
+   "Operating procedure",
+   "FIC-302 LO 700 t/h",
+   "TIC-301 HI 70 °C",
+   "FSLL-302 < 300 t/h → I-2 closes XV-301",
+   "TSHH-301 75 °C → I-2",
+   "FIC-302 trend (no HI alarm)",
+   "FSLL-302 300 t/h → I-2",
+   "FIC-303 LO 15 t/h (not when FT-303 reads high)",
+   "AIT-206 LO 2.2 mm",
+   "FIC-204 LO 14 t/h",
+   "DIT-206 HI 25 wt %",
+   "FIC-302 trend",
+   "LIC-201 LO",
+   "FSLL-302",
+   "Seal flush",
+   "inspection",
+   "TIC-301 LO 63 °C",
+   "TV-301 output at its limit",
+   "TIC-301 HI 70 °C (2:35)",
+   "PIC-202 HI (10:46)",
+   "TIC-301 (output falls)",
+   "PIC-202 HI",
+   "no relief device on CR-201",
+   "FSLL-302 and TSHH-301 → I-2 (on this simulator they read FT-302 and TT-301, the control transmitters)",
+   "TV-301 output trend",
+   "FI-304",
+   "Permit to work",
+   "LSHH-201 90 % (own switch) → I-1",
+   "FIC-101 HI 40 t/h",
+   "LIC-201 LO 35 % (on the wrong reading)",
+   "LSHH-201 90 % → I-1",
+   "PIC-202 LO 12.5 kPa a",
+   "TI-203 LO 58.5 °C",
+   "AY-205 HI 1.05",
+   "PIC-202 HI 14.5 kPa a",
+   "TI-203 HI 61.5 °C",
+   "PI-403 HI 6 kPa",
+   "PIC-202 HI only",
+   "no relief device",
+   "Full-vacuum design (AS-PID-201 note 4, TBC)",
+   "SIC-201 LO 50 rpm",
+   "JI-201 LO 35 A",
+   "SSLL-201 (stopped > 10 min) → I-1",
+   "JI-201 LO",
+   "JI-201 HI 110 A",
+   "AY-205 HI 1.05 (calculated)",
+   "JI-201 (no vibration monitoring)",
+   "DIT-204 LO 38 wt %",
+   "LSHH-201",
+   "Operating procedure (TBC)",
+   "TI-402 HI 45 °C",
+   "TI-404 HI 52 °C",
+   "TI-401 (indicated)",
+   "TI-402 HI",
+   "TI-404 HI",
+   "LIC-201 HI",
+   "LSHH-201 (no condensate analysis)",
+   "PI-403 HI (0:24)",
+   "PIC-202 HI (8:47)",
+   "PIC-202 output trend",
+   "Insulation and silencer (TBC)",
+   "I-2 reset blocked until FIC-302 ≥ 300 t/h and TT-301 < 75 °C",
+   "SIS open permissives: propeller running, vacuum < 25 kPa a, level below LSHH-201",
+   "SSLL-201 → I-1 after 10 min",
+   "Reset permissives",
+   "Fail positions",
+   "SSLL-201 → I-1",
+   "Fail positions FC/FO on AS-PID-201"
+  ],
+  "recs": [
+   "Add a low-low level (LSLL-201) action that stops product withdrawal (P-202) before the draft-tube top is uncovered.",
+   "Fit a second, independent level measurement on CR-201 with a deviation alarm against LT-201 (foam makes the radar read low).",
+   "Heat-trace and insulate the feed line with a tracing-failure alarm; raise TI-102 LO toward the 120 °C saturation temperature (110 °C is already 10 °C into crystallization); drain or keep circulating a blocked-in hot line.",
+   "Analyse the feed for free acid, free ammonia and Al/Fe on a schedule with action limits; tie the results to the growth-rate trend."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "off-spec product",
+    "no release"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid or medical treatment",
+    "small release contained on site",
+    "repair < 1 day"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "equipment damage, unit down < 1 week",
+    "reportable release to drains"
+   ],
+   [
+    4,
+    "Major",
+    "Single fatality or permanent disability",
+    "vessel rupture",
+    "significant environmental release"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "vessel collapse with major release",
+    "major off-site impact"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "not expected in the industry",
+    "< 1e-4 per year"
+   ],
+   [
+    2,
+    "Unlikely",
+    "has happened in the industry",
+    "1e-4 to 1e-3 per year"
+   ],
+   [
+    3,
+    "Possible",
+    "could happen in the plant life",
+    "1e-3 to 1e-2 per year"
+   ],
+   [
+    4,
+    "Likely",
+    "several times in the plant life",
+    "1e-2 to 1e-1 per year"
+   ],
+   [
+    5,
+    "Frequent",
+    "expected about once a year or more",
+    "> 1e-1 per year"
+   ]
+  ],
+  "tel": {
+   "1": "1",
+   "2": "0.1",
+   "3": "0.01",
+   "4": "0.001",
+   "5": "0.0001"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 7,
+ "sgseq": 11,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

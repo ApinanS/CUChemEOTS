@@ -560,6 +560,27 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
 #vpPanel .vpl{list-style:none;padding:0;margin:4px 0 6px;display:flex;flex-wrap:wrap;gap:3px 12px;font-size:12.5px}
 #vpPanel .vpl li{color:var(--muted)}#vpPanel .vpl li.ok{color:var(--green,#15803D);font-weight:600}
 
+
+#hzs .doc{max-width:none}
+#hzs .hzsbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0}
+#hzs .hzsbar .btn{text-decoration:none}
+#hzs .hzsdlnote{flex:1 1 100%;font-size:12.5px}
+#hzsWrap{background:#fff;border:1px solid var(--edge);border-radius:4px}
+#hzsWrap:fullscreen{border:0}
+#hzsFrame{display:block;width:100%;height:calc(100vh - 150px);min-height:640px;border:0}
+#hzsWrap:fullscreen #hzsFrame{height:100vh}
+#hzs details{margin:6px 0 4px}
+#hzs details table td:first-child{font-weight:600}
+#hztPanel{border:1px solid var(--accent);border-left:6px solid var(--accent);border-radius:4px;background:var(--panel-2);padding:8px 12px;margin:0 0 8px}
+#hztPanel[hidden]{display:none}
+#hztPanel .hzthead{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+#hztPanel .hzthead b{flex:1 1 260px}
+#hztPanel .hztgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:10px;margin-top:6px}
+#hztPanel ul{margin:2px 0;padding-left:18px;max-height:150px;overflow:auto}
+#hztPanel table{border-collapse:collapse;width:100%}
+#hztPanel td,#hztPanel th{padding:1px 6px;border-bottom:1px solid var(--edge);text-align:left;font-variant-numeric:tabular-nums}
+@media (max-width:700px){#hztPanel .hztgrid{grid-template-columns:minmax(0,1fr)}}
+#hzsBox .btn{text-decoration:none}
 </style>
 </head>
 <body>
@@ -610,6 +631,7 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
  <div class="subrow" data-group="gsafety" role="tablist">
   <button class="tab" role="tab" aria-selected="false" data-view="hazid">HAZID</button>
   <button class="tab" role="tab" aria-selected="false" data-view="hazop">HAZOP</button>
+  <button class="tab" role="tab" aria-selected="false" data-view="hzs">HAZOP Studio</button>
   <button class="tab" role="tab" aria-selected="false" data-view="cq">Consequence analysis</button>
   <button class="tab" role="tab" aria-selected="false" data-view="safety">Safety layers</button>
   <button class="tab" role="tab" aria-selected="false" data-view="lopa">LOPA</button>
@@ -1556,6 +1578,17 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
    <li><b>Simulator training</b> on the dynamic-check scenarios so operators recognise the deviations that no trip will catch.</li></ul>
   <ol id="hzLopa" class="small"></ol>
   <div class="tscroll"><table class="tbl hz-fol"><thead><tr><th>ID</th><th>Owner (discipline)</th><th>Target</th><th>Response route</th><th>Status</th></tr></thead><tbody id="hzFollow"></tbody></table></div>
+ </div>
+</section>
+<section class="view" id="hzs">
+ <div class="panel doc" id="hzsDoc">
+  <h2>HAZOP Studio · run your own HAZOP and LOPA of the cooling water system</h2>
+  <p class="small muted">PHA Studio is the team HAZOP/LOPA program of this course. It opens here in the <b>Simple</b> edition, six steps for the class workshop: set up the study, nodes, the worksheet, risk, actions, check and report. The switch at the top right turns it into the <b>Full</b> edition (LOPA in the worksheet, scenario groups, analytics and the administration pages of a real PHA); your rows stay. The nine nodes, the guide words, the risk matrix, the safeguards and the worked example (node N1) come from the HAZOP tab of this OTS. A green <b>▶ OTS</b> chip on a worksheet row means the simulator can run that deviation: <b>Run it on the DCS console ▶</b> lines the unit out at design, starts the deviation after one minute and shows the alarms, any SIS trip and the key readings in a panel above the DCS. Copy the result into the row and come back here.</p>
+  <details class="small" id="hzsCmp"><summary><b>How PHA Studio compares with commercial PHA software</b></summary><div class="tscroll" id="hzsCmpT"></div>
+   <p class="small muted">PHA Studio is a teaching tool. It is not affiliated with, endorsed by or a copy of any of these products and reproduces none of their screens; the comparison is by function only, from public product descriptions (check the vendors' own documents). PHA-Pro and PHAWorks are trademarks of their owners.</p></details>
+  <div class="row small hzsbar" id="hzsBar"></div>
+  <div id="hzsWrap"><iframe id="hzsFrame" title="PHA Studio" loading="lazy"></iframe></div>
+  <p class="small muted" id="hzsNote"></p>
  </div>
 </section>
 
@@ -3251,7 +3284,7 @@ function loadExercise(key){
 }
 function exTick(){
   const e=exState,P=sim.P,m=sim.meas;
-  e.pending=e.pending.filter(p=>{if(p.when?p.when(sim):sim.t>=p.at){injectFault(p.id,p.sev,p.ramp);if(p.id==='cool_night'||p.id==='power_dip')e.upset=sim.t;return false;}return true;});
+  e.pending=e.pending.filter(p=>{if(p.when?p.when(sim):sim.t>=p.at){if(p.fn){p.fn(sim);log('EX',p.msg);banner(p.msg);return false;}injectFault(p.id,p.sev,p.ramp);if(p.id==='cool_night'||p.id==='power_dip')e.upset=sim.t;return false;}return true;});
   const pr=e.proc;if(!pr||pr.finished!==null)return;
   if(e.kind==='startup')e.hold=(P.load>=0.9&&m.TI202>=29.5&&m.TI202<=34&&Math.abs(m.FI201-340)<=10&&m.AI201>=7.5&&m.AI201<=8.8&&m.LB>=50)?e.hold+1:0;
   if(e.kind==='tsc1')e.hold=(m.TI202>=30&&m.TI202<=34&&Math.abs(m.FI201-306)<=5&&m.AI201>=7.5&&m.AI201<=8.8&&cellsOK(sim))?e.hold+1:0;
@@ -3577,7 +3610,7 @@ var TB={tabs:{},built:{},
   enter(v){const t=this.tabs[v];if(!t)return;if(!this.built[v]){this.built[v]=true;try{t.build&&t.build();}catch(e){console.error(e);}}},
   live(v){const t=this.tabs[v];if(t&&t.live&&this.built[v]){try{t.live();}catch(e){console.error(e);}}}};
 (function(){const _r=render;render=function(){const s=document.querySelector('.view.show');if(s)TB.enter(s.id);_r.apply(this,arguments);if(s&&tick%2===0)TB.live(s.id);};})();
-var TAB_GROUPS=[["gstart", "Start", ["howto", "workbook"]], ["gdesign", "Process & Design", ["process", "design", "bfd", "pfd", "control", "pid"]], ["gop", "Operability", ["opwin", "flex", "trans", "relia", "effic", "sop"]], ["gsafety", "Safety", ["hazid", "hazop", "cq", "safety", "lopa", "srs", "cem", "inc"]], ["geng", "Engineering (EPC)", ["eproj", "eproc", "pid", "lay", "emech", "erel", "einst", "eelec", "ecomm"]], ["grun", "Operate", ["operate", "bms", "field", "v3d", "pid"]], ["gtrain", "Train & Assess", ["exercises", "sps", "debrief", "export"]]], TAB_PRIMARY={"pid": "gdesign"};
+var TAB_GROUPS=[["gstart", "Start", ["howto", "workbook"]], ["gdesign", "Process & Design", ["process", "design", "bfd", "pfd", "control", "pid"]], ["gop", "Operability", ["opwin", "flex", "trans", "relia", "effic", "sop"]], ["gsafety", "Safety", ["hazid", "hazop", "hzs", "cq", "safety", "lopa", "srs", "cem", "inc"]], ["geng", "Engineering (EPC)", ["eproj", "eproc", "pid", "lay", "emech", "erel", "einst", "eelec", "ecomm"]], ["grun", "Operate", ["operate", "bms", "field", "v3d", "pid"]], ["gtrain", "Train & Assess", ["exercises", "sps", "debrief", "export"]]], TAB_PRIMARY={"pid": "gdesign"};
 var curGroup=null,lastInGroup={};
 function groupsOf(v){return TAB_GROUPS.filter(g=>g[2].includes(v)).map(g=>g[0]);}
 function visibleIn(g,v){const b=document.querySelector(`.subrow[data-group="${g}"] .tab[data-view="${v}"]`);return b&&!b.hidden;}
@@ -5332,6 +5365,109 @@ function lpBuild(){
   ['#lpLam','#lpTi'].forEach(k=>$(k).oninput=()=>{$('#lpLamV').textContent=$('#lpLam').value;lpCalc();});
   $('#lpCsv').onclick=lpCsv;lpCalc();lpSum();lpPst();lpSif();lpSel('L1');}
 TB.tab('lopa',lpBuild,null);
+
+/* ===== HAZOP Studio tab (prefix hzs): PHA Studio in an iframe + the embedded-mode hooks it calls =====
+   Hooks used by PHA Studio when embedded (EMB = window.parent.HZT exists): window.HZT, window.hztStart(id),
+   window.hzsSave(name, blob). Opening the page with #hzt-tNN starts the same test (the standalone program uses this). */
+var HZS_TESTS={"t01":{"node":"N1","param":"Flow","gw":"NO","row":"N1.1","title":"No return flow — FCV-201 shut (FIC-201 MAN 0 %)","at":60,"start":[{"c":"FIC-201","mode":"MAN","op":0}],"watch":[["FI-202","FI202","m³/h"],["PI-202","PI202","kPa g"],["TI-203","TI203","°C"],["TI-201","TI201","°C"]]},"t02":{"node":"N1","param":"Flow","gw":"LESS","row":"N1.2","title":"Less return flow — circulating pump P-215 trips","at":60,"start":[{"f":"p215_trip","sev":1,"ramp":0}],"watch":[["FI-202","FI202","m³/h"],["PI-202","PI202","kPa g"],["TI-201","TI201","°C"],["TI-203","TI203","°C"]]},"t03":{"node":"N1","param":"Flow","gw":"MORE","row":"N1.3","title":"More return flow — FCV-201 wide open (FIC-201 MAN 100 %)","at":60,"start":[{"c":"FIC-201","mode":"MAN","op":100}],"watch":[["FI-202","FI202","m³/h"],["PI-202","PI202","kPa g"],["TI-202","TI202","°C"]]},"t04":{"node":"N1","param":"Temperature","gw":"MORE","row":"N1.4","title":"Return temperature high — users' heat load ramps up 30 %","at":60,"start":[{"f":"load_up","sev":1,"ramp":600}],"watch":[["TI-201","TI201","°C"],["TI-202","TI202","°C"],["TI-203","TI203","°C"]]},"t05":{"node":"N1","param":"Composition","gw":"AS WELL AS","row":"N1.5","title":"Process fluid in the CW — acidic process leak reaches the return (5 min)","at":60,"start":[{"f":"ph_low","sev":1,"ramp":0}],"watch":[["AI-201","AI201","pH"],["TI-201","TI201","°C"]]},"t06":{"node":"N2","param":"Flow","gw":"LESS","row":"N2.2","title":"Less water on one cell — nozzles blocked in cell E-201","at":60,"start":[{"f":"nozzle_block","sev":1,"ramp":300}],"watch":[["TI-202","TI202","°C"],["TI-201","TI201","°C"],["PI-201","PI201","kPa g"]]},"t07":{"node":"N2","param":"Temperature","gw":"MORE","row":"N2.4","title":"Supply too warm — fan P-213 (cell E-202) trips","at":60,"start":[{"f":"fan2_trip","sev":1,"ramp":0}],"watch":[["TI-202","TI202","°C"],["TI-203","TI203","°C"],["TI-201","TI201","°C"]]},"t08":{"node":"N2","param":"Temperature","gw":"LESS","row":"N2.5","title":"Supply too cold — cool rainy night","at":60,"start":[{"f":"cool_night","sev":1,"ramp":900}],"watch":[["TI-202","TI202","°C"],["TI-231","TI231","°C"]]},"t09":{"node":"N2","param":"Mechanical","gw":"OTHER THAN","row":"N2.7","title":"Fan vibration high — blade damage on fan P-214","at":60,"start":[{"f":"fan_vib","sev":1,"ramp":300}],"watch":[["VI-214","VI214","mm/s"],["TI-202","TI202","°C"]]},"t10":{"node":"N3","param":"Level","gw":"MORE","row":"N3.2","title":"Basin overflows — LCV-201 wide open (LIC-201 MAN 100 %)","at":60,"start":[{"c":"LIC-201","mode":"MAN","op":100}],"watch":[["LIC-201","LB","%"],["FI-206","FI206","m³/h"]]},"t11":{"node":"N3","param":"Flow","gw":"NO","row":"N3.3","title":"No make-up — LCV-201 shut (LIC-201 MAN 0 %)","at":60,"start":[{"c":"LIC-201","mode":"MAN","op":0}],"watch":[["LIC-201","LB","%"],["FI-206","FI206","m³/h"],["PI-202","PI202","kPa g"]]},"t12":{"node":"N4","param":"Flow","gw":"NO","row":"N4.1","title":"No supply to the users — the three running pumps trip","at":60,"start":[{"f":"p215_trip","sev":1,"ramp":0},{"f":"p216_trip","sev":1,"ramp":0},{"f":"p217_trip","sev":1,"ramp":0}],"watch":[["FI-202","FI202","m³/h"],["PI-202","PI202","kPa g"],["TI-203","TI203","°C"]]},"t13":{"node":"N4","param":"Flow","gw":"LESS","row":"N4.2","title":"One pump fails — circulating pump P-216 trips","at":60,"start":[{"f":"p216_trip","sev":1,"ramp":0}],"watch":[["FI-202","FI202","m³/h"],["PI-202","PI202","kPa g"],["TI-203","TI203","°C"]]},"t14":{"node":"N5","param":"Flow","gw":"NO","row":"N5.1","title":"No blowdown — FV-222 shut (AIC-202 MAN 0 %)","at":60,"start":[{"c":"AIC-202","mode":"MAN","op":0}],"watch":[["FI-222","FI222","m³/h"],["AIC-202","AI202","µS/cm"]]},"t15":{"node":"N5","param":"Flow","gw":"MORE","row":"N5.2","title":"Too much blowdown — FV-222 fails open","at":60,"start":[{"f":"bd_open","sev":1,"ramp":0}],"watch":[["FI-222","FI222","m³/h"],["FI-206","FI206","m³/h"],["AIC-202","AI202","µS/cm"],["LIC-201","LB","%"]]},"t16":{"node":"N6","param":"Flow","gw":"NO","row":"N6.1","title":"No flow through the filter — S-281 plugs","at":60,"start":[{"f":"filter_plug","sev":1,"ramp":300}],"watch":[["PDI-201","PDI201","kPa"]]},"t17":{"node":"N6","param":"Pressure","gw":"MORE","row":"N6.3","title":"Filter ΔP high — S-281 plugs","at":60,"start":[{"f":"filter_plug","sev":1,"ramp":300}],"watch":[["PDI-201","PDI201","kPa"]]},"t18":{"node":"N8","param":"Utility","gw":"NO","row":"N8.1","title":"Power dip — every pump and fan motor drops out","at":60,"start":[{"f":"power_dip","sev":1,"ramp":0}],"watch":[["FI-202","FI202","m³/h"],["TI-203","TI203","°C"],["TI-201","TI201","°C"]]},"t19":{"node":"N8","param":"Utility","gw":"NO","row":"N8.2","title":"Instrument-air failure — FCV-201 and LCV-201 fail open, FV-222 fails closed","at":60,"start":[{"f":"air_fail","sev":1,"ramp":0}],"watch":[["FI-202","FI202","m³/h"],["LIC-201","LB","%"],["FI-206","FI206","m³/h"],["FI-222","FI222","m³/h"]]},"t20":{"node":"N8","param":"Utility","gw":"LESS","row":"N8.3","title":"City-water pressure low — make-up capacity lost","at":60,"start":[{"f":"city_low","sev":1,"ramp":300}],"watch":[["FI-206","FI206","m³/h"],["LIC-201","LB","%"]]},"t21":{"node":"N9","param":"Sequence","gw":"LATE","row":"N9.5","title":"Spare pump started late — P-215 trips, watch how long until the spare is on line","at":60,"start":[{"f":"p215_trip","sev":1,"ramp":0}],"watch":[["FI-202","FI202","m³/h"],["PI-202","PI202","kPa g"],["TI-203","TI203","°C"]]}};
+var HZS_URLS={"simple": "PHA_Studio_CWT-V1_Simple.html", "full": "PHA_Studio_CWT-V1_Full.html", "deck": "PHA_Studio_CWT-V1_deck.html"};
+var HZS_FILES={"simple": "PHA_Studio_CWT-V1_Simple.html", "full": "PHA_Studio_CWT-V1_Full.html", "deck": "PHA_Studio_CWT-V1_deck.html", "example": "PHA_Studio_CWT-V1_example_N1.json", "exnode": "N1"};
+var HZS_ED=document.getElementById('instructor')?'instructor':'student';
+var HZT={tests:HZS_TESTS,active:null,results:{}};
+window.HZT=HZT;
+function hzsUrl(k){return HZS_URLS[k]||'';}
+function hzsMs(t){t=Math.max(0,Math.round(t));return Math.floor(t/60)+':'+String(t%60).padStart(2,'0');}
+function hztStart(id){
+  const t=HZS_TESTS[id];if(!t){alert('Unknown OTS test '+id);return false;}
+  newSession('design',`HAZOP Studio test ${id.toUpperCase()}: ${t.title}`);
+  const pend=t.start.map(a=>a.f?{id:a.f,sev:a.sev,ramp:a.ramp||0,at:t.at}:{at:t.at,fn:s=>{s.C[a.c].mode=a.mode;s.C[a.c].op=a.op;},msg:`HAZOP test: ${a.c} put in ${a.mode} at ${a.op} % output`});
+  exState={kind:'hzt',name:'HAZOP test '+id.toUpperCase(),pending:pend,proc:null,hold:0};
+  $('#exBadge').textContent=exState.name;log('EX','Exercise loaded: '+exState.name);
+  HZT.active={id,t,ex:exState,mm:{},end:false};
+  if(!running&&$('#runBtn'))$('#runBtn').click();
+  banner(`HAZOP test ${id.toUpperCase()} (node ${t.node}, ${t.param} · ${t.gw}): ${t.title}. The unit is at design; the deviation starts at 1:00. Watch the alarms and the SIS, do not act, then copy the result back to the worksheet.`);
+  showView('operate');hztPaint();return true;}
+window.hztStart=hztStart;
+function hztResult(){const A=HZT.active;if(!A)return null;const t=A.t,d=t.at,P=sim.P,B=P.sis;
+  const ev=logArr.filter(x=>x.t>=d-0.5&&(x.type==='ALM'||x.type==='SIS'||x.type==='MALF'||(x.type==='EX'&&/^HAZOP test:/.test(x.msg)))&&!/ cleared$/.test(x.msg))
+    .map(x=>[x.t-d,x.type==='SIS'?'SIS: '+x.msg:x.msg]);
+  const trip=B.state==='TRIPPED'?'SIS tripped: '+(B.first||''):'';
+  const out=FANS.filter(k=>B.ft&&B.ft[k]).map(k=>'fan '+k.replace('F','P-')+' tripped by VSHH-'+k.slice(1));
+  const run=PUMPS.filter(k=>P.sw[k]).map(k=>k.replace('P','P-'));out.push('pumps running: '+(run.length?run.join(', '):'none'));
+  const rows=t.watch.map(w=>{const m=A.mm[w[1]]||{};return [w[0],sim.meas[w[1]],m.lo,m.hi,w[2]];});
+  return {t:sim.t-d,ev,trip,out,rows};}
+function hzF(v){return v==null||isNaN(v)?'—':(+v).toFixed(Math.abs(v)>=100?0:Math.abs(v)>=10?1:2);}
+function hztText(){const A=HZT.active,r=hztResult();if(!r)return '';const t=A.t;
+  return [`OTS test ${A.id.toUpperCase()} · ${t.row} ${t.param} / ${t.gw}: ${t.title}`,
+    `Run on the CWT-V1 OTS from design; deviation at 0:00 below; ${hzsMs(r.t)} after it.`,
+    'Alarms and SIS: '+(r.ev.length?r.ev.map(e=>`${hzsMs(e[0])} ${e[1]}`).join('; '):'none'),
+    'Trip: '+(r.trip||'none')+(r.out.length?'; '+r.out.join('; '):''),
+    'Readings (now; min–max since the deviation): '+r.rows.map(x=>`${x[0]} ${hzF(x[1])} (${hzF(x[2])}–${hzF(x[3])}) ${x[4]}`).join('; ')].join('\n');}
+function hztPaint(){let p=document.getElementById('hztPanel');
+  if(!p){p=document.createElement('div');p.id='hztPanel';p.className='small';p.hidden=true;const op=document.getElementById('operate');if(!op)return;op.insertBefore(p,op.firstChild);}
+  const A=HZT.active;if(!A){p.hidden=true;return;}
+  if(exState!==A.ex)A.end=true;
+  const r=hztResult(),t=A.t;
+  p.hidden=false;
+  p.innerHTML=`<div class="hzthead"><b>HAZOP Studio · OTS test ${esc(A.id.toUpperCase())} · ${esc(t.row)} ${esc(t.param)} / ${esc(t.gw)}: ${esc(t.title)}</b>
+   <button class="btn small" id="hztCopy">Copy result</button><button class="btn small" id="hztBack">Back to HAZOP Studio</button><button class="btn small" id="hztClose">Close</button></div>
+   <div class="muted">${A.end?'This test has ended (another session was loaded). The result below is from the moment it ended.':r.t<0?`The deviation starts in ${hzsMs(-r.t)}. The unit is lined out at design.`:`Deviation running for ${hzsMs(r.t)}. Do not act: watch what the safeguards do.`}</div>
+   <div class="hztgrid"><div><b>Alarms and SIS since the deviation</b><ul>${r.ev.length?r.ev.map(e=>`<li>${hzsMs(e[0])} · ${esc(e[1])}</li>`).join(''):'<li class="muted">none yet</li>'}</ul>
+    <div>${r.trip?'<b>'+esc(r.trip)+'</b>':'No SIS trip'}${r.out.length?' · '+esc(r.out.join(' · ')):''}</div></div>
+    <div><table><tr><th>Tag</th><th>Now</th><th>Min</th><th>Max</th><th></th></tr>${r.rows.map(x=>`<tr><td>${esc(x[0])}</td><td>${hzF(x[1])}</td><td>${hzF(x[2])}</td><td>${hzF(x[3])}</td><td>${esc(x[4])}</td></tr>`).join('')}</table></div></div>
+   <div class="muted" id="hztMsg"></div>`;
+  $('#hztCopy').onclick=()=>{const s=hztText();HZT.results[A.id]=s;const done=()=>{$('#hztMsg').textContent='Copied. Paste it into the Notes or Events of the row in HAZOP Studio.';};
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(s).then(done,()=>hzsCopyFallback(s,done));else hzsCopyFallback(s,done);};
+  $('#hztBack').onclick=()=>{HZT.results[A.id]=hztText();showView('hzs');};
+  $('#hztClose').onclick=()=>{HZT.active=null;p.hidden=true;};}
+function hzsCopyFallback(s,done){const ta=document.createElement('textarea');ta.value=s;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){prompt('Copy the result:',s);}ta.remove();}
+setInterval(()=>{const A=HZT.active;if(!A||A.end)return;if(exState!==A.ex){A.end=true;hztPaint();return;}
+  if(sim.t>=A.t.at)A.t.watch.forEach(w=>{const v=sim.meas[w[1]];if(v==null||isNaN(v))return;const m=A.mm[w[1]]||(A.mm[w[1]]={lo:v,hi:v});if(v<m.lo)m.lo=v;if(v>m.hi)m.hi=v;});
+  const op=document.getElementById('operate');if(op&&op.classList.contains('show'))hztPaint();},1000);
+var hzsDl;
+async function hzsSave(name,blob){
+  try{if(hzsDl===undefined)hzsDl=(window.claude&&window.claude.use)?await window.claude.use('downloads'):null;}catch(e){hzsDl=null;}
+  if(hzsDl){try{await hzsDl.save({filename:name,data:blob});log('OPER','PHA Studio saved '+name);return true;}catch(e){return false;}}
+  try{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1000);log('OPER','PHA Studio saved '+name);return true;}catch(e){return false;}}
+window.hzsSave=hzsSave;
+var HZS_CMP=[
+ ['Worksheet: deviation, causes, consequences, safeguards, risk, recommendations','Yes','Yes','Yes (Simple and Full)'],
+ ['Nodes with design intent, parameters and guide words','Yes','Yes','Yes: the nine nodes of this OTS, IEC 61882 guide words'],
+ ['Risk ranking on a matrix (S × L)','Yes, configurable','Yes, configurable','Yes: the course 5 × 5 matrix, editable'],
+ ['LOPA in the worksheet (IE, enabling, modifiers, IPL, target frequency)','Yes','Yes','Full edition: LOPA columns and a scenario dialog with every step'],
+ ['Safeguard / IPL library linked to rows','Yes','Yes','Yes: master list from the alarms, trips LSLL-201 and VSHH-212/213/214 and fail positions of the system'],
+ ['Recommendation register and tracking','Yes','Yes','Yes'],
+ ['Open points carried between sessions','Yes','Yes (Parking Lot)','Yes (Open points / Parking Lot)'],
+ ['Sessions, attendance, documents, revision history','Yes','Yes','Full edition'],
+ ['Reports (Word, Excel)','Yes','Yes','Print, Word (.doc), HTML, Excel, CSV'],
+ ['Team workshop on a projector with phone input','—','—','Workshop mode (on an http(s) copy)'],
+ ['Run a deviation on a dynamic simulator','—','—','Yes: ▶ OTS on the DCS console of this page'],
+ ['Score group studies against a reference study','—','—','Instructor edition: Compare and score']];
+function hzsBuild(){
+  $('#hzsCmpT').innerHTML=`<table class="tbl small"><thead><tr><th>Function</th><th>PHA-Pro</th><th>PHAWorks RA Edition</th><th>HAZOP Studio (PHA Studio)</th></tr></thead><tbody>${HZS_CMP.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  const s=hzsUrl('simple'),f=hzsUrl('full'),dk=hzsUrl('deck'),F=HZS_FILES,ins=HZS_ED==='instructor';
+  const dl=(h,t)=>`<a class="btn small" href="${esc(h)}" download="${esc(h)}" data-hzsdl>${t}</a>`;
+  $('#hzsBar').innerHTML=`<button class="btn small" id="hzsFs">Full screen</button><a class="btn small" href="hazop-studio.html" target="_blank" rel="noopener">Open in its own window ↗</a>`+
+   (s?`<a class="btn small" href="${esc(s)}" target="_blank" rel="noopener">Standalone PHA Studio · Simple${ins?' (instructor)':''} ↗</a>`:'')+
+   (f?`<a class="btn small" href="${esc(f)}" target="_blank" rel="noopener">Standalone PHA Studio · Full${ins?' (instructor)':''} ↗</a>`:'')+
+   dl(F.simple,'⬇ Download HTML · Simple')+dl(F.full,'⬇ Download HTML · Full')+
+   (dk?`<a class="btn small" href="${esc(dk)}" target="_blank" rel="noopener">Slide deck${ins?' (instructor)':''} ↗</a>`:'')+dl(F.deck,'⬇ Deck HTML')+
+   (F.example?dl(F.example,'⬇ Download example'):'')+
+   (F.example?`<span class="muted hzsdlnote">Worked example: node ${esc(F.exnode)}, load it from File → Worked example.</span>`:'')+
+   `<span class="muted hzsdlnote">The HTML file works offline on any computer. Workshop phone mode needs an http(s) copy (web server or GitHub Pages).</span>`;
+  $$('#hzsBar a[data-hzsdl]').forEach(a=>a.onclick=async ev=>{if(!(window.claude&&window.claude.use))return;ev.preventDefault();
+    try{const r=await fetch(a.getAttribute('href'));if(!r.ok)throw 0;if(!await hzsSave(a.getAttribute('download'),await r.blob()))throw 0;}catch(e){location.href=a.getAttribute('href');}});
+  $('#hzsNote').innerHTML=`Your study is saved in this browser and with <b>File ▸ Save</b> as a JSON file; the same file opens in the standalone copies. Inside this page the ▶ OTS buttons run the test here; in a standalone copy they open the OTS in a new tab at <code>#hzt-tNN</code>.`+(ins?' This is the instructor build: it holds the reference study and <b>Compare and score</b>.':'');
+  $('#hzsFs').onclick=()=>{const w=$('#hzsWrap');if(document.fullscreenElement)document.exitFullscreen();else if(w.requestFullscreen)w.requestFullscreen();};
+  const fr=$('#hzsFrame');if(!fr.getAttribute('src'))fr.setAttribute('src','hazop-studio.html');}
+TB.tab('hzs',hzsBuild,null);
+(function(){
+  const rep=document.getElementById('hzRepBox'),s=hzsUrl('simple');
+  if(rep&&!document.getElementById('hzsBox'))rep.insertAdjacentHTML('afterend',`<div class="deckbox hzwsapp" id="hzsBox"><div><b>PHA Studio</b><p class="small muted">Run your own HAZOP of the cooling water system as a team, with the nodes, guide words, risk matrix and safeguards of this study. Simple edition for the class workshop (six steps, worked example of node N1); switch to Full for LOPA, scenario groups and the administration pages of a real PHA. Inside this page it runs on the HAZOP Studio tab and its ▶ OTS tests run on the DCS console.</p></div><div class="row">${s?`<a class="btn" href="${esc(s)}" target="_blank" rel="noopener">Open PHA Studio ↗</a>`:''}<button class="btn" id="hzsGo">HAZOP Studio tab</button></div></div>`);
+  const g=document.getElementById('hzsGo');if(g)g.onclick=()=>showView('hzs');
+})();
+(function(){const m=/#hzt-(t\d+)/i.exec(location.hash||'');if(m)setTimeout(()=>{if(HZS_TESTS[m[1].toLowerCase()])hztStart(m[1].toLowerCase());},1500);})();
+
 
 /* ===== SRS of SIF (prefix sr) ===== */
 /*PURE-BEGIN*/
