@@ -1,0 +1,942 @@
+{
+ "v": 2,
+ "unit": "RF-CAS-v1",
+ "meta": {
+  "title": "HAZOP and LOPA of the RF-CAS-v1 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "RF-CAS-v1",
+  "pid": "",
+  "scope": "From the gas packs and the ethanol tank to the cold vent and the product tank T-601, including utilities (instrument air, N₂, chilled water, electrical power).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Nitrogen, instrument air and power are available at start-up. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Runs the method, keeps the pace, not part of the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every deviation in the worksheet as agreed",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, balances, relief cases",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations (shift supervisor / panel operator)",
+   "name": "",
+   "duty": "How the unit is really run, start-up and upsets",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Loops, fail positions, alarms, trips, SIS",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Rotating-equipment engineer",
+   "name": "",
+   "duty": "Compressors, turbines, lube oil, surge",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety / loss-prevention engineer",
+   "name": "",
+   "duty": "Consequences, fire and gas, risk ranking, LOPA follow-up",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID RF-PID-101 / 201 / 301 rev B",
+   "where": "P&ID tab (EPC set below the screen drawing)",
+   "use": "Node boundaries, tags, valves, relief"
+  },
+  {
+   "ref": "PFD RF-CAS-v1-PFD-001 and HMB RF-CAS-v1-PE-HMB-001",
+   "where": "PFD and Process engineering tabs",
+   "use": "Design intent, flows, conditions"
+  },
+  {
+   "ref": "C&E RF-CAS-v1-IN-CE-001",
+   "where": "C&E matrix tab",
+   "use": "Trip settings and effects"
+  },
+  {
+   "ref": "Instrument list RF-CAS-v1-IN-INL-001",
+   "where": "Instrumentation & control tab",
+   "use": "Instrument tags and ranges"
+  },
+  {
+   "ref": "Relief-load summary RF-CAS-v1-PE-RLB-001",
+   "where": "Relief & vent tab",
+   "use": "PSV set pressures and governing cases"
+  },
+  {
+   "ref": "Equipment list RF-CAS-v1-ME-EQL-001",
+   "where": "Mechanical tab",
+   "use": "Design pressures and temperatures"
+  },
+  {
+   "ref": "Control philosophy, loop list",
+   "where": "Control loop design tab",
+   "use": "What each loop measures and moves, fail positions"
+  },
+  {
+   "ref": "Alarm limits, trips, permissives",
+   "where": "Workbook and SIS tabs",
+   "use": "Alarm and trip settings"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP tab, Exercises → Procedures",
+   "use": "Start-up, shutdown, trip recovery"
+  },
+  {
+   "ref": "HAZOP report RF-CAS-v1-SA-HZP-001 rev A",
+   "where": "HAZOP tab",
+   "use": "The reference study of this OTS"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "More feed than the chillers can take",
+    "causes": "Cracked-gas section raises the rate\nFIC-101 set point raised\nFV-101 positioner fails open (FV-101 is fail-closed on air loss only)",
+    "events": "",
+    "grp": [],
+    "cons": "Chill temperatures rise, AI-114 rises (ethylene to fuel), compressors run toward maximum power and discharge pressure",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004",
+     "S005"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Feed reduced to 25–30 t/h",
+    "causes": "Upstream turndown\nFV-101 sticks partly closed",
+    "events": "",
+    "grp": [],
+    "cons": "Compressors move toward surge; anti-surge recycle opens and power per tonne rises; chillers over-cool",
+    "cat": "PER",
+    "sg": [
+     "S006",
+     "S007",
+     "S008",
+     "S009"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No feed",
+    "causes": "XV-100 trips\nFV-101 fails closed on air loss\nupstream compressor trip",
+    "events": "",
+    "grp": [],
+    "cons": "Loss of production; compressors on full recycle; kettles warm slowly — no hazard if both loops keep running",
+    "cat": "PER",
+    "sg": [
+     "S009",
+     "S010",
+     "S011"
+    ],
+    "S": "1",
+    "L": "4",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Back-flow from the chilled section to the cracked-gas header",
+    "causes": "Upstream pressure lost while V-102 is held at 32.5 bar",
+    "events": "",
+    "grp": [],
+    "cons": "Cold gas (−35 °C or colder) back into warm carbon-steel piping (brittle fracture), loss of containment",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013",
+     "S014"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R02",
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Feed warmer than 15 °C (up to 35 °C)",
+    "causes": "Upstream chiller fouled or cooling water warm",
+    "events": "",
+    "grp": [],
+    "cons": "More duty on E-101: propylene level and K-201 power rise; small effect on the off-gas loss",
+    "cat": "PER",
+    "sg": [
+     "S015",
+     "S016",
+     "S004"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Water or methanol in the feed",
+    "causes": "Dryer breakthrough\nregeneration upset upstream",
+    "events": "",
+    "grp": [],
+    "cons": "Ice and hydrate in E-101 / E-102 tubes and in LV-105 / LV-110: duty falls, valves stick, tube blockage",
+    "cat": "PER",
+    "sg": [
+     "S017",
+     "S018",
+     "S019"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Composition",
+    "gw": "OTHER THAN",
+    "dev": "Feed richer in C2 (more ethylene / ethane)",
+    "causes": "Cracking severity changed",
+    "events": "",
+    "grp": [],
+    "cons": "More liquid in V-101 / V-102; level control must keep up; less load on the ethylene loop (toward surge)",
+    "cat": "PER",
+    "sg": [
+     "S020",
+     "S021",
+     "S022",
+     "S008"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Feed pressure above 36 bar",
+    "causes": "Upstream compressor overpressure",
+    "events": "",
+    "grp": [],
+    "cons": "Gas-train pressure rises toward the upstream maximum; E-101 / E-102 tube side, V-101 / V-102 overpressure if their design pressure is below the upstream maximum",
+    "cat": "PER",
+    "sg": [
+     "S023",
+     "S024",
+     "S025"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R01"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": [],
+  "N10": [],
+  "N11": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FAH-101 (47 t/h)",
+   "tag": "FAH-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "TAH-107 (−94 °C)",
+   "tag": "TAH-107",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "AAH-114 (3 mol%)",
+   "tag": "AAH-114",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "JAH-208 (6.8 MW)",
+   "tag": "JAH-208",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "compressor speed controllers have 12 % reserve above design",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "UIC-205 / UIC-305 anti-surge recycle (FV-205 / FV-305 fail open)",
+   "tag": "UIC-205",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "UAL-205 (5 %)",
+   "tag": "UAL-205",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "UAL-305 (5 %)",
+   "tag": "UAL-305",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "FAL-101 (20 t/h)",
+   "tag": "FAL-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "anti-surge control",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "procedure to line up recycle",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "XV-100 closes on SIS trip",
+   "tag": "XV-100",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "FV-101 fails closed",
+   "tag": "FV-101",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "no check valve credited on the feed line",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "TIC-102 → LIC-103 cascade raises the level",
+   "tag": "TIC-102",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "LAH-103 (85 %)",
+   "tag": "LAH-103",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "Dryer outlet moisture analyzer upstream (not on this unit)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "TI-102 / TI-107 rise",
+   "tag": "TI-102",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "no direct protection here",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "LIC-105 / LIC-110",
+   "tag": "LIC-105",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S021",
+   "text": "LSHH-105 (90 %, closes XV-100)",
+   "tag": "LSHH-105",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S022",
+   "text": "LSHH-110 (90 %, closes XV-100)",
+   "tag": "LSHH-110",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S023",
+   "text": "Upstream relief (not on this unit)",
+   "tag": "",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S024",
+   "text": "PAH-112 (33.5 bar a)",
+   "tag": "PAH-112",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S025",
+   "text": "no PSHH on the gas train",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Confirm that the design pressure of the gas train (E-101, E-102, V-101, V-102) covers the maximum upstream pressure; otherwise add PAHH-112 closing XV-100. Consider a check valve on the off-gas line.",
+   "by": "Process / Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Confirm minimum design metal temperatures of all cold equipment and the letdown outlets against the lowest temperature reachable (low suction pressure, cold flash), and alarm accordingly.",
+   "by": "Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Specify the moisture content of refrigerant make-up, dry the loops after maintenance, and add moisture monitoring on the refrigerant charge.",
+   "by": "Process / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Proof-test the anti-surge valves FV-205 / FV-305 (stroke time) and the surge (vibration) trips; fit discharge check valves.",
+   "by": "Rotating / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Agree a communication protocol with the cracked-gas section for rate and composition changes.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Install gas detection and fire protection around the compressors and receivers, with ESD on confirmed gas.",
+   "by": "Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "Cracked-gas section raises the rate",
+   "FIC-101 set point raised",
+   "FV-101 positioner fails open (FV-101 is fail-closed on air loss only)",
+   "Upstream turndown",
+   "FV-101 sticks partly closed",
+   "XV-100 trips",
+   "FV-101 fails closed on air loss",
+   "upstream compressor trip",
+   "Upstream pressure lost while V-102 is held at 32.5 bar",
+   "Upstream chiller fouled or cooling water warm",
+   "Dryer breakthrough",
+   "regeneration upset upstream",
+   "Cracking severity changed",
+   "Upstream compressor overpressure"
+  ],
+  "cons": [
+   "Chill temperatures rise, AI-114 rises (ethylene to fuel), compressors run toward maximum power and discharge pressure",
+   "Compressors move toward surge",
+   "anti-surge recycle opens and power per tonne rises",
+   "chillers over-cool",
+   "Loss of production",
+   "compressors on full recycle",
+   "kettles warm slowly — no hazard if both loops keep running",
+   "Cold gas (−35 °C or colder) back into warm carbon-steel piping (brittle fracture), loss of containment",
+   "More duty on E-101: propylene level and K-201 power rise",
+   "small effect on the off-gas loss",
+   "Ice and hydrate in E-101 / E-102 tubes and in LV-105 / LV-110: duty falls, valves stick, tube blockage",
+   "More liquid in V-101 / V-102",
+   "level control must keep up",
+   "less load on the ethylene loop (toward surge)",
+   "Gas-train pressure rises toward the upstream maximum",
+   "E-101 / E-102 tube side, V-101 / V-102 overpressure if their design pressure is below the upstream maximum"
+  ],
+  "safe": [
+   "FAL-101 at 20 t/h (Feed gas)",
+   "FAH-101 at 47 t/h (Feed gas)",
+   "TAL-102 at −38 °C (E-101 gas outlet temperature)",
+   "TAH-102 at −32 °C (E-101 gas outlet temperature)",
+   "TAL-107 at −100 °C (E-102 gas outlet temperature)",
+   "TAH-107 at −94 °C (E-102 gas outlet temperature)",
+   "AAH-114 at 3 mol% (Ethylene lost in the off-gas)",
+   "PAL-112 at 31.5 bar a (V-102 pressure)",
+   "PAH-112 at 33.5 bar a (V-102 pressure)",
+   "LAL-103 at 20 % (E-101 propylene level)",
+   "LAH-103 at 85 % (E-101 propylene level)",
+   "LAL-108 at 20 % (E-102 ethylene level)",
+   "LAH-108 at 85 % (E-102 ethylene level)",
+   "LAL-105 at 20 % (V-101 level)",
+   "LAH-105 at 80 % (V-101 level)",
+   "LAL-110 at 20 % (V-102 level)",
+   "LAH-110 at 80 % (V-102 level)",
+   "PAL-201 at 1.2 bar a (C3= suction pressure)",
+   "PAH-201 at 1.55 bar a (C3= suction pressure)",
+   "LAH-202 at 25 % (V-201 liquid (carry-over))",
+   "TAH-207 at 110 °C (K-201 discharge temperature)",
+   "PAH-206 at 18.5 bar a (K-201 discharge pressure)",
+   "UAL-205 at 5 % (K-201 surge margin)",
+   "JAH-208 at 6.8 MW (K-201 power)",
+   "LAL-211 at 20 % (V-202 propylene receiver level)",
+   "LAH-211 at 85 % (V-202 propylene receiver level)",
+   "LAL-213 at 20 % (E-203 propylene level)",
+   "LAH-213 at 85 % (E-203 propylene level)",
+   "TAH-220 at 33 °C (Cooling-water supply)",
+   "PAL-301 at 1 bar a (C2= suction pressure)",
+   "PAH-301 at 1.3 bar a (C2= suction pressure)",
+   "LAH-302 at 25 % (V-301 liquid (carry-over))",
+   "TAH-307 at 115 °C (K-301 discharge temperature)",
+   "PAH-306 at 20.5 bar a (K-301 discharge pressure)",
+   "UAL-305 at 5 % (K-301 surge margin)",
+   "PAH-310 at 19.5 bar a (C2= condensing pressure)",
+   "LAL-312 at 20 % (V-302 ethylene accumulator level)",
+   "LAH-312 at 85 % (V-302 ethylene accumulator level)",
+   "LSHH-105 at 90 % closes XV-100 (V-101 level)",
+   "LSHH-110 at 90 % closes XV-100 (V-102 level)",
+   "PSHH-206 at 20 bar a trips K-201",
+   "TSHH-207 at 125 °C trips K-201",
+   "LSHH-202 at 50 % trips K-201 (V-201 liquid)",
+   "VSHH-209 surge > 20 s trips K-201",
+   "Lube-oil pressure low-low trips K-201 / K-301",
+   "PSHH-306 at 22 bar a trips K-301",
+   "TSHH-307 at 135 °C trips K-301",
+   "LSHH-302 at 50 % trips K-301 (V-301 liquid)",
+   "VSHH-309 surge > 20 s trips K-301",
+   "Cascade interlock: K-201 stopped trips K-301",
+   "Permissive: K-301 start only with PI-310 < 14.5 bar a",
+   "PSV-314 set 24 bar a on the ethylene high side, to flare",
+   "Turbine overspeed trips on KT-201 / KT-301",
+   "UIC-205 anti-surge control (FV-205 fail open)",
+   "UIC-305 anti-surge control (FV-305 fail open)",
+   "FV-101 fail closed (feed)",
+   "XV-100 feed shutdown valve (SIS, fail closed)",
+   "LV-103 / LV-213 propylene letdowns fail closed",
+   "LV-108 ethylene letdown fails closed",
+   "LV-105 / LV-110 liquid to demethanizer fail closed",
+   "PV-112 off-gas fails open",
+   "HIC-313 non-condensable vent at V-302 (manual)",
+   "FIC-101 feed flow control",
+   "TIC-107 / PIC-301 cascade (V-102 temperature)",
+   "PIC-201 propylene suction pressure control",
+   "LIC-103 / LIC-108 kettle level control",
+   "Operator response to alarm (procedure)"
+  ],
+  "recs": [
+   "Confirm that the design pressure of the gas train (E-101, E-102, V-101, V-102) covers the maximum upstream pressure; otherwise add PAHH-112 closing XV-100. Consider a check valve on the off-gas line.",
+   "Confirm minimum design metal temperatures of all cold equipment and the letdown outlets against the lowest temperature reachable (low suction pressure, cold flash), and alarm accordingly.",
+   "Specify the moisture content of refrigerant make-up, dry the loops after maintenance, and add moisture monitoring on the refrigerant charge.",
+   "Proof-test the anti-surge valves FV-205 / FV-305 (stroke time) and the surge (vibration) trips; fit discharge check valves.",
+   "Agree a communication protocol with the cracked-gas section for rate and composition changes.",
+   "Install gas detection and fire protection around the compressors and receivers, with ESD on confirmed gas."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "No safety or production effect",
+    "No release"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid",
+    "Off-specification, small economic loss, recoverable upset",
+    "Small release to flare or fuel"
+   ],
+   [
+    3,
+    "Moderate",
+    "Medical treatment",
+    "Equipment damage, compressor trip with loss of production",
+    "Ethylene to flare or fuel, reportable"
+   ],
+   [
+    4,
+    "Major",
+    "Lost-time or serious injury",
+    "Loss of containment of flammable gas, major equipment damage",
+    "Release off site, short term"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Fatality",
+    "Explosion or BLEVE, major plant damage",
+    "Major off-site impact"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not known in the industry",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in the industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Has happened in similar units",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Expected once in the life of the unit",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Several times per year",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 8,
+ "sgseq": 25,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

@@ -1,0 +1,1092 @@
+{
+ "v": 2,
+ "unit": "SO3-V1",
+ "meta": {
+  "title": "HAZOP and LOPA of the SO3-V1 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "SO3-V1",
+  "pid": "",
+  "scope": "From the molten-sulfur pumps P-101A/B and the main air blower K-101 through the furnace F-101, the waste heat boiler B-101, the five converter beds and their exchangers, the intermediate and final absorbers T-301 and T-302 to the stack ST-301, including utilities (instrument air, power, BFW, steam, cooling water) and the start-up, shutdown and hot-standby procedures.",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Instrument air, power, BFW and steam are available at start-up. Instruments and the SIS trips I-1 to I-6 are proof-tested on the plan in the maintenance procedure. Sulfur pit, acid tanks and steam drum are outside the battery limit.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (chair)",
+   "name": "",
+   "duty": "Independent of the design; runs the method, keeps the team on the node, decides when a deviation is covered",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe (recorder)",
+   "name": "",
+   "duty": "Writes the worksheet live, reads back every recommendation",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer (designer)",
+   "name": "",
+   "duty": "Design intent, heat and material balance, bed temperature and conversion profile, limits",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the converter is really run: start-up preheat, sulfur admission, hot standby, upsets, rounds",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Loops, fail positions on instrument-air loss, SIS logic (I-1 to I-6), trip independence",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety / risk engineer",
+   "name": "",
+   "duty": "Risk matrix, SO₂/SO₃ toxic consequences, LOPA follow-up, regulations and permit",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Catalyst vendor, boiler (B-101) and exchanger mechanical, acid-plant materials, environmental",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "Screen P&ID and EPC P&ID SO3-PID-001 / -002 rev A",
+   "where": "P&ID and EPC P&ID tabs",
+   "use": "Node boundaries, equipment, lines, instruments, valves and fail positions"
+  },
+  {
+   "ref": "Process and Design data",
+   "where": "Process and Design tabs",
+   "use": "Design intent, stream conditions, bed profile, duties, catalyst loads"
+  },
+  {
+   "ref": "BFD and PFD with stream table",
+   "where": "BFD and PFD tabs",
+   "use": "Battery limits, flows"
+  },
+  {
+   "ref": "Control loop design",
+   "where": "Control loop design tab",
+   "use": "Loops, cascades, FFC-101 ratio station, tuning"
+  },
+  {
+   "ref": "SIS trips I-1 to I-6 and alarm list",
+   "where": "Safety system (SIS) and Workbook tabs",
+   "use": "Trip set points, delays, start permissives, alarm limits"
+  },
+  {
+   "ref": "C&E matrix and SRS of SIF",
+   "where": "C&E matrix and SRS tabs",
+   "use": "Cause and effect of every trip, safety requirements"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP and Exercises tabs",
+   "use": "Start-up, hot restart, shutdown, hot standby, ESD"
+  },
+  {
+   "ref": "HAZID",
+   "where": "HAZID tab",
+   "use": "Hazards identified before this study"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No sulfur to the burner",
+    "causes": "Running pump P-101A trips (motor, power)\nspare P-101B fails to start\nXV-103 closed by a spurious SIS trip\nFV-103 closes on instrument-air loss (fail closed)\nsulfur frozen in the line",
+    "events": "",
+    "grp": [],
+    "cons": "Furnace and converter cool; bed 1 falls toward its strike temperature; if not restored, a preheat with H-101 is needed; production loss",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R01"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less sulfur than set",
+    "causes": "Sulfur filter blinding\npump wear\nFV-103 sticking\nsulfur too viscous (cold or overheated)\nlow pit level",
+    "events": "",
+    "grp": [],
+    "cons": "Lower SO₂ strength and production; the beds cool slowly because FFC-101 follows the measured sulfur",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S005",
+     "S006",
+     "S007"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R03",
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "More sulfur than intended",
+    "causes": "FIC-103 set point raised beyond design (production push)\nFV-103 sticks open\nFI-103 reads low",
+    "events": "",
+    "grp": [],
+    "cons": "More SO₂ and heat; if the air does not follow (ratio station in MAN, FIC-101 at its limit) sulfur vapour leaves the furnace unburned and burns on bed 1: bed-1 overheating, catalyst sintering, stack SO₂ up",
+    "cat": "PER",
+    "sg": [
+     "S007",
+     "S008",
+     "S009",
+     "S010",
+     "S011"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R04",
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Temperature",
+    "gw": "LESS",
+    "dev": "Sulfur too cold",
+    "causes": "Steam jacket or tracing failure\nlow jacket steam pressure\nlong stop with the line full",
+    "events": "",
+    "grp": [],
+    "cons": "Sulfur freezes in the line, filter and burner gun: flow loss and plugging; a line can split when it is re-melted (expansion), releasing molten sulfur: burns, fire, SO₂",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Sulfur overheated (above about 160 °C)",
+    "causes": "Jacket steam at too high a pressure",
+    "events": "",
+    "grp": [],
+    "cons": "Viscosity rises steeply: flow falls, FV-103 opens wide; more H₂S released from the sulfur (pit area, outside the battery limit)",
+    "cat": "PER",
+    "sg": [
+     "S014",
+     "S001"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Pump discharge pressure high (dead-head)",
+    "causes": "XV-103 or FV-103 closed with the pump running\nfilter blocked\nburner gun plugged",
+    "events": "",
+    "grp": [],
+    "cons": "Pump overheats at no flow; seal failure; molten sulfur leak at the pump: burns, sulfur fire, SO₂",
+    "cat": "PER",
+    "sg": [
+     "S015",
+     "S016",
+     "S017"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Pressure",
+    "gw": "LESS",
+    "dev": "Pump suction pressure low",
+    "causes": "Low sulfur pit level\nsuction strainer plugged\nsuction line partly frozen",
+    "events": "",
+    "grp": [],
+    "cons": "Cavitation, pump damage, loss of flow (see N1.1)",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S018"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R01",
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Hot furnace gas back into the sulfur line",
+    "causes": "Both pumps stopped with XV-103 open\ndischarge check valve passing",
+    "events": "",
+    "grp": [],
+    "cons": "Hot SO₂ gas flows back toward the pumps and the pit: toxic release in the sulfur area, sulfur fire in the line",
+    "cat": "PER",
+    "sg": [
+     "S019",
+     "S020",
+     "S021"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Integrity",
+    "gw": "AS WELL AS",
+    "dev": "Molten sulfur leak",
+    "causes": "Pump seal failure\nsteam-jacket leak\nfilter opened while hot or under pressure during a change-over",
+    "events": "",
+    "grp": [],
+    "cons": "Molten sulfur at 140 °C: burns; sulfur fire producing SO₂; possible H₂S",
+    "cat": "PER",
+    "sg": [
+     "S022",
+     "S023",
+     "S024",
+     "S025"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R07",
+     "R08"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r10",
+    "param": "Maintenance",
+    "gw": "OTHER THAN",
+    "dev": "Filter or pump change-over done incorrectly",
+    "causes": "Spare filter not preheated (sulfur freezes)\nvalve line-up wrong\nrunning pump stopped before the spare runs",
+    "events": "",
+    "grp": [],
+    "cons": "Flow interruption (see N1.1); sulfur spill at the filter",
+    "cat": "PER",
+    "sg": [
+     "S026",
+     "S001"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r11",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Ash, carbon or water in the sulfur",
+    "causes": "Poor sulfur quality\nfilter by-passed or element torn",
+    "events": "",
+    "grp": [],
+    "cons": "Ash and carbon carried to the furnace and the first catalyst bed: burner and converter fouling, higher pressure drop over time; carbon burns and uses O₂; water forms acid on cold surfaces",
+    "cat": "PER",
+    "sg": [
+     "S027",
+     "S028",
+     "S029"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R03",
+     "R09"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": [],
+  "N10": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FIC-103 alarm LO 35 t/h",
+   "tag": "FIC-103",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "AIC-104 alarm LO 11 % SO₂",
+   "tag": "AIC-104",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "spare P-101B (manual start)",
+   "tag": "P-101B",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "hot standby procedure",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "FIC-103 opens FV-103",
+   "tag": "FIC-103",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "PDG-103 local ΔP gauge on the filter",
+   "tag": "PDG-103",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "FFC-101 ratio 4.994 kNm³/t sets the FIC-101 set point (floor 100 kNm³/h)",
+   "tag": "FFC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "FIC-103 alarm HI 44 t/h",
+   "tag": "FIC-103",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "TI-203 alarm HI 640 °C",
+   "tag": "TI-203",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "I-2 TSHH-203 trip at bed-1 exit > 660 °C, 5 s (same element as TI-203)",
+   "tag": "TSHH-203",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "AIT-306 alarm HI 500 ppm",
+   "tag": "AIT-306",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "Steam-jacketed line DN80-MS-105",
+   "tag": "MS-105",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "operator rounds (no temperature indication in the DCS)",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "Jacket steam pressure set at the source (outside the battery limit, assumed)",
+   "tag": "",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "Pump shut-off head below the line design pressure (assumed)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "operator",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "P-101A/B stop from the DCS",
+   "tag": "P-101A",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "pit level (outside the battery limit)",
+   "tag": "",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "XV-103 closes on every SIS trip",
+   "tag": "XV-103",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "FV-103 fails closed",
+   "tag": "FV-103",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S021",
+   "text": "check valves on the pump discharge (assumed)",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S022",
+   "text": "XV-103 remote isolation (SIS)",
+   "tag": "XV-103",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S023",
+   "text": "pump stop from the DCS",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S024",
+   "text": "I-6 HS ESD push-button (XV-103 closed, K-101 and H-101 stopped)",
+   "tag": "XV-103",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S025",
+   "text": "PPE",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S026",
+   "text": "Procedure",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S027",
+   "text": "Sulfur filter",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S028",
+   "text": "sulfur purchase specification (assumed)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S029",
+   "text": "PDI-204 alarm HI 8 kPa",
+   "tag": "PDI-204",
+   "type": "Alarm",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Auto-start of the spare sulfur pump P-101B on a stop of P-101A or low FI-103, completing before the furnace and bed 1 cool; test the spare monthly.",
+   "by": "Instrument / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Sulfur temperature: indication with low and high alarms on the sulfur line at the pump discharge and at the burner (sulfur solidifies near 115–120 °C and becomes viscous above about 160 °C, assumed values); steam-trap and jacket survey on the round sheet.",
+   "by": "Process / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Sulfur filter: ΔP transmitter to the DCS with a high alarm (today the local gauge PDG-103 only); duplex filters with a preheated spare.",
+   "by": "Instrument / Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Cross-limiting of sulfur and combustion air: sulfur demand limited by the measured air (air leads on increase, sulfur leads on decrease), in addition to the FFC-101 ratio station.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Verify the sulfur flow meter FI-103 (mass meter, proving, comparison with the pit inventory); the FFC-101 ratio and the production figure both depend on it.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Sulfur pump and line protection: minimum-flow recycle to the pit; confirm discharge check valves; stop the running pump when XV-103 has been closed for a set time; close XV-103 when no sulfur pump runs.",
+   "by": "Process / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Written change-over procedure for sulfur filters and pumps (preheated spare, drain, permit); PPE and steam lances at the sulfur area.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R08",
+   "text": "Fixed SO₂ gas detectors at the furnace front, the sulfur pumps, B-101, the converter manways and the acid pumps, alarmed in the control room.",
+   "by": "Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R09",
+   "text": "Catalyst management: ΔP trend of every bed, PDI-214 to PDI-244 high alarms, screening at turnarounds, activity sampling and a replacement plan.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "Running pump P-101A trips (motor, power)",
+   "spare P-101B fails to start",
+   "XV-103 closed by a spurious SIS trip",
+   "FV-103 closes on instrument-air loss (fail closed)",
+   "sulfur frozen in the line",
+   "Sulfur filter blinding",
+   "pump wear",
+   "FV-103 sticking",
+   "sulfur too viscous (cold or overheated)",
+   "low pit level",
+   "FIC-103 set point raised beyond design (production push)",
+   "FV-103 sticks open",
+   "FI-103 reads low",
+   "Steam jacket or tracing failure",
+   "low jacket steam pressure",
+   "long stop with the line full",
+   "Jacket steam at too high a pressure",
+   "XV-103 or FV-103 closed with the pump running",
+   "filter blocked",
+   "burner gun plugged",
+   "Low sulfur pit level",
+   "suction strainer plugged",
+   "suction line partly frozen",
+   "Both pumps stopped with XV-103 open",
+   "discharge check valve passing",
+   "Pump seal failure",
+   "steam-jacket leak",
+   "filter opened while hot or under pressure during a change-over",
+   "Spare filter not preheated (sulfur freezes)",
+   "valve line-up wrong",
+   "running pump stopped before the spare runs",
+   "Poor sulfur quality",
+   "filter by-passed or element torn"
+  ],
+  "cons": [
+   "Furnace and converter cool",
+   "bed 1 falls toward its strike temperature",
+   "if not restored, a preheat with H-101 is needed",
+   "production loss",
+   "Lower SO₂ strength and production",
+   "the beds cool slowly because FFC-101 follows the measured sulfur",
+   "More SO₂ and heat",
+   "if the air does not follow (ratio station in MAN, FIC-101 at its limit) sulfur vapour leaves the furnace unburned and burns on bed 1: bed-1 overheating, catalyst sintering, stack SO₂ up",
+   "Sulfur freezes in the line, filter and burner gun: flow loss and plugging",
+   "a line can split when it is re-melted (expansion), releasing molten sulfur: burns, fire, SO₂",
+   "Viscosity rises steeply: flow falls, FV-103 opens wide",
+   "more H₂S released from the sulfur (pit area, outside the battery limit)",
+   "Pump overheats at no flow",
+   "seal failure",
+   "molten sulfur leak at the pump: burns, sulfur fire, SO₂",
+   "Cavitation, pump damage, loss of flow (see N1.1)",
+   "Hot SO₂ gas flows back toward the pumps and the pit: toxic release in the sulfur area, sulfur fire in the line",
+   "Molten sulfur at 140 °C: burns",
+   "sulfur fire producing SO₂",
+   "possible H₂S",
+   "Flow interruption (see N1.1)",
+   "sulfur spill at the filter",
+   "Ash and carbon carried to the furnace and the first catalyst bed: burner and converter fouling, higher pressure drop over time",
+   "carbon burns and uses O₂",
+   "water forms acid on cold surfaces"
+  ],
+  "safe": [
+   "FIC-103 alarm LO 35 / HI 44 t/h",
+   "FI-100 alarm LO 200 / HI 265 kNm³/h",
+   "AIC-104 alarm LO 11 / HI 12.8 % SO₂",
+   "AI-105 alarm LO 8 % O₂",
+   "TIC-201 alarm LO 405 / HI 435 °C",
+   "TI-203 alarm HI 640 °C",
+   "TIC-211 alarm LO 430 / HI 460 °C",
+   "TIC-221 alarm LO 425 / HI 455 °C",
+   "TIC-231 alarm LO 405 / HI 445 °C",
+   "TIC-241 alarm LO 410 / HI 445 °C",
+   "TIC-251 alarm LO 165 / HI 230 °C",
+   "PDI-204 alarm HI 8 kPa",
+   "PI-200 alarm HI 42 kPa g",
+   "TI-107 alarm HI 340 °C",
+   "AIT-306 alarm HI 500 ppm",
+   "AIT-307 alarm HI 40 mg/Nm³",
+   "FI-301 alarm LO 1200 m³/h",
+   "FI-302 alarm LO 750 m³/h",
+   "AI-303 alarm LO 98 %",
+   "TI-304 alarm HI 95 °C",
+   "FI-253 alarm LO 110 t/h",
+   "I-1 FSLL-100 trip (XV-103) at total air < 90 kNm³/h, 3 s",
+   "I-2 TSHH-203 trip at bed-1 exit > 660 °C, 5 s (same element as TI-203)",
+   "I-3 FSLL-301 trip at IPA acid < 800 m³/h, 10 s",
+   "I-4 FSLL-302 trip at FAT acid < 500 m³/h, 10 s",
+   "I-5 ASHH-306 trip at stack SO₂ > 3000 ppm for 5 min (inhibited 60 min after admission)",
+   "I-6 HS ESD push-button (XV-103 closed, K-101 and H-101 stopped)",
+   "start permissive TI-106 ≥ 450 °C",
+   "start permissive TIC-201 and TI-202 ≥ 400 °C, inlet ≤ 440 °C",
+   "start permissive TI-232 ≥ 360 °C",
+   "start permissive FI-301 and FI-302 ≥ 80 %",
+   "start permissive HV-112 closed",
+   "start permissive FIC-103 in MAN ≤ 25 %",
+   "FFC-101 ratio 4.994 kNm³/t sets the FIC-101 set point (floor 100 kNm³/h)",
+   "FV-103 fails closed",
+   "FV-101/FV-102 fail open",
+   "TV-201 fails closed on air loss",
+   "TV-211 … TV-251 fail open",
+   "XV-103 closes on every SIS trip",
+   "HS-301B auto-start of P-301B",
+   "spare P-101B (manual start)",
+   "spare P-302B (manual start)",
+   "HV-112 locked closed in operation",
+   "H-101 own flame protection (fuel shut off)",
+   "Steam-jacketed sulfur line DN80-MS-105",
+   "check valves on the pump discharges (assumed)",
+   "SIS de-energise to trip (assumed)",
+   "PPE, safety showers (assumed)",
+   "Permit to work and gas test (assumed)",
+   "operator rounds"
+  ],
+  "recs": [
+   "Auto-start of the spare sulfur pump P-101B on a stop of P-101A or low FI-103, completing before the furnace and bed 1 cool; test the spare monthly.",
+   "Sulfur temperature: indication with low and high alarms on the sulfur line at the pump discharge and at the burner (sulfur solidifies near 115–120 °C and becomes viscous above about 160 °C, assumed values); steam-trap and jacket survey on the round sheet.",
+   "Sulfur filter: ΔP transmitter to the DCS with a high alarm (today the local gauge PDG-103 only); duplex filters with a preheated spare.",
+   "Cross-limiting of sulfur and combustion air: sulfur demand limited by the measured air (air leads on increase, sulfur leads on decrease), in addition to the FFC-101 ratio station.",
+   "Verify the sulfur flow meter FI-103 (mass meter, proving, comparison with the pit inventory); the FFC-101 ratio and the production figure both depend on it.",
+   "Sulfur pump and line protection: minimum-flow recycle to the pit; confirm discharge check valves; stop the running pump when XV-103 has been closed for a set time; close XV-103 when no sulfur pump runs.",
+   "Written change-over procedure for sulfur filters and pumps (preheated spare, drain, permit); PPE and steam lances at the sulfur area.",
+   "Fixed SO₂ gas detectors at the furnace front, the sulfur pumps, B-101, the converter manways and the acid pumps, alarmed in the control room.",
+   "Catalyst management: ΔP trend of every bed, PDI-214 to PDI-244 high alarms, screening at turnarounds, activity sampling and a replacement plan."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "First aid",
+    "Minor upset, no damage",
+    "No release"
+   ],
+   [
+    2,
+    "Minor",
+    "Medical treatment",
+    "Outage under a day, minor repair",
+    "Small release inside the unit; short permit exceedance"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "Shutdown for days; partial catalyst damage",
+    "Reportable SO₂ or acid-mist exceedance"
+   ],
+   [
+    4,
+    "Major",
+    "Permanent disability or a single fatality",
+    "Major damage (converter, B-101)",
+    "Large toxic release on site"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "Explosion; loss of the unit",
+    "Toxic release beyond the site"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the life of the plant",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Could happen in the plant life",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Several times in the plant life",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Yearly or more",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 11,
+ "sgseq": 29,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

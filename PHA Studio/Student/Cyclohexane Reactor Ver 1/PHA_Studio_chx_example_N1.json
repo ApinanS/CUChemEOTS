@@ -1,0 +1,930 @@
+{
+ "v": 2,
+ "unit": "chx",
+ "meta": {
+  "title": "HAZOP and LOPA of the Cyclohexane Reactor Ver 1 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "chx",
+  "pid": "",
+  "scope": "From the TK-100 outlet to the product line at HS-115 (TK-106 / TK-107), the hydrogen loop from XV-105 to the purge to fuel gas, and the utility connections at their valves (cooling water, MP steam, boiler feed water, LP steam export, nitrogen, flare header, instrument air, electrical power).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Nitrogen, instrument air and power are available at start-up. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Runs the method, keeps the pace and the scope; not from the design team so assumptions get challenged",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every row in the team's words while the team watches the screen (full recording)",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, heat and mass balance, reaction and relief cases",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the unit is really run: start-up, shutdown, what goes wrong on shift, what operators can see and do",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Loops, fail positions, alarm limits, SIS logic and its independence",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety / loss prevention",
+   "name": "",
+   "duty": "Consequence judgement, risk matrix, link to LOPA and SIL",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Catalyst supplier (Raney-Ni handling), compressor, metallurgy, electrical",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "PFD CHX-V1-PFD-001",
+   "where": "PFD tab",
+   "use": "Design intent, streams and their conditions"
+  },
+  {
+   "ref": "P&ID CHX-V1-PID-001 sheets 1–2 (and the screen P&ID)",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, valves, fail positions"
+  },
+  {
+   "ref": "Heat and mass balance CHX-V1-PE-HMB-001",
+   "where": "Process engineering tab",
+   "use": "Design flows, temperatures, pressures"
+  },
+  {
+   "ref": "Line list CHX-V1-PE-LL-001",
+   "where": "Process engineering tab",
+   "use": "Line sizes, design conditions, services"
+  },
+  {
+   "ref": "Equipment list CHX-V1-ME-EQL-001 and datasheets CHX-V1-ME-DS-001",
+   "where": "Mechanical tab",
+   "use": "Design pressures and temperatures of the equipment"
+  },
+  {
+   "ref": "Cause and effect CHX-V1-IN-CE-001",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects"
+  },
+  {
+   "ref": "Instrument list CHX-V1-IN-INL-001",
+   "where": "Instrumentation & control tab",
+   "use": "Instrument tags and ranges"
+  },
+  {
+   "ref": "Safety requirements specification CHX-V1-IN-SRS-001",
+   "where": "SRS of SIF tab",
+   "use": "Trip functions, SIL targets, proof tests"
+  },
+  {
+   "ref": "Relief load summary CHX-V1-PE-RLB-001",
+   "where": "Relief & vent tab",
+   "use": "Relief cases and loads"
+  },
+  {
+   "ref": "Plot plan CHX-V1-PL-PP-001 and hazardous area CHX-V1-EE-HAC-001",
+   "where": "Layout & isometrics and Electrical tabs",
+   "use": "Where a release goes, ignition sources"
+  },
+  {
+   "ref": "Alarm list, trip list and permissives",
+   "where": "Safety system (SIS) tab and the DCS console",
+   "use": "Arming, delays, first-out, reset"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP tab",
+   "use": "Start-up, shutdown, filter change-over, catalyst handling"
+  },
+  {
+   "ref": "Dynamic model",
+   "where": "DCS console (HAZOP Studio tests)",
+   "use": "Deviation runs with the existing safeguards active"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No benzene flow to R-101",
+    "causes": "Running feed pump P-100A stops (motor trip) and P-100B is not started\nFV-101 closes (fails closed on loss of instrument air)\nXV-101 closed by the SIS or spuriously\nTK-100 empty or suction strainer blocked",
+    "events": "",
+    "grp": [],
+    "cons": "Reaction stops: R-101 cools, hydrogen consumption falls and the loop pressure rises until PIC-105 closes PV-105; production lost and a new light-off needed. A pump running against a closed FV-101 or XV-101 overheats and its seal can leak benzene.",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R05",
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "More benzene than the hydrogen and heat removal can take",
+    "causes": "FIC-101 output driven high (controller or positioner fault, set-point entry error)\nFI-101 transmitter reading low\nFV-101 trim damaged",
+    "events": "",
+    "grp": [],
+    "cons": "Conversion in R-101 falls and unreacted benzene passes to R-102 and R-103, which then release its heat of reaction: R-102 and the adiabatic R-103 bed heat up (about 9 °C per 1 % benzene slip), the product goes off-spec and the bed can run away.",
+    "cat": "PER",
+    "sg": [
+     "S005",
+     "S006",
+     "S007",
+     "S008",
+     "S009",
+     "S010"
+    ],
+    "S": "4",
+    "L": "3",
+    "recs": [
+     "R01",
+     "R02",
+     "R08"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less benzene than set",
+    "causes": "FV-101 partly stuck\nP-100A/B worn or cavitating\nsuction strainer partly blocked",
+    "events": "",
+    "grp": [],
+    "cons": "Lower rate and margin; R-101 runs with more hydrogen excess. No hazard.",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S011"
+    ],
+    "S": "1",
+    "L": "4",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Reactor liquid and hydrogen flow back toward P-100A/B and TK-100",
+    "causes": "Feed pump stops while R-101 is at 30.0 bar g with FV-101 and XV-101 open\nno non-return valve shown on the pump discharge",
+    "events": "",
+    "grp": [],
+    "cons": "Hot liquid saturated with hydrogen enters the feed line and the atmospheric tank TK-100: tank overpressure, release of hydrogen and benzene vapour, fire.",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013",
+     "S001"
+    ],
+    "S": "5",
+    "L": "2",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Feed line at pump shut-off pressure (dead-headed pump)",
+    "causes": "XV-101 closed by the SIS or FV-101 closed while P-100A runs\na manual valve downstream left shut",
+    "events": "",
+    "grp": [],
+    "cons": "Pump runs at shut-off: liquid heats, seal and bearing damage, benzene leak at the seal (flammable, carcinogenic).",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S014"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Benzene feed hotter than the design 40 °C",
+    "causes": "TK-100 heated by sun or tracing left on\nproduct recycled to the tank hot",
+    "events": "",
+    "grp": [],
+    "cons": "Slightly less heat absorbed by the feed (TIC-101 compensates); pump NPSH margin falls, cavitation.",
+    "cat": "PER",
+    "sg": [
+     "S015",
+     "S016"
+    ],
+    "S": "1",
+    "L": "2",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Composition",
+    "gw": "OTHER THAN",
+    "dev": "Sulphur compounds (thiophene) in the benzene",
+    "causes": "Off-spec benzene cargo\nTK-100 contaminated\nwrong tank lined up",
+    "events": "",
+    "grp": [],
+    "cons": "The Raney-Ni in R-101 is poisoned irreversibly: conversion falls, benzene slips to R-102 and R-103 (more heat there), product off-spec; the catalyst must be replaced.",
+    "cat": "PER",
+    "sg": [
+     "S010",
+     "S007",
+     "S017"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R04",
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Water with the benzene",
+    "causes": "Tank bottoms drawn into the suction\nwater not drained from TK-100",
+    "events": "",
+    "grp": [],
+    "cons": "Water flashes in R-101 at 200 °C: pressure surge, catalyst activity lost, water carried to V-104 and the product.",
+    "cat": "PER",
+    "sg": [
+     "S018",
+     "S019"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": [],
+  "N10": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FIC-101 LO alarm at 25 t/h",
+   "tag": "FIC-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "standby pump P-100B",
+   "tag": "P-100B",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "TIC-101 LO alarm at 190 °C",
+   "tag": "TIC-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "PIC-105 holds loop pressure by closing PV-105",
+   "tag": "PIC-105",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "FIC-101 HI alarm at 42 t/h",
+   "tag": "FIC-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "TIC-102 HI alarm at 172 °C",
+   "tag": "TIC-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "TI-107 HI alarm at 185 °C",
+   "tag": "TI-107",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "TSHH-107 trips at 220 °C (5 s)",
+   "tag": "TSHH-107",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "TSHH-100 trips at 220 °C (5 s)",
+   "tag": "TSHH-100",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "AI-103 HI alarm at 10 ppm",
+   "tag": "AI-103",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "FIC-101 in AUTO opens FV-101 further",
+   "tag": "FIC-101",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "XV-101 closes on any SIS trip",
+   "tag": "XV-101",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "FV-101 fails closed",
+   "tag": "FV-101",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "trip procedure stops the feed pump",
+   "tag": "",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "TIC-101 cascade to FIC-104 compensates",
+   "tag": "TIC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "TIC-101 HI alarm at 208 °C",
+   "tag": "TIC-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "fresh catalyst through the catalyst pot HV-117",
+   "tag": "HV-117",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "TIC-101 and PIC-105 control",
+   "tag": "TIC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "PSHH-101 trips at 33.5 bar g (3 s)",
+   "tag": "PSHH-101",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Add a high-high benzene flow or benzene-to-hydrogen ratio trip (FI-101 against FI-103) that closes XV-101; the feed can run far above design with no trip.",
+   "by": "Instrument / Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Add a high-high temperature trip on R-102 with its own element (set below the R-102 boiling point at loop pressure).",
+   "by": "Instrument / Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Fit a non-return valve on the P-100A/B discharge and close XV-101 when no feed pump runs.",
+   "by": "Process / Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Analyse every benzene receipt for sulphur and water; drain TK-100 water; consider a guard bed ahead of R-101.",
+   "by": "Process / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Auto-start the standby pumps P-100B, P-101B and P-102B on low discharge pressure or flow.",
+   "by": "Electrical / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Write a Raney-Ni handling procedure: always wet and under nitrogen, metered charges through HV-117, filter-cake handling.",
+   "by": "Operations / Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Fit minimum-flow bypasses on P-100A/B and P-102A/B.",
+   "by": "Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R08",
+   "text": "Add an R-103 bed-rise alarm (TI-107E minus TI-106) as early warning of benzene slip.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "Running feed pump P-100A stops (motor trip) and P-100B is not started",
+   "FV-101 closes (fails closed on loss of instrument air)",
+   "XV-101 closed by the SIS or spuriously",
+   "TK-100 empty or suction strainer blocked",
+   "FIC-101 output driven high (controller or positioner fault, set-point entry error)",
+   "FI-101 transmitter reading low",
+   "FV-101 trim damaged",
+   "FV-101 partly stuck",
+   "P-100A/B worn or cavitating",
+   "suction strainer partly blocked",
+   "Feed pump stops while R-101 is at 30.0 bar g with FV-101 and XV-101 open",
+   "no non-return valve shown on the pump discharge",
+   "XV-101 closed by the SIS or FV-101 closed while P-100A runs",
+   "a manual valve downstream left shut",
+   "TK-100 heated by sun or tracing left on",
+   "product recycled to the tank hot",
+   "Off-spec benzene cargo",
+   "TK-100 contaminated",
+   "wrong tank lined up",
+   "Tank bottoms drawn into the suction",
+   "water not drained from TK-100"
+  ],
+  "cons": [
+   "Reaction stops: R-101 cools, hydrogen consumption falls and the loop pressure rises until PIC-105 closes PV-105",
+   "production lost and a new light-off needed. A pump running against a closed FV-101 or XV-101 overheats and its seal can leak benzene.",
+   "Conversion in R-101 falls and unreacted benzene passes to R-102 and R-103, which then release its heat of reaction: R-102 and the adiabatic R-103 bed heat up (about 9 °C per 1 % benzene slip), the product goes off-spec and the bed can run away.",
+   "Lower rate and margin",
+   "R-101 runs with more hydrogen excess. No hazard.",
+   "Hot liquid saturated with hydrogen enters the feed line and the atmospheric tank TK-100: tank overpressure, release of hydrogen and benzene vapour, fire.",
+   "Pump runs at shut-off: liquid heats, seal and bearing damage, benzene leak at the seal (flammable, carcinogenic).",
+   "Slightly less heat absorbed by the feed (TIC-101 compensates)",
+   "pump NPSH margin falls, cavitation.",
+   "The Raney-Ni in R-101 is poisoned irreversibly: conversion falls, benzene slips to R-102 and R-103 (more heat there), product off-spec",
+   "the catalyst must be replaced.",
+   "Water flashes in R-101 at 200 °C: pressure surge, catalyst activity lost, water carried to V-104 and the product."
+  ],
+  "safe": [
+   "FIC-101 LO alarm at 25 t/h (Benzene feed)",
+   "FIC-101 HI alarm at 42 t/h (Benzene feed)",
+   "FIC-103 LO alarm at 35000 Nm³/h (Hydrogen to R-101 sparger)",
+   "PIC-105 LO alarm at 27.5 bar g (Loop pressure (V-104))",
+   "PIC-105 HI alarm at 30.5 bar g (Loop pressure (V-104))",
+   "TIC-101 LO alarm at 190 °C (R-101 temperature)",
+   "TIC-101 HI alarm at 208 °C (R-101 temperature)",
+   "TI-100 HI alarm at 210 °C (R-101 temperature (independent element))",
+   "LIC-101 LO alarm at 45 % (R-101 level)",
+   "LIC-101 HI alarm at 82 % (R-101 level)",
+   "JI-101 LO alarm at 80 kW (Agitator M-101 power low)",
+   "TIC-102 LO alarm at 148 °C (R-102 temperature)",
+   "TIC-102 HI alarm at 172 °C (R-102 temperature)",
+   "LIC-102 LO alarm at 30 % (R-102 level)",
+   "LIC-102 HI alarm at 80 % (R-102 level)",
+   "PDI-102 HI alarm at 0.8 bar (Catalyst filter F-102 ΔP)",
+   "TI-107 HI alarm at 185 °C (R-103 hottest bed temperature)",
+   "LIC-104 LO alarm at 25 % (V-104 separator level)",
+   "LIC-104 HI alarm at 78 % (V-104 separator level)",
+   "AI-103 HI alarm at 10 ppm (Product benzene (spec 10 ppm))",
+   "AI-104 HI alarm at 200 ppm (Product MCP isomer (spec 200 ppm))",
+   "AI-105 LO alarm at 85 % H2 (Recycle hydrogen purity)",
+   "LIC-109 LO alarm at 25 % (D-101 steam drum level)",
+   "LIC-109 HI alarm at 75 % (D-101 steam drum level)",
+   "PIC-110 LO alarm at 3.8 bar g (D-101 steam pressure)",
+   "PIC-110 HI alarm at 5.6 bar g (D-101 steam pressure)",
+   "TI-103 HI alarm at 75 °C (E-103 vent temperature (reflux condenser))",
+   "AI-100 HI alarm at 1 % O2 (Loop oxygen with hydrogen admitted)",
+   "TSHH-100 R-101 temperature high-high (220 °C, 5 s): trips the unit (XV-101 benzene and XV-105 make-up shut, K-101 stops, E-101 to COOL with FV-104 open, R-102 jacket to COOL)",
+   "TSHH-107 R-103 bed temperature high-high (220 °C, 5 s): trips the unit (XV-101 benzene and XV-105 make-up shut, K-101 stops, E-101 to COOL with FV-104 open, R-102 jacket to COOL)",
+   "PSHH-101 R-101 pressure high-high (33.5 bar g, 3 s): trips the unit (XV-101 benzene and XV-105 make-up shut, K-101 stops, E-101 to COOL with FV-104 open, R-102 jacket to COOL)",
+   "XS-101 agitator M-101 stopped with XV-101 open (10 s): trips the unit (XV-101 benzene and XV-105 make-up shut, K-101 stops, E-101 to COOL with FV-104 open, R-102 jacket to COOL)",
+   "XS-102 compressor K-101 stopped with XV-101 open (10 s): trips the unit (XV-101 benzene and XV-105 make-up shut, K-101 stops, E-101 to COOL with FV-104 open, R-102 jacket to COOL)",
+   "LSHH-104 V-104 level high-high (90 %, 5 s): stops K-101",
+   "Operator ESD push button: unit trip plus EDV-101 depressuring to flare",
+   "SIS reset blocked while a trip condition is active or R-101 is above 210 °C",
+   "Permissive for benzene (XV-101): Loop oxygen AI-100 below 1 % (before hydrogen)",
+   "Permissive for benzene (XV-101): Hydrogen admitted (XV-105 open) and loop purity AI-105 ≥ 80 %",
+   "Permissive for benzene (XV-101): R-101 level LIC-101 ≥ 40 % (agitator and sparger covered)",
+   "Permissive for benzene (XV-101): Agitator M-101 running",
+   "Permissive for benzene (XV-101): K-101 running and FIC-103 ≥ 15 000 Nm³/h",
+   "Permissive for benzene (XV-101): R-101 at light-off temperature TI-100 ≥ 140 °C",
+   "Permissive for benzene (XV-101): Reflux condenser E-103 on cooling water (HV-113 open)",
+   "XV-101 alarm: benzene permitted with R-101 below 180 °C",
+   "K-101 LOFL alarm: compressor on kickback with no forward flow",
+   "FV-101 fails closed on loss of air or signal (FIC-101 Benzene feed to R-101)",
+   "FV-103 fails closed on loss of air or signal (FIC-103 Hydrogen (recycle + make-up) to R-101 sparger)",
+   "PV-105 fails closed on loss of air or signal (PIC-105 Loop pressure at V-104)",
+   "FV-104 fails open on loss of air or signal (FIC-104 Pump-around flow through E-101)",
+   "LV-101 fails closed on loss of air or signal (LIC-101 R-101 level)",
+   "TV-102 fails closed on loss of air or signal (TIC-102 R-102 temperature)",
+   "LV-102 fails closed on loss of air or signal (LIC-102 R-102 level)",
+   "LV-104 fails closed on loss of air or signal (LIC-104 V-104 separator level)",
+   "LV-109 fails open on loss of air or signal (LIC-109 D-101 steam drum level)",
+   "PV-110 fails open on loss of air or signal (PIC-110 D-101 steam pressure)",
+   "HIC-107 purge valve fails closed",
+   "Standby pump P-100B for P-100A benzene feed pump (manual start)",
+   "Standby pump P-101B for P-101A pump-around pump (manual start)",
+   "Standby pump P-102B for P-102A R-102 transfer pump (manual start)",
+   "Standby catalyst filter F-102B (manual change-over on PDI-102)",
+   "TI-100 independent temperature element in R-101 (separate from TIC-101)",
+   "HS-115 product to the slop tank TK-107 when off-spec",
+   "Operating procedure (SOP tab) and operator training on the simulator"
+  ],
+  "recs": [
+   "Add a high-high benzene flow or benzene-to-hydrogen ratio trip (FI-101 against FI-103) that closes XV-101; the feed can run far above design with no trip.",
+   "Add a high-high temperature trip on R-102 with its own element (set below the R-102 boiling point at loop pressure).",
+   "Fit a non-return valve on the P-100A/B discharge and close XV-101 when no feed pump runs.",
+   "Analyse every benzene receipt for sulphur and water; drain TK-100 water; consider a guard bed ahead of R-101.",
+   "Auto-start the standby pumps P-100B, P-101B and P-102B on low discharge pressure or flow.",
+   "Write a Raney-Ni handling procedure: always wet and under nitrogen, metered charges through HV-117, filter-cake handling.",
+   "Fit minimum-flow bypasses on P-100A/B and P-102A/B.",
+   "Add an R-103 bed-rise alarm (TI-107E minus TI-106) as early warning of benzene slip."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "small off-spec batch; < 10 k$",
+    "No release"
+   ],
+   [
+    2,
+    "Minor",
+    "First-aid case",
+    "short outage; < 100 k$",
+    "contained spill"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "unit down for days; < 1 M$",
+    "reportable release"
+   ],
+   [
+    4,
+    "Major",
+    "Single fatality or permanent disability",
+    "major equipment damage; < 10 M$",
+    "off-site effect"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "loss of the unit; > 10 M$",
+    "major off-site impact"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the life of the industry",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Heard of in the industry",
+    "10⁻⁴ to 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Has happened in the company",
+    "10⁻³ to 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Once in the life of the unit",
+    "10⁻² to 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Several times in the life of the unit",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 8,
+ "sgseq": 19,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

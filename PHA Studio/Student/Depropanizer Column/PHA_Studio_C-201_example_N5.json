@@ -1,0 +1,908 @@
+{
+ "v": 2,
+ "unit": "C-201",
+ "meta": {
+  "title": "HAZOP and LOPA of the C-201 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "C-201",
+  "pid": "",
+  "scope": "From the battery limit at the V-201 inlet, through P-201A/B, FV-201, E-201, C-201 with E-203, E-202, V-202 and P-202A/B, to the propane rundown (LV-203), the bottoms to the debutanizer (LV-202), the vent to fuel gas (PV-210) and the relief to flare (PSV-201); the SIS (XV-201, XV-202, XV-209) and the utilities as they enter the unit.",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Nitrogen, instrument air and power are available at start-up. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (chair)",
+   "name": "",
+   "duty": "Independent of the design; runs the method, keeps the team on the node, decides when a deviation is covered",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe (recorder)",
+   "name": "",
+   "duty": "Writes the worksheet live, reads back recommendations",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer (designer)",
+   "name": "",
+   "duty": "Design intent, heat and material balance, column hydraulics, relief cases and flare loads",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the column is really run: rounds on LG-201, water draining, pump change-overs, start-up and shutdown, what the operators trust",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Loops and fail positions, the SIS (LSLL-202, LSHH-203, ESD), auto-starts, transmitter independence",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety / risk engineer",
+   "name": "",
+   "duty": "Risk matrix, LOPA follow-up, fire and gas, regulations",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Mechanical (pump seals, vessel design and MDMT), relief and flare, the upstream unit, the debutanizer and the utilities owners",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID DC3-V1-PID-001 rev C (rev B / rev C upgrades in the notes)",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, valves, fail positions, relief"
+  },
+  {
+   "ref": "PFD, stream table and duties",
+   "where": "Process tab; BFD and PFD tabs",
+   "use": "Design intent, flows, conditions"
+  },
+  {
+   "ref": "HAZID register and major hazards",
+   "where": "HAZID tab",
+   "use": "Hazards already ranked; inventory"
+  },
+  {
+   "ref": "Alarm list and trip settings",
+   "where": "Workbook tab; C&E matrix tab",
+   "use": "Alarm and trip settings, effects"
+  },
+  {
+   "ref": "SRS of the SIFs",
+   "where": "SRS tab",
+   "use": "LSLL-202, LSHH-203, proposed PSHH"
+  },
+  {
+   "ref": "Relief: PSV-201 set 1.80 MPa g to flare",
+   "where": "P&ID tab; Consequence analysis tab",
+   "use": "Relief cases (cooling-water loss, blocked outlet, reflux failure, fire)"
+  },
+  {
+   "ref": "Design and control loop design",
+   "where": "Design and Control loop design tabs",
+   "use": "Design pressures, loop pairing"
+  },
+  {
+   "ref": "Start-up, shutdown and emergency-shutdown procedures",
+   "where": "Exercises tab; SOP tab",
+   "use": "Node N9 (procedures)"
+  },
+  {
+   "ref": "Dynamic model",
+   "where": "HAZOP tab, part 9; this program (Test in OTS)",
+   "use": "Deviation runs with the safeguards active"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N5": [
+   {
+    "id": "r1",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Overpressure: cooling water lost",
+    "causes": "CW pump or cooling-tower failure (site-wide)\nHV-216 closed",
+    "events": "",
+    "grp": [],
+    "cons": "Nothing condenses: pressure climbs, PSV-201 lifts at 00:27 and the model peaks at 1.868 MPa g relieving up to about 19,900 Nm³/h (6,500 Nm³ in 30 min) with no trip; V-202 drains (LIC-203 LO at 04:20, down to 0.3 %) and the reflux pumps run dry",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004",
+     "S005"
+    ],
+    "S": "5",
+    "L": "3",
+    "recs": [
+     "R03",
+     "R04",
+     "R05",
+     "R12"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Overpressure: vent blocked",
+    "causes": "HV-210 closed by mistake\nPV-210 fails closed or PIC-210 in MAN at low output\nfuel-gas header blocked",
+    "events": "",
+    "grp": [],
+    "cons": "Non-condensables accumulate and blanket E-202: pressure rises slowly (model, PV-210 closed: PIC-210 HI at 06:19, PI-211 HI at 07:37, PSV-201 lifts at 07:41, about 330 Nm³/h)",
+    "cat": "PER",
+    "sg": [
+     "S002",
+     "S003",
+     "S004"
+    ],
+    "S": "4",
+    "L": "3",
+    "recs": [
+     "R03",
+     "R06",
+     "R12"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Overpressure: condenser capacity reduced",
+    "causes": "Warmer cooling water\ncondenser fouling",
+    "events": "",
+    "grp": [],
+    "cons": "Higher condensing temperature: PV-210 vents more (and more propane with it), then the pressure rises to relief (model: CW 15 °C warmer lifts PSV-201 at 01:43, up to 6,100 Nm³/h; condenser UA −50 % lifts it at 01:52, vent up to 521 Nm³/h)",
+    "cat": "PER",
+    "sg": [
+     "S002",
+     "S003",
+     "S006",
+     "S004"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R03",
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "More non-condensables",
+    "causes": "Methane or hydrogen from the upstream unit",
+    "events": "",
+    "grp": [],
+    "cons": "Condenser area blanketed; PV-210 vents more gas and propane (model, five-fold: vent up to 361 Nm³/h, PIC-210 HI at 03:29, PSV-201 briefly lifts at 04:17)",
+    "cat": "PER",
+    "sg": [
+     "S002",
+     "S003"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "Too much vent to fuel gas (column depressured)",
+    "causes": "PV-210 fails open (instrument air) or PIC-210 forced high",
+    "events": "",
+    "grp": [],
+    "cons": "Propane vapour lost to fuel gas (model, PV-210 wide open: vent up to 483 Nm³/h, pressure down to 1.54 MPa g, PIC-210 LO at 05:20); fuel-gas header overpressure; column upset",
+    "cat": "PER",
+    "sg": [
+     "S007",
+     "S008"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R07",
+     "R11"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Measurement",
+    "gw": "OTHER THAN",
+    "dev": "PIC-210 transmitter wrong",
+    "causes": "Drift, impulse-line leak or blockage, calibration error",
+    "events": "",
+    "grp": [],
+    "cons": "PV-210 acts on a wrong pressure: the true column pressure can move away from 1.70 MPa g in either direction without the control alarm seeing it",
+    "cat": "PER",
+    "sg": [
+     "S009",
+     "S004"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R08",
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Relief",
+    "gw": "OTHER THAN",
+    "dev": "PSV-201 unavailable or passing",
+    "causes": "Inlet or outlet isolation closed\nset too high\nseat damage after lifting",
+    "events": "",
+    "grp": [],
+    "cons": "No protection against the overpressure rows above (vessel rupture), or continuous loss of propane to flare",
+    "cat": "PER",
+    "sg": [
+     "S010"
+    ],
+    "S": "5",
+    "L": "1",
+    "recs": [
+     "R09",
+     "R12"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "External fire at C-201 or V-202",
+    "causes": "Pool fire from an LPG leak at the pumps or the bottoms",
+    "events": "",
+    "grp": [],
+    "cons": "Vapour generation beyond the process cases; wall overheating above the liquid, rupture and BLEVE",
+    "cat": "PER",
+    "sg": [
+     "S011"
+    ],
+    "S": "5",
+    "L": "2",
+    "recs": [
+     "R01",
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Integrity",
+    "gw": "OTHER THAN",
+    "dev": "E-202 tube leak",
+    "causes": "Corrosion, vibration",
+    "events": "",
+    "grp": [],
+    "cons": "LPG at 1.70 MPa g into the cooling water: flammable gas released at the cooling tower",
+    "cat": "PER",
+    "sg": [
+     "S012"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R10"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N1": [],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FI-216 LO alarm (250 m³/h) (first, at 00:02)",
+   "tag": "FI-216",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "PIC-210 HI alarm (1.76 MPa g)",
+   "tag": "PIC-210",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "PI-211 HI alarm (1.78 MPa g) on the independent transmitter",
+   "tag": "PI-211",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "PSV-201",
+   "tag": "PSV-201",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "no high-pressure trip",
+   "tag": "",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "TI-214, TI-215",
+   "tag": "TI-214",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "PIC-210 LO alarm (1.6 MPa g)",
+   "tag": "PIC-210",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "fuel-gas system relief",
+   "tag": "",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "PI-211 independent transmitter with its own HI alarm",
+   "tag": "PI-211",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "Relief valve test programme",
+   "tag": "",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "PSV-201 (fire case to be confirmed)",
+   "tag": "PSV-201",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "None",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Relief and fire review: confirm the design pressures of V-201, V-202 and the E-201 process side (not on the P&ID); give V-201 its own PSV sized for fire, and confirm V-202 is protected by PSV-201 with no isolation between; add fireproofing, water deluge and a depressuring route for the LPG vessels (BLEVE prevention).",
+   "by": "Process / Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Gas detection around P-201A/B, P-202A/B, V-201, V-202, E-203 and the bottoms line, with remote-operated shut-off valves on the V-201 and V-202 outlets and on the column bottoms; double mechanical seals with seal-leak alarms on the LPG pumps.",
+   "by": "Instrument / Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "High-pressure trip PSHH on two or three independent transmitters (recommended addition, 2oo3) that closes XV-209 and XV-202 (heat off) before PSV-201 lifts; LOPA to set its SIL. Today PSV-201 is the only layer against every overpressure scenario.",
+   "by": "Process safety / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Flare study: loss of cooling water is common to every column on the site, so check the flare header and flare for the simultaneous relief (C-201 alone reaches about 19,900 Nm³/h in the model); back-pressure on PSV-201.",
+   "by": "Process safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Low-low level on V-202 (LSLL-203, recommended addition) that stops P-202A/B before they run dry.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Car-seal HV-210 open (CSO register) and add a PIC-210 output-high alarm: a vent that cannot open leaves the column to PSV-201.",
+   "by": "Operations / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Fuel-gas interface: knock-out drum on the PV-210 vent before the fuel-gas header, high-flow alarm on FI-217, and tell the fuel-gas system owner that PV-210 fails open.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R08",
+   "text": "Deviation alarm between PIC-210 and PI-211: two independent transmitters must agree; operating note on which to believe.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R09",
+   "text": "PSV-201 inlet and outlet isolation valves car-sealed open; test and inspection interval; flare line free-draining.",
+   "by": "Mechanical / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R10",
+   "text": "Hydrocarbon detection on the E-202 cooling-water return: LPG leaking into the cooling water is released at the cooling tower.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R11",
+   "text": "Instrument-air failure: review the fail positions (PV-210 fails open to fuel gas, LV-202 and LV-203 fail closed) and consider an ESD on low air-header pressure; confirm the air receiver hold-up time.",
+   "by": "Instrument / Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R12",
+   "text": "LOPA for the High rows that rely on PSV-201, LSHH-203, LSLL-202 and on the operator (overpressure from cooling-water loss, a blocked vent or too much reflux; V-201 overfill and fire; LPG leaks).",
+   "by": "Process safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "CW pump or cooling-tower failure (site-wide)",
+   "HV-216 closed",
+   "HV-210 closed by mistake",
+   "PV-210 fails closed or PIC-210 in MAN at low output",
+   "fuel-gas header blocked",
+   "Warmer cooling water",
+   "condenser fouling",
+   "Methane or hydrogen from the upstream unit",
+   "PV-210 fails open (instrument air) or PIC-210 forced high",
+   "Drift, impulse-line leak or blockage, calibration error",
+   "Inlet or outlet isolation closed",
+   "set too high",
+   "seat damage after lifting",
+   "Pool fire from an LPG leak at the pumps or the bottoms",
+   "Corrosion, vibration"
+  ],
+  "cons": [
+   "Nothing condenses: pressure climbs, PSV-201 lifts at 00:27 and the model peaks at 1.868 MPa g relieving up to about 19,900 Nm³/h (6,500 Nm³ in 30 min) with no trip",
+   "V-202 drains (LIC-203 LO at 04:20, down to 0.3 %) and the reflux pumps run dry",
+   "Non-condensables accumulate and blanket E-202: pressure rises slowly (model, PV-210 closed: PIC-210 HI at 06:19, PI-211 HI at 07:37, PSV-201 lifts at 07:41, about 330 Nm³/h)",
+   "Higher condensing temperature: PV-210 vents more (and more propane with it), then the pressure rises to relief (model: CW 15 °C warmer lifts PSV-201 at 01:43, up to 6,100 Nm³/h",
+   "condenser UA −50 % lifts it at 01:52, vent up to 521 Nm³/h)",
+   "Condenser area blanketed",
+   "PV-210 vents more gas and propane (model, five-fold: vent up to 361 Nm³/h, PIC-210 HI at 03:29, PSV-201 briefly lifts at 04:17)",
+   "Propane vapour lost to fuel gas (model, PV-210 wide open: vent up to 483 Nm³/h, pressure down to 1.54 MPa g, PIC-210 LO at 05:20)",
+   "fuel-gas header overpressure",
+   "column upset",
+   "PV-210 acts on a wrong pressure: the true column pressure can move away from 1.70 MPa g in either direction without the control alarm seeing it",
+   "No protection against the overpressure rows above (vessel rupture), or continuous loss of propane to flare",
+   "Vapour generation beyond the process cases",
+   "wall overheating above the liquid, rupture and BLEVE",
+   "LPG at 1.70 MPa g into the cooling water: flammable gas released at the cooling tower"
+  ],
+  "safe": [
+   "FIC-201 LO alarm at 45 m³/h (Feed flow (rev B FAL-201))",
+   "FIC-201 HI alarm at 70 m³/h (Feed flow (rev B FAL-201))",
+   "TIC-202 LO alarm at 68 °C (Feed preheat)",
+   "TIC-202 HI alarm at 85 °C (Feed preheat)",
+   "PIC-210 LO alarm at 1.6 MPa g (Column pressure)",
+   "PIC-210 HI alarm at 1.76 MPa g (Column pressure)",
+   "PI-211 HI alarm at 1.78 MPa g (Column pressure high (independent))",
+   "TIC-208 LO alarm at 72 °C (Tray 8 temperature)",
+   "TIC-208 HI alarm at 82 °C (Tray 8 temperature)",
+   "TIC-227 HI alarm at 50 °C (Top tray temperature high)",
+   "LIC-202 LO alarm at 25 % (C-201 sump level)",
+   "LIC-202 HI alarm at 75 % (C-201 sump level)",
+   "LIC-203 LO alarm at 25 % (Reflux drum level)",
+   "LIC-203 HI alarm at 75 % (Reflux drum level)",
+   "FIC-204 LO alarm at 35 m³/h (Reflux flow)",
+   "FIC-204 HI alarm at 65 m³/h (Reflux flow)",
+   "AI-219 HI alarm at 2.5 mol % (Propane product off spec (C4+))",
+   "AI-220 HI alarm at 2 mol % (Bottoms off spec (C3))",
+   "PDI-212 HI alarm at 30 kPa (Column ΔP high (flooding))",
+   "FI-216 LO alarm at 250 m³/h (Cooling water flow low)",
+   "PI-207 LO alarm at 350 kPa g (LP steam header low)",
+   "LI-201 LO alarm at 20 % (Feed drum V-201 level (rev B LAL/LAH-201))",
+   "LI-201 HI alarm at 80 % (Feed drum V-201 level (rev B LAL/LAH-201))",
+   "LSLL-202 trip: C-201 sump < 5 % for 5 s closes XV-209 and XV-202 (SIS, I-2)",
+   "LSHH-203 trip: V-202 > 92 % for 5 s closes XV-201, XV-209 and XV-202 (SIS, I-1)",
+   "FSLL-201: feed < 15 m³/h for 5 s auto-starts spare P-201B",
+   "PDSL-230: reflux pump ΔP < 150 kPa for 3 s auto-starts spare P-202B",
+   "PSV-201 on the C-201 overhead, set 1.80 MPa g, to flare",
+   "ESD from the console (XV-201, XV-202, XV-209)",
+   "FV-201 fails closed",
+   "TV-202 fails closed",
+   "FV-204 fails open",
+   "PV-210 fails open (vent to fuel gas)",
+   "LV-203 fails closed",
+   "TV-208 fails closed",
+   "LV-202 fails closed",
+   "Spare feed pump P-201B (steam turbine)",
+   "Spare reflux pump P-202B",
+   "Check valves on the P-201A/B and P-202A/B discharges",
+   "LG-201 local level gauge and operator rounds",
+   "Rev B upgrade: LT-201 on the DCS with LAL/LAH-201 and FAL-201",
+   "Rev C upgrade: LIC-201 cascaded onto FIC-201",
+   "PSV-201 inlet and outlet blocks car-sealed open (MV-218, MV-219)",
+   "Operator response to the alarm (procedure)"
+  ],
+  "recs": [
+   "Relief and fire review: confirm the design pressures of V-201, V-202 and the E-201 process side (not on the P&ID); give V-201 its own PSV sized for fire, and confirm V-202 is protected by PSV-201 with no isolation between; add fireproofing, water deluge and a depressuring route for the LPG vessels (BLEVE prevention).",
+   "Gas detection around P-201A/B, P-202A/B, V-201, V-202, E-203 and the bottoms line, with remote-operated shut-off valves on the V-201 and V-202 outlets and on the column bottoms; double mechanical seals with seal-leak alarms on the LPG pumps.",
+   "High-pressure trip PSHH on two or three independent transmitters (recommended addition, 2oo3) that closes XV-209 and XV-202 (heat off) before PSV-201 lifts; LOPA to set its SIL. Today PSV-201 is the only layer against every overpressure scenario.",
+   "Flare study: loss of cooling water is common to every column on the site, so check the flare header and flare for the simultaneous relief (C-201 alone reaches about 19,900 Nm³/h in the model); back-pressure on PSV-201.",
+   "Low-low level on V-202 (LSLL-203, recommended addition) that stops P-202A/B before they run dry.",
+   "Car-seal HV-210 open (CSO register) and add a PIC-210 output-high alarm: a vent that cannot open leaves the column to PSV-201.",
+   "Fuel-gas interface: knock-out drum on the PV-210 vent before the fuel-gas header, high-flow alarm on FI-217, and tell the fuel-gas system owner that PV-210 fails open.",
+   "Deviation alarm between PIC-210 and PI-211: two independent transmitters must agree; operating note on which to believe.",
+   "PSV-201 inlet and outlet isolation valves car-sealed open; test and inspection interval; flare line free-draining.",
+   "Hydrocarbon detection on the E-202 cooling-water return: LPG leaking into the cooling water is released at the cooling tower.",
+   "Instrument-air failure: review the fail positions (PV-210 fails open to fuel gas, LV-202 and LV-203 fail closed) and consider an ESD on low air-header pressure; confirm the air receiver hold-up time.",
+   "LOPA for the High rows that rely on PSV-201, LSHH-203, LSLL-202 and on the operator (overpressure from cooling-water loss, a blocked vent or too much reflux; V-201 overfill and fire; LPG leaks)."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "First aid",
+    "minor upset",
+    "no release"
+   ],
+   [
+    2,
+    "Minor",
+    "Medical treatment",
+    "off-spec product",
+    "small contained release"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "unit shutdown for days; relief to flare",
+    "small LPG release"
+   ],
+   [
+    4,
+    "Major",
+    "Permanent disability or single fatality",
+    "major equipment damage",
+    "LPG release with fire"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "vessel rupture, BLEVE or vapour-cloud explosion",
+    "–"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the life of the plant",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Could happen in the plant life",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Several times in the plant life",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Yearly or more",
+    "≥ 1 /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 9,
+ "sgseq": 12,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

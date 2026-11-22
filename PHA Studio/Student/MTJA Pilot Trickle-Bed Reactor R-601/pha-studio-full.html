@@ -1005,7 +1005,9 @@ function init(){ST=load();
  $('#fileIn').onchange=e=>{if(e.target.files[0]){snap('open');openFile(e.target.files[0]);}e.target.value='';};
  window.addEventListener('beforeunload',()=>{try{persist();}catch(e){}});
  const _p=persist;persist=function(){_p();if(UI.tab)renderRail();};
- renderTop();show(ED()==='full'?'main':'home');}
+ renderTop();show(ED()==='full'?'main':'home');
+ /* ?example opens the worked example node (any edition, student builds too) */
+ if(/[?&]example\b/.test(location.search)&&U.example){if(!rowsOf(U.example.node).length)loadExample();UI.node=U.example.node;show('ws');}}
 
 /* ================= WORKSHOP MODE (facilitator), PHONE INPUT, INSTRUCTOR COMPARE ================= */
 const qs=new URLSearchParams(location.search);
