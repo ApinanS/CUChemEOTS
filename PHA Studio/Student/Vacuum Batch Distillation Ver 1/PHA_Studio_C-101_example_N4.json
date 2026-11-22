@@ -1,0 +1,849 @@
+{
+ "v": 2,
+ "unit": "vbd",
+ "meta": {
+  "title": "HAZOP and LOPA of the C-101 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "C-101",
+  "pid": "",
+  "scope": "From the gas packs and the ethanol tank to the cold vent and the product tank T-601, including utilities (instrument air, N₂, chilled water, electrical power).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Nitrogen, instrument air and power are available at start-up. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Keeps the method, timing and the guide-word discipline · Not from the project team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every deviation in full; reads back recommendations · Assistant",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, balances, the Design and Operating-window numbers · Process / design",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations",
+   "name": "",
+   "duty": "How the still is really run: charging, cut switching, cool-down · Senior operator of the pilot",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control",
+   "name": "",
+   "duty": "Loops, fail positions, SIS-100 logic and settings · Control engineer",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety",
+   "name": "",
+   "duty": "Risk matrix, consequences, links to LOPA and the SRS · Process-safety engineer",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists (when needed)",
+   "name": "",
+   "duty": "Equipment limits, sampling and GC · Mechanical (hot-oil, vacuum pump), laboratory",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "VBD-PFD-100 · Process flow diagram",
+   "where": "PFD tab",
+   "use": "Design intent, streams, conditions"
+  },
+  {
+   "ref": "VBD-PR-HMB-001 · Heat and material balance (campaigns A and B)",
+   "where": "Process engineering tab",
+   "use": "Flows, duties, compositions (campaigns A and B)"
+  },
+  {
+   "ref": "VBD-PID-001 · P&ID · column, pot, drum, distillate, vacuum",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, valves, line numbers"
+  },
+  {
+   "ref": "VBD-PID-002 · P&ID · hot-oil skid, tempered water, SIS-100",
+   "where": "P&ID tab",
+   "use": "Hot oil, tempered water, SIS-100, interlock schedule"
+  },
+  {
+   "ref": "VBD-SA-HZP-001 · HAZOP report",
+   "where": "HAZOP tab",
+   "use": "Reference study of the OTS (rev B): worksheets, recommendations"
+  },
+  {
+   "ref": "VBD-IN-CE-001 · Cause and effect matrix",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects"
+  },
+  {
+   "ref": "VBD-IN-SRS-001 · Safety requirements specification of SIS-100",
+   "where": "SRS of SIF tab",
+   "use": "SIF-01…05: set points, delays, SIL targets"
+  },
+  {
+   "ref": "VBD-IN-INL-001 · Instrument index",
+   "where": "Instrumentation & control tab",
+   "use": "Instrument tags, ranges, fail positions"
+  },
+  {
+   "ref": "VBD-PR-RLB-001 · Relief load summary",
+   "where": "Relief & vent tab",
+   "use": "Relief cases (devices recommended, HOLD)"
+  },
+  {
+   "ref": "VBD-ME-EQL-001 · Equipment list",
+   "where": "Mechanical tab",
+   "use": "Design pressures and temperatures"
+  },
+  {
+   "ref": "VBD-PR-LL-001 · Line list with sizing",
+   "where": "Process engineering tab",
+   "use": "Line numbers and sizes"
+  },
+  {
+   "ref": "VBD-LY-PP-001 · Plot plan (teaching layout)",
+   "where": "Layout & isometrics tab",
+   "use": "Where things are: hot surfaces, access, the bay"
+  },
+  {
+   "ref": "SIS-100 logic: trips, delays, arming permissives, first-out",
+   "where": "SIS-100 and campaign tab",
+   "use": "What trips, when, and what the trip does"
+  },
+  {
+   "ref": "Operating procedures SOP-01…14",
+   "where": "SOP tab",
+   "use": "Charging, start-up, cut switching, shutdown, vacuum break, discharge"
+  },
+  {
+   "ref": "Dynamic model of C-101",
+   "where": "DCS console (▶ OTS tests)",
+   "use": "Run a cause with the safeguards active and read the alarms and trips"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N4": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No tempered water to E-103",
+    "causes": "P-108 trips (motor, power)\nHV-105 closed by mistake\nloop isolation valve shut",
+    "events": "",
+    "grp": [],
+    "cons": "Vapour no longer condensed: ester vapour to VP-101 and the vent, top pressure rises; no reflux",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R01",
+     "R02",
+     "R08",
+     "R09"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Tempered-water flow low",
+    "causes": "HV-105 strainer blocking (flow down by up to 80 %)\nHIC-105 set too low\nP-108 worn",
+    "events": "",
+    "grp": [],
+    "cons": "Condenser capacity falls; part of the vapour passes to VP-101; FSLL-108 trips heating when the flow falls below its setting",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S004"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R06",
+     "R08"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Temperature",
+    "gw": "LESS",
+    "dev": "Tempered water too cold (below 45 °C)",
+    "causes": "Tempered-water TCV fails (supply falls to ≈ 22 °C)\nloop heater off\ncold water used at start-up",
+    "events": "",
+    "grp": [],
+    "cons": "C16/C18 esters freeze on the tubes: E-103 plugs, condenser capacity and vacuum lost, column upset, ester to VP-101",
+    "cat": "PER",
+    "sg": [
+     "S005",
+     "S006",
+     "S007"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R05",
+     "R07",
+     "R09"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Tempered water too hot (above 80 °C)",
+    "causes": "Loop heater or TCV fails towards heating",
+    "events": "",
+    "grp": [],
+    "cons": "Less temperature difference: condenser capacity falls a little (dew point ≈ 190 °C); small effect",
+    "cat": "PER",
+    "sg": [
+     "S008"
+    ],
+    "S": "1",
+    "L": "2",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Water enters the process side (E-103 tube leak)",
+    "causes": "Tube leak\nprocess side is under vacuum so water leaks inward",
+    "events": "",
+    "grp": [],
+    "cons": "Water flashes in E-103/D-104: pressure rises, P-104 cavitates, wet product",
+    "cat": "PER",
+    "sg": [
+     "S009",
+     "S010"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Phase",
+    "gw": "AS WELL AS",
+    "dev": "Frozen ester left in E-103 from the last batch",
+    "causes": "Tempered water left running cold after shutdown\ncold start with water below 45 °C",
+    "events": "",
+    "grp": [],
+    "cons": "Next start-up with a partly plugged condenser: high pressure, vapour to VP-101",
+    "cat": "PER",
+    "sg": [
+     "S005",
+     "S011"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Heat duty",
+    "gw": "MORE",
+    "dev": "Vapour load above the condenser capacity",
+    "causes": "Duty much higher than design (N2/N3)\ncondenser capacity margin 2.5× the design load (assumed)",
+    "events": "",
+    "grp": [],
+    "cons": "Uncondensed vapour to VP-101, pressure rises",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R03",
+     "R02",
+     "R09"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N1": [],
+  "N2": [],
+  "N3": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FI-108 L alarm 0.6 m³/h",
+   "tag": "FI-108",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "FSLL-108 trips heating at < 0.36 m³/h (10 s, shares FT-108 with FI-108)",
+   "tag": "FSLL-108",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "PSHH-102 at > 300 mbar",
+   "tag": "PSHH-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "FSLL-108 at < 0.36 m³/h (10 s)",
+   "tag": "FSLL-108",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "TI-109 L alarm 45 °C",
+   "tag": "TI-109",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "TI-105 L alarm 45 °C",
+   "tag": "TI-105",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "no trip",
+   "tag": "",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "TI-109 H alarm 80 °C",
+   "tag": "TI-109",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "PIC-102 H alarm 200 mbar",
+   "tag": "PIC-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "lab sample of the distillate",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "start-up procedure",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "E-103 OVLD alarm (condenser overloaded) on the DCS",
+   "tag": "E-103",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "JIC-101 H alarm 5 kW",
+   "tag": "JIC-101",
+   "type": "Alarm",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Fit a non-return and an automatic isolation valve on the VP-101 suction; add a VP-101 run-status alarm.",
+   "by": "Mechanical / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Route the VP-101 exhaust outdoors through a demister; check and empty the trap every batch; consider a cold trap.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Clamp the JIC-101 set point at 5 kW once the pot boils and add a PDI-103 high-high override in the BPCS that cuts duty; train the heat-up duty cut.",
+   "by": "Control / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Analyse every charge before charging (water, methanol, C16:0) and adapt the cut plan to the feed.",
+   "by": "Operations / Laboratory",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Add a TI-109 low-low alarm and make the tempered-water TCV fail towards warm; consider stopping heating when TI-109 stays below 40 °C (assumed).",
+   "by": "Instrument / Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Fit a duplex strainer with a ΔP gauge upstream of HV-105.",
+   "by": "Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Warm E-103 to 60 °C before the first vapour arrives and never leave the tempered water cold after shutdown.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R08",
+   "text": "Carry every High row and every row that relies on a SIS-100 trip into LOPA; record the SIL targets in the SRS.",
+   "by": "Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R09",
+   "text": "Train the deviations of the dynamic check on the simulator (one per shift team) and revalidate this HAZOP every 5 years or at any MOC.",
+   "by": "Operations / Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "P-108 trips (motor, power)",
+   "HV-105 closed by mistake",
+   "loop isolation valve shut",
+   "HV-105 strainer blocking (flow down by up to 80 %)",
+   "HIC-105 set too low",
+   "P-108 worn",
+   "Tempered-water TCV fails (supply falls to ≈ 22 °C)",
+   "loop heater off",
+   "cold water used at start-up",
+   "Loop heater or TCV fails towards heating",
+   "Tube leak",
+   "process side is under vacuum so water leaks inward",
+   "Tempered water left running cold after shutdown",
+   "cold start with water below 45 °C",
+   "Duty much higher than design (N2/N3)",
+   "condenser capacity margin 2.5× the design load (assumed)"
+  ],
+  "cons": [
+   "Vapour no longer condensed: ester vapour to VP-101 and the vent, top pressure rises",
+   "no reflux",
+   "Condenser capacity falls",
+   "part of the vapour passes to VP-101",
+   "FSLL-108 trips heating when the flow falls below its setting",
+   "C16/C18 esters freeze on the tubes: E-103 plugs, condenser capacity and vacuum lost, column upset, ester to VP-101",
+   "Less temperature difference: condenser capacity falls a little (dew point ≈ 190 °C)",
+   "small effect",
+   "Water flashes in E-103/D-104: pressure rises, P-104 cavitates, wet product",
+   "Next start-up with a partly plugged condenser: high pressure, vapour to VP-101",
+   "Uncondensed vapour to VP-101, pressure rises"
+  ],
+  "safe": [
+   "PIC-102 L alarm at 140 mbar (Column top pressure, suppressed while VP-101 is stopped)",
+   "PIC-102 H alarm at 200 mbar (Column top pressure, suppressed while VP-101 is stopped)",
+   "PDI-103 H alarm at 18 mbar (Column ΔP high (flooding), active only while boiling in RUN)",
+   "TIC-101 H alarm at 280 °C (Pot temperature high)",
+   "TIC-107 H alarm at 315 °C (Hot-oil supply high)",
+   "JIC-101 H alarm at 5 kW (Pot duty high (flooding risk), active only while boiling in RUN)",
+   "LIC-104 L alarm at 20 % (Reflux drum level, suppressed while P-104 is stopped)",
+   "LIC-104 H alarm at 85 % (Reflux drum level, suppressed while P-104 is stopped)",
+   "LI-101 L alarm at 30 % (Pot level low, active in RUN only)",
+   "FI-108 L alarm at 0.6 m³/h (Tempered-water flow low, suppressed outside RUN with P-108 stopped)",
+   "TI-109 L alarm at 45 °C (Tempered-water temperature, suppressed outside RUN with P-108 stopped)",
+   "TI-109 H alarm at 80 °C (Tempered-water temperature, suppressed outside RUN with P-108 stopped)",
+   "TI-105 L alarm at 45 °C (Condensate cold (freezing risk), active only while boiling in RUN)",
+   "FIC-104 L alarm at 20 kg/h (Reflux flow low, suppressed while P-104 is stopped)",
+   "C-101 AIR alarm (air entering the hot column)",
+   "E-103 OVLD alarm (condenser overloaded, vapour to the vacuum pump)",
+   "P-104 DRY alarm (reflux pump running dry)",
+   "TSHH-101 (TE-101B, own sensor) pot > 290 °C – SIS-100 trip SIF-01, 5 s delay",
+   "PSHH-102 (PT-102, shared with PIC-102) top > 300 mbar – SIS-100 trip SIF-02, 5 s delay, armed in RUN",
+   "FSLL-108 (FT-108, shared with FI-108) tempered water < 0.36 m³/h – SIS-100 trip SIF-03, 10 s delay, armed in RUN",
+   "LSLL-101 (LT-101, shared with LI-101) pot level < 20 % – SIS-100 trip SIF-04, 5 s delay, armed in RUN",
+   "TSHH-107 (TE-107B, own sensor) hot oil > 330 °C – SIS-100 trip SIF-05, 5 s delay",
+   "HS-100 emergency stop button (manual SIS-100 trip)",
+   "SIS-100 trip action: TV-101 shut (JIC-101 MAN 0 %), HE-101 off (TIC-107 MAN 0 %), XV-101 closed, XV-107 to total reflux",
+   "LSLL-104 D-104 level < 5 % stops P-104 (pump protection, 5 s; equipment interlock, not a SIF)",
+   "SIS-100 arming permissives: VP-101 running and PIC-102 below 250 mbar; Tempered water P-108 running, FI-108 ≥ 0.6 m³/h; Pot level LI-101 above 30 %; Hot-oil pump P-101 running; Hot oil TIC-107 below 320 °C; N₂ vacuum break HV-110 closed",
+   "PV-102 fail open (PIC-102)",
+   "TV-101 fail closed (JIC-101)",
+   "FV-104 fail open (FIC-104)",
+   "FV-105 fail closed (FIC-105)",
+   "XV-101 SIS valve fail closed",
+   "HE-101 heater runs only with P-101 running (as the model behaves; to be confirmed on the plant)",
+   "HV-110 N₂ vacuum break only with the pot below 150 °C (procedure)",
+   "Leak test (pressure-rise test, VP-101 isolated) before heat-up",
+   "D-105 sample and lab result before each cut switch",
+   "End-of-campaign rule (cumulative TK-202 purity)",
+   "Charging procedure 110 L (LI-101)",
+   "Residue drained below 60 °C (SOP-11)",
+   "VP-101 trap (collects uncondensed ester)",
+   "Operator response to the alarm",
+   "Written procedure (SOP) and checklist",
+   "Insulation of hot surfaces and PPE for sampling and draining",
+   "Fire extinguishers and emergency response"
+  ],
+  "recs": [
+   "Fit a non-return and an automatic isolation valve on the VP-101 suction; add a VP-101 run-status alarm.",
+   "Route the VP-101 exhaust outdoors through a demister; check and empty the trap every batch; consider a cold trap.",
+   "Clamp the JIC-101 set point at 5 kW once the pot boils and add a PDI-103 high-high override in the BPCS that cuts duty; train the heat-up duty cut.",
+   "Analyse every charge before charging (water, methanol, C16:0) and adapt the cut plan to the feed.",
+   "Add a TI-109 low-low alarm and make the tempered-water TCV fail towards warm; consider stopping heating when TI-109 stays below 40 °C (assumed).",
+   "Fit a duplex strainer with a ΔP gauge upstream of HV-105.",
+   "Warm E-103 to 60 °C before the first vapour arrives and never leave the tempered water cold after shutdown.",
+   "Carry every High row and every row that relies on a SIS-100 trip into LOPA; record the SIL targets in the SRS.",
+   "Train the deviations of the dynamic check on the simulator (one per shift team) and revalidate this HAZOP every 5 years or at any MOC."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Minor",
+    "First aid",
+    "Product rework only",
+    "No release"
+   ],
+   [
+    2,
+    "Moderate",
+    "–",
+    "Batch off-spec or lost; minor equipment damage",
+    "Small contained spill"
+   ],
+   [
+    3,
+    "Serious",
+    "Lost-time injury (burn)",
+    "Equipment damage",
+    "Release of ester vapour indoors"
+   ],
+   [
+    4,
+    "Major",
+    "Permanent injury",
+    "Fire in the unit; major equipment damage",
+    "–"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Fatality",
+    "Fire spreading beyond the pilot hall",
+    "–"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the life of the pilot",
+    "< 10⁻³ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Could happen once in the life of the pilot",
+    "10⁻³–10⁻² /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Once in a few years",
+    "10⁻²–10⁻¹ /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "About once a year or a few times a year",
+    "0.1–1 /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Several times per year or more",
+    "> 1 /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 7,
+ "sgseq": 13,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

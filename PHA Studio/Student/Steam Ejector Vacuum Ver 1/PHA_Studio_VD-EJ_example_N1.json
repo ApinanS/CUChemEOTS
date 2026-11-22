@@ -1,0 +1,1057 @@
+{
+ "v": 2,
+ "unit": "VD-EJ",
+ "meta": {
+  "title": "HAZOP and LOPA of the VD-EJ unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "VD-EJ",
+  "pid": "",
+  "scope": "From the feed control valve FV-101 through the column T-101, reboiler E-101, overhead condenser E-102, reflux drum V-101 and vent condenser E-103 to the two-stage ejector set J-201/J-202 with E-201/E-202, the start-up hogger J-203, the hotwell V-201 and the condensate pumps P-201, including utilities (MP and LP steam, cooling and chilled water, N₂, instrument air, electrical power).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions (top 7.0 kPa a). MP steam, cooling water, nitrogen, instrument air and power are available at start-up. Instruments, trips and PSV-101 are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Guides the team through nodes, parameters and guide words; keeps to the method; not from the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every deviation (full recording) in the worksheet",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent of T-101 and the ejector set, the heat and mass balance, the vacuum and steam figures",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the unit is really run: evacuation with the hogger, vacuum break, alarms the operators see",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "PIC-101 and the N2 bleed, alarms, I-1/I-2/I-3 trips, fail positions, the C&E",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety engineer",
+   "name": "",
+   "duty": "Risk matrix, relief (PSV-101), air ingress and flammability, follow-up to LOPA",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Ejector vendor (MDP, motive-steam quality), mechanical (vacuum rating FV), WWT (acid in the condensate)",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID VD-PID-101 and VD-PID-201 Rev A",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, valves, relief"
+  },
+  {
+   "ref": "PFD VD-PFD-001 and HMB VD-PE-HMB-001",
+   "where": "Process / BFD & PFD tabs",
+   "use": "Design intent, flows, conditions"
+  },
+  {
+   "ref": "C&E VD-IN-CE-001",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects (I-1, I-2, I-3)"
+  },
+  {
+   "ref": "Instrument list VD-IN-INL-001",
+   "where": "P&ID / Engineering tabs",
+   "use": "Instrument tags and ranges"
+  },
+  {
+   "ref": "Relief-load summary VD-PE-RLB-001",
+   "where": "Engineering tab (process)",
+   "use": "PSV-101 set pressure and governing case"
+  },
+  {
+   "ref": "Equipment list VD-ME-EQL-001",
+   "where": "Design tab",
+   "use": "Design pressures (FV / 3.5 bar g) and temperatures"
+  },
+  {
+   "ref": "Ejector performance curves (MDP, capacity)",
+   "where": "Design / Operating windows tabs",
+   "use": "Break-points, motive-steam limits"
+  },
+  {
+   "ref": "SIS logic, permissives, trips",
+   "where": "SIS tab",
+   "use": "I-1 column trip, I-2 hotwell, I-3 hogger permissive"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP tab and Exercises tab (procedures)",
+   "use": "Start-up and evacuation, shutdown, vacuum break"
+  },
+  {
+   "ref": "HAZOP report VD-SA-HZP-001 and the dynamic model",
+   "where": "HAZOP tab, HAZOP Studio tab",
+   "use": "Reference study; deviation runs with the safeguards active"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No feed to T-101",
+    "causes": "FV-101 fails closed\nXV-101 closed by I-1\nfeed supply lost (off-plot)\nFIC-101 transmitter reads high",
+    "events": "",
+    "grp": [],
+    "cons": "Sump inventory falls (LIC-102 LO after about 17 min in the model); off-spec; reboiler keeps heating a shrinking inventory",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004",
+     "S005"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "Feed above 10 t/h",
+    "causes": "FIC-101 set point error\nFV-101 positioner fault (opens)\nFIC-101 transmitter reads low",
+    "events": "",
+    "grp": [],
+    "cons": "Higher liquid and vapour load: flooding (PDI-105), acrylic acid in the distillate, sump level rises",
+    "cat": "PER",
+    "sg": [
+     "S006",
+     "S007",
+     "S008",
+     "S009",
+     "S010"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Feed below design",
+    "causes": "FIC-101 in MAN at low output\nfeed strainer partly blocked",
+    "events": "",
+    "grp": [],
+    "cons": "Turndown: poor wetting of the packing, off-spec products",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S008",
+     "S011"
+    ],
+    "S": "1",
+    "L": "4",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Feed hotter than 70 °C",
+    "causes": "Upstream heater fault (off-plot)",
+    "events": "",
+    "grp": [],
+    "cons": "Feed flashes at 7 kPa a: extra vapour to E-102 and the ejectors, top pressure rises, entrainment",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013",
+     "S007"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Column top pressure above 7.0 kPa a (loss of vacuum)",
+    "causes": "Ejector capacity lost (motive steam, cooling water, see N5–N8)\nair in-leakage\nPV-201 opens too far\nE-102 condensing capacity lost",
+    "events": "",
+    "grp": [],
+    "cons": "Boiling points rise with the pressure: the bottoms reach 95 °C at a top pressure of 14.2 kPa a and 100 °C at 19.9 kPa a; acrylic acid polymerises (exothermic, can run away), plugs packing, reboiler and lines; off-spec",
+    "cat": "PER",
+    "sg": [
+     "S013",
+     "S014",
+     "S004",
+     "S015",
+     "S016"
+    ],
+    "S": "4",
+    "L": "3",
+    "recs": [
+     "R01",
+     "R02",
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Pressure",
+    "gw": "LESS",
+    "dev": "Column pressure below 7.0 kPa a",
+    "causes": "N2 supply lost (no bleed)\nPT-101 reads high\nPIC-101 in MAN with PV-201 closed",
+    "events": "",
+    "grp": [],
+    "cons": "Lower boiling points, larger vapour volume: flooding and loss of product to the vent; no mechanical concern (T-101 rated for full vacuum)",
+    "cat": "PER",
+    "sg": [
+     "S017",
+     "S018",
+     "S019"
+    ],
+    "S": "1",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Pressure",
+    "gw": "OTHER THAN",
+    "dev": "Positive pressure instead of vacuum (N2 overpressure)",
+    "causes": "HV-202 left open with XV-201 shut\nPV-201 open with the ejectors stopped\nN2 header at 5 bar g",
+    "events": "",
+    "grp": [],
+    "cons": "Column pressurised above its 3.5 bar g design: flange leaks or rupture, release of hot acetic and acrylic acid (flammable, corrosive)",
+    "cat": "PER",
+    "sg": [
+     "S020",
+     "S021",
+     "S022",
+     "S023"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R04",
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Air (oxygen) in the column and overhead",
+    "causes": "In-leakage at flanges, sight glasses and seals\na drain or vent opened under vacuum\nXV-203 passing",
+    "events": "",
+    "grp": [],
+    "cons": "More non-condensable load: pressure rises (see N1.5); oxygen with hot acetic and acrylic acid vapour can form a flammable mixture in the column top, E-103, the vacuum line and the ejectors; ignition by static or pyrophoric and polymer deposits → internal deflagration",
+    "cat": "PER",
+    "sg": [
+     "S024",
+     "S018",
+     "S014",
+     "S025",
+     "S026",
+     "S027"
+    ],
+    "S": "5",
+    "L": "2",
+    "recs": [
+     "R06",
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Composition",
+    "gw": "PART OF",
+    "dev": "Feed off design composition (more acetic acid or water)",
+    "causes": "Upstream unit upset",
+    "events": "",
+    "grp": [],
+    "cons": "More overhead vapour and vent load; water lowers the dew point in E-103; off-spec",
+    "cat": "PER",
+    "sg": [
+     "S008",
+     "S011",
+     "S028"
+    ],
+    "S": "1",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": [],
+  "N10": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FIC-101 indication",
+   "tag": "FIC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "LIC-102 LO 20 %",
+   "tag": "LIC-102",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "LIC-102 throttles FV-105",
+   "tag": "LIC-102",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "TI-104 HI 95 °C",
+   "tag": "TI-104",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "TSHH-104 100 °C (I-1)",
+   "tag": "TSHH-104",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "FIC-101 (FV-101 fail closed)",
+   "tag": "FIC-101",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "PDI-105 HI 11.5 kPa",
+   "tag": "PDI-105",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "AIT-107 HI 1.0 wt%",
+   "tag": "AIT-107",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "LIC-102 HI 80 %",
+   "tag": "LIC-102",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "LSHH-102 90 % (I-1)",
+   "tag": "LSHH-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "AIT-108 HI 0.8 wt%",
+   "tag": "AIT-108",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "TI-101",
+   "tag": "TI-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "PIC-101 HI 7.6 kPa a",
+   "tag": "PIC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "PI-201 HI 9 kPa a",
+   "tag": "PI-201",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "TSHH-104 100 °C → I-1 closes XV-101 and XV-102",
+   "tag": "TSHH-104",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "PSHH-102 30 kPa a (I-1, armed in RUN)",
+   "tag": "PSHH-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "PIC-101 LO 6.5 kPa a",
+   "tag": "PIC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "FI-201 LO 0.5 kg/h",
+   "tag": "FI-201",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "T-101 design FV",
+   "tag": "T-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "PSV-101 set 3.5 bar g to flare",
+   "tag": "PSV-101",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S021",
+   "text": "PSHH-102 30 kPa a (I-1, in RUN only)",
+   "tag": "PSHH-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S022",
+   "text": "check valves on the N2 injections (VD-PID-201 note 7)",
+   "tag": "PID-201",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S023",
+   "text": "T-101 design 3.5 bar g",
+   "tag": "T-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S024",
+   "text": "PIC-101 (PV-201 closes to absorb a leak)",
+   "tag": "PIC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S025",
+   "text": "ejectors sized for 18.54 kg/h against 10 kg/h actual leak",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S026",
+   "text": "vacuum-tight construction (VD-PID-101 note C)",
+   "tag": "PID-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S027",
+   "text": "FA-201 on the vent",
+   "tag": "FA-201",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S028",
+   "text": "TI-102 HI 53 °C",
+   "tag": "TI-102",
+   "type": "Other",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Cut the reboiler heat before the bottoms reach 100 °C on a loss of vacuum: add a column-pressure initiator to I-1 below the pressure at which TI-104 reaches 95 °C (top 14.2 kPa a), or re-set TSHH-104, setting and process safety time to be confirmed in the SRS of SIF tab. In every dynamic run TSHH-104 was the first out; PSHH-102 (30 kPa a) never acted first.",
+   "by": "Process / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Define the polymerisation-inhibitor system (inhibitor, dosing points to feed and reflux, minimum concentration, oxygen need of phenolic inhibitors) and show it on VD-PID-101.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Simulator training on the dynamic-check scenarios (loss of CW, loss of motive steam, air ingress, vacuum break) for every shift.",
+   "by": "Training",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Verify the PSV-101 relief case for N2 at 5 bar g through HV-202 / PV-201 with the ejectors stopped (TBC on VD-PID-101 note 9) and its seat tightness against back-flow from the flare under vacuum (consider a rupture disc with tell-tale upstream).",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Write the vacuum-break and shutdown procedure: cool to TI-104 < 80 °C under vacuum, break with N2 only through HV-202, never with air; close HV-202 at ≥ 95 kPa a; car-seal closed all vents and drains on vacuum equipment.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Leak (rate-of-rise or blank-off) test before every start-up and after maintenance, acceptance within the HEI allowance of 18.54 kg/h; trend the PV-201 opening as a leak indicator.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Add an oxygen analyser on the vent gas (E-103 outlet / J-201 suction) with a high alarm, set from the limiting oxygen concentration of acetic and acrylic acid (TBC).",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "FV-101 fails closed",
+   "XV-101 closed by I-1",
+   "feed supply lost (off-plot)",
+   "FIC-101 transmitter reads high",
+   "FIC-101 set point error",
+   "FV-101 positioner fault (opens)",
+   "FIC-101 transmitter reads low",
+   "FIC-101 in MAN at low output",
+   "feed strainer partly blocked",
+   "Upstream heater fault (off-plot)",
+   "Ejector capacity lost (motive steam, cooling water, see N5–N8)",
+   "air in-leakage",
+   "PV-201 opens too far",
+   "E-102 condensing capacity lost",
+   "N2 supply lost (no bleed)",
+   "PT-101 reads high",
+   "PIC-101 in MAN with PV-201 closed",
+   "HV-202 left open with XV-201 shut",
+   "PV-201 open with the ejectors stopped",
+   "N2 header at 5 bar g",
+   "In-leakage at flanges, sight glasses and seals",
+   "a drain or vent opened under vacuum",
+   "XV-203 passing",
+   "Upstream unit upset"
+  ],
+  "cons": [
+   "Sump inventory falls (LIC-102 LO after about 17 min in the model)",
+   "off-spec",
+   "reboiler keeps heating a shrinking inventory",
+   "Higher liquid and vapour load: flooding (PDI-105), acrylic acid in the distillate, sump level rises",
+   "Turndown: poor wetting of the packing, off-spec products",
+   "Feed flashes at 7 kPa a: extra vapour to E-102 and the ejectors, top pressure rises, entrainment",
+   "Boiling points rise with the pressure: the bottoms reach 95 °C at a top pressure of 14.2 kPa a and 100 °C at 19.9 kPa a",
+   "acrylic acid polymerises (exothermic, can run away), plugs packing, reboiler and lines",
+   "Lower boiling points, larger vapour volume: flooding and loss of product to the vent",
+   "no mechanical concern (T-101 rated for full vacuum)",
+   "Column pressurised above its 3.5 bar g design: flange leaks or rupture, release of hot acetic and acrylic acid (flammable, corrosive)",
+   "More non-condensable load: pressure rises (see N1.5)",
+   "oxygen with hot acetic and acrylic acid vapour can form a flammable mixture in the column top, E-103, the vacuum line and the ejectors",
+   "ignition by static or pyrophoric and polymer deposits → internal deflagration",
+   "More overhead vapour and vent load",
+   "water lowers the dew point in E-103"
+  ],
+  "safe": [
+   "FIC-101 indication",
+   "LIC-102 LO 20 %",
+   "LIC-102 throttles FV-105",
+   "TI-104 HI 95 °C",
+   "TSHH-104 100 °C (I-1)",
+   "FIC-101 (FV-101 fail closed)",
+   "PDI-105 HI 11.5 kPa",
+   "AIT-107 HI 1.0 wt%",
+   "LIC-102 HI 80 %",
+   "LSHH-102 90 % (I-1)",
+   "AIT-108 HI 0.8 wt%",
+   "TI-101",
+   "PIC-101 HI 7.6 kPa a",
+   "PI-201 HI 9 kPa a",
+   "TSHH-104 100 °C → I-1 closes XV-101 and XV-102",
+   "PSHH-102 30 kPa a (I-1, armed in RUN)",
+   "PIC-101 LO 6.5 kPa a",
+   "FI-201 LO 0.5 kg/h",
+   "T-101 design FV",
+   "PSV-101 set 3.5 bar g to flare",
+   "PSHH-102 30 kPa a (I-1, in RUN only)",
+   "check valves on the N2 injections (VD-PID-201 note 7)",
+   "T-101 design 3.5 bar g",
+   "PIC-101 (PV-201 closes to absorb a leak)",
+   "ejectors sized for 18.54 kg/h against 10 kg/h actual leak",
+   "vacuum-tight construction (VD-PID-101 note C)",
+   "FA-201 on the vent",
+   "TI-102 HI 53 °C",
+   "FIC-102 indication",
+   "FIC-102",
+   "TSHH-104 100 °C (I-1 closes XV-102)",
+   "TSHH-104 100 °C → I-1 closes XV-102 and XV-101",
+   "permissive TI-104 < 95 °C before XV-102 opens",
+   "PSV-101 3.5 bar g",
+   "LSHH-102 90 % → I-1",
+   "P-102A/B spare",
+   "permissive LIC-102 20–85 %",
+   "ST-101",
+   "FIC-102 indication against FV-102 opening",
+   "TI-104",
+   "FI-106 LO 60 t/h",
+   "TI-106 HI 43 °C",
+   "TI-110 HI 33 °C",
+   "LIC-101 HI 80 %",
+   "P-101A/B spare",
+   "vent line sloped back to V-101 (VD-PID-101 note 5)",
+   "LIC-101 LO 20 %",
+   "FIC-104 indication",
+   "PIC-101 (bleed closes)",
+   "TI-201 HI 18 °C",
+   "PSV-101 seat test at proof test",
+   "FI-201 HI 13 kg/h",
+   "PI-202 HI 29 kPa a",
+   "PV-201 fails closed",
+   "J-201 BREAK alarm",
+   "XV-201 (operator)",
+   "Line sloped to V-101 (VD-PID-101 note 5)",
+   "PI-201 against PIC-101",
+   "PIC-210 LO 9.7 bar a",
+   "PI-209 LO 10.4 bar a",
+   "BREAK alarms",
+   "PV-210 fails open on air loss",
+   "PIC-210 HI 11.0 bar a",
+   "FI-210 indication",
+   "S-210 with ST-210",
+   "PI-211",
+   "TI-203 HI 56 °C",
+   "BREAK alarm",
+   "TI-205 HI 60 °C",
+   "PI-202 HI 29 kPa a (just below MDP1 29.7)",
+   "Insulation (typical practice, not shown on the P&ID)",
+   "LIC-201 HI 80 %",
+   "PI-203 HI 114 kPa a",
+   "seal leg to V-201",
+   "TI-206",
+   "FA-201 flame arrester",
+   "motive steam dilutes the vent while the stages run (typical practice)",
+   "vent to a safe location (VD-PID-201)",
+   "PI-203",
+   "SL-201 silencer",
+   "BREAK alarms (surging)",
+   "LSLL-201 10 % → I-2 stops P-201A/B (separate sensor)",
+   "LIC-201 LO 20 %",
+   "leg ≥ 10.4 m",
+   "P-201A/B spare",
+   "Leg ≥ 10.4 m: seals at full vacuum (101.3 kPa head)",
+   "SS316 condensate system (VD-PID-201 note 6)",
+   "Vent routed to a safe location (VD-PID-201 \"VENT TO ATM\")",
+   "I-3 (XV-203 opens only with J-203 steam)",
+   "PI-213",
+   "FI-213",
+   "Procedure: take the hogger out below 20 kPa a, XV-203 first then XV-213 (VD-PID-201 start-up notes)",
+   "I-3 permissive (XV-203 cannot open unless XV-213 is open)",
+   "XV-203 OPEN alarm with steam off",
+   "evacuation rate watched on PIC-101",
+   "SL-203 silencer",
+   "vent to a safe location",
+   "Procedure: last stage first (VD-PID-201 start-up note 3)",
+   "Permissives: top below 15 kPa a and TI-104 below 95 °C before XV-102 opens",
+   "Shutdown procedure: cool to TI-104 < 80 °C under vacuum first",
+   "TSHH-104 100 °C while XV-102 is open",
+   "Procedure: break with N2 only through HV-202 (VD-PID-101 note B, VD-PID-201 note B)",
+   "cool first (TI-104 < 80 °C)",
+   "PSV-101 3.5 bar g to flare",
+   "check valves on the N2 injections",
+   "T-101 design FV (VD-PID-101)",
+   "vacuum relief by HV-202 (manual)",
+   "Permit to work (typical practice)",
+   "XV-211 / XV-212 / XV-213 (single valves)",
+   "FV-101 / FV-102 FC (heat cut)",
+   "Fail positions FV-101..105 FC, PV-201 FC, PV-210 FO, LV-201 FC",
+   "Procedure (below 20 kPa a)"
+  ],
+  "recs": [
+   "Cut the reboiler heat before the bottoms reach 100 °C on a loss of vacuum: add a column-pressure initiator to I-1 below the pressure at which TI-104 reaches 95 °C (top 14.2 kPa a), or re-set TSHH-104, setting and process safety time to be confirmed in the SRS of SIF tab. In every dynamic run TSHH-104 was the first out; PSHH-102 (30 kPa a) never acted first.",
+   "Define the polymerisation-inhibitor system (inhibitor, dosing points to feed and reflux, minimum concentration, oxygen need of phenolic inhibitors) and show it on VD-PID-101.",
+   "Simulator training on the dynamic-check scenarios (loss of CW, loss of motive steam, air ingress, vacuum break) for every shift.",
+   "Verify the PSV-101 relief case for N2 at 5 bar g through HV-202 / PV-201 with the ejectors stopped (TBC on VD-PID-101 note 9) and its seat tightness against back-flow from the flare under vacuum (consider a rupture disc with tell-tale upstream).",
+   "Write the vacuum-break and shutdown procedure: cool to TI-104 < 80 °C under vacuum, break with N2 only through HV-202, never with air; close HV-202 at ≥ 95 kPa a; car-seal closed all vents and drains on vacuum equipment.",
+   "Leak (rate-of-rise or blank-off) test before every start-up and after maintenance, acceptance within the HEI allowance of 18.54 kg/h; trend the PV-201 opening as a leak indicator.",
+   "Add an oxygen analyser on the vent gas (E-103 outlet / J-201 suction) with a high alarm, set from the limiting oxygen concentration of acetic and acrylic acid (TBC)."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "Off-spec product",
+    "No release"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid or medical treatment",
+    "Repair < 1 day",
+    "Small release contained on site"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "Equipment damage, unit down < 1 week",
+    "Reportable vent or WWT exceedance"
+   ],
+   [
+    4,
+    "Major",
+    "Single fatality or permanent disability",
+    "Vessel rupture or fire in the unit",
+    "Significant environmental release"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "Explosion or fire beyond the unit",
+    "Major off-site impact"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the industry",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Has happened in the industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Could happen in the plant life",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Several times in the plant life",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Expected about once a year or more",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 9,
+ "sgseq": 28,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}
