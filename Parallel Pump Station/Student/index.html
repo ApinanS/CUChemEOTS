@@ -1106,16 +1106,25 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
 <section class="view" id="howto">
  <div class="panel doc">
   <h2>How to use the simulator</h2>
-  <nav class="toc small"><a href="#hu1">1 Quick start</a> · <a href="#hu2">2 Top bar</a> · <a href="#hu3">3 Tabs</a> · <a href="#hu4">4 DCS console</a> · <a href="#hu5">5 Pump curves</a> · <a href="#hu6">6 Faceplates</a> · <a href="#hu7">7 Trends and alarms</a> · <a href="#hu8">8 SIS</a> · <a href="#hu9">9 Field</a> · <a href="#hu10">10 Exercises</a> · <a href="#hu12">11 Debrief and export</a> · <a href="#hu13">12 Symbols</a></nav>
-  <h3 id="hu1">1 · Quick start</h3>
+  <nav class="toc small"><a href="#hu1">1 Quick start and learning path</a> · <a href="#hu2">2 Top bar</a> · <a href="#hu3">3 Tabs</a> · <a href="#hu4">4 DCS console</a> · <a href="#hu5">5 Pump curves</a> · <a href="#hu6">6 Faceplates</a> · <a href="#hu7">7 Trends and alarms</a> · <a href="#hu8">8 SIS</a> · <a href="#hu9">9 Field and Visual plant 3D</a> · <a href="#hu10">10 Exercises</a> · <a href="#hu12">11 Debrief and export</a> · <a href="#hu13">12 Symbols</a></nav>
+  <h3 id="hu1">1 · Quick start and the learning path</h3>
   <ol>
    <li>Click anywhere once so the browser allows alarm sound. Check the top bar shows <b>🔔 Sound on</b>.</li>
-   <li>The session opens at design: pump <b>P-200A</b> draws cat-cracker feed from tank <b>T200</b> and delivers 14 L/s through FE-100 and V100 (FRC-100), the steam preheater E-100 and the feed drum D-150 to the cat cracker. <b>P-200B</b> is the identical spare, lined up with its suction and discharge valves open. Open <b>P&amp;ID</b> to see the plant, <b>Pump curves</b> to see where the pump runs, then <b>DCS console</b> to operate it.</li>
-   <li>Go to <b>Exercises</b>, pick a list (Training, Think EQUIPPED or Procedures) and click <i>Load</i>. A blue banner gives the situation; <b>Acknowledge</b> it to hide it.</li>
-   <li>Operate from the DCS console: click an instrument bubble, a pump or a valve to open its faceplate. Pumps, hand valves, vents, the local gauges and the telephones are on the <b>Field</b> tab. The local gauges PI-209, PI-210 and PI-220 are <b>not</b> on the DCS: send the field operator to read them.</li>
+   <li>The session opens at design on the <b>Operate</b> group (DCS console): pump <b>P-200A</b> draws cat-cracker feed from tank <b>T200</b> and delivers 14 L/s through FE-100 and V100 (FRC-100), the steam preheater E-100 and the feed drum D-150 to the cat cracker. <b>P-200B</b> is the identical spare, lined up with its suction and discharge valves open.</li>
+   <li>The tabs are in seven groups (section 3). Pick a group in the top row, then a tab in the second row.</li>
    <li>Use <b>Speed</b> to run faster (2×–50×) and <b>Freeze</b> to pause while you think. Flows settle in seconds, temperatures in minutes, tank levels over tens of minutes.</li>
-   <li>When finished, open <b>Debrief and grading</b> for your score, then <b>Data export</b> to download CSV files for your report.</li>
+   <li>Work through the eight steps below in order. The <b>Workbook</b> tab gives the activities for each step (Parts A–I) and what to hand in.</li>
   </ol>
+  <div class="tscroll"><table class="tbl small" id="lpPath"><thead><tr><th>Step</th><th>What you do</th><th>Tabs</th><th>Workbook</th></tr></thead><tbody>
+   <tr><td>1 · Know the plant</td><td>What the station is for, how a centrifugal pump and a system curve set the flow, the design numbers, then the drawings from block flow to P&amp;ID.</td><td><a href="#" class="lpgo" data-goto="process">The process</a> · <a href="#" class="lpgo" data-goto="design">Design of the unit operation</a> · <a href="#" class="lpgo" data-goto="bfd">BFD</a> · <a href="#" class="lpgo" data-goto="pfd">PFD</a> · <a href="#" class="lpgo" data-goto="pid">P&amp;ID</a> · <a href="#" class="lpgo" data-goto="curves">Pump curves</a></td><td>Parts A, B</td></tr>
+   <tr><td>2 · Walk the plant</td><td>Where everything stands, then the outside operator's round: read the local gauges, check the hand valves, identify the items, fill the rounds sheet.</td><td><a href="#" class="lpgo" data-goto="elay">Layout &amp; isometrics</a> · <a href="#" class="lpgo" data-goto="v3d">Visual plant 3D</a> · <a href="#" class="lpgo" data-goto="field">Field</a></td><td>Part C · VP-1 … VP-8</td></tr>
+   <tr><td>3 · Control and safety</td><td>How the loops were chosen and tuned, how far the station can be pushed, what can go wrong and which layers stop it.</td><td><a href="#" class="lpgo" data-goto="control">Control loop design</a> · <a href="#" class="lpgo" data-goto="opwin">Operating windows</a> · <a href="#" class="lpgo" data-goto="flex">Flexibility</a> · <a href="#" class="lpgo" data-goto="hazid">HAZID</a> · <a href="#" class="lpgo" data-goto="hazop">HAZOP</a> · <a href="#" class="lpgo" data-goto="cq">Consequence analysis</a> · <a href="#" class="lpgo" data-goto="safety">Safety layers</a> · <a href="#" class="lpgo" data-goto="lopa">LOPA</a> · <a href="#" class="lpgo" data-goto="srs">SRS of SIF</a> · <a href="#" class="lpgo" data-goto="cem">C&amp;E matrix</a> · <a href="#" class="lpgo" data-goto="inc">Incident cases</a></td><td>Part D</td></tr>
+   <tr><td>4 · Engineering (EPC)</td><td>The document set behind the plant, issued for teaching from the model: register, HMB, datasheets, relief basis, instrument list, load list, procurement to commissioning.</td><td><a href="#" class="lpgo" data-goto="eproj">Project &amp; deliverables</a> · <a href="#" class="lpgo" data-goto="eproc">Process engineering</a> · <a href="#" class="lpgo" data-goto="emech">Mechanical</a> · <a href="#" class="lpgo" data-goto="erel">Relief &amp; vent</a> · <a href="#" class="lpgo" data-goto="einst">Instrumentation &amp; control</a> · <a href="#" class="lpgo" data-goto="eelec">Electrical</a> · <a href="#" class="lpgo" data-goto="ecomm">Procurement to commissioning</a></td><td>Part E</td></tr>
+   <tr><td>5 · Operate</td><td>Start up, change over and shut down from the DCS and the field, following the SOPs; then the operability lessons of transitions, reliability and efficiency.</td><td><a href="#" class="lpgo" data-goto="operate">DCS console</a> · <a href="#" class="lpgo" data-goto="bms">SIS</a> · <a href="#" class="lpgo" data-goto="trans">Transition operation</a> · <a href="#" class="lpgo" data-goto="sop">SOP</a> · <a href="#" class="lpgo" data-goto="relia">Process reliability</a> · <a href="#" class="lpgo" data-goto="effic">Efficiency</a></td><td>Part F</td></tr>
+   <tr><td>6 · Train</td><td>The 20 training exercises, each with a field check in Visual plant 3D or on the Field tab.</td><td><a href="#" class="lpgo" data-goto="exercises">Exercises</a> ▸ Training</td><td>Part G</td></tr>
+   <tr><td>7 · Troubleshoot</td><td>Think EQUIPPED cases TE-1 … TE-12 worked with the six-stage method; TE-1 is a worked example for everyone.</td><td><a href="#" class="lpgo" data-goto="exercises">Exercises</a> ▸ Think EQUIPPED · <a href="#" class="lpgo" data-goto="sps">Systematic problem solving</a></td><td>Part H</td></tr>
+   <tr><td>8 · Debrief</td><td>Your score and grades, the event log and the run data for the report.</td><td><a href="#" class="lpgo" data-goto="debrief">Debrief and grading</a> · <a href="#" class="lpgo" data-goto="export">Data export</a></td><td>Part I</td></tr>
+  </tbody></table></div>
   <h3 id="hu2">2 · Top bar</h3>
   <table class="tbl small"><thead><tr><th>Control</th><th>What it does</th></tr></thead><tbody>
    <tr><td>Clock</td><td>Simulated time since the session or exercise started.</td></tr>
@@ -1126,7 +1135,7 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
    <tr><td>Score</td><td>Continuous score (starts at 100); see Debrief and grading.</td></tr>
   </tbody></table>
   <h3 id="hu3">3 · Tabs</h3>
-  <p>The tabs are in six groups. Click a group in the top row; its tabs appear in the second row (on a phone, in a drop-down). A few pages sit in two groups because they belong to both: P&amp;ID (Process &amp; Design and Operate), Safety layers (Process &amp; Design and Safety) and SOP (Operability and Train &amp; Assess). The page opens on Operate (DCS console).</p>
+  <p>The tabs are in seven groups: Start, Process &amp; Design, Operability, Safety, Engineering (EPC), Operate, Train &amp; Assess. Click a group in the top row; its tabs appear in the second row (on a phone, in a drop-down). A few pages sit in two groups because they belong to both: P&amp;ID (Process &amp; Design and Operate), Safety layers (Process &amp; Design and Safety) and SOP (Operability and Train &amp; Assess). The page opens on Operate (DCS console).</p>
   <table class="tbl small"><thead><tr><th>Tab</th><th>Use it for</th></tr></thead><tbody>
    <tr class="hgrp"><td colspan="2">Start</td></tr>
    <tr><td>How to use</td><td>This page.</td></tr>
@@ -1204,14 +1213,24 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
   <p>Trend groups: station overview, pumps, preheater, tanks, Rev C casing transmitters, or the selected tag. Alarm summary: newest unacknowledged first; click a row to acknowledge it and open that instrument.</p>
   <h3 id="hu8">8 · Safety system (SIS)</h3>
   <p><b>Reset</b> clears a unit trip (T200 above 15 %), latched motor trips (casing below 85 °C, relay healthy) and LSHH-150 (D-150 below 90 %). <b>Emergency shutdown</b> stops both pumps and closes V100 and TV-110. The <b>Rev C upgrades</b> (MOC after the lazy-twin investigation) add casing pressure transmitters with a high alarm on the idle pump, and motor-operated discharge valves that close when their pump stops.</p>
-  <h3 id="hu9">9 · Field</h3>
+  <h3 id="hu9">9 · Field and Visual plant 3D</h3>
+  <p>The outside operator works in two places that act on the same plant: the <b>Field</b> tab (a panel of motors, valves and gauges) and <b>Visual plant 3D</b> (the same items in a walk-through model of the plot). A valve moved in one is moved in the other.</p>
   <ul>
-   <li><b>Motors</b> P-200A and P-200B; <b>valves</b> V200, V202, V201, V206, V205 (hand-wheel), casing vents, the header drain.</li>
-   <li><b>Pump checks</b>: <i>Read PI-210 / PI-220 / PI-209</i> records a reading (with time) in the log and places the pump on the curve; the text describes noise, vibration, casing temperature, shaft rotation and what the vent shows.</li>
-   <li><b>Telephones</b>: the tank farm sets HIC-199 (transfer into T200); the cat cracker starts or stops drawing charge (10-minute ramp) and tells you what it sees (answer in 2 minutes).</li>
+   <li><b>Field tab</b>: motors P-200A and P-200B; hand valves V200, V202, V201, V206, V205 (hand wheel), casing vents VA and VB, the header drain DRN. <i>Read PI-210 / PI-220 / PI-209</i> records a reading with its time in the log and places the pump on the curve; the text describes noise, vibration, casing temperature, shaft rotation and what the vent shows. The <b>telephones</b> reach the tank farm (HIC-199, transfer into T200) and the cat cracker (start or stop drawing charge over 10 minutes; it tells you what it sees within 2 minutes).</li>
+   <li><b>Visual plant 3D · moving</b>: <i>Next ▶</i> and <i>◀ Prev</i> walk the round of 12 stations along the yellow floor arrows; the numbered buttons jump to a station; <i>Home</i> shows the whole plot; the compass pad walks and looks freely (▲ ▼ ⟲ ⟳ ⤒ ⤓). <i>Legend</i> explains the colours.</li>
+   <li><b>Reading and operating</b>: at a station, <i>◀ Read</i> zooms to a gauge or local indicator and logs the reading; <i>◀ Operate</i> zooms to a hand valve (gate valves 0, 25, 50, 75, 100 %). Check valves NRV-210/220 can only be looked at; car-sealed items refuse to move. <i>Back</i> returns to the station.</li>
+   <li><b>Labels</b>: <i>Tour</i> shows each tag with its live reading, <i>Identify</i> shows blank boxes for the identification exercise (name every item, then <i>Check station</i>; target 90 %), <i>Off</i> hides them.</li>
+   <li><b>Rounds sheet</b> (in the tab): fill each row from what you read in the plant; it is checked against the live plant and graded on the Debrief tab.</li>
   </ul>
   <h3 id="hu10">10 · Exercises</h3>
-  <p>Load an exercise: the plant resets to its starting state and faults appear on their own schedule. The procedure tracker ticks steps when the simulator sees them done (! = out of order). Tick <i>Communicated</i> and press <i>Finish and grade</i> (it also grades itself at the time limit). What-if, trend matching, scrambles and the reading sheet are graded to the Debrief tab.</p>
+  <p>Load an exercise from one of the lists: the plant resets to its starting state, a blue banner gives the situation (<b>Acknowledge</b> to hide it) and faults appear on their own schedule.</p>
+  <ul>
+   <li><b>Training</b> (1–20): one upset each. A <b>Field check</b> panel lists the gauges to read and the items to check in Visual plant 3D or on the Field tab; it ticks itself from the log and is graded out of 5.</li>
+   <li><b>Visual plant</b> (VP-1 … VP-8): familiarisation on the round (finding things, reading each level, utilities, line-up, a valve out of position, identification); every answer is checked against the live plant, graded out of 10.</li>
+   <li><b>Think EQUIPPED</b> (TE-1 … TE-12): troubleshooting cases with the situation only. Work them with the six stages in <b>Systematic problem solving</b>, which pulls the run data, a snapshot and the event log from the page. TE-1 has a worked example from real runs.</li>
+   <li><b>Procedures</b>: cold startup, normal shutdown, changeover, pump trip, parallel operation, the lazy twin and the optimisation. The tracker ticks steps when the simulator sees them done (! = out of order). Tick <i>Communicated</i> and press <i>Finish and grade</i> (it also grades itself at the time limit).</li>
+   <li><b>What-if, trend matching, scrambles and the DCS reading sheet</b> are graded to the Debrief tab.</li>
+  </ul>
   <h3 id="hu12">11 · Debrief and data export</h3>
   <p>Score with each deduction, performance, exercise grades, fault recovery times and the event log. Export run data, a station snapshot or the event log as UTF-8 CSV. Nothing is kept after the page is closed.</p>
   <h3 id="hu13">12 · Symbols and colours</h3>
@@ -3795,13 +3814,16 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
 <section class="view" id="workbook">
  <div class="panel doc">
   <h2>Trainee workbook · Parallel Pump Station Ver 1</h2>
-  <p class="muted">Work through Parts A to G in order. Record your answers and evidence (screenshots, CSV files) as you go.</p>
-  <nav class="toc small"><a href="#wb1">1 Purpose</a> · <a href="#wb2">2 The unit</a> · <a href="#wb3">3 Control scheme</a> · <a href="#wb4">4 Safety systems</a> · <a href="#wb5">5 Operating rules</a> · <a href="#wb6">6 Activities A–G</a> · <a href="#wb7">7 Grading</a> · <a href="#wb8">8 Report checklist</a></nav>
+  <p class="muted">Work through Parts A to I in order; they follow the learning path of the How to use tab. Record your answers and evidence (screenshots, CSV files) as you go.</p>
+  <nav class="toc small"><a href="#wb1">1 Purpose</a> · <a href="#wb2">2 The unit</a> · <a href="#wb3">3 Control scheme</a> · <a href="#wb4">4 Safety systems</a> · <a href="#wb5">5 Operating rules</a> · <a href="#wb6">6 Activities A–I</a> · <a href="#wb7">7 Grading</a> · <a href="#wb8">8 Report checklist</a></nav>
   <h3 id="wb1">1 · Purpose</h3>
   <p>A pair of identical centrifugal pumps in parallel is the most common piece of rotating equipment in a plant. By the end you should be able to:</p>
   <ol>
-   <li>Read the P&amp;ID and the DCS, and state the normal value and alarm limits of every key tag.</li>
+   <li>Read the BFD, PFD, P&amp;ID and the DCS, and state the normal value and alarm limits of every key tag.</li>
    <li>Explain a pump curve, a system curve and the operating point, and predict the flow when V100, the static head, the speed or the number of pumps changes.</li>
+   <li>Find every item of the station on the plot and in the field, read the local gauges and report the line-up of the hand valves.</li>
+   <li>Explain how the control loops were chosen, how far the station can be pushed, and which safety layers stand between each hazard and its consequence.</li>
+   <li>Read the engineering documents of the unit and check one against another.</li>
    <li>Start up, change over and shut down a centrifugal pump safely: prime and vent, start against a closed discharge, confirm shut-off head, never run it dry or deadheaded.</li>
    <li>Use local gauges and the pump curve to tell a weak pump from flow that goes somewhere else, extra resistance, cavitation or a wrong meter.</li>
    <li>Troubleshoot with the six stages of a systematic method, and propose a change that stops a fault recurring.</li>
@@ -3832,17 +3854,49 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
    <li><b>Read both local gauges</b> whenever the flow is short with V100 at 100 %, and compare with the pump curve before opening anything up.</li>
   </ol>
   <h3 id="wb6">6 · Activities</h3>
-  <h4>Part A · Identification</h4>
-  <ol><li>Trace every line on the P&amp;ID; list each valve's normal position and each instrument's normal reading.</li><li>Read all three local gauges in the field and place pump A on its curve (Pump curves tab).</li><li>Complete the DCS reading sheet (Exercises). Graded out of 15.</li></ol>
-  <h4>Part B · Pump and system curves</h4>
+  <h4>Part A · Know the plant (The process, Design, BFD, PFD, P&amp;ID)</h4>
+  <ol>
+   <li>The process: in your own words, why does a centrifugal pump deliver more when the system resistance falls? Copy the design stream table and check the mass balance closes.</li>
+   <li>Design of the unit operation: list the design basis and the decisions (number of pumps, spare philosophy, drive, control valve), and run the sizing calculator at the design flow and at 16 L/s. Which check turns ✗ first?</li>
+   <li>BFD and PFD: match every stream number on the BFD with its row in the stream table, and every PFD flag with its BFD number.</li>
+   <li>P&amp;ID: trace every line; list each valve's normal position and each instrument's normal reading. Note two differences between the screen P&amp;ID and the EPC alternative version below it.</li>
+  </ol>
+  <h4>Part B · Pump and system curves (Pump curves)</h4>
   <ol><li>With the calculator, find the flow for V100 at 40, 60, 80 and 100 % with A alone, B alone and A + B. Why does the second pump add so little at small openings?</li><li>Repeat at 1800 rpm (the old speed). Explain the answer with the affinity laws.</li><li>Raise the static head from 24 to 30 m. Which pump combination still delivers 14 L/s?</li><li>Run the six what-if events: predict ↑ / ↓ / = for all eight variables before you check.</li></ol>
-  <h4>Part C · Procedures (graded)</h4>
-  <p>Cold startup, normal shutdown, changeover A → B, pump trip, B in parallel. The startup tracker ticks these steps:</p>
+  <h4>Part C · Walk the plant (Layout &amp; isometrics, Visual plant 3D, Field)</h4>
+  <ol>
+   <li>Layout: on the plot plan, measure the distances from the pumps to T200, to D-150 and to the control room. Why does T200 stand 1 m above the pump centre line? Check NPSH available with the calculator.</li>
+   <li>Visual plant 3D: walk the 12-station round once in Tour mode, then do the identification at every station in Identify mode (90 % or better).</li>
+   <li>Read all three local gauges and place pump A on its curve (Pump curves ▸ gauge check). Fill the rounds sheet.</li>
+   <li>Complete the DCS reading sheet (Exercises). Graded out of 15.</li>
+   <li>Do the Visual plant exercises VP-1 … VP-8 (Exercises ▸ Visual plant), each graded out of 10:</li>
+  </ol>
+  <div class="tscroll"><table class="tbl small" id="wbVP"></table></div>
+  <h4>Part D · Control and safety</h4>
+  <ol>
+   <li>Control loop design: classify every variable of the station (CV, MV, DV, indicated) and count the degrees of freedom. Step-test FRC-100 in the tuning lab and compare your lambda tuning with the simulator's.</li>
+   <li>Operating windows and Flexibility: find the highest feed the station can hold with one pump and with two, and the bound that stops each. Which handle gives the station its flexibility?</li>
+   <li>HAZID and HAZOP: for one node of your choice, write two rows of the worksheet yourself before you open the tab's rows, then compare.</li>
+   <li>Consequence analysis: for one scenario, follow the chain from source to severity and say which input changes the answer most.</li>
+   <li>Safety layers, LOPA and SRS of SIF: for one LOPA scenario, list the layers credited, the frequency before and after, and whether the SIF meets its target. Which trip shares a sensor with control?</li>
+   <li>C&amp;E matrix: read one row as a sentence (cause, setting, delay, every effect). At design, say what the Live column shows and why.</li>
+   <li>Incident cases: pick one case and write three lines on what it means for this station.</li>
+  </ol>
+  <h4>Part E · Engineering (EPC)</h4>
+  <ol>
+   <li>Project &amp; deliverables: find the document number of the HMB, the relief load basis and the instrument list in the register.</li>
+   <li>Check one number across three documents (for example the design flow in the HMB, the line list and the instrument list, or a design pressure in the equipment list against the PSV set) and report any query you find.</li>
+   <li>Procurement to commissioning: list the pre-commissioning checks you would sign before the first pump start.</li>
+  </ol>
+  <h4>Part F · Operate (procedures, graded)</h4>
+  <p>Cold startup, normal shutdown, changeover A → B, pump trip, B in parallel. Read the matching SOP first (SOP tab), and the Transition operation tab for why the order matters. The startup tracker ticks these steps:</p>
   <ol id="wbStartup"></ol>
-  <h4>Part D · Training exercises</h4>
-  <p>For each: first alarm and time, the first variable you noticed, both local gauges, what you did, and the recovery time.</p>
-  <table class="tbl small" id="wbTraining"></table>
-  <h4>Part E · Think EQUIPPED troubleshooting</h4>
+  <p>Then, on Process reliability and Efficiency: how many outages a year does the station expect with one running pump, and what does the spare change? What does throttling on V100 cost in electricity compared with a variable-speed drive?</p>
+  <h4>Part G · Training exercises</h4>
+  <p>For each: first alarm and time, the first variable you noticed, both local gauges, the field check, what you did, and the recovery time.</p>
+  <div class="tscroll"><table class="tbl small" id="wbTraining"></table></div>
+  <h4>Part H · Troubleshooting: Think EQUIPPED and the six stages</h4>
+  <p>Load a case from Exercises ▸ Think EQUIPPED, then work it in <b>Systematic problem solving</b> (pull the run data, snapshot and event log; plan and run your tests; write the report). Start with the worked example of TE-1, then do the cases your instructor sets.</p>
   <table class="tbl small"><thead><tr><th>Stage</th><th>What you must produce</th></tr></thead><tbody>
    <tr><td>1 Engage</td><td>Is it urgent? Keep running on which pump, and what would change your mind?</td></tr>
    <tr><td>2 Define</td><td>Problem statement (what, where, when, how much, what did not change), IS / IS NOT, a measurable target.</td></tr>
@@ -3851,11 +3905,10 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
    <tr><td>5 Do it</td><td>Run the tests, find the root cause, apply the fix, compare with your prediction.</td></tr>
    <tr><td>6 Look back</td><td>Propose the change (procedure, hardware, instrument) that stops it happening again.</td></tr>
   </tbody></table>
-  <table class="tbl small" id="wbTE"></table>
-  <h4>Part F · Trend matching, scrambles, the lazy twin</h4>
-  <p>Match four unlabelled trends, order the three scrambles, then run the graded <b>lazy twin</b> procedure and the <b>optimisation</b>.</p>
-  <h4>Part G · Data and report</h4>
-  <p>Export the run data of your startup and the lazy twin case. Plot FRC-100, V100, the currents and your gauge readings against time, and draw the operating points on the pump curve before and after the fix.</p>
+  <div class="tscroll"><table class="tbl small" id="wbTE"></table></div>
+  <p>Also: match four unlabelled trends, order the three scrambles, then run the graded <b>lazy twin</b> procedure and the <b>optimisation</b>.</p>
+  <h4>Part I · Debrief, data and report</h4>
+  <p>Open Debrief and grading for your score and grades. Export the run data of your startup and of one troubleshooting case. Plot FRC-100, V100, the currents and your gauge readings against time, and draw the operating points on the pump curve before and after the fix.</p>
   <h3 id="wb7">7 · How you are graded</h3>
   <table class="tbl small"><thead><tr><th>Deduction</th><th>Rate</th></tr></thead><tbody>
    <tr><td>Feed to the cat cracker more than 0.7 L/s from its demand</td><td>0.2–1 point/min</td></tr>
@@ -3865,9 +3918,9 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
    <tr><td>Alarm unacknowledged over 60 s</td><td>0.3 point/min each</td></tr>
    <tr><td>Unplanned trip caused by operation / cat cracker loses its feed</td><td>15 / 20</td></tr>
   </tbody></table>
-  <p>Procedures are graded out of 10 (safe, order, time, communication). During startup, shutdown and the trip procedure the flow, temperature and level deductions are paused.</p>
+  <p>Procedures are graded out of 10 (safe, order, time, communication). During startup, shutdown and the trip procedure the flow, temperature and level deductions are paused. Field checks of the training exercises are graded out of 5 and the Visual plant exercises out of 10; the identification and the rounds sheet are graded in Visual plant 3D. All grades appear on the Debrief tab.</p>
   <h3 id="wb8">8 · Report checklist</h3>
-  <ul><li>Part A tables, reading sheet, a station snapshot CSV.</li><li>Part B calculator results and what-if corrections.</li><li>Procedure grades and trend plots.</li><li>Six-stage worksheets with gauge readings and curve plots.</li><li>Debrief screenshot; one recommended improvement with data.</li></ul>
+  <ul><li>Part A tables and the P&amp;ID line-up; Part B calculator results and what-if corrections.</li><li>Part C: identification score, rounds sheet, VP grades, reading sheet, a station snapshot CSV.</li><li>Part D and E answers with the tab or document you took each number from.</li><li>Procedure grades and trend plots (Part F); training exercises with their field checks (Part G).</li><li>Six-stage worksheets with gauge readings and curve plots (Part H).</li><li>Debrief screenshot; one recommended improvement with data (Part I).</li></ul>
  </div>
 </section>
 
@@ -19027,6 +19080,22 @@ function vpPlaceQ(v){const q=$('#vpQ');if(!q)return;
   const v3=TAB_HOOKS['v3d'];TAB_HOOKS['v3d']=()=>{vpPlaceQ('v3d');if(v3)v3();};
   const fd=TAB_HOOKS['field'];TAB_HOOKS['field']=()=>{vpPlaceQ('field');if(fd)fd();};})();
 vpRender();
+
+/* ---- tabs/lpath/lpath.js (add-on) ---- */
+/* ===== tabs/lpath/lpath.js · learning path (add-on, prefix lp; skill 8x): dynamic Workbook tables in course order and the tab links of
+   the How to use and Workbook tabs. Wraps buildGuides() so the tables are built from the data (VP_TRF, VP_EX, TRAINING), never typed. ===== */
+var lpBuild0=buildGuides;
+buildGuides=function(){lpBuild0();lpFill();};
+function lpFc(n){const f=(typeof VP_TRF!=='undefined')&&VP_TRF[n];if(!f)return '—';
+  return (f.r&&f.r.length?'Read '+f.r.join(', '):'')+(f.c&&f.c.length?(f.r&&f.r.length?' · ':'')+'Check '+f.c.join(', '):'');}
+function lpFill(){
+  const tr=$('#wbTraining');
+  if(tr)tr.innerHTML=`<thead><tr><th>#</th><th>Exercise</th><th>Starting situation</th><th>Field check (Visual plant / Field tab)</th></tr></thead><tbody>${TRAINING.map(e=>`<tr><td>${e.n}</td><td>${esc(e.title)}</td><td>${esc(e.sit)}</td><td>${esc(lpFc(e.n))}</td></tr>`).join('')}</tbody>`;
+  const vp=$('#wbVP');
+  if(vp&&typeof VP_EX!=='undefined')vp.innerHTML=`<thead><tr><th>Exercise</th><th>Title</th><th>What you do</th><th>Questions</th></tr></thead><tbody>${VP_EX.map(e=>`<tr><td>${e.id}</td><td>${esc(e.title)}</td><td>${esc(e.brief)}</td><td>${e.qs.length}</td></tr>`).join('')}</tbody>`;
+}
+document.addEventListener('click',e=>{const g=e.target.closest&&e.target.closest('a.lpgo[data-goto]');if(!g)return;e.preventDefault();
+  const id=g.dataset.goto;if(document.getElementById(id)&&document.querySelector(`.tab[data-view="${id}"]`))showView(id);else g.title='That tab is not in this edition';});
 
 /* ===== P&ID tab, alternative version: loop and interlock tables from the model (makeCtrls, tripConditions, K) ===== */
 var PD_FAIL={'FRC-100':['V100 (flow control valve to E-100)','FC'],'TIC-110':['TV-110 (steam to the E-100 shell)','FC'],'HIC-199':['Tank-farm transfer pump / valve (at the tank farm)','—']};
