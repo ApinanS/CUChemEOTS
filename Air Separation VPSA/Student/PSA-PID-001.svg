@@ -1,0 +1,831 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1654 1169" font-family="Arial, Helvetica, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse" markerUnits="strokeWidth"><path d="M0 0L10 5L0 10z" fill="#000"/></marker></defs>
+<rect width="1654" height="1169" fill="#fff"/>
+<rect x="20" y="20" width="1614" height="1129" fill="none" stroke="#000000" stroke-width="3.1"/>
+<rect x="35" y="35" width="1584" height="1099" fill="none" stroke="#000000" stroke-width="1.2"/>
+<line x1="45" y1="400" x2="80" y2="400" stroke="#000000" stroke-width="2.1" marker-end="url(#ah)"/>
+<rect x="80" y="370" width="36" height="60" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="80" y1="430" x2="116" y2="370" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<text x="98" y="452.1" font-size="10.4" font-weight="bold" text-anchor="middle">F-100</text>
+<text x="98" y="464.8" font-size="7.5" text-anchor="middle">AIR INTAKE</text>
+<text x="98" y="476.2" font-size="7.5" text-anchor="middle">FILTER</text>
+<ellipse cx="98" cy="305" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="98" y="302.7" font-size="7.6" font-weight="bold" text-anchor="middle">PDI</text>
+<text x="98" y="311.9" font-size="7.6" font-weight="bold" text-anchor="middle">100</text>
+<line x1="80" y1="305" x2="116" y2="305" stroke="#000000" stroke-width="1"/>
+<line x1="98" y1="323" x2="98" y2="342" stroke="#000000" stroke-width="1"/>
+<line x1="62" y1="342" x2="130" y2="342" stroke="#000000" stroke-width="1"/>
+<line x1="62" y1="342" x2="62" y2="400" stroke="#000000" stroke-width="1"/>
+<ellipse cx="62" cy="400" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="130" y1="342" x2="130" y2="400" stroke="#000000" stroke-width="1"/>
+<ellipse cx="130" cy="400" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="116" y1="400" x2="187" y2="400" stroke="#000000" stroke-width="2.1"/>
+<text x="152" y="414.1" font-size="6.9" text-anchor="middle">10&quot;-AIR-1001-A1A</text>
+<text x="40" y="414.1" font-size="6.9" font-weight="bold">ATM. AIR</text>
+<path d="M187 362L263 382.9L263 417.1L187 438Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M200.3 386.5L206.5 393.5L212.6 386.5L218.8 393.5L225 386.5L231.2 393.5L237.3 386.5L243.5 393.5L249.7 386.5" fill="none" stroke="#000000" stroke-width="0.7" stroke-linejoin="miter"/>
+<path d="M200.3 406.5L206.5 413.5L212.6 406.5L218.8 413.5L225 406.5L231.2 413.5L237.3 406.5L243.5 413.5L249.7 406.5" fill="none" stroke="#000000" stroke-width="0.7" stroke-linejoin="miter"/>
+<text x="225" y="460.1" font-size="10.4" font-weight="bold" text-anchor="middle">K-100</text>
+<text x="225" y="472.8" font-size="7.5" text-anchor="middle">FEED AIR COMPRESSOR</text>
+<text x="225" y="484.2" font-size="7.5" text-anchor="middle">OIL-FREE SCREW, VSD, ~200 kW</text>
+<text x="225" y="495.8" font-size="7.5" text-anchor="middle">1800 Nm3/h, 1.0 &gt; 5.2 bar a</text>
+<line x1="225" y1="372.4" x2="225" y2="325" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="225" cy="308" rx="17" ry="17" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="225" y="310.5" font-size="8.3" font-weight="bold" text-anchor="middle">M</text>
+<rect x="200" y="233" width="50" height="24" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="225" y="242.9" font-size="6.9" font-weight="bold" text-anchor="middle">VSD</text>
+<text x="225" y="251.2" font-size="6.9" font-weight="bold" text-anchor="middle">(SC)</text>
+<line x1="225" y1="257" x2="225" y2="291" stroke="#000000" stroke-width="1"/>
+<ellipse cx="155" cy="245" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="155" y="242.7" font-size="7.6" font-weight="bold" text-anchor="middle">SI</text>
+<text x="155" y="251.9" font-size="7.6" font-weight="bold" text-anchor="middle">100</text>
+<line x1="137" y1="245" x2="173" y2="245" stroke="#000000" stroke-width="1"/>
+<line x1="200" y1="245" x2="173" y2="245" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<ellipse cx="155" cy="190" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="155" y="187.7" font-size="7.6" font-weight="bold" text-anchor="middle">JI</text>
+<text x="155" y="196.9" font-size="7.6" font-weight="bold" text-anchor="middle">100</text>
+<line x1="137" y1="190" x2="173" y2="190" stroke="#000000" stroke-width="1"/>
+<line x1="185" y1="245" x2="185" y2="190" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="185" y1="190" x2="173" y2="190" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="292" y1="388" x2="292" y2="412" stroke="#000000" stroke-width="1.5"/>
+<line x1="298" y1="388" x2="298" y2="412" stroke="#000000" stroke-width="1.5"/>
+<ellipse cx="295" cy="335" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="295" y="332.7" font-size="7.6" font-weight="bold" text-anchor="middle">FT</text>
+<text x="295" y="341.9" font-size="7.6" font-weight="bold" text-anchor="middle">101</text>
+<line x1="295" y1="353" x2="295" y2="388" stroke="#000000" stroke-width="1"/>
+<ellipse cx="295" cy="245" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="295" y="242.7" font-size="7.6" font-weight="bold" text-anchor="middle">FIC</text>
+<text x="295" y="251.9" font-size="7.6" font-weight="bold" text-anchor="middle">101</text>
+<line x1="277" y1="245" x2="313" y2="245" stroke="#000000" stroke-width="1"/>
+<line x1="295" y1="317" x2="295" y2="263" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="277" y1="245" x2="250" y2="245" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<text x="295" y="209" font-size="6.7" text-anchor="middle">SP 1800 Nm3/h</text>
+<line x1="263" y1="400" x2="340" y2="400" stroke="#000000" stroke-width="2.1"/>
+<text x="302" y="425.2" font-size="7.2" text-anchor="middle">6&quot;-AIR-1002-A1A</text>
+<path d="M307 391.5L333 408.5L333 391.5L307 408.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="320" y="383.8" font-size="7.6" font-weight="bold" text-anchor="middle">HV-150</text>
+<ellipse cx="370" cy="400" rx="30" ry="30" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M340 400L352 413.5L364 386.5L376 413.5L388 386.5L400 400" fill="none" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="370" y="308.1" font-size="10.4" font-weight="bold" text-anchor="middle">E-100</text>
+<text x="370" y="320.8" font-size="7.5" text-anchor="middle">AIR AFTERCOOLER</text>
+<text x="370" y="332.2" font-size="7.5" text-anchor="middle">CHW 10 C</text>
+<line x1="355" y1="572" x2="355" y2="426" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<line x1="385" y1="426" x2="385" y2="572" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="355" y="583.1" font-size="6.9" font-weight="bold" text-anchor="end">CHWS</text>
+<text x="387" y="583.1" font-size="6.9" font-weight="bold">CHWR</text>
+<text x="353" y="597.1" font-size="6.9" text-anchor="end">2&quot;-CHW-1051-A1A</text>
+<text x="387" y="597.1" font-size="6.9">2&quot;-CHW-1052-A1A</text>
+<path d="M346.5 532L363.5 558L346.5 558L363.5 532Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="344" y="547.3" font-size="7.6" font-weight="bold" text-anchor="end">HV-151</text>
+<path d="M376.5 532L393.5 558L376.5 558L393.5 532Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="396" y="547.3" font-size="7.6" font-weight="bold">HV-152</text>
+<path d="M376.5 482L393.5 508L376.5 508L393.5 482Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="393.5" y1="495" x2="407" y2="495" stroke="#000000" stroke-width="1"/>
+<path d="M407 505L410.1 504.4L412.8 502.7L414.8 500L415.9 496.7L415.9 493.3L414.8 490L412.8 487.3L410.1 485.6L407 485Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="420" y="485.8" font-size="7.6" font-weight="bold">TV-102</text>
+<text x="420" y="498.1" font-size="6.9">FO</text>
+<line x1="400" y1="400" x2="480" y2="400" stroke="#000000" stroke-width="2.1"/>
+<text x="440" y="393.2" font-size="7.2" text-anchor="middle">6&quot;-AIR-1003-A1A</text>
+<ellipse cx="455" cy="452" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="455" y="449.7" font-size="7.6" font-weight="bold" text-anchor="middle">TT</text>
+<text x="455" y="458.9" font-size="7.6" font-weight="bold" text-anchor="middle">102</text>
+<line x1="455" y1="434" x2="455" y2="400" stroke="#000000" stroke-width="1"/>
+<ellipse cx="455" cy="400" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="455" cy="532" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="455" y="529.7" font-size="7.6" font-weight="bold" text-anchor="middle">TIC</text>
+<text x="455" y="538.9" font-size="7.6" font-weight="bold" text-anchor="middle">102</text>
+<line x1="437" y1="532" x2="473" y2="532" stroke="#000000" stroke-width="1"/>
+<line x1="455" y1="470" x2="455" y2="514" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="437" y1="532" x2="411.5" y2="532" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="411.5" y1="532" x2="411.5" y2="505" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<rect x="480" y="340" width="60" height="270" rx="30" ry="30" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="510" y="440.1" font-size="10.4" font-weight="bold" text-anchor="middle">V-100</text>
+<text x="510" y="452.8" font-size="7.5" text-anchor="middle">AIR</text>
+<text x="510" y="464.2" font-size="7.5" text-anchor="middle">RECEIVER</text>
+<text x="510" y="475.8" font-size="7.5" text-anchor="middle">20 m3</text>
+<text x="510" y="487.2" font-size="7.5" text-anchor="middle">7 bar g</text>
+<line x1="492" y1="346" x2="492" y2="210" stroke="#000000" stroke-width="1.4"/>
+<path d="M485.5 272L498.5 292L485.5 292L498.5 272Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M499 282L502 276L505 278.4L502 280.8L505 283.2L502 285.6L505 288" fill="none" stroke="#000000" stroke-width="0.7" stroke-linejoin="miter"/>
+<line x1="492" y1="210" x2="452" y2="210" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="447" y="204.8" font-size="7.6" font-weight="bold" text-anchor="end">PSV-100</text>
+<text x="447" y="218.1" font-size="6.9" text-anchor="end">SET 7.0 bar a</text>
+<line x1="525" y1="344" x2="525" y2="230" stroke="#000000" stroke-width="2.1"/>
+<path d="M516.5 262L533.5 288L516.5 288L533.5 262Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="533.5" y1="275" x2="547" y2="275" stroke="#000000" stroke-width="1"/>
+<path d="M547 285L550.1 284.4L552.8 282.7L554.8 280L555.9 276.7L555.9 273.3L554.8 270L552.8 267.3L550.1 265.6L547 265Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="560" y="270.8" font-size="7.6" font-weight="bold">PV-103</text>
+<text x="560" y="283.1" font-size="6.9">FO</text>
+<rect x="512" y="165" width="26" height="65" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="517.2" y1="181.2" x2="532.8" y2="181.2" stroke="#000000" stroke-width="0.7"/>
+<line x1="517.2" y1="197.5" x2="532.8" y2="197.5" stroke="#000000" stroke-width="0.7"/>
+<line x1="517.2" y1="213.8" x2="532.8" y2="213.8" stroke="#000000" stroke-width="0.7"/>
+<line x1="525" y1="165" x2="525" y2="135" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="507" y="187.8" font-size="7.6" font-weight="bold" text-anchor="end">SL-100</text>
+<text x="507" y="199.1" font-size="6.9" text-anchor="end">SILENCER</text>
+<text x="533" y="137.1" font-size="6.9" font-weight="bold">TO ATM</text>
+<text x="545" y="244.2" font-size="7.2">4&quot;-AIR-1006-A1A</text>
+<ellipse cx="575" cy="395" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="575" y="392.7" font-size="7.6" font-weight="bold" text-anchor="middle">PT</text>
+<text x="575" y="401.9" font-size="7.6" font-weight="bold" text-anchor="middle">103</text>
+<line x1="557" y1="395" x2="540" y2="395" stroke="#000000" stroke-width="1"/>
+<ellipse cx="540" cy="395" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="575" cy="325" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="575" y="322.7" font-size="7.6" font-weight="bold" text-anchor="middle">PIC</text>
+<text x="575" y="331.9" font-size="7.6" font-weight="bold" text-anchor="middle">103</text>
+<line x1="557" y1="325" x2="593" y2="325" stroke="#000000" stroke-width="1"/>
+<line x1="575" y1="377" x2="575" y2="343" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="557" y1="325" x2="551" y2="325" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="551" y1="325" x2="551" y2="285" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<line x1="400" y1="400" x2="480" y2="400" stroke="#000000" stroke-width="2.1"/>
+<line x1="481.1" y1="362" x2="445" y2="362" stroke="#000000" stroke-width="1.4"/>
+<path d="M452 355.5L472 368.5L472 355.5L452 368.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<line x1="445" y1="356" x2="445" y2="368" stroke="#000000" stroke-width="1.5"/>
+<text x="440" y="358.8" font-size="7.6" font-weight="bold" text-anchor="end">HV-154</text>
+<text x="440" y="369.6" font-size="6.9" text-anchor="end">VENT, NC</text>
+<line x1="510" y1="610" x2="510" y2="640" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="510" cy="640" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="460" y1="640" x2="510" y2="640" stroke="#000000" stroke-width="1.4"/>
+<line x1="510" y1="640" x2="510" y2="705" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="501" y="663" width="18" height="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="510" y="674.3" font-size="7.6" font-weight="bold" text-anchor="middle">T</text>
+<text x="522" y="673.8" font-size="7.6" font-weight="bold">DT-104</text>
+<line x1="460" y1="640" x2="460" y2="705" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M451.5 659L468.5 685L451.5 685L468.5 659Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="449" y="668.8" font-size="7.6" font-weight="bold" text-anchor="end">HV-104</text>
+<text x="449" y="679.6" font-size="6.9" text-anchor="end">NC</text>
+<text x="485" y="717.1" font-size="6.9" text-anchor="middle">TO DRAIN (NOTE 7)</text>
+<line x1="540" y1="570" x2="585" y2="570" stroke="#000000" stroke-width="2.1"/>
+<line x1="585" y1="570" x2="585" y2="830" stroke="#000000" stroke-width="2.1"/>
+<path d="M576.5 642L593.5 668L576.5 668L593.5 642Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="596" y="657.3" font-size="7.6" font-weight="bold">HV-153</text>
+<line x1="585" y1="830" x2="970" y2="830" stroke="#000000" stroke-width="2.1"/>
+<text x="645" y="823.2" font-size="7.2" text-anchor="middle">6&quot;-AIR-1004-A1A</text>
+<rect x="715" y="350" width="100" height="390" rx="50" ry="50" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="719" y1="405" x2="811" y2="405" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="719" y1="670" x2="811" y2="670" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="715" y1="690" x2="815" y2="690" stroke="#000000" stroke-width="1.5"/>
+<line x1="718.1" y1="421" x2="726.1" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="718.1" y1="666" x2="726.1" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="732.4" y1="421" x2="740.4" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="732.4" y1="666" x2="740.4" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="746.7" y1="421" x2="754.7" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="746.7" y1="666" x2="754.7" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="761" y1="421" x2="769" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="761" y1="666" x2="769" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="775.3" y1="421" x2="783.3" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="775.3" y1="666" x2="783.3" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="789.6" y1="421" x2="797.6" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="789.6" y1="666" x2="797.6" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="803.9" y1="421" x2="811.9" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="803.9" y1="666" x2="811.9" y2="654" stroke="#000000" stroke-width="0.6"/>
+<text x="765" y="440.1" font-size="10.4" font-weight="bold" text-anchor="middle">V-101A</text>
+<text x="765" y="452.8" font-size="7.5" text-anchor="middle">ADSORBER A</text>
+<text x="765" y="513.3" font-size="7.8" font-weight="bold" text-anchor="middle">ZEOLITE 5A</text>
+<text x="765" y="529.1" font-size="6.4" text-anchor="middle">12.8 t, 5640 mm</text>
+<text x="765" y="536.7" font-size="6.4" text-anchor="middle">1910 ID, 7 bar a/FV</text>
+<text x="765" y="681.8" font-size="6.1" text-anchor="middle">ACT. ALUMINA 0.3 m</text>
+<line x1="765" y1="350" x2="765" y2="125" stroke="#000000" stroke-width="2.1"/>
+<path d="M756.5 167L773.5 193L756.5 193L773.5 167Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="756.5" y1="180" x2="743" y2="180" stroke="#000000" stroke-width="1"/>
+<rect x="727" y="174" width="16" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="735" y="182.1" font-size="6.9" font-weight="bold" text-anchor="middle">S</text>
+<text x="777" y="175.8" font-size="7.6" font-weight="bold">XV-113A</text>
+<text x="777" y="188.1" font-size="6.9">FC</text>
+<ellipse cx="765" cy="270" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="765" y1="270" x2="860" y2="270" stroke="#000000" stroke-width="2.1"/>
+<path d="M824 261.5L850 278.5L850 261.5L824 278.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="837" y1="261.5" x2="837" y2="250" stroke="#000000" stroke-width="1"/>
+<rect x="829" y="238" width="16" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="837" y="246.1" font-size="6.9" font-weight="bold" text-anchor="middle">S</text>
+<text x="837" y="289.8" font-size="7.6" font-weight="bold" text-anchor="middle">XV-114A</text>
+<text x="837" y="301.1" font-size="6.9" text-anchor="middle">FC</text>
+<line x1="860" y1="270" x2="860" y2="230" stroke="#000000" stroke-width="2.1"/>
+<path d="M756.5 284L773.5 310L756.5 310L773.5 284Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="776" y="293.8" font-size="7.6" font-weight="bold">HV-155A</text>
+<text x="776" y="304.6" font-size="6.9">LO</text>
+<line x1="765" y1="330" x2="807" y2="330" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="765" cy="330" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<path d="M779 323.5L799 336.5L799 323.5L779 336.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<line x1="807" y1="324" x2="807" y2="336" stroke="#000000" stroke-width="1.5"/>
+<text x="813" y="326.8" font-size="7.6" font-weight="bold">HV-157A</text>
+<text x="813" y="337.6" font-size="6.9">VENT, NC</text>
+<line x1="735" y1="360" x2="735" y2="260" stroke="#000000" stroke-width="1.4"/>
+<path d="M728.5 304L741.5 324L728.5 324L741.5 304Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M742 314L745 308L748 310.4L745 312.8L748 315.2L745 317.6L748 320" fill="none" stroke="#000000" stroke-width="0.7" stroke-linejoin="miter"/>
+<line x1="735" y1="260" x2="695" y2="260" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="690" y="254.8" font-size="7.6" font-weight="bold" text-anchor="end">PSV-110A</text>
+<text x="690" y="268.1" font-size="6.9" text-anchor="end">SET 6.5 bar a</text>
+<ellipse cx="670" cy="380" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="670" y="377.7" font-size="7.6" font-weight="bold" text-anchor="middle">PT</text>
+<text x="670" y="386.9" font-size="7.6" font-weight="bold" text-anchor="middle">115A</text>
+<line x1="688" y1="380" x2="719.2" y2="380" stroke="#000000" stroke-width="1"/>
+<ellipse cx="719.2" cy="380" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<path d="M693.5 373.5L713.5 386.5L713.5 373.5L693.5 386.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="703.5" y="357.8" font-size="7.6" font-weight="bold" text-anchor="middle">HV-159A</text>
+<text x="703.5" y="368.6" font-size="6.9" text-anchor="middle">LO</text>
+<ellipse cx="620" cy="380" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="620" y="377.7" font-size="7.6" font-weight="bold" text-anchor="middle">PI</text>
+<text x="620" y="386.9" font-size="7.6" font-weight="bold" text-anchor="middle">115A</text>
+<line x1="602" y1="380" x2="638" y2="380" stroke="#000000" stroke-width="1"/>
+<line x1="652" y1="380" x2="638" y2="380" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<rect x="599" y="419" width="42" height="42" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="620" cy="440" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="620" y="437.7" font-size="7.6" font-weight="bold" text-anchor="middle">PSHH</text>
+<text x="620" y="446.9" font-size="7.6" font-weight="bold" text-anchor="middle">115A</text>
+<line x1="602" y1="440" x2="638" y2="440" stroke="#000000" stroke-width="1"/>
+<line x1="620" y1="398" x2="620" y2="419" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<text x="620" y="470.9" font-size="6.4" text-anchor="middle">I-1, 5.5 bar a</text>
+<ellipse cx="685" cy="430" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="685" y="427.7" font-size="7.6" font-weight="bold" text-anchor="middle">TE</text>
+<text x="685" y="436.9" font-size="7.6" font-weight="bold" text-anchor="middle">118A</text>
+<line x1="703" y1="430" x2="715" y2="430" stroke="#000000" stroke-width="1"/>
+<ellipse cx="715" cy="430" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="685" cy="535" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="685" y="532.7" font-size="7.6" font-weight="bold" text-anchor="middle">TE</text>
+<text x="685" y="541.9" font-size="7.6" font-weight="bold" text-anchor="middle">117A</text>
+<line x1="703" y1="535" x2="715" y2="535" stroke="#000000" stroke-width="1"/>
+<ellipse cx="715" cy="535" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="685" cy="645" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="685" y="642.7" font-size="7.6" font-weight="bold" text-anchor="middle">TE</text>
+<text x="685" y="651.9" font-size="7.6" font-weight="bold" text-anchor="middle">116A</text>
+<line x1="703" y1="645" x2="715" y2="645" stroke="#000000" stroke-width="1"/>
+<ellipse cx="715" cy="645" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="840" cy="535" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="840" y="532.7" font-size="7.6" font-weight="bold" text-anchor="middle">PDT</text>
+<text x="840" y="541.9" font-size="7.6" font-weight="bold" text-anchor="middle">119A</text>
+<line x1="840" y1="517" x2="840" y2="410" stroke="#000000" stroke-width="1"/>
+<line x1="840" y1="410" x2="815" y2="410" stroke="#000000" stroke-width="1"/>
+<ellipse cx="815" cy="410" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="840" y1="553" x2="840" y2="680" stroke="#000000" stroke-width="1"/>
+<line x1="840" y1="680" x2="815" y2="680" stroke="#000000" stroke-width="1"/>
+<ellipse cx="815" cy="680" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="765" y1="740" x2="765" y2="788" stroke="#000000" stroke-width="2.1"/>
+<path d="M756.5 744.5L773.5 770.5L756.5 770.5L773.5 744.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="754" y="754.8" font-size="7.6" font-weight="bold" text-anchor="end">HV-156A</text>
+<text x="754" y="765.6" font-size="6.9" text-anchor="end">LO</text>
+<line x1="790" y1="733.3" x2="790" y2="780" stroke="#000000" stroke-width="1.4"/>
+<path d="M783.5 748L796.5 768L783.5 768L796.5 748Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<line x1="784" y1="780" x2="796" y2="780" stroke="#000000" stroke-width="1.5"/>
+<text x="798" y="754.8" font-size="7.6" font-weight="bold">HV-158A</text>
+<text x="798" y="765.6" font-size="6.9">DRAIN, NC</text>
+<ellipse cx="765" cy="788" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="765" y1="788" x2="710" y2="788" stroke="#000000" stroke-width="2.1"/>
+<line x1="710" y1="830" x2="710" y2="788" stroke="#000000" stroke-width="2.1"/>
+<path d="M701.5 796L718.5 822L701.5 822L718.5 796Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="701.5" y1="809" x2="688" y2="809" stroke="#000000" stroke-width="1"/>
+<rect x="672" y="803" width="16" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="680" y="811.1" font-size="6.9" font-weight="bold" text-anchor="middle">S</text>
+<text x="722" y="804.8" font-size="7.6" font-weight="bold">XV-111A</text>
+<text x="722" y="817.1" font-size="6.9">FC</text>
+<ellipse cx="710" cy="830" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="765" y1="788" x2="765" y2="821.5" stroke="#000000" stroke-width="2.1"/>
+<path d="M765 838.5L769.2 837.4L772.4 834.2L773.5 830L772.4 825.8L769.2 822.6L765 821.5" fill="none" stroke="#000000" stroke-width="2.1" stroke-linejoin="miter"/>
+<line x1="765" y1="838.5" x2="765" y2="910" stroke="#000000" stroke-width="2.1"/>
+<path d="M756.5 857L773.5 883L756.5 883L773.5 857Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="756.5" y1="870" x2="743" y2="870" stroke="#000000" stroke-width="1"/>
+<rect x="727" y="864" width="16" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="735" y="872.1" font-size="6.9" font-weight="bold" text-anchor="middle">S</text>
+<text x="777" y="865.8" font-size="7.6" font-weight="bold">XV-112A</text>
+<text x="777" y="878.1" font-size="6.9">FC</text>
+<rect x="975" y="350" width="100" height="390" rx="50" ry="50" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<line x1="979" y1="405" x2="1071" y2="405" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="979" y1="670" x2="1071" y2="670" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="975" y1="690" x2="1075" y2="690" stroke="#000000" stroke-width="1.5"/>
+<line x1="978.1" y1="421" x2="986.1" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="978.1" y1="666" x2="986.1" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="992.4" y1="421" x2="1000.4" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="992.4" y1="666" x2="1000.4" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="1006.7" y1="421" x2="1014.7" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="1006.7" y1="666" x2="1014.7" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="1021" y1="421" x2="1029" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="1021" y1="666" x2="1029" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="1035.3" y1="421" x2="1043.3" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="1035.3" y1="666" x2="1043.3" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="1049.6" y1="421" x2="1057.6" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="1049.6" y1="666" x2="1057.6" y2="654" stroke="#000000" stroke-width="0.6"/>
+<line x1="1063.9" y1="421" x2="1071.9" y2="409" stroke="#000000" stroke-width="0.6"/>
+<line x1="1063.9" y1="666" x2="1071.9" y2="654" stroke="#000000" stroke-width="0.6"/>
+<text x="1025" y="440.1" font-size="10.4" font-weight="bold" text-anchor="middle">V-101B</text>
+<text x="1025" y="452.8" font-size="7.5" text-anchor="middle">ADSORBER B</text>
+<text x="1025" y="513.3" font-size="7.8" font-weight="bold" text-anchor="middle">ZEOLITE 5A</text>
+<text x="1025" y="529.1" font-size="6.4" text-anchor="middle">12.8 t, 5640 mm</text>
+<text x="1025" y="536.7" font-size="6.4" text-anchor="middle">1910 ID, 7 bar a/FV</text>
+<text x="1025" y="681.8" font-size="6.1" text-anchor="middle">ACT. ALUMINA 0.3 m</text>
+<line x1="1025" y1="350" x2="1025" y2="238.5" stroke="#000000" stroke-width="2.1"/>
+<path d="M1025 238.5L1029.2 237.4L1032.4 234.2L1033.5 230L1032.4 225.7L1029.2 222.6L1025 221.5" fill="none" stroke="#000000" stroke-width="2.1" stroke-linejoin="miter"/>
+<line x1="1025" y1="221.5" x2="1025" y2="125" stroke="#000000" stroke-width="2.1"/>
+<ellipse cx="1025" cy="125" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<path d="M1016.5 167L1033.5 193L1016.5 193L1033.5 167Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="1016.5" y1="180" x2="1003" y2="180" stroke="#000000" stroke-width="1"/>
+<rect x="987" y="174" width="16" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="995" y="182.1" font-size="6.9" font-weight="bold" text-anchor="middle">S</text>
+<text x="1037" y="175.8" font-size="7.6" font-weight="bold">XV-113B</text>
+<text x="1037" y="188.1" font-size="6.9">FC</text>
+<ellipse cx="1025" cy="270" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="1025" y1="270" x2="1120" y2="270" stroke="#000000" stroke-width="2.1"/>
+<path d="M1084 261.5L1110 278.5L1110 261.5L1084 278.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="1097" y1="261.5" x2="1097" y2="250" stroke="#000000" stroke-width="1"/>
+<rect x="1089" y="238" width="16" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="1097" y="246.1" font-size="6.9" font-weight="bold" text-anchor="middle">S</text>
+<text x="1097" y="289.8" font-size="7.6" font-weight="bold" text-anchor="middle">XV-114B</text>
+<text x="1097" y="301.1" font-size="6.9" text-anchor="middle">FC</text>
+<line x1="1120" y1="270" x2="1120" y2="230" stroke="#000000" stroke-width="2.1"/>
+<path d="M1016.5 284L1033.5 310L1016.5 310L1033.5 284Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="1036" y="293.8" font-size="7.6" font-weight="bold">HV-155B</text>
+<text x="1036" y="304.6" font-size="6.9">LO</text>
+<line x1="1025" y1="330" x2="1067" y2="330" stroke="#000000" stroke-width="1.4"/>
+<ellipse cx="1025" cy="330" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<path d="M1039 323.5L1059 336.5L1059 323.5L1039 336.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<line x1="1067" y1="324" x2="1067" y2="336" stroke="#000000" stroke-width="1.5"/>
+<text x="1073" y="326.8" font-size="7.6" font-weight="bold">HV-157B</text>
+<text x="1073" y="337.6" font-size="6.9">VENT, NC</text>
+<ellipse cx="1120" cy="230" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="995" y1="360" x2="995" y2="260" stroke="#000000" stroke-width="1.4"/>
+<path d="M988.5 304L1001.5 324L988.5 324L1001.5 304Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<path d="M1002 314L1005 308L1008 310.4L1005 312.8L1008 315.2L1005 317.6L1008 320" fill="none" stroke="#000000" stroke-width="0.7" stroke-linejoin="miter"/>
+<line x1="995" y1="260" x2="955" y2="260" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="950" y="254.8" font-size="7.6" font-weight="bold" text-anchor="end">PSV-110B</text>
+<text x="950" y="268.1" font-size="6.9" text-anchor="end">SET 6.5 bar a</text>
+<ellipse cx="930" cy="380" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="930" y="377.7" font-size="7.6" font-weight="bold" text-anchor="middle">PT</text>
+<text x="930" y="386.9" font-size="7.6" font-weight="bold" text-anchor="middle">115B</text>
+<line x1="948" y1="380" x2="979.2" y2="380" stroke="#000000" stroke-width="1"/>
+<ellipse cx="979.2" cy="380" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<path d="M953.5 373.5L973.5 386.5L973.5 373.5L953.5 386.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="963.5" y="357.8" font-size="7.6" font-weight="bold" text-anchor="middle">HV-159B</text>
+<text x="963.5" y="368.6" font-size="6.9" text-anchor="middle">LO</text>
+<ellipse cx="880" cy="380" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="880" y="377.7" font-size="7.6" font-weight="bold" text-anchor="middle">PI</text>
+<text x="880" y="386.9" font-size="7.6" font-weight="bold" text-anchor="middle">115B</text>
+<line x1="862" y1="380" x2="898" y2="380" stroke="#000000" stroke-width="1"/>
+<line x1="912" y1="380" x2="898" y2="380" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<rect x="859" y="419" width="42" height="42" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="880" cy="440" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="880" y="437.7" font-size="7.6" font-weight="bold" text-anchor="middle">PSHH</text>
+<text x="880" y="446.9" font-size="7.6" font-weight="bold" text-anchor="middle">115B</text>
+<line x1="862" y1="440" x2="898" y2="440" stroke="#000000" stroke-width="1"/>
+<line x1="880" y1="398" x2="880" y2="419" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<text x="880" y="470.9" font-size="6.4" text-anchor="middle">I-1, 5.5 bar a</text>
+<ellipse cx="945" cy="430" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="945" y="427.7" font-size="7.6" font-weight="bold" text-anchor="middle">TE</text>
+<text x="945" y="436.9" font-size="7.6" font-weight="bold" text-anchor="middle">118B</text>
+<line x1="963" y1="430" x2="975" y2="430" stroke="#000000" stroke-width="1"/>
+<ellipse cx="975" cy="430" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="945" cy="535" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="945" y="532.7" font-size="7.6" font-weight="bold" text-anchor="middle">TE</text>
+<text x="945" y="541.9" font-size="7.6" font-weight="bold" text-anchor="middle">117B</text>
+<line x1="963" y1="535" x2="975" y2="535" stroke="#000000" stroke-width="1"/>
+<ellipse cx="975" cy="535" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="945" cy="645" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="945" y="642.7" font-size="7.6" font-weight="bold" text-anchor="middle">TE</text>
+<text x="945" y="651.9" font-size="7.6" font-weight="bold" text-anchor="middle">116B</text>
+<line x1="963" y1="645" x2="975" y2="645" stroke="#000000" stroke-width="1"/>
+<ellipse cx="975" cy="645" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<ellipse cx="1100" cy="535" rx="18" ry="18" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1100" y="532.7" font-size="7.6" font-weight="bold" text-anchor="middle">PDT</text>
+<text x="1100" y="541.9" font-size="7.6" font-weight="bold" text-anchor="middle">119B</text>
+<line x1="1100" y1="517" x2="1100" y2="410" stroke="#000000" stroke-width="1"/>
+<line x1="1100" y1="410" x2="1075" y2="410" stroke="#000000" stroke-width="1"/>
+<ellipse cx="1075" cy="410" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="1100" y1="553" x2="1100" y2="680" stroke="#000000" stroke-width="1"/>
+<line x1="1100" y1="680" x2="1075" y2="680" stroke="#000000" stroke-width="1"/>
+<ellipse cx="1075" cy="680" rx="2.5" ry="2.5" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="1025" y1="740" x2="1025" y2="788" stroke="#000000" stroke-width="2.1"/>
+<path d="M1016.5 744.5L1033.5 770.5L1016.5 770.5L1033.5 744.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="1014" y="754.8" font-size="7.6" font-weight="bold" text-anchor="end">HV-156B</text>
+<text x="1014" y="765.6" font-size="6.9" text-anchor="end">LO</text>
+<line x1="1050" y1="733.3" x2="1050" y2="780" stroke="#000000" stroke-width="1.4"/>
+<path d="M1043.5 748L1056.5 768L1043.5 768L1056.5 748Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<line x1="1044" y1="780" x2="1056" y2="780" stroke="#000000" stroke-width="1.5"/>
+<text x="1058" y="754.8" font-size="7.6" font-weight="bold">HV-158B</text>
+<text x="1058" y="765.6" font-size="6.9">DRAIN, NC</text>
+<ellipse cx="1025" cy="788" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<line x1="1025" y1="788" x2="970" y2="788" stroke="#000000" stroke-width="2.1"/>
+<line x1="970" y1="830" x2="970" y2="788" stroke="#000000" stroke-width="2.1"/>
+<path d="M961.5 796L978.5 822L961.5 822L978.5 796Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="961.5" y1="809" x2="948" y2="809" stroke="#000000" stroke-width="1"/>
+<rect x="932" y="803" width="16" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="940" y="811.1" font-size="6.9" font-weight="bold" text-anchor="middle">S</text>
+<text x="982" y="804.8" font-size="7.6" font-weight="bold">XV-111B</text>
+<text x="982" y="817.1" font-size="6.9">FC</text>
+<line x1="1025" y1="788" x2="1025" y2="910" stroke="#000000" stroke-width="2.1"/>
+<ellipse cx="1025" cy="910" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
+<path d="M1016.5 857L1033.5 883L1016.5 883L1033.5 857Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="1016.5" y1="870" x2="1003" y2="870" stroke="#000000" stroke-width="1"/>
+<rect x="987" y="864" width="16" height="12" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="995" y="872.1" font-size="6.9" font-weight="bold" text-anchor="middle">S</text>
+<text x="1037" y="865.8" font-size="7.6" font-weight="bold">XV-112B</text>
+<text x="1037" y="878.1" font-size="6.9">FC</text>
+<line x1="765" y1="125" x2="1145" y2="125" stroke="#000000" stroke-width="2.1"/>
+<text x="900" y="118.2" font-size="7.2" text-anchor="middle">3&quot;-O2-1201-O2S</text>
+<path d="M1145 115L1173 115L1181 125L1173 135L1145 135Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1186" y="122.9" font-size="6.9">O2 PRODUCT HEADER</text>
+<text x="1186" y="131.2" font-size="6.9">TO PSA-PID-002</text>
+<line x1="860" y1="230" x2="1181" y2="230" stroke="#000000" stroke-width="2.1"/>
+<path d="M1181 220L1153 220L1145 230L1153 240L1181 240Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1186" y="227.9" font-size="6.9">PURGE / EQ HEADER</text>
+<text x="1186" y="236.2" font-size="6.9">FROM PSA-PID-002</text>
+<text x="935" y="223.2" font-size="7.2" text-anchor="middle">3&quot;-O2-1211-O2S</text>
+<line x1="765" y1="910" x2="1145" y2="910" stroke="#000000" stroke-width="2.1"/>
+<text x="900" y="903.2" font-size="7.2" text-anchor="middle">12&quot;-VAC-1301-C1A</text>
+<path d="M1145 900L1173 900L1181 910L1173 920L1145 920Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1186" y="907.9" font-size="6.9">VACUUM HEADER</text>
+<text x="1186" y="916.2" font-size="6.9">TO K-101, PSA-PID-002</text>
+<rect x="218" y="748" width="44" height="44" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<path d="M240 748L262 770L240 792L218 770Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="240" y="766.7" font-size="7.4" font-weight="bold" text-anchor="middle">KS</text>
+<text x="240" y="777.7" font-size="7.4" font-weight="bold" text-anchor="middle">140</text>
+<text x="240" y="803.1" font-size="6.9" font-weight="bold" text-anchor="middle">CYCLE SEQUENCER (PLC)</text>
+<path d="M55 760L83 760L91 770L83 780L55 780Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="50" y="738.9" font-size="6.9">AIC-124 OUTPUT (AD STEP TRIM)</text>
+<text x="50" y="747.2" font-size="6.9">FROM PSA-PID-002</text>
+<line x1="91" y1="770" x2="218" y2="770" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<line x1="262" y1="770" x2="305" y2="770" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<text x="310" y="767.9" font-size="6.9">TO XV-111...XV-114 A/B</text>
+<text x="310" y="776.2" font-size="6.9">(8 VALVES, NOTE 3)</text>
+<line x1="240" y1="808" x2="240" y2="845" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<line x1="240" y1="845" x2="91" y2="845" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9" marker-end="url(#ah)"/>
+<path d="M91 835L63 835L55 845L63 855L91 855Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="50" y="868.9" font-size="6.9">TO FV-121 (FORCE CLOSED IN EQ STEPS)</text>
+<text x="50" y="877.2" font-size="6.9">PSA-PID-002</text>
+<rect x="1270" y="45" width="345" height="890" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="1280" y="62.9" font-size="9.7" font-weight="bold">LEGEND</text>
+<line x1="1285" y1="82" x2="1327" y2="82" stroke="#000000" stroke-width="2.1"/>
+<text x="1332" y="84" font-size="6.5">PROCESS LINE</text>
+<line x1="1450" y1="82" x2="1492" y2="82" stroke="#000000" stroke-width="1.4"/>
+<text x="1497" y="84" font-size="6.5">UTILITY / RELIEF LINE</text>
+<line x1="1285" y1="112" x2="1327" y2="112" stroke="#000000" stroke-width="1" stroke-dasharray="3.9 2.9"/>
+<text x="1332" y="114" font-size="6.5">SIGNAL (ELECTRONIC/SOFTWARE)</text>
+<line x1="1450" y1="112" x2="1492" y2="112" stroke="#000000" stroke-width="2.1"/>
+<line x1="1471" y1="99" x2="1471" y2="103.5" stroke="#000000" stroke-width="2.1"/>
+<path d="M1471 120.5L1475.2 119.4L1478.4 116.2L1479.5 112L1478.4 107.8L1475.2 104.6L1471 103.5" fill="none" stroke="#000000" stroke-width="2.1" stroke-linejoin="miter"/>
+<line x1="1471" y1="120.5" x2="1471" y2="125" stroke="#000000" stroke-width="2.1"/>
+<text x="1497" y="114" font-size="6.5">LINE JUMP (NO JOIN)</text>
+<line x1="1285" y1="147" x2="1327" y2="147" stroke="#000000" stroke-width="2.1"/>
+<path d="M1296 140.5L1316 153.5L1316 140.5L1296 153.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="1306" y1="140" x2="1306" y2="135" stroke="#000000" stroke-width="1"/>
+<path d="M1313 135L1312.6 132.8L1311.4 131L1309.5 129.5L1307.2 128.8L1304.8 128.8L1302.5 129.5L1300.6 131L1299.4 132.8L1299 135Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1332" y="144" font-size="6.5">CONTROL VALVE (DIAPHRAGM)</text>
+<line x1="1450" y1="147" x2="1492" y2="147" stroke="#000000" stroke-width="2.1"/>
+<path d="M1461 140.5L1481 153.5L1481 140.5L1461 153.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="1471" y1="140" x2="1471" y2="136" stroke="#000000" stroke-width="1"/>
+<rect x="1466" y="129" width="10" height="7" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<text x="1497" y="144" font-size="6.5">ON/OFF VALVE c/w SOLENOID</text>
+<line x1="1285" y1="172" x2="1327" y2="172" stroke="#000000" stroke-width="2.1"/>
+<path d="M1296 165.5L1316 178.5L1316 165.5L1296 178.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="1332" y="174" font-size="6.5">MANUAL VALVE</text>
+<line x1="1450" y1="172" x2="1492" y2="172" stroke="#000000" stroke-width="2.1"/>
+<path d="M1461 165L1476.5 172L1461 179Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="1476.5" y1="165" x2="1476.5" y2="179" stroke="#000000" stroke-width="1.5"/>
+<text x="1497" y="174" font-size="6.5">CHECK VALVE</text>
+<line x1="1297" y1="215" x2="1297" y2="195" stroke="#000000" stroke-width="1.4"/>
+<path d="M1291.5 197L1302.5 213L1291.5 213L1302.5 197Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<line x1="1297" y1="195" x2="1325" y2="195" stroke="#000000" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="1332" y="204" font-size="6.5">SAFETY / RELIEF VALVE</text>
+<line x1="1450" y1="202" x2="1492" y2="202" stroke="#000000" stroke-width="2.1"/>
+<line x1="1468" y1="190" x2="1468" y2="214" stroke="#000000" stroke-width="1.5"/>
+<line x1="1474" y1="190" x2="1474" y2="214" stroke="#000000" stroke-width="1.5"/>
+<text x="1497" y="204" font-size="6.5">FLOW ELEMENT (ORIFICE)</text>
+<ellipse cx="1307" cy="232" rx="12" ry="12" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1307" y="229.7" font-size="7.6" font-weight="bold" text-anchor="middle">PI</text>
+<line x1="1295" y1="232" x2="1319" y2="232" stroke="#000000" stroke-width="1"/>
+<text x="1332" y="234" font-size="6.5">DCS / PLC SHARED DISPLAY</text>
+<ellipse cx="1472" cy="232" rx="12" ry="12" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1472" y="229.7" font-size="7.6" font-weight="bold" text-anchor="middle">PI</text>
+<text x="1497" y="234" font-size="6.5">FIELD INSTRUMENT</text>
+<rect x="1293" y="248" width="28" height="28" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<ellipse cx="1307" cy="262" rx="12" ry="12" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1307" y="259.7" font-size="7.6" font-weight="bold" text-anchor="middle">PI</text>
+<line x1="1295" y1="262" x2="1319" y2="262" stroke="#000000" stroke-width="1"/>
+<text x="1332" y="264" font-size="6.5">SIS FUNCTION</text>
+<rect x="1459" y="249" width="26" height="26" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<path d="M1472 249L1485 262L1472 275L1459 262Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1497" y="264" font-size="6.5">PLC SEQUENCER (KS)</text>
+<path d="M1290 284L1313 284L1321 292L1313 300L1290 300Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<text x="1332" y="294" font-size="6.5">OFF-SHEET CONNECTOR</text>
+<line x1="1471" y1="279" x2="1471" y2="305" stroke="#000000" stroke-width="1"/>
+<rect x="1463" y="284" width="16" height="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
+<text x="1471" y="294.3" font-size="7.6" font-weight="bold" text-anchor="middle">T</text>
+<text x="1497" y="294" font-size="6.5">DRAIN TRAP</text>
+<line x1="1285" y1="325" x2="1327" y2="325" stroke="#000000" stroke-width="2.1"/>
+<path d="M1296 318.5L1316 331.5L1316 318.5L1296 331.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
+<text x="1306" y="313.5" font-size="6.5" font-weight="bold" text-anchor="middle">LO</text>
+<text x="1332" y="324" font-size="6.5">HAND VALVE, LOCKED OPEN (LO)</text>
+<line x1="1454" y1="322" x2="1484" y2="322" stroke="#000000" stroke-width="1.4"/>
+<path d="M1461 316.5L1477 327.5L1477 316.5L1461 327.5Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-linejoin="miter"/>
+<line x1="1484" y1="316" x2="1484" y2="328" stroke="#000000" stroke-width="1.5"/>
+<text x="1497" y="324" font-size="6.5">VENT / DRAIN / SAMPLE PT.</text>
+<text x="1280" y="344.7" font-size="9" font-weight="bold">CYCLE SEQUENCE / VALVE LINEUP (KS-140)</text>
+<line x1="1280" y1="355" x2="1594" y2="355" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="370" x2="1594" y2="370" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="385" x2="1594" y2="385" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="400" x2="1594" y2="400" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="415" x2="1594" y2="415" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="430" x2="1594" y2="430" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="445" x2="1594" y2="445" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="460" x2="1594" y2="460" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="475" x2="1594" y2="475" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="490" x2="1594" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="355" x2="1280" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1296" y1="355" x2="1296" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1332" y1="355" x2="1332" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1370" y1="355" x2="1370" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1394" y1="355" x2="1394" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1418" y1="355" x2="1418" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1442" y1="355" x2="1442" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1466" y1="355" x2="1466" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1490" y1="355" x2="1490" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1514" y1="355" x2="1514" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1538" y1="355" x2="1538" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1562" y1="355" x2="1562" y2="490" stroke="#000000" stroke-width="1"/>
+<line x1="1594" y1="355" x2="1594" y2="490" stroke="#000000" stroke-width="1"/>
+<text x="1288" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">S</text>
+<text x="1314" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">BED A</text>
+<text x="1351" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">BED B</text>
+<text x="1382" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">111A</text>
+<text x="1406" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">112A</text>
+<text x="1430" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">113A</text>
+<text x="1454" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">114A</text>
+<text x="1478" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">111B</text>
+<text x="1502" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">112B</text>
+<text x="1526" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">113B</text>
+<text x="1550" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">114B</text>
+<text x="1578" y="364.4" font-size="6.2" font-weight="bold" text-anchor="middle">FV121</text>
+<text x="1288" y="379.4" font-size="6.2" text-anchor="middle">1</text>
+<text x="1314" y="379.4" font-size="6.2" text-anchor="middle">AD</text>
+<text x="1351" y="379.4" font-size="6.2" text-anchor="middle">EV</text>
+<text x="1382" y="379.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1406" y="379.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1430" y="379.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1454" y="379.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1478" y="379.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1502" y="379.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1526" y="379.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1550" y="379.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1578" y="379.4" font-size="6.2" text-anchor="middle">C</text>
+<text x="1288" y="394.4" font-size="6.2" text-anchor="middle">2</text>
+<text x="1314" y="394.4" font-size="6.2" text-anchor="middle">AD</text>
+<text x="1351" y="394.4" font-size="6.2" text-anchor="middle">EV+PG</text>
+<text x="1382" y="394.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1406" y="394.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1430" y="394.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1454" y="394.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1478" y="394.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1502" y="394.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1526" y="394.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1550" y="394.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1578" y="394.4" font-size="6.2" text-anchor="middle">FIC</text>
+<text x="1288" y="409.4" font-size="6.2" text-anchor="middle">3</text>
+<text x="1314" y="409.4" font-size="6.2" text-anchor="middle">EQ-D</text>
+<text x="1351" y="409.4" font-size="6.2" text-anchor="middle">EQ-R</text>
+<text x="1382" y="409.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1406" y="409.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1430" y="409.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1454" y="409.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1478" y="409.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1502" y="409.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1526" y="409.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1550" y="409.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1578" y="409.4" font-size="6.2" text-anchor="middle">C</text>
+<text x="1288" y="424.4" font-size="6.2" text-anchor="middle">4</text>
+<text x="1314" y="424.4" font-size="6.2" text-anchor="middle">BD</text>
+<text x="1351" y="424.4" font-size="6.2" text-anchor="middle">PR</text>
+<text x="1382" y="424.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1406" y="424.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1430" y="424.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1454" y="424.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1478" y="424.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1502" y="424.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1526" y="424.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1550" y="424.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1578" y="424.4" font-size="6.2" text-anchor="middle">C</text>
+<text x="1288" y="439.4" font-size="6.2" text-anchor="middle">5</text>
+<text x="1314" y="439.4" font-size="6.2" text-anchor="middle">EV</text>
+<text x="1351" y="439.4" font-size="6.2" text-anchor="middle">AD</text>
+<text x="1382" y="439.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1406" y="439.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1430" y="439.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1454" y="439.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1478" y="439.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1502" y="439.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1526" y="439.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1550" y="439.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1578" y="439.4" font-size="6.2" text-anchor="middle">C</text>
+<text x="1288" y="454.4" font-size="6.2" text-anchor="middle">6</text>
+<text x="1314" y="454.4" font-size="6.2" text-anchor="middle">EV+PG</text>
+<text x="1351" y="454.4" font-size="6.2" text-anchor="middle">AD</text>
+<text x="1382" y="454.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1406" y="454.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1430" y="454.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1454" y="454.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1478" y="454.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1502" y="454.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1526" y="454.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1550" y="454.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1578" y="454.4" font-size="6.2" text-anchor="middle">FIC</text>
+<text x="1288" y="469.4" font-size="6.2" text-anchor="middle">7</text>
+<text x="1314" y="469.4" font-size="6.2" text-anchor="middle">EQ-R</text>
+<text x="1351" y="469.4" font-size="6.2" text-anchor="middle">EQ-D</text>
+<text x="1382" y="469.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1406" y="469.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1430" y="469.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1454" y="469.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1478" y="469.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1502" y="469.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1526" y="469.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1550" y="469.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1578" y="469.4" font-size="6.2" text-anchor="middle">C</text>
+<text x="1288" y="484.4" font-size="6.2" text-anchor="middle">8</text>
+<text x="1314" y="484.4" font-size="6.2" text-anchor="middle">PR</text>
+<text x="1351" y="484.4" font-size="6.2" text-anchor="middle">BD</text>
+<text x="1382" y="484.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1406" y="484.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1430" y="484.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1454" y="484.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1478" y="484.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1502" y="484.4" font-size="6.2" text-anchor="middle">O</text>
+<text x="1526" y="484.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1550" y="484.4" font-size="6.2" text-anchor="middle">-</text>
+<text x="1578" y="484.4" font-size="6.2" text-anchor="middle">C</text>
+<text x="1280" y="502.1" font-size="6.4">O = OPEN, - = CLOSED, FIC = FV-121 ON FIC-121 (40 Nm3/h).</text>
+<text x="1280" y="509.7" font-size="6.4">HALF CYCLE S1-S4 ~449 s AT DESIGN (NOTE 3).</text>
+<text x="1280" y="532.7" font-size="9" font-weight="bold">STREAM SUMMARY (DESIGN BASIS, NOTE 1)</text>
+<line x1="1280" y1="543" x2="1610" y2="543" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="558" x2="1610" y2="558" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="573" x2="1610" y2="573" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="588" x2="1610" y2="588" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="603" x2="1610" y2="603" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="618" x2="1610" y2="618" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="633" x2="1610" y2="633" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="543" x2="1280" y2="633" stroke="#000000" stroke-width="1"/>
+<line x1="1360" y1="543" x2="1360" y2="633" stroke="#000000" stroke-width="1"/>
+<line x1="1410" y1="543" x2="1410" y2="633" stroke="#000000" stroke-width="1"/>
+<line x1="1460" y1="543" x2="1460" y2="633" stroke="#000000" stroke-width="1"/>
+<line x1="1510" y1="543" x2="1510" y2="633" stroke="#000000" stroke-width="1"/>
+<line x1="1560" y1="543" x2="1560" y2="633" stroke="#000000" stroke-width="1"/>
+<line x1="1610" y1="543" x2="1610" y2="633" stroke="#000000" stroke-width="1"/>
+<text x="1283" y="552.4" font-size="6.4" font-weight="bold">STREAM</text>
+<text x="1385" y="552.4" font-size="6.4" font-weight="bold" text-anchor="middle">AIR FEED</text>
+<text x="1435" y="552.4" font-size="6.4" font-weight="bold" text-anchor="middle">BED TOP</text>
+<text x="1485" y="552.4" font-size="6.4" font-weight="bold" text-anchor="middle">PURGE</text>
+<text x="1535" y="552.4" font-size="6.4" font-weight="bold" text-anchor="middle">O2 PROD.</text>
+<text x="1585" y="552.4" font-size="6.4" font-weight="bold" text-anchor="middle">N2-RICH</text>
+<text x="1283" y="567.4" font-size="6.4">FLOW, Nm3/h</text>
+<text x="1385" y="567.4" font-size="6.4" text-anchor="middle">1800</text>
+<text x="1435" y="567.4" font-size="6.4" text-anchor="middle">206 *</text>
+<text x="1485" y="567.4" font-size="6.4" text-anchor="middle">40 *</text>
+<text x="1535" y="567.4" font-size="6.4" text-anchor="middle">191</text>
+<text x="1585" y="567.4" font-size="6.4" text-anchor="middle">1608</text>
+<text x="1283" y="582.4" font-size="6.4">PRESS., bar a</text>
+<text x="1385" y="582.4" font-size="6.4" text-anchor="middle">2.7-5.5</text>
+<text x="1435" y="582.4" font-size="6.4" text-anchor="middle">4.50</text>
+<text x="1485" y="582.4" font-size="6.4" text-anchor="middle">4.5&gt;0.1</text>
+<text x="1535" y="582.4" font-size="6.4" text-anchor="middle">3.5</text>
+<text x="1585" y="582.4" font-size="6.4" text-anchor="middle">1.25</text>
+<text x="1283" y="597.4" font-size="6.4">TEMP., C</text>
+<text x="1385" y="597.4" font-size="6.4" text-anchor="middle">25</text>
+<text x="1435" y="597.4" font-size="6.4" text-anchor="middle">25</text>
+<text x="1485" y="597.4" font-size="6.4" text-anchor="middle">25</text>
+<text x="1535" y="597.4" font-size="6.4" text-anchor="middle">25</text>
+<text x="1585" y="597.4" font-size="6.4" text-anchor="middle">25</text>
+<text x="1283" y="612.4" font-size="6.4">O2, mol %</text>
+<text x="1385" y="612.4" font-size="6.4" text-anchor="middle">21.0</text>
+<text x="1435" y="612.4" font-size="6.4" text-anchor="middle">96.0</text>
+<text x="1485" y="612.4" font-size="6.4" text-anchor="middle">96.0</text>
+<text x="1535" y="612.4" font-size="6.4" text-anchor="middle">96.0</text>
+<text x="1585" y="612.4" font-size="6.4" text-anchor="middle">12.0</text>
+<text x="1283" y="627.4" font-size="6.4">N2 (+Ar), mol %</text>
+<text x="1385" y="627.4" font-size="6.4" text-anchor="middle">79.0</text>
+<text x="1435" y="627.4" font-size="6.4" text-anchor="middle">4.0</text>
+<text x="1485" y="627.4" font-size="6.4" text-anchor="middle">4.0</text>
+<text x="1535" y="627.4" font-size="6.4" text-anchor="middle">4.0</text>
+<text x="1585" y="627.4" font-size="6.4" text-anchor="middle">88.0</text>
+<text x="1280" y="645.1" font-size="6.4">* PURGE = FIC-121 SP WHILE PURGING; INTERNAL RECYCLE, NOT IN</text>
+<text x="1280" y="652.7" font-size="6.4">NET BALANCE. CLOSURE: 1800 = 191 + 1608; O2 378 = 184 + 194.</text>
+<text x="1280" y="675.7" font-size="9" font-weight="bold">CONTROL LOOP SCHEDULE (THIS SHEET)</text>
+<line x1="1280" y1="686" x2="1610" y2="686" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="701" x2="1610" y2="701" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="716" x2="1610" y2="716" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="731" x2="1610" y2="731" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="746" x2="1610" y2="746" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="761" x2="1610" y2="761" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="686" x2="1280" y2="761" stroke="#000000" stroke-width="1"/>
+<line x1="1328" y1="686" x2="1328" y2="761" stroke="#000000" stroke-width="1"/>
+<line x1="1410" y1="686" x2="1410" y2="761" stroke="#000000" stroke-width="1"/>
+<line x1="1492" y1="686" x2="1492" y2="761" stroke="#000000" stroke-width="1"/>
+<line x1="1520" y1="686" x2="1520" y2="761" stroke="#000000" stroke-width="1"/>
+<line x1="1610" y1="686" x2="1610" y2="761" stroke="#000000" stroke-width="1"/>
+<text x="1283" y="695.4" font-size="6.4" font-weight="bold">LOOP</text>
+<text x="1331" y="695.4" font-size="6.4" font-weight="bold">MEASURES</text>
+<text x="1413" y="695.4" font-size="6.4" font-weight="bold">MOVES</text>
+<text x="1495" y="695.4" font-size="6.4" font-weight="bold">FAIL</text>
+<text x="1523" y="695.4" font-size="6.4" font-weight="bold">SET / NOTE</text>
+<text x="1283" y="710.4" font-size="6.4">FIC-101</text>
+<text x="1331" y="710.4" font-size="6.4">K-100 DISCH. FLOW</text>
+<text x="1413" y="710.4" font-size="6.4">K-100 VSD (SC)</text>
+<text x="1495" y="710.4" font-size="6.4">-</text>
+<text x="1523" y="710.4" font-size="6.4">1800 Nm3/h</text>
+<text x="1283" y="725.4" font-size="6.4">TIC-102</text>
+<text x="1331" y="725.4" font-size="6.4">E-100 AIR OUTLET</text>
+<text x="1413" y="725.4" font-size="6.4">TV-102 CHWR</text>
+<text x="1495" y="725.4" font-size="6.4">FO</text>
+<text x="1523" y="725.4" font-size="6.4">25 C</text>
+<text x="1283" y="740.4" font-size="6.4">PIC-103</text>
+<text x="1331" y="740.4" font-size="6.4">V-100 PRESSURE</text>
+<text x="1413" y="740.4" font-size="6.4">PV-103 BLOW-OFF</text>
+<text x="1495" y="740.4" font-size="6.4">FO</text>
+<text x="1523" y="740.4" font-size="6.4">6.2 bar a</text>
+<text x="1283" y="755.4" font-size="6.4">KS-140</text>
+<text x="1331" y="755.4" font-size="6.4">STEP TIMER</text>
+<text x="1413" y="755.4" font-size="6.4">XV-111...114A/B</text>
+<text x="1495" y="755.4" font-size="6.4">FC</text>
+<text x="1523" y="755.4" font-size="6.4">~449 s HALF CYCLE</text>
+<text x="1280" y="779.7" font-size="9" font-weight="bold">EQUIPMENT DATA</text>
+<line x1="1280" y1="790" x2="1610" y2="790" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="805" x2="1610" y2="805" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="820" x2="1610" y2="820" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="835" x2="1610" y2="835" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="850" x2="1610" y2="850" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="865" x2="1610" y2="865" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="880" x2="1610" y2="880" stroke="#000000" stroke-width="1"/>
+<line x1="1280" y1="790" x2="1280" y2="880" stroke="#000000" stroke-width="1"/>
+<line x1="1335" y1="790" x2="1335" y2="880" stroke="#000000" stroke-width="1"/>
+<line x1="1430" y1="790" x2="1430" y2="880" stroke="#000000" stroke-width="1"/>
+<line x1="1610" y1="790" x2="1610" y2="880" stroke="#000000" stroke-width="1"/>
+<text x="1283" y="799.4" font-size="6.4" font-weight="bold">TAG</text>
+<text x="1338" y="799.4" font-size="6.4" font-weight="bold">SERVICE</text>
+<text x="1433" y="799.4" font-size="6.4" font-weight="bold">DESIGN DATA</text>
+<text x="1283" y="814.4" font-size="6.4">F-100</text>
+<text x="1338" y="814.4" font-size="6.4">AIR INTAKE FILTER</text>
+<text x="1433" y="814.4" font-size="6.4">1800 Nm3/h, dP 10 mbar CLEAN</text>
+<text x="1283" y="829.4" font-size="6.4">K-100</text>
+<text x="1338" y="829.4" font-size="6.4">FEED AIR COMPR.</text>
+<text x="1433" y="829.4" font-size="6.4">OIL-FREE SCREW, VSD, ~200 kW</text>
+<text x="1283" y="844.4" font-size="6.4">E-100</text>
+<text x="1338" y="844.4" font-size="6.4">AIR AFTERCOOLER</text>
+<text x="1433" y="844.4" font-size="6.4">~86 kW, CHW 10 C (CALC.)</text>
+<text x="1283" y="859.4" font-size="6.4">V-100</text>
+<text x="1338" y="859.4" font-size="6.4">AIR RECEIVER</text>
+<text x="1433" y="859.4" font-size="6.4">20 m3, 7 bar g DESIGN</text>
+<text x="1283" y="874.4" font-size="6.4">V-101A/B</text>
+<text x="1338" y="874.4" font-size="6.4">ADSORBERS</text>
+<text x="1433" y="874.4" font-size="6.4">1910 ID, 7 bar a / FV</text>
+<text x="50" y="953.5" font-size="7.2" font-weight="bold">GENERAL NOTES:</text>
+<text x="50" y="962.2" font-size="7.2">1. DESIGN BASIS (TEXTBOOK EXAMPLE, ZEOLITE 5A O2 VPSA): AIR 1800 Nm3/h, 79/21 (Ar LUMPED WITH N2), 25 C; TEXTBOOK O2 234 Nm3/h AT 96 %; OTS DYNAMIC DESIGN: O2 191 Nm3/h AT 96 % (RECOVERY 48.6 %), N2-RICH 1608 Nm3/h, 88 % N2.</text>
+<text x="50" y="970.8" font-size="7.2">   ALL PRESSURES bar a; Nm3 AT 0 C / 1.01325 bar. REAL AIR CARRIES 0.93 % Ar, WHICH 5A DOES NOT SEPARATE FROM O2: ACHIEVABLE PURITY &lt;= 95.7 % O2 - 96 % IS THE OTS MODEL VALUE (TBC).</text>
+<text x="50" y="979.5" font-size="7.2">2. K-100: T2 = T1 (P2/P1)^((k-1)/k) / ETA: ONE STAGE 281 C / 166 kW, TWO STAGES INTERCOOLED 138 C / 147 kW (ETA 0.70) - STAGING, INTERCOOLER AND DISCHARGE T BY VENDOR (TBC).</text>
+<text x="50" y="988.2" font-size="7.2">   E-100 DUTY ~86 kW INCL. ~19 kg/h CONDENSATE (AMBIENT 60 % RH ASSUMED, TBC) TO DT-104; RESIDUAL WATER (~9 kg/h AT 25 C, 5.15 bar a) IS TAKEN BY THE ACTIVATED-ALUMINA LAYER.</text>
+<text x="50" y="996.8" font-size="7.2">3. XV-111...114A/B: PNEUMATIC ON/OFF, FAIL CLOSED, SOLENOID, LIMIT SWITCHES ZSO/ZSC (NOT SHOWN); ALL DRIVEN BY KS-140, SIGNAL LINES NOT SHOWN INDIVIDUALLY. STEPS PER BED: PR, AD, EQ-D, BD, EV, EV+PG, EQ-R.</text>
+<text x="50" y="1005.5" font-size="7.2">   HALF CYCLE ~449 s AT DESIGN: S1 AD 209 s + S2 AD+PG 180 s (AD 389 s; AIC-124 TRIMS S1/S5, AD 330-530 s), S3 EQ 30 s, S4 BD/PR 30 s (OTS CYCLE SIMULATION).</text>
+<text x="50" y="1014.2" font-size="7.2">4. PARTIAL EQUALISATION (30 s) ENDS AT ~3.3 / 0.85 bar a (DONOR / RECEIVER) &gt; V-103 1.25 bar a, SO BLOWDOWN LEAVES THROUGH CV-130. XV-114A/B OPENING SPEED LIMITED (ADJUSTABLE STOPS, TBC). FV-121 FORCED CLOSED IN EQ STEPS.</text>
+<text x="50" y="1022.8" font-size="7.2">   IN S4/S8 BOTH XV-111 ARE CLOSED: FEED ACCUMULATES IN V-100 (~ +0.75 bar IN 30 s, BELOW PIC-103 6.2 bar a). K-101 RUNS ON CLOSED SUCTION (UNLOADING PER VENDOR, TBC).</text>
+<text x="50" y="1031.5" font-size="7.2">5. PT-115A/B ROOT VALVES HV-159A/B SHOWN, LO (THEY FEED I-1); OTHER TRANSMITTERS c/w ROOT AND TEST VALVES (TYP., NOT SHOWN). TE-116/117/118 = BED THERMOCOUPLES BOTTOM/MIDDLE/TOP, TRENDED AS TI ON THE DCS. PDT-119 TAPS ABOVE AND BELOW THE PACKING.</text>
+<text x="50" y="1040.2" font-size="7.2">6. V-101A/B: 1910 mm ID, 5640 mm ZEOLITE 5A (12.8 t, 792 kg/m3) OVER 0.3 m ACTIVATED ALUMINA; DESIGN 7 bar a / FULL VACUUM (NO VACUUM RELIEF NEEDED). PSVs DISCHARGE TO A SAFE LOCATION.</text>
+<text x="50" y="1048.8" font-size="7.2">   VENTS AND DRAINS SHOWN (REV B); MANWAYS AND MEDIA FILL/DUMP NOZZLES NOT SHOWN (VENDOR). SUPERFICIAL VELOCITY IN AD ~0.04 m/s AT 4.7 bar a (UPFLOW LIFT CHECK BY VENDOR, TBC).</text>
+<text x="50" y="1057.5" font-size="7.2">7. PIPING CLASSES: A1A CARBON STEEL 150#; O2S SS316L CLEANED FOR OXYGEN SERVICE (CGA G-4.1 / EIGA 33), VELOCITIES PER EIGA 13; C1A CARBON STEEL, FULL-VACUUM RATED. SIZES PRELIMINARY - TBC BY PIPING.</text>
+<text x="50" y="1066.2" font-size="7.2">   CHWS/CHWR = CHILLED WATER 10 C SUPPLY / RETURN (~15 m3/h AT dT 5 K). V-100 DRAINS TO OIL-FREE CONDENSATE DRAIN.</text>
+<text x="50" y="1074.8" font-size="7.2">8. FIC-101 HOLDS THE FEED AIR AT 1800 Nm3/h (LOCAL SP); V-102 PRESSURE IS HELD BY PIC-123 &gt; FIC-125. K-100 MIN. SPEED / UNLOAD PER VENDOR. INTERLOCKS I-1...I-6: SEE PSA-PID-002.</text>
+<text x="50" y="1083.5" font-size="7.2">9. HAND VALVES (REV B) ARE NORMALLY OPEN UNLESS MARKED NC (NORMALLY CLOSED), LO (LOCKED / CAR-SEALED OPEN) OR LC (LOCKED CLOSED); LO VALVES ARE CLOSED ONLY UNDER PERMIT WITH THE UNIT STOPPED. HV-155A/B AND HV-156A/B ISOLATE A BED</text>
+<text x="50" y="1092.2" font-size="7.2">   FOR MAINTENANCE (ADD SPECTACLE BLINDS FOR ENTRY, TBC); CLOSING ONE WHILE CYCLING DEAD-ENDS THE BED (I-1). PSV-100 / PSV-110A/B HAVE NO BLOCK VALVES: TESTED AT SHUTDOWN. VENTS / DRAINS 1&quot; c/w PLUG. HAND-VALVE LIST: OTS P&amp;ID TAB.</text>
+<line x1="1285" y1="945" x2="1619" y2="945" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="964" x2="1619" y2="964" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="983" x2="1619" y2="983" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="1002" x2="1619" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="945" x2="1285" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1320" y1="945" x2="1320" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1534" y1="945" x2="1534" y2="1002" stroke="#000000" stroke-width="1"/>
+<line x1="1619" y1="945" x2="1619" y2="1002" stroke="#000000" stroke-width="1"/>
+<text x="1302.5" y="956.8" font-size="7.6" font-weight="bold" text-anchor="middle">REV</text>
+<text x="1427" y="956.8" font-size="7.6" font-weight="bold" text-anchor="middle">DESCRIPTION</text>
+<text x="1576.5" y="956.8" font-size="7.6" font-weight="bold" text-anchor="middle">DATE</text>
+<text x="1302.5" y="975.8" font-size="7.6" text-anchor="middle">A</text>
+<text x="1427" y="975.8" font-size="7.6" text-anchor="middle">ISSUED FOR OTS DEVELOPMENT (REVIEW)</text>
+<text x="1576.5" y="975.8" font-size="7.6" text-anchor="middle">25-SEP-26</text>
+<text x="1302.5" y="994.8" font-size="7.6" text-anchor="middle">B</text>
+<text x="1427" y="994.8" font-size="7.6" text-anchor="middle">HAND VALVES, VENTS AND DRAINS ADDED</text>
+<text x="1576.5" y="994.8" font-size="7.6" text-anchor="middle">28-OCT-26</text>
+<rect x="1285" y="1002" width="334" height="132" fill="#FFFFFF" stroke="#000000" stroke-width="1.9"/>
+<line x1="1285" y1="1036" x2="1619" y2="1036" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="1072" x2="1619" y2="1072" stroke="#000000" stroke-width="1"/>
+<line x1="1285" y1="1102" x2="1619" y2="1102" stroke="#000000" stroke-width="1"/>
+<text x="1452" y="1022.3" font-size="11.1" font-weight="bold" text-anchor="middle">AIR SEPARATION VPSA VER 1 (OTS)</text>
+<text x="1452" y="1050.2" font-size="12.5" font-weight="bold" text-anchor="middle">P&amp;ID - AIR FEED AND ADSORBERS</text>
+<text x="1452" y="1065.2" font-size="12.5" font-weight="bold" text-anchor="middle">K-100, V-100, V-101A/B</text>
+<line x1="1368.5" y1="1072" x2="1368.5" y2="1134" stroke="#000000" stroke-width="1"/>
+<line x1="1452" y1="1072" x2="1452" y2="1134" stroke="#000000" stroke-width="1"/>
+<line x1="1535.5" y1="1072" x2="1535.5" y2="1134" stroke="#000000" stroke-width="1"/>
+<text x="1326.8" y="1084.7" font-size="7.6" text-anchor="middle">DRAWN: APINAN</text>
+<text x="1326.8" y="1093.9" font-size="7.6" text-anchor="middle">SOOTTITANTAWAT</text>
+<text x="1410.2" y="1089.3" font-size="7.6" text-anchor="middle">CHK&#x27;D: --</text>
+<text x="1493.8" y="1089.3" font-size="7.6" text-anchor="middle">APP&#x27;D: --</text>
+<text x="1577.2" y="1089.3" font-size="7.6" text-anchor="middle">DATE: 25-SEP-26</text>
+<text x="1326.8" y="1115.7" font-size="7.6" font-weight="bold" text-anchor="middle">DWG NO.</text>
+<text x="1326.8" y="1124.9" font-size="7.6" font-weight="bold" text-anchor="middle">PSA-PID-001</text>
+<text x="1410.2" y="1115.7" font-size="7.6" text-anchor="middle">REV</text>
+<text x="1410.2" y="1124.9" font-size="7.6" text-anchor="middle">B</text>
+<text x="1493.8" y="1115.7" font-size="7.6" text-anchor="middle">SCALE</text>
+<text x="1493.8" y="1124.9" font-size="7.6" text-anchor="middle">N.T.S.</text>
+<text x="1577.2" y="1115.7" font-size="7.6" text-anchor="middle">SHEET</text>
+<text x="1577.2" y="1124.9" font-size="7.6" text-anchor="middle">1 OF 2</text>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpkNTE3YTA4Zi0wZDVkLTQ5OWUtYTJiYS1kZGYwODEzZjdmNzkAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaDZj4e7m1M5yAaHANnMx/cwAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDozNmVlNjFjYy04NWM1LTQwZDktODYyYS03YmIyYmQ1NTQwMDlscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNouQcjmYtnc0jFdUvA9T2/4gAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggi5d1ydogVEwqI/kcCra1lPK9w4Mgh9DEkQ4Tm8b1S6ukZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaGpoYKqxUQkvX/4MLvaPkRMAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRKAAAAAAAAAAAAAGRoYXNoWCBf7onh5up4c1HdN4i8KyrbcJn9KsI90SuCRBgYcPod7GRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBoAASGdZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmQ1MTdhMDhmLTBkNWQtNDk5ZS1hMmJhLWRkZjA4MTNmN2Y3OS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjMxZjVlZDIwLWE3Y2YtNGIwNy04NDI2LTBkMjk2ODcwNjRiNXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCLl3XJ2iBUTCoj+RwKtrWU8r3DgyCH0MSRDhObxvVLq6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggFGhMyR32Hi0Bv8FpqswozyDdmuiB32Gg7esDAzU+ihSiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggNJ1vyDW/yrNvusXGtt6/p7TnbolwYJjIUdgxjxHIEIh0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQGsn/RO26gjww+xfwMmUbwTJeW9bTSBXYQ5BLLWZdRVpKhk7gim4Df81r2X470BJg/U34d4syb1z57Z/JvfK1XA=</c2pa:manifest></metadata></svg>
