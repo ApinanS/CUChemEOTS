@@ -1462,8 +1462,8 @@ details.srcard{border:1px solid var(--edge);border-radius:4px;background:var(--p
   <a class="btn small" id="hzsSimpleLink" href="#" target="_blank" rel="noopener">Standalone PHA Studio · Simple ↗</a>
   <a class="btn small" id="hzsFullLink" href="#" target="_blank" rel="noopener">Standalone PHA Studio · Full ↗</a>
   <a class="btn small" href="PHA_Studio_PVC-CONV_example_N4.json" download>⬇ Worked example (.json)</a>
-  <a class="btn small" href="hazop-studio.html" download="PHA_Studio_PVC-CONV_Simple.html">⬇ Download HTML · Simple</a>
-  <a class="btn small" href="pha-studio-full.html" download="PHA_Studio_PVC-CONV_Full.html">⬇ Download HTML · Full</a>
+  <a class="btn small" href="PHA_Studio_PVC-CONV_Simple.html" download>⬇ Download HTML · Simple</a>
+  <a class="btn small" href="PHA_Studio_PVC-CONV_Full.html" download>⬇ Download HTML · Full</a>
   <span class="small muted" id="hzsNow"></span>
  </div>
  <p class="small muted" style="margin:0 0 8px">Worked example: node N4 (day silo and rotary feeder), load it from File → Worked example. The HTML files work offline on any computer; workshop phone mode needs an http(s) copy (web server or GitHub Pages).</p>
@@ -10285,7 +10285,7 @@ window.hztStart=hztStart;
 function hztStop(){window.HZT.test=null;var p=document.getElementById('hztPanel');if(p)p.remove();}
 function hztTick(){var T=window.HZT.test;if(!T)return;
   if(!T.applied&&sim.t>=T.tA){T.applied=true;var d=T.def;
-    (d.faults||[]).forEach(function(f){injectFault(f[0],f[1],30,true);});
+    if(d.pre)d.pre();(d.faults||[]).forEach(function(f){injectFault(f[0],f[1],f[2]!=null?f[2]:30,true);});
     (d.ctl||[]).forEach(function(q){var C=sim.C[q[0]];C.mode='MAN';C.op=q[1];});
     log('EX','HAZOP Studio test '+d.id.toUpperCase()+': deviation applied ('+d.title+')');T.logN=logArr.length;}
   if(T.applied){T.def.keys.forEach(function(k){var v=hztKey(k);if(v<T.rng[k][0])T.rng[k][0]=v;if(v>T.rng[k][1])T.rng[k][1]=v;});

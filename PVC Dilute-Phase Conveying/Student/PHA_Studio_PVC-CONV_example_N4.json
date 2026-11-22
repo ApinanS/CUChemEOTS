@@ -260,7 +260,9 @@
     "sg": [
      "S011",
      "S012",
-     "S013"
+     "S013",
+     "S001",
+     "S014"
     ],
     "S": "4",
     "L": "2",
@@ -268,13 +270,26 @@
      "R04"
     ],
     "park": [],
-    "notes": "Worked example",
+    "notes": "Worked example. LOPA (worked): PSHH-102 → I-1 is not credited because it shares PT-102 with PIC-102 (not independent, see R02). With its own transmitter it could be credited as a SIL 1 SIF (PFD 0.1) and the scenario would meet the TEL.",
     "lopa": {
-     "on": false,
-     "ie": [],
+     "on": true,
+     "ie": [
+      {
+       "d": "Plug forming in the line (lumps at the bends, air below the saltation margin)",
+       "f": "0.1"
+      }
+     ],
      "en": [],
-     "cm": [],
-     "ipl": []
+     "cm": [
+      {
+       "d": "Probability that people are near the line, E-101 or the blower when it bursts",
+       "p": "0.5"
+      }
+     ],
+     "ipl": [
+      "S001",
+      "S014"
+     ]
     }
    },
    {
@@ -288,7 +303,7 @@
     "cons": "PIC-102 and PSHH-102 both blind; a blockage is not seen",
     "cat": "PER",
     "sg": [
-     "S014"
+     "S015"
     ],
     "S": "4",
     "L": "2",
@@ -316,8 +331,8 @@
     "cons": "Plugs at bends, friction sparks in RV-101",
     "cat": "PER",
     "sg": [
-     "S015",
-     "S016"
+     "S016",
+     "S017"
     ],
     "S": "3",
     "L": "2",
@@ -345,7 +360,7 @@
     "cons": "Exposure during silo entry or sampling",
     "cat": "PER",
     "sg": [
-     "S017"
+     "S018"
     ],
     "S": "3",
     "L": "2",
@@ -373,8 +388,8 @@
     "cons": "Amputation",
     "cat": "PER",
     "sg": [
-     "S018",
-     "S019"
+     "S019",
+     "S020"
     ],
     "S": "4",
     "L": "2",
@@ -401,8 +416,8 @@
    "id": "S001",
    "text": "PIC-102 override 58 kPa g",
    "tag": "PIC-102",
-   "type": "Other",
-   "pfd": ""
+   "type": "BPCS control",
+   "pfd": "0.1"
   },
   {
    "id": "S002",
@@ -490,41 +505,48 @@
   },
   {
    "id": "S014",
+   "text": "PSV-101 90 kPa g on the blower discharge",
+   "tag": "PSV-101",
+   "type": "Relief (PRD)",
+   "pfd": "0.01"
+  },
+  {
+   "id": "S015",
    "text": "PI-104, PI-105 and PI-101 trends (no automatic action)",
    "tag": "PI-104",
    "type": "Other",
    "pfd": ""
   },
   {
-   "id": "S015",
+   "id": "S016",
    "text": "PT-102 spikes",
    "tag": "PT-102",
    "type": "Other",
    "pfd": ""
   },
   {
-   "id": "S016",
+   "id": "S017",
    "text": "sieve upstream (assumed)",
    "tag": "",
    "type": "Other",
    "pfd": ""
   },
   {
-   "id": "S017",
+   "id": "S018",
    "text": "Resin specification (assumed)",
    "tag": "",
    "type": "Other",
    "pfd": ""
   },
   {
-   "id": "S018",
+   "id": "S019",
    "text": "LOTO",
    "tag": "",
    "type": "Other",
    "pfd": ""
   },
   {
-   "id": "S019",
+   "id": "S020",
    "text": "guards",
    "tag": "",
    "type": "Other",
@@ -892,10 +914,10 @@
   ]
  },
  "seq": 9,
- "sgseq": 19,
+ "sgseq": 20,
  "rseq": 0,
  "pseq": 0,
- "saved": "2026-11-22T17:07:32.393Z",
+ "saved": "2026-11-22T17:15:47.897Z",
  "views": [
   {
    "name": "Worksheet View 1",
