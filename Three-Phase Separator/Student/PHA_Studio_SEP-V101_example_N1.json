@@ -1,0 +1,1116 @@
+{
+ "v": 2,
+ "unit": "sep_v101",
+ "meta": {
+  "title": "HAZOP and LOPA of the SEP-V101 unit",
+  "group": "",
+  "date": "2026-11-16",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "SEP-V101",
+  "pid": "",
+  "scope": "From the production manifold (well stream battery limit) through SDV-101, choke HV-100, the demulsifier injection (T-105, P-105) and the inlet heater E-101 to the three-phase separator V-101 and its gas (PV-110 to V-201 / K-201), flare (PV-111, PSV-119, BDV-118), oil (SDV-134, LV-130 to the LP separator) and water (SDV-124, LV-120 to the hydrocyclones) outlets, including utilities (LP steam, instrument air, electrical power).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions (V-101 at 10.0 bar g, 50 °C). LP steam, instrument air and power are available at start-up. The well stream carries no H2S (assumed). Instruments, trips and PSV-119 are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Guides the team through nodes, parameters and guide words; keeps to the method; not from the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every deviation (full recording) in the worksheet",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, the heat and mass balance (SEP-V101-PE-HMB-001), separator sizing, the operating window",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the unit is really run: start-up with the PSLL override, shutdown, blowdown, the alarms the operators see",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Control loops, alarms, trips PSHH-114 / PSLL-115 / LSHH-127 / LSLL-126 / LSLL-136, fail positions, the C&E and the SRS",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety engineer",
+   "name": "",
+   "duty": "Risk matrix, relief and flare cases, follow-up to LOPA",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Mechanical and inspection (sand erosion, PSV-119), rotating equipment (K-201, P-105), production chemistry (demulsifier, foam)",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID SEP-PID-101 rev A (reference)",
+   "where": "P&ID tab (Process & Design; also Operate)",
+   "use": "The drawing the DCS and the exercises use: node boundaries, tags, valves, trips"
+  },
+  {
+   "ref": "EPC P&ID SEP-V101-PID-001 rev A (2 sheets)",
+   "where": "P&ID tab, Alternative version (PDF, SVG, PNG)",
+   "use": "Hand valves, fail positions, interlock schedule I-1…I-5, HOLD items H1–H10"
+  },
+  {
+   "ref": "PFD SEP-PFD-101 rev 0 and HMB SEP-V101-PE-HMB-001 rev 0",
+   "where": "PFD tab (Process & Design); Process engineering tab (Engineering EPC)",
+   "use": "Design intent, flows, conditions, line sizes"
+  },
+  {
+   "ref": "HAZOP report SEP-V101-SA-HZP-001 rev 0",
+   "where": "HAZOP tab (Safety): worksheets of the existing study; report PDF on the HAZOP tab",
+   "use": "Revalidation baseline; recommendations R01–R30 already raised"
+  },
+  {
+   "ref": "C&E matrix SEP-V101-IN-CE-001 rev 0",
+   "where": "C&E matrix tab (Safety)",
+   "use": "Alarm and trip settings, delays and effects"
+  },
+  {
+   "ref": "SRS of SIF SEP-V101-IN-SRS-001 rev 0",
+   "where": "SRS of SIF tab (Safety)",
+   "use": "SIF-01 … SIF-06, SIL, PFDavg, proof tests"
+  },
+  {
+   "ref": "LOPA and Safety layers (study)",
+   "where": "LOPA and Safety layers tabs (Safety)",
+   "use": "LP-1 … LP-6, IPL credits, PFDs, layer register"
+  },
+  {
+   "ref": "Consequence analysis (study)",
+   "where": "Consequence analysis tab (Safety)",
+   "use": "Gas leak, crude spill, vessel burst, blow-by, flare radiation (CHEF / RAST)"
+  },
+  {
+   "ref": "Relief load basis SEP-V101-PE-RLB-001 rev 0",
+   "where": "Relief & vent tab (Engineering EPC)",
+   "use": "PSV-119 cases (blocked outlet, fire), BDV-118 blowdown"
+  },
+  {
+   "ref": "Equipment list SEP-V101-ME-EQL-001 rev 0",
+   "where": "Mechanical tab (Engineering EPC)",
+   "use": "Design pressures and temperatures (V-101 12.0 bar g / 80 °C), materials"
+  },
+  {
+   "ref": "Instrument list SEP-V101-IN-INL-001 rev 0",
+   "where": "Instrumentation & control tab (Engineering EPC)",
+   "use": "Instrument tags, ranges, control-valve check"
+  },
+  {
+   "ref": "Electrical load list SEP-V101-EE-LL-001 rev 0",
+   "where": "Electrical tab (Engineering EPC)",
+   "use": "Motors, power dip, UPS"
+  },
+  {
+   "ref": "Document register SEP-V101-PM-DOC-001 rev 0",
+   "where": "Project & deliverables tab (Engineering EPC)",
+   "use": "Revisions and open engineering queries (EQ)"
+  },
+  {
+   "ref": "Operating procedures SOP-V101-01 … 12",
+   "where": "SOP tab (Operability) and the procedures on the Exercises tab",
+   "use": "Start-up, shutdown, blowdown, slug, K-201 trip"
+  },
+  {
+   "ref": "Dynamic model",
+   "where": "DCS console (Operate): the ▶ OTS tests of this program",
+   "use": "Deviation runs with the safeguards active"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r10",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No well stream to V-101",
+    "causes": "SDV-101 closes (SIS trip or instrument-air failure)\nwells shut in upstream\nchoke HV-100 closed in error",
+    "events": "",
+    "grp": [],
+    "cons": "Production lost. V-101 pressure falls slowly: 10.0 → 6.6 bar g in 30 min with the choke shut (model run); levels drop; no hazard",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r11",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "More well stream (more gas)",
+    "causes": "Choke HV-100 opened wide (HIC-100 error, trim eroded)\nanother well brought on line (+20 %)\ngas breakthrough (gas rate up to +60 %)",
+    "events": "",
+    "grp": [],
+    "cons": "More gas than PV-110 passes: with the choke at 100 % the model reached 10.99 bar g and flared 3.7 kSm³/h. If both gas outlets are also blocked, V-101 goes above its 12.0 bar g design: rupture, jet fire",
+    "cat": "PER",
+    "sg": [
+     "S004",
+     "S005",
+     "S006",
+     "S007",
+     "S008"
+    ],
+    "S": "5",
+    "L": "2",
+    "recs": [
+     "R01",
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example\nLOPA (worked example): values from the OTS LOPA tab, scenario LP-1, and teaching defaults. Not credited: PIC-111 / PV-111 (the cause is a BPCS failure; one BPCS credit per scenario) and the PI-111 HI alarm (seconds to the trip, too fast for an operator). PSV-119 (PFD 0.01) may be credited only after R01 confirms the relief case: then f_mit = 3.08e-07 per year, which meets the TEL.",
+    "lopa": {
+     "on": true,
+     "ie": [
+      {
+       "d": "HIC-100 / choke HV-100 driven wide open: BPCS loop failure (generic CCPS value, as the LOPA tab, LP-1)",
+       "f": "0.1"
+      }
+     ],
+     "en": [
+      {
+       "d": "Both gas outlets blocked at the same time: export route lost and PV-111 not opening (assumed for teaching)",
+       "p": "0.1"
+      }
+     ],
+     "cm": [
+      {
+       "d": "Probability of ignition (LOPA tab LP-1, assumed generic)",
+       "p": "0.3"
+      },
+      {
+       "d": "Probability that someone is in the area (LOPA tab LP-1, assumed)",
+       "p": "0.5"
+      }
+     ],
+     "ipl": [
+      "S007"
+     ]
+    }
+   },
+   {
+    "id": "r12",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Upstream pressure higher than normal",
+    "causes": "Wells shut in against a closed SDV-101 (pressure settles to the shut-in pressure, assumed above 30 bar g)\nwrong manifold line-up",
+    "events": "",
+    "grp": [],
+    "cons": "SDV-101 and HV-100 see the full shut-in pressure; if the specification break is wrong, a rupture upstream of the choke",
+    "cat": "PER",
+    "sg": [
+     "S009",
+     "S010"
+    ],
+    "S": "5",
+    "L": "1",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r13",
+    "param": "Pressure",
+    "gw": "LESS",
+    "dev": "Lower manifold pressure",
+    "causes": "Wells declining\nupstream shutdown",
+    "events": "",
+    "grp": [],
+    "cons": "Less flow and production; no hazard",
+    "cat": "PER",
+    "sg": [
+     "S010",
+     "S011"
+    ],
+    "S": "1",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r14",
+    "param": "Temperature",
+    "gw": "LESS",
+    "dev": "Colder well stream",
+    "causes": "Cold flowline (rain, low rate): TI-101 falls 35 → 22 °C\nJoule–Thomson cooling across the choke",
+    "events": "",
+    "grp": [],
+    "cons": "More heat needed in E-101; colder separation and off-spec oil if steam is limited; hydrates could block the choke (not modelled)",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013",
+     "S014"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r15",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Sand with the well stream",
+    "causes": "Sand production from a well (up to 1.5 m³/h)",
+    "events": "",
+    "grp": [],
+    "cons": "Erosion of the choke and elbows: loss of containment and jet fire; sand fills the V-101 inlet section and blocks the water nozzle",
+    "cat": "PER",
+    "sg": [
+     "S015",
+     "S016"
+    ],
+    "S": "5",
+    "L": "2",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r16",
+    "param": "Composition",
+    "gw": "MORE",
+    "dev": "Higher water cut",
+    "causes": "A well waters out: water cut 33 → 50 %",
+    "events": "",
+    "grp": [],
+    "cons": "Interface rises; more water through LV-120; more oil in the water",
+    "cat": "PER",
+    "sg": [
+     "S017",
+     "S018",
+     "S019"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r17",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Back-flow from V-101 to the manifold",
+    "causes": "Manifold pressure falls below V-101 pressure with SDV-101 open",
+    "events": "",
+    "grp": [],
+    "cons": "Gas from V-101 back into the flowline; small, no hazard at 30 bar g normal manifold pressure",
+    "cat": "PER",
+    "sg": [
+     "S020",
+     "S021",
+     "S022"
+    ],
+    "S": "2",
+    "L": "1",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r18",
+    "param": "Flow",
+    "gw": "AS WELL AS",
+    "dev": "Liquid slugs with the well stream",
+    "causes": "Pigging\nterrain slugging on a long flowline at low rate",
+    "events": "",
+    "grp": [],
+    "cons": "Inlet level rises (a full slug reached 1236 mm in the model, no trip); carry-over to K-201; inlet trip if the level reaches 1500 mm",
+    "cat": "PER",
+    "sg": [
+     "S023",
+     "S024",
+     "S025",
+     "S026"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": [],
+  "N10": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "PI-110 LO alarm 9.2 bar g",
+   "tag": "PI-110",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "LI-125 LO alarm 950 mm",
+   "tag": "LI-125",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "LSLL-126 and LSLL-136 close SDV-124 / SDV-134 below 200 mm",
+   "tag": "LSLL-126",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "PIC-110 / PV-110 to K-201",
+   "tag": "PIC-110",
+   "type": "BPCS control",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "PIC-111 / PV-111 (fail open) to flare at 11.0 bar g",
+   "tag": "PIC-111",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "PI-110 HI 10.6, PI-111 HI 10.8, KI-116 HI 0.095 alarms",
+   "tag": "PI-110",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "PSHH-114 closes SDV-101 at 11.5 bar g (3 s)",
+   "tag": "PSHH-114",
+   "type": "Interlock (SIS)",
+   "pfd": "0.0205"
+  },
+  {
+   "id": "S008",
+   "text": "PSV-119 set 12.0 bar g",
+   "tag": "PSV-119",
+   "type": "Relief (PRD)",
+   "pfd": "0.01"
+  },
+  {
+   "id": "S009",
+   "text": "Manifold, SDV-101 and HV-100 rated for the upstream pressure (assumed)",
+   "tag": "SDV-101",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "PI-100 indication",
+   "tag": "PI-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "PIC-110 holds V-101 pressure",
+   "tag": "PIC-110",
+   "type": "BPCS control",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "TIC-102 on E-101",
+   "tag": "TIC-102",
+   "type": "BPCS control",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "TI-101 indication",
+   "tag": "TI-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "TI-102 LO alarm 45 °C",
+   "tag": "TI-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "Sand jetting of V-101",
+   "tag": "V-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "wall-thickness inspection (assumed)",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "LIC-120",
+   "tag": "LIC-120",
+   "type": "BPCS control",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "LI-120 HI 800 mm",
+   "tag": "LI-120",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "AI-122 HI 1000 mg/L",
+   "tag": "AI-122",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "Choke HV-100",
+   "tag": "HV-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S021",
+   "text": "non-return valve at the manifold (assumed)",
+   "tag": "",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S022",
+   "text": "PSLL-115 closes SDV-101 below 5.0 bar g (5 s)",
+   "tag": "PSLL-115",
+   "type": "Interlock (SIS)",
+   "pfd": "0.0205"
+  },
+  {
+   "id": "S023",
+   "text": "LIC-130 / LIC-120",
+   "tag": "LIC-130",
+   "type": "BPCS control",
+   "pfd": ""
+  },
+  {
+   "id": "S024",
+   "text": "LI-125 HI 1250 mm",
+   "tag": "LI-125",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S025",
+   "text": "LSHH-127 closes SDV-101 above 1500 mm (5 s)",
+   "tag": "LSHH-127",
+   "type": "Interlock (SIS)",
+   "pfd": "0.023"
+  },
+  {
+   "id": "S026",
+   "text": "LSHH-201 trips K-201",
+   "tag": "LSHH-201",
+   "type": "Interlock (SIS)",
+   "pfd": "0.0155"
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Confirm that PSV-119 (6.5 kg/s relief rate in the model) covers the choke-wide-open and gas-breakthrough cases with K-201 down, and document the relief cases to API 520/521.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Sand: carry out an erosion study for choke HV-100 and the downstream elbows, set wall-thickness inspection intervals, and add an acoustic sand detector upstream of SDV-101; set the sand-jetting frequency from it.",
+   "by": "Inspection",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Confirm the specification break: the manifold, SDV-101 and HV-100 rated for the well shut-in pressure (assumed above 30 bar g, to be confirmed), V-101 and downstream for 12.0 bar g.",
+   "by": "Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Agree advance notice from production before pigging and well tests, so the operator lowers LIC-120 and LIC-130 set points before a slug arrives.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Calculate the hydrate temperature of the well gas after the choke (30 → 10 bar g, cold flowline); provide methanol injection upstream of HV-100 if needed.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "SDV-101 closes (SIS trip or instrument-air failure)",
+   "wells shut in upstream",
+   "choke HV-100 closed in error",
+   "Choke HV-100 opened wide (HIC-100 error, trim eroded)",
+   "another well brought on line (+20 %)",
+   "gas breakthrough (gas rate up to +60 %)",
+   "Wells shut in against a closed SDV-101 (pressure settles to the shut-in pressure, assumed above 30 bar g)",
+   "wrong manifold line-up",
+   "Wells declining",
+   "upstream shutdown",
+   "Cold flowline (rain, low rate): TI-101 falls 35 → 22 °C",
+   "Joule–Thomson cooling across the choke",
+   "Sand production from a well (up to 1.5 m³/h)",
+   "A well waters out: water cut 33 → 50 %",
+   "Manifold pressure falls below V-101 pressure with SDV-101 open",
+   "Pigging",
+   "terrain slugging on a long flowline at low rate"
+  ],
+  "cons": [
+   "Production lost. V-101 pressure falls slowly: 10.0 → 6.6 bar g in 30 min with the choke shut (model run)",
+   "levels drop",
+   "no hazard",
+   "More gas than PV-110 passes: with the choke at 100 % the model reached 10.99 bar g and flared 3.7 kSm³/h. If both gas outlets are also blocked, V-101 goes above its 12.0 bar g design: rupture, jet fire",
+   "SDV-101 and HV-100 see the full shut-in pressure",
+   "if the specification break is wrong, a rupture upstream of the choke",
+   "Less flow and production",
+   "More heat needed in E-101",
+   "colder separation and off-spec oil if steam is limited",
+   "hydrates could block the choke (not modelled)",
+   "Erosion of the choke and elbows: loss of containment and jet fire",
+   "sand fills the V-101 inlet section and blocks the water nozzle",
+   "Interface rises",
+   "more water through LV-120",
+   "more oil in the water",
+   "Gas from V-101 back into the flowline",
+   "small, no hazard at 30 bar g normal manifold pressure",
+   "Inlet level rises (a full slug reached 1236 mm in the model, no trip)",
+   "carry-over to K-201",
+   "inlet trip if the level reaches 1500 mm"
+  ],
+  "safe": [
+   "PI-110 LO alarm 9.2 bar g",
+   "PI-110 HI alarm 10.6 bar g",
+   "PI-111 HI alarm 10.8 bar g",
+   "TI-102 LO alarm 45 °C",
+   "TI-102 HI alarm 60 °C",
+   "TI-112 LO alarm 44 °C",
+   "FI-105 LO alarm 0.4 L/h",
+   "PDI-113 HI alarm 6 mbar",
+   "KI-116 HI alarm 0.095 m/s",
+   "FI-117 HI alarm 0.3 kSm³/h",
+   "FI-119 HI alarm 3 L/h",
+   "LI-201 HI alarm 60 %",
+   "LI-125 LO alarm 950 mm",
+   "LI-125 HI alarm 1250 mm",
+   "LI-120 LO alarm 350 mm",
+   "LI-120 HI alarm 800 mm",
+   "LI-130 LO alarm 350 mm",
+   "LI-130 HI alarm 900 mm",
+   "AI-132 HI alarm 1 vol%",
+   "AI-122 HI alarm 1000 mg/L",
+   "PSHH-114 > 11.5 bar g (3 s) closes SDV-101 (SIF-01, PT-114)",
+   "PSLL-115 < 5.0 bar g (5 s) closes SDV-101 (SIF-02; start-up override 30 min)",
+   "LSHH-127 > 1500 mm (5 s) closes SDV-101 (SIF-03, true inlet-section level)",
+   "LSLL-126 < 200 mm (2 s) closes SDV-124 (SIF-04, true interface)",
+   "LSLL-136 < 200 mm (2 s) closes SDV-134 (SIF-05, true bucket level)",
+   "LSHH-201 on V-201 trips K-201 (SIF-06)",
+   "ESD-2 (HS-002) or instrument-air failure opens BDV-118 to flare (latched)",
+   "PSV-119 on V-101 to flare, set 12.0 bar g (reseat 11.4)",
+   "PIC-111 / PV-111 to flare at 11.0 bar g (own transmitter PT-111)",
+   "PIC-110 / PV-110 holds V-101 at 10.0 bar g (gas to K-201)",
+   "LIC-120 / LV-120 holds the interface at 550 mm",
+   "LIC-130 / LV-130 holds the oil-bucket level at 600 mm",
+   "TIC-102 / TV-102 holds the E-101 outlet at 50 °C",
+   "FIC-105 / P-105 holds the demulsifier at 0.8 L/h (20 ppm)",
+   "BDV-118 fails open (FO)",
+   "HV-100 fails last (FL)",
+   "LV-120 fails closed (FC)",
+   "LV-130 fails closed (FC)",
+   "PV-110 fails open (FO)",
+   "PV-111 fails open (FO)",
+   "SDV-101 fails closed (FC)",
+   "SDV-124 fails closed (FC)",
+   "SDV-134 fails closed (FC)",
+   "TV-102 fails closed (FC)",
+   "LSLL-126 and LSLL-136 close SDV-124 / SDV-134 below 200 mm",
+   "PIC-110 / PV-110 to K-201",
+   "PIC-111 / PV-111 (fail open) to flare at 11.0 bar g",
+   "PI-110 HI 10.6, PI-111 HI 10.8, KI-116 HI 0.095 alarms",
+   "PSHH-114 closes SDV-101 at 11.5 bar g (3 s)",
+   "PSV-119 set 12.0 bar g",
+   "Manifold, SDV-101 and HV-100 rated for the upstream pressure (assumed)",
+   "PI-100 indication",
+   "PIC-110 holds V-101 pressure",
+   "TIC-102 on E-101",
+   "TI-101 indication",
+   "Sand jetting of V-101",
+   "wall-thickness inspection (assumed)",
+   "LIC-120",
+   "LI-120 HI 800 mm",
+   "AI-122 HI 1000 mg/L",
+   "Choke HV-100",
+   "non-return valve at the manifold (assumed)",
+   "PSLL-115 closes SDV-101 below 5.0 bar g (5 s)",
+   "LIC-130 / LIC-120",
+   "LI-125 HI 1250 mm",
+   "LSHH-127 closes SDV-101 above 1500 mm (5 s)",
+   "LSHH-201 trips K-201",
+   "P-105 STOP alarm",
+   "AI-132 HI 1 %",
+   "FIC-105 control",
+   "FIC-105",
+   "FI-105 indication",
+   "daily tank dip",
+   "Pump relief valve (assumed integral)",
+   "PPE",
+   "Check valve at the injection quill and pump check valves (assumed)",
+   "Labelled tank and delivery check (assumed)",
+   "Safety data sheet",
+   "eyewash (assumed)",
+   "steam at 148 °C limits the peak",
+   "TIC-102 cuts the steam",
+   "Bundle inspection",
+   "shell-side relief (assumed, to be confirmed)",
+   "Steam trap",
+   "TV-102 position on the DCS",
+   "Insulation",
+   "permit to work",
+   "PI-110 HI 10.6, PI-111 HI 10.8 alarms",
+   "PSHH-114 (PT-114, separate transmitter) closes SDV-101 at 11.5 bar g (3 s)",
+   "PSV-119 set 12.0 bar g, reseat 11.4",
+   "SA-516-70 impact tested (assumed)",
+   "blowdown restriction orifice",
+   "PSV-119 (fire case to be confirmed)",
+   "BDV-118 on ESD with blowdown",
+   "TI-112 indication",
+   "FI-119 HI 3 L/h",
+   "antifoam injection (field)",
+   "PDI-113 HI 6",
+   "None specific",
+   "Design and inspection",
+   "gauge-glass ball checks (assumed)",
+   "fire and gas detection with ESD and BDV-118 (assumed)",
+   "LI-130 HI 900 mm",
+   "LI-125 LO 950 mm",
+   "LSLL-136 closes SDV-134 below 200 mm",
+   "gauge glass LG-121",
+   "LSLL-126 (separate sensor) closes SDV-124 below 200 mm (2 s)",
+   "LG-121",
+   "Sand jetting (field)",
+   "LI-130 LO 350 mm",
+   "LSLL-136 (true level) closes SDV-134 below 200 mm (2 s)",
+   "PIC-111 to flare",
+   "K-201 TRIP alarm",
+   "PSHH-114",
+   "PSV-119",
+   "compressor-trip procedure (choke to 30 %)",
+   "PI-110 LO 9.2 bar g",
+   "PSLL-115 below 5.0 bar g",
+   "PI-111 HI 10.8 (separate PT-111)",
+   "PSHH-114 (PT-114)",
+   "FI-117 HI 0.3",
+   "KI-116 HI 0.095",
+   "LI-201 HI 60 %",
+   "Non-return valve on the gas outlet (assumed)",
+   "TI-102 HI 60 °C",
+   "PI-111 HI 10.8",
+   "PSHH-114 at 11.5 bar g (3 s)",
+   "Block valves car-sealed open (assumed)",
+   "PSV bench test",
+   "PSHH-114 upstream",
+   "FI-117 HI 0.3 kSm³/h",
+   "PV-111 position on the DCS",
+   "Flare header design (assumed adequate)",
+   "LSHH-127 closes SDV-101",
+   "flare knock-out drum (outside scope, assumed)",
+   "Material selection (assumed)",
+   "restriction orifice",
+   "BDV-118 OPEN alarm",
+   "Flare purge gas (assumed)",
+   "BDV-118 open to the header",
+   "LG-131",
+   "LP separator relief (outside scope, assumed)",
+   "LSHH-127",
+   "LIC-130 control margin",
+   "SDV-134 fail closed",
+   "non-return valve (assumed)",
+   "LSLL-136 closes SDV-134",
+   "operator at LG-131",
+   "LI-120 LO 350 mm",
+   "LSLL-126 closes SDV-124 below 200 mm (2 s)",
+   "Sand jetting procedure",
+   "inspection",
+   "SDV-124 fail closed",
+   "Permissives: PIC-110 and PIC-111 in AUTO, BDV-118 closed, choke at 30 % or less",
+   "Trip message and first-out on the SIS screen",
+   "Override expires automatically after 30 min",
+   "fire and gas detection (assumed)",
+   "Reset only with the choke at 30 % or less",
+   "TI-102 LO 45 °C",
+   "SDV-124 / SDV-134 closed as the last shutdown step",
+   "LSLL-126 / LSLL-136",
+   "PSV-119 fire case",
+   "Permit to work, positive isolation, gas test (assumed)",
+   "Operator response to the alarm",
+   "Written procedure (SOP) and checklist",
+   "Permit to work, isolation, purging and gas test",
+   "Field round with the rounds sheet (Visual plant)",
+   "Gauge glasses LG-121 / LG-131 checked against LI-120 / LI-130 each shift",
+   "PPE for crude oil and chemicals (gloves, goggles, FR clothing)"
+  ],
+  "recs": [
+   "Confirm that PSV-119 (6.5 kg/s relief rate in the model) covers the choke-wide-open and gas-breakthrough cases with K-201 down, and document the relief cases to API 520/521.",
+   "Sand: carry out an erosion study for choke HV-100 and the downstream elbows, set wall-thickness inspection intervals, and add an acoustic sand detector upstream of SDV-101; set the sand-jetting frequency from it.",
+   "Confirm the specification break: the manifold, SDV-101 and HV-100 rated for the well shut-in pressure (assumed above 30 bar g, to be confirmed), V-101 and downstream for 12.0 bar g.",
+   "Agree advance notice from production before pigging and well tests, so the operator lowers LIC-120 and LIC-130 set points before a slug arrives.",
+   "Calculate the hydrate temperature of the well gas after the choke (30 → 10 bar g, cold flowline); provide methanol injection upstream of HV-100 if needed."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Minor",
+    "First aid",
+    "No lasting damage",
+    "No release beyond the unit"
+   ],
+   [
+    2,
+    "Moderate",
+    "Medical treatment",
+    "Off-spec product or a short production loss",
+    "Small emission"
+   ],
+   [
+    3,
+    "Serious",
+    "Lost-time injury",
+    "Equipment damage",
+    "A reportable release"
+   ],
+   [
+    4,
+    "Major",
+    "One fatality or several serious injuries",
+    "Major equipment damage",
+    "Significant release"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Several fatalities",
+    "Loss of the unit",
+    "Major environmental damage"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not heard of in the industry",
+    "below 10⁻⁴ /y"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Heard of in the industry",
+    "10⁻⁴ – 10⁻³ /y"
+   ],
+   [
+    3,
+    "Possible",
+    "Has happened in the company",
+    "10⁻³ – 10⁻² /y"
+   ],
+   [
+    4,
+    "Likely",
+    "Expected a few times in the life of the unit",
+    "10⁻² – 10⁻¹ /y"
+   ],
+   [
+    5,
+    "Frequent",
+    "Several times a year at this site",
+    "above 10⁻¹ /y"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 18,
+ "sgseq": 26,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": "2026-11-16T04:48:53.181Z",
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": true,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

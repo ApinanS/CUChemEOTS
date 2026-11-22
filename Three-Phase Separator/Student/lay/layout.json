@@ -1,0 +1,4814 @@
+{
+ "meta": {
+  "doc": "SEP-V101-LA-PLT-001",
+  "title": "Plot plan, elevations and operator route — V-101 separator unit",
+  "rev": "Rev 0 · Issued for teaching",
+  "version": 1,
+  "units": "m",
+  "axes": "x east, y north, z up; grade z = 0 (EL ±0.000 = top of paving)",
+  "north_deg": 0,
+  "origin": "SW corner of the Consequence-analysis plot plan: x = x_cq, y = 86 − y_cq",
+  "fence": [
+   3,
+   3,
+   127,
+   83
+  ],
+  "plot": [
+   0,
+   0,
+   130,
+   86
+  ],
+  "wind": {
+   "from_deg": 0,
+   "label": "prevailing wind from the north (assumed for teaching)"
+  },
+  "sources": [
+   "SEP-V101-PID-001 rev A (tabs/pidalt/dwg/lines.json, tags.json)",
+   "SEP-V101-ME-EQL-001 and V-101 GA (emech)",
+   "cq LAY plot plan (Consequence analysis)",
+   "eelec hazardous-area rules",
+   "erel relief basis"
+  ],
+  "made_by": "tabs/lay/tools/make_layout.js"
+ },
+ "equipment": [
+  {
+   "tag": "V-101",
+   "name": "Three-phase production separator",
+   "type": "vessel",
+   "shape": "hcyl",
+   "axis": "x",
+   "scope": "unit",
+   "eql": true,
+   "c": [
+    47,
+    40,
+    2.512
+   ],
+   "dims": {
+    "D": 2.024,
+    "L": 6,
+    "head": 0.506,
+    "ID": 2
+   },
+   "bbox": [
+    43.494,
+    38.988,
+    0,
+    50.506,
+    41.012,
+    3.524
+   ],
+   "supports": [
+    {
+     "type": "saddle",
+     "c": [
+      45.2,
+      40,
+      0.775
+     ],
+     "size": [
+      0.3,
+      1.8,
+      1.55
+     ]
+    },
+    {
+     "type": "saddle",
+     "c": [
+      48.8,
+      40,
+      0.775
+     ],
+     "size": [
+      0.3,
+      1.8,
+      1.55
+     ]
+    }
+   ],
+   "sections": [
+    {
+     "name": "inlet section",
+     "x0": 44,
+     "x1": 48.6
+    },
+    {
+     "name": "oil bucket",
+     "x0": 48.6,
+     "x1": 50
+    }
+   ],
+   "note": "2000 ID × 6000 T/T, 2:1 ellipsoidal heads, 12 mm plate (emech); saddles at 0.2 L from the tangents, bottom 1.5 m above grade (emech GA, assumed)"
+  },
+  {
+   "tag": "E-101",
+   "name": "Well-stream heater (shell and tube)",
+   "type": "exchanger",
+   "shape": "hcyl",
+   "axis": "x",
+   "scope": "unit",
+   "eql": true,
+   "c": [
+    30,
+    40,
+    1.2
+   ],
+   "dims": {
+    "D": 0.446,
+    "L": 5.900000000000002,
+    "head": 0,
+    "channel": {
+     "x0": 27.05,
+     "x1": 27.65,
+     "D": 0.5
+    },
+    "rear": {
+     "x0": 32.55,
+     "x1": 32.95,
+     "D": 0.5
+    },
+    "tube_length": 4.88
+   },
+   "bbox": [
+    27.05,
+    39.75,
+    0,
+    32.95,
+    40.25,
+    1.45
+   ],
+   "supports": [
+    {
+     "type": "saddle",
+     "c": [
+      28,
+      40,
+      0.49
+     ],
+     "size": [
+      0.2,
+      0.6,
+      0.98
+     ]
+    },
+    {
+     "type": "saddle",
+     "c": [
+      32,
+      40,
+      0.49
+     ],
+     "size": [
+      0.2,
+      0.6,
+      0.98
+     ]
+    }
+   ],
+   "pull": {
+    "x0": 21.17,
+    "x1": 27.05,
+    "y0": 39.75,
+    "y1": 40.25,
+    "note": "tube-bundle withdrawal space = bundle length + 1 m (typical, assumed)"
+   },
+   "note": "TEMA AES (assumed), 30 m², 78 tubes 25.4 × 4.88 m, well stream in the tubes (1 pass), LP steam in the shell; channel to the west"
+  },
+  {
+   "tag": "MAN",
+   "name": "Inlet manifold skid (MV-151, SDV-101, HV-100)",
+   "type": "skid",
+   "shape": "box",
+   "scope": "unit",
+   "eql": false,
+   "c": [
+    16,
+    40,
+    0.15
+   ],
+   "dims": {
+    "dx": 8,
+    "dy": 5,
+    "dz": 0.3
+   },
+   "bbox": [
+    12,
+    37.5,
+    0,
+    20,
+    42.5,
+    0.3
+   ],
+   "note": "block of the Consequence-analysis plot plan (MAN)"
+  },
+  {
+   "tag": "PK-105",
+   "name": "Chemical injection skid (T-105, P-105, P-105B)",
+   "type": "skid",
+   "shape": "box",
+   "scope": "unit",
+   "eql": false,
+   "c": [
+    57,
+    57,
+    0.075
+   ],
+   "dims": {
+    "dx": 6,
+    "dy": 5,
+    "dz": 0.15
+   },
+   "bbox": [
+    54,
+    54.5,
+    0,
+    60,
+    59.5,
+    0.15
+   ],
+   "note": "block T-105 / P-105 of the Consequence-analysis plot plan"
+  },
+  {
+   "tag": "T-105",
+   "name": "Demulsifier storage tank",
+   "type": "tank",
+   "shape": "vcyl",
+   "scope": "unit",
+   "eql": true,
+   "parent": "PK-105",
+   "c": [
+    55.5,
+    57.5,
+    1.2
+   ],
+   "dims": {
+    "D": 1,
+    "H": 1.4,
+    "base": 0.5
+   },
+   "bbox": [
+    55,
+    57,
+    0,
+    56,
+    58,
+    1.9
+   ],
+   "note": "1.0 m³ (emech, assumed) on a 0.5 m stand inside a bund; vent with flame arrester at the top"
+  },
+  {
+   "tag": "BUND-105",
+   "name": "T-105 bund wall",
+   "type": "bund",
+   "shape": "box",
+   "scope": "unit",
+   "eql": false,
+   "parent": "PK-105",
+   "c": [
+    55.5,
+    57.5,
+    0.2
+   ],
+   "dims": {
+    "dx": 2.2,
+    "dy": 2.2,
+    "dz": 0.4,
+    "wall": 0.15
+   },
+   "bbox": [
+    54.4,
+    56.4,
+    0,
+    56.6,
+    58.6,
+    0.4
+   ]
+  },
+  {
+   "tag": "P-105",
+   "name": "Demulsifier dosing pump",
+   "type": "pump",
+   "shape": "box",
+   "scope": "unit",
+   "eql": true,
+   "parent": "PK-105",
+   "c": [
+    57.6,
+    56.6,
+    0.3
+   ],
+   "dims": {
+    "dx": 0.7,
+    "dy": 0.45,
+    "dz": 0.6
+   },
+   "bbox": [
+    57.25,
+    56.375,
+    0,
+    57.95,
+    56.825,
+    0.6
+   ],
+   "nozzles": {
+    "suction": [
+     57.25,
+     56.6,
+     0.3
+    ],
+    "discharge": [
+     57.95,
+     56.6,
+     0.45
+    ]
+   },
+   "note": "diaphragm metering pump; suction CL EL 0.30"
+  },
+  {
+   "tag": "P-105B",
+   "name": "Demulsifier dosing pump, spare (on the EPC P&ID; not in the model)",
+   "type": "pump",
+   "shape": "box",
+   "scope": "unit",
+   "eql": true,
+   "parent": "PK-105",
+   "c": [
+    57.6,
+    58.2,
+    0.3
+   ],
+   "dims": {
+    "dx": 0.7,
+    "dy": 0.45,
+    "dz": 0.6
+   },
+   "bbox": [
+    57.25,
+    57.975,
+    0,
+    57.95,
+    58.425,
+    0.6
+   ],
+   "nozzles": {
+    "suction": [
+     57.25,
+     58.2,
+     0.3
+    ],
+    "discharge": [
+     57.95,
+     58.2,
+     0.45
+    ]
+   },
+   "note": "emech EQL lists it as an option (qty 0); drawn because SEP-V101-PID-001 shows it"
+  },
+  {
+   "tag": "CR",
+   "name": "Control room / substation building",
+   "type": "building",
+   "shape": "box",
+   "scope": "site",
+   "eql": false,
+   "c": [
+    22,
+    70,
+    2
+   ],
+   "dims": {
+    "dx": 18,
+    "dy": 10,
+    "dz": 4
+   },
+   "bbox": [
+    13,
+    65,
+    0,
+    31,
+    75,
+    4
+   ],
+   "door": [
+    27,
+    65,
+    0
+   ],
+   "note": "block CR of the Consequence-analysis plot plan; HS-001 / HS-002 on the console"
+  },
+  {
+   "tag": "PKG",
+   "name": "K-201 export compressor package (battery limit)",
+   "type": "package_area",
+   "shape": "box",
+   "scope": "outside",
+   "eql": false,
+   "c": [
+    93,
+    38,
+    0.05
+   ],
+   "dims": {
+    "dx": 14,
+    "dy": 10,
+    "dz": 0.1
+   },
+   "bbox": [
+    86,
+    33,
+    0,
+    100,
+    43,
+    0.1
+   ],
+   "note": "block PKG of the Consequence-analysis plot plan"
+  },
+  {
+   "tag": "V-201",
+   "name": "K-201 suction scrubber (outside scope)",
+   "type": "vessel",
+   "shape": "vcyl",
+   "scope": "outside",
+   "eql": true,
+   "parent": "PKG",
+   "c": [
+    89,
+    38,
+    2.25
+   ],
+   "dims": {
+    "D": 1.2,
+    "H": 3.5,
+    "base": 0.5
+   },
+   "bbox": [
+    88.4,
+    37.4,
+    0,
+    89.6,
+    38.6,
+    4
+   ],
+   "note": "size assumed (package)"
+  },
+  {
+   "tag": "K-201",
+   "name": "Export gas compressor (outside scope)",
+   "type": "compressor",
+   "shape": "box",
+   "scope": "outside",
+   "eql": true,
+   "parent": "PKG",
+   "c": [
+    95,
+    38,
+    1.5
+   ],
+   "dims": {
+    "dx": 6,
+    "dy": 4,
+    "dz": 3
+   },
+   "bbox": [
+    92,
+    36,
+    0,
+    98,
+    40,
+    3
+   ],
+   "note": "package outline assumed"
+  },
+  {
+   "tag": "LPS",
+   "name": "LP separator 2.5 bar g (outside scope)",
+   "type": "vessel",
+   "shape": "hcyl",
+   "axis": "x",
+   "scope": "outside",
+   "eql": false,
+   "c": [
+    48,
+    23,
+    1.9
+   ],
+   "dims": {
+    "D": 1.8,
+    "L": 6,
+    "head": 0.45
+   },
+   "bbox": [
+    44.55,
+    22.1,
+    0,
+    51.45,
+    23.9,
+    2.8
+   ],
+   "note": "block LPS of the Consequence-analysis plot plan; size assumed"
+  },
+  {
+   "tag": "HYD",
+   "name": "Produced-water hydrocyclones 5.0 bar g (outside scope)",
+   "type": "skid",
+   "shape": "box",
+   "scope": "outside",
+   "eql": false,
+   "c": [
+    62,
+    23,
+    1.25
+   ],
+   "dims": {
+    "dx": 5,
+    "dy": 3,
+    "dz": 2.5
+   },
+   "bbox": [
+    59.5,
+    21.5,
+    0,
+    64.5,
+    24.5,
+    2.5
+   ],
+   "note": "block HYD of the Consequence-analysis plot plan"
+  },
+  {
+   "tag": "FKO",
+   "name": "Flare knock-out drum (outside scope)",
+   "type": "vessel",
+   "shape": "hcyl",
+   "axis": "x",
+   "scope": "outside",
+   "eql": false,
+   "c": [
+    104,
+    61,
+    1.6
+   ],
+   "dims": {
+    "D": 2,
+    "L": 4.5,
+    "head": 0.5
+   },
+   "bbox": [
+    101.25,
+    60,
+    0,
+    106.75,
+    62,
+    2.6
+   ],
+   "note": "block FKO of the Consequence-analysis plot plan; size assumed"
+  },
+  {
+   "tag": "FLR",
+   "name": "Flare stack, 30 m (outside scope)",
+   "type": "stack",
+   "shape": "vcyl",
+   "scope": "outside",
+   "eql": false,
+   "c": [
+    116,
+    72,
+    15
+   ],
+   "dims": {
+    "D": 0.6,
+    "H": 30,
+    "base": 0
+   },
+   "bbox": [
+    115.7,
+    71.7,
+    0,
+    116.3,
+    72.3,
+    30
+   ],
+   "note": "cq: 30 m stack (assumed); radiation in the Consequence-analysis tab (S6)"
+  }
+ ],
+ "nozzles": [
+  {
+   "eq": "V-101",
+   "mark": "N1",
+   "service": "Well-stream inlet (inlet diverter)",
+   "dn": 300,
+   "p": [
+    44.6,
+    40,
+    3.774
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": "DN250-PF-102",
+   "em": "N1"
+  },
+  {
+   "eq": "V-101",
+   "mark": "N2",
+   "service": "Gas outlet (after the mesh pad)",
+   "dn": 250,
+   "p": [
+    49.65,
+    40,
+    3.774
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": "DN250-GP-110",
+   "em": "N2 (6″ in emech)"
+  },
+  {
+   "eq": "V-101",
+   "mark": "N3",
+   "service": "Gas to flare via PV-111",
+   "dn": 200,
+   "p": [
+    48.85,
+    40,
+    3.774
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": "DN200-FL-111",
+   "em": "—"
+  },
+  {
+   "eq": "V-101",
+   "mark": "N4",
+   "service": "PSV-119 inlet",
+   "dn": 150,
+   "p": [
+    48.3,
+    40,
+    3.774
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": "DN150-GP-152",
+   "em": "N5"
+  },
+  {
+   "eq": "V-101",
+   "mark": "N5",
+   "service": "BDV-118 blowdown",
+   "dn": 80,
+   "p": [
+    47.3,
+    40,
+    3.774
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": "DN80-FL-118",
+   "em": "N6"
+  },
+  {
+   "eq": "V-101",
+   "mark": "N6",
+   "service": "Water outlet (vortex breaker)",
+   "dn": 100,
+   "p": [
+    47.9,
+    40,
+    1.2
+   ],
+   "dir": [
+    0,
+    0,
+    -1
+   ],
+   "line": "DN80-PW-120",
+   "em": "N4"
+  },
+  {
+   "eq": "V-101",
+   "mark": "N7",
+   "service": "Oil outlet from the bucket (vortex breaker)",
+   "dn": 150,
+   "p": [
+    49.75,
+    40,
+    1.2
+   ],
+   "dir": [
+    0,
+    0,
+    -1
+   ],
+   "line": "DN100-OL-130",
+   "em": "N3"
+  },
+  {
+   "eq": "V-101",
+   "mark": "N8",
+   "service": "Vessel drain",
+   "dn": 50,
+   "p": [
+    45.6,
+    40,
+    1.2
+   ],
+   "dir": [
+    0,
+    0,
+    -1
+   ],
+   "line": "DN50-DR-156",
+   "em": "N15 (bucket drain in emech)"
+  },
+  {
+   "eq": "V-101",
+   "mark": "N9",
+   "service": "Sand drain",
+   "dn": 80,
+   "p": [
+    46.3,
+    40,
+    1.2
+   ],
+   "dir": [
+    0,
+    0,
+    -1
+   ],
+   "line": "DN80-DR-157",
+   "em": "N14a/b/c"
+  },
+  {
+   "eq": "V-101",
+   "mark": "N10",
+   "service": "Sand-jet water inlet",
+   "dn": 50,
+   "p": [
+    45.9,
+    38.788,
+    1.9
+   ],
+   "dir": [
+    0,
+    -1,
+    0
+   ],
+   "line": "DN50-SJ-140",
+   "em": "N13a/b"
+  },
+  {
+   "eq": "V-101",
+   "mark": "N11",
+   "service": "Vent to flare",
+   "dn": 50,
+   "p": [
+    45.8,
+    40,
+    3.774
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": "DN50-FL-153",
+   "em": "N16"
+  },
+  {
+   "eq": "V-101",
+   "mark": "N12",
+   "service": "Nitrogen purge connection",
+   "dn": 25,
+   "p": [
+    45.2,
+    40,
+    3.774
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": "DN25-NG-161",
+   "em": "—"
+  },
+  {
+   "eq": "V-101",
+   "mark": "LN1",
+   "service": "PT-110 / PT-111 / PT-114 tappings",
+   "dn": 50,
+   "p": [
+    46.6,
+    40,
+    3.774
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": null,
+   "em": "N10a/b/c"
+  },
+  {
+   "eq": "V-101",
+   "mark": "LN2",
+   "service": "PDT-113 mesh-pad ΔP tappings",
+   "dn": 25,
+   "p": [
+    49.35,
+    40,
+    3.774
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": null,
+   "em": "N12a/b"
+  },
+  {
+   "eq": "V-101",
+   "mark": "LN3",
+   "service": "LG-121 / LT-125 / LT-127 / LT-120 / LT-126 chambers",
+   "dn": 50,
+   "p": [
+    46.9,
+    41.212,
+    2.2
+   ],
+   "dir": [
+    0,
+    1,
+    0
+   ],
+   "line": null,
+   "em": "N7a/b, N9a/b"
+  },
+  {
+   "eq": "V-101",
+   "mark": "LN4",
+   "service": "LT-130 / LG-131 / LT-136 (bucket)",
+   "dn": 50,
+   "p": [
+    49.6,
+    41.212,
+    2.2
+   ],
+   "dir": [
+    0,
+    1,
+    0
+   ],
+   "line": null,
+   "em": "N8a/b"
+  },
+  {
+   "eq": "V-101",
+   "mark": "LN5",
+   "service": "TT-112 / TG-112 thermowells",
+   "dn": 40,
+   "p": [
+    48.1,
+    41.212,
+    2
+   ],
+   "dir": [
+    0,
+    1,
+    0
+   ],
+   "line": null,
+   "em": "N11"
+  },
+  {
+   "eq": "V-101",
+   "mark": "M1",
+   "service": "Manway, inlet section (west head)",
+   "dn": 600,
+   "p": [
+    43.244,
+    40,
+    2.512
+   ],
+   "dir": [
+    -1,
+    0,
+    0
+   ],
+   "line": null,
+   "em": "M1"
+  },
+  {
+   "eq": "V-101",
+   "mark": "M2",
+   "service": "Manway, oil bucket (east head)",
+   "dn": 600,
+   "p": [
+    50.756,
+    40,
+    2.512
+   ],
+   "dir": [
+    1,
+    0,
+    0
+   ],
+   "line": null,
+   "em": "M2"
+  },
+  {
+   "eq": "E-101",
+   "mark": "T1",
+   "service": "Tube-side inlet (channel, top)",
+   "dn": 200,
+   "p": [
+    27.35,
+    40,
+    1.47
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": "DN200-PF-103",
+   "em": "T1"
+  },
+  {
+   "eq": "E-101",
+   "mark": "T2",
+   "service": "Tube-side outlet (rear head, top)",
+   "dn": 250,
+   "p": [
+    32.75,
+    40,
+    1.47
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": "DN250-PF-102",
+   "em": "T2"
+  },
+  {
+   "eq": "E-101",
+   "mark": "S1",
+   "service": "LP steam inlet (shell, top)",
+   "dn": 80,
+   "p": [
+    31.5,
+    40,
+    1.45
+   ],
+   "dir": [
+    0,
+    0,
+    1
+   ],
+   "line": "DN80-LS-102",
+   "em": "S1"
+  },
+  {
+   "eq": "E-101",
+   "mark": "S2",
+   "service": "Condensate outlet (shell, bottom)",
+   "dn": 40,
+   "p": [
+    28.6,
+    40,
+    0.78
+   ],
+   "dir": [
+    0,
+    0,
+    -1
+   ],
+   "line": "DN40-SC-102",
+   "em": "S2"
+  },
+  {
+   "eq": "E-101",
+   "mark": "S4",
+   "service": "Tube-side low-point drain (channel)",
+   "dn": 25,
+   "p": [
+    27.35,
+    40,
+    0.85
+   ],
+   "dir": [
+    0,
+    0,
+    -1
+   ],
+   "line": null,
+   "em": "S4"
+  }
+ ],
+ "rack": {
+  "id": "PR-1",
+  "name": "Main pipe rack",
+  "x0": 10,
+  "x1": 100,
+  "y0": 47.8,
+  "y1": 50.2,
+  "bent": 6,
+  "tiers": [
+   {
+    "n": 1,
+    "tos": 5,
+    "use": "process gas, utilities, chemical tubing"
+   },
+   {
+    "n": 2,
+    "tos": 6,
+    "use": "flare header (sloped on shoes)"
+   }
+  ],
+  "columns": [
+   [
+    10,
+    47.8
+   ],
+   [
+    10,
+    50.2
+   ],
+   [
+    16,
+    47.8
+   ],
+   [
+    16,
+    50.2
+   ],
+   [
+    22,
+    47.8
+   ],
+   [
+    22,
+    50.2
+   ],
+   [
+    28,
+    47.8
+   ],
+   [
+    28,
+    50.2
+   ],
+   [
+    34,
+    47.8
+   ],
+   [
+    34,
+    50.2
+   ],
+   [
+    40,
+    47.8
+   ],
+   [
+    40,
+    50.2
+   ],
+   [
+    46,
+    47.8
+   ],
+   [
+    46,
+    50.2
+   ],
+   [
+    52,
+    47.8
+   ],
+   [
+    52,
+    50.2
+   ],
+   [
+    58,
+    47.8
+   ],
+   [
+    58,
+    50.2
+   ],
+   [
+    64,
+    47.8
+   ],
+   [
+    64,
+    50.2
+   ],
+   [
+    70,
+    47.8
+   ],
+   [
+    70,
+    50.2
+   ],
+   [
+    76,
+    47.8
+   ],
+   [
+    76,
+    50.2
+   ],
+   [
+    82,
+    47.8
+   ],
+   [
+    82,
+    50.2
+   ],
+   [
+    88,
+    47.8
+   ],
+   [
+    88,
+    50.2
+   ],
+   [
+    94,
+    47.8
+   ],
+   [
+    94,
+    50.2
+   ],
+   [
+    100,
+    47.8
+   ],
+   [
+    100,
+    50.2
+   ]
+  ],
+  "note": "two-tier rack, bents every 6 m (typical, assumed); tier 1 underside 4.7 m clears the access road"
+ },
+ "runs": [
+  {
+   "id": "DN200-PF-101",
+   "line": "DN200-PF-101",
+   "service": "PF",
+   "dn": 200,
+   "od": 0.2191,
+   "part": "main",
+   "pts": [
+    [
+     10,
+     40,
+     1
+    ],
+    [
+     17.6,
+     40,
+     1
+    ]
+   ],
+   "from": "BL-01 production manifold",
+   "to": "HV-100"
+  },
+  {
+   "id": "DN200-PF-103",
+   "line": "DN200-PF-103",
+   "service": "PF",
+   "dn": 200,
+   "od": 0.2191,
+   "part": "main",
+   "pts": [
+    [
+     17.6,
+     40,
+     1
+    ],
+    [
+     18.4,
+     40,
+     1
+    ],
+    [
+     18.4,
+     42.5,
+     1
+    ],
+    [
+     27.35,
+     42.5,
+     1
+    ],
+    [
+     27.35,
+     42.5,
+     1.9
+    ],
+    [
+     27.35,
+     40,
+     1.9
+    ],
+    [
+     27.35,
+     40,
+     1.47
+    ]
+   ],
+   "from": "HV-100",
+   "to": "E-101 T1"
+  },
+  {
+   "id": "DN250-PF-102",
+   "line": "DN250-PF-102",
+   "service": "PF",
+   "dn": 250,
+   "od": 0.2731,
+   "part": "main",
+   "pts": [
+    [
+     32.75,
+     40,
+     1.47
+    ],
+    [
+     32.75,
+     40,
+     4.6
+    ],
+    [
+     44.6,
+     40,
+     4.6
+    ],
+    [
+     44.6,
+     40,
+     3.774
+    ]
+   ],
+   "from": "E-101 T2",
+   "to": "V-101 N1"
+  },
+  {
+   "id": "DN250-GP-110",
+   "line": "DN250-GP-110",
+   "service": "GP",
+   "dn": 250,
+   "od": 0.2731,
+   "part": "main",
+   "pts": [
+    [
+     49.65,
+     40,
+     3.774
+    ],
+    [
+     49.65,
+     40,
+     4.4
+    ],
+    [
+     49.65,
+     42.6,
+     4.4
+    ],
+    [
+     54.6,
+     42.6,
+     4.4
+    ],
+    [
+     54.6,
+     42.6,
+     5.137
+    ],
+    [
+     54.6,
+     48.3,
+     5.137
+    ],
+    [
+     88,
+     48.3,
+     5.137
+    ],
+    [
+     88,
+     44.5,
+     5.137
+    ],
+    [
+     88,
+     44.5,
+     2.8
+    ],
+    [
+     88,
+     38,
+     2.8
+    ],
+    [
+     88.4,
+     38,
+     2.8
+    ]
+   ],
+   "from": "V-101 N2",
+   "to": "V-201 inlet (BL-05)"
+  },
+  {
+   "id": "DN250-GP-110:bypass",
+   "line": "DN250-GP-110",
+   "service": "GP",
+   "dn": 250,
+   "od": 0.2731,
+   "part": "bypass",
+   "pts": [
+    [
+     50.7,
+     42.6,
+     4.4
+    ],
+    [
+     50.7,
+     43.2,
+     4.4
+    ],
+    [
+     53.3,
+     43.2,
+     4.4
+    ],
+    [
+     53.3,
+     42.6,
+     4.4
+    ]
+   ],
+   "from": "PV-110 bypass"
+  },
+  {
+   "id": "DN200-FL-111",
+   "line": "DN200-FL-111",
+   "service": "FL",
+   "dn": 200,
+   "od": 0.2191,
+   "part": "main",
+   "pts": [
+    [
+     48.85,
+     40,
+     3.774
+    ],
+    [
+     48.85,
+     40,
+     6.8
+    ],
+    [
+     48.85,
+     41.3,
+     6.8
+    ],
+    [
+     48.85,
+     41.3,
+     6.555
+    ]
+   ],
+   "from": "V-101 N3",
+   "to": "flare sub-header"
+  },
+  {
+   "id": "DN80-FL-118",
+   "line": "DN80-FL-118",
+   "service": "FL",
+   "dn": 80,
+   "od": 0.0889,
+   "part": "main",
+   "pts": [
+    [
+     47.3,
+     40,
+     3.774
+    ],
+    [
+     47.3,
+     40,
+     6.8
+    ],
+    [
+     47.3,
+     40.9,
+     6.8
+    ]
+   ],
+   "from": "V-101 N5",
+   "to": "RO-118"
+  },
+  {
+   "id": "DN150-FL-158",
+   "line": "DN150-FL-158",
+   "service": "FL",
+   "dn": 150,
+   "od": 0.1683,
+   "part": "main",
+   "pts": [
+    [
+     47.3,
+     40.9,
+     6.8
+    ],
+    [
+     47.3,
+     41.3,
+     6.8
+    ],
+    [
+     47.3,
+     41.3,
+     6.558
+    ]
+   ],
+   "from": "RO-118",
+   "to": "flare sub-header"
+  },
+  {
+   "id": "DN150-GP-152",
+   "line": "DN150-GP-152",
+   "service": "GP",
+   "dn": 150,
+   "od": 0.1683,
+   "part": "main",
+   "pts": [
+    [
+     48.3,
+     40,
+     3.774
+    ],
+    [
+     48.3,
+     40,
+     6.5
+    ]
+   ],
+   "from": "V-101 N4",
+   "to": "PSV-119 inlet"
+  },
+  {
+   "id": "DN200-FL-119",
+   "line": "DN200-FL-119",
+   "service": "FL",
+   "dn": 200,
+   "od": 0.2191,
+   "part": "main",
+   "pts": [
+    [
+     48.3,
+     40.35,
+     6.76
+    ],
+    [
+     48.3,
+     41.3,
+     6.75
+    ],
+    [
+     48.3,
+     41.3,
+     6.556
+    ]
+   ],
+   "from": "PSV-119 outlet",
+   "to": "flare sub-header",
+   "slope": "1:100 to the header"
+  },
+  {
+   "id": "DN300-FL-150",
+   "line": "DN300-FL-150",
+   "service": "FL",
+   "dn": 300,
+   "od": 0.3239,
+   "part": "main",
+   "pts": [
+    [
+     45.6,
+     41.3,
+     6.4
+    ],
+    [
+     50.2,
+     41.3,
+     6.39
+    ],
+    [
+     50.2,
+     48.6,
+     6.374
+    ],
+    [
+     100,
+     48.6,
+     6.263
+    ],
+    [
+     102.5,
+     48.6,
+     6.257
+    ],
+    [
+     102.5,
+     61,
+     6.23
+    ],
+    [
+     102.5,
+     61,
+     2.75
+    ]
+   ],
+   "from": "flare sub-header above V-101",
+   "to": "flare KO drum (BL-08)",
+   "slope": "1:500 continuous fall to the KO drum"
+  },
+  {
+   "id": "DN50-FL-153",
+   "line": "DN50-FL-153",
+   "service": "FL",
+   "dn": 50,
+   "od": 0.0603,
+   "part": "main",
+   "pts": [
+    [
+     45.8,
+     40,
+     3.774
+    ],
+    [
+     45.8,
+     40,
+     6.8
+    ],
+    [
+     45.8,
+     41.3,
+     6.8
+    ],
+    [
+     45.8,
+     41.3,
+     6.562
+    ]
+   ],
+   "from": "V-101 N11",
+   "to": "flare sub-header"
+  },
+  {
+   "id": "DN100-OL-130",
+   "line": "DN100-OL-130",
+   "service": "OL",
+   "dn": 100,
+   "od": 0.1143,
+   "part": "main",
+   "pts": [
+    [
+     49.75,
+     40,
+     1.2
+    ],
+    [
+     49.75,
+     40,
+     0.8
+    ],
+    [
+     52,
+     40,
+     0.8
+    ],
+    [
+     52,
+     35.3,
+     0.8
+    ]
+   ],
+   "from": "V-101 N7",
+   "to": "LV-130"
+  },
+  {
+   "id": "DN100-OL-130:bypass",
+   "line": "DN100-OL-130",
+   "service": "OL",
+   "dn": 100,
+   "od": 0.1143,
+   "part": "bypass",
+   "pts": [
+    [
+     52,
+     36.3,
+     0.8
+    ],
+    [
+     51.4,
+     36.3,
+     0.8
+    ],
+    [
+     51.4,
+     34.3,
+     0.8
+    ],
+    [
+     52,
+     34.3,
+     0.8
+    ]
+   ],
+   "from": "LV-130 bypass"
+  },
+  {
+   "id": "DN150-OL-154",
+   "line": "DN150-OL-154",
+   "service": "OL",
+   "dn": 150,
+   "od": 0.1683,
+   "part": "main",
+   "pts": [
+    [
+     52,
+     35.3,
+     0.8
+    ],
+    [
+     52,
+     33,
+     0.8
+    ],
+    [
+     52,
+     33,
+     3.4
+    ],
+    [
+     52,
+     26,
+     3.4
+    ],
+    [
+     50.5,
+     26,
+     3.4
+    ],
+    [
+     50.5,
+     23,
+     3.4
+    ],
+    [
+     50.5,
+     23,
+     3
+    ]
+   ],
+   "from": "LV-130",
+   "to": "LP separator (BL-06)"
+  },
+  {
+   "id": "DN80-PW-120",
+   "line": "DN80-PW-120",
+   "service": "PW",
+   "dn": 80,
+   "od": 0.0889,
+   "part": "main",
+   "pts": [
+    [
+     47.9,
+     40,
+     1.2
+    ],
+    [
+     47.9,
+     40,
+     0.35
+    ],
+    [
+     47.9,
+     38.6,
+     0.35
+    ],
+    [
+     54.2,
+     38.6,
+     0.35
+    ],
+    [
+     54.2,
+     38.6,
+     0.8
+    ],
+    [
+     54.2,
+     35.2,
+     0.8
+    ]
+   ],
+   "from": "V-101 N6",
+   "to": "LV-120"
+  },
+  {
+   "id": "DN80-PW-120:bypass",
+   "line": "DN80-PW-120",
+   "service": "PW",
+   "dn": 80,
+   "od": 0.0889,
+   "part": "bypass",
+   "pts": [
+    [
+     54.2,
+     36.1,
+     0.8
+    ],
+    [
+     54.8,
+     36.1,
+     0.8
+    ],
+    [
+     54.8,
+     34.3,
+     0.8
+    ],
+    [
+     54.2,
+     34.3,
+     0.8
+    ]
+   ],
+   "from": "LV-120 bypass"
+  },
+  {
+   "id": "DN80-PW-155",
+   "line": "DN80-PW-155",
+   "service": "PW",
+   "dn": 80,
+   "od": 0.0889,
+   "part": "main",
+   "pts": [
+    [
+     54.2,
+     35.2,
+     0.8
+    ],
+    [
+     54.2,
+     33,
+     0.8
+    ],
+    [
+     54.2,
+     33,
+     3.4
+    ],
+    [
+     54.2,
+     30,
+     3.4
+    ],
+    [
+     62,
+     30,
+     3.4
+    ],
+    [
+     62,
+     24,
+     3.4
+    ],
+    [
+     62,
+     24,
+     2.55
+    ]
+   ],
+   "from": "LV-120",
+   "to": "hydrocyclones (BL-07)"
+  },
+  {
+   "id": "DN50-SJ-140",
+   "line": "DN50-SJ-140",
+   "service": "SJ",
+   "dn": 50,
+   "od": 0.0603,
+   "part": "main",
+   "pts": [
+    [
+     43,
+     49.95,
+     5.03
+    ],
+    [
+     43,
+     37.9,
+     5.03
+    ],
+    [
+     43,
+     37.9,
+     1.9
+    ],
+    [
+     45.9,
+     37.9,
+     1.9
+    ],
+    [
+     45.9,
+     38.788,
+     1.9
+    ]
+   ],
+   "from": "BL-04 PW pumps",
+   "to": "V-101 N10"
+  },
+  {
+   "id": "DN50-DR-156",
+   "line": "DN50-DR-156",
+   "service": "DR",
+   "dn": 50,
+   "od": 0.0603,
+   "part": "main",
+   "pts": [
+    [
+     45.6,
+     40,
+     1.2
+    ],
+    [
+     45.6,
+     40,
+     0.9
+    ],
+    [
+     45.6,
+     38.6,
+     0.9
+    ],
+    [
+     45.6,
+     38.6,
+     0.15
+    ]
+   ],
+   "from": "V-101 N8",
+   "to": "closed-drain hub DH-1"
+  },
+  {
+   "id": "DN50-DR-156:ug",
+   "line": "DN50-DR-156",
+   "service": "DR",
+   "dn": 50,
+   "od": 0.0603,
+   "part": "ug",
+   "pts": [
+    [
+     45.6,
+     38.6,
+     -0.6
+    ],
+    [
+     45.6,
+     30.6,
+     -0.68
+    ]
+   ],
+   "from": "DH-1",
+   "to": "closed-drain drum (outside, assumed)",
+   "slope": "1:100"
+  },
+  {
+   "id": "DN80-DR-157",
+   "line": "DN80-DR-157",
+   "service": "DR",
+   "dn": 80,
+   "od": 0.0889,
+   "part": "main",
+   "pts": [
+    [
+     46.3,
+     40,
+     1.2
+    ],
+    [
+     46.3,
+     40,
+     0.9
+    ],
+    [
+     46.3,
+     38.4,
+     0.9
+    ],
+    [
+     46.3,
+     38.4,
+     0.3
+    ],
+    [
+     46.3,
+     35,
+     0.232
+    ]
+   ],
+   "from": "V-101 N9",
+   "to": "sand handling (BL-10)",
+   "slope": "1:50"
+  },
+  {
+   "id": "DN25-CI-159",
+   "line": "DN25-CI-159",
+   "service": "CI",
+   "dn": 25,
+   "od": 0.0334,
+   "part": "main",
+   "pts": [
+    [
+     56,
+     57.5,
+     0.6
+    ],
+    [
+     56.6,
+     57.5,
+     0.6
+    ],
+    [
+     56.6,
+     57.5,
+     0.3
+    ],
+    [
+     56.6,
+     56.6,
+     0.3
+    ],
+    [
+     57.25,
+     56.6,
+     0.3
+    ]
+   ],
+   "from": "T-105",
+   "to": "P-105 suction"
+  },
+  {
+   "id": "DN25-CI-159:branch",
+   "line": "DN25-CI-159",
+   "service": "CI",
+   "dn": 25,
+   "od": 0.0334,
+   "part": "branch",
+   "pts": [
+    [
+     56.6,
+     57.5,
+     0.3
+    ],
+    [
+     56.6,
+     58.2,
+     0.3
+    ],
+    [
+     57.25,
+     58.2,
+     0.3
+    ]
+   ],
+   "from": "header",
+   "to": "P-105B suction"
+  },
+  {
+   "id": "DN25-CI-105",
+   "line": "DN25-CI-105",
+   "service": "CI",
+   "dn": 25,
+   "od": 0.0334,
+   "part": "main",
+   "pts": [
+    [
+     57.95,
+     56.6,
+     0.45
+    ],
+    [
+     58.5,
+     56.6,
+     0.45
+    ],
+    [
+     58.5,
+     57.4,
+     0.45
+    ],
+    [
+     58.5,
+     57.4,
+     2.6
+    ],
+    [
+     58.5,
+     49.7,
+     2.6
+    ],
+    [
+     58.5,
+     49.7,
+     5.017
+    ],
+    [
+     23,
+     49.7,
+     5.017
+    ],
+    [
+     23,
+     47.4,
+     5.017
+    ],
+    [
+     23,
+     47.4,
+     2.6
+    ],
+    [
+     23,
+     42.5,
+     2.6
+    ],
+    [
+     23,
+     42.5,
+     1.11
+    ]
+   ],
+   "from": "P-105 discharge",
+   "to": "quill on DN200-PF-103"
+  },
+  {
+   "id": "DN25-CI-105:branch",
+   "line": "DN25-CI-105",
+   "service": "CI",
+   "dn": 25,
+   "od": 0.0334,
+   "part": "branch",
+   "pts": [
+    [
+     57.95,
+     58.2,
+     0.45
+    ],
+    [
+     58.5,
+     58.2,
+     0.45
+    ],
+    [
+     58.5,
+     57.4,
+     0.45
+    ]
+   ],
+   "from": "P-105B discharge"
+  },
+  {
+   "id": "DN80-LS-102",
+   "line": "DN80-LS-102",
+   "service": "LS",
+   "dn": 80,
+   "od": 0.0889,
+   "part": "main",
+   "pts": [
+    [
+     31.5,
+     49,
+     5.044
+    ],
+    [
+     31.5,
+     47.4,
+     5.044
+    ],
+    [
+     31.5,
+     47.4,
+     1
+    ],
+    [
+     31.5,
+     42.9,
+     1
+    ],
+    [
+     31.5,
+     42.9,
+     1.75
+    ],
+    [
+     31.5,
+     40,
+     1.75
+    ],
+    [
+     31.5,
+     40,
+     1.45
+    ]
+   ],
+   "from": "BL-02 LP steam header",
+   "to": "E-101 S1"
+  },
+  {
+   "id": "DN80-LS-102:bypass",
+   "line": "DN80-LS-102",
+   "service": "LS",
+   "dn": 80,
+   "od": 0.0889,
+   "part": "bypass",
+   "pts": [
+    [
+     31.5,
+     46,
+     1
+    ],
+    [
+     32.1,
+     46,
+     1
+    ],
+    [
+     32.1,
+     43.8,
+     1
+    ],
+    [
+     31.5,
+     43.8,
+     1
+    ]
+   ],
+   "from": "TV-102 bypass"
+  },
+  {
+   "id": "DN40-SC-102",
+   "line": "DN40-SC-102",
+   "service": "SC",
+   "dn": 40,
+   "od": 0.0483,
+   "part": "main",
+   "pts": [
+    [
+     28.6,
+     40,
+     0.78
+    ],
+    [
+     28.6,
+     40,
+     0.5
+    ],
+    [
+     28.6,
+     38.9,
+     0.489
+    ]
+   ],
+   "from": "E-101 S2",
+   "to": "ST-157",
+   "slope": "1:100 to the trap"
+  },
+  {
+   "id": "DN50-SC-160",
+   "line": "DN50-SC-160",
+   "service": "SC",
+   "dn": 50,
+   "od": 0.0603,
+   "part": "main",
+   "pts": [
+    [
+     28.6,
+     38.7,
+     0.5
+    ],
+    [
+     28.6,
+     38,
+     0.5
+    ],
+    [
+     28.6,
+     38,
+     2.6
+    ],
+    [
+     28.6,
+     46.8,
+     2.6
+    ],
+    [
+     28.6,
+     46.8,
+     5.03
+    ],
+    [
+     28.6,
+     49.4,
+     5.03
+    ]
+   ],
+   "from": "ST-157",
+   "to": "BL-03 condensate return"
+  },
+  {
+   "id": "DN25-NG-161",
+   "line": "DN25-NG-161",
+   "service": "NG",
+   "dn": 25,
+   "od": 0.0334,
+   "part": "main",
+   "pts": [
+    [
+     44.6,
+     39.3,
+     4.6
+    ],
+    [
+     45.2,
+     39.3,
+     4.6
+    ],
+    [
+     45.2,
+     40,
+     4.6
+    ],
+    [
+     45.2,
+     40,
+     3.774
+    ]
+   ],
+   "from": "utility station US-1 (hose)",
+   "to": "V-101 N12"
+  },
+  {
+   "id": "DN25-DR-162",
+   "line": "DN25-DR-162",
+   "service": "DR",
+   "dn": 25,
+   "od": 0.0334,
+   "part": "main",
+   "pts": [
+    [
+     52,
+     38.5,
+     1.15
+    ],
+    [
+     51.5,
+     38.5,
+     1.15
+    ],
+    [
+     51.5,
+     38.5,
+     0.1
+    ]
+   ],
+   "from": "TSV-131",
+   "to": "drain hub DH-2"
+  },
+  {
+   "id": "DN25-DR-163",
+   "line": "DN25-DR-163",
+   "service": "DR",
+   "dn": 25,
+   "od": 0.0334,
+   "part": "main",
+   "pts": [
+    [
+     54.2,
+     37.6,
+     1
+    ],
+    [
+     54.7,
+     37.6,
+     1
+    ],
+    [
+     54.7,
+     37.6,
+     0.1
+    ]
+   ],
+   "from": "TSV-121",
+   "to": "drain hub DH-3"
+  },
+  {
+   "id": "KO-STACK",
+   "line": null,
+   "service": "FL",
+   "dn": 300,
+   "od": 0.3239,
+   "part": "outside",
+   "pts": [
+    [
+     106.75,
+     61,
+     1.6
+    ],
+    [
+     112,
+     61,
+     1.6
+    ],
+    [
+     112,
+     72,
+     1.6
+    ],
+    [
+     115.7,
+     72,
+     1.6
+    ]
+   ],
+   "from": "FKO",
+   "to": "FLR",
+   "note": "outside scope, no line number"
+  }
+ ],
+ "platforms": [
+  {
+   "id": "PL-1",
+   "name": "V-101 top platform (south)",
+   "el": 3.7,
+   "rect": [
+    44,
+    38.3,
+    51.7,
+    39.5
+   ],
+   "serves": [
+    "PT-110",
+    "PT-111",
+    "PT-114",
+    "PG-110",
+    "PDT-113",
+    "MV-163",
+    "MV-169",
+    "MV-172",
+    "N12",
+    "utility station US-1"
+   ],
+   "handrail": 1.1,
+   "toe": 0.1
+  },
+  {
+   "id": "PL-1c",
+   "name": "Crossover east of V-101",
+   "el": 3.7,
+   "rect": [
+    50.7,
+    39.5,
+    51.7,
+    41.8
+   ],
+   "serves": [],
+   "handrail": 1.1,
+   "toe": 0.1
+  },
+  {
+   "id": "PL-1b",
+   "name": "Gas valve platform (north)",
+   "el": 3.7,
+   "rect": [
+    49,
+    41.8,
+    54.2,
+    43.6
+   ],
+   "serves": [
+    "FT-116",
+    "MV-174",
+    "PV-110",
+    "MV-175",
+    "MV-177",
+    "NRV-173"
+   ],
+   "handrail": 1.1,
+   "toe": 0.1
+  },
+  {
+   "id": "PL-2",
+   "name": "Relief platform (PSV-119, PV-111, BDV-118)",
+   "el": 6,
+   "rect": [
+    46.4,
+    38.3,
+    50.2,
+    39.5
+   ],
+   "serves": [
+    "PSV-119",
+    "MV-170",
+    "PV-111",
+    "BDV-118",
+    "RO-118"
+   ],
+   "handrail": 1.1,
+   "toe": 0.1
+  },
+  {
+   "id": "PL-4",
+   "name": "Gas battery-limit valve platform",
+   "el": 2.6,
+   "rect": [
+    87.2,
+    44.8,
+    88.8,
+    46
+   ],
+   "serves": [
+    "MV-176",
+    "SDV-109"
+   ],
+   "handrail": 1.1,
+   "toe": 0.1
+  }
+ ],
+ "ladders": [
+  {
+   "id": "LD-1",
+   "x": 50.9,
+   "y": 38.1,
+   "z0": 0,
+   "z1": 3.7,
+   "from": "grade",
+   "to": "PL-1",
+   "face": "S",
+   "cage": true
+  },
+  {
+   "id": "LD-2",
+   "x": 53.8,
+   "y": 43.8,
+   "z0": 0,
+   "z1": 3.7,
+   "from": "grade",
+   "to": "PL-1b",
+   "face": "N",
+   "cage": true
+  },
+  {
+   "id": "LD-3",
+   "x": 46.1,
+   "y": 38.5,
+   "z0": 3.7,
+   "z1": 6,
+   "from": "PL-1",
+   "to": "PL-2",
+   "face": "S",
+   "cage": false
+  },
+  {
+   "id": "LD-4",
+   "x": 89.05,
+   "y": 45.4,
+   "z0": 0,
+   "z1": 2.6,
+   "from": "grade",
+   "to": "PL-4",
+   "face": "E",
+   "cage": false
+  }
+ ],
+ "instruments": [
+  {
+   "tag": "PT-100",
+   "kind": "transmitter",
+   "dcs": "PI-100",
+   "p": [
+    13.6,
+    40,
+    1.4
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "line": "DN200-PF-101"
+  },
+  {
+   "tag": "TT-101",
+   "kind": "transmitter",
+   "dcs": "TI-101",
+   "p": [
+    25.8,
+    42.5,
+    1.25
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "line": "DN200-PF-103"
+  },
+  {
+   "tag": "TT-102",
+   "kind": "transmitter",
+   "dcs": "TIC-102",
+   "p": [
+    32.75,
+    40,
+    2.3
+   ],
+   "floor": 0,
+   "read_from": "DCS",
+   "line": "DN250-PF-102",
+   "note": "on the outlet riser; reads in the DCS"
+  },
+  {
+   "tag": "TT-103",
+   "kind": "transmitter",
+   "dcs": "TSHH-103",
+   "p": [
+    32.75,
+    40,
+    2.8
+   ],
+   "floor": 0,
+   "read_from": "DCS",
+   "line": "DN250-PF-102",
+   "hold": true,
+   "note": "HAZOP R07 HOLD, own thermowell"
+  },
+  {
+   "tag": "FT-104",
+   "kind": "transmitter",
+   "dcs": "FI-104",
+   "p": [
+    31.5,
+    46.6,
+    1
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "line": "DN80-LS-102"
+  },
+  {
+   "tag": "FT-105",
+   "kind": "transmitter",
+   "dcs": "FIC-105",
+   "p": [
+    58.5,
+    57.4,
+    1.2
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "line": "DN25-CI-105"
+  },
+  {
+   "tag": "PT-110",
+   "kind": "transmitter",
+   "dcs": "PIC-110",
+   "p": [
+    46.35,
+    39.4,
+    4.9
+   ],
+   "floor": 3.7,
+   "read_from": "PL-1",
+   "eq": "V-101"
+  },
+  {
+   "tag": "PT-111",
+   "kind": "transmitter",
+   "dcs": "PIC-111",
+   "p": [
+    46.65,
+    39.4,
+    4.9
+   ],
+   "floor": 3.7,
+   "read_from": "PL-1",
+   "eq": "V-101"
+  },
+  {
+   "tag": "PT-114",
+   "kind": "transmitter",
+   "dcs": "PSHH-114 / PSLL-115",
+   "p": [
+    46.95,
+    39.4,
+    4.9
+   ],
+   "floor": 3.7,
+   "read_from": "PL-1",
+   "eq": "V-101",
+   "sis": true
+  },
+  {
+   "tag": "PG-110",
+   "kind": "local_gauge",
+   "dcs": "PG-110",
+   "p": [
+    46,
+    39.4,
+    4.9
+   ],
+   "floor": 3.7,
+   "read_from": "PL-1",
+   "eq": "V-101",
+   "range": "0–16 bar g (assumed)"
+  },
+  {
+   "tag": "PDT-113",
+   "kind": "transmitter",
+   "dcs": "PDI-113",
+   "p": [
+    49.35,
+    39.4,
+    4.9
+   ],
+   "floor": 3.7,
+   "read_from": "PL-1",
+   "eq": "V-101"
+  },
+  {
+   "tag": "TT-112",
+   "kind": "transmitter",
+   "dcs": "TI-112",
+   "p": [
+    48.1,
+    41.212,
+    2
+   ],
+   "floor": 0,
+   "read_from": "DCS",
+   "eq": "V-101"
+  },
+  {
+   "tag": "TG-112",
+   "kind": "local_gauge",
+   "dcs": "TG-112",
+   "p": [
+    48.35,
+    41.262,
+    1.8
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "eq": "V-101",
+   "range": "0–120 °C (assumed)"
+  },
+  {
+   "tag": "LG-121",
+   "kind": "gauge_glass",
+   "dcs": "LG-121",
+   "p": [
+    46.3,
+    41.362,
+    2.22
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "eq": "V-101",
+   "window": [
+    1.62,
+    2.82
+   ],
+   "note": "inlet section 0–1300 mm above the bottom; interface and oil level"
+  },
+  {
+   "tag": "LT-125",
+   "kind": "transmitter",
+   "dcs": "LI-125",
+   "p": [
+    46.65,
+    41.362,
+    3.1
+   ],
+   "floor": 0,
+   "read_from": "DCS",
+   "eq": "V-101",
+   "note": "GWR in a chamber 1.6–3.0 m"
+  },
+  {
+   "tag": "LT-127",
+   "kind": "transmitter",
+   "dcs": "LSHH-127",
+   "p": [
+    47,
+    41.362,
+    3.1
+   ],
+   "floor": 0,
+   "read_from": "DCS",
+   "eq": "V-101",
+   "sis": true
+  },
+  {
+   "tag": "LT-120",
+   "kind": "transmitter",
+   "dcs": "LIC-120",
+   "p": [
+    47.35,
+    41.362,
+    2.6
+   ],
+   "floor": 0,
+   "read_from": "DCS",
+   "eq": "V-101",
+   "note": "displacer cage 1.7–2.5 m, local indicator on the head"
+  },
+  {
+   "tag": "LT-126",
+   "kind": "transmitter",
+   "dcs": "LSLL-126",
+   "p": [
+    47.7,
+    41.362,
+    2.7
+   ],
+   "floor": 0,
+   "read_from": "DCS",
+   "eq": "V-101",
+   "sis": true
+  },
+  {
+   "tag": "LT-130",
+   "kind": "transmitter",
+   "dcs": "LIC-130",
+   "p": [
+    49.3,
+    41.362,
+    3
+   ],
+   "floor": 0,
+   "read_from": "DCS",
+   "eq": "V-101"
+  },
+  {
+   "tag": "LG-131",
+   "kind": "gauge_glass",
+   "dcs": "LG-131",
+   "p": [
+    49.6,
+    41.362,
+    2.21
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "eq": "V-101",
+   "window": [
+    1.55,
+    2.92
+   ],
+   "note": "oil bucket 0–1400 mm"
+  },
+  {
+   "tag": "LT-136",
+   "kind": "transmitter",
+   "dcs": "LSLL-136",
+   "p": [
+    49.9,
+    41.362,
+    1.2
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "eq": "V-101",
+   "sis": true,
+   "note": "DP with remote seals; transmitter below the lower seal"
+  },
+  {
+   "tag": "FT-116",
+   "kind": "transmitter",
+   "dcs": "FI-116",
+   "p": [
+    50.3,
+    42.6,
+    4.4
+   ],
+   "floor": 3.7,
+   "read_from": "PL-1b",
+   "line": "DN250-GP-110",
+   "disp": 5,
+   "note": "orifice run; KI-116 is computed in the DCS from it; local display 1.3 m above PL-1b"
+  },
+  {
+   "tag": "FT-117",
+   "kind": "transmitter",
+   "dcs": "FI-117",
+   "p": [
+    86,
+    48.6,
+    6.294
+   ],
+   "floor": 0,
+   "read_from": "DCS",
+   "line": "DN300-FL-150",
+   "note": "ultrasonic flare meter on the rack"
+  },
+  {
+   "tag": "FT-133",
+   "kind": "transmitter",
+   "dcs": "FI-133",
+   "p": [
+    52,
+    37.8,
+    0.8
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "line": "DN100-OL-130",
+   "disp": 1.4
+  },
+  {
+   "tag": "AIT-132",
+   "kind": "analyser",
+   "dcs": "AIT-132",
+   "p": [
+    52,
+    37.1,
+    0.8
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "line": "DN100-OL-130",
+   "disp": 1.4,
+   "note": "BS&W analyser; transmitter box at 1.4 m"
+  },
+  {
+   "tag": "FT-123",
+   "kind": "transmitter",
+   "dcs": "FI-123",
+   "p": [
+    54.2,
+    37.1,
+    0.8
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "line": "DN80-PW-120",
+   "disp": 1.4
+  },
+  {
+   "tag": "AIT-122",
+   "kind": "analyser",
+   "dcs": "AIT-122",
+   "p": [
+    54.2,
+    36.6,
+    0.8
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "line": "DN80-PW-120",
+   "disp": 1.4,
+   "note": "oil-in-water analyser; transmitter box at 1.4 m"
+  },
+  {
+   "tag": "LT-201",
+   "kind": "transmitter",
+   "dcs": "LI-201",
+   "p": [
+    89.65,
+    38,
+    2
+   ],
+   "floor": 0,
+   "read_from": "DCS",
+   "eq": "V-201",
+   "outside": true
+  },
+  {
+   "tag": "LSHH-201",
+   "kind": "switch",
+   "dcs": "LSHH-201",
+   "p": [
+    89.65,
+    38,
+    3.2
+   ],
+   "floor": 0,
+   "read_from": "DCS",
+   "eq": "V-201",
+   "outside": true
+  },
+  {
+   "tag": "LT-105",
+   "kind": "transmitter",
+   "dcs": "LAL-105",
+   "p": [
+    55.5,
+    57,
+    2
+   ],
+   "floor": 0,
+   "read_from": "grade",
+   "eq": "T-105",
+   "hold": true,
+   "note": "HAZOP R04 HOLD"
+  }
+ ],
+ "valves": [
+  {
+   "tag": "MV-151",
+   "kind": "hand",
+   "line": "DN200-PF-101",
+   "part": "main",
+   "p": [
+    12.8,
+    40,
+    1
+   ],
+   "floor": 0,
+   "service": "Well stream battery-limit isolation",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "LO"
+  },
+  {
+   "tag": "SDV-101",
+   "kind": "sdv",
+   "line": "DN200-PF-101",
+   "part": "main",
+   "p": [
+    15.4,
+    40,
+    1
+   ],
+   "floor": 0,
+   "service": "Inlet shutdown valve (SIS)",
+   "type": "Shutdown valve, on/off, spring return (SIS)",
+   "on_pid": true,
+   "fail": "FC"
+  },
+  {
+   "tag": "HV-100",
+   "kind": "choke",
+   "line": "DN200-PF-101",
+   "part": "main",
+   "p": [
+    17.6,
+    40,
+    1
+   ],
+   "floor": 0,
+   "service": "Well-stream choke 30 -> 10.3 bar g",
+   "type": "Choke valve c/w positioner",
+   "on_pid": true,
+   "fail": "FL (assumed, HOLD)",
+   "note": "angle choke; specification break to DN200-PF-103"
+  },
+  {
+   "tag": "MV-199",
+   "kind": "hand",
+   "line": "DN25-CI-105",
+   "part": "main",
+   "p": [
+    23,
+    42.5,
+    1.6
+   ],
+   "floor": 0,
+   "service": "Injection-quill isolation",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "NRV-198",
+   "kind": "check",
+   "line": "DN25-CI-105",
+   "part": "main",
+   "p": [
+    23,
+    42.5,
+    1.3
+   ],
+   "floor": 0,
+   "service": "Second injection check valve at the quill (HAZOP assumed)",
+   "type": "Check valve",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "NRV-105",
+   "kind": "check",
+   "line": "DN25-CI-105",
+   "part": "main",
+   "p": [
+    58.5,
+    57.4,
+    1.8
+   ],
+   "floor": 0,
+   "service": "Demulsifier injection check valve",
+   "type": "Check valve",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "MV-159",
+   "kind": "hand",
+   "line": null,
+   "part": "main",
+   "p": [
+    27.35,
+    40,
+    0.75
+   ],
+   "floor": 0,
+   "service": "E-101 tube-side low-point drain",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NC",
+   "eq": "E-101",
+   "nozzle": "S4"
+  },
+  {
+   "tag": "MV-153",
+   "kind": "hand",
+   "line": "DN80-LS-102",
+   "part": "main",
+   "p": [
+    31.5,
+    47.4,
+    1.5
+   ],
+   "floor": 0,
+   "service": "LP steam battery-limit isolation",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "LO"
+  },
+  {
+   "tag": "MV-154",
+   "kind": "hand",
+   "line": "DN80-LS-102",
+   "part": "main",
+   "p": [
+    31.5,
+    45.6,
+    1
+   ],
+   "floor": 0,
+   "service": "TV-102 upstream block",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "TV-102",
+   "kind": "control",
+   "line": "DN80-LS-102",
+   "part": "main",
+   "p": [
+    31.5,
+    44.9,
+    1
+   ],
+   "floor": 0,
+   "service": "LP steam to E-101 (TIC-102)",
+   "type": "Control valve, diaphragm",
+   "on_pid": true,
+   "fail": "FC"
+  },
+  {
+   "tag": "MV-155",
+   "kind": "hand",
+   "line": "DN80-LS-102",
+   "part": "main",
+   "p": [
+    31.5,
+    44.2,
+    1
+   ],
+   "floor": 0,
+   "service": "TV-102 downstream block",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "MV-156",
+   "kind": "hand",
+   "line": "DN80-LS-102",
+   "part": "bypass",
+   "p": [
+    32.1,
+    44.9,
+    1
+   ],
+   "floor": 0,
+   "service": "TV-102 bypass (globe)",
+   "type": "Manual valve (globe)",
+   "on_pid": true,
+   "state": "NC"
+  },
+  {
+   "tag": "ST-157",
+   "kind": "trap",
+   "line": "DN40-SC-102",
+   "part": "main",
+   "p": [
+    28.6,
+    38.9,
+    0.489
+   ],
+   "floor": 0,
+   "service": "E-101 condensate",
+   "type": "Steam trap (thermodynamic, assumed)",
+   "on_pid": true
+  },
+  {
+   "tag": "MV-158",
+   "kind": "hand",
+   "line": "DN50-SC-160",
+   "part": "main",
+   "p": [
+    28.6,
+    38.35,
+    0.5
+   ],
+   "floor": 0,
+   "service": "Condensate isolation",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "LO"
+  },
+  {
+   "tag": "PSV-162",
+   "kind": "psv",
+   "line": null,
+   "part": "main",
+   "p": [
+    30.5,
+    40,
+    1.65
+   ],
+   "floor": 0,
+   "service": "E-101 shell side, tube-rupture case (R06)",
+   "type": "Pressure safety valve",
+   "on_pid": true,
+   "hold": true,
+   "eq": "E-101",
+   "note": "HAZOP R06 HOLD; discharge routing HOLD"
+  },
+  {
+   "tag": "MV-163",
+   "kind": "hand",
+   "line": "DN50-FL-153",
+   "part": "main",
+   "p": [
+    45.8,
+    40,
+    4.3
+   ],
+   "floor": 3.7,
+   "service": "V-101 vent to flare",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NC"
+  },
+  {
+   "tag": "MV-172",
+   "kind": "hand",
+   "line": "DN25-NG-161",
+   "part": "main",
+   "p": [
+    45.2,
+    40,
+    4.1
+   ],
+   "floor": 3.7,
+   "service": "Nitrogen purge connection (R25)",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NC",
+   "note": "blinded hose connection"
+  },
+  {
+   "tag": "MV-169",
+   "kind": "hand",
+   "line": "DN150-GP-152",
+   "part": "main",
+   "p": [
+    48.3,
+    40,
+    4.2
+   ],
+   "floor": 3.7,
+   "service": "PSV-119 inlet isolation, car-sealed open",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "LO",
+   "seal": "CSO",
+   "note2": "car-sealed open on the P&ID"
+  },
+  {
+   "tag": "PSV-119",
+   "kind": "psv",
+   "line": "DN150-GP-152",
+   "part": "main",
+   "p": [
+    48.3,
+    40,
+    6.6
+   ],
+   "floor": 6,
+   "service": "V-101 relief to flare, set 12.0 bar g, reseat 11.4",
+   "type": "Pressure safety valve",
+   "on_pid": true,
+   "note": "inlet flange EL 6.50, outlet CL 6.76 above the flare header"
+  },
+  {
+   "tag": "MV-170",
+   "kind": "hand",
+   "line": "DN200-FL-119",
+   "part": "main",
+   "p": [
+    48.3,
+    40.75,
+    6.755
+   ],
+   "floor": 6,
+   "service": "PSV-119 outlet isolation, car-sealed open",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "LO",
+   "seal": "CSO",
+   "note2": "car-sealed open on the P&ID"
+  },
+  {
+   "tag": "BDV-118",
+   "kind": "bdv",
+   "line": "DN80-FL-118",
+   "part": "main",
+   "p": [
+    47.3,
+    40.5,
+    6.8
+   ],
+   "floor": 6,
+   "service": "V-101 depressuring to flare",
+   "type": "Blowdown valve, on/off, spring return (SIS)",
+   "on_pid": true,
+   "fail": "FO"
+  },
+  {
+   "tag": "RO-118",
+   "kind": "ro",
+   "line": "DN80-FL-118",
+   "part": "main",
+   "p": [
+    47.3,
+    40.9,
+    6.8
+   ],
+   "floor": 6,
+   "service": "Blowdown rate (bore HOLD, R17)",
+   "type": "Restriction orifice",
+   "on_pid": true
+  },
+  {
+   "tag": "PV-111",
+   "kind": "control",
+   "line": "DN200-FL-111",
+   "part": "main",
+   "p": [
+    48.85,
+    40.7,
+    6.8
+   ],
+   "floor": 6,
+   "service": "V-101 gas to flare (PIC-111), normally closed",
+   "type": "Control valve, diaphragm",
+   "on_pid": true,
+   "fail": "FO"
+  },
+  {
+   "tag": "MV-174",
+   "kind": "hand",
+   "line": "DN250-GP-110",
+   "part": "main",
+   "p": [
+    51.1,
+    42.6,
+    4.4
+   ],
+   "floor": 3.7,
+   "service": "PV-110 upstream block",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "PV-110",
+   "kind": "control",
+   "line": "DN250-GP-110",
+   "part": "main",
+   "p": [
+    52,
+    42.6,
+    4.4
+   ],
+   "floor": 3.7,
+   "service": "V-101 gas to K-201 (PIC-110)",
+   "type": "Control valve, diaphragm",
+   "on_pid": true,
+   "fail": "FO"
+  },
+  {
+   "tag": "MV-175",
+   "kind": "hand",
+   "line": "DN250-GP-110",
+   "part": "main",
+   "p": [
+    52.9,
+    42.6,
+    4.4
+   ],
+   "floor": 3.7,
+   "service": "PV-110 downstream block",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "MV-177",
+   "kind": "hand",
+   "line": "DN250-GP-110",
+   "part": "bypass",
+   "p": [
+    52,
+    43.2,
+    4.4
+   ],
+   "floor": 3.7,
+   "service": "PV-110 bypass (globe)",
+   "type": "Manual valve (globe)",
+   "on_pid": true,
+   "state": "NC"
+  },
+  {
+   "tag": "NRV-173",
+   "kind": "check",
+   "line": "DN250-GP-110",
+   "part": "main",
+   "p": [
+    53.7,
+    42.6,
+    4.4
+   ],
+   "floor": 3.7,
+   "service": "Gas to K-201: stops back-flow from the export header (R27)",
+   "type": "Check valve",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "SDV-109",
+   "kind": "sdv",
+   "line": "DN250-GP-110",
+   "part": "main",
+   "p": [
+    88,
+    44.5,
+    4.1
+   ],
+   "floor": 2.6,
+   "service": "Gas line to K-201, fail closed (R27)",
+   "type": "Shutdown valve, on/off (recommended)",
+   "on_pid": true,
+   "fail": "FC",
+   "hold": true,
+   "note": "HAZOP R27 HOLD"
+  },
+  {
+   "tag": "MV-176",
+   "kind": "hand",
+   "line": "DN250-GP-110",
+   "part": "main",
+   "p": [
+    88,
+    44.5,
+    3.3
+   ],
+   "floor": 2.6,
+   "service": "Gas battery-limit isolation",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "LO"
+  },
+  {
+   "tag": "MV-164",
+   "kind": "hand",
+   "line": "DN50-DR-156",
+   "part": "main",
+   "p": [
+    45.6,
+    39.4,
+    0.9
+   ],
+   "floor": 0,
+   "service": "V-101 drain, first valve (NC)",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NC"
+  },
+  {
+   "tag": "MV-165",
+   "kind": "hand",
+   "line": "DN50-DR-156",
+   "part": "main",
+   "p": [
+    45.6,
+    38.9,
+    0.9
+   ],
+   "floor": 0,
+   "service": "V-101 drain, second valve (NC)",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NC"
+  },
+  {
+   "tag": "MV-166",
+   "kind": "hand",
+   "line": "DN80-DR-157",
+   "part": "main",
+   "p": [
+    46.3,
+    39.4,
+    0.9
+   ],
+   "floor": 0,
+   "service": "Sand drain, first valve (NC)",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NC"
+  },
+  {
+   "tag": "MV-167",
+   "kind": "hand",
+   "line": "DN80-DR-157",
+   "part": "main",
+   "p": [
+    46.3,
+    38.9,
+    0.9
+   ],
+   "floor": 0,
+   "service": "Sand drain, second valve (NC)",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NC"
+  },
+  {
+   "tag": "NRV-171",
+   "kind": "check",
+   "line": "DN50-SJ-140",
+   "part": "main",
+   "p": [
+    44.2,
+    37.9,
+    1.9
+   ],
+   "floor": 0,
+   "service": "Sand-jet water: stops V-101 fluid flowing back to the PW pumps",
+   "type": "Check valve",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "MV-168",
+   "kind": "hand",
+   "line": "DN50-SJ-140",
+   "part": "main",
+   "p": [
+    45.3,
+    37.9,
+    1.9
+   ],
+   "floor": 0,
+   "service": "Sand-jet water isolation",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NC"
+  },
+  {
+   "tag": "SDV-134",
+   "kind": "sdv",
+   "line": "DN100-OL-130",
+   "part": "main",
+   "p": [
+    52,
+    39.2,
+    0.8
+   ],
+   "floor": 0,
+   "service": "Oil outlet shutdown valve (SIS)",
+   "type": "Shutdown valve, on/off, spring return (SIS)",
+   "on_pid": true,
+   "fail": "FC"
+  },
+  {
+   "tag": "TSV-131",
+   "kind": "tsv",
+   "line": "DN100-OL-130",
+   "part": "main",
+   "p": [
+    52,
+    38.5,
+    1
+   ],
+   "floor": 0,
+   "service": "Blocked-in oil between SDV-134 and LV-130",
+   "type": "Thermal relief valve",
+   "on_pid": true
+  },
+  {
+   "tag": "MV-184",
+   "kind": "hand",
+   "line": "DN100-OL-130",
+   "part": "main",
+   "p": [
+    52,
+    36,
+    0.8
+   ],
+   "floor": 0,
+   "service": "LV-130 upstream block",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "LV-130",
+   "kind": "control",
+   "line": "DN100-OL-130",
+   "part": "main",
+   "p": [
+    52,
+    35.3,
+    0.8
+   ],
+   "floor": 0,
+   "service": "Oil outlet (LIC-130)",
+   "type": "Control valve, diaphragm",
+   "on_pid": true,
+   "fail": "FC",
+   "note": "specification break to DN150-OL-154"
+  },
+  {
+   "tag": "MV-186",
+   "kind": "hand",
+   "line": "DN100-OL-130",
+   "part": "bypass",
+   "p": [
+    51.4,
+    35.3,
+    0.8
+   ],
+   "floor": 0,
+   "service": "LV-130 bypass (globe), locked closed (R30)",
+   "type": "Manual valve (globe)",
+   "on_pid": true,
+   "state": "LC"
+  },
+  {
+   "tag": "MV-185",
+   "kind": "hand",
+   "line": "DN150-OL-154",
+   "part": "main",
+   "p": [
+    52,
+    34.6,
+    0.8
+   ],
+   "floor": 0,
+   "service": "LV-130 downstream block",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "NRV-187",
+   "kind": "check",
+   "line": "DN150-OL-154",
+   "part": "main",
+   "p": [
+    52,
+    34,
+    0.8
+   ],
+   "floor": 0,
+   "service": "Oil: stops back-flow from the LP separator",
+   "type": "Check valve",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "MV-188",
+   "kind": "hand",
+   "line": "DN150-OL-154",
+   "part": "main",
+   "p": [
+    52,
+    33.5,
+    0.8
+   ],
+   "floor": 0,
+   "service": "Oil battery-limit isolation",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "LO"
+  },
+  {
+   "tag": "SDV-124",
+   "kind": "sdv",
+   "line": "DN80-PW-120",
+   "part": "main",
+   "p": [
+    54.2,
+    38,
+    0.8
+   ],
+   "floor": 0,
+   "service": "Water outlet shutdown valve (SIS)",
+   "type": "Shutdown valve, on/off, spring return (SIS)",
+   "on_pid": true,
+   "fail": "FC"
+  },
+  {
+   "tag": "TSV-121",
+   "kind": "tsv",
+   "line": "DN80-PW-120",
+   "part": "main",
+   "p": [
+    54.2,
+    37.6,
+    1
+   ],
+   "floor": 0,
+   "service": "Blocked-in water between SDV-124 and LV-120",
+   "type": "Thermal relief valve",
+   "on_pid": true
+  },
+  {
+   "tag": "MV-189",
+   "kind": "hand",
+   "line": "DN80-PW-120",
+   "part": "main",
+   "p": [
+    54.2,
+    35.85,
+    0.8
+   ],
+   "floor": 0,
+   "service": "LV-120 upstream block",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "LV-120",
+   "kind": "control",
+   "line": "DN80-PW-120",
+   "part": "main",
+   "p": [
+    54.2,
+    35.2,
+    0.8
+   ],
+   "floor": 0,
+   "service": "Water outlet (LIC-120)",
+   "type": "Control valve, diaphragm",
+   "on_pid": true,
+   "fail": "FC",
+   "note": "specification break to DN80-PW-155"
+  },
+  {
+   "tag": "MV-191",
+   "kind": "hand",
+   "line": "DN80-PW-120",
+   "part": "bypass",
+   "p": [
+    54.8,
+    35.2,
+    0.8
+   ],
+   "floor": 0,
+   "service": "LV-120 bypass (globe), locked closed (R30)",
+   "type": "Manual valve (globe)",
+   "on_pid": true,
+   "state": "LC"
+  },
+  {
+   "tag": "MV-190",
+   "kind": "hand",
+   "line": "DN80-PW-155",
+   "part": "main",
+   "p": [
+    54.2,
+    34.6,
+    0.8
+   ],
+   "floor": 0,
+   "service": "LV-120 downstream block",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "NRV-192",
+   "kind": "check",
+   "line": "DN80-PW-155",
+   "part": "main",
+   "p": [
+    54.2,
+    34,
+    0.8
+   ],
+   "floor": 0,
+   "service": "Water: stops back-flow from the hydrocyclones",
+   "type": "Check valve",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "MV-193",
+   "kind": "hand",
+   "line": "DN80-PW-155",
+   "part": "main",
+   "p": [
+    54.2,
+    33.5,
+    0.8
+   ],
+   "floor": 0,
+   "service": "Water battery-limit isolation",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "LO"
+  },
+  {
+   "tag": "MV-194",
+   "kind": "hand",
+   "line": "DN25-CI-159",
+   "part": "main",
+   "p": [
+    56.3,
+    57.5,
+    0.6
+   ],
+   "floor": 0,
+   "service": "T-105 outlet",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "MV-195",
+   "kind": "hand",
+   "line": "DN25-CI-159",
+   "part": "main",
+   "p": [
+    56.95,
+    56.6,
+    0.3
+   ],
+   "floor": 0,
+   "service": "P-105 suction",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "MV-196",
+   "kind": "hand",
+   "line": "DN25-CI-159",
+   "part": "branch",
+   "p": [
+    56.95,
+    58.2,
+    0.3
+   ],
+   "floor": 0,
+   "service": "P-105B suction",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "MV-197",
+   "kind": "hand",
+   "line": "DN25-CI-105",
+   "part": "main",
+   "p": [
+    58.2,
+    56.6,
+    0.45
+   ],
+   "floor": 0,
+   "service": "P-105 discharge",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "MV-141",
+   "kind": "hand",
+   "line": "DN25-CI-105",
+   "part": "branch",
+   "p": [
+    58.2,
+    58.2,
+    0.45
+   ],
+   "floor": 0,
+   "service": "P-105B discharge",
+   "type": "Manual valve (gate/ball)",
+   "on_pid": true,
+   "state": "NO"
+  },
+  {
+   "tag": "PSV-105",
+   "kind": "psv",
+   "line": "DN25-CI-105",
+   "part": "main",
+   "p": [
+    58.5,
+    57.4,
+    0.95
+   ],
+   "floor": 0,
+   "service": "P-105 discharge relief to T-105 (R05)",
+   "type": "Pressure safety valve",
+   "on_pid": true,
+   "hold": true,
+   "note": "HAZOP R05 HOLD; relieves to T-105"
+  }
+ ],
+ "samples": [
+  {
+   "tag": "SP-181",
+   "line": "DN200-PF-101",
+   "p": [
+    14.2,
+    40,
+    1
+   ],
+   "floor": 0,
+   "state": "NC",
+   "service": "Well stream: H2S / CO2 at each well test (R26)"
+  },
+  {
+   "tag": "SP-182",
+   "line": "DN100-OL-130",
+   "p": [
+    52,
+    36.7,
+    0.8
+   ],
+   "floor": 0,
+   "state": "NC",
+   "service": "Oil sample (BS&W check)"
+  },
+  {
+   "tag": "SP-183",
+   "line": "DN80-PW-120",
+   "p": [
+    54.2,
+    36.3,
+    0.8
+   ],
+   "floor": 0,
+   "state": "NC",
+   "service": "Produced-water sample (oil in water)"
+  }
+ ],
+ "esd": [
+  {
+   "id": "ESD-PB-1",
+   "tag": "HS-001",
+   "p": [
+    42,
+    43.9,
+    1.2
+   ],
+   "floor": 0,
+   "where": "field",
+   "note": "field repeat of the ESD-1 pushbutton on the escape route from V-101 (assumed; SEP-V101-PID-001 shows HS-001 on the console only)"
+  },
+  {
+   "id": "ESD-CON-1",
+   "tag": "HS-001",
+   "p": [
+    24,
+    70,
+    1
+   ],
+   "floor": 0,
+   "where": "control room console",
+   "note": "ESD-1 (SDVs)"
+  },
+  {
+   "id": "ESD-CON-2",
+   "tag": "HS-002",
+   "p": [
+    24.6,
+    70,
+    1
+   ],
+   "floor": 0,
+   "where": "control room console",
+   "note": "ESD-2 with blowdown (BDV-118)"
+  }
+ ],
+ "field": [
+  {
+   "key": "antifoam",
+   "tag": "AF-1",
+   "name": "Antifoam injection connection on the inlet (portable pump, assumed; not on SEP-V101-PID-001)",
+   "p": [
+    24,
+    42.5,
+    1.15
+   ],
+   "line": "DN200-PF-103"
+  },
+  {
+   "key": "jet",
+   "tag": "MV-168",
+   "name": "Sand jetting: MV-168 jet water in, sand drain MV-166 / MV-167 open",
+   "p": [
+    45.3,
+    37.9,
+    1.9
+   ],
+   "line": "DN50-SJ-140"
+  },
+  {
+   "key": "p105",
+   "tag": "P-105",
+   "name": "Demulsifier dosing pump P-105 local start / stop",
+   "p": [
+    57.6,
+    56.6,
+    0.6
+   ]
+  },
+  {
+   "key": "k201",
+   "tag": "K-201",
+   "name": "K-201 package (local panel, gas compression operator)",
+   "p": [
+    92,
+    40.2,
+    1.2
+   ]
+  }
+ ],
+ "hubs": [
+  {
+   "id": "DH-1",
+   "name": "Closed-drain hub (tundish) under V-101",
+   "p": [
+    45.6,
+    38.6,
+    0
+   ]
+  },
+  {
+   "id": "DH-2",
+   "name": "Drain hub, oil train (TSV-131)",
+   "p": [
+    51.5,
+    38.5,
+    0
+   ]
+  },
+  {
+   "id": "DH-3",
+   "name": "Drain hub, water train (TSV-121)",
+   "p": [
+    54.7,
+    37.6,
+    0
+   ]
+  },
+  {
+   "id": "US-1",
+   "name": "Utility station (nitrogen hose) on PL-1",
+   "p": [
+    44.6,
+    39.3,
+    3.7
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "id": "BL-01",
+   "name": "Well stream from the production manifold",
+   "p": [
+    10,
+    40,
+    1
+   ],
+   "line": "DN200-PF-101",
+   "side": "W"
+  },
+  {
+   "id": "BL-02",
+   "name": "LP steam header (rack)",
+   "p": [
+    31.5,
+    49,
+    5.044
+   ],
+   "line": "DN80-LS-102",
+   "side": "rack"
+  },
+  {
+   "id": "BL-03",
+   "name": "Condensate return header (rack)",
+   "p": [
+    28.6,
+    49.4,
+    5.03
+   ],
+   "line": "DN50-SC-160",
+   "side": "rack"
+  },
+  {
+   "id": "BL-04",
+   "name": "Sand-jet water from the PW pumps (rack)",
+   "p": [
+    43,
+    49.95,
+    5.03
+   ],
+   "line": "DN50-SJ-140",
+   "side": "rack"
+  },
+  {
+   "id": "BL-05",
+   "name": "Gas to V-201 / K-201 package",
+   "p": [
+    88,
+    43,
+    2.8
+   ],
+   "line": "DN250-GP-110",
+   "side": "E",
+   "to": "V-201"
+  },
+  {
+   "id": "BL-06",
+   "name": "Oil to the LP separator",
+   "p": [
+    52,
+    33,
+    0.8
+   ],
+   "line": "DN150-OL-154",
+   "side": "S",
+   "to": "LPS"
+  },
+  {
+   "id": "BL-07",
+   "name": "Water to the hydrocyclones",
+   "p": [
+    54.2,
+    33,
+    0.8
+   ],
+   "line": "DN80-PW-155",
+   "side": "S",
+   "to": "HYD"
+  },
+  {
+   "id": "BL-08",
+   "name": "Flare header to the KO drum",
+   "p": [
+    100,
+    48.6,
+    6.263
+   ],
+   "line": "DN300-FL-150",
+   "side": "E",
+   "to": "FKO"
+  },
+  {
+   "id": "BL-09",
+   "name": "Closed-drain system",
+   "p": [
+    45.6,
+    30.6,
+    -0.68
+   ],
+   "line": "DN50-DR-156",
+   "side": "S"
+  },
+  {
+   "id": "BL-10",
+   "name": "Sand handling",
+   "p": [
+    46.3,
+    35,
+    0.232
+   ],
+   "line": "DN80-DR-157",
+   "side": "S"
+  },
+  {
+   "id": "BL-11",
+   "name": "Nitrogen utility station",
+   "p": [
+    44.6,
+    39.3,
+    4.6
+   ],
+   "line": "DN25-NG-161",
+   "side": "PL-1"
+  }
+ ],
+ "areas": [
+  {
+   "id": "A-MAN",
+   "name": "Inlet manifold",
+   "rect": [
+    12,
+    37.5,
+    20,
+    42.5
+   ],
+   "cq": "MAN"
+  },
+  {
+   "id": "A-E101",
+   "name": "E-101 area",
+   "rect": [
+    26.5,
+    38.5,
+    33.5,
+    41.5
+   ],
+   "cq": "E-101"
+  },
+  {
+   "id": "A-V101",
+   "name": "V-101 area (paved, kerbed)",
+   "rect": [
+    41,
+    36.5,
+    55,
+    43.5
+   ],
+   "cq": "V-101 (12 × 7 m in cq; 14 × 7 m here)"
+  },
+  {
+   "id": "A-105",
+   "name": "Chemical injection skid",
+   "rect": [
+    54,
+    54.5,
+    60,
+    59.5
+   ],
+   "cq": "T-105"
+  }
+ ],
+ "roads": [
+  {
+   "id": "RD-1",
+   "name": "Site road",
+   "rect": [
+    0,
+    7,
+    130,
+    12
+   ]
+  },
+  {
+   "id": "RD-2",
+   "name": "Access road",
+   "rect": [
+    70.5,
+    12,
+    75,
+    78
+   ]
+  }
+ ],
+ "route": {
+  "eye": 1.6,
+  "stations": [
+   {
+    "n": 1,
+    "id": "S1",
+    "name": "Control room — start of the round",
+    "p": [
+     27,
+     64.2,
+     1.6
+    ],
+    "floor": 0,
+    "look": [
+     47,
+     40,
+     2
+    ],
+    "via": [],
+    "items": [
+     "HS-001",
+     "HS-002"
+    ],
+    "field": [],
+    "note": "log on, take the radio, read the shift notes; ESD-1 and ESD-2 are on the console"
+   },
+   {
+    "n": 2,
+    "id": "S2",
+    "name": "Inlet manifold",
+    "p": [
+     16,
+     36.4,
+     1.6
+    ],
+    "floor": 0,
+    "look": [
+     16,
+     40,
+     1
+    ],
+    "via": [
+     [
+      27,
+      64.2,
+      0
+     ],
+     [
+      27,
+      49,
+      0
+     ],
+     [
+      34.6,
+      49,
+      0
+     ],
+     [
+      34.6,
+      36.4,
+      0
+     ]
+    ],
+    "items": [
+     "MV-151",
+     "PT-100",
+     "SP-181",
+     "SDV-101",
+     "HV-100"
+    ],
+    "field": [],
+    "note": "MV-151 locked open; choke position and SDV-101 limit switches"
+   },
+   {
+    "n": 3,
+    "id": "S3",
+    "name": "Chemical injection quill",
+    "p": [
+     23,
+     41.4,
+     1.6
+    ],
+    "floor": 0,
+    "look": [
+     23,
+     42.5,
+     1.3
+    ],
+    "via": [
+     [
+      21,
+      36.4,
+      0
+     ],
+     [
+      21,
+      41.4,
+      0
+     ]
+    ],
+    "items": [
+     "MV-199",
+     "NRV-198",
+     "AF-1",
+     "TT-101"
+    ],
+    "field": [
+     "antifoam"
+    ],
+    "note": "demulsifier quill and the antifoam connection on DN200-PF-103"
+   },
+   {
+    "n": 4,
+    "id": "S4",
+    "name": "E-101 condensate and outlet",
+    "p": [
+     29.8,
+     37.4,
+     1.6
+    ],
+    "floor": 0,
+    "look": [
+     28.6,
+     38.6,
+     0.6
+    ],
+    "via": [
+     [
+      26.5,
+      41.4,
+      0
+     ],
+     [
+      26.5,
+      37.4,
+      0
+     ]
+    ],
+    "items": [
+     "ST-157",
+     "MV-158",
+     "MV-159",
+     "TT-102",
+     "TT-103"
+    ],
+    "field": [],
+    "note": "trap working (no live steam), condensate isolation locked open"
+   },
+   {
+    "n": 5,
+    "id": "S5",
+    "name": "E-101 steam station",
+    "p": [
+     32.9,
+     44.6,
+     1.6
+    ],
+    "floor": 0,
+    "look": [
+     31.5,
+     44.9,
+     1
+    ],
+    "via": [
+     [
+      34,
+      37.4,
+      0
+     ],
+     [
+      34,
+      44.6,
+      0
+     ]
+    ],
+    "items": [
+     "MV-153",
+     "FT-104",
+     "MV-154",
+     "TV-102",
+     "MV-155",
+     "MV-156",
+     "PSV-162"
+    ],
+    "field": [],
+    "note": "TV-102 position against TIC-102 output; bypass MV-156 closed"
+   },
+   {
+    "n": 6,
+    "id": "S6",
+    "name": "V-101 west end — drains and sand jetting",
+    "p": [
+     44.6,
+     36.8,
+     1.6
+    ],
+    "floor": 0,
+    "look": [
+     45.9,
+     38.6,
+     1
+    ],
+    "via": [
+     [
+      34,
+      44.6,
+      0
+     ],
+     [
+      34,
+      36.8,
+      0
+     ]
+    ],
+    "items": [
+     "MV-164",
+     "MV-165",
+     "MV-166",
+     "MV-167",
+     "MV-168",
+     "NRV-171"
+    ],
+    "field": [
+     "jet"
+    ],
+    "note": "drain and sand-drain valves closed; sand jetting is done from here"
+   },
+   {
+    "n": 7,
+    "id": "S7",
+    "name": "V-101 north side — inlet-section gauges",
+    "p": [
+     46.8,
+     42.4,
+     1.6
+    ],
+    "floor": 0,
+    "look": [
+     47,
+     41,
+     2.2
+    ],
+    "via": [
+     [
+      42.6,
+      36.8,
+      0
+     ],
+     [
+      42.6,
+      42.4,
+      0
+     ]
+    ],
+    "items": [
+     "LG-121",
+     "LT-125",
+     "LT-127",
+     "LT-120",
+     "LT-126",
+     "TT-112",
+     "TG-112"
+    ],
+    "field": [],
+    "note": "read LG-121 (interface, rag, foam) and TG-112; compare with LI-120 / LI-125 in the DCS"
+   },
+   {
+    "n": 8,
+    "id": "S8",
+    "name": "V-101 north side — oil bucket",
+    "p": [
+     50,
+     42.6,
+     1.6
+    ],
+    "floor": 0,
+    "look": [
+     49.6,
+     41,
+     2.2
+    ],
+    "via": [],
+    "items": [
+     "LG-131",
+     "LT-130",
+     "LT-136"
+    ],
+    "field": [],
+    "note": "read LG-131 against LI-130"
+   },
+   {
+    "n": 9,
+    "id": "S9",
+    "name": "Oil and water outlet trains",
+    "p": [
+     53.1,
+     36.2,
+     1.6
+    ],
+    "floor": 0,
+    "look": [
+     53.1,
+     36.2,
+     0.8
+    ],
+    "via": [
+     [
+      56.5,
+      42.6,
+      0
+     ],
+     [
+      56.5,
+      32.4,
+      0
+     ],
+     [
+      53.1,
+      32.4,
+      0
+     ]
+    ],
+    "items": [
+     "SDV-134",
+     "TSV-131",
+     "FT-133",
+     "AIT-132",
+     "SP-182",
+     "MV-184",
+     "LV-130",
+     "MV-185",
+     "MV-186",
+     "NRV-187",
+     "MV-188",
+     "SDV-124",
+     "TSV-121",
+     "FT-123",
+     "AIT-122",
+     "SP-183",
+     "MV-189",
+     "LV-120",
+     "MV-190",
+     "MV-191",
+     "NRV-192",
+     "MV-193"
+    ],
+    "field": [],
+    "note": "LV positions, locked-closed bypasses MV-186 / MV-191, locked-open battery-limit valves; samples"
+   },
+   {
+    "n": 10,
+    "id": "S10",
+    "name": "V-101 top platform (PL-1)",
+    "p": [
+     47.5,
+     38.9,
+     5.3
+    ],
+    "floor": 3.7,
+    "look": [
+     47.5,
+     40,
+     5
+    ],
+    "via": [
+     [
+      53.1,
+      32.4,
+      0
+     ],
+     [
+      50.9,
+      32.4,
+      0
+     ],
+     [
+      50.9,
+      37.95,
+      0
+     ],
+     [
+      50.9,
+      38.4,
+      3.7
+     ]
+    ],
+    "items": [
+     "PG-110",
+     "PT-110",
+     "PT-111",
+     "PT-114",
+     "PDT-113",
+     "MV-163",
+     "MV-172",
+     "MV-169",
+     "PSV-119",
+     "MV-170",
+     "BDV-118",
+     "RO-118",
+     "PV-111"
+    ],
+    "field": [],
+    "note": "read PG-110; car seals on MV-169 / MV-170; PSV-119, PV-111 and BDV-118 above on PL-2"
+   },
+   {
+    "n": 11,
+    "id": "S11",
+    "name": "Gas valve platform (PL-1b)",
+    "p": [
+     52.4,
+     42.1,
+     5.3
+    ],
+    "floor": 3.7,
+    "look": [
+     52,
+     42.6,
+     4.4
+    ],
+    "via": [
+     [
+      51.2,
+      38.9,
+      3.7
+     ],
+     [
+      51.2,
+      41.9,
+      3.7
+     ]
+    ],
+    "items": [
+     "FT-116",
+     "MV-174",
+     "PV-110",
+     "MV-175",
+     "MV-177",
+     "NRV-173"
+    ],
+    "field": [],
+    "note": "PV-110 position against PIC-110 output; bypass MV-177 closed"
+   },
+   {
+    "n": 12,
+    "id": "S12",
+    "name": "Chemical injection skid",
+    "p": [
+     56.5,
+     53.8,
+     1.6
+    ],
+    "floor": 0,
+    "look": [
+     57,
+     57.2,
+     0.6
+    ],
+    "via": [
+     [
+      53.8,
+      43.5,
+      3.7
+     ],
+     [
+      53.8,
+      43.85,
+      0
+     ],
+     [
+      56.5,
+      43.85,
+      0
+     ]
+    ],
+    "items": [
+     "T-105",
+     "LT-105",
+     "MV-194",
+     "MV-195",
+     "MV-196",
+     "P-105",
+     "P-105B",
+     "MV-197",
+     "MV-141",
+     "FT-105",
+     "NRV-105",
+     "PSV-105"
+    ],
+    "field": [
+     "p105"
+    ],
+    "note": "T-105 level, P-105 running and stroke, no leaks in the bund"
+   },
+   {
+    "n": 13,
+    "id": "S13",
+    "name": "Gas battery limit, K-201 package and flare",
+    "p": [
+     86.4,
+     45.2,
+     1.6
+    ],
+    "floor": 0,
+    "look": [
+     88,
+     44.5,
+     3.3
+    ],
+    "via": [
+     [
+      56.5,
+      45.4,
+      0
+     ],
+     [
+      86.4,
+      45.4,
+      0
+     ]
+    ],
+    "items": [
+     "MV-176",
+     "SDV-109",
+     "V-201",
+     "LT-201",
+     "LSHH-201",
+     "K-201",
+     "FT-117",
+     "FLR"
+    ],
+    "field": [
+     "k201"
+    ],
+    "note": "MV-176 locked open; K-201 local panel; flare flame (pilot only in normal operation)"
+   }
+  ],
+  "return_via": [
+   [
+    86.4,
+    45.4,
+    0
+   ],
+   [
+    56.5,
+    45.4,
+    0
+   ],
+   [
+    56.5,
+    49,
+    0
+   ],
+   [
+    27,
+    49,
+    0
+   ],
+   [
+    27,
+    64.2,
+    0
+   ]
+  ],
+  "note": "walk at grade on paved areas; the rack is crossed underneath (4.7 m clear); no low pipe is crossed (no step-over stiles needed)"
+ }
+}
