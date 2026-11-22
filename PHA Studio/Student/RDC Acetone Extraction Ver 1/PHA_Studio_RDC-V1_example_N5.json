@@ -1,0 +1,1068 @@
+{
+ "v": 2,
+ "unit": "RDC-V1",
+ "meta": {
+  "title": "HAZOP and LOPA of the RDC-V1 unit",
+  "group": "",
+  "date": "2026-11-16",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "RDC-V1",
+  "pid": "",
+  "scope": "From the feed receipt into T-101 (HIC-117) through the feed pumps P-101A/B, FV-101 and the cooler E-101, and from the solvent drum D-102 (N₂ blanket, return HIC-118) through P-102A/B, FV-103 and E-102, to the rotating-disc contactor C-101 with its rotor M-101, PSV-108, the raffinate line (PV-108, HV-108) to the stripper C-102 and the extract line (LV-109, XV-119) to the solvent recovery column C-103; the SIS and the procedures.",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions (1000 kg/h feed, solvent ratio 0.35, 180 rpm, 25 °C, 1.0 bar g). Instrument air, chilled water, N₂ and power are available at start-up. Instruments and the relief valve are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader",
+   "name": "",
+   "duty": "Independent, experienced; runs the sessions",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records the worksheets as the team speaks",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, balances, relief cases",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations",
+   "name": "",
+   "duty": "How the unit is really run, procedures",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control",
+   "name": "",
+   "duty": "Loops, trips, fail positions, alarms",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety",
+   "name": "",
+   "duty": "Consequences, risk ranking, follow-up",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Rotating equipment (rotor, pumps), chemistry of the solvent",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID RDC-PID-002 rev 0",
+   "where": "P&ID tab (EPC P&ID below the screen drawing)",
+   "use": "Node boundaries, tags, valves, relief, fail positions"
+  },
+  {
+   "ref": "PFD RDC-PFD-001 and HMB RDC-PE-HMB-001",
+   "where": "PFD tab; Engineering tabs",
+   "use": "Streams, design flows, temperatures and pressures"
+  },
+  {
+   "ref": "Design basis",
+   "where": "Design of the unit operation tab",
+   "use": "Column sizing, flooding margin, rotor speed"
+  },
+  {
+   "ref": "Control narrative",
+   "where": "Control loop design tab",
+   "use": "Loops, fail positions, ratio control"
+  },
+  {
+   "ref": "C&E matrix RDC-IN-CE-001 and SRS",
+   "where": "C&E matrix and SRS of SIF tabs",
+   "use": "Trips, set points, final elements"
+  },
+  {
+   "ref": "Relief load basis RDC-PE-RLB-001",
+   "where": "Relief & vent tab",
+   "use": "PSV-108 cases and capacity"
+  },
+  {
+   "ref": "HAZID register",
+   "where": "HAZID tab",
+   "use": "Major accident hazards already found"
+  },
+  {
+   "ref": "Procedures",
+   "where": "Exercises tab (procedures), SOP tab",
+   "use": "Start-up, shutdown, ESD, changeovers"
+  },
+  {
+   "ref": "HAZOP report RDC-SA-HZP-001",
+   "where": "HAZOP tab (PDF)",
+   "use": "The reference study of this unit"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [
+   {
+    "id": "r1",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Overpressure of the liquid-full column",
+    "causes": "Raffinate outlet blocked: PV-108 drifts shut, PV-108 closed in MAN, downstream valve closed\nthermal expansion when blocked in",
+    "events": "",
+    "grp": [],
+    "cons": "Pressure reaches pump shut-off (about 5 bar g): flange or shell failure, release of flammable and toxic liquid",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004",
+     "S005"
+    ],
+    "S": "4",
+    "L": "3",
+    "recs": [
+     "R02",
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": true,
+     "ie": [
+      {
+       "d": "PV-108 or its positioner fails closed",
+       "f": "0.1"
+      },
+      {
+       "d": "PIC-108 loop fails low (PT-108 reads low) and closes PV-108",
+       "f": "0.1"
+      },
+      {
+       "d": "Downstream block valve closed in error with the unit running",
+       "f": "0.1"
+      }
+     ],
+     "en": [],
+     "cm": [
+      {
+       "d": "Probability of ignition",
+       "p": "0.3"
+      },
+      {
+       "d": "Person present at the column",
+       "p": "0.5"
+      }
+     ],
+     "ipl": [
+      "S003",
+      "S004"
+     ]
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Pressure",
+    "gw": "LESS",
+    "dev": "Low column pressure",
+    "causes": "Feed and solvent stop\nPV-108 fails open (air failure)",
+    "events": "",
+    "grp": [],
+    "cons": "Column drains toward C-102; dissolved gas or vapour; interface upset",
+    "cat": "PER",
+    "sg": [
+     "S006"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Column too warm",
+    "causes": "Chilled water lost with a hot feed\nbearing friction",
+    "events": "",
+    "grp": [],
+    "cons": "Acetone vapour forms at the top; pressure rises; extraction poorer",
+    "cat": "PER",
+    "sg": [
+     "S007",
+     "S008",
+     "S009"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Interface",
+    "gw": "LESS",
+    "dev": "Interface falls toward the extract outlet",
+    "causes": "LT-109 reads high (LIC-109 lowers the real interface)\nLV-109 sticks open",
+    "events": "",
+    "grp": [],
+    "cons": "Aqueous phase leaves with the extract to C-103; in the dynamic run the real interface reached about 5 % with LI-109 showing about 92 %",
+    "cat": "PER",
+    "sg": [
+     "S010",
+     "S011"
+    ],
+    "S": "3",
+    "L": "4",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Interface",
+    "gw": "MORE",
+    "dev": "Interface rises into the active zone",
+    "causes": "LV-109 closed or stuck\nLT-109 reads low\nemulsion band",
+    "events": "",
+    "grp": [],
+    "cons": "Extract carried into the raffinate outlet; TCE loss (AI-113 up)",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Rotor speed / power",
+    "gw": "MORE",
+    "dev": "Rotor too fast or overloaded",
+    "causes": "SIC-105 set point too high\nbearing wear\ncoupling problem",
+    "events": "",
+    "grp": [],
+    "cons": "Fine drops, flooding, emulsion; overload damages the drive",
+    "cat": "PER",
+    "sg": [
+     "S014",
+     "S015",
+     "S016",
+     "S017"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Rotor speed / power",
+    "gw": "LESS",
+    "dev": "Rotor slow or stopped",
+    "causes": "VFD trip\ncoupling slip (discs slower than the tachometer)",
+    "events": "",
+    "grp": [],
+    "cons": "Coarse drops, poor extraction; no safety hazard",
+    "cat": "PER",
+    "sg": [
+     "S018",
+     "S019",
+     "S020"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "Throughput beyond flooding",
+    "causes": "Feed and solvent both high\nsurfactant in the feed",
+    "events": "",
+    "grp": [],
+    "cons": "Flooding: phases leave by the wrong outlets",
+    "cat": "PER",
+    "sg": [
+     "S021",
+     "S022"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R01"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Phase / contamination",
+    "gw": "OTHER THAN",
+    "dev": "Leak at the top shaft seal",
+    "causes": "Seal wear, vibration",
+    "events": "",
+    "grp": [],
+    "cons": "Release of extract (flammable and toxic) at the column top; fire gives HCl and phosgene",
+    "cat": "PER",
+    "sg": [
+     "S023",
+     "S024"
+    ],
+    "S": "4",
+    "L": "3",
+    "recs": [
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r10",
+    "param": "Phase / contamination",
+    "gw": "AS WELL AS",
+    "dev": "Gas or air in the column",
+    "causes": "Not vented at start-up\nN₂ carried from D-102",
+    "events": "",
+    "grp": [],
+    "cons": "Pressure surges, poor control, flammable pocket at the top",
+    "cat": "PER",
+    "sg": [
+     "S025",
+     "S026"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [
+     "R08"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N6": [],
+  "N7": [],
+  "N8": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "PIC-108",
+   "tag": "PIC-108",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "PI-108 HI 1.5 bar g",
+   "tag": "PI-108",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "PSHH-108 trips the pumps at 3.0 bar g (3 s)",
+   "tag": "PSHH-108",
+   "type": "Interlock (SIS)",
+   "pfd": "0.0101"
+  },
+  {
+   "id": "S004",
+   "text": "PSV-108 3.5 bar g",
+   "tag": "PSV-108",
+   "type": "Relief (PRD)",
+   "pfd": "0.01"
+  },
+  {
+   "id": "S005",
+   "text": "HV-108 bypass",
+   "tag": "HV-108",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "PI-108 LO 0.7 bar g",
+   "tag": "PI-108",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "TI-106 HI 32 °C",
+   "tag": "TI-106",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "TSHH-106 trips at 40 °C (10 s)",
+   "tag": "TSHH-106",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "PSV-108",
+   "tag": "PSV-108",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "LI-109 LO 25 %",
+   "tag": "LI-109",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "LSLL-109 closes XV-119 at 5 % — but LSLL-109 uses the same LT-109",
+   "tag": "LSLL-109",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "LI-109 HI 75 %",
+   "tag": "LI-109",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "LSHH-109 stops the solvent pumps at 95 % (same LT-109)",
+   "tag": "LSHH-109",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "SI-105 HI 230 rpm",
+   "tag": "SI-105",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "JI-105 HI 1.6 kW",
+   "tag": "JI-105",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "overload trip 2.2 kW (10 s)",
+   "tag": "",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "VI-105 HI",
+   "tag": "VI-105",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "SI-105 LO 120 rpm",
+   "tag": "SI-105",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "AI-111 HI",
+   "tag": "AI-111",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "stroboscope check in the field",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S021",
+   "text": "PDI-110 HI 0.36 kPa",
+   "tag": "PDI-110",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S022",
+   "text": "AI-113 HI 1.5 wt%",
+   "tag": "AI-113",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S023",
+   "text": "VI-105 HI 4.5 mm/s",
+   "tag": "VI-105",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S024",
+   "text": "inspection",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S025",
+   "text": "High-point vent",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S026",
+   "text": "start-up procedure",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Add an operating-window alarm on the flood approach (PDI-110 with FI-101 + FI-103)",
+   "by": "Process / control",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "LOPA for column overpressure; confirm the PSV-108 relief case (blocked outlet with both pumps at shut-off) and its discharge to a closed system",
+   "by": "Process / safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Consider a high-pressure override that closes FV-101 and FV-103 before PSHH-108",
+   "by": "Control",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Confirm the design temperature of C-101 and the TSHH-106 set point against the acetone boiling point at the column pressure",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Give LSLL-109 and LSHH-109 their own interface transmitter (LT-109B), independent of LIC-109",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Add a disc-speed sensor on the shaft (not only the motor tachometer)",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Seal leak detection on the rotor shaft seal; fire and toxic-smoke response plan",
+   "by": "Mechanical / safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R08",
+   "text": "Write the fill-and-vent step with a check that liquid is at the vent",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "Raffinate outlet blocked: PV-108 drifts shut, PV-108 closed in MAN, downstream valve closed",
+   "thermal expansion when blocked in",
+   "Feed and solvent stop",
+   "PV-108 fails open (air failure)",
+   "Chilled water lost with a hot feed",
+   "bearing friction",
+   "LT-109 reads high (LIC-109 lowers the real interface)",
+   "LV-109 sticks open",
+   "LV-109 closed or stuck",
+   "LT-109 reads low",
+   "emulsion band",
+   "SIC-105 set point too high",
+   "bearing wear",
+   "coupling problem",
+   "VFD trip",
+   "coupling slip (discs slower than the tachometer)",
+   "Feed and solvent both high",
+   "surfactant in the feed",
+   "Seal wear, vibration",
+   "Not vented at start-up",
+   "N₂ carried from D-102"
+  ],
+  "cons": [
+   "Pressure reaches pump shut-off (about 5 bar g): flange or shell failure, release of flammable and toxic liquid",
+   "Column drains toward C-102",
+   "dissolved gas or vapour",
+   "interface upset",
+   "Acetone vapour forms at the top",
+   "pressure rises",
+   "extraction poorer",
+   "Aqueous phase leaves with the extract to C-103",
+   "in the dynamic run the real interface reached about 5 % with LI-109 showing about 92 %",
+   "Extract carried into the raffinate outlet",
+   "TCE loss (AI-113 up)",
+   "Fine drops, flooding, emulsion",
+   "overload damages the drive",
+   "Coarse drops, poor extraction",
+   "no safety hazard",
+   "Flooding: phases leave by the wrong outlets",
+   "Release of extract (flammable and toxic) at the column top",
+   "fire gives HCl and phosgene",
+   "Pressure surges, poor control, flammable pocket at the top"
+  ],
+  "safe": [
+   "LI-101 HI alarm 90 %",
+   "operator response (the 1.1 m³/h supply takes about 5.3 h from 60 % to the alarm and 1.8 h more to overfill)",
+   "LI-101 LO alarm 20 %",
+   "LSLL-101 stops the feed pumps at 8 %",
+   "AI-111 HI alarm 10 wt%",
+   "lab samples",
+   "TIC-102 on E-101",
+   "TI-102 HI 30 °C",
+   "Open vent",
+   "Bonding and earthing",
+   "hazardous-area equipment",
+   "FIC-101 LO alarm 900 kg/h",
+   "FFIC-103 ratio follows FI-101",
+   "standby pump",
+   "FIC-101 HI alarm 1300 kg/h",
+   "PDI-110 HI 0.36 kPa",
+   "AI-111 HI",
+   "AI-111 HI alarm",
+   "mass balance FI-114 + FI-115 against FI-101 + FI-103",
+   "FIC-101 LO alarm",
+   "operator rounds",
+   "TIC-102",
+   "TSHH-106 40 °C",
+   "TI-102 LO alarm 20 °C",
+   "Isolation procedure",
+   "Mechanical seals",
+   "maintenance",
+   "kerb and drain",
+   "LI-102 HI alarm 90 %",
+   "LI-102 LO 20 %",
+   "LSLL-102 stops the pumps at 8 %",
+   "TIC-104",
+   "TI-104 HI 30 °C",
+   "Regulator",
+   "LSLL-102",
+   "Closed system",
+   "PPE",
+   "FFIC-103 LO alarm",
+   "FFIC-103 HI alarm 480 kg/h",
+   "LI-102 LO",
+   "lab",
+   "TSHH-106",
+   "PIC-108",
+   "PI-108 HI 1.5 bar g",
+   "PSHH-108 trips the pumps at 3.0 bar g (3 s)",
+   "PSV-108 3.5 bar g",
+   "HV-108 bypass",
+   "PI-108 LO 0.7 bar g",
+   "TI-106 HI 32 °C",
+   "TSHH-106 trips at 40 °C (10 s)",
+   "PSV-108",
+   "LI-109 LO 25 %",
+   "LSLL-109 closes XV-119 at 5 % — but LSLL-109 uses the same LT-109",
+   "LI-109 HI 75 %",
+   "LSHH-109 stops the solvent pumps at 95 % (same LT-109)",
+   "SI-105 HI 230 rpm",
+   "JI-105 HI 1.6 kW",
+   "overload trip 2.2 kW (10 s)",
+   "VI-105 HI",
+   "SI-105 LO 120 rpm",
+   "stroboscope check in the field",
+   "AI-113 HI 1.5 wt%",
+   "VI-105 HI 4.5 mm/s",
+   "inspection",
+   "High-point vent",
+   "start-up procedure",
+   "PI-108 HI",
+   "PSHH-108",
+   "HV-108",
+   "PI-108 LO alarm",
+   "AI-111 HI 10 wt% (analyzer can drift low)",
+   "Pressure difference in normal operation",
+   "LSHH-109",
+   "LSLL-109 (same transmitter)",
+   "DI-115 LO 970 kg/m³ (density falls with water)",
+   "Inspection",
+   "kerb",
+   "Start-up procedure",
+   "AI-113 HI",
+   "Procedure",
+   "operator at the vent",
+   "Alarms",
+   "training",
+   "Reset permissives (pressure, temperature, levels must be clear)",
+   "PI-101 / PI-102",
+   "Fail-safe valves (FC/FO)",
+   "De-energise-to-trip SIS",
+   "UPS for DCS and SIS",
+   "Permit to work"
+  ],
+  "recs": [
+   "Add an operating-window alarm on the flood approach (PDI-110 with FI-101 + FI-103)",
+   "LOPA for column overpressure; confirm the PSV-108 relief case (blocked outlet with both pumps at shut-off) and its discharge to a closed system",
+   "Consider a high-pressure override that closes FV-101 and FV-103 before PSHH-108",
+   "Confirm the design temperature of C-101 and the TSHH-106 set point against the acetone boiling point at the column pressure",
+   "Give LSLL-109 and LSHH-109 their own interface transmitter (LT-109B), independent of LIC-109",
+   "Add a disc-speed sensor on the shaft (not only the motor tachometer)",
+   "Seal leak detection on the rotor shaft seal; fire and toxic-smoke response plan",
+   "Write the fill-and-vent step with a check that liquid is at the vent"
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "Off-spec raffinate for a short time; small solvent loss",
+    "Release contained in the bund or kerb"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid",
+    "Production lost for hours; damage < 10 k$",
+    "Small TCE or acetone release, cleaned up on site"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "Unit down for days; damage < 100 k$",
+    "Reportable release; TCE to drain or soil"
+   ],
+   [
+    4,
+    "Major",
+    "One fatality or several serious injuries",
+    "Long outage; damage < 1 M$",
+    "Major release beyond the site fence"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Several fatalities",
+    "Loss of the unit",
+    "Lasting environmental damage"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the life of the plant",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Heard of in the industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Could happen in the life of the plant",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Expected a few times in the life of the plant",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Expected every year or more often",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 10,
+ "sgseq": 26,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": "2026-11-16T04:01:06.123Z",
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}
