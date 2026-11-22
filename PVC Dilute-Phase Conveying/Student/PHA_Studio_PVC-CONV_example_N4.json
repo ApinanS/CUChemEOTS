@@ -1,0 +1,951 @@
+{
+ "v": 2,
+ "unit": "PVC-CONV",
+ "meta": {
+  "title": "HAZOP and LOPA of the PVC-CONV unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "PVC-CONV",
+  "pid": "",
+  "scope": "From the D-100 outlet and the blower suction (F-101, K-101, E-101, FE-101) through the rotary feeder RV-101, the stepped DN150/DN200 conveying line and the diverters DV-102/DV-103 to the storage silos D-201A/B with their bag filters, vents and outlets, including the cooling water to E-101, instrument air and electrical power. The dryer upstream and the bagging and compounding lines downstream are excluded.",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at design (18 t/h, FT-101 0.98 kg/s, PT-102 47.3 kPa g, v/v_salt 1.24 after the step). Cooling water, instrument air and power are available at start-up. Instruments, trips (I-1, I-2) and PSV-101 are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Guides the team through nodes, parameters and guide words; keeps to the method; not from the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every deviation (full recording) in the worksheet",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent of the conveying system: air rate, saltation margin, pressure profile, heat and mass balance",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the line is really run: start-up and purge, silo changeover, clearing a plug",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "FIC-101, PIC-102 override, TIC-103, XI-106, the I-1/I-2 trips, fail positions, the C&E",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety engineer",
+   "name": "",
+   "duty": "Risk matrix, PSV-101, dust explosion and static, follow-up to LOPA",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Blower vendor, rotary-valve vendor, electrical (earthing and bonding), dust-hazard specialist (NFPA 652)",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID PVC-PID-001 rev B",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, valves, relief"
+  },
+  {
+   "ref": "PFD PVC-PFD-001 and HMB PVC-PE-HMB-001",
+   "where": "Process / BFD & PFD tabs",
+   "use": "Design intent, flows, conditions"
+  },
+  {
+   "ref": "C&E PVC-IN-CE-001",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects (I-1, I-2)"
+  },
+  {
+   "ref": "Instrument list PVC-IN-INL-001",
+   "where": "Engineering (EPC) tabs",
+   "use": "Instrument tags and ranges"
+  },
+  {
+   "ref": "Relief-load summary PVC-PE-RLB-001",
+   "where": "Engineering tab (process)",
+   "use": "PSV-101 set pressure and governing case"
+  },
+  {
+   "ref": "Equipment list PVC-ME-EQL-001",
+   "where": "Design tab",
+   "use": "Design pressures and temperatures"
+  },
+  {
+   "ref": "Saltation and pressure-drop curves",
+   "where": "Design / Operating windows tabs",
+   "use": "Minimum air, margin XI-106, blower limits"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP tab and Exercises tab",
+   "use": "Start-up, purge, silo changeover, shutdown, restart"
+  },
+  {
+   "ref": "HAZOP tab of the OTS and the dynamic model",
+   "where": "HAZOP tab, HAZOP Studio tab",
+   "use": "Reference worksheets; deviation runs with the safeguards active"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [],
+  "N2": [],
+  "N3": [],
+  "N4": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "Too much resin for the air",
+    "causes": "Feed pushed with HIC-110\ndenser resin grade",
+    "events": "",
+    "grp": [],
+    "cons": "v / v_salt falls, dunes, plug; PIC-102 cuts the feed only on pressure",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R01",
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less resin than set",
+    "causes": "Worn rotor (fills less, leaks more)\nbridging in D-100\nlow D-100 level",
+    "events": "",
+    "grp": [],
+    "cons": "Lost throughput; more air per tonne",
+    "cat": "PER",
+    "sg": [
+     "S005",
+     "S006",
+     "S007"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "Feed stops",
+    "causes": "RV-101 overload trip\nI-1\nD-100 empty",
+    "events": "",
+    "grp": [],
+    "cons": "Silo filling stops; air only",
+    "cat": "PER",
+    "sg": [
+     "S008",
+     "S009"
+    ],
+    "S": "1",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Air leaking up through the rotor",
+    "causes": "Normal clearance leak\nworn rotor (up to 5×)",
+    "events": "",
+    "grp": [],
+    "cons": "Less conveying air; dust in D-100 vent filter F-100",
+    "cat": "PER",
+    "sg": [
+     "S010"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Pick-up pressure high",
+    "causes": "Plug forming\nlumps at the bends\nsilo filter blinding",
+    "events": "",
+    "grp": [],
+    "cons": "Line blocking; blower to its relief",
+    "cat": "PER",
+    "sg": [
+     "S011",
+     "S012",
+     "S013",
+     "S001",
+     "S014"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example. LOPA (worked): PSHH-102 → I-1 is not credited because it shares PT-102 with PIC-102 (not independent, see R02). With its own transmitter it could be credited as a SIL 1 SIF (PFD 0.1) and the scenario would meet the TEL.",
+    "lopa": {
+     "on": true,
+     "ie": [
+      {
+       "d": "Plug forming in the line (lumps at the bends, air below the saltation margin)",
+       "f": "0.1"
+      }
+     ],
+     "en": [],
+     "cm": [
+      {
+       "d": "Probability that people are near the line, E-101 or the blower when it bursts",
+       "p": "0.5"
+      }
+     ],
+     "ipl": [
+      "S001",
+      "S014"
+     ]
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Pressure",
+    "gw": "OTHER THAN",
+    "dev": "PT-102 reading frozen",
+    "causes": "Resin packs the impulse line",
+    "events": "",
+    "grp": [],
+    "cons": "PIC-102 and PSHH-102 both blind; a blockage is not seen",
+    "cat": "PER",
+    "sg": [
+     "S015"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Lumps, tramp metal or streamers in the feed",
+    "causes": "Dryer upset\nsieve damaged",
+    "events": "",
+    "grp": [],
+    "cons": "Plugs at bends, friction sparks in RV-101",
+    "cat": "PER",
+    "sg": [
+     "S016",
+     "S017"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Residual monomer in the resin",
+    "causes": "Poor stripping upstream",
+    "events": "",
+    "grp": [],
+    "cons": "Exposure during silo entry or sampling",
+    "cat": "PER",
+    "sg": [
+     "S018"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Speed",
+    "gw": "MORE",
+    "dev": "Hand in the rotor during clearing",
+    "causes": "Blockage cleared without isolation",
+    "events": "",
+    "grp": [],
+    "cons": "Amputation",
+    "cat": "PER",
+    "sg": [
+     "S019",
+     "S020"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N5": [],
+  "N6": [],
+  "N7": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "PIC-102 override 58 kPa g",
+   "tag": "PIC-102",
+   "type": "BPCS control",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S002",
+   "text": "XI-106 alarm",
+   "tag": "XI-106",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "WAH-110 21 t/h",
+   "tag": "WAH-110",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "PSHH-102 → I-1",
+   "tag": "PSHH-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "WAL-110 15 t/h",
+   "tag": "WAL-110",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "LAL-100 15 %",
+   "tag": "LAL-100",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "PDI-100",
+   "tag": "PDI-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "RV-101 motor status",
+   "tag": "RV-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "WI-110 alarm",
+   "tag": "WI-110",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "PDI-100 alarm 1.2 kPa",
+   "tag": "PDI-100",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "PAH-102 60 kPa g",
+   "tag": "PAH-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "PIC-102",
+   "tag": "PIC-102",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "PSHH-102 → I-1 (same PT-102)",
+   "tag": "PSHH-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "PSV-101 90 kPa g on the blower discharge",
+   "tag": "PSV-101",
+   "type": "Relief (PRD)",
+   "pfd": "0.01"
+  },
+  {
+   "id": "S015",
+   "text": "PI-104, PI-105 and PI-101 trends (no automatic action)",
+   "tag": "PI-104",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "PT-102 spikes",
+   "tag": "PT-102",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "sieve upstream (assumed)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "Resin specification (assumed)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "LOTO",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "guards",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Schedule the FIC-101 set point on the measured feed (WI-110) with a slow XI-106 trim (see Control loop design).",
+   "by": "Process / control",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Train operators on the simulator scenarios of the dynamic check (section 9).",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Alarm on PDI-100 high (rotor wear) and a rotary-valve clearance check interval.",
+   "by": "Maintenance",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Give PSHH-102 its own pressure transmitter (today it shares PT-102 with PIC-102: a plugged impulse line blinds both).",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Check upstream tramp-metal removal and residual-monomer specification of the resin.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Interlocked inspection hatch on RV-101 and a LOTO procedure for clearing blockages.",
+   "by": "Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "Feed pushed with HIC-110",
+   "denser resin grade",
+   "Worn rotor (fills less, leaks more)",
+   "bridging in D-100",
+   "low D-100 level",
+   "RV-101 overload trip",
+   "I-1",
+   "D-100 empty",
+   "Normal clearance leak",
+   "worn rotor (up to 5×)",
+   "Plug forming",
+   "lumps at the bends",
+   "silo filter blinding",
+   "Resin packs the impulse line",
+   "Dryer upset",
+   "sieve damaged",
+   "Poor stripping upstream",
+   "Blockage cleared without isolation"
+  ],
+  "cons": [
+   "v / v_salt falls, dunes, plug",
+   "PIC-102 cuts the feed only on pressure",
+   "Lost throughput",
+   "more air per tonne",
+   "Silo filling stops",
+   "air only",
+   "Less conveying air",
+   "dust in D-100 vent filter F-100",
+   "Line blocking",
+   "blower to its relief",
+   "PIC-102 and PSHH-102 both blind",
+   "a blockage is not seen",
+   "Plugs at bends, friction sparks in RV-101",
+   "Exposure during silo entry or sampling",
+   "Amputation"
+  ],
+  "safe": [
+   "I-1 stops RV-101 when K-101 stops",
+   "FSLL-101 → I-1 (0.70 kg/s)",
+   "FAL-101 0.85 kg/s",
+   "FIC-101 raises the speed",
+   "PDI-101 alarm 3 kPa",
+   "XI-106 alarm 1.1",
+   "FSLL-101 → I-1",
+   "FAH-101 1.15 kg/s",
+   "energy display",
+   "PAH-101 80 kPa g",
+   "PIC-102 override",
+   "PSHH-102 → I-1",
+   "PSV-101 90 kPa g",
+   "49-101 overload (176 A)",
+   "TAH-101 125 °C",
+   "TSHH-101 → I-2 at 140 °C",
+   "TT-101",
+   "NRV-101",
+   "XV-101 opens on stop (unloads)",
+   "FIC-101",
+   "ZS on XV-101 (TBC)",
+   "TAH-103 55 °C",
+   "TSHH-103 → I-1 at 65 °C",
+   "TV-103 fails open",
+   "TSHH-103 → I-1",
+   "TAH-103",
+   "TSHH-103 (same TT-103)",
+   "TAL-103 25 °C",
+   "TT-103 trend",
+   "laboratory moisture",
+   "PSV-101 upstream",
+   "XI-106 alarm 1.1 (uses the same FT-101)",
+   "PI-104 − PI-105 rising",
+   "Operator practice",
+   "ramp",
+   "PDI-100 rises with the leak",
+   "Start permissive FT-101 ≥ 0.85 kg/s",
+   "PIC-102 override 58 kPa g",
+   "XI-106 alarm",
+   "WAH-110 21 t/h",
+   "WAL-110 15 t/h",
+   "LAL-100 15 %",
+   "PDI-100",
+   "RV-101 motor status",
+   "WI-110 alarm",
+   "PDI-100 alarm 1.2 kPa",
+   "PAH-102 60 kPa g",
+   "PIC-102",
+   "PSHH-102 → I-1 (same PT-102)",
+   "PI-104, PI-105 and PI-101 trends (no automatic action)",
+   "PT-102 spikes",
+   "sieve upstream (assumed)",
+   "Resin specification (assumed)",
+   "LOTO",
+   "guards",
+   "PI-104 − PI-105 trend",
+   "PSV-101",
+   "motor overload",
+   "FAH-101",
+   "PI-104 − PI-105 up",
+   "silo level slower than WI-110",
+   "49-101 overload",
+   "Bonding and earthing (assumed)",
+   "Housekeeping",
+   "bend inspection",
+   "LAH-201 90 %",
+   "LSHH-201 → I-1 at 95 % (same LI-201)",
+   "PDI-201 alarm 3.5 kPa",
+   "None (no low-ΔP alarm)",
+   "ZS position switches → I-1 (2 s)",
+   "procedure",
+   "Earthing",
+   "air ≤ 50 °C",
+   "vents (assumed)",
+   "TSHH-103 → I-1 upstream",
+   "Start permissive PT-102 < 25 kPa g",
+   "Procedure",
+   "scoring in the simulator",
+   "ZS interlock → I-1",
+   "Bypass authorisation (assumed)",
+   "Permit to work",
+   "isolation"
+  ],
+  "recs": [
+   "Schedule the FIC-101 set point on the measured feed (WI-110) with a slow XI-106 trim (see Control loop design).",
+   "Train operators on the simulator scenarios of the dynamic check (section 9).",
+   "Alarm on PDI-100 high (rotor wear) and a rotary-valve clearance check interval.",
+   "Give PSHH-102 its own pressure transmitter (today it shares PT-102 with PIC-102: a plugged impulse line blinds both).",
+   "Check upstream tramp-metal removal and residual-monomer specification of the resin.",
+   "Interlocked inspection hatch on RV-101 and a LOTO procedure for clearing blockages."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "Off-spec batch, short stop",
+    "No release"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid or medical treatment",
+    "Line plug cleared in < 1 shift",
+    "Small dust release on site"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "Equipment damage, unit down < 1 week",
+    "Reportable dust emission"
+   ],
+   [
+    4,
+    "Major",
+    "Single fatality or permanent disability",
+    "Line or exchanger rupture, silo fire",
+    "Significant release off site"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "Dust explosion in a silo or filter",
+    "Major off-site impact"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the industry",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Has happened in the industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Could happen in the plant life",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Several times in the plant life",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Expected about once a year or more",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 9,
+ "sgseq": 20,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": "2026-11-22T17:15:47.897Z",
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

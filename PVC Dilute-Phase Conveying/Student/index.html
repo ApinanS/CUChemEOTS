@@ -171,6 +171,16 @@ textarea{width:100%;min-height:220px;background:var(--field);border:1px solid va
 .dvbar .btn.on{background:#7FB0FF;color:#0E1A2E;border-color:#7FB0FF}
 .dvparts{display:flex;gap:4px;flex-wrap:wrap;flex:1}
 #dvFrame{flex:1;width:100%;border:0;background:#ECEFF3}
+#hzs .doc{max-width:none}
+#hzsWrap{background:#fff;border:1px solid var(--edge);border-radius:6px;overflow:hidden}
+#hzsFrame{display:block;width:100%;height:calc(100vh - 150px);min-height:640px;border:0;background:#f5f7fb}
+#hzsWrap:fullscreen #hzsFrame{height:100vh}
+#hztPanel{border:2px solid #2563eb;background:#f4f8ff;border-radius:6px;padding:8px 10px;margin:0 0 8px;font-size:13px}
+#hztPanel h3{margin:0 0 4px;font-size:14px}
+#hztPanel .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+#hztPanel ol{margin:4px 0 4px 18px;padding:0}
+#hztPanel .tscroll{overflow-x:auto}
+#hztPanel table{border-collapse:collapse;font-size:12.5px}#hztPanel td,#hztPanel th{border:1px solid var(--edge);padding:2px 6px;text-align:left}
 </style>
 
 <style>
@@ -383,6 +393,7 @@ details.srcard{border:1px solid var(--edge);border-radius:4px;background:var(--p
   <button class="tab" role="tab" aria-selected="false" data-view="flex">Flexibility</button>
   <button class="tab" role="tab" aria-selected="false" data-view="hazid">HAZID</button>
   <button class="tab" role="tab" aria-selected="false" data-view="hazop">HAZOP</button>
+  <button class="tab" role="tab" aria-selected="false" data-view="hzs">HAZOP Studio</button>
   <button class="tab" role="tab" aria-selected="false" data-view="cq">Consequence analysis</button>
   <button class="tab" role="tab" aria-selected="false" data-view="safety">Safety layers</button>
   <button class="tab" role="tab" aria-selected="false" data-view="lopa">LOPA</button>
@@ -1390,6 +1401,9 @@ details.srcard{border:1px solid var(--edge);border-radius:4px;background:var(--p
   <h2>HAZOP · hazard and operability study</h2>
   <div class="deckbox"><div class="deckhead"><b>Teaching deck · HAZOP</b><span class="small muted">22 slides in three parts, with interactives that run on the simulator's own model. Arrow keys to move, T for the contents.</span></div><div class="deckbtns"><a class="btn" href="https://claude.ai/artifact/3URZuDbvCXDSYrWct2kKHP" target="_blank" rel="noopener"><b>Deck</b> Open on claude.ai</a><a class="btn" href="decks/pvc-hazop-deck.html" target="_blank" rel="noopener">Open the file (same folder, for GitHub Pages)</a></div></div>
   <div class="deckbox" id="hzRepBox" hidden></div>
+  <div class="deckbox hzwsapp"><div class="row" style="gap:10px;flex-wrap:wrap;align-items:center">
+  <span><b>PHA Studio</b>: run your own HAZOP of this unit as a team, node by node, with the guide words, the risk matrix and the real safeguards of this simulator; rows marked <b>▶ OTS</b> can be run on the DCS console to see what the safeguards really do. The <b>Simple</b> edition is for the class workshop; switch to <b>Full</b> for LOPA, scenario groups and the administration pages of a real PHA.</span>
+  <button class="btn small" onclick="showView('hzs')">Open the HAZOP Studio tab</button><a class="btn small" id="hzwsLink" href="#" target="_blank" rel="noopener">Open PHA Studio ↗</a></div></div>
   <nav class="toc small"><a href="#hz1">1 Standard and method</a> · <a href="#hz2">2 Team and documents</a> · <a href="#hz3">3 Nodes</a> · <a href="#hz4">4 Guide words</a> · <a href="#hz5">5 Risk matrix</a> · <a href="#hz6">6 Worksheets</a> · <a href="#hz7">7 Coverage</a> · <a href="#hz8">8 Recommendations</a> · <a href="#hz9">9 Dynamic check</a> · <a href="#hz10">10 Follow-up</a></nav>
   <p class="small muted">A teaching study following IEC 61882 with an example risk matrix. Consequences are judged with no credit for safeguards; likelihood is with the existing safeguards. Full recording: every meaningful deviation is written, including those with adequate safeguards.</p>
   <h3 id="hz1">1 · Standard and method</h3>
@@ -1423,6 +1437,40 @@ details.srcard{border:1px solid var(--edge);border-radius:4px;background:var(--p
   <ul id="hzFollow"></ul>
  </div>
 </section>
+
+<section class="view" id="hzs"><div class="panel doc" id="hzsDoc">
+ <h2>HAZOP Studio · run the HAZOP of this unit with PHA Studio</h2>
+ <p>PHA Studio is the team program for the HAZOP of the dilute-phase conveying line: blower K-101, after-cooler E-101, rotary feeder RV-101, the stepped line and the storage silos D-201A/B. It runs here inside the OTS, holds the seven nodes of the HAZOP tab, the guide words, the risk matrix and the real safeguards of this simulator, and saves the study in this browser (File → Save study file to keep a copy). Rows marked <b>▶ OTS</b> have a test: <b>Run it on the DCS console ▶</b> lines the unit out at design, starts the deviation after one minute and shows the alarms, any trip and the key tags in a panel above the DCS. Leave the controls alone, press <b>Copy result</b>, then <b>Back to HAZOP Studio</b> and paste the result into the Notes cell of the row.</p>
+ <p class="small muted">Simple shows the six steps of a class workshop. The switch at its top right opens <b>Full</b>: LOPA, scenario groups, sessions and the administration pages of a real PHA, on the same study.</p>
+ <details class="small"><summary><b>How the functions compare with commercial PHA software</b></summary>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Function</th><th>PHA-Pro</th><th>PHAWorks RA Edition</th><th>HAZOP Studio (this tab)</th></tr></thead><tbody>
+   <tr><td>Study set-up: team, sessions, drawings, nodes</td><td>Yes</td><td>Yes</td><td>Yes (Full: sessions, attendance, MOCs, revision history)</td></tr>
+   <tr><td>Worksheet: deviation, causes, consequences, safeguards, S, L, risk</td><td>Yes</td><td>Yes</td><td>Yes, with linked safeguards (global or local edit) and Quick entry</td></tr>
+   <tr><td>Risk matrix and ranking</td><td>Yes</td><td>Yes</td><td>Yes, editable S, L and bands</td></tr>
+   <tr><td>LOPA: initiating events, enabling conditions, modifiers, IPLs, RRF</td><td>Yes</td><td>Yes</td><td>Full edition, every equation step shown</td></tr>
+   <tr><td>Scenario groups against a group tolerance</td><td>Partly</td><td>Yes</td><td>Full edition</td></tr>
+   <tr><td>Recommendations and parking lot</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+   <tr><td>Reports: Word, Excel, print</td><td>Yes</td><td>Yes</td><td>Print, Word (.doc), HTML, Excel, CSV</td></tr>
+   <tr><td>Run a deviation on a dynamic model</td><td>No</td><td>No</td><td>Yes: ▶ OTS tests on the DCS console of this simulator</td></tr>
+   <tr><td>Projector workshop mode with phone input</td><td>No</td><td>No</td><td>Yes (phone input only from a copy on an ordinary web address)</td></tr>
+  </tbody></table></div>
+  <p class="small muted">HAZOP Studio is a teaching tool. It is not affiliated with, and copies no screens of, PHA-Pro (Sphera) or PHAWorks (Primatech); the names are trademarks of their owners. The LOPA library values are teaching defaults in the CCPS style, not data for a real plant.</p>
+ </details>
+ <div class="row hzsbar" style="gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0">
+  <button class="btn small" id="hzsFull">Full screen</button>
+  <a class="btn small" href="hazop-studio.html" target="_blank" rel="noopener">Open in its own window ↗</a>
+  <a class="btn small" id="hzsSimpleLink" href="#" target="_blank" rel="noopener">Standalone PHA Studio · Simple ↗</a>
+  <a class="btn small" id="hzsFullLink" href="#" target="_blank" rel="noopener">Standalone PHA Studio · Full ↗</a>
+  <a class="btn small" href="PHA_Studio_PVC-CONV_example_N4.json" download>⬇ Worked example (.json)</a>
+  <a class="btn small" href="PHA_Studio_PVC-CONV_Simple.html" download>⬇ Download HTML · Simple</a>
+  <a class="btn small" href="PHA_Studio_PVC-CONV_Full.html" download>⬇ Download HTML · Full</a>
+  <a class="btn small" href="PHA_Studio_PVC-CONV_deck.html" target="_blank" rel="noopener">Slide deck ↗</a>
+  <a class="btn small" href="PHA_Studio_PVC-CONV_deck.html" download>⬇ Deck HTML</a>
+  <span class="small muted" id="hzsNow"></span>
+ </div>
+ <p class="small muted" style="margin:0 0 8px">Worked example: node N4 (day silo and rotary feeder), load it from File → Worked example. The HTML files work offline on any computer; workshop phone mode needs an http(s) copy (web server or GitHub Pages). The slide deck teaches the workflow on node N4 with live phone polls.</p>
+ <div id="hzsWrap"><iframe id="hzsFrame" title="PHA Studio" loading="lazy"></iframe></div>
+</div></section>
 
 <section class="view" id="cq">
  <div class="panel doc" id="cqDoc">
@@ -2079,6 +2127,8 @@ details.srcard{border:1px solid var(--edge);border-radius:4px;background:var(--p
   <p class="small muted">The six-stage troubleshooting workbook (Woods: Engage, Define, Explore, Plan, Do it, Look back) runs inside this tab and reads this simulator: the unit, its tags with their design values, the situation of each Think EQUIPPED case, the PFD and the P&amp;ID. On <b>OTS data &amp; evidence</b> the card <b>From this OTS (live)</b> pulls the run data, a snapshot and the event log at the press of a button. It never reads the instructor keys. Your work is kept in this browser; use <b>Save</b> in the workbook for a project file.</p>
   <div class="spsex"><div><b>Worked example · <span id="spsExT"></span></b><br><span class="small" id="spsExA"></span><br><span class="small muted">Built from a real run of this simulator: the first 20 minutes, a field check, an air test and the fix. Every stage is filled in. Because the answer is shown, TE-1 is a worked case for everyone and is not graded.</span></div>
    <div class="row"><button class="btn small" id="spsExOpen">Open in the workbook</button><a class="btn small" href="sps/PVC_TE-1_worked_example.woods.json" download>Download .woods.json</a></div></div>
+  <div class="row spslinks" style="margin:4px 0 10px;gap:8px;flex-wrap:wrap;align-items:center"><a class="btn small" href="ts-workbook.html" target="_blank" rel="noopener">Open the workbook in its own window ↗</a><a class="btn small" href="TSWorkbook_PVC-CONV.html" target="_blank" rel="noopener">Standalone workbook (link to share) ↗</a><a class="btn small" href="TSWorkbook_PVC-CONV.html" download>⬇ Download HTML</a><a class="btn small" href="TE-1_PVC-CONV_worked_example.woods.json" download>⬇ TE-1 .woods.json</a><a class="btn small" href="../../TSWorkbook%20Studio/Student/" target="_blank" rel="noopener">TSWorkbook Studio (all units) ↗</a></div>
+  <p class="small muted" style="margin:0 0 8px">The standalone copies open on this unit. The HTML file works offline on any computer; save your work with Save (.woods.json). They cannot pull data from the simulator: export the CSV on the Data export tab and load it on the workbook's <i>OTS data &amp; evidence</i> page; the card <b>From this OTS (live)</b> works only inside this tab. Worked example TE-1: open it from Worked examples in the workbook, or download the .woods.json and Open it. The Workshop | Full and ไทย | EN switches are at the top of the workbook.</p>
   <p class="small" id="spsMsg"></p>
   <div id="spsHost" class="spshost"></div>
  </div>
@@ -10149,7 +10199,7 @@ vpInit();
 
 var EG_PDF={"PVC-CM-PLN-001": 3, "PVC-EE-LL-001": 3, "PVC-IN-INL-001": 3, "PVC-ME-EQL-001": 4, "PVC-PE-HMB-001": 5, "PVC-PE-RLB-001": 3, "PVC-PM-DOC-001": 3};
 /* ===== Grouped tab navigation (8l) ===== */
-var TAB_GROUPS=[{"id": "gstart", "name": "Start", "views": ["howto", "workbook"]}, {"id": "gdesign", "name": "Process & Design", "views": ["process", "theory", "design", "bfd", "pfd", "control", "safety", "pid"]}, {"id": "goper", "name": "Operability", "views": ["opwin", "flex", "trans", "relia", "effic", "sop"]}, {"id": "gsafety", "name": "Safety", "views": ["hazid", "hazop", "cq", "safety", "lopa", "srs", "cem", "inc", "bms"]}, {"id": "geng", "name": "Engineering (EPC)", "views": ["eproj", "eproc", "lay", "emech", "erel", "einst", "eelec", "ecomm"]}, {"id": "grun", "name": "Operate", "views": ["operate", "bms", "field", "v3d", "curves", "pid"]}, {"id": "gtrain", "name": "Train & Assess", "views": ["exercises", "sps", "sop", "debrief", "export"]}],TAB_PRIMARY={"pid": "gdesign", "safety": "gsafety", "bms": "grun", "sop": "goper"},curGroup=null,lastInGroup={};
+var TAB_GROUPS=[{"id": "gstart", "name": "Start", "views": ["howto", "workbook"]}, {"id": "gdesign", "name": "Process & Design", "views": ["process", "theory", "design", "bfd", "pfd", "control", "safety", "pid"]}, {"id": "goper", "name": "Operability", "views": ["opwin", "flex", "trans", "relia", "effic", "sop"]}, {"id": "gsafety", "name": "Safety", "views": ["hazid", "hazop", "hzs", "cq", "safety", "lopa", "srs", "cem", "inc", "bms"]}, {"id": "geng", "name": "Engineering (EPC)", "views": ["eproj", "eproc", "lay", "emech", "erel", "einst", "eelec", "ecomm"]}, {"id": "grun", "name": "Operate", "views": ["operate", "bms", "field", "v3d", "curves", "pid"]}, {"id": "gtrain", "name": "Train & Assess", "views": ["exercises", "sps", "sop", "debrief", "export"]}],TAB_PRIMARY={"pid": "gdesign", "safety": "gsafety", "bms": "grun", "sop": "goper"},curGroup=null,lastInGroup={};
 function groupsOf(v){return TAB_GROUPS.filter(g=>g.views.includes(v)).map(g=>g.id);}
 function initGroups(){
   const nav=document.querySelector('nav.tabs');const orig={};$$('nav.tabs .tab').forEach(b=>orig[b.dataset.view]=b);
@@ -10201,6 +10251,74 @@ function huTables(){
 }
 huTables();
 (function(){const st=setTrainee;setTrainee=function(on){st(on);huTables();};})();
+
+/* HAZOP Studio ▶ OTS tests: the student dynamic-check runs D4 and D5 of the HAZOP tab (the other runs replay training exercises) */
+var HZT_TESTS=[
+ {id:'t01',ref:'N4',param:'Flow',gw:'MORE',title:'HIC-110 feed pushed to 85 % (more resin for the same air)',faults:[],ctl:[['HIC-110',85]],keys:['WI110','PT102','XI106','FT101']},
+ {id:'t02',ref:'N3',param:'Flow',gw:'LESS',title:'FIC-101 left in MAN at 70 % output (less conveying air)',faults:[],ctl:[['FIC-101',70]],keys:['FT101','XI106','PT102','SI101']},
+ {id:'t03',ref:'N5',param:'Flow',gw:'LESS',title:'FIC-101 left in MAN at 70 % output: velocity after the step falls toward saltation',faults:[],ctl:[['FIC-101',70]],keys:['XI106','VEL','FT101','PT104']}];
+var HZT_KEYN={FT101:['FT-101','kg/s',3],PT102:['PT-102','kPa g',1],PT104:['PT-104','kPa g',1],PT101:['PT-101','kPa g',1],XI106:['XI-106 v/v_salt','–',2],WI110:['WI-110','t/h',2],SI101:['SI-101','rpm',0],VEL:['Air velocity after the step','m/s',1],TT103:['TT-103','°C',1]};
+/* HAZOP Studio tab (prefix hzs, hzt for the DCS tests): PHA Studio (Simple build, hazop-studio.html beside the page) in an iframe,
+   and the parent hooks it uses when embedded: window.HZT (test state), window.hztStart(id), window.hzsSave(name,blob).
+   #hzt-tNN on the page URL starts the same test (the standalone PHA Studio opens the OTS this way). */
+var HZS_URL={simple:'../../PHA%20Studio/Student/PVC%20Dilute-Phase%20Conveying%20Ver%201/hazop-studio.html',full:'../../PHA%20Studio/Student/PVC%20Dilute-Phase%20Conveying%20Ver%201/pha-studio-full.html'};
+window.HZT={test:null};
+(function(){var a=document.getElementById('hzwsLink');if(a)a.href=HZS_URL.simple;
+  var s=document.getElementById('hzsSimpleLink');if(s)s.href=HZS_URL.simple;var f=document.getElementById('hzsFullLink');if(f)f.href=HZS_URL.full;})();
+TB.tab('hzs',function(){var fr=document.getElementById('hzsFrame');if(!fr.getAttribute('src'))fr.setAttribute('src','hazop-studio.html');
+  document.getElementById('hzsFull').onclick=function(){var w=document.getElementById('hzsWrap');if(w.requestFullscreen)w.requestFullscreen().catch(function(){});};},
+ function(){var n=document.getElementById('hzsNow'),T=window.HZT.test;if(n)n.textContent=T?('Test '+T.def.id.toUpperCase()+' is on the DCS console ('+hztClock(T)+')'):'';});
+function hzsSave(name,blob){return (async function(){
+  try{if(typeof dlNs==='undefined'||dlNs===undefined)dlNs=(window.claude&&window.claude.use)?await window.claude.use('downloads'):null;}catch(e){dlNs=null;}
+  if(dlNs){try{await dlNs.save({filename:name,data:blob});return true;}catch(e){return false;}}
+  try{var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},1000);return true;}catch(e){return false;}})();}
+window.hzsSave=hzsSave;
+function hztKey(k){return sim.meas[k];}
+function hztFmt(k,v){var n=HZT_KEYN[k];return isFinite(v)?(+v).toFixed(n?n[2]:1).replace(/^-/,'−'):'—';}
+function hztMmss(t){t=Math.max(0,Math.round(t));return Math.floor(t/60)+':'+String(t%60).padStart(2,'0');}
+function hztClock(T){return T.applied?hztMmss(sim.t-T.tA)+' after the deviation':'deviation in '+hztMmss(T.tA-sim.t);}
+function hztStart(id){var d=HZT_TESTS.filter(function(t){return t.id===id;})[0];if(!d)return false;
+  newSession('design','HAZOP Studio test '+d.id.toUpperCase()+' ('+d.ref+'): '+d.title+'. The deviation starts after 1 minute; leave the controls alone.');
+  var T={def:d,tA:60,applied:false,logN:logArr.length,first:[],trip:null,rng:{},v0:{}};
+  d.keys.forEach(function(k){var v=hztKey(k);T.v0[k]=v;T.rng[k]=[v,v];});
+  window.HZT.test=T;if(typeof running!=='undefined')running=true;
+  showView('operate');hztPanel();return true;}
+window.hztStart=hztStart;
+function hztStop(){window.HZT.test=null;var p=document.getElementById('hztPanel');if(p)p.remove();}
+function hztTick(){var T=window.HZT.test;if(!T)return;
+  if(!T.applied&&sim.t>=T.tA){T.applied=true;var d=T.def;
+    if(d.pre)d.pre();(d.faults||[]).forEach(function(f){injectFault(f[0],f[1],f[2]!=null?f[2]:30,true);});
+    (d.ctl||[]).forEach(function(q){var C=sim.C[q[0]];C.mode='MAN';C.op=q[1];});
+    log('EX','HAZOP Studio test '+d.id.toUpperCase()+': deviation applied ('+d.title+')');T.logN=logArr.length;}
+  if(T.applied){T.def.keys.forEach(function(k){var v=hztKey(k);if(v<T.rng[k][0])T.rng[k][0]=v;if(v>T.rng[k][1])T.rng[k][1]=v;});
+    for(var i=T.logN;i<logArr.length;i++){var l=logArr[i];if(l.type==='ALM'&&!/cleared$/.test(l.msg)&&T.first.length<12)T.first.push([l.t-T.tA,l.msg]);}T.logN=logArr.length;
+    var B=sim.P.sis;if(!T.trip&&(B.state==='TRIPPED'||B.feedTrip||B.blowTrip))T.trip=[sim.t-T.tA,B.state==='TRIPPED'?B.first:B.blowTrip?'I-2 blower stopped: '+B.blowWhy:'I-1 feeder stopped: '+B.feedWhy];}
+  hztPanel();}
+function hztText(){var T=window.HZT.test;if(!T)return '';var d=T.def;
+  var s='OTS test '+d.id.toUpperCase()+' ('+d.ref+', '+d.param+' '+d.gw+'): '+d.title+'. ';
+  s+=T.applied?('Result '+hztMmss(sim.t-T.tA)+' after the deviation, no operator action. '):'Deviation not started yet. ';
+  s+='First alarms: '+(T.first.length?T.first.slice(0,6).map(function(f){return f[1].split(' ').slice(0,2).join(' ')+' at '+hztMmss(f[0]);}).join(', '):'none')+'. ';
+  s+='SIS: '+(T.trip?'trip at '+hztMmss(T.trip[0])+' ('+T.trip[1]+')':'no trip')+'. ';
+  s+='Key tags (design → now, range): '+d.keys.map(function(k){var n=HZT_KEYN[k]||[k,''];return n[0]+' '+hztFmt(k,T.v0[k])+' → '+hztFmt(k,hztKey(k))+' '+n[1]+' ('+hztFmt(k,T.rng[k][0])+' to '+hztFmt(k,T.rng[k][1])+')';}).join('; ')+'.';
+  return s;}
+function hztCopy(){var t=hztText(),b=document.getElementById('hztCopy');
+  var done=function(){if(b){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy result';},1500);}};
+  try{navigator.clipboard.writeText(t).then(done,function(){hztCopyFb(t);done();});}catch(e){hztCopyFb(t);done();}}
+function hztCopyFb(t){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');}catch(e){}a.remove();}
+function hztPanel(){var T=window.HZT.test;if(!T)return;var op=document.getElementById('operate');if(!op)return;
+  var p=document.getElementById('hztPanel');
+  if(!p){p=document.createElement('div');p.id='hztPanel';op.insertBefore(p,op.firstChild);
+    p.innerHTML='<div class="row"><h3 id="hztTitle"></h3><span class="grow"></span><button class="btn small" id="hztCopy">Copy result</button><button class="btn small" id="hztBack">Back to HAZOP Studio</button><button class="btn small" id="hztEnd">End test</button></div><div id="hztBody"></div>';
+    document.getElementById('hztCopy').onclick=hztCopy;document.getElementById('hztBack').onclick=function(){showView('hzs');};document.getElementById('hztEnd').onclick=hztStop;}
+  var d=T.def;document.getElementById('hztTitle').textContent='HAZOP Studio test '+d.id.toUpperCase()+' · '+d.ref+' '+d.param+' '+d.gw+' · '+d.title;
+  var h='<p class="small" style="margin:2px 0"><b>'+hztClock(T)+'</b> · no operator action: the test shows what the existing safeguards do on their own. Raise the speed (top bar) to see 30 minutes in a few minutes.</p>';
+  h+='<div class="row" style="align-items:flex-start;gap:18px"><div><b>First alarms</b>'+(T.first.length?'<ol>'+T.first.slice(0,8).map(function(f){return '<li>'+hztMmss(f[0])+' · '+esc(f[1])+'</li>';}).join('')+'</ol>':'<p class="small muted" style="margin:2px 0">none yet</p>')+
+     '<b>SIS</b> <span class="small">'+(T.trip?'trip at '+hztMmss(T.trip[0])+' · '+esc(T.trip[1]):'no trip')+'</span></div>';
+  h+='<div class="tscroll"><table><thead><tr><th>Tag</th><th>Design</th><th>Now</th><th>Range</th><th>Unit</th></tr></thead><tbody>'+d.keys.map(function(k){var n=HZT_KEYN[k]||[k,''];
+     return '<tr><td>'+esc(n[0])+'</td><td>'+hztFmt(k,T.v0[k])+'</td><td><b>'+hztFmt(k,hztKey(k))+'</b></td><td>'+hztFmt(k,T.rng[k][0])+' to '+hztFmt(k,T.rng[k][1])+'</td><td>'+esc(n[1])+'</td></tr>';}).join('')+'</tbody></table></div></div>';
+  document.getElementById('hztBody').innerHTML=h;}
+setInterval(hztTick,500);
+window.addEventListener('load',function(){var m=location.hash.match(/^#hzt-(t\d+)$/);if(m)setTimeout(function(){hztStart(m[1]);},1200);});
 
 var HZ_REPORT=null;HZ_DYN=HZ_DYN.filter(d=>d[0]==='D4'||d[0]==='D5');setTrainee(true);
 </script>
