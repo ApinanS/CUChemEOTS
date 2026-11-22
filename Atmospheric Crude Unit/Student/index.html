@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Atmospheric Crude Unit Ver 1</title>
+<title>Atmospheric Crude Unit Ver 1 · Student edition</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=Prompt:wght@400;500&display=swap" rel="stylesheet">
@@ -177,7 +177,7 @@ details.guide ul{margin:6px 0 4px;padding-left:18px;font-size:14px}
 </head>
 <body>
 <header class="bar">
-  <h1>Atmospheric Crude Unit Ver 1</h1>
+  <h1>Atmospheric Crude Unit Ver 1 · Student edition</h1>
   <span class="clock" id="clock">00:00:00</span>
   <button class="btn" id="runBtn">Freeze</button>
   <label class="small">Speed <select id="speed"><option>1</option><option>2</option><option>5</option><option>10</option><option>20</option></select>×</label>
@@ -187,7 +187,7 @@ details.guide ul{margin:6px 0 4px;padding-left:18px;font-size:14px}
   <button class="btn" id="ackAllTop">Acknowledge</button>
   <span class="grow"></span>
   <span class="score">Score <b id="scoreTop">100</b></span>
-  <button class="btn" id="modeBtn" title="Trainee mode hides the instructor station">Trainee mode off</button>
+  <span class="small muted" id="edLabel">Student edition</span>
 </header>
 <nav class="tabs" role="tablist">
   <button class="tab" role="tab" aria-selected="false" data-view="howto">How to use</button>
@@ -198,7 +198,6 @@ details.guide ul{margin:6px 0 4px;padding-left:18px;font-size:14px}
   <button class="tab" role="tab" aria-selected="false" data-view="ems">Heater EMS</button>
   <button class="tab" role="tab" aria-selected="false" data-view="field">Field: pumps, valves, checks</button>
   <button class="tab" role="tab" aria-selected="false" data-view="exercises">Exercises</button>
-  <button class="tab" role="tab" aria-selected="false" data-view="instructor" id="instrTab">Instructor station</button>
   <button class="tab" role="tab" aria-selected="false" data-view="debrief">Debrief and grading</button>
   <button class="tab" role="tab" aria-selected="false" data-view="export">Data export</button>
 </nav>
@@ -206,7 +205,7 @@ details.guide ul{margin:6px 0 4px;padding-left:18px;font-size:14px}
 <section class="view" id="howto">
  <div class="panel doc">
   <h2>How to use the simulator</h2>
-  <nav class="toc small"><a href="#hu1">1 Quick start</a> · <a href="#hu2">2 Top bar</a> · <a href="#hu3">3 Tabs</a> · <a href="#hu4">4 DCS console</a> · <a href="#hu5">5 Faceplates</a> · <a href="#hu6">6 Trends and alarms</a> · <a href="#hu7">7 Heater EMS</a> · <a href="#hu8">8 Field</a> · <a href="#hu9">9 Exercises</a> · <a href="#hu10">10 Instructor station</a> · <a href="#hu11">11 Debrief and export</a> · <a href="#hu12">12 Symbols</a></nav>
+  <nav class="toc small"><a href="#hu1">1 Quick start</a> · <a href="#hu2">2 Top bar</a> · <a href="#hu3">3 Tabs</a> · <a href="#hu4">4 DCS console</a> · <a href="#hu5">5 Faceplates</a> · <a href="#hu6">6 Trends and alarms</a> · <a href="#hu7">7 Heater EMS</a> · <a href="#hu8">8 Field</a> · <a href="#hu9">9 Exercises</a> · <a href="#hu10">10 Debrief and export</a> · <a href="#hu11">11 Symbols</a></nav>
   <h3 id="hu1">1 · Quick start</h3>
   <ol>
    <li>Click anywhere once so the browser allows alarm sound. The top bar should show <b>🔔 Sound on</b>.</li>
@@ -225,7 +224,6 @@ details.guide ul{margin:6px 0 4px;padding-left:18px;font-size:14px}
    <tr><td>Status lamp</td><td>Green: heater firing. Amber: heater EMS idle or purging. Red: heater tripped. Click it to open the Heater EMS tab.</td></tr>
    <tr><td>Sound / Silence / Acknowledge</td><td>Sound on or off; Silence stops the horn until the next new alarm; Acknowledge accepts every alarm.</td></tr>
    <tr><td>Score</td><td>Continuous score out of 100 (see the Workbook, section 7).</td></tr>
-   <tr><td>Trainee mode</td><td>Hides the instructor station, fault names and troubleshooting keys. An optional PIN (Instructor station) protects switching back.</td></tr>
   </tbody></table>
   <h3 id="hu3">3 · Tabs</h3>
   <table class="tbl small"><thead><tr><th>Tab</th><th>Use it for</th></tr></thead><tbody>
@@ -236,7 +234,6 @@ details.guide ul{margin:6px 0 4px;padding-left:18px;font-size:14px}
    <tr><td>Heater EMS</td><td>Heater emergency shutdown system: purge, light-off, fuel oil admission, trips, HS-101 and HS-105A.</td></tr>
    <tr><td>Field</td><td>What the outside operator does: pumps (A/B), block valves, steam bypasses, boot drain, snuffing steam, local gauges, laboratory samples.</td></tr>
    <tr><td>Exercises</td><td>Training, Think EQUIPPED troubleshooting, graded procedures, what-if, trend matching, scrambles and the DCS reading sheet.</td></tr>
-   <tr><td>Instructor station</td><td>Faults with severity and ramp, initial conditions, snapshots, backtrack, options, orders and the model check.</td></tr>
    <tr><td>Debrief / Data export</td><td>Score, deductions, exercise grades, fault recovery, event log; CSV downloads.</td></tr>
   </tbody></table>
   <h3 id="hu4">4 · DCS console</h3>
@@ -257,12 +254,10 @@ details.guide ul{margin:6px 0 4px;padding-left:18px;font-size:14px}
   <h3 id="hu8">8 · Field</h3>
   <p>Start and stop pumps (a tripped motor will not restart while its fault is active: use the spare), open and close block valves, set the steam bypass globe valves and the boot drain in %, and put snuffing steam into the firebox. <b>Local gauges</b> read the process directly and are the independent check when a transmitter is suspect. Laboratory samples report product qualities and salt in the desalted crude after 2 simulated minutes.</p>
   <h3 id="hu9">9 · Exercises</h3>
-  <p><b>Training</b>: 29 single-fault exercises starting from design. <b>Think EQUIPPED</b>: 12 cases with only a situation (the key is hidden in trainee mode). <b>Procedures</b>: cold start-up, normal shutdown, emergency shutdown, P-9A recovery and a 30-minute optimisation; steps tick automatically, "!" marks a step done out of order, some steps need <b>Mark done</b>. <b>What-if</b>: seven sets (tower bottom, top, tower, diesel stripper, AGO stripper, reflux drum, analyzers); predict each variable, then the model runs a hidden copy for 30 minutes. <b>Trend matching</b>, <b>scrambles</b> and the <b>DCS reading sheet</b> are graded into the Debrief.</p>
-  <h3 id="hu10">10 · Instructor station</h3>
-  <p>Inject any of the 38 faults (switch numbers follow the legacy console where one exists) with severity and ramp; clear them again. Load the design, cold or heavy-crude initial condition, save snapshots, backtrack every 1–5 minutes, change the purge time, switch noise, send written orders, and run the model check (the same direction cases used to validate the model offline).</p>
-  <h3 id="hu11">11 · Debrief and export</h3>
+  <p><b>Training</b>: 29 single-fault exercises starting from design. <b>Think EQUIPPED</b>: 12 cases with only a situation (the instructor holds the key). <b>Procedures</b>: cold start-up, normal shutdown, emergency shutdown, P-9A recovery and a 30-minute optimisation; steps tick automatically, "!" marks a step done out of order, some steps need <b>Mark done</b>. <b>What-if</b>: seven sets (tower bottom, top, tower, diesel stripper, AGO stripper, reflux drum, analyzers); predict each variable, then the model runs a hidden copy for 30 minutes. <b>Trend matching</b>, <b>scrambles</b> and the <b>DCS reading sheet</b> are graded into the Debrief.</p>
+  <h3 id="hu10">10 · Debrief and export</h3>
   <p>The debrief shows the continuous score with each deduction, performance figures, exercise grades, fault recovery times and the event log (filter and copy). Data export writes CSV files (UTF-8) of the run data, a design-versus-now snapshot and the event log. On GitHub Pages the file downloads normally; in claude.ai the download prompt appears. Nothing is kept after the page is closed: export before you leave.</p>
-  <h3 id="hu12">12 · Symbols and colours</h3>
+  <h3 id="hu11">11 · Symbols and colours</h3>
   <p>Lines: <span style="color:#1565C0">crude and residue blue</span>, <span style="color:#AD1457">pumparounds and hot oil magenta</span>, <span style="color:#2E7D32">products green</span>, <span style="color:#C62828">steam red</span>, <span style="color:#E65100">fuel gas orange</span>, <span style="color:#6D4C41">fuel oil brown</span>, <span style="color:#00838F">water cyan</span>, <span style="color:#8D6E00">vapour and gas olive</span>, signals dashed. Bubble colours: blue flow/pressure controllers, red temperatures, purple levels, green analyzers, black indicators.</p>
  </div>
 </section>
@@ -577,39 +572,6 @@ details.guide ul{margin:6px 0 4px;padding-left:18px;font-size:14px}
   </div>
 </section>
 
-<section class="view" id="instructor">
-  <div class="grid2">
-    <div class="panel">
-      <h2>Faults</h2>
-      <div class="tscroll"><table class="tbl"><thead><tr><th>SW</th><th>Fault</th><th>Severity</th><th>Ramp</th><th></th></tr></thead><tbody id="mbody"></tbody></table></div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div class="panel">
-        <h2>Initial conditions</h2>
-        <div class="row"><button class="btn" id="icDesign">Design (light crude)</button><button class="btn" id="icHeavy">Design, heavy crude</button><button class="btn" id="icCold">Cold start</button></div>
-        <h3>Snapshots and backtrack</h3>
-        <div class="row"><input type="text" id="snapName" placeholder="Snapshot name" style="flex:1"><button class="btn" id="snapSave">Save snapshot</button></div>
-        <label class="small row" style="margin-top:6px"><input type="checkbox" id="btOn" checked> Backtrack every <select id="btEvery"><option value="60">1</option><option value="120" selected>2</option><option value="300">5</option></select> min (last 10 kept)</label>
-        <ul class="small" id="snaps" style="list-style:none;padding:0;margin:6px 0 0;max-height:200px;overflow:auto"></ul>
-      </div>
-      <div class="panel">
-        <h2>Options</h2>
-        <label class="small row">Heater purge time <select id="optPurge"><option value="60">1 min (class)</option><option value="120" selected>2 min</option><option value="300">5 min (plant)</option></select></label>
-        <label class="small row"><input type="checkbox" id="optNoise" checked> Measurement noise</label>
-        <label class="small row"><input type="checkbox" id="optSound" checked> Audible alarm</label>
-        <label class="small row">Trainee-mode PIN <input type="password" id="optPin" placeholder="none" style="width:90px" autocomplete="off"></label>
-        <h3>Order to trainee</h3>
-        <div class="row"><input type="text" id="orderTxt" placeholder="e.g. Cut feed by 10 % in 2 % steps every 5 minutes" style="flex:1"><button class="btn" id="orderSend">Send</button></div>
-      </div>
-      <div class="panel">
-        <h2>Model check</h2>
-        <p class="small muted" style="margin:0 0 6px">Runs every direction case of the validation suite on a copy of the model and compares the direction of each expected response.</p>
-        <button class="btn" id="valRun">Run model check</button>
-        <div id="valBox" class="tscroll small" style="margin-top:6px"></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="view" id="export">
   <div class="grid2">
@@ -1190,49 +1152,49 @@ if(typeof module!=='undefined')module.exports={createSim,step,warmStart,emsCmd,e
 
 /* ===== Atmospheric Crude Unit Ver 1 — exercise library ===== */
 const TRAINING=[
- {n:1,title:'Crude charge pump P-1A trips',faults:[['p1a_trip',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-114 falls to zero, FCV-129 opens wide, desalter pressure collapses, pass flows fall and FSL-105A/B trip the heater fuel.',act:'Start P-1B, bring FIC-114, FIC-129 and FIC-130 back by hand, reset the EMS, purge and relight, then return the loops to AUTO/CAS.'},
- {n:2,title:'Desalter booster pump P-2A trips',faults:[['p2a_trip',1,0,30]],sit:'Unit lined out at design.',obs:'Pass flows collapse and FCV-105A/B open fully; desalter pressure rises toward the relief valve; FIC-129 and FIC-114 fall; the heater trips on low flow.',act:'Start P-2B quickly, recover the passes by hand, reset the EMS and relight.'},
- {n:3,title:'Tower bottoms pump P-3A trips',faults:[['p3a_trip',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-1102 falls to zero and LIC-107 climbs.',act:'Warn the vacuum unit, start P-3B, bring FIC-1102 up slowly in MAN, then back to CAS once LIC-107 is normal.'},
- {n:4,title:'Sour water pump P-4 trips',faults:[['p4_trip',1,0,30]],sit:'Unit lined out at design.',obs:'LIC-102 rises; if nothing is done the boot overflows and water reaches the naphtha, the reflux and LIC-101.',act:'Try to restart P-4; if it will not run, drain the boot to the sewer by hand (drain valve) and hold the interface until the pump is repaired.'},
- {n:5,title:'Top reflux pump P-5A trips',faults:[['p5a_trip',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-101 falls to zero and FCV-101 opens wide; TIC-102 and the naphtha end point climb; LIC-101 rises.',act:'Put FIC-101 in MAN at a low output, start P-5B, bring reflux back gradually, then CAS under TIC-102.'},
- {n:6,title:'Naphtha pump P-6A trips',faults:[['p6a_trip',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-100 falls to zero, LIC-101 rises slowly, AI-100/101 fall to the bottom of their range (no sample flow).',act:'FIC-100 to MAN, start P-6B, raise the flow slowly (it feeds another column), then back to CAS.'},
- {n:7,title:'AGO pump P-7A trips',faults:[['p7a_trip',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-113 falls to zero, LIC-109 fills, E-14 loses its hot stream so TI-180 falls.',act:'FIC-113 to MAN, start P-7B, recover the level, then CAS under LIC-109.'},
- {n:8,title:'Diesel pump P-8A trips',faults:[['p8a_trip',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-102 falls to zero, LIC-108 fills, E-2 loses its hot stream so TI-172 falls.',act:'FIC-102 to MAN, start P-8B, recover the level, then CAS under LIC-108.'},
- {n:9,title:'Mid pumparound pump P-9A trips',faults:[['p9a_trip',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-104 falls to zero; TIC-102 pushes the reflux up; TI-103 rises; TI-184 falls; the overhead condensers load up.',act:'FIC-104 to MAN, start P-9B, bring the pumparound back to 87.5 m³/h, then AUTO.'},
- {n:10,title:'Bottom pumparound pump P-10 trips (no spare)',faults:[['p10_trip',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-108 falls to zero; about a third of the tower heat removal is lost; reflux runs to its limit; tower temperatures rise; TI-185 falls; gas and flare rise.',act:'Raise the mid pumparound toward its maximum, cut feed if the top cannot be held, have the pump repaired, then bring FIC-108 back slowly.'},
- {n:11,title:'Wash water pump P-11A (V-3) trips',faults:[['p11a_trip',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-103 falls to zero, LIC-103 falls, desalter pressure dips; desalting gets worse.',act:'Restart P-11A. If the interface is lost, close the block valves round LCV-103 so no oil goes to water treatment.'},
- {n:12,title:'E-9 fin-fan driver trips',faults:[['fan_fail',1,0,30]],sit:'Unit lined out at design.',obs:'TI-1001 and TI-1016 rise; more gas; the compressor fills and the flare opens; naphtha falls; mid-tower temperatures creep up.',act:'Restart the fan. If it stays off, raise the pumparounds and/or cut feed to unload the overhead; let the flare take the gas until the fan returns.'},
- {n:13,title:'Overhead compressor trips',faults:[['comp_fail',1,0,30]],sit:'Unit lined out at design.',obs:'FI-155 falls to zero; PIC-102 opens the flare valve and FI-119 shows the gas going to flare.',act:'Restart the compressor quickly; flaring wastes product and is an emission. Plan a shutdown if it will not run.'},
- {n:14,title:'Fuel oil supply fails (oil as swing fuel)',setup:'oilswing',faults:[['fo_fail',1,0,60]],sit:'Unit lined out with fuel gas as base load and fuel oil as the swing fuel (HS-101 = OIL).',obs:'FI-107 falls to zero; PIC-112 output goes to 100 %; PDC-111 rises; TIC-101, TI-1018 and all tower temperatures fall.',act:'Raise FIC-106 by hand until the outlet recovers, switch HS-101 to fuel gas, then TIC-101 AUTO with FIC-106 in CAS.'},
- {n:15,title:'Crude switched to heavy crude',faults:[['crude_heavy',1,60,30]],sit:'Unit lined out on light crude. A tank switch is scheduled.',obs:'Less material vaporises: naphtha falls, residue rises, uncontrolled tower temperatures fall; diesel and AGO get heavier with the draws unchanged.',act:'Close the E-1 bypass, re-balance the pumparounds and cut HIC-101/102 to bring the 90 % and 10 % points back.'},
- {n:16,title:'Crude from storage 12 °C colder',faults:[['crude_cold',0.5,120,30]],sit:'Unit lined out at design.',obs:'TI-170 falls 12 °C; the exchangers make up part of it so TI-171/180 fall less and the heater inlet only a little; fuel gas rises.',act:'Close FIC-130 to send all crude through E-1; nothing else is needed.'},
- {n:17,title:'E-1 fouling',faults:[['e1_foul',1,300,30]],sit:'Unit lined out at design.',obs:'TI-171 and the rest of the train fall; TI-175 and TI-1001 rise; fuel gas rises.',act:'Close FIC-130, use the fin-fan pitch to hold the overhead, report it so E-1 can be cleaned.'},
- {n:18,title:'PT-108 desalter pressure reads low',faults:[['pt108_low',0.5,0,30]],sit:'Unit lined out at design.',obs:'PIC-108 opens FCV-129 fully; the real desalter pressure climbs about 150 kPa (toward the 1400 kPa relief valve); FIC-114 briefly sees extra crude and cuts the passes, then restores them.',act:'PIC-108 to MAN, check the local gauge PG-108, take FIC-129 out of cascade and set its flow, let FIC-114 restore the passes.'},
- {n:19,title:'FT-114 fails low',faults:[['ft114_low',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-114 reads zero and drives FIC-105A/B up; desalter pressure falls; PIC-108 raises FIC-129; fuel gas rises; the unit creeps to a higher rate.',act:'Take FIC-105A/B out of cascade and set them by hand at the normal flow until FT-114 is repaired.'},
- {n:20,title:'FT-114 fails high',faults:[['ft114_high',0.2,60,30]],sit:'Unit lined out at design.',obs:'FIC-114 reads high and cuts FIC-105A/B; desalter pressure rises; PIC-108 cuts FIC-129; fuel gas falls; the unit creeps to a lower rate.',act:'FIC-105A/B out of cascade and set by hand until FT-114 is repaired.'},
- {n:21,title:'FT-101 reflux meter fails high',faults:[['ft101_high',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-101 reads high so FCV-101 closes; real reflux falls; TIC-102 climbs and asks for more, but the reading stays high; tower temperatures and the naphtha end point rise.',act:'Break the cascade: FIC-101 to MAN and set the valve from the local reflux gauge FG-101 and TIC-102.'},
- {n:22,title:'E-4 (mid pumparound) fouling',faults:[['e4_foul',1,300,30]],sit:'Unit lined out at design.',obs:'TI-184 falls; TI-1014 and TI-1013 rise; FIC-101 rises to hold the top.',act:'Nothing to correct on the board; report it so a clean can be planned.'},
- {n:23,title:'E-5 (bottom pumparound) fouling',faults:[['e5_foul',1,300,30]],sit:'Unit lined out at design.',obs:'TI-185 falls; TI-1009 and TI-1012 rise; FIC-101 rises.',act:'Report it; the fuel gas makes up the lost preheat.'},
- {n:24,title:'TT-101 heater outlet reads high',faults:[['tt101_high',0.5,0,30]],sit:'Unit lined out at design.',obs:'TIC-101 reads high and cuts the fuel gas; TI-1007A/B, TI-1018 and TI-198 fall; residue rises.',act:'Take FIC-106 out of cascade and fire on the pass outlet readings TI-1007A/B until TT-101 is repaired.'},
- {n:25,title:'Coking in pass A',faults:[['crack_a',0.8,30,30]],sit:'Unit lined out at design.',obs:'PI-105A climbs; FCV-105A opens to hold the flow and eventually runs out; pass A flow falls and TI-1007A rises; FIC-106 falls a little.',act:'Nothing will correct it: report it and plan a decoke. Watch the tube skin and TSHH-1007.'},
- {n:26,title:'V-1 stripping steam fails',faults:[['steam_v1',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-109 falls to zero; TI-198 rises (less stripping); residue rises a little.',act:'Have the field open the bypass round FCV-109 and set the steam by hand.'},
- {n:27,title:'AGO stripper steam fails',faults:[['steam_ago',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-112 falls to zero; the AGO 10 % point AI-104 falls.',act:'Open the bypass round FCV-112 in the field and set the steam by hand.'},
- {n:28,title:'Diesel stripper steam fails',faults:[['steam_dsl',1,0,30]],sit:'Unit lined out at design.',obs:'FIC-111 falls to zero; the diesel 5 % point AI-103 falls.',act:'Open the bypass round FCV-111 in the field and set the steam by hand.'},
- {n:29,title:'Heater tube leak',faults:[['tube_leak',0.5,20,30]],sit:'Unit lined out at design; fuel oil is the base load.',obs:'Crude leaking into the firebox burns and adds heat: TIC-101 rises a few degrees, then holds by cutting fuel gas to about a third of normal; no alarm comes in. The clue is fuel gas falling at an unchanged crude rate (and smoke at the stack).',act:'Emergency: trip the heater (HS-105B), stop crude to the passes, snuffing steam into the firebox, prepare for a fast shutdown.'},
+ {n:1,title:'Training exercise 1',faults:[['p1a_trip',1,0,30]],sit:'Unit lined out at design.'},
+ {n:2,title:'Training exercise 2',faults:[['p2a_trip',1,0,30]],sit:'Unit lined out at design.'},
+ {n:3,title:'Training exercise 3',faults:[['p3a_trip',1,0,30]],sit:'Unit lined out at design.'},
+ {n:4,title:'Training exercise 4',faults:[['p4_trip',1,0,30]],sit:'Unit lined out at design.'},
+ {n:5,title:'Training exercise 5',faults:[['p5a_trip',1,0,30]],sit:'Unit lined out at design.'},
+ {n:6,title:'Training exercise 6',faults:[['p6a_trip',1,0,30]],sit:'Unit lined out at design.'},
+ {n:7,title:'Training exercise 7',faults:[['p7a_trip',1,0,30]],sit:'Unit lined out at design.'},
+ {n:8,title:'Training exercise 8',faults:[['p8a_trip',1,0,30]],sit:'Unit lined out at design.'},
+ {n:9,title:'Training exercise 9',faults:[['p9a_trip',1,0,30]],sit:'Unit lined out at design.'},
+ {n:10,title:'Training exercise 10',faults:[['p10_trip',1,0,30]],sit:'Unit lined out at design.'},
+ {n:11,title:'Training exercise 11',faults:[['p11a_trip',1,0,30]],sit:'Unit lined out at design.'},
+ {n:12,title:'Training exercise 12',faults:[['fan_fail',1,0,30]],sit:'Unit lined out at design.'},
+ {n:13,title:'Training exercise 13',faults:[['comp_fail',1,0,30]],sit:'Unit lined out at design.'},
+ {n:14,title:'Training exercise 14',setup:'oilswing',faults:[['fo_fail',1,0,60]],sit:'Unit lined out with fuel gas as base load and fuel oil as the swing fuel (HS-101 = OIL).'},
+ {n:15,title:'Training exercise 15',faults:[['crude_heavy',1,60,30]],sit:'Unit lined out on light crude. A tank switch is scheduled.'},
+ {n:16,title:'Training exercise 16',faults:[['crude_cold',0.5,120,30]],sit:'Unit lined out at design.'},
+ {n:17,title:'Training exercise 17',faults:[['e1_foul',1,300,30]],sit:'Unit lined out at design.'},
+ {n:18,title:'Training exercise 18',faults:[['pt108_low',0.5,0,30]],sit:'Unit lined out at design.'},
+ {n:19,title:'Training exercise 19',faults:[['ft114_low',1,0,30]],sit:'Unit lined out at design.'},
+ {n:20,title:'Training exercise 20',faults:[['ft114_high',0.2,60,30]],sit:'Unit lined out at design.'},
+ {n:21,title:'Training exercise 21',faults:[['ft101_high',1,0,30]],sit:'Unit lined out at design.'},
+ {n:22,title:'Training exercise 22',faults:[['e4_foul',1,300,30]],sit:'Unit lined out at design.'},
+ {n:23,title:'Training exercise 23',faults:[['e5_foul',1,300,30]],sit:'Unit lined out at design.'},
+ {n:24,title:'Training exercise 24',faults:[['tt101_high',0.5,0,30]],sit:'Unit lined out at design.'},
+ {n:25,title:'Training exercise 25',faults:[['crack_a',0.8,30,30]],sit:'Unit lined out at design.'},
+ {n:26,title:'Training exercise 26',faults:[['steam_v1',1,0,30]],sit:'Unit lined out at design.'},
+ {n:27,title:'Training exercise 27',faults:[['steam_ago',1,0,30]],sit:'Unit lined out at design.'},
+ {n:28,title:'Training exercise 28',faults:[['steam_dsl',1,0,30]],sit:'Unit lined out at design.'},
+ {n:29,title:'Training exercise 29',faults:[['tube_leak',0.5,20,30]],sit:'Unit lined out at design; fuel oil is the base load.'},
 ];
 const EQUIPPED=[
- {code:'TE-1',title:'Reflux climbing, nothing obvious',faults:[['e4_foul',0.9,600,60]],sit:'Night shift says FIC-101 has crept up all night while TIC-102 held. Fuel gas is a little higher too.',key:'E-4 fouling: MPA duty falls (TI-1014 rises, TI-184 falls) while FIC-104 is steady, so TIC-102 adds reflux. Compare with a P-9A problem, where FIC-104 itself falls.'},
- {code:'TE-2',title:'Desalters pressurising',faults:[['pt108_low',0.4,60,60]],sit:'The field operator reports the local gauge PG-108 on the desalter outlet reading well above normal. The board shows PIC-108 close to set point and FCV-129 wide open.',key:'PT-108 reads low: PIC-108 thinks the pressure is low and keeps opening FIC-129. PG-108 (local gauge) shows the real, high pressure. Break the cascade.'},
- {code:'TE-3',title:'Heater calmer, bottoms cooler',faults:[['tt101_high',0.4,0,60]],sit:'The heater looks quieter than usual (fuel gas well below normal), the flash zone and tower bottoms run cooler, yet TIC-101 sits on its set point.',key:'TT-101 reads high: TIC-101 cuts fuel, the true outlet (TI-1007A/B, TG-1007) is low; less vaporisation, more residue.'},
- {code:'TE-4',title:'Diesel 90 % point creeping up after a tank change',faults:[['crude_heavy',0.8,120,60]],sit:'Offsites switched tanks at the start of the shift. Since then the diesel 90 % point has crept up toward its alarm, the AGO 10 % point is rising, and the naphtha rate is down by about a fifth.',key:'Heavier crude: at the same draw rates the cuts move up the TBP curve, so diesel carries heavier material. Cut HIC-101 (and HIC-102), re-balance the pumparounds.'},
- {code:'TE-5',title:'Flare lit on a warm afternoon',faults:[['hot_day',1,600,60],['fan_fail',1,900,60]],sit:'It is hot. By mid-afternoon the flare is burning and the naphtha rate is down.',key:'Hot day cuts E-9 capacity; then the fan motor trips. Drum temperature rises, more gas, compressor full, flare opens. Restart the fan, unload the overhead with the pumparounds.'},
- {code:'TE-6',title:'Residue pump noisy',faults:[['lt107_high',1,120,120]],sit:'The field says P-3A is cavitating. LIC-107 on the board shows a normal-looking level, but FIC-1102 has been running about 50 % above its normal flow for half an hour.',key:'LT-107 reads high: LIC-107 draws the bottoms down; the sight glass LG-107 shows the true low level. Put FIC-1102 in MAN and hold the level from the glass.'},
- {code:'TE-7',title:'Top hot although reflux reads high',faults:[['ft101_high',0.9,60,60]],sit:'TIC-102 is above set point and still climbing although FIC-101 reads well above its normal flow.',key:'FT-101 reads high: FCV-101 has closed; real reflux (FG-101) is low. Break the cascade and control the valve by hand.'},
- {code:'TE-8',title:'Pass outlets drifting apart',faults:[['crack_b',0.9,60,60]],sit:'TI-1007A and TI-1007B used to read the same; now B is several degrees hotter and the gap is growing.',key:'Coking in pass B: PI-105B climbs, FCV-105B opens toward 100 %, flow in B falls, its outlet rises. Not correctable on line; plan a decoke.'},
- {code:'TE-9',title:'Preheat down, fuel up',faults:[['crude_cold',0.6,300,60],['e1_foul',0.7,900,300]],sit:'Fuel gas is up about 10 % since yesterday. Offsites say the crude tank heaters were switched off.',key:'Two causes: colder crude from storage (TI-170) and E-1 fouling (TI-175 up, TI-171 rise smaller than it should be). The tank story explains only part of it.'},
- {code:'TE-10',title:'Vacuum unit upset',faults:[['hvgo_loss',0.7,300,60]],sit:'The vacuum unit had a pump problem. Your heater is firing much harder.',key:'HVGO to E-6 lost: TI-219 and TI-191 fall, all downstream preheat falls, fuel gas makes it up. Check the heater capacity; call the vacuum unit.'},
- {code:'TE-11',title:'Water in the naphtha',faults:[['p4_trip',1,60,60]],sit:'The debutanizer reports free water in the feed. LIC-101 is higher than usual.',key:'P-4 tripped (no spare): the boot filled and overflowed into the naphtha and reflux. Drain the boot by hand, restart P-4.'},
- {code:'TE-12',title:'Products overlapping, tower ΔP low',faults:[['tray_damage',0.8,60,60]],sit:'After last week\'s upset the gaps between products have closed by a few degrees: naphtha end point up, diesel 5 % point down, AGO 10 % point down. The tower ΔP is well below normal.',key:'Tray damage in the top section: poor fractionation (overlap) and a lower tower ΔP (channelling). Operating moves only partly help; schedule an inspection.'},
+ {code:'TE-1',title:'Reflux climbing, nothing obvious',faults:[['e4_foul',0.9,600,60]],sit:'Night shift says FIC-101 has crept up all night while TIC-102 held. Fuel gas is a little higher too.',key:''},
+ {code:'TE-2',title:'Desalters pressurising',faults:[['pt108_low',0.4,60,60]],sit:'The field operator reports the local gauge PG-108 on the desalter outlet reading well above normal. The board shows PIC-108 close to set point and FCV-129 wide open.',key:''},
+ {code:'TE-3',title:'Heater calmer, bottoms cooler',faults:[['tt101_high',0.4,0,60]],sit:'The heater looks quieter than usual (fuel gas well below normal), the flash zone and tower bottoms run cooler, yet TIC-101 sits on its set point.',key:''},
+ {code:'TE-4',title:'Diesel 90 % point creeping up after a tank change',faults:[['crude_heavy',0.8,120,60]],sit:'Offsites switched tanks at the start of the shift. Since then the diesel 90 % point has crept up toward its alarm, the AGO 10 % point is rising, and the naphtha rate is down by about a fifth.',key:''},
+ {code:'TE-5',title:'Flare lit on a warm afternoon',faults:[['hot_day',1,600,60],['fan_fail',1,900,60]],sit:'It is hot. By mid-afternoon the flare is burning and the naphtha rate is down.',key:''},
+ {code:'TE-6',title:'Residue pump noisy',faults:[['lt107_high',1,120,120]],sit:'The field says P-3A is cavitating. LIC-107 on the board shows a normal-looking level, but FIC-1102 has been running about 50 % above its normal flow for half an hour.',key:''},
+ {code:'TE-7',title:'Top hot although reflux reads high',faults:[['ft101_high',0.9,60,60]],sit:'TIC-102 is above set point and still climbing although FIC-101 reads well above its normal flow.',key:''},
+ {code:'TE-8',title:'Pass outlets drifting apart',faults:[['crack_b',0.9,60,60]],sit:'TI-1007A and TI-1007B used to read the same; now B is several degrees hotter and the gap is growing.',key:''},
+ {code:'TE-9',title:'Preheat down, fuel up',faults:[['crude_cold',0.6,300,60],['e1_foul',0.7,900,300]],sit:'Fuel gas is up about 10 % since yesterday. Offsites say the crude tank heaters were switched off.',key:''},
+ {code:'TE-10',title:'Vacuum unit upset',faults:[['hvgo_loss',0.7,300,60]],sit:'The vacuum unit had a pump problem. Your heater is firing much harder.',key:''},
+ {code:'TE-11',title:'Water in the naphtha',faults:[['p4_trip',1,60,60]],sit:'The debutanizer reports free water in the feed. LIC-101 is higher than usual.',key:''},
+ {code:'TE-12',title:'Products overlapping, tower ΔP low',faults:[['tray_damage',0.8,60,60]],sit:'After last week\'s upset the gaps between products have closed by a few degrees: naphtha end point up, diesel 5 % point down, AGO 10 % point down. The tower ΔP is well below normal.',key:''},
 ];
 const TREND_EVENTS=[
  ['A','Desalter booster pump P-2A trips',s=>{s.P.sw.P2A=false;}],
@@ -1406,7 +1368,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const fmtT=t=>{const s=Math.max(0,Math.floor(t));return [Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(x=>String(x).padStart(2,'0')).join(':');};
 const reduceMotion=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 let sim,snapDesign,snapCold,running=true,speed=1,acc=0,lastSec=0;
-let disp='ov',selTag='TIC-101',faceFor=null,trainee=false,silenced=false,audioCtx=null,pidSheet='001';
+const OPT_SOUND={checked:true};let disp='ov',selTag='TIC-101',faceFor=null,trainee=true,silenced=false,audioCtx=null,pidSheet='001';
 let alarms=new Map(),logArr=[],pen,kpi,recs,bandRun,trend=[],snaps=[],backtracks=[],ackTimes,alarmCount,trips,grades=[];
 let exState=null,order=null;
 const TARGET={cot:388,top:136.1};
@@ -1517,7 +1479,7 @@ function secondTick(){
   const r={t:sim.t,m:Object.assign({},m),sp:{},op:{},x:{fl:P.flame?1:0,ems:P.ems.state,Pdes:P.Pdes,R:P.R,Req:P.Req,OF:P.OF,Qabs:P.Qabs,COT:P.COT,cutc1:P.cut.c1,cutc2:P.cut.c2,cutc3:P.cut.c3,QMPA:P.QMPA,QBPA:P.QBPA,flare:P.Gflare}};
   for(const k in sim.C){r.sp[k]=sim.C[k].sp;r.op[k]=sim.C[k].op;}
   trend.push(r);if(trend.length>14400)trend.shift();
-  if($('#btOn').checked&&lastSec>0&&lastSec%(+$('#btEvery').value)===0){backtracks.push({name:'Backtrack',t:sim.t,state:stateOf()});if(backtracks.length>10)backtracks.shift();}
+  if(false){backtracks.push({name:'Backtrack',t:sim.t,state:stateOf()});if(backtracks.length>10)backtracks.shift();}
 }
 function score(){return Math.max(0,100-Object.values(pen).reduce((a,b)=>a+b,0));}
 function evalAlarms(){
@@ -1544,7 +1506,7 @@ function tagAlarm(tag){let r=null;alarms.forEach(a=>{if(a.tag!==tag||(!a.active&
 function tone(f,t0,d,vol){const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='square';o.frequency.value=f;g.gain.setValueAtTime(vol||0.04,audioCtx.currentTime+t0);g.gain.setValueAtTime(0,audioCtx.currentTime+t0+d);o.connect(g);g.connect(audioCtx.destination);o.start(audioCtx.currentTime+t0);o.stop(audioCtx.currentTime+t0+d+0.02);}
 function unlockAudio(){try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();}catch(e){}}
 let beepN=0;
-function beep(force){if(!$('#optSound').checked||silenced)return;let un=false,trip=false;alarms.forEach(a=>{if(!a.acked){un=true;if(['TRIP','WATER','LIFT'].includes(a.type))trip=true;}});if(!un)return;
+function beep(force){if(!OPT_SOUND.checked||silenced)return;let un=false,trip=false;alarms.forEach(a=>{if(!a.acked){un=true;if(['TRIP','WATER','LIFT'].includes(a.type))trip=true;}});if(!un)return;
   beepN++;if(!force&&!trip&&beepN%2)return;
   try{unlockAudio();if(!audioCtx||audioCtx.state!=='running')return;if(trip){tone(1040,0,0.16,0.05);tone(760,0.2,0.16,0.05);}else tone(880,0,0.14,0.04);}catch(e){}}
 
@@ -2288,32 +2250,12 @@ function injectFault(id,sev,ramp,quiet){const f=sim.M[id];if(f.active)return;if(
   log('MALF',`Injected${f.sw!=null?' SW '+f.sw:''}: ${f.name}${f.binary?'':` (${Math.round(f.sev*100)}%, ramp ${f.ramp} s)`}`);}
 function clearFault(id){const f=sim.M[id];if(!f.active)return;f.active=false;const r=[...recs].reverse().find(r=>r.id===id&&r.tOff===null);if(r)r.tOff=sim.t;log('MALF','Cleared: '+f.name);}
 function buildMalfTable(){
-  $('#mbody').innerHTML=Object.values(sim.M).map(f=>`<tr data-id="${f.id}"><td>${f.sw??'–'}</td><td><b>${esc(f.name)}</b><br><span class="small muted">${esc(f.desc)}</span></td>
-   <td>${f.binary?'<span class="small muted">On/off</span>':`<input type="range" min="10" max="100" step="5" value="${Math.round(f.sev*100)}" aria-label="Severity"> <span class="small" data-sv>${Math.round(f.sev*100)}%</span>`}<span class="lvl"><i data-lvl></i></span></td>
-   <td>${f.binary?'':`<select aria-label="Ramp"><option value="0">Step</option><option value="30" selected>30 s</option><option value="120">2 min</option><option value="300">5 min</option><option value="900">15 min</option></select>`}</td>
-   <td><button class="btn small" data-go>Inject</button></td></tr>`).join('');
-  $$('#mbody tr').forEach(tr=>{const f=sim.M[tr.dataset.id],rg=tr.querySelector('input[type=range]'),se=tr.querySelector('select');
-    if(rg)rg.oninput=()=>{f.sev=rg.value/100;tr.querySelector('[data-sv]').textContent=rg.value+'%';};
-    if(se)se.onchange=()=>f.ramp=+se.value;
-    tr.querySelector('[data-go]').onclick=()=>f.active?clearFault(f.id):injectFault(f.id);});
 }
 function renderInstructor(){
-  $$('#mbody tr').forEach(tr=>{const f=sim.M[tr.dataset.id];tr.classList.toggle('act',f.active);tr.querySelector('[data-lvl]').style.width=(f.lvl*100)+'%';
-    const b=tr.querySelector('[data-go]');b.textContent=f.active?'Clear':'Inject';b.classList.toggle('on',f.active);});
-  const all=[...snaps.map((s,i)=>({...s,k:'s'+i})),...backtracks.map((s,i)=>({...s,k:'b'+i}))];
-  $('#snaps').innerHTML=all.length?all.map(s=>`<li class="row" style="justify-content:space-between;border-bottom:1px solid var(--edge);padding:3px 0"><span>${esc(s.name)} <span class="muted">${fmtT(s.t)}</span></span><button class="btn small" data-snap="${s.k}">Load</button></li>`).join(''):'<li class="muted">No snapshots yet.</li>';
-  $$('[data-snap]').forEach(b=>b.onclick=()=>{const k=b.dataset.snap,s=k[0]==='s'?snaps[+k.slice(1)]:backtracks[+k.slice(1)];const keep=sim.t;loadState(s.state);sim.t=keep;lastSec=Math.floor(keep);log('INSTR',`Loaded ${s.name} (${fmtT(s.t)})`);});
 }
 /* model check: the same direction cases as the offline validation suite */
 function copySim(js){const s=createSim();loadInto(s,js);s.noise=false;s.log=null;s.onTrip=null;s.t=0;return s;}
 function runValidation(){
-  let pass=0,tot=0;const G=CHECKS.getters,TL=CHECKS.tol;
-  const rows=CHECKS.cases.map(([name,act,checks])=>{const s=copySim(snapDesign);const b={};for(const k in G)b[k]=G[k](s);act(s);let t=0;
-    const res=[...checks].sort((a,b)=>a[0]-b[0]).map(([tt,v,d])=>{while(t<tt){step(s,0.25);t+=0.25;}const dv=G[v](s)-b[v];const tol=TL[v]??0.3;
-      const got=Math.abs(dv)<tol?'0':dv>0?'+':'-';const ok=got===d;tot++;if(ok)pass++;return `<span class="${ok?'ok':'bad'}">${v} ${d==='+'?'↑':d==='-'?'↓':'steady'} @${tt}s</span>`;}).join(' · ');
-    return `<tr><td>${esc(name)}</td><td>${res}</td></tr>`;});
-  $('#valBox').innerHTML=`<p><b>${pass} of ${tot}</b> expected responses reproduced in direction.</p><table class="tbl"><thead><tr><th>Case</th><th>Expected response (green matches)</th></tr></thead><tbody>${rows.join('')}</tbody></table>`;
-  log('INSTR',`Model check: ${pass}/${tot}`);
 }
 
 /* ---------- procedures ---------- */
@@ -2321,7 +2263,7 @@ let exTab='tr';
 function exListHtml(){
   const hide=trainee;
   if(exTab==='tr')return TRAINING.map(e=>`<div class="exitem"><span class="muted">#${e.n}</span><span><b>${hide?'Exercise '+e.n:esc(e.title)}</b><br><span class="small muted">${esc(e.sit)}</span></span><button class="btn small" data-ex="tr:${e.n}">Load</button></div>`).join('');
-  if(exTab==='te')return EQUIPPED.map(e=>`<div class="exitem"><span class="muted">${e.code}</span><span><b>${esc(e.title)}</b><br><span class="small muted">${esc(e.sit)}${hide?'':' · Key: '+esc(e.key)}</span></span><button class="btn small" data-ex="te:${e.code}">Load</button></div>`).join('');
+  if(exTab==='te')return EQUIPPED.map(e=>`<div class="exitem"><span class="muted">${e.code}</span><span><b>${esc(e.title)}</b><br><span class="small muted">${esc(e.sit)}</span></span><button class="btn small" data-ex="te:${e.code}">Load</button></div>`).join('');
   return [['startup','Cold startup through the heater EMS (graded)','From cold and empty to design rate on specification. Takes several simulated hours: use 10–20× speed.'],
    ['shutdown','Normal shutdown (graded)','From design conditions to an empty, cool tower.'],['esd','Emergency shutdown (graded)','A heater tube starts leaking shortly after loading.'],
    ['mpa','Recovery from a P-9A trip (graded)','The mid pumparound pump trips two minutes after loading.'],['opt','Optimisation: maximise diesel (graded, 30 min)','Raise diesel yield while every product stays on specification.']]
@@ -2332,7 +2274,7 @@ function banner(text){$('#bannerTxt').textContent=text;$('#banner').classList.ad
 function oilSwing(){const C=sim.C;sim.P.sw.HS101='OIL';C['FIC-106'].mode='AUTO';C['FIC-106'].init=true;C['TIC-101'].op=C['PIC-112'].sp/1034*100;C['PIC-112'].mode='CAS';C['PIC-112'].init=true;log('EX','Setup: fuel oil is the swing fuel (HS-101 = OIL), fuel gas base load');}
 function loadExercise(key){
   const [kind,id]=key.split(':');
-  if(kind==='tr'){const e=TRAINING.find(x=>x.n==id);newSession('design',`Loaded training exercise ${e.n}: ${e.title}`);if(e.setup==='oilswing')oilSwing();
+  if(kind==='tr'){const e=TRAINING.find(x=>x.n==id);newSession('design',`Loaded ${e.title}`);if(e.setup==='oilswing')oilSwing();
     exState={kind:'training',name:`Exercise ${e.n}`+(trainee?'':`: ${e.title}`),def:e,pending:e.faults.map(f=>({id:f[0],sev:f[1],ramp:f[2],at:f[3]}))};banner(`Exercise ${e.n}. ${e.sit}`);}
   else if(kind==='te'){const e=EQUIPPED.find(x=>x.code===id);newSession('design',`Loaded Think EQUIPPED ${e.code}`);
     exState={kind:'te',name:`${e.code} ${e.title}`,def:e,pending:e.faults.map(f=>({id:f[0],sev:f[1],ramp:f[2],at:f[3]}))};banner(`${e.code}: ${e.sit} Troubleshoot with Engage, Define, Explore, Plan, Do it, Look back.`);}
@@ -2452,11 +2394,9 @@ function render(){
   const v=document.querySelector('.view.show').id;
   if(v==='operate'){renderSvg();renderFace();}tick++;
   if(v==='ems')renderEms();
-  if(tick%2===0){if(v==='operate'){renderTrend();renderAlarms();}if(v==='field')renderSwitches();if(v==='instructor')renderInstructor();if(v==='debrief')renderDebrief();if(v==='export')renderExport();if(v==='exercises')tickProcView();if(v==='process')renderProcess();}
+  if(tick%2===0){if(v==='operate'){renderTrend();renderAlarms();}if(v==='field')renderSwitches();if(v==='debrief')renderDebrief();if(v==='export')renderExport();if(v==='exercises')tickProcView();if(v==='process')renderProcess();}
 }
-function setTrainee(on){trainee=on;$('#instrTab').hidden=on;$('#modeBtn').textContent=on?'Trainee mode on':'Trainee mode off';$('#modeBtn').classList.toggle('on',on);
-  if(on&&$('#instructor').classList.contains('show')){$$('.tab').forEach(x=>x.setAttribute('aria-selected',x.dataset.view==='operate'));$$('.view').forEach(v=>v.classList.toggle('show',v.id==='operate'));}
-  renderExList();}
+function setTrainee(on){renderExList();}
 function wire(){
   wireExport();
   $('#dispBar').innerHTML=DISPS.map(([k,n])=>`<button class="btn${k===disp?' on':''}" data-disp="${k}">${esc(n)}</button>`).join('');
@@ -2465,8 +2405,7 @@ function wire(){
   $$('.tab').forEach(t=>t.onclick=()=>{$$('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));$$('.view').forEach(v=>v.classList.toggle('show',v.id===t.dataset.view));tick=1;render();});
   $$('[data-disp]').forEach(b=>b.onclick=()=>{setDisp(b.dataset.disp);if(GROUPS[b.dataset.disp])$('#tgroup').value=b.dataset.disp;renderTrend();});
   const pick=id=>{selTag=id;renderFace();renderTrend();};
-  $('#soundBtn').onclick=()=>{const c=$('#optSound');c.checked=!c.checked;unlockAudio();$('#soundBtn').textContent=c.checked?'🔔 Sound on':'🔕 Sound off';$('#soundBtn').classList.toggle('on',c.checked);if(c.checked)beep(true);};
-  $('#optSound').onchange=()=>{const c=$('#optSound');$('#soundBtn').textContent=c.checked?'🔔 Sound on':'🔕 Sound off';$('#soundBtn').classList.toggle('on',c.checked);};
+  $('#soundBtn').onclick=()=>{const c=OPT_SOUND;c.checked=!c.checked;unlockAudio();$('#soundBtn').textContent=c.checked?'🔔 Sound on':'🔕 Sound off';$('#soundBtn').classList.toggle('on',c.checked);if(c.checked)beep(true);};
   $('#svg').addEventListener('click',e=>{const g=e.target.closest('[data-tag]');if(g)pick(g.dataset.tag);});
   $('#svg').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){const g=e.target.closest('[data-tag]');if(g){e.preventDefault();pick(g.dataset.tag);}}});
   $('#tripLamp').onclick=()=>showView('ems');$('#tripLamp').onkeydown=e=>{if(e.key==='Enter')showView('ems');};
@@ -2475,19 +2414,6 @@ function wire(){
   $('#silence').onclick=()=>{silenced=true;};$('#ackAllTop').onclick=$('#ackAll').onclick=()=>{ack([...alarms.keys()]);renderAlarms();};
   $('#tgroup').onchange=renderTrend;$('#twin').onchange=renderTrend;$('#tcol').onchange=renderTrend;
   $('#bannerAck').onclick=()=>{if(order)log('OPER',`Acknowledged order after ${Math.round(sim.t-order.t)} s`);$('#banner').classList.remove('show');order=null;};
-  $('#icDesign').onclick=()=>{newSession('design','Instructor loaded design IC');};$('#icCold').onclick=()=>{newSession('cold','Instructor loaded cold start IC');};
-  $('#icHeavy').onclick=()=>{newSession('design','Instructor loaded design IC with heavy crude');sim.P.x=1;Object.assign(sim.M.crude_heavy,{active:true,sev:1,lvl:1,ramp:0});};
-  $('#snapSave').onclick=()=>{const n=$('#snapName').value.trim()||('Snapshot '+(snaps.length+1));snaps.push({name:n,t:sim.t,state:stateOf()});$('#snapName').value='';log('INSTR',`Saved snapshot "${n}"`);renderInstructor();};
-  $('#optPurge').onchange=e=>{sim.opt.purgeTime=+e.target.value;log('INSTR',`Purge time ${e.target.value} s`);};
-  $('#optNoise').onchange=e=>{sim.noise=e.target.checked;};
-  $('#orderSend').onclick=()=>{const t=$('#orderTxt').value.trim();if(!t)return;banner('Order from shift supervisor: '+t);log('INSTR','Order sent: '+t);};
-  $('#valRun').onclick=()=>{$('#valBox').textContent='Running… (about 20 s)';setTimeout(runValidation,30);};
-  $('#modeBtn').onclick=()=>{
-    if(!trainee){setTrainee(true);log('SYS','Trainee mode on');return;}
-    const pin=$('#optPin').value;if(!pin){setTrainee(false);log('SYS','Trainee mode off');return;}
-    let box=$('#pinIn');if(!box){box=document.createElement('input');box.type='password';box.id='pinIn';box.placeholder='PIN';box.style.width='80px';box.setAttribute('aria-label','Instructor PIN');$('#modeBtn').after(box);
-      box.onkeydown=e=>{if(e.key==='Enter'){if(box.value===$('#optPin').value){setTrainee(false);box.remove();log('SYS','Trainee mode off');}else{box.value='';box.placeholder='Wrong PIN';}}};}
-    box.focus();};
   $('#logFilter').onchange=renderDebrief;
   $('#copyLog').onclick=async()=>{const ta=$('#logTxt');try{await navigator.clipboard.writeText(ta.value);$('#copyMsg').textContent='Log copied.';}catch(e){ta.focus();ta.select();$('#copyMsg').textContent='Clipboard blocked here: the log is selected, press Ctrl+C (⌘C on Mac).';}};
   window.addEventListener('resize',renderTrend);
@@ -2523,7 +2449,7 @@ function buildSnapCsv(){const m=sim.meas,D=desM();
     ['Overhead','TI-175'],['Overhead','TI-1001'],['Overhead','TI-1016'],['Overhead','PIC-102'],['Overhead','FI-155'],['Overhead','FI-119']];
   const val=(t,M)=>sim.C[t]&&CTLKEY[t]?M[CTLKEY[t]]:IND[t].v(M),un=t=>sim.C[t]?sim.C[t].unit:IND[t].u;
   return `# ${UNIT} · snapshot at ${fmtT(sim.t)} · exported ${new Date().toISOString()}\n`+['area,tag,unit,value_now,value_design,deviation'].concat(pts.map(([a,t])=>{const v=val(t,m),d=val(t,D);return [a,t,un(t),v.toFixed(2),d.toFixed(2),(v-d).toFixed(2)].map(csvCell).join(',');})).join('\n')+'\n';}
-function buildLogCsv(){return `# ${UNIT} · event log\n`+['time_s,time_hms,type,message'].concat(logArr.map(l=>[l.t.toFixed(0),fmtT(l.t),l.type,l.msg].map(csvCell).join(','))).join('\n')+'\n';}
+function buildLogCsv(){return `# ${UNIT} · event log\n`+['time_s,time_hms,type,message'].concat(logArr.filter(l=>l.type!=='MALF'&&l.type!=='INSTR').map(l=>[l.t.toFixed(0),fmtT(l.t),l.type,l.msg].map(csvCell).join(','))).join('\n')+'\n';}
 let dlNs;
 async function saveCsv(name,text){const msg=$('#xMsg');text='﻿'+text;
   try{if(dlNs===undefined)dlNs=(window.claude&&window.claude.use)?await window.claude.use('downloads'):null;}catch(e){dlNs=null;}
