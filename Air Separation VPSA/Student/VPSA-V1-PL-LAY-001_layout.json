@@ -1,0 +1,6447 @@
+{
+ "doc": {
+  "no": "VPSA-V1-PL-LAY-001",
+  "title": "Plot plan, elevations and piping isometrics",
+  "rev": "0",
+  "status": "Issued for teaching",
+  "unit": "Air Separation VPSA Ver 1",
+  "originator": "Apinan Soottitantawat",
+  "date": "2026-10-28",
+  "basis": "Equipment sizes from tabs/EPC_MASTER.json and the simulator model (K, BED); line numbers from the EPC P&ID PSA-PID-001/002 rev A; placement, elevations, supports and rules assumed (typical practice)."
+ },
+ "units": "m",
+ "origin": {
+  "desc": "south-west corner of the plot fence",
+  "x": 0,
+  "y": 0,
+  "grade_EL": 100
+ },
+ "north": {
+  "plant_north_deg": 0,
+  "note": "+y = plant north = true north (assumed); +x = east; z up from grade"
+ },
+ "site": {
+  "w": 64,
+  "d": 48,
+  "location": "generic site in central Thailand (assumed)",
+  "wind": [
+   {
+    "id": "SW",
+    "from_deg": 225,
+    "name": "SW monsoon, May-Oct (assumed prevailing)"
+   },
+   {
+    "id": "NE",
+    "from_deg": 45,
+    "name": "NE monsoon, Nov-Feb (assumed prevailing)"
+   }
+  ],
+  "roads": [
+   {
+    "id": "R-S",
+    "name": "Main road and plant gate (west end)",
+    "x": 0,
+    "y": 0,
+    "w": 64,
+    "d": 6,
+    "kind": "road"
+   },
+   {
+    "id": "R-E",
+    "name": "East road (fire and crane access)",
+    "x": 58,
+    "y": 6,
+    "w": 6,
+    "d": 42,
+    "kind": "road"
+   },
+   {
+    "id": "R-N",
+    "name": "North road (crane hardstand access)",
+    "x": 28,
+    "y": 42,
+    "w": 30,
+    "d": 6,
+    "kind": "road"
+   },
+   {
+    "id": "AW-1",
+    "name": "Access way to the B1 equipment door (under the rack)",
+    "x": 16,
+    "y": 6,
+    "w": 6,
+    "d": 24,
+    "kind": "access"
+   }
+  ],
+  "hardstand": {
+   "id": "HS-1",
+   "name": "Crane hardstand for zeolite change-out and vessel lifts",
+   "x": 36,
+   "y": 42,
+   "w": 10,
+   "d": 6
+  },
+  "areas": [
+   {
+    "id": "O2A",
+    "name": "Oxygen-clean area (no oil, grease or flammables)",
+    "x": 43,
+    "y": 8,
+    "w": 8.2,
+    "d": 9.5,
+    "kind": "o2"
+   }
+  ],
+  "assembly": [
+   {
+    "id": "AP-1",
+    "name": "Assembly point 1 (north-west yard)",
+    "x": 3,
+    "y": 44
+   },
+   {
+    "id": "AP-2",
+    "name": "Assembly point 2 (south-west, by the gate)",
+    "x": 4,
+    "y": 10
+   }
+  ]
+ },
+ "equipment": [
+  {
+   "tag": "F-100",
+   "service": "Air intake filter (weather hood)",
+   "shape": "box",
+   "x": 8.25,
+   "y": 41.2,
+   "z0": 0,
+   "dims": {
+    "L": 2,
+    "W": 1.2,
+    "H": 3.2
+   },
+   "colour": "#C9CED6",
+   "building": null,
+   "src": "EQL type; size assumed",
+   "top": 3.2,
+   "foot": {
+    "kind": "rect",
+    "x": 7.25,
+    "y": 40.6,
+    "w": 2,
+    "d": 1.2
+   },
+   "vol_m3": 7.68,
+   "EL_top": 103.2
+  },
+  {
+   "tag": "K-100",
+   "service": "Feed air compressor package (oil-free screw, VSD)",
+   "shape": "box",
+   "x": 8.25,
+   "y": 37.7,
+   "z0": 0,
+   "dims": {
+    "L": 4.5,
+    "W": 2.2,
+    "H": 2.4
+   },
+   "colour": "#4C8C5A",
+   "building": "B1",
+   "src": "EQL; package size assumed",
+   "top": 2.4,
+   "foot": {
+    "kind": "rect",
+    "x": 6,
+    "y": 36.6,
+    "w": 4.5,
+    "d": 2.2
+   },
+   "vol_m3": 23.76,
+   "EL_top": 102.4
+  },
+  {
+   "tag": "E-100",
+   "service": "Air aftercooler (shell and tube, CHW)",
+   "shape": "hcyl",
+   "x": 13.5,
+   "y": 37.7,
+   "z0": 0.775,
+   "dims": {
+    "D": 0.45,
+    "L": 3,
+    "axis": "x"
+   },
+   "colour": "#C9CED6",
+   "building": "B1",
+   "src": "EQL duty; size assumed",
+   "top": 1.225,
+   "foot": {
+    "kind": "rect",
+    "x": 12,
+    "y": 37.475,
+    "w": 3,
+    "d": 0.45
+   },
+   "vol_m3": 0.48,
+   "EL_top": 101.225
+  },
+  {
+   "tag": "V-100",
+   "service": "Air receiver 20 m3",
+   "shape": "vcyl",
+   "x": 30.5,
+   "y": 35,
+   "z0": 1,
+   "dims": {
+    "D": 2.4,
+    "H": 5.2
+   },
+   "tl": {
+    "btl": 1.6,
+    "ttl": 5.6
+   },
+   "support": {
+    "kind": "legs",
+    "h": 1
+   },
+   "colour": "#C9CED6",
+   "building": null,
+   "src": "EQL ID 2.4 m x 4.0 m T/T; legs assumed",
+   "top": 6.2,
+   "foot": {
+    "kind": "circle",
+    "x": 30.5,
+    "y": 35,
+    "r": 1.2
+   },
+   "vol_m3": 21.71,
+   "EL_top": 106.2
+  },
+  {
+   "tag": "V-101A",
+   "service": "Adsorber A (zeolite 5A, 12.8 t)",
+   "shape": "vcyl",
+   "x": 37.5,
+   "y": 35,
+   "z0": 2.5,
+   "dims": {
+    "D": 1.91,
+    "H": 7.96
+   },
+   "tl": {
+    "btl": 2.98,
+    "ttl": 9.98
+   },
+   "support": {
+    "kind": "skirt",
+    "h": 2.5
+   },
+   "bed": {
+    "alumina": 0.3,
+    "zeolite": 5.64
+   },
+   "colour": "#C9CED6",
+   "building": null,
+   "src": "EQL ID 1.91 m x 7.0 m T/T; skirt assumed",
+   "top": 10.46,
+   "foot": {
+    "kind": "circle",
+    "x": 37.5,
+    "y": 35,
+    "r": 0.955
+   },
+   "vol_m3": 21.89,
+   "EL_top": 110.46
+  },
+  {
+   "tag": "V-101B",
+   "service": "Adsorber B (zeolite 5A, 12.8 t)",
+   "shape": "vcyl",
+   "x": 43.5,
+   "y": 35,
+   "z0": 2.5,
+   "dims": {
+    "D": 1.91,
+    "H": 7.96
+   },
+   "tl": {
+    "btl": 2.98,
+    "ttl": 9.98
+   },
+   "support": {
+    "kind": "skirt",
+    "h": 2.5
+   },
+   "bed": {
+    "alumina": 0.3,
+    "zeolite": 5.64
+   },
+   "colour": "#C9CED6",
+   "building": null,
+   "src": "EQL ID 1.91 m x 7.0 m T/T; skirt assumed",
+   "top": 10.46,
+   "foot": {
+    "kind": "circle",
+    "x": 43.5,
+    "y": 35,
+    "r": 0.955
+   },
+   "vol_m3": 21.89,
+   "EL_top": 110.46
+  },
+  {
+   "tag": "V-102",
+   "service": "O2 product buffer 50 m3 (oxygen service)",
+   "shape": "vcyl",
+   "x": 46,
+   "y": 14,
+   "z0": 1.2,
+   "dims": {
+    "D": 3.2,
+    "H": 7.2
+   },
+   "tl": {
+    "btl": 2,
+    "ttl": 7.6
+   },
+   "support": {
+    "kind": "legs",
+    "h": 1.2
+   },
+   "colour": "#E3EEF9",
+   "building": null,
+   "o2": true,
+   "src": "EQL ID 3.2 m x 5.6 m T/T; legs assumed",
+   "top": 8.4,
+   "foot": {
+    "kind": "circle",
+    "x": 46,
+    "y": 14,
+    "r": 1.6
+   },
+   "vol_m3": 53.62,
+   "EL_top": 108.4
+  },
+  {
+   "tag": "V-103",
+   "service": "N2-rich buffer 50 m3",
+   "shape": "vcyl",
+   "x": 53,
+   "y": 16.5,
+   "z0": 1.2,
+   "dims": {
+    "D": 3.2,
+    "H": 7.2
+   },
+   "tl": {
+    "btl": 2,
+    "ttl": 7.6
+   },
+   "support": {
+    "kind": "legs",
+    "h": 1.2
+   },
+   "colour": "#EFE3BF",
+   "building": null,
+   "src": "EQL ID 3.2 m x 5.6 m T/T; legs assumed",
+   "top": 8.4,
+   "foot": {
+    "kind": "circle",
+    "x": 53,
+    "y": 16.5,
+    "r": 1.6
+   },
+   "vol_m3": 53.62,
+   "EL_top": 108.4
+  },
+  {
+   "tag": "K-101",
+   "service": "Liquid-ring vacuum pump package",
+   "shape": "box",
+   "x": 18.5,
+   "y": 36.8,
+   "z0": 0,
+   "dims": {
+    "L": 4,
+    "W": 2,
+    "H": 1.8
+   },
+   "colour": "#4C8C5A",
+   "building": "B1",
+   "src": "EQL; skid size assumed",
+   "top": 1.8,
+   "foot": {
+    "kind": "rect",
+    "x": 16.5,
+    "y": 35.8,
+    "w": 4,
+    "d": 2
+   },
+   "vol_m3": 14.4,
+   "EL_top": 101.8
+  },
+  {
+   "tag": "V-104",
+   "service": "Seal-water separator 2 m3",
+   "shape": "hcyl",
+   "x": 23.25,
+   "y": 36.8,
+   "z0": 0.5,
+   "dims": {
+    "D": 1,
+    "L": 2.5,
+    "axis": "x"
+   },
+   "colour": "#C9CED6",
+   "building": "B1",
+   "src": "EQL 2 m3; D x L assumed",
+   "top": 1.5,
+   "foot": {
+    "kind": "rect",
+    "x": 22,
+    "y": 36.3,
+    "w": 2.5,
+    "d": 1
+   },
+   "vol_m3": 1.96,
+   "EL_top": 101.5
+  },
+  {
+   "tag": "DT-104",
+   "service": "Receiver condensate drain trap",
+   "shape": "box",
+   "x": 30.5,
+   "y": 33.6,
+   "z0": 0.15,
+   "dims": {
+    "L": 0.3,
+    "W": 0.3,
+    "H": 0.3
+   },
+   "colour": "#8A9099",
+   "building": null,
+   "mounted": "drain line of V-100",
+   "src": "EQL DN25",
+   "top": 0.45,
+   "foot": {
+    "kind": "rect",
+    "x": 30.35,
+    "y": 33.45,
+    "w": 0.3,
+    "d": 0.3
+   },
+   "vol_m3": 0.03,
+   "EL_top": 100.45
+  },
+  {
+   "tag": "SL-100",
+   "service": "Silencer on the air blow-off (PV-103)",
+   "shape": "vcyl",
+   "x": 30.5,
+   "y": 35,
+   "z0": 8.4,
+   "dims": {
+    "D": 0.4,
+    "H": 1.2
+   },
+   "colour": "#8A9099",
+   "building": null,
+   "mounted": "top of line 4\"-AIR-1006-A1A above V-100",
+   "src": "EQL DN150",
+   "top": 9.6,
+   "foot": {
+    "kind": "circle",
+    "x": 30.5,
+    "y": 35,
+    "r": 0.2
+   },
+   "vol_m3": 0.15,
+   "EL_top": 109.6
+  },
+  {
+   "tag": "SL-102",
+   "service": "Silencer on the off-spec O2 vent (XV-127)",
+   "shape": "vcyl",
+   "x": 49.5,
+   "y": 11.2,
+   "z0": 11,
+   "dims": {
+    "D": 0.3,
+    "H": 1
+   },
+   "colour": "#B0BEC5",
+   "building": null,
+   "mounted": "top of the O2 vent stack, line 2\"-O2-1204-O2S",
+   "src": "EQL DN80",
+   "top": 12,
+   "foot": {
+    "kind": "circle",
+    "x": 49.5,
+    "y": 11.2,
+    "r": 0.15
+   },
+   "vol_m3": 0.07,
+   "EL_top": 112
+  }
+ ],
+ "skids": [
+  {
+   "id": "VS-120",
+   "name": "Product valve station (PV-122, FV-121, PT-122, FT-121, FT-128) at grade",
+   "x": 41,
+   "y": 31.4,
+   "w": 2.4,
+   "d": 2
+  }
+ ],
+ "buildings": [
+  {
+   "id": "B1",
+   "name": "Compressor and vacuum-pump house",
+   "x": 4,
+   "y": 30,
+   "w": 22,
+   "d": 10,
+   "h": 7,
+   "roof": "flat (assumed), roof extract fans EF-1/EF-2",
+   "contains": [
+    "K-100",
+    "E-100",
+    "K-101",
+    "V-104"
+   ],
+   "wall_TL_dB": 25,
+   "doors": [
+    {
+     "id": "D1",
+     "wall": "W",
+     "at": 35,
+     "w": 1,
+     "h": 2.1,
+     "kind": "personnel (escape)",
+     "x": 4,
+     "y": 35
+    },
+    {
+     "id": "D2",
+     "wall": "S",
+     "at": 18.5,
+     "w": 4,
+     "h": 4.5,
+     "kind": "roller shutter with wicket (equipment removal, escape through the wicket)",
+     "x": 18.5,
+     "y": 30
+    },
+    {
+     "id": "D3",
+     "wall": "E",
+     "at": 32,
+     "w": 1,
+     "h": 2.1,
+     "kind": "personnel (escape)",
+     "x": 26,
+     "y": 32
+    },
+    {
+     "id": "D4",
+     "wall": "S",
+     "at": 7,
+     "w": 1,
+     "h": 2.1,
+     "kind": "personnel (escape)",
+     "x": 7,
+     "y": 30
+    }
+   ],
+   "openings": [
+    {
+     "id": "LV1",
+     "kind": "louvre",
+     "wall": "N",
+     "at": 13,
+     "w": 3,
+     "z0": 0.5,
+     "h": 1.5,
+     "free": 0.5,
+     "note": "ventilation inlet"
+    },
+    {
+     "id": "LV2",
+     "kind": "louvre",
+     "wall": "N",
+     "at": 21,
+     "w": 3,
+     "z0": 0.5,
+     "h": 1.5,
+     "free": 0.5,
+     "note": "ventilation inlet"
+    },
+    {
+     "id": "EF-1",
+     "kind": "roof fan",
+     "x": 10,
+     "y": 35,
+     "z": 7,
+     "note": "extract"
+    },
+    {
+     "id": "EF-2",
+     "kind": "roof fan",
+     "x": 20,
+     "y": 35,
+     "z": 7,
+     "note": "extract"
+    }
+   ],
+   "ach_design": 6,
+   "ach_basis": "heat removal, worked calculation in part 2 (assumed motor efficiency 95 %, casing losses 2 %, 5 K rise)",
+   "volume_m3": 1540,
+   "equipment_volume_m3": 40.6,
+   "free_volume_m3": 1499.4,
+   "louvre_free_area_m2": 4.5,
+   "floor_area_m2": 220
+  },
+  {
+   "id": "B2",
+   "name": "MCC and control room",
+   "x": 2,
+   "y": 16,
+   "w": 11,
+   "d": 8,
+   "h": 4,
+   "roof": "flat; pressurised HVAC (assumed)",
+   "contains": [
+    "MCC (K-100 VSD, K-101 starter)",
+    "DCS/PLC cabinets",
+    "operator console"
+   ],
+   "wall_TL_dB": 30,
+   "doors": [
+    {
+     "id": "D5",
+     "wall": "S",
+     "at": 7.5,
+     "w": 1,
+     "h": 2.1,
+     "kind": "personnel (escape, to AP-2)",
+     "x": 7.5,
+     "y": 16
+    },
+    {
+     "id": "D6",
+     "wall": "E",
+     "at": 20,
+     "w": 1,
+     "h": 2.1,
+     "kind": "personnel (main, to the plant)",
+     "x": 13,
+     "y": 20
+    }
+   ],
+   "openings": [
+    {
+     "id": "W1",
+     "kind": "window",
+     "wall": "N",
+     "at": 7.5,
+     "w": 7,
+     "z0": 1,
+     "h": 1.2,
+     "note": "fixed laminated glass, view of the plant"
+    },
+    {
+     "id": "HV-IN",
+     "kind": "HVAC intake",
+     "x": 7.5,
+     "y": 21.5,
+     "z": 4.6,
+     "note": "roof-mounted fresh-air intake"
+    }
+   ],
+   "ach_design": 6,
+   "ach_basis": "HVAC fresh air (assumed)",
+   "volume_m3": 352,
+   "equipment_volume_m3": 0,
+   "free_volume_m3": 352,
+   "louvre_free_area_m2": 0,
+   "floor_area_m2": 88
+  }
+ ],
+ "racks": [
+  {
+   "id": "PR-1",
+   "name": "Pipe rack",
+   "x": 14,
+   "y": 25,
+   "w": 43,
+   "d": 3,
+   "tiers": [
+    5,
+    6.5
+   ],
+   "beam_depth": 0.3,
+   "bent_spacing": 6
+  }
+ ],
+ "platforms": [
+  {
+   "id": "PL-1",
+   "name": "Adsorber top valve deck",
+   "x": 35.8,
+   "y": 33.3,
+   "w": 9.4,
+   "d": 3.4,
+   "z": 10,
+   "holes": [
+    [
+     37.5,
+     35,
+     1
+    ],
+    [
+     43.5,
+     35,
+     1
+    ]
+   ],
+   "serves": "XV-113A/B, XV-114A/B, PT-115A/B, PSV-110A/B",
+   "EL": 110,
+   "ladders": [
+    "LD-3",
+    "LD-4"
+   ]
+  },
+  {
+   "id": "PL-2",
+   "name": "Adsorber intermediate platform",
+   "x": 35.8,
+   "y": 33,
+   "w": 9.4,
+   "d": 1,
+   "z": 5,
+   "holes": [],
+   "serves": "TE-117A/B, PDT-119A/B, ladder rest",
+   "EL": 105,
+   "ladders": [
+    "LD-1",
+    "LD-2",
+    "LD-3",
+    "LD-4"
+   ]
+  },
+  {
+   "id": "PL-3",
+   "name": "V-100 top platform",
+   "x": 29,
+   "y": 33.5,
+   "w": 3,
+   "d": 3,
+   "z": 6.4,
+   "holes": [],
+   "serves": "PV-103, PSV-100",
+   "EL": 106.4,
+   "ladders": [
+    "LD-5"
+   ]
+  },
+  {
+   "id": "PL-4",
+   "name": "V-102 top platform",
+   "x": 44.3,
+   "y": 12.3,
+   "w": 3.4,
+   "d": 3.4,
+   "z": 8.6,
+   "holes": [],
+   "serves": "PSV-102",
+   "EL": 108.6,
+   "ladders": [
+    "LD-6"
+   ]
+  },
+  {
+   "id": "PL-5",
+   "name": "V-103 top platform",
+   "x": 51.3,
+   "y": 14.8,
+   "w": 3.4,
+   "d": 3.4,
+   "z": 8.6,
+   "holes": [],
+   "serves": "HV-136, PSV-103",
+   "EL": 108.6,
+   "ladders": [
+    "LD-7"
+   ]
+  }
+ ],
+ "ladders": [
+  {
+   "id": "LD-1",
+   "x": 35.5,
+   "y": 33.5,
+   "z0": 0,
+   "z1": 5,
+   "from": "grade",
+   "to": "PL-2",
+   "landings": []
+  },
+  {
+   "id": "LD-2",
+   "x": 45.5,
+   "y": 33.5,
+   "z0": 0,
+   "z1": 5,
+   "from": "grade",
+   "to": "PL-2",
+   "landings": []
+  },
+  {
+   "id": "LD-3",
+   "x": 36.2,
+   "y": 33.6,
+   "z0": 5,
+   "z1": 10,
+   "from": "PL-2",
+   "to": "PL-1",
+   "landings": []
+  },
+  {
+   "id": "LD-4",
+   "x": 44.8,
+   "y": 33.6,
+   "z0": 5,
+   "z1": 10,
+   "from": "PL-2",
+   "to": "PL-1",
+   "landings": []
+  },
+  {
+   "id": "LD-5",
+   "x": 32.3,
+   "y": 34,
+   "z0": 0,
+   "z1": 6.4,
+   "from": "grade",
+   "to": "PL-3",
+   "landings": [
+    3.2
+   ]
+  },
+  {
+   "id": "LD-6",
+   "x": 48,
+   "y": 15.2,
+   "z0": 0,
+   "z1": 8.6,
+   "from": "grade",
+   "to": "PL-4",
+   "landings": [
+    4.3
+   ]
+  },
+  {
+   "id": "LD-7",
+   "x": 54.9,
+   "y": 18.4,
+   "z0": 0,
+   "z1": 8.6,
+   "from": "grade",
+   "to": "PL-5",
+   "landings": [
+    4.3
+   ]
+  }
+ ],
+ "pipes": [
+  {
+   "id": "1001",
+   "line": "10\"-AIR-1001-A1A",
+   "nps": 10,
+   "service": "Air from F-100 to K-100 suction",
+   "fluid": "air",
+   "from": "F-100",
+   "to": "K-100",
+   "pid": "PSA-PID-001",
+   "points": [
+    [
+     8.25,
+     40.6,
+     1.6
+    ],
+    [
+     8.25,
+     38.8,
+     1.6
+    ]
+   ],
+   "iso": null,
+   "dn": 250,
+   "od": 0.273,
+   "spec": "A1A",
+   "length": 1.8,
+   "fit": {
+    "elbow": 0,
+    "tee": [],
+    "nozzle": [
+     "F-100",
+     "K-100"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      8.25,
+      39.7,
+      1.6
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1002",
+   "line": "6\"-AIR-1002-A1A",
+   "nps": 6,
+   "service": "Compressed air K-100 to E-100",
+   "fluid": "air",
+   "from": "K-100",
+   "to": "E-100",
+   "pid": "PSA-PID-001",
+   "points": [
+    [
+     10.5,
+     37.7,
+     1
+    ],
+    [
+     12,
+     37.7,
+     1
+    ]
+   ],
+   "iso": null,
+   "dn": 150,
+   "od": 0.1683,
+   "spec": "A1A",
+   "length": 1.5,
+   "fit": {
+    "elbow": 0,
+    "tee": [],
+    "nozzle": [
+     "K-100",
+     "E-100"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      11.25,
+      37.7,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1003",
+   "line": "6\"-AIR-1003-A1A",
+   "nps": 6,
+   "service": "Cooled air E-100 to V-100",
+   "fluid": "air",
+   "from": "E-100",
+   "to": "V-100",
+   "pid": "PSA-PID-001",
+   "points": [
+    [
+     15,
+     37.7,
+     1
+    ],
+    [
+     15.8,
+     37.7,
+     1
+    ],
+    [
+     15.8,
+     37.7,
+     3.2
+    ],
+    [
+     28.6,
+     37.7,
+     3.2
+    ],
+    [
+     28.6,
+     35,
+     3.2
+    ],
+    [
+     29.3,
+     35,
+     3.2
+    ]
+   ],
+   "iso": null,
+   "dn": 150,
+   "od": 0.1683,
+   "spec": "A1A",
+   "length": 19.2,
+   "fit": {
+    "elbow": 4,
+    "tee": [],
+    "nozzle": [
+     "E-100",
+     "V-100"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "T-post / bracket",
+     "p": [
+      19,
+      37.7,
+      3.2
+     ]
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      25.4,
+      37.7,
+      3.2
+     ]
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      28.6,
+      36.35,
+      3.2
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1006",
+   "line": "4\"-AIR-1006-A1A",
+   "nps": 4,
+   "service": "Air blow-off PV-103 to SL-100",
+   "fluid": "air",
+   "from": "V-100",
+   "to": "SL-100",
+   "pid": "PSA-PID-001",
+   "points": [
+    [
+     30.5,
+     35,
+     6.2
+    ],
+    [
+     30.5,
+     35,
+     9.6
+    ]
+   ],
+   "iso": null,
+   "dn": 100,
+   "od": 0.1143,
+   "spec": "A1A",
+   "length": 3.4,
+   "fit": {
+    "elbow": 0,
+    "tee": [],
+    "nozzle": [
+     "V-100"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "guide",
+     "p": [
+      30.5,
+      35,
+      7.9
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1004-H",
+   "line": "6\"-AIR-1004-A1A",
+   "nps": 6,
+   "service": "Air header V-100 to the adsorbers",
+   "fluid": "air",
+   "from": "V-100",
+   "to": "XV-111B",
+   "pid": "PSA-PID-001",
+   "iso": "ISO-1",
+   "points": [
+    [
+     30.5,
+     36.2,
+     2
+    ],
+    [
+     30.5,
+     37.8,
+     2
+    ],
+    [
+     30.5,
+     37.8,
+     0.9
+    ],
+    [
+     42.7,
+     37.8,
+     0.9
+    ]
+   ],
+   "dn": 150,
+   "od": 0.1683,
+   "spec": "A1A",
+   "length": 14.9,
+   "fit": {
+    "elbow": 2,
+    "tee": [
+     {
+      "at": [
+       36.7,
+       37.8,
+       0.9
+      ],
+      "branch": "1004-A",
+      "bnps": 6
+     }
+    ],
+    "nozzle": [
+     "V-100"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      30.5,
+      37,
+      2
+     ],
+     "id": "S1"
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      33.55,
+      37.8,
+      0.9
+     ],
+     "id": "S2"
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      39.65,
+      37.8,
+      0.9
+     ],
+     "id": "S3"
+    }
+   ]
+  },
+  {
+   "id": "1004-A",
+   "line": "6\"-AIR-1004-A1A",
+   "nps": 6,
+   "service": "Feed branch through XV-111A to the V-101A bottom tee",
+   "fluid": "air",
+   "from": "1004-H",
+   "to": "1301-A",
+   "pid": "PSA-PID-001",
+   "iso": "ISO-1",
+   "points": [
+    [
+     36.7,
+     37.8,
+     0.9
+    ],
+    [
+     36.7,
+     37.2,
+     0.9
+    ],
+    [
+     36.7,
+     37.2,
+     1.6
+    ],
+    [
+     37.5,
+     37.2,
+     1.6
+    ]
+   ],
+   "dn": 150,
+   "od": 0.1683,
+   "spec": "A1A",
+   "length": 2.1,
+   "fit": {
+    "elbow": 2,
+    "tee": [],
+    "nozzle": [],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": []
+  },
+  {
+   "id": "1004-B",
+   "line": "6\"-AIR-1004-A1A",
+   "nps": 6,
+   "service": "Feed branch through XV-111B to the V-101B bottom tee",
+   "fluid": "air",
+   "from": "1004-H",
+   "to": "1301-H",
+   "pid": "PSA-PID-001",
+   "iso": "ISO-1",
+   "points": [
+    [
+     42.7,
+     37.8,
+     0.9
+    ],
+    [
+     42.7,
+     37.2,
+     0.9
+    ],
+    [
+     42.7,
+     37.2,
+     1.6
+    ],
+    [
+     43.5,
+     37.2,
+     1.6
+    ]
+   ],
+   "dn": 150,
+   "od": 0.1683,
+   "spec": "A1A",
+   "length": 2.1,
+   "fit": {
+    "elbow": 3,
+    "tee": [],
+    "nozzle": [],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": []
+  },
+  {
+   "id": "1301-H",
+   "line": "12\"-VAC-1301-C1A",
+   "nps": 12,
+   "service": "V-101B bottom spool (12\", assumed) and evacuation header through XV-112B to the house wall",
+   "fluid": "vac",
+   "from": "V-101B",
+   "to": "1302",
+   "pid": "PSA-PID-001",
+   "iso": "ISO-5",
+   "points": [
+    [
+     43.5,
+     35,
+     2.5
+    ],
+    [
+     43.5,
+     35,
+     1.6
+    ],
+    [
+     43.5,
+     37.2,
+     1.6
+    ],
+    [
+     44.3,
+     37.2,
+     1.6
+    ],
+    [
+     44.3,
+     38.6,
+     1.6
+    ],
+    [
+     44.3,
+     38.6,
+     0.9
+    ],
+    [
+     26,
+     38.6,
+     0.9
+    ]
+   ],
+   "dn": 300,
+   "od": 0.3239,
+   "spec": "C1A",
+   "length": 24.3,
+   "fit": {
+    "elbow": 4,
+    "tee": [
+     {
+      "at": [
+       43.5,
+       37.2,
+       1.6
+      ],
+      "branch": "1004-B",
+      "bnps": 6,
+      "corner": true
+     },
+     {
+      "at": [
+       38.3,
+       38.6,
+       0.9
+      ],
+      "branch": "1301-A",
+      "bnps": 12
+     }
+    ],
+    "nozzle": [
+     "V-101B"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": [
+     {
+      "at": [
+       26,
+       38.6,
+       0.9
+      ],
+      "with": "1302"
+     }
+    ]
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      43.5,
+      36.1,
+      1.6
+     ],
+     "id": "S1"
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      44.3,
+      37.9,
+      1.6
+     ],
+     "id": "S2"
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      41.25,
+      38.6,
+      0.9
+     ],
+     "id": "S3"
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      35.15,
+      38.6,
+      0.9
+     ],
+     "id": "S4"
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      29.05,
+      38.6,
+      0.9
+     ],
+     "id": "S5"
+    }
+   ]
+  },
+  {
+   "id": "1301-A",
+   "line": "12\"-VAC-1301-C1A",
+   "nps": 12,
+   "service": "V-101A bottom spool (12\", assumed) and evacuation branch through XV-112A",
+   "fluid": "vac",
+   "from": "V-101A",
+   "to": "1301-H",
+   "pid": "PSA-PID-001",
+   "iso": "ISO-5",
+   "points": [
+    [
+     37.5,
+     35,
+     2.5
+    ],
+    [
+     37.5,
+     35,
+     1.6
+    ],
+    [
+     37.5,
+     37.2,
+     1.6
+    ],
+    [
+     38.3,
+     37.2,
+     1.6
+    ],
+    [
+     38.3,
+     38.6,
+     1.6
+    ],
+    [
+     38.3,
+     38.6,
+     0.9
+    ]
+   ],
+   "dn": 300,
+   "od": 0.3239,
+   "spec": "C1A",
+   "length": 6,
+   "fit": {
+    "elbow": 3,
+    "tee": [
+     {
+      "at": [
+       37.5,
+       37.2,
+       1.6
+      ],
+      "branch": "1004-A",
+      "bnps": 6,
+      "corner": true
+     }
+    ],
+    "nozzle": [
+     "V-101A"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      37.5,
+      36.1,
+      1.6
+     ],
+     "id": "S6"
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      38.3,
+      37.9,
+      1.6
+     ],
+     "id": "S7"
+    }
+   ]
+  },
+  {
+   "id": "1302",
+   "line": "12\"-VAC-1302-C1A",
+   "nps": 12,
+   "service": "Evacuation header, house wall to K-101 suction",
+   "fluid": "vac",
+   "from": "1301",
+   "to": "K-101",
+   "pid": "PSA-PID-002",
+   "iso": "ISO-5",
+   "points": [
+    [
+     26,
+     38.6,
+     0.9
+    ],
+    [
+     18,
+     38.6,
+     0.9
+    ],
+    [
+     18,
+     37.8,
+     0.9
+    ]
+   ],
+   "dn": 300,
+   "od": 0.3239,
+   "spec": "C1A",
+   "length": 8.8,
+   "fit": {
+    "elbow": 1,
+    "tee": [
+     {
+      "at": [
+       24.8,
+       38.6,
+       0.9
+      ],
+      "branch": "1303",
+      "bnps": 8
+     }
+    ],
+    "nozzle": [
+     "K-101"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      22,
+      38.6,
+      0.9
+     ],
+     "id": "S8"
+    }
+   ]
+  },
+  {
+   "id": "1303",
+   "line": "8\"-VAC-1303-C1A",
+   "nps": 8,
+   "service": "Blowdown bypass through CV-130 to the N2-rich line",
+   "fluid": "vac",
+   "from": "1302",
+   "to": "1322",
+   "pid": "PSA-PID-002",
+   "iso": "ISO-5",
+   "points": [
+    [
+     24.8,
+     38.6,
+     0.9
+    ],
+    [
+     24.8,
+     38.6,
+     2.5
+    ],
+    [
+     23.6,
+     38.6,
+     2.5
+    ],
+    [
+     23.6,
+     36.8,
+     2.5
+    ]
+   ],
+   "dn": 200,
+   "od": 0.2191,
+   "spec": "C1A",
+   "length": 4.6,
+   "fit": {
+    "elbow": 2,
+    "tee": [],
+    "nozzle": [],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "T-post / bracket",
+     "p": [
+      24.2,
+      38.6,
+      2.5
+     ],
+     "id": "S9"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      23.6,
+      37.7,
+      2.5
+     ],
+     "id": "S10"
+    }
+   ]
+  },
+  {
+   "id": "1321",
+   "line": "8\"-N2R-1321-A1A",
+   "nps": 8,
+   "service": "K-101 discharge to V-104",
+   "fluid": "n2",
+   "from": "K-101",
+   "to": "V-104",
+   "pid": "PSA-PID-002",
+   "points": [
+    [
+     20.5,
+     36.8,
+     1.2
+    ],
+    [
+     22,
+     36.8,
+     1.2
+    ]
+   ],
+   "iso": null,
+   "dn": 200,
+   "od": 0.2191,
+   "spec": "A1A",
+   "length": 1.5,
+   "fit": {
+    "elbow": 0,
+    "tee": [],
+    "nozzle": [
+     "K-101",
+     "V-104"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      21.25,
+      36.8,
+      1.2
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1322",
+   "line": "8\"-N2R-1322-A1A",
+   "nps": 8,
+   "service": "N2-rich gas V-104 to V-103 (on the rack)",
+   "fluid": "n2",
+   "from": "V-104",
+   "to": "V-103",
+   "pid": "PSA-PID-002",
+   "iso": "ISO-6",
+   "points": [
+    [
+     23.6,
+     36.8,
+     1.5
+    ],
+    [
+     23.6,
+     36.8,
+     5.1
+    ],
+    [
+     23.6,
+     27.3,
+     5.1
+    ],
+    [
+     53,
+     27.3,
+     5.1
+    ],
+    [
+     53,
+     27.3,
+     3
+    ],
+    [
+     53,
+     18.1,
+     3
+    ]
+   ],
+   "dn": 200,
+   "od": 0.2191,
+   "spec": "A1A",
+   "length": 53.8,
+   "fit": {
+    "elbow": 4,
+    "tee": [
+     {
+      "at": [
+       23.6,
+       36.8,
+       2.5
+      ],
+      "branch": "1303",
+      "bnps": 8
+     }
+    ],
+    "nozzle": [
+     "V-104",
+     "V-103"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "guide",
+     "p": [
+      23.6,
+      36.8,
+      3.3
+     ],
+     "id": "S1"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      23.6,
+      34.425,
+      5.1
+     ],
+     "id": "S2"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      23.6,
+      29.675,
+      5.1
+     ],
+     "id": "S3"
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      26,
+      27.3,
+      5.1
+     ],
+     "id": "S4"
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      32,
+      27.3,
+      5.1
+     ],
+     "id": "S5"
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      38,
+      27.3,
+      5.1
+     ],
+     "id": "S6"
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      44,
+      27.3,
+      5.1
+     ],
+     "id": "S7"
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      50,
+      27.3,
+      5.1
+     ],
+     "id": "S8"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      53,
+      25,
+      3
+     ],
+     "id": "S9"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      53,
+      20.4,
+      3
+     ],
+     "id": "S10"
+    }
+   ]
+  },
+  {
+   "id": "1331",
+   "line": "8\"-N2R-1331-A1A",
+   "nps": 8,
+   "service": "N2-rich gas V-103 to users (battery limit)",
+   "fluid": "n2",
+   "from": "V-103",
+   "to": "B/L",
+   "pid": "PSA-PID-002",
+   "iso": "ISO-6",
+   "points": [
+    [
+     53,
+     16.5,
+     1.2
+    ],
+    [
+     53,
+     16.5,
+     0.8
+    ],
+    [
+     57,
+     16.5,
+     0.8
+    ]
+   ],
+   "dn": 200,
+   "od": 0.2191,
+   "spec": "A1A",
+   "length": 4.4,
+   "fit": {
+    "elbow": 1,
+    "tee": [],
+    "nozzle": [
+     "V-103"
+    ],
+    "bl": 1,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      55,
+      16.5,
+      0.8
+     ],
+     "id": "S11"
+    }
+   ]
+  },
+  {
+   "id": "1341",
+   "line": "2\"-SW-1341-A1A",
+   "nps": 2,
+   "service": "Seal water V-104 to K-101",
+   "fluid": "water",
+   "from": "V-104",
+   "to": "K-101",
+   "pid": "PSA-PID-002",
+   "points": [
+    [
+     23.25,
+     36.8,
+     0.5
+    ],
+    [
+     23.25,
+     36.8,
+     0.3
+    ],
+    [
+     23.25,
+     35.4,
+     0.3
+    ],
+    [
+     20.8,
+     35.4,
+     0.3
+    ],
+    [
+     20.8,
+     36,
+     0.3
+    ]
+   ],
+   "iso": null,
+   "dn": 50,
+   "od": 0.0603,
+   "spec": "A1A",
+   "length": 4.65,
+   "fit": {
+    "elbow": 3,
+    "tee": [],
+    "nozzle": [
+     "V-104"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      23.25,
+      36.1,
+      0.3
+     ]
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      22.025,
+      35.4,
+      0.3
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1201-T",
+   "line": "3\"-O2-1201-O2S",
+   "nps": 3,
+   "service": "O2 product header over the bed tops (XV-113A/B)",
+   "fluid": "o2",
+   "from": "V-101A",
+   "to": "V-101B",
+   "pid": "PSA-PID-001",
+   "iso": "ISO-2",
+   "points": [
+    [
+     37.5,
+     35,
+     10.46
+    ],
+    [
+     37.5,
+     35,
+     12.6
+    ],
+    [
+     43.5,
+     35,
+     12.6
+    ],
+    [
+     43.5,
+     35,
+     10.46
+    ]
+   ],
+   "dn": 80,
+   "od": 0.0889,
+   "spec": "O2S",
+   "length": 10.28,
+   "fit": {
+    "elbow": 2,
+    "tee": [
+     {
+      "at": [
+       40.5,
+       35,
+       12.6
+      ],
+      "branch": "1201-D",
+      "bnps": 3
+     },
+     {
+      "at": [
+       37.5,
+       35,
+       10.9
+      ],
+      "branch": "1211",
+      "bnps": 3
+     },
+     {
+      "at": [
+       43.5,
+       35,
+       10.9
+      ],
+      "branch": "1211",
+      "bnps": 3
+     }
+    ],
+    "nozzle": [
+     "V-101A",
+     "V-101B"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "T-post / bracket",
+     "p": [
+      39,
+      35,
+      12.6
+     ],
+     "id": "S1"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      42,
+      35,
+      12.6
+     ],
+     "id": "S2"
+    }
+   ]
+  },
+  {
+   "id": "1201-D",
+   "line": "3\"-O2-1201-O2S",
+   "nps": 3,
+   "service": "O2 product down-comer to PV-122 (valve station VS-120)",
+   "fluid": "o2",
+   "from": "1201-T",
+   "to": "PV-122",
+   "pid": "PSA-PID-002",
+   "iso": "ISO-2",
+   "points": [
+    [
+     40.5,
+     35,
+     12.6
+    ],
+    [
+     40.5,
+     35,
+     1.4
+    ],
+    [
+     40.5,
+     31.2,
+     1.4
+    ]
+   ],
+   "dn": 80,
+   "od": 0.0889,
+   "spec": "O2S",
+   "length": 15,
+   "fit": {
+    "elbow": 1,
+    "tee": [
+     {
+      "at": [
+       40.5,
+       32,
+       1.4
+      ],
+      "branch": "1212",
+      "bnps": 1
+     }
+    ],
+    "nozzle": [],
+    "bl": 0,
+    "open": 0,
+    "breaks": [
+     {
+      "at": [
+       40.5,
+       31.2,
+       1.4
+      ],
+      "with": "1202"
+     }
+    ]
+   },
+   "supports": [
+    {
+     "type": "guide",
+     "p": [
+      40.5,
+      35,
+      7
+     ],
+     "id": "S3"
+    },
+    {
+     "type": "base support",
+     "p": [
+      40.5,
+      35,
+      1.4
+     ],
+     "id": "S4"
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      40.5,
+      33.1,
+      1.4
+     ],
+     "id": "S5"
+    }
+   ]
+  },
+  {
+   "id": "1211",
+   "line": "3\"-O2-1211-O2S",
+   "nps": 3,
+   "service": "Equalisation / purge header (XV-114A/B)",
+   "fluid": "o2",
+   "from": "V-101A",
+   "to": "V-101B",
+   "pid": "PSA-PID-001",
+   "iso": "ISO-2",
+   "points": [
+    [
+     37.5,
+     35,
+     10.9
+    ],
+    [
+     37.5,
+     34.4,
+     10.9
+    ],
+    [
+     37.5,
+     34.4,
+     12.2
+    ],
+    [
+     43.5,
+     34.4,
+     12.2
+    ],
+    [
+     43.5,
+     34.4,
+     10.9
+    ],
+    [
+     43.5,
+     35,
+     10.9
+    ]
+   ],
+   "dn": 80,
+   "od": 0.0889,
+   "spec": "O2S",
+   "length": 9.8,
+   "fit": {
+    "elbow": 4,
+    "tee": [
+     {
+      "at": [
+       42,
+       34.4,
+       12.2
+      ],
+      "branch": "1212",
+      "bnps": 1
+     }
+    ],
+    "nozzle": [],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "T-post / bracket",
+     "p": [
+      39,
+      34.4,
+      12.2
+     ],
+     "id": "S6"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      42,
+      34.4,
+      12.2
+     ],
+     "id": "S7"
+    }
+   ]
+  },
+  {
+   "id": "1212",
+   "line": "1\"-O2-1212-O2S",
+   "nps": 1,
+   "service": "O2 purge FV-121 back to the EQ/purge header",
+   "fluid": "o2",
+   "from": "1201-D",
+   "to": "1211",
+   "pid": "PSA-PID-002",
+   "iso": "ISO-2",
+   "points": [
+    [
+     40.5,
+     32,
+     1.4
+    ],
+    [
+     42,
+     32,
+     1.4
+    ],
+    [
+     42,
+     32,
+     12.2
+    ],
+    [
+     42,
+     34.4,
+     12.2
+    ]
+   ],
+   "dn": 25,
+   "od": 0.0334,
+   "spec": "O2S",
+   "length": 14.7,
+   "fit": {
+    "elbow": 2,
+    "tee": [],
+    "nozzle": [],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      41.25,
+      32,
+      1.4
+     ],
+     "id": "S8"
+    },
+    {
+     "type": "guide",
+     "p": [
+      42,
+      32,
+      6.8
+     ],
+     "id": "S9"
+    },
+    {
+     "type": "base support",
+     "p": [
+      42,
+      32,
+      1.4
+     ],
+     "id": "S10"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      42,
+      33.2,
+      12.2
+     ],
+     "id": "S11"
+    }
+   ]
+  },
+  {
+   "id": "1202",
+   "line": "3\"-O2-1202-O2S",
+   "nps": 3,
+   "service": "O2 made, PV-122 to V-102 (on the rack)",
+   "fluid": "o2",
+   "from": "PV-122",
+   "to": "V-102",
+   "pid": "PSA-PID-002",
+   "iso": "ISO-3",
+   "points": [
+    [
+     40.5,
+     31.2,
+     1.4
+    ],
+    [
+     40.5,
+     29.6,
+     1.4
+    ],
+    [
+     40.5,
+     29.6,
+     6.55
+    ],
+    [
+     40.5,
+     26.2,
+     6.55
+    ],
+    [
+     46,
+     26.2,
+     6.55
+    ],
+    [
+     46,
+     24,
+     6.55
+    ],
+    [
+     46,
+     24,
+     2.6
+    ],
+    [
+     46,
+     15.6,
+     2.6
+    ]
+   ],
+   "dn": 80,
+   "od": 0.0889,
+   "spec": "O2S",
+   "length": 30.2,
+   "fit": {
+    "elbow": 6,
+    "tee": [],
+    "nozzle": [
+     "V-102"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      40.5,
+      30.4,
+      1.4
+     ],
+     "id": "S1"
+    },
+    {
+     "type": "guide",
+     "p": [
+      40.5,
+      29.6,
+      3.975
+     ],
+     "id": "S2"
+    },
+    {
+     "type": "base support",
+     "p": [
+      40.5,
+      29.6,
+      1.4
+     ],
+     "id": "S3"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      40.5,
+      27.9,
+      6.55
+     ],
+     "id": "S4"
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      44,
+      26.2,
+      6.55
+     ],
+     "id": "S5"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      46,
+      25.1,
+      6.55
+     ],
+     "id": "S6"
+    },
+    {
+     "type": "guide",
+     "p": [
+      46,
+      24,
+      4.575
+     ],
+     "id": "S7"
+    },
+    {
+     "type": "base support",
+     "p": [
+      46,
+      24,
+      2.6
+     ],
+     "id": "S8"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      46,
+      21.9,
+      2.6
+     ],
+     "id": "S9"
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      46,
+      17.7,
+      2.6
+     ],
+     "id": "S10"
+    }
+   ]
+  },
+  {
+   "id": "1203",
+   "line": "3\"-O2-1203-O2S",
+   "nps": 3,
+   "service": "O2 product V-102 to the customer (battery limit)",
+   "fluid": "o2",
+   "from": "V-102",
+   "to": "B/L",
+   "pid": "PSA-PID-002",
+   "iso": "ISO-4",
+   "points": [
+    [
+     46,
+     14,
+     1.2
+    ],
+    [
+     46,
+     14,
+     0.8
+    ],
+    [
+     57,
+     14,
+     0.8
+    ]
+   ],
+   "dn": 80,
+   "od": 0.0889,
+   "spec": "O2S",
+   "length": 11.4,
+   "fit": {
+    "elbow": 1,
+    "tee": [
+     {
+      "at": [
+       51,
+       14,
+       0.8
+      ],
+      "branch": "1204",
+      "bnps": 2
+     }
+    ],
+    "nozzle": [
+     "V-102"
+    ],
+    "bl": 1,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      47.833,
+      14,
+      0.8
+     ],
+     "id": "S1"
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      51.5,
+      14,
+      0.8
+     ],
+     "id": "S2"
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      55.167,
+      14,
+      0.8
+     ],
+     "id": "S3"
+    }
+   ]
+  },
+  {
+   "id": "1204",
+   "line": "2\"-O2-1204-O2S",
+   "nps": 2,
+   "service": "Off-spec O2 vent through XV-127 to SL-102",
+   "fluid": "o2",
+   "from": "1203",
+   "to": "SL-102",
+   "pid": "PSA-PID-002",
+   "iso": "ISO-4",
+   "points": [
+    [
+     51,
+     14,
+     0.8
+    ],
+    [
+     51,
+     11.2,
+     0.8
+    ],
+    [
+     49.5,
+     11.2,
+     0.8
+    ],
+    [
+     49.5,
+     11.2,
+     12
+    ]
+   ],
+   "dn": 50,
+   "od": 0.0603,
+   "spec": "O2S",
+   "length": 15.5,
+   "fit": {
+    "elbow": 2,
+    "tee": [],
+    "nozzle": [],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      51,
+      12.6,
+      0.8
+     ],
+     "id": "S4"
+    },
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      50.25,
+      11.2,
+      0.8
+     ],
+     "id": "S5"
+    },
+    {
+     "type": "guide",
+     "p": [
+      49.5,
+      11.2,
+      6.4
+     ],
+     "id": "S6"
+    },
+    {
+     "type": "base support",
+     "p": [
+      49.5,
+      11.2,
+      0.8
+     ],
+     "id": "S7"
+    }
+   ]
+  },
+  {
+   "id": "1051",
+   "line": "2\"-CHW-1051-A1A",
+   "nps": 2,
+   "service": "Chilled water supply to E-100",
+   "fluid": "water",
+   "from": "B/L",
+   "to": "E-100",
+   "pid": "PSA-PID-001",
+   "points": [
+    [
+     57,
+     25.6,
+     5.03
+    ],
+    [
+     15,
+     25.6,
+     5.03
+    ],
+    [
+     15,
+     37.1,
+     5.03
+    ],
+    [
+     14.2,
+     37.1,
+     5.03
+    ],
+    [
+     14.2,
+     37.1,
+     1
+    ],
+    [
+     14.2,
+     37.475,
+     1
+    ]
+   ],
+   "iso": null,
+   "dn": 50,
+   "od": 0.0603,
+   "spec": "A1A",
+   "length": 58.7,
+   "fit": {
+    "elbow": 4,
+    "tee": [],
+    "nozzle": [
+     "E-100"
+    ],
+    "bl": 1,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on rack bent",
+     "p": [
+      20,
+      25.6,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      26,
+      25.6,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      32,
+      25.6,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      38,
+      25.6,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      44,
+      25.6,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      50,
+      25.6,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      56,
+      25.6,
+      5.03
+     ]
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      15,
+      27.517,
+      5.03
+     ]
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      15,
+      31.35,
+      5.03
+     ]
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      15,
+      35.183,
+      5.03
+     ]
+    },
+    {
+     "type": "guide",
+     "p": [
+      14.2,
+      37.1,
+      3.015
+     ]
+    },
+    {
+     "type": "base support",
+     "p": [
+      14.2,
+      37.1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1052",
+   "line": "2\"-CHW-1052-A1A",
+   "nps": 2,
+   "service": "Chilled water return from E-100 (TV-102)",
+   "fluid": "water",
+   "from": "E-100",
+   "to": "B/L",
+   "pid": "PSA-PID-001",
+   "points": [
+    [
+     12.8,
+     37.925,
+     1
+    ],
+    [
+     12.8,
+     38.4,
+     1
+    ],
+    [
+     12.8,
+     38.4,
+     5.03
+    ],
+    [
+     15.4,
+     38.4,
+     5.03
+    ],
+    [
+     15.4,
+     25.9,
+     5.03
+    ],
+    [
+     57,
+     25.9,
+     5.03
+    ]
+   ],
+   "iso": null,
+   "dn": 50,
+   "od": 0.0603,
+   "spec": "A1A",
+   "length": 61.2,
+   "fit": {
+    "elbow": 4,
+    "tee": [],
+    "nozzle": [
+     "E-100"
+    ],
+    "bl": 1,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "guide",
+     "p": [
+      12.8,
+      38.4,
+      3.015
+     ]
+    },
+    {
+     "type": "base support",
+     "p": [
+      12.8,
+      38.4,
+      1
+     ]
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      14.1,
+      38.4,
+      5.03
+     ]
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      15.4,
+      36.838,
+      5.03
+     ]
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      15.4,
+      33.713,
+      5.03
+     ]
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      15.4,
+      30.588,
+      5.03
+     ]
+    },
+    {
+     "type": "T-post / bracket",
+     "p": [
+      15.4,
+      27.463,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      20,
+      25.9,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      26,
+      25.9,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      32,
+      25.9,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      38,
+      25.9,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      44,
+      25.9,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      50,
+      25.9,
+      5.03
+     ]
+    },
+    {
+     "type": "rest on rack bent",
+     "p": [
+      56,
+      25.9,
+      5.03
+     ]
+    }
+   ]
+  },
+  {
+   "id": "VNT-136",
+   "line": null,
+   "nps": 4,
+   "service": "N2-rich vent through HV-136 (no line number on rev A)",
+   "fluid": "n2",
+   "from": "V-103",
+   "to": "atm",
+   "pid": "PSA-PID-002",
+   "iso": "ISO-6",
+   "points": [
+    [
+     53.3,
+     16.8,
+     8.4
+    ],
+    [
+     53.3,
+     16.8,
+     12
+    ]
+   ],
+   "dn": 100,
+   "od": 0.1143,
+   "spec": "A1A",
+   "length": 3.6,
+   "fit": {
+    "elbow": 0,
+    "tee": [],
+    "nozzle": [
+     "V-103"
+    ],
+    "bl": 0,
+    "open": 1,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "guide",
+     "p": [
+      53.3,
+      16.8,
+      10.2
+     ],
+     "id": "S12"
+    }
+   ]
+  },
+  {
+   "id": "RV-100",
+   "line": null,
+   "nps": 3,
+   "service": "PSV-100 discharge (air)",
+   "fluid": "air",
+   "from": "PSV-100",
+   "to": "atm",
+   "pid": "PSA-PID-001",
+   "points": [
+    [
+     30,
+     35.4,
+     6.15
+    ],
+    [
+     30,
+     35.4,
+     9.6
+    ]
+   ],
+   "iso": null,
+   "dn": 80,
+   "od": 0.0889,
+   "spec": "A1A",
+   "length": 3.45,
+   "fit": {
+    "elbow": 0,
+    "tee": [],
+    "nozzle": [
+     "V-100"
+    ],
+    "bl": 0,
+    "open": 1,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "guide",
+     "p": [
+      30,
+      35.4,
+      7.875
+     ]
+    }
+   ]
+  },
+  {
+   "id": "RV-110A",
+   "line": null,
+   "nps": 3,
+   "service": "PSV-110A discharge (O2-rich at the bed top)",
+   "fluid": "o2",
+   "from": "PSV-110A",
+   "to": "atm",
+   "pid": "PSA-PID-001",
+   "points": [
+    [
+     38,
+     35.5,
+     10.3
+    ],
+    [
+     38,
+     35.5,
+     13.2
+    ]
+   ],
+   "iso": null,
+   "dn": 80,
+   "od": 0.0889,
+   "spec": "O2S",
+   "length": 2.9,
+   "fit": {
+    "elbow": 0,
+    "tee": [],
+    "nozzle": [
+     "V-101A"
+    ],
+    "bl": 0,
+    "open": 1,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "guide",
+     "p": [
+      38,
+      35.5,
+      11.75
+     ]
+    }
+   ]
+  },
+  {
+   "id": "RV-110B",
+   "line": null,
+   "nps": 3,
+   "service": "PSV-110B discharge (O2-rich at the bed top)",
+   "fluid": "o2",
+   "from": "PSV-110B",
+   "to": "atm",
+   "pid": "PSA-PID-001",
+   "points": [
+    [
+     44,
+     35.5,
+     10.3
+    ],
+    [
+     44,
+     35.5,
+     13.2
+    ]
+   ],
+   "iso": null,
+   "dn": 80,
+   "od": 0.0889,
+   "spec": "O2S",
+   "length": 2.9,
+   "fit": {
+    "elbow": 0,
+    "tee": [],
+    "nozzle": [
+     "V-101B"
+    ],
+    "bl": 0,
+    "open": 1,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "guide",
+     "p": [
+      44,
+      35.5,
+      11.75
+     ]
+    }
+   ]
+  },
+  {
+   "id": "RV-102",
+   "line": null,
+   "nps": 3,
+   "service": "PSV-102 discharge (O2)",
+   "fluid": "o2",
+   "from": "PSV-102",
+   "to": "atm",
+   "pid": "PSA-PID-002",
+   "points": [
+    [
+     46.5,
+     14.4,
+     8.35
+    ],
+    [
+     46.5,
+     14.4,
+     12
+    ]
+   ],
+   "iso": null,
+   "dn": 80,
+   "od": 0.0889,
+   "spec": "O2S",
+   "length": 3.65,
+   "fit": {
+    "elbow": 0,
+    "tee": [],
+    "nozzle": [
+     "V-102"
+    ],
+    "bl": 0,
+    "open": 1,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "guide",
+     "p": [
+      46.5,
+      14.4,
+      10.175
+     ]
+    }
+   ]
+  },
+  {
+   "id": "RV-103",
+   "line": null,
+   "nps": 3,
+   "service": "PSV-103 discharge (N2-rich)",
+   "fluid": "n2",
+   "from": "PSV-103",
+   "to": "atm",
+   "pid": "PSA-PID-002",
+   "points": [
+    [
+     52.6,
+     16.1,
+     8.35
+    ],
+    [
+     52.6,
+     16.1,
+     12
+    ]
+   ],
+   "iso": null,
+   "dn": 80,
+   "od": 0.0889,
+   "spec": "A1A",
+   "length": 3.65,
+   "fit": {
+    "elbow": 0,
+    "tee": [],
+    "nozzle": [
+     "V-103"
+    ],
+    "bl": 0,
+    "open": 1,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "guide",
+     "p": [
+      52.6,
+      16.1,
+      10.175
+     ]
+    }
+   ]
+  },
+  {
+   "id": "DR-104",
+   "line": null,
+   "nps": 1,
+   "service": "V-100 condensate drain to DT-104 (HV-104 bypass)",
+   "fluid": "water",
+   "from": "V-100",
+   "to": "drain",
+   "pid": "PSA-PID-001",
+   "points": [
+    [
+     30.5,
+     35,
+     1
+    ],
+    [
+     30.5,
+     35,
+     0.3
+    ],
+    [
+     30.5,
+     33.2,
+     0.3
+    ]
+   ],
+   "iso": null,
+   "dn": 25,
+   "od": 0.0334,
+   "spec": "A1A",
+   "length": 2.5,
+   "fit": {
+    "elbow": 1,
+    "tee": [],
+    "nozzle": [
+     "V-100"
+    ],
+    "bl": 0,
+    "open": 0,
+    "breaks": []
+   },
+   "supports": [
+    {
+     "type": "rest on stanchion (grade)",
+     "p": [
+      30.5,
+      34.1,
+      0.3
+     ]
+    }
+   ]
+  }
+ ],
+ "hv_generic": [
+  {
+   "on": "1203",
+   "p": [
+    56.4,
+    14,
+    0.8
+   ],
+   "type": "ball",
+   "note": "battery-limit block valve"
+  },
+  {
+   "on": "1331",
+   "p": [
+    56.6,
+    16.5,
+    0.8
+   ],
+   "type": "butterfly",
+   "note": "battery-limit block valve"
+  },
+  {
+   "on": "1202",
+   "p": [
+    46,
+    16.2,
+    2.6
+   ],
+   "type": "ball",
+   "note": "V-102 inlet isolation"
+  },
+  {
+   "on": "1203",
+   "p": [
+    46.6,
+    14,
+    0.8
+   ],
+   "type": "ball",
+   "note": "V-102 outlet isolation"
+  },
+  {
+   "on": "1322",
+   "p": [
+    53,
+    18.7,
+    3
+   ],
+   "type": "butterfly",
+   "note": "V-103 inlet isolation"
+  },
+  {
+   "on": "1331",
+   "p": [
+    53.6,
+    16.5,
+    0.8
+   ],
+   "type": "butterfly",
+   "note": "V-103 outlet isolation"
+  },
+  {
+   "on": "1302",
+   "p": [
+    19,
+    38.6,
+    0.9
+   ],
+   "type": "butterfly",
+   "note": "K-101 suction isolation"
+  },
+  {
+   "on": "1004-H",
+   "p": [
+    31.2,
+    37.8,
+    0.9
+   ],
+   "type": "butterfly",
+   "note": "V-100 outlet isolation"
+  },
+  {
+   "on": "1202",
+   "p": [
+    40.5,
+    30.6,
+    1.4
+   ],
+   "type": "check",
+   "note": "NRV downstream of PV-122 (on rev A, untagged)"
+  }
+ ],
+ "instruments": [
+  {
+   "tag": "PDI-100",
+   "kind": "gauge",
+   "x": 9.45,
+   "y": 41.2,
+   "z": 1.4,
+   "level": "grade",
+   "dcs": "PDI-100",
+   "on": "F-100",
+   "note": "filter differential pressure (local dial + transmitter)",
+   "read_z": 0,
+   "height_above_floor": 1.4
+  },
+  {
+   "tag": "FT-101",
+   "kind": "transmitter",
+   "x": 11.25,
+   "y": 37.7,
+   "z": 1,
+   "level": "grade",
+   "dcs": "FIC-101",
+   "on": "1002",
+   "read_z": 0,
+   "height_above_floor": 1
+  },
+  {
+   "tag": "TT-102",
+   "kind": "transmitter",
+   "x": 15.8,
+   "y": 37.7,
+   "z": 1.6,
+   "level": "grade",
+   "dcs": "TIC-102",
+   "on": "1003",
+   "read_z": 0,
+   "height_above_floor": 1.6
+  },
+  {
+   "tag": "TV-102",
+   "kind": "valve",
+   "x": 12.8,
+   "y": 38.4,
+   "z": 1.5,
+   "level": "grade",
+   "dcs": "TIC-102",
+   "on": "1052",
+   "note": "CHW control valve, fail open",
+   "read_z": 0,
+   "height_above_floor": 1.5
+  },
+  {
+   "tag": "PT-103",
+   "kind": "transmitter",
+   "x": 31.75,
+   "y": 35,
+   "z": 1.8,
+   "level": "grade",
+   "dcs": "PIC-103",
+   "on": "V-100",
+   "read_z": 0,
+   "height_above_floor": 1.8
+  },
+  {
+   "tag": "PV-103",
+   "kind": "valve",
+   "x": 30.5,
+   "y": 35,
+   "z": 7.4,
+   "level": "PL-3",
+   "dcs": "PIC-103",
+   "on": "1006",
+   "note": "blow-off, fail open",
+   "read_z": 6.4,
+   "height_above_floor": 1
+  },
+  {
+   "tag": "PSV-100",
+   "kind": "psv",
+   "x": 30,
+   "y": 35.4,
+   "z": 6.6,
+   "level": "PL-3",
+   "dcs": null,
+   "on": "RV-100",
+   "note": "set 7.0 bar a",
+   "read_z": 6.4,
+   "height_above_floor": 0.2
+  },
+  {
+   "tag": "DT-104",
+   "kind": "trap",
+   "x": 30.5,
+   "y": 33.6,
+   "z": 0.3,
+   "level": "grade",
+   "dcs": null,
+   "on": "DR-104",
+   "read_z": 0,
+   "height_above_floor": 0.3
+  },
+  {
+   "tag": "HV-104",
+   "kind": "hand valve",
+   "x": 30.9,
+   "y": 33.6,
+   "z": 0.3,
+   "level": "grade",
+   "dcs": null,
+   "on": "DR-104",
+   "note": "trap bypass (normally closed)",
+   "read_z": 0,
+   "height_above_floor": 0.3
+  },
+  {
+   "tag": "XV-111A",
+   "kind": "valve",
+   "x": 37.1,
+   "y": 37.2,
+   "z": 1.6,
+   "level": "grade",
+   "dcs": "XV-111A",
+   "on": "1004-A",
+   "read_z": 0,
+   "height_above_floor": 1.6
+  },
+  {
+   "tag": "XV-112A",
+   "kind": "valve",
+   "x": 37.9,
+   "y": 37.2,
+   "z": 1.6,
+   "level": "grade",
+   "dcs": "XV-112A",
+   "on": "1301-A",
+   "read_z": 0,
+   "height_above_floor": 1.6
+  },
+  {
+   "tag": "XV-111B",
+   "kind": "valve",
+   "x": 43.1,
+   "y": 37.2,
+   "z": 1.6,
+   "level": "grade",
+   "dcs": "XV-111B",
+   "on": "1004-B",
+   "read_z": 0,
+   "height_above_floor": 1.6
+  },
+  {
+   "tag": "XV-112B",
+   "kind": "valve",
+   "x": 43.9,
+   "y": 37.2,
+   "z": 1.6,
+   "level": "grade",
+   "dcs": "XV-112B",
+   "on": "1301-H",
+   "read_z": 0,
+   "height_above_floor": 1.6
+  },
+  {
+   "tag": "XV-113A",
+   "kind": "valve",
+   "x": 37.5,
+   "y": 35,
+   "z": 11.6,
+   "level": "PL-1",
+   "dcs": "XV-113A",
+   "on": "1201-T",
+   "read_z": 10,
+   "height_above_floor": 1.6
+  },
+  {
+   "tag": "XV-113B",
+   "kind": "valve",
+   "x": 43.5,
+   "y": 35,
+   "z": 11.6,
+   "level": "PL-1",
+   "dcs": "XV-113B",
+   "on": "1201-T",
+   "read_z": 10,
+   "height_above_floor": 1.6
+  },
+  {
+   "tag": "XV-114A",
+   "kind": "valve",
+   "x": 37.5,
+   "y": 34.7,
+   "z": 10.9,
+   "level": "PL-1",
+   "dcs": "XV-114A",
+   "on": "1211",
+   "read_z": 10,
+   "height_above_floor": 0.9
+  },
+  {
+   "tag": "XV-114B",
+   "kind": "valve",
+   "x": 43.5,
+   "y": 34.7,
+   "z": 10.9,
+   "level": "PL-1",
+   "dcs": "XV-114B",
+   "on": "1211",
+   "read_z": 10,
+   "height_above_floor": 0.9
+  },
+  {
+   "tag": "PT-115A",
+   "kind": "transmitter",
+   "x": 37.5,
+   "y": 35,
+   "z": 10.7,
+   "level": "PL-1",
+   "dcs": "PI-115A",
+   "on": "1201-T",
+   "note": "with PSHH-115A (separate trip switch)",
+   "read_z": 10,
+   "height_above_floor": 0.7
+  },
+  {
+   "tag": "PT-115B",
+   "kind": "transmitter",
+   "x": 43.5,
+   "y": 35,
+   "z": 10.7,
+   "level": "PL-1",
+   "dcs": "PI-115B",
+   "on": "1201-T",
+   "note": "with PSHH-115B",
+   "read_z": 10,
+   "height_above_floor": 0.7
+  },
+  {
+   "tag": "PSHH-115A",
+   "kind": "switch",
+   "x": 37.2,
+   "y": 35.3,
+   "z": 10.65,
+   "level": "PL-1",
+   "dcs": null,
+   "on": "V-101A",
+   "note": "I-1 trip switch",
+   "read_z": 10,
+   "height_above_floor": 0.65
+  },
+  {
+   "tag": "PSHH-115B",
+   "kind": "switch",
+   "x": 43.2,
+   "y": 35.3,
+   "z": 10.65,
+   "level": "PL-1",
+   "dcs": null,
+   "on": "V-101B",
+   "note": "I-1 trip switch",
+   "read_z": 10,
+   "height_above_floor": 0.65
+  },
+  {
+   "tag": "PSV-110A",
+   "kind": "psv",
+   "x": 38,
+   "y": 35.5,
+   "z": 10.6,
+   "level": "PL-1",
+   "dcs": null,
+   "on": "RV-110A",
+   "note": "set 6.5 bar a",
+   "read_z": 10,
+   "height_above_floor": 0.6
+  },
+  {
+   "tag": "PSV-110B",
+   "kind": "psv",
+   "x": 44,
+   "y": 35.5,
+   "z": 10.6,
+   "level": "PL-1",
+   "dcs": null,
+   "on": "RV-110B",
+   "note": "set 6.5 bar a",
+   "read_z": 10,
+   "height_above_floor": 0.6
+  },
+  {
+   "tag": "TE-116A",
+   "kind": "thermocouple",
+   "x": 37.5,
+   "y": 33.95,
+   "z": 3.88,
+   "level": "DCS",
+   "dcs": "TI-116A",
+   "on": "V-101A",
+   "note": "bed bottom, 0.6 m into the zeolite; head reached from LD-1",
+   "read_z": null,
+   "height_above_floor": null
+  },
+  {
+   "tag": "TE-117A",
+   "kind": "thermocouple",
+   "x": 37.5,
+   "y": 33.95,
+   "z": 6.18,
+   "level": "PL-2",
+   "dcs": "TI-117A",
+   "on": "V-101A",
+   "note": "bed middle, 2.9 m",
+   "read_z": 5,
+   "height_above_floor": 1.18
+  },
+  {
+   "tag": "TE-118A",
+   "kind": "thermocouple",
+   "x": 37.5,
+   "y": 33.95,
+   "z": 8.48,
+   "level": "DCS",
+   "dcs": "TI-118A",
+   "on": "V-101A",
+   "note": "bed top, 5.2 m; head reached from LD-3",
+   "read_z": null,
+   "height_above_floor": null
+  },
+  {
+   "tag": "TE-116B",
+   "kind": "thermocouple",
+   "x": 43.5,
+   "y": 33.95,
+   "z": 3.88,
+   "level": "DCS",
+   "dcs": "TI-116B",
+   "on": "V-101B",
+   "read_z": null,
+   "height_above_floor": null
+  },
+  {
+   "tag": "TE-117B",
+   "kind": "thermocouple",
+   "x": 43.5,
+   "y": 33.95,
+   "z": 6.18,
+   "level": "PL-2",
+   "dcs": "TI-117B",
+   "on": "V-101B",
+   "read_z": 5,
+   "height_above_floor": 1.18
+  },
+  {
+   "tag": "TE-118B",
+   "kind": "thermocouple",
+   "x": 43.5,
+   "y": 33.95,
+   "z": 8.48,
+   "level": "DCS",
+   "dcs": "TI-118B",
+   "on": "V-101B",
+   "read_z": null,
+   "height_above_floor": null
+  },
+  {
+   "tag": "PDT-119A",
+   "kind": "transmitter",
+   "x": 36.9,
+   "y": 33.9,
+   "z": 6.2,
+   "level": "PL-2",
+   "dcs": "PDI-119A",
+   "on": "V-101A",
+   "read_z": 5,
+   "height_above_floor": 1.2
+  },
+  {
+   "tag": "PDT-119B",
+   "kind": "transmitter",
+   "x": 42.9,
+   "y": 33.9,
+   "z": 6.2,
+   "level": "PL-2",
+   "dcs": "PDI-119B",
+   "on": "V-101B",
+   "read_z": 5,
+   "height_above_floor": 1.2
+  },
+  {
+   "tag": "PT-122",
+   "kind": "transmitter",
+   "x": 40.5,
+   "y": 32.6,
+   "z": 1.4,
+   "level": "grade",
+   "dcs": "PIC-122",
+   "on": "1201-D",
+   "read_z": 0,
+   "height_above_floor": 1.4
+  },
+  {
+   "tag": "PV-122",
+   "kind": "valve",
+   "x": 40.5,
+   "y": 31.2,
+   "z": 1.4,
+   "level": "grade",
+   "dcs": "PIC-122",
+   "on": "1202",
+   "note": "back-pressure valve, fail closed",
+   "read_z": 0,
+   "height_above_floor": 1.4
+  },
+  {
+   "tag": "FT-121",
+   "kind": "transmitter",
+   "x": 41,
+   "y": 32,
+   "z": 1.4,
+   "level": "grade",
+   "dcs": "FIC-121",
+   "on": "1212",
+   "read_z": 0,
+   "height_above_floor": 1.4
+  },
+  {
+   "tag": "FV-121",
+   "kind": "valve",
+   "x": 41.6,
+   "y": 32,
+   "z": 1.4,
+   "level": "grade",
+   "dcs": "FIC-121",
+   "on": "1212",
+   "note": "purge, fail closed",
+   "read_z": 0,
+   "height_above_floor": 1.4
+  },
+  {
+   "tag": "FT-128",
+   "kind": "transmitter",
+   "x": 40.5,
+   "y": 30.1,
+   "z": 1.4,
+   "level": "grade",
+   "dcs": "FI-128",
+   "on": "1202",
+   "read_z": 0,
+   "height_above_floor": 1.4
+  },
+  {
+   "tag": "PT-123",
+   "kind": "transmitter",
+   "x": 44.3,
+   "y": 14,
+   "z": 1.5,
+   "level": "grade",
+   "dcs": "PIC-123",
+   "on": "V-102",
+   "read_z": 0,
+   "height_above_floor": 1.5
+  },
+  {
+   "tag": "PSHH-123",
+   "kind": "switch",
+   "x": 44.35,
+   "y": 14.5,
+   "z": 1.5,
+   "level": "grade",
+   "dcs": null,
+   "on": "V-102",
+   "note": "I-4 trip switch",
+   "read_z": 0,
+   "height_above_floor": 1.5
+  },
+  {
+   "tag": "PSV-102",
+   "kind": "psv",
+   "x": 46.5,
+   "y": 14.4,
+   "z": 8.9,
+   "level": "PL-4",
+   "dcs": null,
+   "on": "RV-102",
+   "note": "set 6.0 bar a",
+   "read_z": 8.6,
+   "height_above_floor": 0.3
+  },
+  {
+   "tag": "AT-124",
+   "kind": "analyzer",
+   "x": 47.9,
+   "y": 14.3,
+   "z": 1.1,
+   "level": "grade",
+   "dcs": "AIC-124",
+   "on": "1203",
+   "note": "paramagnetic O2, sample from the V-102 outlet",
+   "read_z": 0,
+   "height_above_floor": 1.1
+  },
+  {
+   "tag": "FT-125",
+   "kind": "transmitter",
+   "x": 48.6,
+   "y": 14,
+   "z": 0.8,
+   "level": "grade",
+   "dcs": "FIC-125",
+   "on": "1203",
+   "read_z": 0,
+   "height_above_floor": 0.8
+  },
+  {
+   "tag": "FV-125",
+   "kind": "valve",
+   "x": 49.6,
+   "y": 14,
+   "z": 0.8,
+   "level": "grade",
+   "dcs": "FIC-125",
+   "on": "1203",
+   "note": "fail closed",
+   "read_z": 0,
+   "height_above_floor": 0.8
+  },
+  {
+   "tag": "XV-126",
+   "kind": "valve",
+   "x": 52.3,
+   "y": 14,
+   "z": 0.8,
+   "level": "grade",
+   "dcs": "XV-126",
+   "on": "1203",
+   "note": "to customer, fail closed",
+   "read_z": 0,
+   "height_above_floor": 0.8
+  },
+  {
+   "tag": "XV-127",
+   "kind": "valve",
+   "x": 51,
+   "y": 12.6,
+   "z": 0.8,
+   "level": "grade",
+   "dcs": "XV-127",
+   "on": "1204",
+   "note": "off-spec vent, fail open",
+   "read_z": 0,
+   "height_above_floor": 0.8
+  },
+  {
+   "tag": "PT-131",
+   "kind": "transmitter",
+   "x": 20,
+   "y": 38.6,
+   "z": 1.2,
+   "level": "grade",
+   "dcs": "PI-131",
+   "on": "1302",
+   "read_z": 0,
+   "height_above_floor": 1.2
+  },
+  {
+   "tag": "CV-130",
+   "kind": "check valve",
+   "x": 24.2,
+   "y": 38.6,
+   "z": 2.5,
+   "level": "grade",
+   "dcs": null,
+   "on": "1303",
+   "note": "blowdown bypass of K-101",
+   "read_z": 0,
+   "height_above_floor": 2.5
+  },
+  {
+   "tag": "TI-132",
+   "kind": "gauge",
+   "x": 21.8,
+   "y": 35.4,
+   "z": 0.6,
+   "level": "grade",
+   "dcs": "TI-132",
+   "on": "1341",
+   "note": "seal-water temperature",
+   "read_z": 0,
+   "height_above_floor": 0.6
+  },
+  {
+   "tag": "FI-137",
+   "kind": "gauge",
+   "x": 22.5,
+   "y": 35.4,
+   "z": 0.6,
+   "level": "grade",
+   "dcs": null,
+   "on": "1341",
+   "note": "seal-water flow (orifice)",
+   "read_z": 0,
+   "height_above_floor": 0.6
+  },
+  {
+   "tag": "FSLL-137",
+   "kind": "switch",
+   "x": 22.15,
+   "y": 35.4,
+   "z": 0.6,
+   "level": "grade",
+   "dcs": null,
+   "on": "1341",
+   "note": "I-2 trip switch",
+   "read_z": 0,
+   "height_above_floor": 0.6
+  },
+  {
+   "tag": "LG-104",
+   "kind": "gauge",
+   "x": 23.25,
+   "y": 37.4,
+   "z": 1,
+   "level": "grade",
+   "dcs": null,
+   "on": "V-104",
+   "note": "level glass",
+   "read_z": 0,
+   "height_above_floor": 1
+  },
+  {
+   "tag": "PT-133",
+   "kind": "transmitter",
+   "x": 54.7,
+   "y": 16.2,
+   "z": 1.6,
+   "level": "grade",
+   "dcs": "PIC-133",
+   "on": "V-103",
+   "read_z": 0,
+   "height_above_floor": 1.6
+  },
+  {
+   "tag": "FT-134",
+   "kind": "transmitter",
+   "x": 55,
+   "y": 16.5,
+   "z": 0.8,
+   "level": "grade",
+   "dcs": "FI-134",
+   "on": "1331",
+   "read_z": 0,
+   "height_above_floor": 0.8
+  },
+  {
+   "tag": "AT-135",
+   "kind": "analyzer",
+   "x": 55.5,
+   "y": 16.5,
+   "z": 0.8,
+   "level": "grade",
+   "dcs": "AI-135",
+   "on": "1331",
+   "note": "N2 purity",
+   "read_z": 0,
+   "height_above_floor": 0.8
+  },
+  {
+   "tag": "PV-133",
+   "kind": "valve",
+   "x": 56.2,
+   "y": 16.5,
+   "z": 0.8,
+   "level": "grade",
+   "dcs": "PIC-133",
+   "on": "1331",
+   "note": "to N2 users, fail closed",
+   "read_z": 0,
+   "height_above_floor": 0.8
+  },
+  {
+   "tag": "HV-136",
+   "kind": "hand valve",
+   "x": 53.3,
+   "y": 16.8,
+   "z": 9.6,
+   "level": "PL-5",
+   "dcs": null,
+   "on": "VNT-136",
+   "note": "N2-rich vent to atmosphere",
+   "read_z": 8.6,
+   "height_above_floor": 1
+  },
+  {
+   "tag": "PSV-103",
+   "kind": "psv",
+   "x": 52.6,
+   "y": 16.1,
+   "z": 8.9,
+   "level": "PL-5",
+   "dcs": null,
+   "on": "RV-103",
+   "note": "set 2.0 bar a",
+   "read_z": 8.6,
+   "height_above_floor": 0.3
+  }
+ ],
+ "vents": [
+  {
+   "tag": "SL-100",
+   "fluid": "air",
+   "kind": "routine",
+   "x": 30.5,
+   "y": 35,
+   "z": 9.6,
+   "note": "air blow-off (PV-103) through silencer",
+   "EL": 109.6
+  },
+  {
+   "tag": "PSV-100",
+   "fluid": "air",
+   "kind": "relief",
+   "x": 30,
+   "y": 35.4,
+   "z": 9.6,
+   "EL": 109.6
+  },
+  {
+   "tag": "PSV-110A",
+   "fluid": "O2",
+   "kind": "relief",
+   "x": 38,
+   "y": 35.5,
+   "z": 13.2,
+   "note": "bed-top gas is O2-rich",
+   "EL": 113.2
+  },
+  {
+   "tag": "PSV-110B",
+   "fluid": "O2",
+   "kind": "relief",
+   "x": 44,
+   "y": 35.5,
+   "z": 13.2,
+   "note": "bed-top gas is O2-rich",
+   "EL": 113.2
+  },
+  {
+   "tag": "SL-102",
+   "fluid": "O2",
+   "kind": "routine",
+   "x": 49.5,
+   "y": 11.2,
+   "z": 12,
+   "note": "off-spec O2 vent (XV-127) through silencer",
+   "EL": 112
+  },
+  {
+   "tag": "PSV-102",
+   "fluid": "O2",
+   "kind": "relief",
+   "x": 46.5,
+   "y": 14.4,
+   "z": 12,
+   "EL": 112
+  },
+  {
+   "tag": "HV-136",
+   "fluid": "N2",
+   "kind": "routine",
+   "x": 53.3,
+   "y": 16.8,
+   "z": 12,
+   "note": "N2-rich gas (about 12 % O2) vent, no silencer on rev A",
+   "EL": 112
+  },
+  {
+   "tag": "PSV-103",
+   "fluid": "N2",
+   "kind": "relief",
+   "x": 52.6,
+   "y": 16.1,
+   "z": 12,
+   "EL": 112
+  }
+ ],
+ "intakes": [
+  {
+   "tag": "F-100",
+   "x": 8.25,
+   "y": 41.8,
+   "z": 2.9,
+   "serves": "K-100 process air (the feed)"
+  },
+  {
+   "tag": "B1-LV1",
+   "x": 13,
+   "y": 40,
+   "z": 1.25,
+   "serves": "B1 ventilation louvre"
+  },
+  {
+   "tag": "B1-LV2",
+   "x": 21,
+   "y": 40,
+   "z": 1.25,
+   "serves": "B1 ventilation louvre"
+  },
+  {
+   "tag": "B2-HVAC",
+   "x": 7.5,
+   "y": 21.5,
+   "z": 4.6,
+   "serves": "control-room fresh air"
+  }
+ ],
+ "route": [
+  {
+   "n": 1,
+   "name": "Air intake and filter F-100",
+   "p": [
+    10.6,
+    43.2,
+    1.6
+   ],
+   "look": [
+    8.25,
+    41.2,
+    1.8
+   ],
+   "via": [
+    [
+     14.3,
+     20,
+     1.6
+    ],
+    [
+     15,
+     26.8,
+     1.6
+    ],
+    [
+     2.5,
+     28.8,
+     1.6
+    ],
+    [
+     2.5,
+     42.8,
+     1.6
+    ]
+   ],
+   "items": [
+    "F-100",
+    "PDI-100"
+   ]
+  },
+  {
+   "n": 2,
+   "name": "Feed air compressor K-100",
+   "p": [
+    8.25,
+    34.6,
+    1.6
+   ],
+   "look": [
+    8.25,
+    37.7,
+    1.2
+   ],
+   "via": [
+    [
+     2.5,
+     42.8,
+     1.6
+    ],
+    [
+     2.5,
+     35,
+     1.6
+    ],
+    [
+     5,
+     35,
+     1.6
+    ]
+   ],
+   "items": [
+    "K-100",
+    "FT-101"
+   ]
+  },
+  {
+   "n": 3,
+   "name": "Aftercooler E-100 and chilled water",
+   "p": [
+    13.5,
+    35.6,
+    1.6
+   ],
+   "look": [
+    13.5,
+    37.7,
+    1
+   ],
+   "via": [],
+   "items": [
+    "E-100",
+    "TT-102",
+    "TV-102"
+   ]
+  },
+  {
+   "n": 4,
+   "name": "Air receiver V-100",
+   "p": [
+    32.6,
+    32.8,
+    1.6
+   ],
+   "look": [
+    30.5,
+    35,
+    2
+   ],
+   "via": [
+    [
+     15,
+     33.4,
+     1.6
+    ],
+    [
+     25,
+     32,
+     1.6
+    ],
+    [
+     27,
+     32,
+     1.6
+    ]
+   ],
+   "items": [
+    "V-100",
+    "PT-103",
+    "DT-104",
+    "HV-104",
+    "PV-103",
+    "PSV-100"
+   ]
+  },
+  {
+   "n": 5,
+   "name": "Adsorber A (bottom valves)",
+   "p": [
+    37.5,
+    40,
+    1.6
+   ],
+   "look": [
+    37.5,
+    37.2,
+    1.4
+   ],
+   "via": [
+    [
+     34,
+     29,
+     1.6
+    ],
+    [
+     46.4,
+     29,
+     1.6
+    ],
+    [
+     46.4,
+     40,
+     1.6
+    ]
+   ],
+   "items": [
+    "V-101A",
+    "XV-111A",
+    "XV-112A",
+    "TE-116A",
+    "PDT-119A"
+   ]
+  },
+  {
+   "n": 6,
+   "name": "Adsorber B (bottom valves)",
+   "p": [
+    43.5,
+    40,
+    1.6
+   ],
+   "look": [
+    43.5,
+    37.2,
+    1.4
+   ],
+   "via": [],
+   "items": [
+    "V-101B",
+    "XV-111B",
+    "XV-112B",
+    "TE-116B",
+    "PDT-119B"
+   ]
+  },
+  {
+   "n": 7,
+   "name": "Product valve station VS-120",
+   "p": [
+    42.8,
+    30.3,
+    1.6
+   ],
+   "look": [
+    40.8,
+    31.4,
+    1.2
+   ],
+   "via": [
+    [
+     46.4,
+     40,
+     1.6
+    ],
+    [
+     46.4,
+     30.6,
+     1.6
+    ]
+   ],
+   "items": [
+    "PT-122",
+    "PV-122",
+    "FT-121",
+    "FV-121",
+    "FT-128"
+   ]
+  },
+  {
+   "n": 8,
+   "name": "Adsorber top valve deck PL-1",
+   "p": [
+    40.5,
+    33.8,
+    11.6
+   ],
+   "look": [
+    40.5,
+    35,
+    11.2
+   ],
+   "via": [
+    [
+     45.9,
+     32.6,
+     1.6
+    ],
+    [
+     45.9,
+     33.5,
+     1.6
+    ],
+    [
+     45.9,
+     33.5,
+     6.6
+    ],
+    [
+     45,
+     33.4,
+     6.6
+    ],
+    [
+     36.2,
+     33.4,
+     6.6
+    ],
+    [
+     36.2,
+     33.6,
+     11.6
+    ],
+    [
+     36.6,
+     33.7,
+     11.6
+    ]
+   ],
+   "items": [
+    "XV-113A",
+    "XV-113B",
+    "XV-114A",
+    "XV-114B",
+    "PT-115A",
+    "PT-115B",
+    "PSV-110A",
+    "PSV-110B"
+   ]
+  },
+  {
+   "n": 9,
+   "name": "O2 buffer V-102 and analyzer AT-124",
+   "p": [
+    43.4,
+    12.6,
+    1.6
+   ],
+   "look": [
+    46,
+    14,
+    2.5
+   ],
+   "via": [
+    [
+     44.8,
+     33.7,
+     11.6
+    ],
+    [
+     44.8,
+     33.6,
+     6.6
+    ],
+    [
+     45.9,
+     33.5,
+     6.6
+    ],
+    [
+     45.9,
+     33.5,
+     1.6
+    ],
+    [
+     45.9,
+     30,
+     1.6
+    ],
+    [
+     47,
+     29,
+     1.6
+    ],
+    [
+     47,
+     24,
+     1.6
+    ],
+    [
+     43.4,
+     22,
+     1.6
+    ]
+   ],
+   "items": [
+    "V-102",
+    "PT-123",
+    "PSHH-123",
+    "AT-124",
+    "PSV-102"
+   ]
+  },
+  {
+   "n": 10,
+   "name": "Customer and vent valves",
+   "p": [
+    50,
+    16,
+    1.6
+   ],
+   "look": [
+    50.6,
+    13.6,
+    0.9
+   ],
+   "via": [
+    [
+     43.4,
+     17.4,
+     1.6
+    ],
+    [
+     50,
+     17.4,
+     1.6
+    ]
+   ],
+   "items": [
+    "FT-125",
+    "FV-125",
+    "XV-126",
+    "XV-127",
+    "SL-102"
+   ]
+  },
+  {
+   "n": 11,
+   "name": "N2-rich buffer V-103 and vent",
+   "p": [
+    55.4,
+    22.4,
+    1.6
+   ],
+   "look": [
+    53,
+    16.5,
+    3
+   ],
+   "via": [
+    [
+     50,
+     23.4,
+     1.6
+    ],
+    [
+     55.4,
+     23.4,
+     1.6
+    ]
+   ],
+   "items": [
+    "V-103",
+    "PT-133",
+    "FT-134",
+    "AT-135",
+    "PV-133",
+    "HV-136",
+    "PSV-103"
+   ]
+  },
+  {
+   "n": 12,
+   "name": "Vacuum pump K-101 and seal water",
+   "p": [
+    19.6,
+    34.2,
+    1.6
+   ],
+   "look": [
+    20,
+    36.8,
+    1
+   ],
+   "via": [
+    [
+     55.4,
+     23.4,
+     1.6
+    ],
+    [
+     18.5,
+     23.4,
+     1.6
+    ],
+    [
+     18.5,
+     31,
+     1.6
+    ]
+   ],
+   "items": [
+    "K-101",
+    "V-104",
+    "PT-131",
+    "TI-132",
+    "FI-137",
+    "FSLL-137",
+    "LG-104",
+    "CV-130"
+   ]
+  },
+  {
+   "n": 13,
+   "name": "Control room (B2)",
+   "p": [
+    8,
+    21,
+    1.6
+   ],
+   "look": [
+    7.5,
+    23.6,
+    1.5
+   ],
+   "via": [
+    [
+     18.5,
+     31,
+     1.6
+    ],
+    [
+     18.5,
+     20,
+     1.6
+    ],
+    [
+     13.5,
+     20,
+     1.6
+    ]
+   ],
+   "items": [
+    "B2"
+   ]
+  }
+ ],
+ "route_start": [
+  14.3,
+  20,
+  1.6
+ ],
+ "escape": [
+  {
+   "from": "B1-D1",
+   "to": "AP-1",
+   "points": [
+    [
+     3.5,
+     35
+    ],
+    [
+     2.5,
+     35
+    ],
+    [
+     2.5,
+     44
+    ],
+    [
+     3,
+     44
+    ]
+   ]
+  },
+  {
+   "from": "B1-D4",
+   "to": "AP-2",
+   "points": [
+    [
+     7,
+     29.5
+    ],
+    [
+     7,
+     26
+    ],
+    [
+     15,
+     26
+    ],
+    [
+     15,
+     12
+    ],
+    [
+     4,
+     10
+    ]
+   ]
+  },
+  {
+   "from": "B1-D2",
+   "to": "AP-2",
+   "points": [
+    [
+     18.5,
+     29.5
+    ],
+    [
+     18.5,
+     12
+    ],
+    [
+     4,
+     10
+    ]
+   ]
+  },
+  {
+   "from": "B1-D3",
+   "to": "AP-2",
+   "points": [
+    [
+     26.5,
+     32
+    ],
+    [
+     27,
+     29
+    ],
+    [
+     18.5,
+     29
+    ],
+    [
+     18.5,
+     12
+    ],
+    [
+     4,
+     10
+    ]
+   ]
+  },
+  {
+   "from": "PL-1/PL-2 via LD-1",
+   "to": "AP-2",
+   "points": [
+    [
+     35.5,
+     33
+    ],
+    [
+     34,
+     29
+    ],
+    [
+     18.5,
+     29
+    ],
+    [
+     18.5,
+     12
+    ],
+    [
+     4,
+     10
+    ]
+   ]
+  },
+  {
+   "from": "PL-1/PL-2 via LD-2",
+   "to": "AP-2",
+   "points": [
+    [
+     45.9,
+     33.5
+    ],
+    [
+     47,
+     29
+    ],
+    [
+     47,
+     24
+    ],
+    [
+     43,
+     20
+    ],
+    [
+     42,
+     7.5
+    ],
+    [
+     4,
+     7.5
+    ],
+    [
+     4,
+     10
+    ]
+   ]
+  },
+  {
+   "from": "O2/N2 area",
+   "to": "AP-2",
+   "points": [
+    [
+     48,
+     20
+    ],
+    [
+     43,
+     20
+    ],
+    [
+     42,
+     7.5
+    ],
+    [
+     4,
+     7.5
+    ],
+    [
+     4,
+     10
+    ]
+   ]
+  },
+  {
+   "from": "B2-D5",
+   "to": "AP-2",
+   "points": [
+    [
+     7.5,
+     15.5
+    ],
+    [
+     4,
+     10
+    ]
+   ]
+  }
+ ],
+ "noise": [
+  {
+   "src": "K-100",
+   "x": 8.25,
+   "y": 37.7,
+   "z": 1.2,
+   "L1": 85,
+   "indoor": "B1",
+   "note": "enclosed oil-free screw package (assumed)"
+  },
+  {
+   "src": "K-101",
+   "x": 18.5,
+   "y": 36.8,
+   "z": 0.9,
+   "L1": 88,
+   "indoor": "B1",
+   "note": "liquid-ring pump and motor (assumed)"
+  },
+  {
+   "src": "SL-100",
+   "x": 30.5,
+   "y": 35,
+   "z": 9.6,
+   "L1": 85,
+   "indoor": null,
+   "note": "air blow-off through silencer, intermittent (assumed)"
+  },
+  {
+   "src": "SL-102",
+   "x": 49.5,
+   "y": 11.2,
+   "z": 12,
+   "L1": 80,
+   "indoor": null,
+   "note": "off-spec O2 vent through silencer (assumed)"
+  },
+  {
+   "src": "HV-136",
+   "x": 53.3,
+   "y": 16.8,
+   "z": 12,
+   "L1": 90,
+   "indoor": null,
+   "note": "N2 vent, no silencer on rev A (assumed)"
+  }
+ ],
+ "receptors": [
+  {
+   "id": "B2-N",
+   "name": "Control-room north facade (window W1)",
+   "x": 7.5,
+   "y": 24,
+   "z": 1.6,
+   "limit": 70
+  },
+  {
+   "id": "AP-1",
+   "name": "Assembly point AP-1",
+   "x": 3,
+   "y": 44,
+   "z": 1.6,
+   "limit": 70
+  },
+  {
+   "id": "AP-2",
+   "name": "Assembly point AP-2",
+   "x": 4,
+   "y": 10,
+   "z": 1.6,
+   "limit": 70
+  }
+ ],
+ "rules": [
+  {
+   "id": "SP-1",
+   "text": "Clear gap between outdoor vessels",
+   "value": 1.5,
+   "unit": "m",
+   "src": "typical access/maintenance practice (assumed)"
+  },
+  {
+   "id": "SP-2",
+   "text": "Outdoor vessel to building wall, clear",
+   "value": 3,
+   "unit": "m",
+   "src": "typical practice (assumed)"
+  },
+  {
+   "id": "SP-3",
+   "text": "Maintenance space around indoor machines and vessels (to each other and to walls)",
+   "value": 1,
+   "unit": "m",
+   "src": "typical practice (assumed)"
+  },
+  {
+   "id": "SP-4",
+   "text": "Air intakes to any O2 or N2-rich vent or relief outlet, horizontal",
+   "value": 15,
+   "unit": "m",
+   "src": "typical practice (assumed); an intake that pulls vent gas changes the feed or the room air"
+  },
+  {
+   "id": "SP-5",
+   "text": "No routine O2/N2 vent with an intake inside its downwind sector (half-angle) for either prevailing wind",
+   "value": 45,
+   "unit": "deg",
+   "src": "assumed: two monsoon winds, SW and NE"
+  },
+  {
+   "id": "SP-6",
+   "text": "O2 / N2-rich vent outlets above any platform within 15 m",
+   "value": 3,
+   "unit": "m",
+   "src": "typical practice for atmospheric discharges (e.g. the 3 m / 15 m rule used with API 521), assumed"
+  },
+  {
+   "id": "SP-7",
+   "text": "O2 / N2-rich vent outlets to building doors, louvres and windows, horizontal",
+   "value": 5,
+   "unit": "m",
+   "src": "typical practice (assumed)"
+  },
+  {
+   "id": "SP-8",
+   "text": "O2 buffer and O2 vent to road edges (vehicles: fuel, oil, hot exhaust) and to buildings with motors/MCC",
+   "value": 5,
+   "unit": "m",
+   "src": "typical oxygen-service practice (cf. EIGA/CGA oxygen guidance), value assumed"
+  },
+  {
+   "id": "SP-9",
+   "text": "Headroom under the pipe rack over the access way (underside of beam)",
+   "value": 4.5,
+   "unit": "m",
+   "src": "typical maintenance-access clearance (assumed)"
+  },
+  {
+   "id": "SP-10",
+   "text": "Single ladder flight without a landing",
+   "value": 6,
+   "unit": "m",
+   "src": "typical (cf. EN ISO 14122-4), assumed"
+  },
+  {
+   "id": "SP-11",
+   "text": "Platforms longer than this need two means of escape",
+   "value": 7.5,
+   "unit": "m",
+   "src": "typical practice (assumed)"
+  },
+  {
+   "id": "SP-12",
+   "text": "Travel distance to the nearest exit inside a building; at least two exits",
+   "value": 25,
+   "unit": "m",
+   "src": "typical practice (assumed)"
+  },
+  {
+   "id": "SP-13",
+   "text": "For each prevailing wind at least one assembly point outside every routine vent sector",
+   "value": 1,
+   "unit": "AP",
+   "src": "typical practice (assumed)"
+  },
+  {
+   "id": "SP-14",
+   "text": "Outdoor noise at the control-room facade and assembly points, each source (screening)",
+   "value": 70,
+   "unit": "dB(A)",
+   "src": "assumed screening limit"
+  },
+  {
+   "id": "SP-15",
+   "text": "Adsorber centre within crane radius of the hardstand edge",
+   "value": 12,
+   "unit": "m",
+   "src": "assumed mobile-crane duty"
+  },
+  {
+   "id": "SP-16",
+   "text": "Clear gap between pipe outside surfaces (no clash); pipes do not pass through equipment other than their own",
+   "value": 0.025,
+   "unit": "m",
+   "src": "clash-check tolerance (assumed)"
+  },
+  {
+   "id": "SP-17",
+   "text": "Operator round: no pipe crosses the walkway between 0.1 m and the headroom above the floor",
+   "value": 2.1,
+   "unit": "m",
+   "src": "typical headroom (assumed)"
+  },
+  {
+   "id": "SP-18",
+   "text": "Every inline instrument or valve sits on its line (plan distance)",
+   "value": 0.6,
+   "unit": "m",
+   "src": "consistency tolerance (assumed)"
+  }
+ ],
+ "specs": {
+  "A1A": {
+   "name": "A1A",
+   "desc": "Carbon steel, ASME B16.5 Class 150",
+   "pipe": "ASTM A106 Gr B seamless",
+   "sch": "Sch 40 (≤ 6\"), STD (≥ 8\")",
+   "fittings": "ASME B16.9 BW, A234 WPB",
+   "flanges": "ASME B16.5 Cl 150 WN RF, A105",
+   "gasket": "spiral wound SS/graphite"
+  },
+  "O2S": {
+   "name": "O2S",
+   "desc": "SS 316L cleaned for oxygen service (CGA G-4.1 / EIGA 33)",
+   "pipe": "ASTM A312 TP316L",
+   "sch": "Sch 10S",
+   "fittings": "ASME B16.9 BW, A403 WP316L",
+   "flanges": "ASME B16.5 Cl 150 WN RF, A182 F316L",
+   "gasket": "PTFE-based, oxygen-compatible"
+  },
+  "C1A": {
+   "name": "C1A",
+   "desc": "Carbon steel, full-vacuum rated, Class 150",
+   "pipe": "ASTM A106 Gr B seamless",
+   "sch": "STD",
+   "fittings": "ASME B16.9 BW, A234 WPB",
+   "flanges": "ASME B16.5 Cl 150 WN RF, A105",
+   "gasket": "spiral wound SS/graphite"
+  }
+ },
+ "spans": {
+  "1": 2.7,
+  "2": 4,
+  "3": 4.6,
+  "4": 5.2,
+  "6": 6.4,
+  "8": 7.3,
+  "10": 8.2,
+  "12": 9.1
+ },
+ "isos": [
+  {
+   "id": "ISO-1",
+   "title": "Air header V-100 to the adsorbers through XV-111A/B",
+   "runs": [
+    "1004-H",
+    "1004-A",
+    "1004-B"
+   ],
+   "lines": [
+    "6\"-AIR-1004-A1A"
+   ],
+   "bom": [
+    {
+     "line": "6\"-AIR-1004-A1A",
+     "spec": "A1A",
+     "specDesc": "Carbon steel, ASME B16.5 Class 150",
+     "nps": 6,
+     "dn": 150,
+     "runs": [
+      "1004-H",
+      "1004-A",
+      "1004-B"
+     ],
+     "length": 19.1,
+     "nozzles": [
+      "V-100"
+     ],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A106 Gr B seamless, Sch 40 (≤ 6\"), STD (≥ 8\")",
+       "size": "6\" (DN150)",
+       "qty": 19.1,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A234 WPB",
+       "size": "6\"",
+       "qty": 7,
+       "unit": "pc"
+      },
+      {
+       "item": "Tee, equal",
+       "desc": "ASME B16.9 BW, A234 WPB",
+       "size": "6\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A105",
+       "size": "6\"",
+       "qty": 7,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "spiral wound SS/graphite",
+       "size": "6\"",
+       "qty": 7,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "6\"",
+       "qty": 7,
+       "unit": "set"
+      },
+      {
+       "item": "On/off valve (XV)",
+       "desc": "pneumatic, per P&ID · XV-111A, XV-111B",
+       "size": "6\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Hand valve (generic)",
+       "desc": "block valve, tag per P&ID rev B",
+       "size": "6\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "rest on stanchion (grade)",
+       "size": "6\"",
+       "qty": 3,
+       "unit": "pc"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ISO-2",
+   "title": "O2 product and EQ/purge headers on the bed tops, down-comer to PV-122, purge FV-121",
+   "runs": [
+    "1201-T",
+    "1201-D",
+    "1211",
+    "1212"
+   ],
+   "lines": [
+    "3\"-O2-1201-O2S",
+    "3\"-O2-1211-O2S",
+    "1\"-O2-1212-O2S"
+   ],
+   "bom": [
+    {
+     "line": "3\"-O2-1201-O2S",
+     "spec": "O2S",
+     "specDesc": "SS 316L cleaned for oxygen service (CGA G-4.1 / EIGA 33)",
+     "nps": 3,
+     "dn": 80,
+     "runs": [
+      "1201-T",
+      "1201-D"
+     ],
+     "length": 25.28,
+     "nozzles": [
+      "V-101A",
+      "V-101B"
+     ],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A312 TP316L, Sch 10S",
+       "size": "3\" (DN80)",
+       "qty": 25.3,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A403 WP316L",
+       "size": "3\"",
+       "qty": 3,
+       "unit": "pc"
+      },
+      {
+       "item": "Tee, equal",
+       "desc": "ASME B16.9 BW, A403 WP316L",
+       "size": "3\"",
+       "qty": 3,
+       "unit": "pc"
+      },
+      {
+       "item": "Tee, reducing (branch)",
+       "desc": "ASME B16.9 BW, A403 WP316L",
+       "size": "3\" × 1\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A182 F316L",
+       "size": "3\"",
+       "qty": 6,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "PTFE-based, oxygen-compatible",
+       "size": "3\"",
+       "qty": 6,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "3\"",
+       "qty": 6,
+       "unit": "set"
+      },
+      {
+       "item": "On/off valve (XV)",
+       "desc": "pneumatic, per P&ID · XV-113A, XV-113B",
+       "size": "3\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Instrument tap",
+       "desc": "¾\" weldolet + root valve (assumed) · PT-115A, PT-115B, PT-122",
+       "size": "¾\"",
+       "qty": 3,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "T-post / bracket",
+       "size": "3\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "guide",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "base support",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "rest on stanchion (grade)",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "pc"
+      }
+     ]
+    },
+    {
+     "line": "3\"-O2-1211-O2S",
+     "spec": "O2S",
+     "specDesc": "SS 316L cleaned for oxygen service (CGA G-4.1 / EIGA 33)",
+     "nps": 3,
+     "dn": 80,
+     "runs": [
+      "1211"
+     ],
+     "length": 9.8,
+     "nozzles": [],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A312 TP316L, Sch 10S",
+       "size": "3\" (DN80)",
+       "qty": 9.8,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A403 WP316L",
+       "size": "3\"",
+       "qty": 4,
+       "unit": "pc"
+      },
+      {
+       "item": "Tee, reducing (branch)",
+       "desc": "ASME B16.9 BW, A403 WP316L",
+       "size": "3\" × 1\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A182 F316L",
+       "size": "3\"",
+       "qty": 4,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "PTFE-based, oxygen-compatible",
+       "size": "3\"",
+       "qty": 4,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "3\"",
+       "qty": 4,
+       "unit": "set"
+      },
+      {
+       "item": "On/off valve (XV)",
+       "desc": "pneumatic, per P&ID · XV-114A, XV-114B",
+       "size": "3\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "T-post / bracket",
+       "size": "3\"",
+       "qty": 2,
+       "unit": "pc"
+      }
+     ]
+    },
+    {
+     "line": "1\"-O2-1212-O2S",
+     "spec": "O2S",
+     "specDesc": "SS 316L cleaned for oxygen service (CGA G-4.1 / EIGA 33)",
+     "nps": 1,
+     "dn": 25,
+     "runs": [
+      "1212"
+     ],
+     "length": 14.7,
+     "nozzles": [],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A312 TP316L, Sch 10S",
+       "size": "1\" (DN25)",
+       "qty": 14.7,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A403 WP316L",
+       "size": "1\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A182 F316L",
+       "size": "1\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "PTFE-based, oxygen-compatible",
+       "size": "1\"",
+       "qty": 3,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "1\"",
+       "qty": 3,
+       "unit": "set"
+      },
+      {
+       "item": "Control valve",
+       "desc": "per instrument datasheet · FV-121",
+       "size": "1\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Orifice flange pair + plate",
+       "desc": "flow element · FT-121",
+       "size": "1\"",
+       "qty": 1,
+       "unit": "set"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "rest on stanchion (grade)",
+       "size": "1\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "guide",
+       "size": "1\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "base support",
+       "size": "1\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "T-post / bracket",
+       "size": "1\"",
+       "qty": 1,
+       "unit": "pc"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ISO-3",
+   "title": "O2 made from PV-122 to V-102 over the pipe rack",
+   "runs": [
+    "1202"
+   ],
+   "lines": [
+    "3\"-O2-1202-O2S"
+   ],
+   "bom": [
+    {
+     "line": "3\"-O2-1202-O2S",
+     "spec": "O2S",
+     "specDesc": "SS 316L cleaned for oxygen service (CGA G-4.1 / EIGA 33)",
+     "nps": 3,
+     "dn": 80,
+     "runs": [
+      "1202"
+     ],
+     "length": 30.2,
+     "nozzles": [
+      "V-102"
+     ],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A312 TP316L, Sch 10S",
+       "size": "3\" (DN80)",
+       "qty": 30.2,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A403 WP316L",
+       "size": "3\"",
+       "qty": 6,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A182 F316L",
+       "size": "3\"",
+       "qty": 7,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "PTFE-based, oxygen-compatible",
+       "size": "3\"",
+       "qty": 8,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "3\"",
+       "qty": 8,
+       "unit": "set"
+      },
+      {
+       "item": "Control valve",
+       "desc": "per instrument datasheet · PV-122",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Check valve",
+       "desc": "per P&ID · NRV (untagged)",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Hand valve (generic)",
+       "desc": "block valve, tag per P&ID rev B",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Orifice flange pair + plate",
+       "desc": "flow element · FT-128",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "set"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "rest on stanchion (grade)",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "guide",
+       "size": "3\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "base support",
+       "size": "3\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "T-post / bracket",
+       "size": "3\"",
+       "qty": 4,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "rest on rack bent",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "pc"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ISO-4",
+   "title": "O2 product V-102 to the customer and the off-spec vent SL-102",
+   "runs": [
+    "1203",
+    "1204"
+   ],
+   "lines": [
+    "3\"-O2-1203-O2S",
+    "2\"-O2-1204-O2S"
+   ],
+   "bom": [
+    {
+     "line": "3\"-O2-1203-O2S",
+     "spec": "O2S",
+     "specDesc": "SS 316L cleaned for oxygen service (CGA G-4.1 / EIGA 33)",
+     "nps": 3,
+     "dn": 80,
+     "runs": [
+      "1203"
+     ],
+     "length": 11.4,
+     "nozzles": [
+      "V-102"
+     ],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A312 TP316L, Sch 10S",
+       "size": "3\" (DN80)",
+       "qty": 11.4,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A403 WP316L",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Tee, reducing (branch)",
+       "desc": "ASME B16.9 BW, A403 WP316L",
+       "size": "3\" × 2\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A182 F316L",
+       "size": "3\"",
+       "qty": 10,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "PTFE-based, oxygen-compatible",
+       "size": "3\"",
+       "qty": 11,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "3\"",
+       "qty": 11,
+       "unit": "set"
+      },
+      {
+       "item": "On/off valve (XV)",
+       "desc": "pneumatic, per P&ID · XV-126",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Control valve",
+       "desc": "per instrument datasheet · FV-125",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Hand valve (generic)",
+       "desc": "block valve, tag per P&ID rev B",
+       "size": "3\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Orifice flange pair + plate",
+       "desc": "flow element · FT-125",
+       "size": "3\"",
+       "qty": 1,
+       "unit": "set"
+      },
+      {
+       "item": "Instrument tap",
+       "desc": "¾\" weldolet + root valve (assumed) · AT-124",
+       "size": "¾\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "rest on stanchion (grade)",
+       "size": "3\"",
+       "qty": 3,
+       "unit": "pc"
+      }
+     ]
+    },
+    {
+     "line": "2\"-O2-1204-O2S",
+     "spec": "O2S",
+     "specDesc": "SS 316L cleaned for oxygen service (CGA G-4.1 / EIGA 33)",
+     "nps": 2,
+     "dn": 50,
+     "runs": [
+      "1204"
+     ],
+     "length": 15.5,
+     "nozzles": [],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A312 TP316L, Sch 10S",
+       "size": "2\" (DN50)",
+       "qty": 15.5,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A403 WP316L",
+       "size": "2\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A182 F316L",
+       "size": "2\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "PTFE-based, oxygen-compatible",
+       "size": "2\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "2\"",
+       "qty": 2,
+       "unit": "set"
+      },
+      {
+       "item": "On/off valve (XV)",
+       "desc": "pneumatic, per P&ID · XV-127",
+       "size": "2\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "rest on stanchion (grade)",
+       "size": "2\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "guide",
+       "size": "2\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "base support",
+       "size": "2\"",
+       "qty": 1,
+       "unit": "pc"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ISO-5",
+   "title": "Evacuation header XV-112A/B to K-101 and the CV-130 bypass",
+   "runs": [
+    "1301-H",
+    "1301-A",
+    "1302",
+    "1303"
+   ],
+   "lines": [
+    "12\"-VAC-1301-C1A",
+    "12\"-VAC-1302-C1A",
+    "8\"-VAC-1303-C1A"
+   ],
+   "bom": [
+    {
+     "line": "12\"-VAC-1301-C1A",
+     "spec": "C1A",
+     "specDesc": "Carbon steel, full-vacuum rated, Class 150",
+     "nps": 12,
+     "dn": 300,
+     "runs": [
+      "1301-H",
+      "1301-A"
+     ],
+     "length": 30.3,
+     "nozzles": [
+      "V-101B",
+      "V-101A"
+     ],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A106 Gr B seamless, STD",
+       "size": "12\" (DN300)",
+       "qty": 30.3,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A234 WPB",
+       "size": "12\"",
+       "qty": 7,
+       "unit": "pc"
+      },
+      {
+       "item": "Tee, equal",
+       "desc": "ASME B16.9 BW, A234 WPB",
+       "size": "12\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Tee, reducing (branch)",
+       "desc": "ASME B16.9 BW, A234 WPB",
+       "size": "12\" × 6\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A105",
+       "size": "12\"",
+       "qty": 6,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "spiral wound SS/graphite",
+       "size": "12\"",
+       "qty": 6,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "12\"",
+       "qty": 6,
+       "unit": "set"
+      },
+      {
+       "item": "On/off valve (XV)",
+       "desc": "pneumatic, per P&ID · XV-112B, XV-112A",
+       "size": "12\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "rest on stanchion (grade)",
+       "size": "12\"",
+       "qty": 7,
+       "unit": "pc"
+      }
+     ]
+    },
+    {
+     "line": "12\"-VAC-1302-C1A",
+     "spec": "C1A",
+     "specDesc": "Carbon steel, full-vacuum rated, Class 150",
+     "nps": 12,
+     "dn": 300,
+     "runs": [
+      "1302"
+     ],
+     "length": 8.8,
+     "nozzles": [
+      "K-101"
+     ],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A106 Gr B seamless, STD",
+       "size": "12\" (DN300)",
+       "qty": 8.8,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A234 WPB",
+       "size": "12\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Tee, reducing (branch)",
+       "desc": "ASME B16.9 BW, A234 WPB",
+       "size": "12\" × 8\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A105",
+       "size": "12\"",
+       "qty": 3,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "spiral wound SS/graphite",
+       "size": "12\"",
+       "qty": 3,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "12\"",
+       "qty": 3,
+       "unit": "set"
+      },
+      {
+       "item": "Hand valve (generic)",
+       "desc": "block valve, tag per P&ID rev B",
+       "size": "12\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Instrument tap",
+       "desc": "¾\" weldolet + root valve (assumed) · PT-131",
+       "size": "¾\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "rest on stanchion (grade)",
+       "size": "12\"",
+       "qty": 1,
+       "unit": "pc"
+      }
+     ]
+    },
+    {
+     "line": "8\"-VAC-1303-C1A",
+     "spec": "C1A",
+     "specDesc": "Carbon steel, full-vacuum rated, Class 150",
+     "nps": 8,
+     "dn": 200,
+     "runs": [
+      "1303"
+     ],
+     "length": 4.6,
+     "nozzles": [],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A106 Gr B seamless, STD",
+       "size": "8\" (DN200)",
+       "qty": 4.6,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A234 WPB",
+       "size": "8\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A105",
+       "size": "8\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "spiral wound SS/graphite",
+       "size": "8\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "8\"",
+       "qty": 2,
+       "unit": "set"
+      },
+      {
+       "item": "Check valve",
+       "desc": "per P&ID · CV-130",
+       "size": "8\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "T-post / bracket",
+       "size": "8\"",
+       "qty": 2,
+       "unit": "pc"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ISO-6",
+   "title": "N2-rich gas V-104 to V-103, to the users and the HV-136 vent",
+   "runs": [
+    "1322",
+    "1331",
+    "VNT-136"
+   ],
+   "lines": [
+    "8\"-N2R-1322-A1A",
+    "8\"-N2R-1331-A1A"
+   ],
+   "bom": [
+    {
+     "line": "8\"-N2R-1322-A1A",
+     "spec": "A1A",
+     "specDesc": "Carbon steel, ASME B16.5 Class 150",
+     "nps": 8,
+     "dn": 200,
+     "runs": [
+      "1322"
+     ],
+     "length": 53.8,
+     "nozzles": [
+      "V-104",
+      "V-103"
+     ],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A106 Gr B seamless, Sch 40 (≤ 6\"), STD (≥ 8\")",
+       "size": "8\" (DN200)",
+       "qty": 53.8,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A234 WPB",
+       "size": "8\"",
+       "qty": 4,
+       "unit": "pc"
+      },
+      {
+       "item": "Tee, equal",
+       "desc": "ASME B16.9 BW, A234 WPB",
+       "size": "8\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A105",
+       "size": "8\"",
+       "qty": 4,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "spiral wound SS/graphite",
+       "size": "8\"",
+       "qty": 4,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "8\"",
+       "qty": 4,
+       "unit": "set"
+      },
+      {
+       "item": "Hand valve (generic)",
+       "desc": "block valve, tag per P&ID rev B",
+       "size": "8\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "guide",
+       "size": "8\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "T-post / bracket",
+       "size": "8\"",
+       "qty": 4,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "rest on rack bent",
+       "size": "8\"",
+       "qty": 5,
+       "unit": "pc"
+      }
+     ]
+    },
+    {
+     "line": "8\"-N2R-1331-A1A",
+     "spec": "A1A",
+     "specDesc": "Carbon steel, ASME B16.5 Class 150",
+     "nps": 8,
+     "dn": 200,
+     "runs": [
+      "1331"
+     ],
+     "length": 4.4,
+     "nozzles": [
+      "V-103"
+     ],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A106 Gr B seamless, Sch 40 (≤ 6\"), STD (≥ 8\")",
+       "size": "8\" (DN200)",
+       "qty": 4.4,
+       "unit": "m"
+      },
+      {
+       "item": "Elbow 90° LR",
+       "desc": "ASME B16.9 BW, A234 WPB",
+       "size": "8\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A105",
+       "size": "8\"",
+       "qty": 8,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "spiral wound SS/graphite",
+       "size": "8\"",
+       "qty": 9,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "8\"",
+       "qty": 9,
+       "unit": "set"
+      },
+      {
+       "item": "Control valve",
+       "desc": "per instrument datasheet · PV-133",
+       "size": "8\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Hand valve (generic)",
+       "desc": "block valve, tag per P&ID rev B",
+       "size": "8\"",
+       "qty": 2,
+       "unit": "pc"
+      },
+      {
+       "item": "Orifice flange pair + plate",
+       "desc": "flow element · FT-134",
+       "size": "8\"",
+       "qty": 1,
+       "unit": "set"
+      },
+      {
+       "item": "Instrument tap",
+       "desc": "¾\" weldolet + root valve (assumed) · AT-135",
+       "size": "¾\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "rest on stanchion (grade)",
+       "size": "8\"",
+       "qty": 1,
+       "unit": "pc"
+      }
+     ]
+    },
+    {
+     "line": "(no line no.) VNT-136",
+     "spec": "A1A",
+     "specDesc": "Carbon steel, ASME B16.5 Class 150",
+     "nps": 4,
+     "dn": 100,
+     "runs": [
+      "VNT-136"
+     ],
+     "length": 3.6,
+     "nozzles": [
+      "V-103"
+     ],
+     "items": [
+      {
+       "item": "Pipe",
+       "desc": "ASTM A106 Gr B seamless, Sch 40 (≤ 6\"), STD (≥ 8\")",
+       "size": "4\" (DN100)",
+       "qty": 3.6,
+       "unit": "m"
+      },
+      {
+       "item": "Flange WN RF",
+       "desc": "ASME B16.5 Cl 150 WN RF, A105",
+       "size": "4\"",
+       "qty": 3,
+       "unit": "pc"
+      },
+      {
+       "item": "Gasket",
+       "desc": "spiral wound SS/graphite",
+       "size": "4\"",
+       "qty": 3,
+       "unit": "pc"
+      },
+      {
+       "item": "Stud-bolt set",
+       "desc": "ASTM A193 B7 / A194 2H (assumed)",
+       "size": "4\"",
+       "qty": 3,
+       "unit": "set"
+      },
+      {
+       "item": "Hand valve",
+       "desc": "tagged on rev A · HV-136",
+       "size": "4\"",
+       "qty": 1,
+       "unit": "pc"
+      },
+      {
+       "item": "Pipe support",
+       "desc": "guide",
+       "size": "4\"",
+       "qty": 1,
+       "unit": "pc"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "A-A",
+   "name": "Section A-A looking north (house, receiver, adsorbers)",
+   "look": "N",
+   "band": [
+    29,
+    43
+   ]
+  },
+  {
+   "id": "B-B",
+   "name": "Section B-B looking west (O2 and N2 buffers, vents, rack)",
+   "look": "W",
+   "band": [
+    44.5,
+    58
+   ]
+  }
+ ],
+ "generated": {
+  "by": "tabs/lay/tools/mk_layout.js",
+  "from": "tabs/lay/tools/plant.js",
+  "date": "2026-10-28",
+  "note": "do not edit layout.json by hand; edit plant.js and run node tabs/lay/tools/mk_layout.js"
+ },
+ "pid_ref": {
+  "source": "pid/build_pid1.py, pid/build_pid2.py (PSA-PID-001/002 rev A text)",
+  "lines": [
+   {
+    "no": "10\"-AIR-1001-A1A",
+    "sheet": "PSA-PID-001"
+   },
+   {
+    "no": "6\"-AIR-1002-A1A",
+    "sheet": "PSA-PID-001"
+   },
+   {
+    "no": "2\"-CHW-1051-A1A",
+    "sheet": "PSA-PID-001"
+   },
+   {
+    "no": "2\"-CHW-1052-A1A",
+    "sheet": "PSA-PID-001"
+   },
+   {
+    "no": "6\"-AIR-1003-A1A",
+    "sheet": "PSA-PID-001"
+   },
+   {
+    "no": "4\"-AIR-1006-A1A",
+    "sheet": "PSA-PID-001"
+   },
+   {
+    "no": "6\"-AIR-1004-A1A",
+    "sheet": "PSA-PID-001"
+   },
+   {
+    "no": "3\"-O2-1201-O2S",
+    "sheet": "PSA-PID-001"
+   },
+   {
+    "no": "3\"-O2-1211-O2S",
+    "sheet": "PSA-PID-001"
+   },
+   {
+    "no": "12\"-VAC-1301-C1A",
+    "sheet": "PSA-PID-001"
+   },
+   {
+    "no": "3\"-O2-1201-O2S",
+    "sheet": "PSA-PID-002"
+   },
+   {
+    "no": "3\"-O2-1202-O2S",
+    "sheet": "PSA-PID-002"
+   },
+   {
+    "no": "1\"-O2-1212-O2S",
+    "sheet": "PSA-PID-002"
+   },
+   {
+    "no": "3\"-O2-1203-O2S",
+    "sheet": "PSA-PID-002"
+   },
+   {
+    "no": "2\"-O2-1204-O2S",
+    "sheet": "PSA-PID-002"
+   },
+   {
+    "no": "12\"-VAC-1302-C1A",
+    "sheet": "PSA-PID-002"
+   },
+   {
+    "no": "8\"-VAC-1303-C1A",
+    "sheet": "PSA-PID-002"
+   },
+   {
+    "no": "8\"-N2R-1321-A1A",
+    "sheet": "PSA-PID-002"
+   },
+   {
+    "no": "2\"-SW-1341-A1A",
+    "sheet": "PSA-PID-002"
+   },
+   {
+    "no": "8\"-N2R-1322-A1A",
+    "sheet": "PSA-PID-002"
+   },
+   {
+    "no": "8\"-N2R-1331-A1A",
+    "sheet": "PSA-PID-002"
+   }
+  ]
+ },
+ "eql_ref": {
+  "source": "tabs/EPC_MASTER.json (VPSA-V1-ME-EQL-001)",
+  "tags": [
+   "F-100",
+   "K-100",
+   "E-100",
+   "V-100",
+   "V-101A",
+   "V-101B",
+   "V-102",
+   "K-101",
+   "V-104",
+   "V-103",
+   "DT-104",
+   "SL-100",
+   "SL-102"
+  ]
+ }
+}
