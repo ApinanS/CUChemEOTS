@@ -1,0 +1,458 @@
+{
+ "title": "PROCESS FLOW DIAGRAM",
+ "subtitle": "DEMETHANIZER FEED CHILLING · C3= / C2= CASCADE REFRIGERATION",
+ "project": "RF-CAS-v1 OPERATOR TRAINING SIMULATOR · REV 0 ISSUED FOR TEACHING",
+ "drawing_no": "RF-CAS-v1-PFD-001",
+ "rev": "0",
+ "sheet": "1 OF 1",
+ "scale": "NTS",
+ "drawn_by": "Apinan Soottitantawat",
+ "checked_by": "",
+ "date": "2026-11-09",
+ "notes": [
+  "Flows t/h, temperatures °C, pressures bar a: design point of the simulator model (noise off), not plant data.",
+  "Rev 0, issued for teaching. Refrigerant liquid flashes across LV-103 / LV-213 / LV-108; recycles 17 and 24 closed at design.",
+  "K-201 and K-301 are steam-turbine driven; only the valves that define the process are shown."
+ ],
+ "flag_order": [
+  "m",
+  "t",
+  "p"
+ ],
+ "flag_units": {
+  "m": "Mass Flow (t/h)",
+  "t": "Temperature (°C)",
+  "p": "Pressure (bar a)"
+ },
+ "equipment": [
+  {
+   "tag": "E-101",
+   "name": "C3= Kettle Chiller",
+   "type": "hx",
+   "x": 52,
+   "y": 40,
+   "opts": {
+    "free_axis": true
+   }
+  },
+  {
+   "tag": "V-101",
+   "name": "Knock-out Drum",
+   "type": "separator",
+   "x": 84,
+   "y": 46,
+   "real": {
+    "d": 2.5,
+    "h": 6
+   }
+  },
+  {
+   "tag": "E-102",
+   "name": "C2= Kettle Chiller",
+   "type": "hx",
+   "x": 204,
+   "y": 40,
+   "opts": {
+    "free_axis": true
+   }
+  },
+  {
+   "tag": "V-102",
+   "name": "Cold Separator",
+   "type": "separator",
+   "x": 236,
+   "y": 46,
+   "real": {
+    "d": 3,
+    "h": 7
+   }
+  },
+  {
+   "tag": "V-201",
+   "name": "C3= Suction Drum",
+   "type": "drum_v",
+   "x": 30,
+   "y": 118,
+   "real": {
+    "d": 4,
+    "h": 6
+   }
+  },
+  {
+   "tag": "K-201",
+   "name": "C3= Compressor (steam turbine)",
+   "type": "compressor",
+   "x": 64,
+   "y": 124
+  },
+  {
+   "tag": "E-201",
+   "name": "C3= Condenser",
+   "type": "hx",
+   "x": 108,
+   "y": 104,
+   "opts": {
+    "utility": "cw"
+   }
+  },
+  {
+   "tag": "V-202",
+   "name": "C3= Receiver",
+   "type": "drum_h",
+   "x": 118,
+   "y": 136,
+   "real": {
+    "l": 10,
+    "d": 3.5
+   }
+  },
+  {
+   "tag": "E-203",
+   "name": "Cascade Condenser",
+   "type": "hx",
+   "x": 160,
+   "y": 90,
+   "opts": {
+    "free_axis": true
+   }
+  },
+  {
+   "tag": "V-302",
+   "name": "C2= Accumulator",
+   "type": "drum_h",
+   "x": 186,
+   "y": 124,
+   "real": {
+    "l": 7,
+    "d": 2.5
+   }
+  },
+  {
+   "tag": "E-301",
+   "name": "C2= Desuperheater",
+   "type": "hx",
+   "x": 216,
+   "y": 84,
+   "opts": {
+    "utility": "cw"
+   }
+  },
+  {
+   "tag": "K-301",
+   "name": "C2= Compressor (steam turbine)",
+   "type": "compressor",
+   "x": 246,
+   "y": 124,
+   "opts": {
+    "flow": "W"
+   }
+  },
+  {
+   "tag": "V-301",
+   "name": "C2= Suction Drum",
+   "type": "drum_v",
+   "x": 276,
+   "y": 118,
+   "real": {
+    "d": 3,
+    "h": 5
+   }
+  }
+ ],
+ "nodes": [
+  {
+   "id": "R3",
+   "x": 84,
+   "y": 146
+  },
+  {
+   "id": "T3",
+   "x": 142,
+   "y": 150
+  },
+  {
+   "id": "M3",
+   "x": 24,
+   "y": 90
+  },
+  {
+   "id": "R2",
+   "x": 232,
+   "y": 146
+  }
+ ],
+ "terminals": [
+  {
+   "id": "FEED",
+   "label": "Cracked Gas",
+   "x": "left",
+   "y": 40,
+   "dir": "E"
+  },
+  {
+   "id": "OFFGAS",
+   "label": "Off-gas to Fuel",
+   "x": "right",
+   "y": 26,
+   "dir": "W"
+  },
+  {
+   "id": "DM1",
+   "label": "To Demethanizer (1)",
+   "x": "right",
+   "y": 66,
+   "dir": "W"
+  },
+  {
+   "id": "DM2",
+   "label": "To Demethanizer (2)",
+   "x": "right",
+   "y": 76,
+   "dir": "W"
+  },
+  {
+   "id": "FLARE",
+   "label": "Flare",
+   "x": "right",
+   "y": 100,
+   "dir": "W"
+  }
+ ],
+ "streams": [
+  {
+   "n": 1,
+   "from": "FEED",
+   "to": "E-101:W",
+   "valve": 0.45,
+   "control_valve": 0.72,
+   "label": "XV-100 / FV-101",
+   "label_pos": [
+    36,
+    33
+   ],
+   "flags": {
+    "m": 42.2,
+    "t": 15,
+    "p": 33.0
+   }
+  },
+  {
+   "n": 2,
+   "from": "E-101:E",
+   "to": "V-101:W",
+   "flags": {
+    "t": -35
+   }
+  },
+  {
+   "n": 4,
+   "from": "V-101:N",
+   "to": "E-102:W",
+   "flags": {
+    "m": 23.7,
+    "t": -35,
+    "p": 33.0
+   }
+  },
+  {
+   "n": 3,
+   "from": "V-101:S",
+   "to": "DM1",
+   "control_valve": 0.3,
+   "label": "LV-105",
+   "flags": {
+    "m": 18.4,
+    "t": -35,
+    "p": 33.0
+   }
+  },
+  {
+   "n": 5,
+   "from": "E-102:E",
+   "to": "V-102:W"
+  },
+  {
+   "n": 6,
+   "from": "V-102:N",
+   "to": "OFFGAS",
+   "control_valve": 0.5,
+   "label": "PV-112",
+   "flags": {
+    "m": 3.8,
+    "t": -97,
+    "p": 32.5
+   }
+  },
+  {
+   "n": 7,
+   "from": "V-102:S",
+   "to": "DM2",
+   "control_valve": 0.4,
+   "label": "LV-110",
+   "flags": {
+    "m": 20.0,
+    "t": -97,
+    "p": 32.5
+   }
+  },
+  {
+   "n": 8,
+   "from": "V-201:N",
+   "to": "K-201:N@0.2",
+   "flags": {
+    "m": 117.4,
+    "t": -38,
+    "p": 1.35
+   }
+  },
+  {
+   "n": 9,
+   "from": "K-201:S@0.8",
+   "to": "R3:W",
+   "flags": {
+    "m": 117.4,
+    "t": 92,
+    "p": 16.9
+   }
+  },
+  {
+   "from": "R3:E",
+   "to": "E-201:W"
+  },
+  {
+   "n": 10,
+   "from": "E-201:E",
+   "to": "V-202:N"
+  },
+  {
+   "n": 11,
+   "from": "V-202:S",
+   "to": "T3:W"
+  },
+  {
+   "n": 12,
+   "from": "T3:N",
+   "to": "E-101:S",
+   "control_valve": 0.85,
+   "label": "LV-103",
+   "label_pos": [
+    67,
+    75
+   ],
+   "flags": {
+    "m": 42.5,
+    "t": 38,
+    "p": 16.5
+   }
+  },
+  {
+   "n": 13,
+   "from": "T3:E",
+   "to": "E-203:S",
+   "control_valve": 0.5,
+   "label": "LV-213",
+   "flags": {
+    "m": 74.9,
+    "t": 38,
+    "p": 16.5
+   }
+  },
+  {
+   "n": 14,
+   "from": "E-101:N",
+   "to": "M3:N"
+  },
+  {
+   "n": 15,
+   "from": "E-203:W",
+   "to": "M3:E"
+  },
+  {
+   "n": 16,
+   "from": "M3:S",
+   "to": "V-201:W"
+  },
+  {
+   "n": 17,
+   "from": "R3:S",
+   "to": "V-201:S",
+   "control_valve": 0.5,
+   "label": "FV-205"
+  },
+  {
+   "n": 18,
+   "from": "V-301:N",
+   "to": "K-301:N@0.8",
+   "id_at": 0.7,
+   "flags": {
+    "m": 37.7,
+    "t": -96,
+    "p": 1.14
+   }
+  },
+  {
+   "n": 19,
+   "from": "K-301:S@0.2",
+   "to": "R2:E",
+   "flags": {
+    "m": 37.7,
+    "t": 99,
+    "p": 18.4
+   }
+  },
+  {
+   "from": "R2:W",
+   "to": "E-301:E"
+  },
+  {
+   "n": 20,
+   "from": "E-301:W",
+   "to": "E-203:N",
+   "flags": {
+    "t": 38
+   }
+  },
+  {
+   "n": 21,
+   "from": "E-203:E",
+   "to": "V-302:W"
+  },
+  {
+   "n": 22,
+   "from": "V-302:S",
+   "to": "E-102:S",
+   "control_valve": 0.15,
+   "label": "LV-108",
+   "flags": {
+    "m": 37.7,
+    "t": -34,
+    "p": 17.8
+   }
+  },
+  {
+   "n": 23,
+   "from": "E-102:N",
+   "to": "V-301:W",
+   "id_at": 0.25,
+   "flags": {
+    "m": 37.7,
+    "t": -101,
+    "p": 1.19
+   }
+  },
+  {
+   "n": 24,
+   "from": "R2:S",
+   "to": "V-301:S",
+   "control_valve": 0.5,
+   "label": "FV-305"
+  },
+  {
+   "n": 25,
+   "from": "V-302:E",
+   "to": "FLARE",
+   "valve": 0.5,
+   "label": "HV-313"
+  }
+ ]
+}
