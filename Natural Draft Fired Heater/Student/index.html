@@ -8695,7 +8695,7 @@ const PROCS={
  esd:{title:'Emergency shutdown',steps:[
   ['Trip the heater from the BMS',s=>s.P.bms.state==='TRIPPED'],
   ['Confirm XV-301/302 closed and XV-303 vented',s=>!s.P.bms.xv301&&!s.P.bms.xv302&&s.P.bms.xv303],
-  ['Keep feed flowing at about 50% to cool the coil',s=>s.meas.FIC003>=3.4&&s.meas.FIC003<=4.2],
+  ['Keep feed at about 3.8 L/s (FIC-003 3.4–4.2 L/s) to cool the coil',s=>s.meas.FIC003>=3.4&&s.meas.FIC003<=4.2],
   ['Keep purge draft: FV-200 and HV-400 open',s=>s.P.vA>=90&&s.P.damper>=90],
  ],limit:1800},
  opt:{title:'Optimisation: minimum safe excess air',steps:[
@@ -10007,13 +10007,13 @@ const OV = {
  threadTitle: 'the emergency shutdown, from the order to the CSV',
  threadIntro: 'One graded procedure touches every tab of the group: the emergency shutdown. The numbers below come from the tabs themselves.',
  thread: [
-  ['exercises','Procedures and optimisation › Emergency shutdown (graded): the unit is lined out and an emergency order arrives shortly after loading. The tracker has 4 steps: trip from the BMS; XV-301/302 closed and XV-303 vented; feed kept at about 50% to cool the coil; FV-200 and HV-400 open for purge draft.','A run with a trip in it, and a grade that the Debrief tab will show.'],
+  ['exercises','Procedures and optimisation › Emergency shutdown (graded): the unit is lined out and an emergency order arrives shortly after loading. The tracker has 4 steps: trip from the BMS; XV-301/302 closed and XV-303 vented; feed kept at about 3.8 L/s (FIC-003 3.4–4.2 L/s, as SOP-H100-04) to cool the coil; FV-200 and HV-400 open for purge draft.','A run with a trip in it, and a grade that the Debrief tab will show.'],
   ['sps','Stage 1 Engage asks: is it time-critical, run, safe-park or shut down? The order already answers it (shut down, SOP-H100-04). Pull the event log brings the trip and its first-out into Stage 0 and 5.0 as facts with times.','The facts for the report, and the Look back question: why was the trip needed, and how is it prevented?'],
   ['sop','SOP-H100-04 (Emergency, 5 steps, 2 hold points, practised graded): step 1 HOLD press ESD, XV-301/302 closed, XV-303 vented, FV-300 output 0 %; step 2 feed about 3.8 L/s (FIC-003 3.4–4.2 L/s); step 4 HOLD record the first-out; restart only through SOP-H100-10 with a full 5-minute purge.','The standard each tracker step is checked against.'],
   ['debrief','Exercise grades: out of 10, with a note: safe yes / no, order followed or not, time; fuel not cut within 60 s of the order makes the run unsafe. The trip of this exercise is not charged the 15 points of an unplanned shutdown, but the Shutdowns KPI counts it.','The grade, the note and the times for the report.'],
   ['export','Event log CSV: SIS "BMS TRIP, first out … XV-301/302 closed, XV-303 vented, FV-300 closed, FV-200 and HV-400 open". Run data columns XV-301 open, XV-302 open, XV-303 bleed open, BS-005 flame, FIC-003 PV L/s and BMS state, at 1 to 60 s.','Plots for the report, and the CSV the standalone workbook loads.']
  ],
- threadNote: 'The thread also shows a gap the tabs leave for you to find: the tracker keeps the feed at &quot;about 50%&quot;, SOP-H100-04 at about 3.8 L/s, which is 56 % of the 6.8 L/s design. A difference like this is exactly what a debrief should report back to the SOP owner.',
+ threadNote: 'The tracker and SOP-H100-04 hold the same cooling flow after the trip: FIC-003 at about 3.8 L/s (3.4–4.2 L/s), 56 % of the 6.8 L/s design and just above the 3.4 L/s FSLL-008 setting. If a tracker and an SOP ever disagree, follow the approved SOP and report the gap to the SOP owner at debrief.',
  nums: [
   ['Continuous score','100, minus deductions while firing','Debrief and grading','report (Debrief screenshot)','one number per session; T3, O₂ and CO deductions pause during startup, shutdown and ESD procedures','debrief'],
   ['Unplanned BMS trip','15 points each','Debrief and grading','Exercises (training cases)','a trip inside a startup, shutdown or ESD exercise is not charged','debrief'],
@@ -10038,7 +10038,7 @@ const OV = {
   ['Start','Workbook','Parts E to I and the grading rules hand in from this group','workbook']
  ],
  qs: [
-  ['The ESD tracker says keep the feed at "about 50%", SOP-H100-04 says about 3.8 L/s. Which do you follow on the console, and what do you do about the difference?', 'Follow the approved SOP: FIC-003 at 3.4–4.2 L/s keeps the coil cooled and above the FSLL-008 setting. 3.8 L/s is 56 % of the 6.8 L/s design, so the two are close but not the same; report the deviation at sign-off, and the SOP owner decides in the SOP review which one changes.'],
+  ['After the ESD both the tracker and SOP-H100-04 hold FIC-003 at about 3.8 L/s. Why keep the feed running after the flame is out, and why not lower than 3.4 L/s?', 'The refractory keeps radiating after the trip, so oil left standing in the coil would overheat: tube skin temperature climbs and the oil cokes. 3.8 L/s (56 % of the 6.8 L/s design) carries that heat away. Below 3.4 L/s FT-008 crosses the FSLL-008 low-low setting, and the tracker step only ticks inside 3.4–4.2 L/s.'],
   ['You trip the heater in the Emergency shutdown exercise. Why does the continuous score not lose 15 points, while the same trip in a training exercise would?', 'In the ESD exercise the trip is the intended result of the procedure, so Debrief does not count it as unplanned; in a training exercise a trip means the upset was not caught in time. The Shutdowns KPI counts both, and the procedure grade judges the ESD itself (safe, order, time).'],
   ['A Think EQUIPPED case ends with a fix that works. Which tabs of this group do you need to finish Look back, and what does each give?', 'Debrief: the continuous score and fault recovery show whether the target held. Data export: the before/after CSV for the plots and the evidence. SOP: if the fix changes a step, the SOP goes for review, with a HAZOP of the change.'],
   ['Your procedure grade comes back with "procedure order not followed". Where do you find which step went early, and how do you show it in the report?', 'The tracker marks that step with "!", and the event log (on Debrief, and as the event log CSV from Data export) lists each "Step n done" with its time. Plot the run-data columns of those steps against time to show what happened in which order.'],
