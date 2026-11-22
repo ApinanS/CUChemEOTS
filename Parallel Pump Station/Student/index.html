@@ -395,6 +395,25 @@ a.btn:visited{color:var(--ink)}
 #hazop #hzMatrix td,#hazop #hzMatrix th{text-align:center}
 @media (max-width:600px){#hazop .hzhead .kv td:first-child{width:96px}}
 
+#hzs .hztpanel{display:none}
+#hztPanel{display:none;margin:0 0 10px;padding:10px 14px;border:2px solid #2563EB;border-radius:10px;background:#EFF6FF}
+#hztPanel.show{display:block}
+#hztPanel .row{gap:8px;flex-wrap:wrap;align-items:center}
+#hztPanel pre{white-space:pre-wrap;font-size:13px;margin:6px 0 0;max-height:140px;overflow:auto}
+#hzs .spswrap{margin-top:10px;border:1px solid var(--edge);background:#fff;border-radius:3px;overflow:hidden}
+#hzs .spswrap iframe{display:block;width:100%;border:0;background:#fff}
+#hzs .spsfsbar{display:none}
+#hzs .spswrap.fs{position:fixed;inset:0;z-index:60;margin:0;border:0;border-radius:0;display:flex;flex-direction:column}
+#hzs .spswrap.fs .spsfsbar{display:flex;align-items:center;gap:10px;padding:6px 12px;background:var(--panel-2);border-bottom:1px solid var(--edge);color:var(--ink)}
+#hzs .spswrap.fs iframe{flex:1;height:auto;min-height:0}
+#hzs .spswrap iframe{height:calc(100vh - 110px);min-height:520px}
+@media (max-width:600px){#hzs .spswrap iframe{height:calc(100vh - 90px);min-height:480px}}
+#hzs .spswrap iframe{height:calc(100vh - 150px);min-height:640px}
+#hzs .spswrap.fs iframe{height:auto}
+#hzs .spsfsbar{display:none}
+#hzs .spswrap.fs .spsfsbar{display:flex}
+#hzs .spsbar{gap:8px;flex-wrap:wrap;align-items:center;margin:4px 0 0}
+
 #cq h3{margin-top:22px}
 #cq .cqwarn{border:1px solid #CA8A04;border-left:5px solid #CA8A04;background:rgba(202,138,4,.08);padding:8px 10px;border-radius:4px;margin:8px 0;font-size:13.5px}
 #cq .cqbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0}
@@ -1033,7 +1052,7 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
   <button class="gtab" data-group="gstart" aria-selected="false">Start<span class="gcount">2</span></button>
   <button class="gtab" data-group="gdesign" aria-selected="false">Process &amp; Design<span class="gcount">7</span></button>
   <button class="gtab" data-group="goper" aria-selected="false">Operability<span class="gcount">6</span></button>
-  <button class="gtab" data-group="gsafety" aria-selected="false">Safety<span class="gcount">8</span></button>
+  <button class="gtab" data-group="gsafety" aria-selected="false">Safety<span class="gcount">9</span></button>
   <button class="gtab" data-group="gepc" aria-selected="false">Engineering (EPC)<span class="gcount">8</span></button>
   <button class="gtab" data-group="grun" aria-selected="false">Operate<span class="gcount">6</span></button>
   <button class="gtab" data-group="gtrain" aria-selected="false">Train &amp; Assess<span class="gcount">5</span></button>
@@ -1065,6 +1084,7 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
  <div class="subrow" data-group="gsafety" role="tablist">
   <button class="tab" role="tab" aria-selected="false" data-view="hazid">HAZID</button>
   <button class="tab" role="tab" aria-selected="false" data-view="hazop">HAZOP</button>
+  <button class="tab" role="tab" aria-selected="false" data-view="hzs">HAZOP Studio</button>
   <button class="tab" role="tab" aria-selected="false" data-view="cq">Consequence analysis</button>
   <button class="tab" role="tab" aria-selected="false" data-view="safety">Safety layers</button>
   <button class="tab" role="tab" aria-selected="false" data-view="lopa">LOPA</button>
@@ -1158,6 +1178,7 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
    <tr class="hgrp"><td colspan="2">Safety</td></tr>
    <tr><td>HAZID</td><td>Plant-level hazard identification of the pump station on PPS-PFD-100: what HAZID is, the method, study areas on the drawing (click a marker to filter), the 12-category guideword checklist, the hazard register with prevention / mitigation and S × L ranking (area and MAH filters, risk matrix, CSV), the major accident hazards and the studies they lead to.</td></tr>
    <tr><td>HAZOP</td><td>IEC 61882 teaching HAZOP of the pump station: eight nodes from the tank-farm transfer to D-150 plus the procedures, guide words including REVERSE, risk matrix, worksheets with node / guide-word / risk filters and CSV, coverage check, recommendation register, and a dynamic check that runs ten deviations on copies of the model (first alarms, trips and their times).</td></tr>
+   <tr><td>HAZOP Studio</td><td>PHA Studio, the team HAZOP / LOPA program, set up for P-200A/B and running inside the OTS: Simple edition for the class workshop (six steps), Full edition for LOPA, scenario groups and the PHA administration pages; the ▶ OTS chips run a deviation on the DCS console; a worked example of node N3 is loaded from File → Worked example.</td></tr>
    <tr><td>Consequence analysis</td><td>Use it for the consequences of six loss-of-containment events of the pump station (seal leak fire at P-200A, hot-oil leak after E-100, T200 leak into the bund, D-150 overfill, blocked-in E-100, blocked-discharge seal failure) by the CCPS CHEF methods, every equation shown with its numbers, the pump-curve limit from the model, the RAST severity, and the S it gives against HAZID, HAZOP and LOPA.</td></tr>
    <tr><td>Safety layers</td><td>Also listed under Process &amp; Design. Same page.</td></tr>
    <tr><td>LOPA</td><td>Reliability for safety (failure-rate population lab, PFD and proof testing, block diagrams, a SIF calculator for the station trips LSLL-200, TSHH-212/222, 49 overloads, LSHH-150 and ESD, course parallel method, failure data), a LOPA worksheet for seven pump-station scenarios from the HAZOP (independence and time rules, conditional modifiers, RRF, SIL of an extra layer, risk matrix, base case vs recommendations, CSV), a model check of the time each layer has, process safety times for the SRS, and three interactive bow-ties.</td></tr>
@@ -2365,6 +2386,7 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
  <div class="panel doc">
   <h2>HAZOP · Hazard and operability study of the feed pump station</h2>
   <div class="deckbox rpt"><b>HAZOP report PPS-V1-SA-HZP-001 rev A (PDF)</b> — the study of this tab issued as an EPC-style report: cover and close-out summary of the 33 actions, introduction, scope with the node table and map, IEC 61882 method and risk matrix, sessions and documents reviewed, findings with the dynamic check, worksheets per node (Appendix 1), drawings (Appendix 2) and one action close-out sheet per recommendation (Appendix 3).<div class="row" style="margin-top:6px;gap:8px;flex-wrap:wrap"><a class="btn" href="PPS-V1-SA-HZP-001.pdf" target="_blank" rel="noopener">Open the HAZOP report (PDF, 67 pages)</a></div></div>
+  <div class="deckbox hzwsapp"><b>PHA Studio</b>: run your own HAZOP of this station with your team. The Simple edition is for the class workshop (six steps, a worked example of node N3); switch to Full for LOPA, scenario groups and the administration pages of a real PHA.<div class="row" style="margin-top:6px;gap:8px;flex-wrap:wrap"><a class="btn" href="https://claude.ai/artifact/7Xy8L7JCsz8cut52cvnE5c" target="_blank" rel="noopener">Open PHA Studio</a><a class="btn" href="#" onclick="showView('hzs');return false;">HAZOP Studio tab</a></div></div>
   <div class="deckbox"><b>Teaching slide deck · HAZOP</b> — IEC 61882 phases, the nodes of a parallel pump station, guide words including REVERSE, a worked worksheet row, safeguards from the trips and alarms, the dynamic check on the simulator and the follow-up to LOPA.<div class="row" style="margin-top:6px;gap:8px;flex-wrap:wrap"><a class="btn" href="https://claude.ai/artifact/KpuYGqidbHKiBSuB8j48RB" target="_blank" rel="noopener">Open the deck (claude.ai)</a><a class="btn" href="pps-hazop-deck.html" target="_blank" rel="noopener">Open the deck (same folder, e.g. GitHub Pages)</a></div></div>
   <p class="small muted">A teaching HAZOP of the cat-cracker feed pumps P-200A/B as drawn on the P&amp;ID tab (PPS-V1-PID-001 rev A, as found), from the tank-farm transfer into T200 to the feed drum D-150, done node by node with the IEC 61882 guide words, including the start-up, change-over, shutdown and maintenance procedures. Risk ranking uses the example matrix below; a real study uses the owner's corporate matrix, a multidisciplinary team and the as-built documents.</p>
   <p class="small" id="hzSummary"></p>
@@ -2449,6 +2471,38 @@ tr.hgrp td{background:var(--field);font-weight:600;color:var(--ink)}
    <li>Use the simulator to train operators on the scenarios this HAZOP found and to time their response against the D-150 hold-up (R33).</li>
   </ul>
  </div>
+</section>
+
+<section class="view" id="hzs">
+ <div class="panel doc" id="hzsDoc">
+  <h2>HAZOP Studio · run your own HAZOP of the pump station</h2>
+  <p>PHA Studio is the team HAZOP and LOPA program of the course, set up for P-200A/B: the eight nodes of the HAZOP tab, the guide words and parameters, the risk matrix, the safeguards with their tags and PFDs, the recommendations, the node map and the P&amp;ID. Work through the <b>Simple</b> edition in the class workshop; switch to <b>Full</b> (top right) for LOPA, scenario groups and the administration pages of a real PHA. Your study is kept in this browser; save it as a file to hand it in.</p>
+  <div class="row spsbar" id="hzsLinks" style="gap:8px;flex-wrap:wrap;margin:6px 0 4px">
+   <button class="btn on" id="hzsFull">Full screen</button>
+   <a class="btn" href="hazop-studio.html" target="_blank" rel="noopener">Open in its own window ↗</a>
+   <a class="btn" href="https://claude.ai/artifact/7Xy8L7JCsz8cut52cvnE5c" target="_blank" rel="noopener">Standalone PHA Studio · Simple ↗</a>
+   <a class="btn" href="https://claude.ai/artifact/EgfY4izGqZWDM5S3aQaz2V" target="_blank" rel="noopener">· Full ↗</a>
+   <a class="btn" href="PHA_Studio_P-200_Simple.html" download>⬇ Download HTML · Simple</a>
+   <a class="btn" href="PHA_Studio_P-200_Full.html" download>⬇ Download HTML · Full</a>
+   <a class="btn" href="PHA_Studio_P-200_example_N3.json" download>⬇ Download example</a>
+   <a class="btn" href="https://claude.ai/artifact/REXBkJkEw63fKSm7nTopUa" target="_blank" rel="noopener">Slide deck ↗</a>
+   <a class="btn" href="PHA_Studio_P-200_deck.html" download>⬇ Deck HTML</a>
+  </div>
+  <p class="small muted">The HTML file works offline on any computer. Workshop phone mode needs an http(s) copy (web server or GitHub Pages). Worked example: node N3 (pump A leg), load it from File → Worked example. The ▶ OTS chips on a worksheet row run that deviation on the DCS console of this page (in the standalone copies they open the OTS in a new tab).</p>
+  <details class="spsguide"><summary>PHA Studio, PHA-Pro and PHAWorks: what does what</summary>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Function</th><th>PHA-Pro</th><th>PHAWorks RA Edition</th><th>HAZOP Studio (this tab)</th></tr></thead><tbody>
+   <tr><td>Study set-up, team, documents, sessions</td><td>Project information, team, sessions</td><td>Project: Information, Charter, Team, Sessions</td><td>Simple: Set up the study · Full: Project, Sessions</td></tr>
+   <tr><td>Nodes and design intent</td><td>Nodes</td><td>Nodes</td><td>Nodes, Coverage, node map</td></tr>
+   <tr><td>Worksheet: deviation → causes → consequences → safeguards → risk → recommendations</td><td>Worksheet</td><td>Worksheet (Views, Lists, Columns)</td><td>HAZOP worksheet, safeguards as linked entries</td></tr>
+   <tr><td>Risk ranking</td><td>Risk matrix</td><td>Risk Ranking, Risk Graph</td><td>Risk (risk graph, S and L tables)</td></tr>
+   <tr><td>LOPA</td><td>LOPA worksheet</td><td>LOPA Data, LOPA scenarios, libraries</td><td>Full: LOPA columns and scenario dialog (f<sub>unmit</sub>, f<sub>mit</sub>, TEL, RRR, RRF)</td></tr>
+   <tr><td>Recommendations and follow-up</td><td>Recommendations</td><td>Recommendations, Parking Lot</td><td>Actions: Recommendations, Open points</td></tr>
+   <tr><td>Reports</td><td>Reports</td><td>Reports, Analytics, Scenario Groups</td><td>Check and report: Data check, Report (print, Word, HTML, Excel, CSV)</td></tr>
+  </tbody></table></div>
+  <p class="small muted">HAZOP Studio is a teaching tool written for this course. It is not affiliated with, endorsed by or a copy of PHA-Pro (Sphera) or PHAWorks (Primatech); no screens are copied, and those names are trademarks of their owners. Library values (initiating-event frequencies, IPL PFDs) are teaching defaults in the CCPS style.</p>
+  </details>
+ </div>
+ <div id="hzsWrap" class="spswrap"><div class="spsfsbar"><b>HAZOP Studio · PHA Studio for P-200A/B</b><span style="flex:1"></span><button class="btn" id="hzsExit">Close full screen ✕</button></div><iframe id="hzsFrame" title="PHA Studio for the Parallel Pump Station"></iframe></div>
 </section>
 
 <section class="view" id="cq"><div class="panel doc" id="cqDoc">
@@ -8690,6 +8744,39 @@ function hzDynShow(){
 }
 function renderHazop(){hzBuild();}
 TAB_HOOKS['hazop']=renderHazop;
+
+/* ---- tabs/hzs/hzs.js ---- */
+/* HAZOP Studio tab (skill ots-pha-studio §2): PHA Studio Simple build beside this page as hazop-studio.html, in an iframe;
+   parent hooks HZT, hztStart(id), hzsSave(name, blob); #hzt-tNN in the address starts the same test. */
+var HZS_TESTS=[{"id": "t01", "node": "N3", "param": "Flow", "gw": "NO", "title": "Flow NO — Running pump A motor trips; the spare is not started", "cfg": {"faults": [["tripA", 1]]}}, {"id": "t02", "node": "N3", "param": "Flow", "gw": "NO", "title": "Flow NO — Discharge block valve V201 closed in the field while A runs", "cfg": {"faults": [["v201shut", 1]]}}, {"id": "t03", "node": "N4", "param": "Flow", "gw": "REVERSE", "title": "Flow REVERSE — Check valve on the idle spare stops seating", "cfg": {"faults": [["chkB_leak", 1]]}}, {"id": "t04", "node": "N2", "param": "Pressure", "gw": "LESS", "title": "Pressure LESS — Suction strainer S-200 heavily fouled (line loss × 8)", "cfg": {"faults": [["strainer", 1]]}}, {"id": "t05", "node": "N2", "param": "Composition", "gw": "AS WELL AS", "title": "Composition AS WELL AS — Light ends in the feed (vapour pressure toward 75 kPa)", "cfg": {"faults": [["lightends", 1]]}}, {"id": "t06", "node": "N1", "param": "Flow", "gw": "NO", "title": "Flow NO — Tank-farm transfer lost with T200 already down at 12 %", "cfg": {"faults": [["tfLoss", 1]], "level": 12}}, {"id": "t07", "node": "N7", "param": "Level", "gw": "MORE", "title": "Level MORE — Cat-cracker charge pump trips; the station keeps feeding", "cfg": {"faults": [["fccTrip", 1]]}}, {"id": "t08", "node": "N5", "param": "Flow", "gw": "NO", "title": "Flow NO — Instrument-air failure: V100 and TV-110 go to their fail positions", "cfg": {"faults": [["airFail", 1]]}}, {"id": "t09", "node": "N6", "param": "Temperature", "gw": "MORE", "title": "Temperature MORE — TIC-110 output driven to 100 % (TV-110 wide open)", "cfg": {"tv": 100}}, {"id": "t10", "node": "N5", "param": "Flow", "gw": "REVERSE", "title": "Flow REVERSE — Power dip stops the running pump while the spare check valve passes", "cfg": {"faults": [["powerDip", 1], ["chkB_leak", 1]]}}];
+var HZT={on:null,t0:0};
+var hzsBuilt=false;
+function hzsSave(name,blob){try{const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(u);a.remove();},500);return true;}catch(e){return false;}}
+function hztResult(){const t=HZT.on;if(!t)return '';const m=sim.meas||{};const f=(v,d)=>typeof v==='number'&&isFinite(v)?v.toFixed(d):'—';
+  const ev=logArr.filter(l=>l.t>=0&&!(trainee&&(l.type==='MALF'||l.type==='INSTR'))).slice(-12).map(l=>fmtT(l.t)+' '+l.type+' '+l.msg);
+  return 'HAZOP test '+t.id+' · node '+t.node+' · '+t.param+' '+t.gw+'\n'+t.title+'\nOTS time '+fmtT(sim.t)+': FRC-100 '+f(m.FT100,2)+' L/s · TI-110 '+f(m.TI110,1)+' °C · LI-200 '+f(m.LI200,1)+' % · LI-150 '+f(m.LI150,1)+' % · TI-212 '+f(m.TI212,1)+' °C · II-210 '+f(m.II210,2)+' A\nEvents:\n'+ev.join('\n');}
+function hztPanel(){let p=document.getElementById('hztPanel');if(!p){p=document.createElement('div');p.id='hztPanel';
+    p.innerHTML='<div class="row"><b id="hztT"></b><span style="flex:1"></span><button class="btn" id="hztCopy">Copy result</button><button class="btn" id="hztBack">Back to HAZOP Studio</button><button class="btn" id="hztClose">✕</button></div><p class="small" id="hztMsg" style="margin:4px 0 0"></p><pre id="hztOut"></pre>';
+    const op=document.getElementById('operate');op.insertBefore(p,op.firstChild);
+    document.getElementById('hztCopy').onclick=()=>{const s=hztResult();document.getElementById('hztOut').textContent=s;try{navigator.clipboard.writeText(s).then(()=>{document.getElementById('hztMsg').textContent='Copied: paste it into the Notes of the worksheet row.';},()=>{document.getElementById('hztMsg').textContent='Select the text below and copy it.';});}catch(e){document.getElementById('hztMsg').textContent='Select the text below and copy it.';}};
+    document.getElementById('hztBack').onclick=()=>showView('hzs');
+    document.getElementById('hztClose').onclick=()=>{p.classList.remove('show');};}
+  return p;}
+function hztStart(id){const t=(HZS_TESTS||[]).find(x=>x.id===id);if(!t)return false;
+  newSession('design','HAZOP Studio test '+t.id+': '+t.param+' '+t.gw+' in '+t.node);const c=t.cfg||{},P=sim.P,C=sim.C;
+  if(c.level!==undefined)P.L200=c.level/100*K.Htank;
+  if(c.tv!==undefined){C['TIC-110'].mode='MAN';C['TIC-110'].op=c.tv;P.vT=c.tv;}
+  exState={kind:'hzt',name:'HAZOP test '+t.id,pending:(c.faults||[]).map(f=>({id:f[0],sev:f[1],ramp:0,at:60}))};
+  HZT.on=t;HZT.t0=sim.t;$('#exBadge').textContent=exState.name;log('EX','HAZOP Studio test loaded: '+t.id+' '+t.title);
+  banner('HAZOP Studio test '+t.id+' (node '+t.node+', '+t.param+' '+t.gw+'): '+t.title+'. The deviation starts 1 minute after loading. Watch the DCS with no operator action, or act as the operator would; then Copy result.');
+  const p=hztPanel();p.classList.add('show');document.getElementById('hztT').textContent='HAZOP test '+t.id+' · '+t.node+' · '+t.param+' '+t.gw;document.getElementById('hztMsg').textContent=t.title;document.getElementById('hztOut').textContent='';
+  showView('operate');scrollTo(0,0);return true;}
+function hzsFs(on){const w=document.getElementById('hzsWrap');w.classList.toggle('fs',on);document.body.style.overflow=on?'hidden':'';}
+function renderHzs(){if(hzsBuilt)return;hzsBuilt=true;const f=document.getElementById('hzsFrame');f.src='hazop-studio.html';
+  document.getElementById('hzsFull').onclick=()=>hzsFs(true);document.getElementById('hzsExit').onclick=()=>hzsFs(false);
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('hzsWrap').classList.contains('fs'))hzsFs(false);});}
+TAB_HOOKS['hzs']=renderHzs;
+setTimeout(()=>{const m=/^#hzt-(t\d+)$/.exec(location.hash||'');if(m)hztStart(m[1]);},800);
 
 /* ---- tabs/cq/cq.data.js ---- */
 /* ===== tabs/cq/cq.data.js · Consequence analysis engine (prefix cq), CCPS CHEF v4.5 methods, RAST v4.6 severity =====
@@ -19117,7 +19204,7 @@ TAB_HOOKS.pid=pdBuild;
 var IMG_CAP={"IMG-01": "AI-generated illustration (Gemini)", "IMG-02": "AI-generated illustration (Gemini)", "IMG-03": "AI-generated illustration (Gemini)", "IMG-04": "AI-generated illustration (Gemini)", "IMG-05": "AI-generated illustration (Gemini)", "IMG-06": "AI-generated illustration (Gemini)", "IMG-07": "AI-generated illustration (Gemini)", "IMG-08": "AI-generated illustration (Gemini)", "IMG-09": "AI-generated illustration (Gemini)", "IMG-10": "AI-generated illustration (Gemini)", "IMG-11": "AI-generated illustration (Gemini)", "IMG-12": "AI-generated illustration (Gemini)", "IMG-13": "AI-generated illustration (Gemini)", "IMG-14": "AI-generated illustration (Gemini)"};
 
 /* ===== grouped tab navigation (8l) ===== */
-var TAB_GROUPS={"gstart": ["howto", "workbook"], "gdesign": ["process", "design", "bfd", "pfd", "control", "safety", "pid"], "goper": ["opwin", "flex", "trans", "relia", "effic", "sop"], "gsafety": ["hazid", "hazop", "cq", "safety", "lopa", "srs", "cem", "inc"], "gepc": ["eproj", "eproc", "elay", "emech", "erel", "einst", "eelec", "ecomm"], "grun": ["operate", "bms", "field", "v3d", "curves", "pid"], "gtrain": ["exercises", "sps", "sop", "debrief", "export"]},TAB_PRIMARY={"pid": "gdesign", "sop": "goper", "safety": "gsafety"},curGroup=null,lastInGroup={};
+var TAB_GROUPS={"gstart": ["howto", "workbook"], "gdesign": ["process", "design", "bfd", "pfd", "control", "safety", "pid"], "goper": ["opwin", "flex", "trans", "relia", "effic", "sop"], "gsafety": ["hazid", "hazop", "hzs", "cq", "safety", "lopa", "srs", "cem", "inc"], "gepc": ["eproj", "eproc", "elay", "emech", "erel", "einst", "eelec", "ecomm"], "grun": ["operate", "bms", "field", "v3d", "curves", "pid"], "gtrain": ["exercises", "sps", "sop", "debrief", "export"]},TAB_PRIMARY={"pid": "gdesign", "sop": "goper", "safety": "gsafety"},curGroup=null,lastInGroup={};
 function groupsOf(v){return Object.keys(TAB_GROUPS).filter(g=>TAB_GROUPS[g].includes(v));}
 function grpVisible(g){return [...document.querySelectorAll(`.subrow[data-group="${g}"] .tab`)].filter(b=>!b.hidden).map(b=>b.dataset.view);}
 function paintGroups(){
