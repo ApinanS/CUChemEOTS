@@ -495,13 +495,13 @@ img.zoomable{cursor:zoom-in}
   <div class="sim">
     <div class="sim-controls">
       <div class="eq-recall"><span class="rl">API 521 fire</span>$Q=43.2\,F\,A_{ws}^{0.82}\ \text{kW},\qquad W=Q/\lambda$</div>
-      <div class="sl"><label>R-101 bottom above grade <span class="val" id="frEv"></span></label><input type="range" id="frE" min="0" max="7" step="0.1" value="4"></div>
+      <div class="sl"><label>R-101 bottom above grade (layout: 9.9 m) <span class="val" id="frEv"></span></label><input type="range" id="frE" min="0" max="7" step="0.1" value="4"></div>
       <div class="sim-controls chips" data-group="frK"><button class="chip" data-v="1">Drainage and fire fighting</button><button class="chip" data-v="0">Without (70.9)</button></div>
       <p class="rd" id="frTxt"></p>
     </div>
     <div class="sim-out"><svg id="frSvg" style="width:100%"></svg></div>
   </div>
-  <p class="simsum">At grade and without drainage, fire is <b>under 16 %</b> of the 346 t/h runaway load: it never governs.</p>
+  <p class="simsum">Even at grade and without drainage, fire is <b>under 16 %</b> of the 346 t/h runaway load; at the layout elevation (bottom EL +9.875 over gratings) R-101 has no wetted wall in the fire zone.</p>
 </section>
 
 <section class="slide" data-title="What part 2 settled">
@@ -842,7 +842,7 @@ var ER_PATM=1.013;
 var ER_526=[['D',71],['E',126],['F',198],['G',325],['H',506],['J',830],['K',1186],['L',1841],['M',2323],['N',2800],['P',4116],['Q',7129],['R',10323],['T',16774]];
 var ER_526IO={D:'1 × 2',E:'1 × 2',F:'1½ × 2',G:'1½ × 2½',H:'2 × 3',J:'3 × 4',K:'3 × 4',L:'4 × 6',M:'4 × 6',N:'4 × 6',P:'4 × 6',Q:'6 × 8',R:'6 × 8',T:'8 × 10'};
 /* assumed / typical inputs, each labelled in the tab */
-var ER_AS={k:1.18,Z:0.82,M:62.5,Kd:0.975,Kb:1,Kc:0.9,KdL:0.65,Kw:1,Kv:1,elev:4.0,F:1,
+var ER_AS={k:1.18,Z:0.82,M:62.5,Kd:0.975,Kb:1,Kc:0.9,KdL:0.65,Kw:1,Kv:1,elev:9.875,F:1,
   alpha:4.2e-4,kappa:4.5e-10,etaP:0.75,cwSup:4.0,cwRet:1.5,n2:8.0,Precov:1.25,shut:1.2};
 /* ---------- API 520 Part I (SI) ---------- */
 function erC(k){return 0.03948*Math.sqrt(k*Math.pow(2/(k+1),(k+1)/(k-1)));}
@@ -919,7 +919,7 @@ function erScen(){const R=id=>erRun(id),f1=x=>x==null?'—':TB.f(x,1),fi=erFire(
   a=run('steam_design');add('Abnormal heat input: jacket temperature control fails to full steam','TIC-110 output to 0 %: TV-110A LP steam 100 %, TV-110B CW 0 %; the jacket heats the batch','Model run 3.3','Vapour (model) / two-phase',a[0],a[1],g&&g.id==='steam_design'?'governs':'covered');
   a=run('power_design');add('Utility failure: electric power','Agitator M-101, jacket pumps P-101A/B and P-103 stop; CW and air stay','Model run 3.4','Vapour (model) / two-phase',a[0],a[1],'covered');
   a=run('agit_design');const b=run('agit_peak');add('Loss of agitation','M-101 stops; jacket circulation and CW stay','Model runs 3.5 and 3.6','—',a[0]+'; near the gel peak (4.0 h) it '+b[0]+'. The lumped, well-mixed model cannot show a separated monomer layer (SRS SIF-2).','0','not reached (model limit)');
-  add('External fire (pool fire under R-101)','Heat input Q = 43.2·F·A<sub>ws</sub><sup>0.82</sup> kW on the wetted area up to 7.6 m above grade','Calculator 4.3','Vapour',`A<sub>ws</sub> ${TB.f(fi.w.A,1)} m² (bottom ${TB.f(ER_AS.elev,1)} m above grade, assumed), Q ${TB.f(fi.Q,0)} kW, λ ${TB.f(fi.r.lam,0)} kJ/kg at ${TB.f(fi.r.Pg,2)} bar g`,TB.f(fi.W/1000,1),'covered');
+  add('External fire (pool fire under R-101)','Heat input Q = 43.2·F·A<sub>ws</sub><sup>0.82</sup> kW on the wetted area up to 7.6 m above grade','Calculator 4.3','Vapour',`A<sub>ws</sub> ${TB.f(fi.w.A,1)} m² (bottom ${TB.f(ER_AS.elev,1)} m above grade (layout, gratings), above the 7.6 m fire zone), Q ${TB.f(fi.Q,0)} kW, λ ${TB.f(fi.r.lam,0)} kJ/kg at ${TB.f(fi.r.Pg,2)} bar g`,TB.f(fi.W/1000,1),'covered');
   add('Blocked outlet (vapour)','R-101 has no continuous vapour outlet while reacting (vents and degassing are closed); a closed vent adds no load beyond the runaway','Argument','—','No separate load','0','not applicable');
   add('Control-valve failure on the VCM charge (FV-102 wide open)',`Source is P-103: shut-off ${TB.f(K.Pvcm-ER_PATM,1)} bar g (model K.Pvcm ${TB.f(K.Pvcm,1)} bar a) is below the ${TB.f(K.Ppsv,1)} bar g set`,'Model constants','Liquid',`No vapour overpressure; ${TB.f(d.Fv_open_kgs*3.6,0)} t/h at the design pressure would overfill — stopped by the FQI-102 preset and LSHH-100 (overfill: next row)`,'0','not credible (source below set)');
   a=run('inj_open');add('Liquid overfill: shrinkage-water valve FV-103 wide open','≈ '+TB.f(d.Fi_open_kgs/0.996*3.6,1)+' m³/h of water until the vessel is liquid-full; then the injection pump shut-off limits the pressure','Model run 3.7','Liquid',`liquid-full (level ${TB.f(R('inj_open')&&R('inj_open').lvlMax,1)} %), peak ${TB.f(R('inj_open')&&R('inj_open').peakP,2)} bar g = injection pump shut-off ${TB.f(K.Pinj-ER_PATM,2)} bar g (K.Pinj), just below the set: no lift`,'0 (liquid case in 4.2)','covered by the pump shut-off (margin small)');

@@ -39,7 +39,7 @@
 <text x="330" y="757.9" font-size="8.1" text-anchor="middle">PVC SUSPENSION POLYMERISATION REACTOR</text>
 <text x="330" y="770.4" font-size="8.1" text-anchor="middle">140 m3, D 4.5 m x T/T 7.4 m</text>
 <text x="330" y="782.9" font-size="8.1" text-anchor="middle">15.2 barg &amp; FV / 93 C, JACKET 5.2 barg</text>
-<text x="330" y="795.4" font-size="8.1" text-anchor="middle">AGITATOR M-101 330 kW, 2 IMPELLERS</text>
+<text x="330" y="795.4" font-size="8.1" text-anchor="middle">AGITATOR M-101 450 kW, 2 IMPELLERS</text>
 <rect x="60" y="55" width="40" height="62" rx="20" ry="20" fill="#FFFFFF" stroke="#000000" stroke-width="1.5"/>
 <text x="105" y="81.2" font-size="9" font-weight="bold">D-105</text>
 <text x="105" y="94.8" font-size="7.2">SHORT-STOP POT</text>
@@ -169,7 +169,7 @@
 <line x1="677" y1="82" x2="693" y2="96" stroke="#000000" stroke-width="1"/>
 <text x="697" y="93.8" font-size="7.6" font-weight="bold">PSV-100</text>
 <text x="697" y="105.1" font-size="6.9">SET 15.0 barg</text>
-<text x="693" y="53" font-size="6.7">TO DUMP TANK D-103</text>
+<text x="693" y="53" font-size="6.7">TO EMERG. VENT TANK D-103</text>
 <line x1="805" y1="130" x2="805" y2="55" stroke="#000000" stroke-width="2.1" marker-end="url(#ah)"/>
 <ellipse cx="805" cy="130" rx="3.2" ry="3.2" fill="#000000" stroke="#000000" stroke-width="0.7"/>
 <path d="M796.5 85L813.5 111L796.5 111L813.5 85Z" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" stroke-linejoin="miter"/>
@@ -518,7 +518,7 @@
 <text x="1303" y="670" font-size="6.5">HS-001 ESD PUSHBUTTON</text>
 <text x="1423" y="670" font-size="6.5">MANUAL</text>
 <text x="1515" y="670" font-size="6.5">A + XV-108</text>
-<text x="1280" y="691.1" font-size="6.4">A = SHORT-STOP XV-104, CLOSE XV-101/102/103, FV-103 TO 0,</text>
+<text x="1280" y="691.1" font-size="6.4">A = SHORT-STOP XV-104, CLOSE XV-101/102/109, FV-103 TO 0,</text>
 <text x="1280" y="698.7" font-size="6.4">      FORCE TV-110B / FV-120 / FV-130 OPEN.  B = CLOSE XV-101/102, FV-103.</text>
 <line x1="1280" y1="712" x2="1610" y2="712" stroke="#000000" stroke-width="1"/>
 <line x1="1280" y1="727.5" x2="1610" y2="727.5" stroke="#000000" stroke-width="1"/>
@@ -543,7 +543,7 @@
 <text x="1283" y="783.8" font-size="6.7">Q REACTION AT 2 h</text>
 <text x="1438" y="783.8" font-size="6.7">2.71 MW (PEAK 3.43)</text>
 <text x="1283" y="799.2" font-size="6.7">JACKET / BAFFLES / E-101</text>
-<text x="1438" y="799.2" font-size="6.7">1.48 / 0.40 / 0.98 MW</text>
+<text x="1438" y="799.2" font-size="6.7">1.50 / 0.40 / 0.97 MW</text>
 <text x="1283" y="814.8" font-size="6.7">END POINT</text>
 <text x="1438" y="814.8" font-size="6.7">dP 1.8 bar, X 0.85</text>
 <text x="1283" y="830.2" font-size="6.7">PVC PER BATCH / TIME</text>
@@ -551,7 +551,7 @@
 <text x="50" y="953.5" font-size="7.2" font-weight="bold">GENERAL NOTES:</text>
 <text x="50" y="962.2" font-size="7.2">1. DESIGN BASIS (REFERENCE CARD): VINYL CHLORIDE IN WATER -&gt; PVC; JACKETED BATCH TANK + REFLUX CONDENSER; 50-70 C, 8-12 bar; ORGANIC PEROXIDE INITIATOR; 200 kt/y -&gt; 7.9 MW (dHp 71 kJ/mol, 8000 h/y). PLANT = 4 x 140 m3 REACTORS R-101..R-104; THIS SHEET = R-101 (OTS UNIT).</text>
 <text x="50" y="970.8" font-size="7.2">2. RECIPE (ASSUMED OTS DESIGN POINT): 60 t DEMIN WATER 55 C + PVA (HV-107), 51 t VCM, INITIATORS A + B (t1/2 1.5 h / 12 h AT 57 C), 57.0 C (GRADE K 67). END POINT = PRESSURE DROP 1.8 bar -&gt; 85 % CONVERSION, 43.2 t PVC, REACTION 5.3 h; CYCLE ~7 h -&gt; 4 x 43.2 t x 8000 / 6.9 h = 200 kt/y.</text>
-<text x="50" y="979.5" font-size="7.2">3. VESSEL D 4.5 m x T/T 7.4 m (141.5 m3), SS-CLAD. SHELL 15.2 barg &amp; FULL VACUUM / 93 C, JACKET 5.2 barg (220 / 75 psi, 200 F). PSV-100 SET 15.0 barg TO DUMP TANK D-103: RUNAWAY / TWO-PHASE RELIEF SIZING TBC (DIERS METHOD).</text>
+<text x="50" y="979.5" font-size="7.2">3. VESSEL D 4.5 m x T/T 7.4 m (141.5 m3), SS-CLAD. SHELL 15.2 barg &amp; FULL VACUUM / 93 C, JACKET 5.2 barg (220 / 75 psi, 200 F). PSV-100 SET 15.0 barg TO EMERG. VENT TANK D-103: RUNAWAY / TWO-PHASE RELIEF SIZING TBC (DIERS METHOD).</text>
 <text x="50" y="988.2" font-size="7.2">4. BATCH SEQUENCE (DCS): XV-109 EVACUATE TO &lt;= 0.05 bar a -&gt; XV-101 WATER (FQ PRESET) -&gt; XV-102 VCM (PERMISSIVES: XV-106 SHUT, EVACUATED, WATER &gt;= 95 %, M-101 RUNNING, FI-110 &gt;= 300 m3/h) -&gt; HEAT-UP -&gt; XV-103 INITIATOR AT TI-100 &gt;= 54 C -&gt; REACTION -&gt; END POINT</text>
 <text x="50" y="996.8" font-size="7.2">   -&gt; XV-104 SHORT-STOP -&gt; XV-105 / PV-105 DEGAS BELOW 2 barg -&gt; HV-141 N2 PAD (1.5 barg) -&gt; XV-106 DISCHARGE. ALL XV FAIL CLOSED; SEQUENCE SIGNALS NOT SHOWN.</text>
 <text x="50" y="1005.5" font-size="7.2">5. E-101: VCM VAPOUR UP AND CONDENSATE BACK DOWN THE SAME 18&quot; NOZZLE. INERTS (N2 / AIR) COLLECT AT THE TOP AND BLANKET THE TUBES (TI-132 FALLS TOWARD CW TEMPERATURE) - VENT WITH HV-135. E-101 CW BY VPC-130 / FIC-130 ON PVC-PID-002 (ANTI-FOAM LIMIT 12 m3/h PER % XI-100).</text>

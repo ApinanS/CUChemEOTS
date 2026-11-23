@@ -903,7 +903,7 @@ function mpBase() {
   box(668, 140, 126, 50, 'VCM recovery', 'holder, compressor'); ln('M710 46 L731 46 L731 140', '#7C3AED');
   ln('M464 176 L668 176', '#7C3AED'); tg(560, 168, 'XV-105 degassing');
   box(668, 222, 126, 40, 'Vacuum pump'); ln('M464 242 L668 242', '#7C3AED'); tg(560, 234, 'XV-109');
-  box(10, 24, 130, 44, 'D-103', 'dump tank'); ln('M384 116 L384 36 L140 36', C_RED, 1); tg(250, 28, 'PSV-100 · 15 bar g'); ln('M398 112 L398 60 L140 60', C_RED, 1); tg(250, 54, 'XV-108 ESD vent');
+  box(10, 24, 130, 44, 'D-103', 'emerg. vent tank'); ln('M384 116 L384 36 L140 36', C_RED, 1); tg(250, 28, 'PSV-100 · 15 bar g'); ln('M398 112 L398 60 L140 60', C_RED, 1); tg(250, 54, 'XV-108 ESD vent');
   box(150, 94, 120, 40, 'Initiator pot'); ln('M270 114 L346 160'); tg(276, 150, 'XV-103', 'start');
   box(10, 196, 130, 44, 'VCM storage', 'tank cars'); ln('M140 218 L350 218'); tg(250, 210, 'P-103 · XV-102');
   box(10, 262, 130, 36, 'Water + PVA'); ln('M140 280 L350 280'); tg(250, 272, 'XV-101');
@@ -988,7 +988,7 @@ const CHAIN = {
     { c: ['L2'], lab: 'Power signal', sub: 'no action taken', cs: 'Agitator power showed far too low a density after two hours; it led to no action.', r: 'JI-100 agitator power alarms: low 150 kW, high 420 kW.', tab: 'C&E matrix rows 014–015', s: 'model' },
     { c: ['L1'], lab: 'Condensers', sub: 'heat removal', cs: 'Control opened the gas extraction and the condenser water; the pressure did not fall.', r: 'VPC-130 limits FIC-130 to 12 m³/h per % XI-100 against foam; a low-density level rise is not covered.', tab: 'Control loop design', s: 'part' },
     { c: ['L3'], lab: 'Short-stop', sub: 'manual, 10.5 bar', cs: 'Manual inhibitor injection at 10.5 bar had no effect (a step of the sequence; the report does not name it as a barrier).', r: 'SIF-1 short-stops automatically at TSHH-101 63 °C or PSHH-101 12.5 bar g, below PSV-100 at 15 bar g.', tab: 'SRS of SIF', s: 'model' },
-    { c: ['L4'], lab: 'Relief', sub: 'discs to air', mit: 1, cs: 'Two rupture discs burst at 15.2 bar and vented to atmosphere.', r: 'PSV-100 at 15 bar g relieves to the dump tank D-103, not to air.', tab: 'Safety layers', s: 'model' }] },
+    { c: ['L4'], lab: 'Relief', sub: 'discs to air', mit: 1, cs: 'Two rupture discs burst at 15.2 bar and vented to atmosphere.', r: 'PSV-100 at 15 bar g relieves to the emergency vent tank D-103, not to air.', tab: 'Safety layers', s: 'model' }] },
   zjB: { no: 6, init: ['Pressure dip', 'compressor'], cons: c => ['Cloud ignites', `${c.dead} killed, ${c.inj} injured`], nodes: [
     { c: ['MI'], lab: 'Gas holder', sub: 'no overhaul', cs: 'Holder stuck and tilted; seal water down to about 201 mm.', r: 'Recovery gas holder D-106 (1.25 bar a) and compressor C-101: the same kind of equipment.', tab: 'PFD', s: 'page' },
     { c: ['PROC'], lab: 'Operators', sub: 'reflux too fast', cs: 'Reflux opened from 30 % to 80 % in about 3 minutes; the stuck holder was not recognised.', r: 'Not named in the R-101 reading.', tab: '—', s: 'open' },
@@ -1091,7 +1091,7 @@ const RMAP = {
   2: [['ji100', 'JI-100 power alarms, low 150 kW / high 420 kW', 'C&E matrix rows 014–015', 'model'],
       ['vpc', 'VPC-130 anti-foam limit on FIC-130', 'Control loop design', 'model'],
       ['sif1', 'SIF-1 short-stop: TSHH-101 63 °C / PSHH-101 12.5 bar g', 'SRS of SIF', 'model'],
-      ['psv', 'PSV-100 15 bar g to the dump tank D-103', 'Safety layers', 'model']],
+      ['psv', 'PSV-100 15 bar g to the emergency vent tank D-103', 'Safety layers', 'model']],
   3: [['xv103', 'XV-103 initiator permissives: VCM in, TI-100 ≥ 54 °C, agitator, jacket flow', 'C&E matrix row 028', 'model'],
       ['hazop', 'Wrong charge as a runaway initiating event', 'HAZOP · LOPA', 'page'],
       ['psv', 'PSV-100 to D-103, not to air', 'Safety layers', 'model'],

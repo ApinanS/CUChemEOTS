@@ -793,7 +793,7 @@ table.tbl{width:100%; border-collapse:collapse; font-size:18px}
       <tr><th>Item</th><th>R-101 value</th><th>Why</th></tr>
       <tr><td>Operating</td><td class="num">57 °C, 8.6 bar g</td><td>VCM vapour pressure + water + inerts</td></tr>
       <tr><td>Design</td><td class="num">15.2 bar g, 93 °C</td><td>220 psi / 200 °F; full vacuum</td></tr>
-      <tr><td>PSV-100 set</td><td class="num">15 bar g</td><td>last layer, to dump tank D-103</td></tr>
+      <tr><td>PSV-100 set</td><td class="num">15 bar g</td><td>last layer, to emergency vent tank D-103</td></tr>
       <tr><td>SIS trips</td><td class="num">63 °C, 12.5 bar g</td><td>act before the PSV</td></tr>
       <tr><td>Jacket</td><td class="num">≈ 4 bar g</td><td>tempered-water loop; 75 psi (5.2 bar g) design class</td></tr>
     </table>
@@ -2282,7 +2282,7 @@ if (el('fX')) wire(['fX'], () => {
   const xs = rng(0, 12, 96); /* anti-foam */
   plot(el('fPlot'), { x: [0, 12], y: [0, 3], xt: [0, 2, 4, 6, 8, 10, 12], yt: [0, 1, 2, 3], xl: 'calorimetric conversion (%)', yl: 'heat (MW)',
     s: [{ p: xs.map(x => [x, calc(x).Q]), c: 'var(--red)' }, { p: xs.map(x => [x, calc(x).c]), c: '#0f766e' }, { p: xs.map(x => [x, calc(x).j]), c: 'var(--navy)', d: '6 4' }],
-    h: [{ v: 1.8, t: 'jacket maximum ≈ 1.8 MW' }], d: [{ x: X, y: r.j, c: 'var(--navy)' }] });
+    h: [{ v: 1.6, t: 'jacket maximum ≈ 1.6 MW' }], d: [{ x: X, y: r.j, c: 'var(--navy)' }] });
 });
 
 /* ===== Part 4 ===== */
