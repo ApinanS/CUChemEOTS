@@ -13,6 +13,10 @@ a{color:var(--navy)}a:hover{color:var(--navy-d)}
 header{background:var(--navy);color:#fff}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px}
 .back{color:var(--hi);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:8px;min-height:44px}.back:hover{color:#fff}
+
+.rt{display:flex;align-items:center;gap:10px}.lang{display:inline-flex;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:2px}
+.lang button{min-height:32px;min-width:44px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:var(--hi);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--navy)}.lang button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .pill{font-size:13px;color:var(--hi);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 12px}
 .hero{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-end;padding-top:32px;padding-bottom:56px}
 .hero .txt{flex:999 1 520px;min-width:0}
@@ -67,197 +71,205 @@ footer{border-top:1px solid var(--line);background:#fff}footer .wrap{padding-top
 <!-- ots-library-link:end -->
 
 <header>
-<div class="wrap bar"><a class="back" href="../../"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>ChemE Chula OTS Library</a><span class="pill">Student edition</span></div>
+<div class="wrap bar"><a class="back" href="../../"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>ChemE Chula OTS Library</a><span class="rt"><span class="lang" role="group" aria-label="Language"><button type="button" data-lang="th" aria-pressed="true">ไทย</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span><span class="pill">Student edition</span></span></div>
 <div class="wrap hero">
 <div class="txt"><p class="eyebrow">HAZOP · LOPA · TEAM WORKSHOP</p><h1>PHA Studio</h1>
-<p class="lead">ฝึกทำ HAZOP และ LOPA ของหน่วยกระบวนการใน OTS ทุกหน่วยมีตัวอย่างที่ทำเสร็จแล้ว 1 โหนดให้เปิดดูก่อนเริ่มทำเอง</p></div>
-<div class="stats"><div class="stat"><b>21</b><span>หน่วยกระบวนการ</span></div><div class="stat"><b>1</b><span>โหนดตัวอย่างต่อหน่วย</span></div><div class="stat"><b>11</b><span>หน่วยที่มีฉบับ Full</span></div></div>
+<p class="lead"><span class="i18n" data-en="Practise HAZOP and LOPA on the process units of the OTS. Every unit has one finished example node to look at before you start.">ฝึกทำ HAZOP และ LOPA ของหน่วยกระบวนการใน OTS ทุกหน่วยมีตัวอย่างที่ทำเสร็จแล้ว 1 โหนดให้เปิดดูก่อนเริ่มทำเอง</span></p></div>
+<div class="stats"><div class="stat"><b>21</b><span><span class="i18n" data-en="process units">หน่วยกระบวนการ</span></span></div><div class="stat"><b>1</b><span><span class="i18n" data-en="example node per unit">โหนดตัวอย่างต่อหน่วย</span></span></div><div class="stat"><b>11</b><span><span class="i18n" data-en="units with a Full file">หน่วยที่มีฉบับ Full</span></span></div></div>
 </div>
 </header>
 
 <ol class="steps">
-<li><span class="n">1</span><div><b>เปิดตัวอย่าง</b><small>กดปุ่มสีเขียว โปรแกรมจะเปิดพร้อมโหนดตัวอย่างที่ทำเสร็จแล้ว</small></div></li>
-<li><span class="n">2</span><div><b>ทำโหนดที่เหลือเอง</b><small>ใช้ Simple สำหรับ workshop ในห้อง หรือ Full สำหรับ LOPA เต็มรูปแบบ</small></div></li>
-<li><span class="n">3</span><div><b>บันทึกและส่งงาน</b><small>File → Save ได้ไฟล์ .json หรือส่งออกเป็น Excel และรายงาน</small></div></li>
+<li><span class="n">1</span><div><b><span class="i18n" data-en="Open the example">เปิดตัวอย่าง</span></b><small><span class="i18n" data-en="Press the green button: the program opens with the finished example node.">กดปุ่มสีเขียว โปรแกรมจะเปิดพร้อมโหนดตัวอย่างที่ทำเสร็จแล้ว</span></small></div></li>
+<li><span class="n">2</span><div><b><span class="i18n" data-en="Do the other nodes">ทำโหนดที่เหลือเอง</span></b><small><span class="i18n" data-en="Use Simple for the class workshop, or Full for the complete LOPA.">ใช้ Simple สำหรับ workshop ในห้อง หรือ Full สำหรับ LOPA เต็มรูปแบบ</span></small></div></li>
+<li><span class="n">3</span><div><b><span class="i18n" data-en="Save and hand in">บันทึกและส่งงาน</span></b><small><span class="i18n" data-en="File → Save gives a .json file; you can also export to Excel and a report.">File → Save ได้ไฟล์ .json หรือส่งออกเป็น Excel และรายงาน</span></small></div></li>
 </ol>
 
 <section class="wrap open" aria-labelledby="openT">
-<div class="obox"><div class="otxt"><span class="badge">ใหม่</span><h2 id="openT">ใช้กับกระบวนการของคุณเอง</h2>
-<p>เปิด PHA Studio แบบเปล่า ตั้งโหนดของกระบวนการเองได้ (เพิ่ม แก้ชื่อ ลบ) แล้วทำ HAZOP และ LOPA ได้ครบเหมือนหน่วยใน OTS ระหว่างทำกดปุ่ม <b>Guideline</b> ในโปรแกรม เพื่อเปิดดูโหนดตัวอย่างที่ทำเสร็จแล้วจาก OTS ทั้ง 21 หน่วย หรือโหลดเข้ามาเทียบเป็นโหนด EX ก็ได้</p></div>
-<div class="oact"><a class="obtn pri" href="Open%20Process/hazop-studio.html"><b>Workshop</b><span>ฉบับ Simple สำหรับทำเป็นกลุ่มในห้อง</span></a>
-<a class="obtn" href="Open%20Process/pha-studio-full.html"><b>Full · LOPA</b><span>ฉบับเต็ม มี LOPA และรายงาน</span></a>
-<a class="oguide" href="Open%20Process/hazop-studio.html?guide">เปิดพร้อม Guideline ตัวอย่าง →</a></div></div>
+<div class="obox"><div class="otxt"><span class="badge"><span class="i18n" data-en="New">ใหม่</span></span><h2 id="openT"><span class="i18n" data-en="Use it on your own process">ใช้กับกระบวนการของคุณเอง</span></h2>
+<p class="i18n" data-en="Open a blank PHA Studio, set up the nodes of your own process (add, rename, delete) and run the full HAZOP and LOPA as for an OTS unit. While you work, press &lt;b&gt;Guideline&lt;/b&gt; in the program to see a finished example node from any of the 21 OTS units, or load it as node EX to compare.">เปิด PHA Studio แบบเปล่า ตั้งโหนดของกระบวนการเองได้ (เพิ่ม แก้ชื่อ ลบ) แล้วทำ HAZOP และ LOPA ได้ครบเหมือนหน่วยใน OTS ระหว่างทำกดปุ่ม <b>Guideline</b> ในโปรแกรม เพื่อเปิดดูโหนดตัวอย่างที่ทำเสร็จแล้วจาก OTS ทั้ง 21 หน่วย หรือโหลดเข้ามาเทียบเป็นโหนด EX ก็ได้</p></div>
+<div class="oact"><a class="obtn pri" href="Open%20Process/hazop-studio.html"><b>Workshop</b><span><span class="i18n" data-en="Simple edition for group work in class">ฉบับ Simple สำหรับทำเป็นกลุ่มในห้อง</span></span></a>
+<a class="obtn" href="Open%20Process/pha-studio-full.html"><b>Full · LOPA</b><span><span class="i18n" data-en="Full edition with LOPA and reports">ฉบับเต็ม มี LOPA และรายงาน</span></span></a>
+<a class="oguide" href="Open%20Process/hazop-studio.html?guide"><span class="i18n" data-en="Open with the example Guideline →">เปิดพร้อม Guideline ตัวอย่าง →</span></a></div></div>
 </section>
 
 <main class="wrap">
 <div class="tools">
-<div><h2>เลือกหน่วยกระบวนการ</h2><p class="count" id="count" aria-live="polite">แสดง 21 จาก 21 หน่วย</p></div>
+<div><h2><span class="i18n" data-en="Choose a process unit">เลือกหน่วยกระบวนการ</span></h2><p class="count" id="count" aria-live="polite">แสดง 21 จาก 21 หน่วย</p></div>
 <div class="ctrl">
-<label class="sr" for="q">ค้นหาหน่วย</label>
-<div class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#56606A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="ค้นหาชื่อหรือแท็ก เช่น CR-201" autocomplete="off"></div>
-<div class="chips" role="group" aria-label="ตัวกรอง"><button class="chip" type="button" data-f="all" aria-pressed="true">ทั้งหมด</button><button class="chip" type="button" data-f="full" aria-pressed="false">มีฉบับ Full</button><button class="chip" type="button" data-f="learn" aria-pressed="false">มีสไลด์หรือคู่มือ</button></div>
+<label class="sr" for="q"><span class="i18n" data-en="Search units">ค้นหาหน่วย</span></label>
+<div class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#56606A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="ค้นหาชื่อหรือแท็ก เช่น CR-201" data-en-placeholder="Search a name or tag, e.g. CR-201" autocomplete="off"></div>
+<div class="chips" role="group" aria-label="ตัวกรอง"><button class="chip" type="button" data-f="all" aria-pressed="true"><span class="i18n" data-en="All">ทั้งหมด</span></button><button class="chip" type="button" data-f="full" aria-pressed="false"><span class="i18n" data-en="Has a Full file">มีฉบับ Full</span></button><button class="chip" type="button" data-f="learn" aria-pressed="false"><span class="i18n" data-en="Has slides or a manual">มีสไลด์หรือคู่มือ</span></button></div>
 </div>
 </div>
 <div class="grid" id="grid">
 <article class="card" data-s="air separation vpsa air separation vpsa ver 1 vpsa-v1 two-bed zeolite 5a oxygen vpsa" data-full="0" data-learn="0">
-<div class="top"><span class="tag">VPSA-V1</span><span class="nodes">9 โหนด</span></div>
+<div class="top"><span class="tag">VPSA-V1</span><span class="nodes">9 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>Air Separation VPSA</h3><p>Two-bed zeolite 5A oxygen VPSA</p></div>
-<a class="ex" href="Air%20Separation%20VPSA%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
-<div class="pair"><a class="sec" href="Air%20Separation%20VPSA%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม">Full ในโปรแกรม</span></div>
-<div class="foot"><a href="Air%20Separation%20VPSA%20Ver%201/PHA_Studio_VPSA-V1_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<a class="ex" href="Air%20Separation%20VPSA%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
+<div class="pair"><a class="sec" href="Air%20Separation%20VPSA%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม" data-en-title="Switch to Full inside the program"><span class="i18n" data-en="Full in the program">Full ในโปรแกรม</span></span></div>
+<div class="foot"><a href="Air%20Separation%20VPSA%20Ver%201/PHA_Studio_VPSA-V1_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="cascade refrigeration cascade refrigeration rf-cas-v1 propylene / ethylene cascade, demethanizer feed chilling" data-full="0" data-learn="0">
-<div class="top"><span class="tag">RF-CAS-v1</span><span class="nodes">11 โหนด</span></div>
+<div class="top"><span class="tag">RF-CAS-v1</span><span class="nodes">11 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>Cascade Refrigeration</h3><p>Propylene / ethylene cascade, demethanizer feed chilling</p></div>
-<a class="ex" href="Cascade%20Refrigeration/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
-<div class="pair"><a class="sec" href="Cascade%20Refrigeration/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม">Full ในโปรแกรม</span></div>
-<div class="foot"><a href="Cascade%20Refrigeration/PHA_Studio_RF-CAS-v1_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<a class="ex" href="Cascade%20Refrigeration/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
+<div class="pair"><a class="sec" href="Cascade%20Refrigeration/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม" data-en-title="Switch to Full inside the program"><span class="i18n" data-en="Full in the program">Full ในโปรแกรม</span></span></div>
+<div class="foot"><a href="Cascade%20Refrigeration/PHA_Studio_RF-CAS-v1_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="cooling water tower cooling water tower cwt-v1 cooling water tower t-201" data-full="1" data-learn="1">
-<div class="top"><span class="tag">CWT-V1</span><span class="nodes">9 โหนด</span></div>
+<div class="top"><span class="tag">CWT-V1</span><span class="nodes">9 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>Cooling Water Tower</h3><p>Cooling water tower T-201</p></div>
-<a class="ex" href="Cooling%20Water%20Tower/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
+<a class="ex" href="Cooling%20Water%20Tower/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
 <div class="pair"><a class="sec" href="Cooling%20Water%20Tower/hazop-studio.html">Simple</a><a class="sec" href="Cooling%20Water%20Tower/PHA_Studio_CWT-V1_Full.html">Full · LOPA</a></div>
-<div class="foot"><a href="Cooling%20Water%20Tower/PHA_Studio_CWT-V1_example_N1.json" download>ไฟล์ตัวอย่าง .json</a><a href="Cooling%20Water%20Tower/PHA_Studio_CWT-V1_deck.html">สไลด์สอนใช้</a></div>
+<div class="foot"><a href="Cooling%20Water%20Tower/PHA_Studio_CWT-V1_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a><a href="Cooling%20Water%20Tower/PHA_Studio_CWT-V1_deck.html"><span class="i18n" data-en="Slide deck">สไลด์สอนใช้</span></a></div>
 </article>
 <article class="card" data-s="cyclohexane reactor cyclohexane reactor ver 1 chx benzene hydrogenation to cyclohexane" data-full="1" data-learn="0">
-<div class="top"><span class="tag">CHX</span><span class="nodes">10 โหนด</span></div>
+<div class="top"><span class="tag">CHX</span><span class="nodes">10 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>Cyclohexane Reactor</h3><p>Benzene hydrogenation to cyclohexane</p></div>
-<a class="ex" href="Cyclohexane%20Reactor%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
+<a class="ex" href="Cyclohexane%20Reactor%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
 <div class="pair"><a class="sec" href="Cyclohexane%20Reactor%20Ver%201/hazop-studio.html">Simple</a><a class="sec" href="Cyclohexane%20Reactor%20Ver%201/PHA_Studio_Full_student.html">Full · LOPA</a></div>
-<div class="foot"><a href="Cyclohexane%20Reactor%20Ver%201/PHA_Studio_chx_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<div class="foot"><a href="Cyclohexane%20Reactor%20Ver%201/PHA_Studio_chx_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="dtb crystallizer dtb crystallizer cr-201 dtb vacuum crystallizer, ammonium sulphate" data-full="1" data-learn="0">
-<div class="top"><span class="tag">CR-201</span><span class="nodes">9 โหนด</span></div>
+<div class="top"><span class="tag">CR-201</span><span class="nodes">9 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>DTB Crystallizer</h3><p>DTB vacuum crystallizer, ammonium sulphate</p></div>
-<a class="ex" href="DTB%20Crystallizer/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
+<a class="ex" href="DTB%20Crystallizer/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
 <div class="pair"><a class="sec" href="DTB%20Crystallizer/hazop-studio.html">Simple</a><a class="sec" href="DTB%20Crystallizer/PHA_Studio_CR-201_Full.html">Full · LOPA</a></div>
-<div class="foot"><a href="DTB%20Crystallizer/PHA_Studio_CR-201_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<div class="foot"><a href="DTB%20Crystallizer/PHA_Studio_CR-201_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="depropanizer column depropanizer column c-201 lpg depropanizer, propane overhead" data-full="0" data-learn="1">
-<div class="top"><span class="tag">C-201</span><span class="nodes">9 โหนด</span></div>
+<div class="top"><span class="tag">C-201</span><span class="nodes">9 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>Depropanizer Column</h3><p>LPG depropanizer, propane overhead</p></div>
-<a class="ex" href="Depropanizer%20Column/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N5</a>
-<div class="pair"><a class="sec" href="Depropanizer%20Column/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม">Full ในโปรแกรม</span></div>
-<div class="foot"><a href="Depropanizer%20Column/PHA_Studio_C-201_example_N5.json" download>ไฟล์ตัวอย่าง .json</a><a href="Depropanizer%20Column/HAZOP_Studio_Full_N5_manual.pdf">คู่มือ PDF Full</a><a href="Depropanizer%20Column/HAZOP_Studio_Simple_N5_manual.pdf">คู่มือ PDF Simple</a><a href="Depropanizer%20Column/HAZOP_Studio_Full_N5_tutorial.mp4">วิดีโอสอนใช้ Full</a><a href="Depropanizer%20Column/HAZOP_Studio_Simple_N5_tutorial.mp4">วิดีโอสอนใช้ Simple</a></div>
+<a class="ex" href="Depropanizer%20Column/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N5</a>
+<div class="pair"><a class="sec" href="Depropanizer%20Column/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม" data-en-title="Switch to Full inside the program"><span class="i18n" data-en="Full in the program">Full ในโปรแกรม</span></span></div>
+<div class="foot"><a href="Depropanizer%20Column/PHA_Studio_C-201_example_N5.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a><a href="Depropanizer%20Column/HAZOP_Studio_Full_N5_manual.pdf"><span class="i18n" data-en="Manual PDF">คู่มือ PDF</span> Full</a><a href="Depropanizer%20Column/HAZOP_Studio_Simple_N5_manual.pdf"><span class="i18n" data-en="Manual PDF">คู่มือ PDF</span> Simple</a><a href="Depropanizer%20Column/HAZOP_Studio_Full_N5_tutorial.mp4"><span class="i18n" data-en="Tutorial video">วิดีโอสอนใช้</span> Full</a><a href="Depropanizer%20Column/HAZOP_Studio_Simple_N5_tutorial.mp4"><span class="i18n" data-en="Tutorial video">วิดีโอสอนใช้</span> Simple</a></div>
 </article>
 <article class="card" data-s="flash drum flash drum ver 1 d-400 butane / hexane flash drum with e-400 preheater" data-full="0" data-learn="0">
-<div class="top"><span class="tag">D-400</span><span class="nodes">7 โหนด</span></div>
+<div class="top"><span class="tag">D-400</span><span class="nodes">7 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>Flash Drum</h3><p>Butane / hexane flash drum with E-400 preheater</p></div>
-<a class="ex" href="Flash%20Drum%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
-<div class="pair"><a class="sec" href="Flash%20Drum%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม">Full ในโปรแกรม</span></div>
-<div class="foot"><a href="Flash%20Drum%20Ver%201/PHA_Studio_D-400_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<a class="ex" href="Flash%20Drum%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
+<div class="pair"><a class="sec" href="Flash%20Drum%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม" data-en-title="Switch to Full inside the program"><span class="i18n" data-en="Full in the program">Full ในโปรแกรม</span></span></div>
+<div class="foot"><a href="Flash%20Drum%20Ver%201/PHA_Studio_D-400_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="gas export compressor gas export compressor ver 1 k-100 two-section export gas compressor, gt driver" data-full="0" data-learn="0">
-<div class="top"><span class="tag">K-100</span><span class="nodes">12 โหนด</span></div>
+<div class="top"><span class="tag">K-100</span><span class="nodes">12 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>Gas Export Compressor</h3><p>Two-section export gas compressor, GT driver</p></div>
-<a class="ex" href="Gas%20Export%20Compressor%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
-<div class="pair"><a class="sec" href="Gas%20Export%20Compressor%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม">Full ในโปรแกรม</span></div>
-<div class="foot"><a href="Gas%20Export%20Compressor%20Ver%201/PHA_Studio_K-100_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<a class="ex" href="Gas%20Export%20Compressor%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
+<div class="pair"><a class="sec" href="Gas%20Export%20Compressor%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม" data-en-title="Switch to Full inside the program"><span class="i18n" data-en="Full in the program">Full ในโปรแกรม</span></span></div>
+<div class="foot"><a href="Gas%20Export%20Compressor%20Ver%201/PHA_Studio_K-100_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="hex bfw heater hex bfw heater e-101 flash-steam bfw heater" data-full="0" data-learn="0">
-<div class="top"><span class="tag">E-101</span><span class="nodes">6 โหนด</span></div>
+<div class="top"><span class="tag">E-101</span><span class="nodes">6 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>HEX BFW Heater</h3><p>Flash-steam BFW heater</p></div>
-<a class="ex" href="HEX%20BFW%20Heater/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
-<div class="pair"><a class="sec" href="HEX%20BFW%20Heater/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม">Full ในโปรแกรม</span></div>
-<div class="foot"><a href="HEX%20BFW%20Heater/PHA_Studio_E-101_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<a class="ex" href="HEX%20BFW%20Heater/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
+<div class="pair"><a class="sec" href="HEX%20BFW%20Heater/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม" data-en-title="Switch to Full inside the program"><span class="i18n" data-en="Full in the program">Full ในโปรแกรม</span></span></div>
+<div class="foot"><a href="HEX%20BFW%20Heater/PHA_Studio_E-101_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="mea co₂ capture mea co2 capture ver 1 mea-co2 absorber t-101 and stripper t-102, 30 wt% mea" data-full="0" data-learn="0">
-<div class="top"><span class="tag">MEA-CO2</span><span class="nodes">10 โหนด</span></div>
+<div class="top"><span class="tag">MEA-CO2</span><span class="nodes">10 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>MEA CO₂ Capture</h3><p>Absorber T-101 and stripper T-102, 30 wt% MEA</p></div>
-<a class="ex" href="MEA%20CO2%20Capture%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
-<div class="pair"><a class="sec" href="MEA%20CO2%20Capture%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม">Full ในโปรแกรม</span></div>
-<div class="foot"><a href="MEA%20CO2%20Capture%20Ver%201/PHA_Studio_MEA-CO2_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<a class="ex" href="MEA%20CO2%20Capture%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
+<div class="pair"><a class="sec" href="MEA%20CO2%20Capture%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม" data-en-title="Switch to Full inside the program"><span class="i18n" data-en="Full in the program">Full ในโปรแกรม</span></span></div>
+<div class="foot"><a href="MEA%20CO2%20Capture%20Ver%201/PHA_Studio_MEA-CO2_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="mtja trickle-bed reactor mtja pilot trickle-bed reactor r-601 r-601 pilot trickle-bed reactor, co₂ to methanol" data-full="1" data-learn="0">
-<div class="top"><span class="tag">R-601</span><span class="nodes">9 โหนด</span></div>
+<div class="top"><span class="tag">R-601</span><span class="nodes">9 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>MTJA Trickle-Bed Reactor</h3><p>Pilot trickle-bed reactor, CO₂ to methanol</p></div>
-<a class="ex" href="MTJA%20Pilot%20Trickle-Bed%20Reactor%20R-601/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
+<a class="ex" href="MTJA%20Pilot%20Trickle-Bed%20Reactor%20R-601/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
 <div class="pair"><a class="sec" href="MTJA%20Pilot%20Trickle-Bed%20Reactor%20R-601/hazop-studio.html">Simple</a><a class="sec" href="MTJA%20Pilot%20Trickle-Bed%20Reactor%20R-601/pha-studio-full.html">Full · LOPA</a></div>
-<div class="foot"><a href="MTJA%20Pilot%20Trickle-Bed%20Reactor%20R-601/PHA_Studio_R-601_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<div class="foot"><a href="MTJA%20Pilot%20Trickle-Bed%20Reactor%20R-601/PHA_Studio_R-601_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="methanol converter methanol converter ver 1 r-201 ici 4-bed quench methanol converter" data-full="0" data-learn="0">
-<div class="top"><span class="tag">R-201</span><span class="nodes">9 โหนด</span></div>
+<div class="top"><span class="tag">R-201</span><span class="nodes">9 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>Methanol Converter</h3><p>ICI 4-bed quench methanol converter</p></div>
-<a class="ex" href="Methanol%20Converter%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
-<div class="pair"><a class="sec" href="Methanol%20Converter%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม">Full ในโปรแกรม</span></div>
-<div class="foot"><a href="Methanol%20Converter%20Ver%201/PHA_Studio_R-201_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<a class="ex" href="Methanol%20Converter%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
+<div class="pair"><a class="sec" href="Methanol%20Converter%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม" data-en-title="Switch to Full inside the program"><span class="i18n" data-en="Full in the program">Full ในโปรแกรม</span></span></div>
+<div class="foot"><a href="Methanol%20Converter%20Ver%201/PHA_Studio_R-201_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="natural draft fired heater natural draft fired heater ver 1 h-100 natural-draft fired heater, fuel-oil fired" data-full="0" data-learn="0">
-<div class="top"><span class="tag">H-100</span><span class="nodes">9 โหนด</span></div>
+<div class="top"><span class="tag">H-100</span><span class="nodes">9 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>Natural Draft Fired Heater</h3><p>Natural-draft fired heater, fuel-oil fired</p></div>
-<a class="ex" href="Natural%20Draft%20Fired%20Heater%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
-<div class="pair"><a class="sec" href="Natural%20Draft%20Fired%20Heater%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม">Full ในโปรแกรม</span></div>
-<div class="foot"><a href="Natural%20Draft%20Fired%20Heater%20Ver%201/PHA_Studio_H-100_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<a class="ex" href="Natural%20Draft%20Fired%20Heater%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
+<div class="pair"><a class="sec" href="Natural%20Draft%20Fired%20Heater%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม" data-en-title="Switch to Full inside the program"><span class="i18n" data-en="Full in the program">Full ในโปรแกรม</span></span></div>
+<div class="foot"><a href="Natural%20Draft%20Fired%20Heater%20Ver%201/PHA_Studio_H-100_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="pta flash crystallizer pta flash crystallizer pta-fc multistage flash crystallizer v-201 to v-204" data-full="1" data-learn="0">
-<div class="top"><span class="tag">PTA-FC</span><span class="nodes">8 โหนด</span></div>
+<div class="top"><span class="tag">PTA-FC</span><span class="nodes">8 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>PTA Flash Crystallizer</h3><p>Multistage flash crystallizer V-201 to V-204</p></div>
-<a class="ex" href="PTA%20Flash%20Crystallizer/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N2</a>
+<a class="ex" href="PTA%20Flash%20Crystallizer/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N2</a>
 <div class="pair"><a class="sec" href="PTA%20Flash%20Crystallizer/hazop-studio.html">Simple</a><a class="sec" href="PTA%20Flash%20Crystallizer/PHA_Studio_PTA-FC_Full.html">Full · LOPA</a></div>
-<div class="foot"><a href="PTA%20Flash%20Crystallizer/PHA_Studio_PTA-FC_example_N2.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<div class="foot"><a href="PTA%20Flash%20Crystallizer/PHA_Studio_PTA-FC_example_N2.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="pvc dilute-phase conveying pvc dilute-phase conveying ver 1 pvc-conv dilute-phase pneumatic conveying of pvc resin" data-full="1" data-learn="1">
-<div class="top"><span class="tag">PVC-CONV</span><span class="nodes">7 โหนด</span></div>
+<div class="top"><span class="tag">PVC-CONV</span><span class="nodes">7 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>PVC Dilute-Phase Conveying</h3><p>Dilute-phase pneumatic conveying of PVC resin</p></div>
-<a class="ex" href="PVC%20Dilute-Phase%20Conveying%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N4</a>
+<a class="ex" href="PVC%20Dilute-Phase%20Conveying%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N4</a>
 <div class="pair"><a class="sec" href="PVC%20Dilute-Phase%20Conveying%20Ver%201/hazop-studio.html">Simple</a><a class="sec" href="PVC%20Dilute-Phase%20Conveying%20Ver%201/pha-studio-full.html">Full · LOPA</a></div>
-<div class="foot"><a href="PVC%20Dilute-Phase%20Conveying%20Ver%201/PHA_Studio_PVC-CONV_example_N4.json" download>ไฟล์ตัวอย่าง .json</a><a href="PVC%20Dilute-Phase%20Conveying%20Ver%201/PHA_Studio_PVC-CONV_deck.html">สไลด์สอนใช้</a></div>
+<div class="foot"><a href="PVC%20Dilute-Phase%20Conveying%20Ver%201/PHA_Studio_PVC-CONV_example_N4.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a><a href="PVC%20Dilute-Phase%20Conveying%20Ver%201/PHA_Studio_PVC-CONV_deck.html"><span class="i18n" data-en="Slide deck">สไลด์สอนใช้</span></a></div>
 </article>
 <article class="card" data-s="pvc suspension reactor pvc suspension reactor ver 1 r-101 suspension pvc batch reactor" data-full="0" data-learn="0">
-<div class="top"><span class="tag">R-101</span><span class="nodes">10 โหนด</span></div>
+<div class="top"><span class="tag">R-101</span><span class="nodes">10 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>PVC Suspension Reactor</h3><p>Suspension PVC batch reactor</p></div>
-<a class="ex" href="PVC%20Suspension%20Reactor%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
-<div class="pair"><a class="sec" href="PVC%20Suspension%20Reactor%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม">Full ในโปรแกรม</span></div>
-<div class="foot"><a href="PVC%20Suspension%20Reactor%20Ver%201/PHA_Studio_R-101_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<a class="ex" href="PVC%20Suspension%20Reactor%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
+<div class="pair"><a class="sec" href="PVC%20Suspension%20Reactor%20Ver%201/hazop-studio.html">Simple</a><span class="sec none" title="เปิดโหมด Full ได้จากในโปรแกรม" data-en-title="Switch to Full inside the program"><span class="i18n" data-en="Full in the program">Full ในโปรแกรม</span></span></div>
+<div class="foot"><a href="PVC%20Suspension%20Reactor%20Ver%201/PHA_Studio_R-101_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="px melt crystallizer px melt crystallizer ver 1 px-mc p-xylene suspension melt crystallizer" data-full="1" data-learn="1">
-<div class="top"><span class="tag">PX-MC</span><span class="nodes">8 โหนด</span></div>
+<div class="top"><span class="tag">PX-MC</span><span class="nodes">8 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>PX Melt Crystallizer</h3><p>p-Xylene suspension melt crystallizer</p></div>
-<a class="ex" href="PX%20Melt%20Crystallizer%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N6</a>
+<a class="ex" href="PX%20Melt%20Crystallizer%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N6</a>
 <div class="pair"><a class="sec" href="PX%20Melt%20Crystallizer%20Ver%201/hazop-studio.html">Simple</a><a class="sec" href="PX%20Melt%20Crystallizer%20Ver%201/PHA_Studio_PX-MC_Full.html">Full · LOPA</a></div>
-<div class="foot"><a href="PX%20Melt%20Crystallizer%20Ver%201/PHA_Studio_PX-MC_example_N6.json" download>ไฟล์ตัวอย่าง .json</a><a href="PX%20Melt%20Crystallizer%20Ver%201/PHA_Studio_PX-MC_deck.html">สไลด์สอนใช้</a></div>
+<div class="foot"><a href="PX%20Melt%20Crystallizer%20Ver%201/PHA_Studio_PX-MC_example_N6.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a><a href="PX%20Melt%20Crystallizer%20Ver%201/PHA_Studio_PX-MC_deck.html"><span class="i18n" data-en="Slide deck">สไลด์สอนใช้</span></a></div>
 </article>
 <article class="card" data-s="rdc acetone extraction rdc acetone extraction ver 1 rdc-v1 rotating-disc contactor, acetone from water" data-full="1" data-learn="1">
-<div class="top"><span class="tag">RDC-V1</span><span class="nodes">8 โหนด</span></div>
+<div class="top"><span class="tag">RDC-V1</span><span class="nodes">8 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>RDC Acetone Extraction</h3><p>Rotating-disc contactor, acetone from water</p></div>
-<a class="ex" href="RDC%20Acetone%20Extraction%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N5</a>
+<a class="ex" href="RDC%20Acetone%20Extraction%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N5</a>
 <div class="pair"><a class="sec" href="RDC%20Acetone%20Extraction%20Ver%201/hazop-studio.html">Simple</a><a class="sec" href="RDC%20Acetone%20Extraction%20Ver%201/PHA_Studio_RDC-V1_Full.html">Full · LOPA</a></div>
-<div class="foot"><a href="RDC%20Acetone%20Extraction%20Ver%201/PHA_Studio_RDC-V1_example_N5.json" download>ไฟล์ตัวอย่าง .json</a><a href="RDC%20Acetone%20Extraction%20Ver%201/PHA_Studio_RDC-V1_deck.html">สไลด์สอนใช้</a></div>
+<div class="foot"><a href="RDC%20Acetone%20Extraction%20Ver%201/PHA_Studio_RDC-V1_example_N5.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a><a href="RDC%20Acetone%20Extraction%20Ver%201/PHA_Studio_RDC-V1_deck.html"><span class="i18n" data-en="Slide deck">สไลด์สอนใช้</span></a></div>
 </article>
 <article class="card" data-s="so₃ converter so3 converter ver 1 so3-v1 five-bed double-contact so₂ converter" data-full="1" data-learn="0">
-<div class="top"><span class="tag">SO3-V1</span><span class="nodes">10 โหนด</span></div>
+<div class="top"><span class="tag">SO3-V1</span><span class="nodes">10 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>SO₃ Converter</h3><p>Five-bed double-contact SO₂ converter</p></div>
-<a class="ex" href="SO3%20Converter%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
+<a class="ex" href="SO3%20Converter%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
 <div class="pair"><a class="sec" href="SO3%20Converter%20Ver%201/hazop-studio.html">Simple</a><a class="sec" href="SO3%20Converter%20Ver%201/pha-studio-full.html">Full · LOPA</a></div>
-<div class="foot"><a href="SO3%20Converter%20Ver%201/PHA_Studio_SO3-V1_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<div class="foot"><a href="SO3%20Converter%20Ver%201/PHA_Studio_SO3-V1_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="steam ejector vacuum steam ejector vacuum ver 1 vd-ej vacuum column with two-stage steam ejectors" data-full="1" data-learn="0">
-<div class="top"><span class="tag">VD-EJ</span><span class="nodes">10 โหนด</span></div>
+<div class="top"><span class="tag">VD-EJ</span><span class="nodes">10 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>Steam Ejector Vacuum</h3><p>Vacuum column with two-stage steam ejectors</p></div>
-<a class="ex" href="Steam%20Ejector%20Vacuum%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N1</a>
+<a class="ex" href="Steam%20Ejector%20Vacuum%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N1</a>
 <div class="pair"><a class="sec" href="Steam%20Ejector%20Vacuum%20Ver%201/hazop-studio.html">Simple</a><a class="sec" href="Steam%20Ejector%20Vacuum%20Ver%201/pha-studio-full.html">Full · LOPA</a></div>
-<div class="foot"><a href="Steam%20Ejector%20Vacuum%20Ver%201/PHA_Studio_VD-EJ_example_N1.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<div class="foot"><a href="Steam%20Ejector%20Vacuum%20Ver%201/PHA_Studio_VD-EJ_example_N1.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 <article class="card" data-s="vacuum batch distillation vacuum batch distillation ver 1 c-101 vacuum batch distillation column" data-full="1" data-learn="0">
-<div class="top"><span class="tag">C-101</span><span class="nodes">8 โหนด</span></div>
+<div class="top"><span class="tag">C-101</span><span class="nodes">8 <span class="i18n" data-en="nodes">โหนด</span></span></div>
 <div><h3>Vacuum Batch Distillation</h3><p>Vacuum batch distillation column</p></div>
-<a class="ex" href="Vacuum%20Batch%20Distillation%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>เปิดตัวอย่างโหนด N4</a>
+<a class="ex" href="Vacuum%20Batch%20Distillation%20Ver%201/hazop-studio.html?example"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span class="i18n" data-en="Open example node">เปิดตัวอย่างโหนด</span> N4</a>
 <div class="pair"><a class="sec" href="Vacuum%20Batch%20Distillation%20Ver%201/hazop-studio.html">Simple</a><a class="sec" href="Vacuum%20Batch%20Distillation%20Ver%201/PHA_Studio_Full_C-101.html">Full · LOPA</a></div>
-<div class="foot"><a href="Vacuum%20Batch%20Distillation%20Ver%201/PHA_Studio_C-101_example_N4.json" download>ไฟล์ตัวอย่าง .json</a></div>
+<div class="foot"><a href="Vacuum%20Batch%20Distillation%20Ver%201/PHA_Studio_C-101_example_N4.json" download><span class="i18n" data-en="Example .json">ไฟล์ตัวอย่าง .json</span></a></div>
 </article>
 </div>
-<div class="empty" id="empty" hidden>ไม่พบหน่วยที่ตรงกับคำค้น ลองพิมพ์ชื่อหรือแท็กอื่น</div>
+<div class="empty" id="empty" hidden><span class="i18n" data-en="No unit matches. Try another name or tag.">ไม่พบหน่วยที่ตรงกับคำค้น ลองพิมพ์ชื่อหรือแท็กอื่น</span></div>
 </main>
 
-<footer><div class="wrap"><span>ภาควิชาวิศวกรรมเคมี คณะวิศวกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</span><span>ฉบับ Student ไม่มีเฉลย · ในโปรแกรมเปิดตัวอย่างได้อีกทางจาก File → Worked example</span></div></footer>
+<footer><div class="wrap"><span><span class="i18n" data-en="Department of Chemical Engineering, Faculty of Engineering, Chulalongkorn University">ภาควิชาวิศวกรรมเคมี คณะวิศวกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</span></span><span><span class="i18n" data-en="Student edition, no answer key · in the program the example also opens from File → Worked example">ฉบับ Student ไม่มีเฉลย · ในโปรแกรมเปิดตัวอย่างได้อีกทางจาก File → Worked example</span></span></div></footer>
 
 <script>
 (function(){
-var q=document.getElementById('q'),cards=[].slice.call(document.querySelectorAll('.card')),chips=[].slice.call(document.querySelectorAll('.chip')),f='all';
+var L='th',q=document.getElementById('q'),cards=[].slice.call(document.querySelectorAll('.card')),chips=[].slice.call(document.querySelectorAll('.chip')),f='all';
 function run(){var s=q.value.trim().toLowerCase(),n=0;cards.forEach(function(c){var ok=(!s||c.dataset.s.indexOf(s)>-1)&&(f==='all'||c.dataset[f]==='1');c.hidden=!ok;if(ok)n++;});
-document.getElementById('count').textContent='แสดง '+n+' จาก '+cards.length+' หน่วย';document.getElementById('empty').hidden=n>0;}
+document.getElementById('count').textContent=L==='en'?'Showing '+n+' of '+cards.length+' units':'แสดง '+n+' จาก '+cards.length+' หน่วย';document.getElementById('empty').hidden=n>0;}
 q.addEventListener('input',run);
+var tx=[].slice.call(document.querySelectorAll('.i18n'));tx.forEach(function(e){e.dataset.th=e.innerHTML;});
+var at=[].slice.call(document.querySelectorAll('[data-en-placeholder],[data-en-title]'));at.forEach(function(e){if(e.dataset.enPlaceholder)e.dataset.thPlaceholder=e.placeholder;if(e.dataset.enTitle)e.dataset.thTitle=e.title;});
+var lb=[].slice.call(document.querySelectorAll('[data-lang]'));
+function setLang(l){L=l==='en'?'en':'th';document.documentElement.lang=L;tx.forEach(function(e){e.innerHTML=L==='en'?e.dataset.en:e.dataset.th;});
+at.forEach(function(e){if(e.dataset.enPlaceholder)e.placeholder=L==='en'?e.dataset.enPlaceholder:e.dataset.thPlaceholder;if(e.dataset.enTitle)e.title=L==='en'?e.dataset.enTitle:e.dataset.thTitle;});
+lb.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===L?'true':'false');});run();try{localStorage.setItem('pha-landing-lang',L);}catch(e){}}
+lb.forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang);});});
+var l0=(location.search.match(/[?&]lang=(en|th)/)||[])[1];if(!l0){try{l0=localStorage.getItem('pha-landing-lang');}catch(e){}}if(l0==='en')setLang('en');
 chips.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;chips.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});run();});});
 })();
 </script>
