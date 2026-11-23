@@ -2868,6 +2868,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="opwin"><div class="panel doc" id="owDoc" style="max-width:none">
  <h2>Operating windows · where CR-201 can run</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>Where can CR-201 run, and what stops it? &middot; 24 slides</span><a href="https://claude.ai/artifact/9bbmRSEKD7wEmhdJacVVvD" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-opwin-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <nav class="toc small"><a href="#ow1">1 Operability</a> · <a href="#ow2">2 Variables</a> · <a href="#ow3">3 Sources of variability</a> · <a href="#ow4">4 Bounds now</a> · <a href="#ow5">5 Point check</a> · <a href="#ow6">6 Capacity and turndown</a> · <a href="#ow7">7 Window map</a> · <a href="#ow8">8 How often inside</a> · <a href="#ow9">9 Limits of this analysis</a></nav>
  <p class="small muted" style="margin:0">Every number on this tab comes from the simulator: a point is the plant run for 6 hours of plant time with the trips switched off (so a limit can be seen rather than cut short), the disturbance applied through the model's own faults, and the loops in AUTO. The maps were computed with the same engine (<code>tabs/opwin/tools/compute.js</code>, 214 runs).</p>
 
@@ -2922,6 +2923,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="flex"><div class="panel doc" id="fxDoc" style="max-width:none">
  <h2>Flexibility · the handles CR-201 has, and how far they go</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>Which handles does CR-201 have, and how far do they go? &middot; 25 slides</span><a href="https://claude.ai/artifact/FDXrCoYR88A8kDoZwaY3Jm" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-flex-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <nav class="toc small"><a href="#fx1">1 What flexibility is</a> · <a href="#fx2">2 How many handles</a> · <a href="#fx3">3 Where they act</a> · <a href="#fx4">4 Heat transfer</a> · <a href="#fx5">5 The condenser</a> · <a href="#fx6">6 Production rate</a> · <a href="#fx7">7 How much is needed</a> · <a href="#fx8">8 Recommendations</a></nav>
  <p class="small muted" style="margin:0">Flexibility is what lets the plant stay inside its operating window when something moves. Numbers come from the simulator: open-loop steps (<code>tabs/flex/tools/fxcomp.js</code>), the operating-window runs, and calculators that use the model's own equations.</p>
 
@@ -2980,6 +2982,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="trans"><div class="panel doc" id="tnDoc" style="max-width:none">
  <h2>Transition operation · start-up, shutdown, rate change and regeneration of CR-201</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>How do we start, stop and change CR-201 safely? &middot; 23 slides</span><a href="https://claude.ai/artifact/2QhPymkxwfofZbq1z9NnnJ" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-trans-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <nav class="toc small"><a href="#tn1">1 Kinds of transition</a> · <a href="#tn2">2 Before the start-up</a> · <a href="#tn3">3 Start-up sequence</a> · <a href="#tn4">4 Start-up on the model</a> · <a href="#tn5">5 Shutdown</a> · <a href="#tn6">6 Production change</a> · <a href="#tn7">7 Regeneration and storage</a> · <a href="#tn8">8 Lessons</a></nav>
  <p class="small muted" style="margin:0">A plant spends little time in transitions and has most of its incidents and off-spec product there. The runs on this tab are scripted on the OTS model (<code>tabs/trans/tools/trcomp.js</code>): the same switches, controllers and SIS commands an operator uses, with no noise.</p>
 
@@ -3033,6 +3036,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="relia"><div class="panel doc" id="rlDoc" style="max-width:none">
  <h2>Process reliability · how often CR-201 stops, and what to do about it</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>How often does CR-201 stop, and what would keep it running? &middot; 22 slides</span><a href="https://claude.ai/artifact/QmomrWh1JYtz8daCwpNBQJ" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-relia-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <nav class="toc small"><a href="#rl1">1 Definitions</a> · <a href="#rl2">2 Availability and reliability</a> · <a href="#rl3">3 Failure rate over time</a> · <a href="#rl4">4 Structures and spares</a> · <a href="#rl5">5 CR-201 as a series system</a> · <a href="#rl6">6 Inventory between units</a> · <a href="#rl7">7 Design and maintenance for reliability</a></nav>
  <div class="cvbox">This tab is about <b>staying in production</b>. Whether the safeguards work on demand (PFD, SIL) is on <a href="#" onclick="showView('lopa');return false;">LOPA</a> and <a href="#" onclick="showView('srs');return false;">SRS of SIF</a>. The two meet in one place: every spurious trip is a production loss, and a trip that is bypassed to avoid them is a safety loss.</div>
 
@@ -3085,6 +3089,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="effic"><div class="panel doc" id="efDoc" style="max-width:none">
  <h2>Efficiency · steam, cooling water and power per tonne of crystals</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>How much steam does a tonne of crystals cost? &middot; 22 slides</span><a href="https://claude.ai/artifact/3t5tLy8vNKjF5xGkiTiTDj" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-effic-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <nav class="toc small"><a href="#ef1">1 Where efficiency ranks</a> · <a href="#ef2">2 Energy balance now</a> · <a href="#ef3">3 Key efficiency variables</a> · <a href="#ef4">4 Rate and steam</a> · <a href="#ef5">5 Feed temperature</a> · <a href="#ef6">6 Saving options</a> · <a href="#ef7">7 Pushing a constraint</a></nav>
  <p class="small muted" style="margin:0">Numbers come from the simulator: the live state, and the operating-window runs (rate and feed temperature) of the Operating windows tab.</p>
 
@@ -3125,6 +3130,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="sop"><div class="panel doc" id="soDoc" style="max-width:none">
  <h2>Standard operating procedures · how CR-201 is run, step by step</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>How is CR-201 run, step by step, on every shift? &middot; 22 slides</span><a href="https://claude.ai/artifact/1NhLNqYWKkdZmaVgdXG5JX" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-sop-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <nav class="toc small"><a href="#so1">1 What an SOP is</a> · <a href="#so2">2 Register</a> · <a href="#so3">3 Procedure viewer</a> · <a href="#so4">4 Writing a step that works</a> · <a href="#so5">5 Life cycle</a> · <a href="#so6">6 SOPs and the OTS</a></nav>
  <div class="cvbox">The other Operability tabs say <b>where</b> CR-201 can run (Operating windows), <b>how far</b> it can be moved (Flexibility), <b>how it gets from one state to another</b> (Transition operation), <b>how often it stops</b> (Process reliability) and <b>what it costs</b> (Efficiency). This tab turns all of it into the instructions an operator follows on shift. Every limit in the steps is read from the model and the alarm list of this OTS, so it cannot drift from what the simulator does.</div>
 
@@ -3167,6 +3173,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="eproj"><div class="panel doc epdoc" id="ejDoc" style="max-width:none">
  <h2>Project &amp; deliverables · the engineering document set of CR-201</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>What documents does it take to build CR-201? &middot; 22 slides</span><a href="https://claude.ai/artifact/RZqWMH11EsCe1kmv1J63Mx" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-eproj-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <div class="deckbox"><div class="row" style="gap:10px;flex-wrap:wrap;align-items:center"><b>AS-PM-DOC-001 Rev 0</b><span class="small muted">Document register and engineering queries.</span><a class="btn small" href="AS-PM-DOC-001.pdf" target="_blank" rel="noopener">Open (PDF)</a><a class="btn small" href="AS-PM-DOC-001.pdf" download>Download</a></div></div>
  <nav class="toc small"><a href="#ej1">1 What a contractor delivers</a> · <a href="#ej2">2 Document register</a> · <a href="#ej3">3 How the documents feed each other</a> · <a href="#ej4">4 Engineering queries</a> · <a href="#ej5">5 Off-design explorer</a> · <a href="#ej6">6 Every check</a></nav>
  <div class="cvbox">There are no EPC documents for this teaching unit, so this group <b>writes the document set from the OTS model</b>, the P&amp;ID, the Design tab and the Safety tabs, then teaches it the way a contractor's set is read. Every number is computed from the model or labelled <b>assumed</b>; every ✓ / ✗ below is recomputed in the page.</div>
@@ -3200,6 +3207,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="eproc"><div class="panel doc epdoc" id="epcDoc" style="max-width:none">
  <h2>Process engineering · heat and material balance, lines and pumps</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>From the balance to pipes and pumps &middot; 23 slides</span><a href="https://claude.ai/artifact/Bu23JvRKYVUAyAJ5iBTh1G" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-eproc-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <div class="deckbox"><div class="row" style="gap:10px;flex-wrap:wrap;align-items:center"><b>AS-PE-HMB-001 Rev 0</b><span class="small muted">Heat and material balance (design + two off-design cases), line list with sizing, pump hydraulics.</span><a class="btn small" href="AS-PE-HMB-001.pdf" target="_blank" rel="noopener">Open (PDF)</a><a class="btn small" href="AS-PE-HMB-001.pdf" download>Download</a></div></div>
  <nav class="toc small"><a href="#epc1">1 Design basis</a> · <a href="#epc2">2 Heat and material balance</a> · <a href="#epc3">3 Line list and sizing</a> · <a href="#epc4">4 Pumps and NPSH</a> · <a href="#epc5">5 Margins</a> · <a href="#epc6">6 Checks</a></nav>
 
@@ -3241,6 +3249,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="emech"><div class="panel doc epdoc" id="emDoc" style="max-width:none">
  <h2>Mechanical · equipment list, datasheets, vessel and exchanger design</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>Vessels, shells and exchangers for a vacuum crystallizer &middot; 21 slides</span><a href="https://claude.ai/artifact/EVe6u1LUqgxbM6JyAtqtj5" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-emech-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <div class="deckbox"><div class="row" style="gap:10px;flex-wrap:wrap;align-items:center"><b>AS-ME-EQL-001 Rev 0</b><span class="small muted">Equipment list and one datasheet per item.</span><a class="btn small" href="AS-ME-EQL-001.pdf" target="_blank" rel="noopener">Open (PDF)</a><a class="btn small" href="AS-ME-EQL-001.pdf" download>Download</a></div></div>
  <nav class="toc small"><a href="#em1">1 Equipment list</a> · <a href="#em2">2 Datasheets</a> · <a href="#em3">3 Shell thickness: pressure and vacuum</a> · <a href="#em4">4 Exchanger rating</a> · <a href="#em5">5 CR-201 arrangement</a> · <a href="#em6">6 Checks</a></nav>
 
@@ -3275,6 +3284,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="erel"><div class="panel doc epdoc" id="erDoc" style="max-width:none">
  <h2>Relief &amp; vent · what can overpressure CR-201, and how big PSV-201 must be</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>Why a vacuum vessel needs a relief valve &middot; 22 slides</span><a href="https://claude.ai/artifact/WEjBZLLhKu83m8jw6Z56YQ" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-erel-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <div class="deckbox"><div class="row" style="gap:10px;flex-wrap:wrap;align-items:center"><b>AS-PE-RLB-001 Rev 0</b><span class="small muted">Relief load basis: every API 521 case for PSV-201, the governing case, sizing and the other devices.</span><a class="btn small" href="AS-PE-RLB-001.pdf" target="_blank" rel="noopener">Open (PDF)</a><a class="btn small" href="AS-PE-RLB-001.pdf" download>Download</a></div></div>
  <nav class="toc small"><a href="#er1">1 Why a vacuum vessel needs a PSV</a> · <a href="#er2">2 Relief cases and model runs</a> · <a href="#er3">3 Relieving conditions and the governing case</a> · <a href="#er4">4 API 520 sizing</a> · <a href="#er5">5 Fire case</a> · <a href="#er6">6 Other devices, vents</a> · <a href="#er7">7 Checks</a></nav>
 
@@ -3309,6 +3319,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="einst"><div class="panel doc epdoc" id="eiDoc" style="max-width:none">
  <h2>Instrumentation &amp; control · instrument list, I/O and valves</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>Every tag, every signal, every valve &middot; 20 slides</span><a href="https://claude.ai/artifact/14BVu1UFZUeFoJH6vQEckS" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-einst-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <div class="deckbox"><div class="row" style="gap:10px;flex-wrap:wrap;align-items:center"><b>AS-IN-INL-001 Rev 0</b><span class="small muted">Instrument list with ranges, alarms, trips and fail positions; I/O count.</span><a class="btn small" href="AS-IN-INL-001.pdf" target="_blank" rel="noopener">Open (PDF)</a><a class="btn small" href="AS-IN-INL-001.pdf" download>Download</a></div></div>
  <nav class="toc small"><a href="#ei1">1 Instrument list</a> · <a href="#ei2">2 I/O count</a> · <a href="#ei3">3 Control-valve sizing</a> · <a href="#ei4">4 Cause and effect, SIS</a> · <a href="#ei5">5 Checks</a></nav>
 
@@ -3334,6 +3345,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="eelec"><div class="panel doc epdoc" id="eeDoc" style="max-width:none">
  <h2>Electrical · load list, motors and cables, hazardous areas</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>Motors, cables and a transformer for CR-201 &middot; 22 slides</span><a href="https://claude.ai/artifact/NCM7CehhSoNSf3hdxZ3zfG" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-eelec-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <div class="deckbox"><div class="row" style="gap:10px;flex-wrap:wrap;align-items:center"><b>AS-EE-LL-001 Rev 0</b><span class="small muted">Electrical load list, motor and cable sizing, hazardous-area table.</span><a class="btn small" href="AS-EE-LL-001.pdf" target="_blank" rel="noopener">Open (PDF)</a><a class="btn small" href="AS-EE-LL-001.pdf" download>Download</a></div></div>
  <nav class="toc small"><a href="#ee1">1 Load list</a> · <a href="#ee2">2 Motor and cable calculator</a> · <a href="#ee3">3 Single-line sketch</a> · <a href="#ee4">4 Hazardous areas</a> · <a href="#ee5">5 Checks</a></nav>
 
@@ -3359,6 +3371,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="ecomm"><div class="panel doc epdoc" id="ecDoc" style="max-width:none">
  <h2>Procurement to commissioning · from purchase order to the performance test</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>From purchase order to the performance test &middot; 19 slides</span><a href="https://claude.ai/artifact/UPjbhmotzg5bNheYC1kMTk" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-ecomm-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <div class="deckbox"><div class="row" style="gap:10px;flex-wrap:wrap;align-items:center"><b>AS-CM-PCP-001 Rev 0</b><span class="small muted">Procurement packages, mechanical completion, pre-commissioning, commissioning and the performance test.</span><a class="btn small" href="AS-CM-PCP-001.pdf" target="_blank" rel="noopener">Open (PDF)</a><a class="btn small" href="AS-CM-PCP-001.pdf" download>Download</a></div></div>
  <nav class="toc small"><a href="#ec1">1 Procurement packages</a> · <a href="#ec2">2 Mechanical completion</a> · <a href="#ec3">3 Pre-commissioning</a> · <a href="#ec4">4 Commissioning on the OTS</a> · <a href="#ec5">5 Performance test</a> · <a href="#ec6">6 Checks</a></nav>
 
@@ -3388,6 +3401,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="lay"><div class="panel doc epdoc" id="laDoc" style="max-width:none">
  <h2>Layout &amp; isometrics · from the P&amp;ID to the plant you walk through</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>From the P&ID to the plant you walk through &middot; 22 slides</span><a href="https://claude.ai/artifact/J5YKzC8baLFSpXxbbfZZvJ" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-lay-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <nav class="toc small"><a href="#la1">1 Plot plan</a> · <a href="#la2">2 Elevations and levels</a> · <a href="#la3">3 Isometrics</a> · <a href="#la4">4 From layout to the 3-D model</a> · <a href="#la5">5 Checks</a></nav>
  <div class="cvbox">The P&amp;ID says what is connected to what; the layout says <b>where</b> it stands. Here the equipment list, the line list and the hand valves of AS-PID-201 rev B are placed on an assumed plot using typical spacing rules. The same data (<code>layout.json</code>) builds <a href="#" onclick="showView('v3d');return false;">Visual plant 3D</a>. Positions are teaching assumptions, not a survey.</div>
 
@@ -3418,6 +3432,7 @@ table.tbl tr.hgrp td{background:var(--panel);font-weight:700;color:var(--value)}
 </div></section>
 <section class="view" id="v3d"><div class="panel doc" id="v3Doc" style="max-width:none">
  <h2>Visual plant 3D · the outside operator's round of CR-201</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>The outside operator's round &middot; 21 slides</span><a href="https://claude.ai/artifact/SXB7qAqFzRHLn9M735PNAM" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/DTB-v1-v3d-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
  <div class="v3bar"><button class="btn small" id="v3Home">⌂ Home</button><button class="btn small" id="v3Prev">◀ Prev</button><select id="v3Sel" aria-label="Station"></select><button class="btn small" id="v3Next">Next ▶</button>
   <span class="small muted">Labels</span><button class="btn small on" data-v3m="tour">Tour</button><button class="btn small" data-v3m="id">Identify</button><button class="btn small" data-v3m="off">Off</button><button class="btn small" id="v3Leg">Legend</button></div>
  <div class="v3wrap" id="v3Wrap"><div class="v3ov" id="v3Ov"></div>
