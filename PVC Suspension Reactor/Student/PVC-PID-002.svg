@@ -468,9 +468,12 @@
 <text x="1302.5" y="961.5" font-size="7.6" font-weight="bold" text-anchor="middle">REV</text>
 <text x="1427" y="961.5" font-size="7.6" font-weight="bold" text-anchor="middle">DESCRIPTION</text>
 <text x="1576.5" y="961.5" font-size="7.6" font-weight="bold" text-anchor="middle">DATE</text>
-<text x="1302.5" y="990" font-size="7.6" text-anchor="middle">A</text>
-<text x="1427" y="990" font-size="7.6" text-anchor="middle">ISSUED FOR OTS DEVELOPMENT (REVIEW)</text>
-<text x="1576.5" y="990" font-size="7.6" text-anchor="middle">25-SEP-26</text>
+<text x="1302.5" y="981" font-size="7" text-anchor="middle">A</text>
+<text x="1427" y="981" font-size="7" text-anchor="middle">ISSUED FOR OTS DEVELOPMENT (REVIEW)</text>
+<text x="1576.5" y="981" font-size="7" text-anchor="middle">25-SEP-26</text>
+<text x="1302.5" y="995" font-size="7" font-weight="bold" text-anchor="middle">B</text>
+<text x="1427" y="995" font-size="7" font-weight="bold" text-anchor="middle">REV 17: VALUES ALIGNED WITH MODEL</text>
+<text x="1576.5" y="995" font-size="7" font-weight="bold" text-anchor="middle">23-NOV-26</text>
 <rect x="1285" y="1002" width="334" height="132" fill="#FFFFFF" stroke="#000000" stroke-width="1.9"/>
 <line x1="1285" y1="1036" x2="1619" y2="1036" stroke="#000000" stroke-width="1"/>
 <line x1="1285" y1="1072" x2="1619" y2="1072" stroke="#000000" stroke-width="1"/>
@@ -489,7 +492,7 @@
 <text x="1326.8" y="1115.7" font-size="7.6" font-weight="bold" text-anchor="middle">DWG NO.</text>
 <text x="1326.8" y="1124.9" font-size="7.6" font-weight="bold" text-anchor="middle">PVC-PID-002</text>
 <text x="1410.2" y="1115.7" font-size="7.6" text-anchor="middle">REV</text>
-<text x="1410.2" y="1124.9" font-size="7.6" text-anchor="middle">A</text>
+<text x="1410.2" y="1124.9" font-size="7.6" text-anchor="middle">B</text>
 <text x="1493.8" y="1115.7" font-size="7.6" text-anchor="middle">SCALE</text>
 <text x="1493.8" y="1124.9" font-size="7.6" text-anchor="middle">N.T.S.</text>
 <text x="1577.2" y="1115.7" font-size="7.6" text-anchor="middle">SHEET</text>
