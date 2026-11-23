@@ -649,6 +649,7 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
   <button class="tab" role="tab" aria-selected="false" data-view="workbook">Workbook</button>
  </div>
  <div class="subrow" data-group="gdesign" role="tablist">
+  <button class="tab" role="tab" aria-selected="false" data-view="ovd">Process &amp; Design overview</button>
   <button class="tab" role="tab" aria-selected="false" data-view="process">The process</button>
   <button class="tab" role="tab" aria-selected="false" data-view="design">Design of the unit operation</button>
   <button class="tab" role="tab" aria-selected="false" data-view="bfd">BFD</button>
@@ -657,6 +658,7 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
   <button class="tab" role="tab" aria-selected="false" data-view="pid">P&amp;ID</button>
  </div>
  <div class="subrow" data-group="gop" role="tablist">
+  <button class="tab" role="tab" aria-selected="false" data-view="ovo">Operability overview</button>
   <button class="tab" role="tab" aria-selected="false" data-view="opwin">Operating windows</button>
   <button class="tab" role="tab" aria-selected="false" data-view="flex">Flexibility</button>
   <button class="tab" role="tab" aria-selected="false" data-view="trans">Transition operation</button>
@@ -677,6 +679,7 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
   <button class="tab" role="tab" aria-selected="false" data-view="inc">Incident cases</button>
  </div>
  <div class="subrow" data-group="geng" role="tablist">
+  <button class="tab" role="tab" aria-selected="false" data-view="ove">Engineering overview</button>
   <button class="tab" role="tab" aria-selected="false" data-view="eproj">Project &amp; deliverables</button>
   <button class="tab" role="tab" aria-selected="false" data-view="eproc">Process engineering</button>
   <button class="tab" role="tab" aria-selected="false" data-view="pid">P&amp;ID</button>
@@ -688,6 +691,7 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
   <button class="tab" role="tab" aria-selected="false" data-view="ecomm">Procurement to commissioning</button>
  </div>
  <div class="subrow" data-group="grun" role="tablist">
+  <button class="tab" role="tab" aria-selected="false" data-view="ovr">Operate overview</button>
   <button class="tab" role="tab" aria-selected="true" data-view="operate">DCS console</button>
   <button class="tab" role="tab" aria-selected="false" data-view="bms">Safety system (SIS)</button>
   <button class="tab" role="tab" aria-selected="false" data-view="field">Field: pumps, valves, checks</button>
@@ -695,6 +699,7 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
   <button class="tab" role="tab" aria-selected="false" data-view="pid">P&amp;ID</button>
  </div>
  <div class="subrow" data-group="gtrain" role="tablist">
+  <button class="tab" role="tab" aria-selected="false" data-view="ovt">Train &amp; Assess overview</button>
   <button class="tab" role="tab" aria-selected="false" data-view="exercises">Exercises</button>
   <button class="tab" role="tab" aria-selected="false" data-view="sps">Systematic problem solving</button>
   <button class="tab" role="tab" aria-selected="false" data-view="debrief">Debrief and grading</button>
@@ -702,7 +707,12 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
  </div>
 </nav>
 <main>
+<section class="view ovx" id="ovt"><div class="panel doc wide ovdoc"></div></section>
+<section class="view ovx" id="ovr"><div class="panel doc wide ovdoc"></div></section>
+<section class="view ovx" id="ove"><div class="panel doc wide ovdoc"></div></section>
 <section class="view ovx" id="sov"><div class="panel doc wide ovdoc"></div></section>
+<section class="view ovx" id="ovo"><div class="panel doc wide ovdoc"></div></section>
+<section class="view ovx" id="ovd"><div class="panel doc wide ovdoc"></div></section>
 <section class="view" id="howto">
  <div class="panel doc">
   <h2>How to use the simulator</h2>
@@ -712,17 +722,17 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
   <ol>
    <li>Click anywhere once so the browser allows alarm sound. Check the top bar shows <b>🔔 Sound on</b>.</li>
    <li>The session opens at design: 340 m³/h of warm water returns from the process users at 49.2 °C, is cooled in three induced-draught cells to 32.3 °C, collects in basin T-201 and is pumped back by three of the four circulating pumps.</li>
-   <li>The tabs are grouped (rounded buttons at the top). Follow the learning path below in order; the <b>Workbook</b> tab gives the activities of each step (Parts A–I).</li>
+   <li>The tabs are grouped (rounded buttons at the top). Each group starts with an <b>overview</b> tab: read it first, and come back to it, to see how the group's tabs connect, in what order, and when in a project the work is done. Follow the learning path below in order; the <b>Workbook</b> tab gives the activities of each step (Parts A–I).</li>
    <li>To operate: <b>Exercises</b> ▸ pick a list ▸ <i>Load</i>; read the blue banner and <b>Acknowledge</b> it; work from the <b>DCS console</b>, the <b>Field</b> tab and <b>Visual plant 3D</b>. Use <b>Speed</b> (2×–50×) and <b>Freeze</b> as needed.</li>
    <li>When finished, open <b>Debrief and grading</b> for your score and <b>Data export</b> for the CSV files of your report.</li>
   </ol>
   <table class="tbl small"><thead><tr><th>Step</th><th>Goal</th><th>Tabs</th><th>Workbook</th></tr></thead><tbody>
-   <tr><td><b>1 Know the plant</b></td><td>What the unit does, its design numbers, where every item is</td><td>The process · Design of the unit operation · BFD · PFD · P&amp;ID · Layout &amp; isometrics</td><td>Part A</td></tr>
-   <tr><td><b>2 Walk the plant</b></td><td>Find, read and check every item in the field</td><td>Visual plant 3D · Field</td><td>Part B</td></tr>
-   <tr><td><b>3 Control and safety</b></td><td>How the loops hold the plant; what can go wrong and what stops it</td><td>Control loop design · Safety system (SIS) · HAZID · HAZOP · Consequence analysis · Safety layers · LOPA · SRS of SIF · C&amp;E matrix · Incident cases</td><td>Part C</td></tr>
-   <tr><td><b>4 Engineering (EPC)</b></td><td>The deliverables behind the plant and how they check against the model</td><td>Project &amp; deliverables · Process engineering · Mechanical · Relief &amp; vent · Instrumentation &amp; control · Electrical · Procurement to commissioning</td><td>Part D</td></tr>
-   <tr><td><b>5 Operate</b></td><td>Start up, run inside the window, change load, shut down</td><td>DCS console · Operating windows · Flexibility · Transition operation · Process reliability · Efficiency · SOP</td><td>Part E</td></tr>
-   <tr><td><b>6 Train</b></td><td>Recognise each upset by its signature and recover, with a field check</td><td>Exercises (training) · Visual plant 3D</td><td>Part F</td></tr>
+   <tr><td><b>1 Know the plant</b></td><td>What the unit does, its design numbers, where every item is</td><td>Process &amp; Design overview · The process · Design of the unit operation · BFD · PFD · P&amp;ID · Layout &amp; isometrics</td><td>Part A</td></tr>
+   <tr><td><b>2 Walk the plant</b></td><td>Find, read and check every item in the field</td><td>Operate overview · Visual plant 3D · Field</td><td>Part B</td></tr>
+   <tr><td><b>3 Control and safety</b></td><td>How the loops hold the plant; what can go wrong and what stops it</td><td>Control loop design · Safety system (SIS) · Safety overview · HAZID · HAZOP · HAZOP Studio · Consequence analysis · Safety layers · LOPA · SRS of SIF · C&amp;E matrix · Incident cases</td><td>Part C</td></tr>
+   <tr><td><b>4 Engineering (EPC)</b></td><td>The deliverables behind the plant and how they check against the model</td><td>Engineering overview · Project &amp; deliverables · Process engineering · P&amp;ID · Layout &amp; isometrics · Mechanical · Relief &amp; vent · Instrumentation &amp; control · Electrical · Procurement to commissioning</td><td>Part D</td></tr>
+   <tr><td><b>5 Operate</b></td><td>Start up, run inside the window, change load, shut down</td><td>DCS console · Operability overview · Operating windows · Flexibility · Transition operation · Process reliability · Efficiency · SOP</td><td>Part E</td></tr>
+   <tr><td><b>6 Train</b></td><td>Recognise each upset by its signature and recover, with a field check</td><td>Train &amp; Assess overview · Exercises (training) · Visual plant 3D</td><td>Part F</td></tr>
    <tr><td><b>7 Troubleshoot</b></td><td>Solve an unknown problem in six stages, every claim tied to a reading</td><td>Exercises (Think EQUIPPED) · Systematic problem solving</td><td>Parts G–H</td></tr>
    <tr><td><b>8 Debrief</b></td><td>Score, evidence and the report</td><td>Debrief and grading · Data export</td><td>Part I</td></tr>
   </tbody></table>
@@ -918,7 +928,7 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
   </ol>
 
   <h3 id="wb6">6 · Activities in course order</h3>
-  <p class="small">Each Part follows one step of the learning path (How to use, section 1). Times are guides.</p>
+  <p class="small">Each Part follows one step of the learning path (How to use, section 1). Times are guides. Begin each group with its overview tab.</p>
   <h4>Part A · Know the plant (about 2 h)</h4>
   <ol>
    <li><b>The process</b> and <b>Design of the unit operation</b>: write the design range, approach, duty, circulation, evaporation and make-up, and check the heat and water balances close.</li>
@@ -3648,7 +3658,635 @@ var TB={tabs:{},built:{},
   enter(v){const t=this.tabs[v];if(!t)return;if(!this.built[v]){this.built[v]=true;try{t.build&&t.build();}catch(e){console.error(e);}}},
   live(v){const t=this.tabs[v];if(t&&t.live&&this.built[v]){try{t.live();}catch(e){console.error(e);}}}};
 (function(){const _r=render;render=function(){const s=document.querySelector('.view.show');if(s)TB.enter(s.id);_r.apply(this,arguments);if(s&&tick%2===0)TB.live(s.id);};})();
-var TAB_GROUPS=[["gstart", "Start", ["howto", "workbook"]], ["gdesign", "Process & Design", ["process", "design", "bfd", "pfd", "control", "pid"]], ["gop", "Operability", ["opwin", "flex", "trans", "relia", "effic", "sop"]], ["gsafety", "Safety", ["sov", "hazid", "hazop", "hzs", "cq", "safety", "lopa", "srs", "cem", "inc"]], ["geng", "Engineering (EPC)", ["eproj", "eproc", "pid", "lay", "emech", "erel", "einst", "eelec", "ecomm"]], ["grun", "Operate", ["operate", "bms", "field", "v3d", "pid"]], ["gtrain", "Train & Assess", ["exercises", "sps", "debrief", "export"]]], TAB_PRIMARY={"pid": "gdesign"};
+var TAB_GROUPS=[["gstart", "Start", ["howto", "workbook"]], ["gdesign", "Process & Design", ["ovd", "process", "design", "bfd", "pfd", "control", "pid"]], ["gop", "Operability", ["ovo", "opwin", "flex", "trans", "relia", "effic", "sop"]], ["gsafety", "Safety", ["sov", "hazid", "hazop", "hzs", "cq", "safety", "lopa", "srs", "cem", "inc"]], ["geng", "Engineering (EPC)", ["ove", "eproj", "eproc", "pid", "lay", "emech", "erel", "einst", "eelec", "ecomm"]], ["grun", "Operate", ["ovr", "operate", "bms", "field", "v3d", "pid"]], ["gtrain", "Train & Assess", ["ovt", "exercises", "sps", "debrief", "export"]]], TAB_PRIMARY={"pid": "gdesign"};
+
+/* ovt: group overview */
+(()=>{
+const OV = {
+ id:'ovt', group:'Train & Assess',
+ title:'Train & Assess overview · how the 4 Train & Assess tabs fit together, in what order, and when in a project',
+ question:'Can the operator run this cooling water unit, recognise an upset and solve an unknown problem, and can we prove it with numbers?',
+ intro:'Exercises loads a situation on the live simulator and grades what you do; Systematic problem solving turns an unknown problem into six written stages tied to readings. Debrief and grading scores the run against the operating bands, and Data export hands the recorded run, the snapshot and the event log on as CSV files for the report.',
+ stageNote:'Training is not only for the classroom. The exercises and grading rules are written while the plant is designed, operators are trained and signed off before the first water goes to the users, and the same tools are used again for refresher training and for real problems once the plant runs.',
+ decisions:{
+  S1:'Whether the project buys an operator training simulator, how true to the plant it must be, and who will be trained on it.',
+  S2:'Which upsets and procedures the training must cover (taken from the HAZID, HAZOP and the SOP list); what counts as a pass.',
+  S3:'The exercise list with its starting situations, the graded procedures, the bands the score uses, and a check of the simulator against the design values.',
+  S4:'Is every panel and field operator trained and assessed (start-up, shutdown, power dip, backwash) before the users depend on the cooling water?',
+  S5:'Refresher training; new exercises after a change or an incident; real problems worked in six stages with plant data.'},
+ studies:[
+  {v:'exercises',label:'Exercises',c:'#2563EB',why:'First, because every other tab of the group needs a run on the simulator: something loaded, something done, something recorded.',
+   goal:'Put the trainee in front of a situation on the live plant (an upset, a procedure, a prediction, a field task) and grade what they do.',
+   q:'What happens next, and what do I do about it?',inp:'The unit at design (DCS console, SIS, Visual plant 3D); the SOPs; the Workbook activities Parts E–H',
+   out:'A live run with its event log; procedure grades (out of 10), field checks (out of 5), reading sheet (15), what-if, trend matching and scramble results',
+   m:'Four lists: Training exercises 1–21, Think EQUIPPED TE-1…TE-12, Procedures and optimisation, Visual plant VP-1…VP-8',st:{S3:1,S4:2,S5:2},t:'3 × 90 min over Parts E–H (estimate)'},
+  {v:'sps',label:'Systematic problem solving',c:'#7C3AED',why:'After the training exercises, because a problem with no named cause is only solvable once you know how the unit answers a known upset.',
+   goal:'Solve an unknown problem in six stages (Engage, Define, Explore, Plan, Do it, Look back), every claim tied to a reading.',
+   q:'What is really wrong, and how do I prove it before I fix it?',inp:'A Think EQUIPPED case loaded in the simulator; the live run data, snapshot and event log; the worked example TE-1',
+   out:'The six-stage workbook (.woods.json) and its report: problem statement, IS / IS NOT, hypotheses with tests, root cause, look back',
+   m:'Woods six-stage method; EQUIPPED checklist (Equipment, Utilities, Instrumentation, Process, People, Environment, Downstream/upstream); fishbone',st:{S4:2,S5:2},t:'90 min per case (estimate)',deck:'sps'},
+  {v:'debrief',label:'Debrief and grading',c:'#059669',why:'After a run, because a score only means something once there is a run to score.',
+   goal:'Show how well the plant was held: the continuous score with each deduction, the performance, the exercise grades, fault recovery times and the event log.',
+   q:'How well did I hold the plant, and where did points go?',inp:'The run since the session or exercise started; the results sent by the Exercises tab',
+   out:'Score (starts at 100) and deductions, performance (time in band, kWh, city water, margin), exercise grades, recovery times, filtered event log',
+   m:'Continuous score against the operating bands of the Workbook section 7; graded procedures (safe / order / time / communication)',st:{S3:1,S4:2,S5:2},t:'20 min (estimate)'},
+  {v:'export',label:'Data export',c:'#D97706',why:'Last, because it takes what was recorded and makes it a file you can plot, keep and hand in.',
+   goal:'Download the recorded run, a tower snapshot against design and the event log as CSV, for plots, the workbook and the report.',
+   q:'What exactly happened, second by second, and can I show it?',inp:'The recorded session (every simulated second, up to 4 h); the data sets, range and interval you choose',
+   out:'Run data CSV, tower snapshot CSV, event log CSV (UTF-8, # header lines)',
+   m:'Five data sets (Tower, Hydraulics, Water balance and chemistry, Energy and money, Controllers); 1, 5, 10 or 60 s',st:{S3:1,S4:1,S5:2},t:'30 min with the plots (estimate)'}
+ ],
+ learnNote:'The tabs follow one session: <b>do</b> it (Exercises), <b>think</b> it through when the cause is unknown (Systematic problem solving), <b>score</b> it (Debrief and grading) and <b>keep</b> it (Data export). In class, Debrief and Data export are opened after every exercise, not only at the end; the Workbook Part I ties them into the report.',
+ projNote:'In a project the order differs in two places. The <b>grading rules and the data checks come first</b>: the bands the score uses and a snapshot of the simulator against the design values are agreed in detailed engineering, before anyone is trained. <b>Systematic problem solving comes last</b> and keeps going: at commissioning and in operation the problems are real, the cause is never on a banner, and the evidence comes from exported or historian data.',
+ proj:[
+  [1,'exercises','S3 Detailed','Write the exercise list: upsets from the HAZOP deviations and the SOPs, each with a starting situation the operator is told.'],
+  [2,'debrief','S3 Detailed','Agree the grading bands with operations (supply 29.5–33.5 °C, users’ outlet 38–47 °C, pH 7.5–8.8, level 60–98 %).'],
+  [3,'export','S3 – S4','Check the simulator against the design: the tower snapshot lists every transmitter against its design value.'],
+  [4,'exercises','S4 Start-up','Train the crews on the graded procedures: cold start-up, normal shutdown, power dip, filter backwash.'],
+  [5,'debrief','S4 Start-up','Assess and sign off each operator from the score, the deductions and the procedure grades.'],
+  [6,'sps','S4 Start-up','Work the first real problems of commissioning in six stages instead of guessing.'],
+  [7,'exercises','S5 Operation','Refresher training; add an exercise after each change (MOC) or incident.'],
+  [8,'export','S5 Operation','Pull the run or plant data that a problem report needs.'],
+  [9,'sps','S5 Operation','Solve a real complaint from the users in six stages; the Look back proposes a change that stops it coming back.'],
+  [10,'debrief','S5 Operation','Track the event log and alarm response (mean time to acknowledge) shift by shift.']
+ ],
+ flow:{bw:170,h:290,
+  pos:{exercises:[200,70],sps:[700,70],debrief:[200,215],export:[700,215]},
+  edges:[
+   ['exercises','sps','a Think EQUIPPED case loaded: situation only, and the live run data','s'],
+   ['exercises','debrief','every deduction, grade and recovery time of the run','s'],
+   ['exercises','export','the run, recorded every simulated second (up to 4 h)','s'],
+   ['debrief','export','the score and deductions to set beside the plots in the report','s'],
+   ['export','sps','CSV run data, snapshot and event log for the standalone workbook','s'],
+   ['sps','exercises','a prediction to test: reload the case and run it again','d','up']
+  ]},
+ threadTitle:'one Think EQUIPPED session, from Load to the exported report',
+ threadIntro:'One session followed through the four tabs, using only what any trainee is told: the situation of TE-1 (the worked example) and the public grading rules. The page does not say what is behind the case; the point is the route, not the answer.',
+ thread:[
+  ['exercises','Think EQUIPPED ▸ TE-1 ▸ Load. The plant is reset to its starting state. The banner says only: unit lined out; the process units phone after lunch, their product coolers are about 1 °C warmer than this morning; nothing has been changed on the cooling water. At design: 340 m³/h returns at 49.2 °C and is supplied at 32.3 °C.','A live run with a situation and no answer; the clock and the event log start.'],
+  ['sps','Stage 1 Engage: is it dangerous or time-critical for the users; keep running, start a spare, take a cell out or shut down, and what would change your mind. Stage 2 Define: what, where, when, how much (about 1 °C at the users), IS / IS NOT, a measurable target. Stage 3 Explore from the live data (DCS trends at 10 s, snapshot, event log). Stage 4: at least three hypotheses that can fail, each with a test. Stage 5: predict before each move. Stage 6: look back.','Tests and moves on the plant, each one in the event log and the score; the workbook saved as .woods.json.'],
+  ['debrief','The score starts at 100. Points go while the supply is outside 29.5–33.5 °C or the users’ outlet outside 38–47 °C, an alarm stays unacknowledged over 60 s (0.3 point/min), or an operator move trips the SIS (15 points). Performance adds the highest return temperature, kWh, city water and margin.','A screenshot of score, deductions and grades; the time of each event to look for in the data.'],
+  ['export','All five data sets at 10 s for the whole session, the tower snapshot and the event log (Part I). The run data carries TI-201, TI-202, TI-231, TI-203, the fans running, FIC-201, FI-206 and the controllers, plus Approach (TI-202 − TI-231) and Range (TI-201 − TI-202) columns.','Plots of FIC-201, TI-201, TI-202, TI-231 and fans running against time, and the water balance before and after the fix, for the report.']
+ ],
+ threadNote:'Two rules hold the thread together: write Stage 1 before touching a controller, and export before closing the page, because nothing is kept after it closes. Grading uses simulated time, so running at 2×–50× speed does not change the score.',
+ nums:[
+  ['Design circulation and temperatures','340 m³/h · 49.2 → 32.3 °C','Design (the session opens here)','Exercises, Debrief, Data export','The starting state of most exercises and the line every trend is read against.','exercises'],
+  ['Continuous score at the start','100','Debrief and grading','Workbook Part I, report','Every deduction comes off this one number.','debrief'],
+  ['Supply band TI-202','29.5–33.5 °C','Debrief and grading (Workbook section 7)','Systematic problem solving, Data export plots','Gives the Define stage a measurable target and decides when a warm drift starts to cost points.','debrief'],
+  ['Users’ outlet band TI-203','38–47 °C','Debrief and grading','Systematic problem solving','The users’ side of the problem; the Engage stage asks how close it is.','debrief'],
+  ['Unplanned SIS trip caused by operation','15 points each','Debrief and grading','Exercises, Systematic problem solving (Engage)','A wrong move costs more than a slow one; trips after an equipment failure are not charged.','debrief'],
+  ['Graded procedure','out of 10 (safe / order / time / communication)','Exercises (procedure tracker)','Debrief exercise grades','Communication is graded too: tick Communicated before Finish and grade.','exercises'],
+  ['Field check of each training exercise','out of 5','Exercises (read in Visual plant 3D)','Debrief, Workbook Part F','Proves you went out and read the field, not only the DCS.','exercises'],
+  ['Live data in the workbook','DCS trends at 10 s','Systematic problem solving','Data export (10 s for Part I)','The same interval in the tab and in the exported files, so the evidence matches.','sps'],
+  ['Recorded session','every simulated second, up to 4 h','Data export','Systematic problem solving (standalone copy)','Export before closing the page: nothing is kept after it closes.','export']
+ ],
+ links:[
+  ['Operate','DCS console','Where every exercise is worked: faceplates, trends, alarms to acknowledge.','operate'],
+  ['Operate','Visual plant 3D','The field checks (out of 5) and the VP-1…VP-8 exercises; readings go to the event log.','v3d'],
+  ['Operate','Safety system (SIS)','Reset and first-out; an unplanned trip caused by operation costs 15 points.','bms'],
+  ['Operability','SOP','SOP-02, -03, -04 and -08 open as graded procedures in the Exercises tab.','sop'],
+  ['Operability','Transition operation','The reason for each start-up and shutdown step, used to put the scrambles in order.','trans'],
+  ['Operability','Efficiency','Where the electricity went in the 45-minute optimisation.','effic'],
+  ['Process & Design','Control loop design','FIC-201, LIC-201 and AIC-202: needed to explain each what-if prediction.','control'],
+  ['Start','Workbook','Parts E–I, the grading rules (section 7) and the report checklist (section 8).','workbook']
+ ],
+ qs:[
+  ['Why must Stage 1 (Engage) of the workbook be written before you touch a controller, and where would you see the cost of skipping it?','Engage decides whether the problem is dangerous or time-critical for the users and what you will do meanwhile (keep running, start a spare, take a cell out, shut down). A hasty move can turn a slow problem into a fast one: the Debrief charges 15 points for an unplanned SIS trip caused by operation, 5 for a deadheaded pump, and points per minute for a fan on a starved cell or a supply outside 29.5–33.5 °C. Those deductions show in the score and in the event log.'],
+  ['Inside the OTS the workbook pulls the live data; the standalone copy cannot. How do you give the standalone copy the same evidence?','On Data export tick all five data sets, choose the whole session at 10 s (the interval of the live trends), and download the run data, the tower snapshot and the event log. Load the three CSV files on the workbook’s OTS data & evidence page, then Save the .woods.json. Do it before closing the page: nothing is kept.'],
+  ['You ran an exercise at 20× speed. Does it change your score or your data, and what does it change?','No: grading and recording use simulated time, so the score, the recovery times and the exported rows are the same. What changes is your time to think: alarms come faster in real time, and an alarm left over 60 s simulated costs 0.3 point/min. Freeze lets you read and plan without the plant moving.'],
+  ['The What-if exercise and the Do it / Look back stages both ask for a prediction before the move. Why, and where is each checked?','A prediction shows whether your picture of the unit (pump curve, heat balance, water balance, approach) is right. The What-if is checked by a separate copy of the model 30 minutes after the event, and the result goes to Exercise grades in the Debrief. In the workbook you compare your prediction with the trend after each move, from the live data or the exported CSV, and explain every miss in Look back.'],
+  ['A training exercise ends with a good continuous score but a field check of 2 out of 5. What does that tell you, and what goes into the report?','The score says the plant was held inside its bands; the field check says you did not read the field items in Visual plant 3D. Part F asks for a cause-and-effect sheet per exercise: first alarm and time, first variable noticed, what you did, the field-check grade, and the recovery time from the Debrief. The event log (FIELD filter) and the exported event log show which readings were taken and when.']
+ ]
+};
+
+/* Group overview engine. Data: const OV = {...} (schema in the ots-group-overview-tabs skill). */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ID=OV.id,R='#'+ID;
+const ST=OV.stages||[
+ ['S1','Concept / pre-FEED','process route chosen; BFD; plot area; materials and inventories known'],
+ ['S2','FEED (basic engineering)','PFD and HMB; P&ID rev A–B; equipment list; plot plan; relief philosophy'],
+ ['S3','Detailed engineering','P&ID issued for design → IFC; datasheets; SIS and DCS design; isometrics'],
+ ['S4','Construction, commissioning, start-up','FAT / SAT of the control and safety systems; pre-start-up safety review'],
+ ['S5','Operation and change','the plant runs; proof tests; management of change; revalidation; incidents']];
+const STU=OV.studies,BYV=Object.fromEntries(STU.map(s=>[s.v,s])),LEARN=STU.map(s=>s.v);
+const LAB=v=>(BYV[v]&&BYV[v].label)||v;
+const go=(v,t)=>`<a href="#" class="ovgo" data-ovgo="${v}">${esc(t||'open '+LAB(v)+' ›')}</a>`;
+let SEL=null,ORD='learn';
+function card(s,i){const main=Object.entries(s.st).filter(([k,v])=>v===2).map(([k])=>k);
+  return `<div class="ovcard" data-ov="${s.v}" tabindex="0" style="--sc:${s.c}"><div class="ovhd"><span class="ovno">${i+1}</span><b>${esc(s.label)}</b><span class="ovst">${main.map(k=>(ST.find(x=>x[0]===k)||[,k])[1]).join(' · ')}</span></div>
+   <div class="ovq">${esc(s.q)}</div><div class="small"><b>Goal.</b> ${esc(s.goal)}</div>
+   <div class="small"><b>Needs:</b> ${esc(s.inp)}</div><div class="small"><b>Hands on:</b> ${esc(s.out)}</div>
+   <div class="small muted">${esc(s.m)}</div><div>${go(s.v)}</div></div>`;}
+function life(){const W=1000,lw=200,cw=(W-lw-10)/ST.length,rh=34,top=58,H=top+STU.length*rh+14;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(OV.group)} across the project stages">`;
+  ST.forEach((x,i)=>{const X=lw+i*cw;const m=x[1].match(/^([^(,]+)[(,]?\s*(.*?)\)?$/)||[0,x[1],''];s+=`<rect x="${X+2}" y="4" width="${cw-4}" height="${H-8}" rx="6" class="ovcol${i%2?' alt':''}"/><text x="${X+cw/2}" y="22" class="ovtx b sm2" text-anchor="middle">${x[0]} · ${esc(m[1].trim())}</text><text x="${X+cw/2}" y="40" class="ovtx sm" text-anchor="middle">${esc(m[2])}</text>`;});
+  STU.forEach((t,j)=>{const y=top+j*rh;const ks=Object.keys(t.st).map(k=>ST.findIndex(x=>x[0]===k));const a=Math.min(...ks),b=Math.max(...ks);
+    s+=`<g class="ovrow" data-ov="${t.v}" tabindex="0"><rect x="4" y="${y}" width="${W-8}" height="${rh-4}" rx="4" class="ovhit"/><text x="12" y="${y+20}" class="ovtx b">${j+1} · ${esc(t.label.length>22?t.label.slice(0,21)+'…':t.label)}</text>`;
+    s+=`<line x1="${lw+a*cw+cw/2}" x2="${lw+b*cw+cw/2}" y1="${y+15}" y2="${y+15}" stroke="${t.c}" stroke-width="3" opacity=".45"/>`;
+    Object.entries(t.st).forEach(([k,v])=>{const X=lw+ST.findIndex(x=>x[0]===k)*cw+cw/2;s+=v===2?`<circle cx="${X}" cy="${y+15}" r="9" fill="${t.c}"/>`:`<circle cx="${X}" cy="${y+15}" r="7" fill="var(--panel)" stroke="${t.c}" stroke-width="2.5"/>`;});
+    s+='</g>';});
+  return s+'</svg>';}
+function stages(){return ST.map(x=>{const here=STU.filter(t=>t.st[x[0]]);
+  return `<tr><td><b>${x[0]}</b> ${esc(x[1])}</td><td>${esc(x[2])}</td><td>${here.map(t=>`<span class="ovchip${t.st[x[0]]===2?' main':''}" data-ov="${t.v}" style="--sc:${t.c}">${t.st[x[0]]===2?'●':'○'} ${esc(t.label)}</span>`).join(' ')||'<span class="muted">–</span>'}</td><td>${esc((OV.decisions||{})[x[0]]||'')}</td></tr>`;}).join('');}
+const stn=k=>{const s=BYV[k].st;return Object.keys(s).filter(x=>s[x]===2).join(', ');};
+const dk=s=>s.deck?`<a class="small" href="${/\.html$/.test(s.deck)?s.deck:'cwt-'+s.deck+'-deck.html'}" target="_blank" rel="noopener">${esc(/\.html$/.test(s.deck)?s.deck.replace(/\.html$/,''):'cwt-'+s.deck+'-deck')}</a>`:'–';
+function ordRows(){
+  if(ORD==='learn'){$(R+' .ovordnote').innerHTML=`<p class="small">${OV.learnNote}</p>`;
+    return LEARN.map((v,i)=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(s.label)}</b><br><span class="small muted">${esc(s.why||'')}</span></td><td>${esc(s.goal)}</td><td>${stn(v)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+  $(R+' .ovordnote').innerHTML=`<p class="small">${OV.projNote}</p>`;
+  return OV.proj.map(([n,v,stg,what])=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${n}</b></td><td><b>${esc(s.label)}</b></td><td>${esc(what)}</td><td>${esc(stg)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+function flow(){const F=OV.flow,bw=F.bw||170,bh=56,H=F.h||285;let P=F.pos;
+  if(!P){P={};const n=LEARN.length,r1=Math.ceil(n/2),r2=n-r1;LEARN.forEach((v,i)=>{const row=i<r1?0:1,k=row?i-r1:i,m=row?r2:r1;P[v]=[(k+0.5)*1000/m,row?215:70];});}
+  const side=(v,tx,ty)=>{const [x,y]=P[v],dx=tx-x,dy=ty-y;const sx=Math.abs(dx)/(bw/2),sy=Math.abs(dy)/(bh/2);const k=1/Math.max(sx,sy,1e-9);return [x+dx*k,y+dy*k];};
+  let s=`<svg viewBox="0 0 1000 ${H}" role="img" aria-label="What passes between the ${esc(OV.group)} tabs"><defs><marker id="${ID}Ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ovahf"/></marker></defs>`;
+  F.edges.forEach(([a,b,l,k,arc],i)=>{const [x1,y1]=P[a],[x2,y2]=P[b];let path,mx,my;
+    if(arc){const up=arc==='up',sx=x1+(x2>x1?20:-20),ex=x2+(x2>x1?-20:20),y0=up?Math.min(y1,y2)-bh/2:Math.max(y1,y2)+bh/2,dy=up?-38:38;
+      path=`M${sx} ${up?y1-bh/2:y1+bh/2} C ${sx} ${y0+dy}, ${ex} ${y0+dy}, ${ex} ${up?y2-bh/2:y2+bh/2}`;mx=(sx+ex)/2;my=y0+dy*0.75;}
+    else{const [sx,sy]=side(a,x2,y2),[ex,ey]=side(b,x1,y1);path=`M${sx} ${sy} L${ex} ${ey}`;mx=(sx+ex)/2;my=(sy+ey)/2;}
+    s+=`<path d="${path}" class="oved ${k}" data-a="${a}" data-b="${b}" marker-end="url(#${ID}Ah)"/><g class="ovebadge" data-a="${a}" data-b="${b}"><circle cx="${mx}" cy="${my}" r="10"/><text x="${mx}" y="${my+4}" text-anchor="middle">${i+1}</text></g>`;});
+  Object.entries(P).forEach(([v,[x,y]])=>{const t=BYV[v];const lb=t.label.length>20?t.label.slice(0,19)+'…':t.label;s+=`<g class="ovnode" data-ov="${v}" tabindex="0"><rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="8" style="stroke:${t.c}"/><text x="${x}" y="${y-4}" class="ovtx b" text-anchor="middle">${LEARN.indexOf(v)+1} · ${esc(lb)}</text><text x="${x}" y="${y+15}" class="ovtx sm" text-anchor="middle">${esc(t.q.length>30?t.q.slice(0,28)+'…':t.q)}</text></g>`;});
+  s+='</svg>';
+  return s+`<ol class="ovleg small">${F.edges.map(([a,b,l,k])=>`<li data-a="${a}" data-b="${b}"><b>${esc(LAB(a))} → ${esc(LAB(b))}</b>: ${esc(l)}${k==='d'?' <span class="muted">(fed back)</span>':''}</li>`).join('')}</ol>`;}
+function sel(v){SEL=SEL===v?null:v;$$(R+' [data-ov]').forEach(e=>e.classList.toggle('on',!!SEL&&e.dataset.ov===SEL));
+  $$(`${R} .oved,${R} .ovebadge,${R} .ovleg li`).forEach(e=>e.classList.toggle('on',!!SEL&&(e.dataset.a===SEL||e.dataset.b===SEL)));
+  $(R).classList.toggle('ovhas',!!SEL);}
+function build(){const d=$(R+' .ovdoc');const n=STU.length;
+  d.innerHTML=`<h2>${esc(OV.title)}</h2>
+  <nav class="toc small"><a href="#${ID}1">1 The question</a> · <a href="#${ID}2">2 ${n} tabs, ${n} goals</a> · <a href="#${ID}3">3 When in a project</a> · <a href="#${ID}4">4 Order: learning and project</a> · <a href="#${ID}5">5 What passes between tabs</a> · <a href="#${ID}6">6 One thread through the group</a> · <a href="#${ID}7">7 Numbers handed on</a> · <a href="#${ID}8">8 Links to the other groups</a> · <a href="#${ID}9">9 Check yourself</a></nav>
+  <h3 id="${ID}1">1 · The question of this group</h3>
+  <div class="callout ovbig"><b>${esc(OV.question)}</b></div>
+  <p>${OV.intro} Click a tab anywhere on this page (a card, a bar, a box) to highlight it everywhere; the <span class="ovgo">open</span> buttons go to the tab.</p>
+  <h3 id="${ID}2">2 · ${n} tabs, ${n} goals</h3>
+  <p class="small muted">Card = the tab's goal (what it must deliver), the question it answers, what it needs before it can start, what it hands on, the method or standard, and the project stage where that work is mainly done.</p>
+  <div class="ovgrid">${LEARN.map((v,i)=>card(BYV[v],i)).join('')}</div>
+  <h3 id="${ID}3">3 · When in a project this work is done</h3>
+  <p>${OV.stageNote} ● = the main time the work is done; ○ = it is repeated, updated or used there.</p>
+  <div class="ovbox">${life()}</div>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Stage</th><th>State of the design (what exists)</th><th>Work of this group done</th><th>Decisions it drives</th></tr></thead><tbody>${stages()}</tbody></table></div>
+  <h3 id="${ID}4">4 · Order: the order of the tabs and the order in a project</h3>
+  <div class="tbctl"><span class="small">Show:</span><button class="btn small on" data-ovord="learn">Learning order (the tabs)</button><button class="btn small" data-ovord="proj">Project order (real life)</button></div>
+  <div class="ovordnote"></div>
+  <div class="tscroll"><table class="tbl small ovord"><thead><tr><th>Step</th><th>Tab</th><th>Goal of the step</th><th>Project stage</th><th>Starts from (input)</th><th>Hands on (output)</th><th>Time in class</th><th>Deck</th></tr></thead><tbody></tbody></table></div>
+  <h3 id="${ID}5">5 · What passes from one tab to the next</h3>
+  <p class="small muted">Each numbered arrow carries a result. Solid = the next tab needs it to start; dashed = a check or a lesson fed back.</p>
+  <div class="ovbox">${flow()}</div>
+  <h3 id="${ID}6">6 · One thread through the group: ${esc(OV.threadTitle)}</h3>
+  <p>${OV.threadIntro}</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Step</th><th>Tab</th><th>What the tab says about it</th><th>So the next tab gets</th><th></th></tr></thead><tbody>${OV.thread.map(([v,a,b],i)=>`<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(LAB(v))}</b></td><td>${esc(a)}</td><td>${esc(b)}</td><td>${go(v,'open ›')}</td></tr>`).join('')}</tbody></table></div>
+  ${OV.threadNote?`<div class="callout small">${OV.threadNote}</div>`:''}
+  <h3 id="${ID}7">7 · Numbers handed on</h3>
+  <p class="small muted">A number is born in one tab and used in another. If it changes where it is born, every tab that uses it must be checked again (management of change).</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Number</th><th>Value</th><th>Born in</th><th>Used in</th><th>Why it matters there</th></tr></thead><tbody>${OV.nums.map(([nm,val,b,u,w,v])=>`<tr data-ov="${v}"><td>${esc(nm)}</td><td class="num"><b>${esc(val)}</b></td><td>${esc(b)}</td><td>${esc(u)}</td><td class="small">${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}8">8 · Links to the other groups</h3>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Group</th><th>Tab</th><th>What this group takes from it, or gives to it</th></tr></thead><tbody>${OV.links.map(([g,t,w,v])=>`<tr><td>${esc(g)}</td><td><a href="#" class="ovgo" data-ovgo="${v}">${esc(t)}</a></td><td>${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}9">9 · Check yourself</h3>
+  <p class="small muted">Each question needs at least two tabs of the group. Answer first, then open the model answer.</p>
+  ${OV.qs.map(([q,a],i)=>`<div class="ovqa"><p><b>Q${i+1}.</b> ${esc(q)}</p><details><summary>Model answer</summary><p class="small">${esc(a)}</p></details></div>`).join('')}`;
+  $(R+' .ovord tbody').innerHTML=ordRows();
+  const root=$(R);
+  root.addEventListener('click',e=>{const g=e.target.closest('[data-ovgo]');if(g){e.preventDefault();showView(g.dataset.ovgo);return;}
+    const o=e.target.closest('[data-ovord]');if(o){ORD=o.dataset.ovord;$$(R+' [data-ovord]').forEach(b=>b.classList.toggle('on',b===o));$(R+' .ovord tbody').innerHTML=ordRows();if(SEL){const k=SEL;SEL=null;sel(k);}return;}
+    const s=e.target.closest('[data-ov]');if(s&&!e.target.closest('a,summary'))sel(s.dataset.ov);});
+  root.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-ov]')){e.preventDefault();sel(e.target.dataset.ov);}});}
+TB.tab(ID,build,null);
+
+})();
+
+/* ovr: group overview */
+(()=>{
+const OV = {
+ id:'ovr', group:'Operate',
+ title:'Operate overview · how the 5 Operate tabs fit together, in what order, and when in a project',
+ question:'How does an operator see, run and walk this cooling water tower, from the control room screen to the valve in the field?',
+ intro:'The five Operate tabs are the places where the plant is run: the <i>DCS console</i> holds the loops and alarms, the <i>Safety system (SIS)</i> holds the trips and permissives, <i>Field</i> starts motors and makes the outside checks, <i>Visual plant 3D</i> walks the round to every gauge and hand valve, and the <i>P&amp;ID</i> is the drawing that names every tag you meet on the way. All of them run on the same live simulator, so a change made in one shows at once in the others.',
+ stageNote:'Operating work starts long before start-up. The P&amp;ID is the base of the DCS graphics and the SIS logic in detailed engineering; the console, the trips and the field round are tested and trained at commissioning; then they are used every shift and changed only through management of change.',
+ decisions:{
+  S2:'Which variables the control room must see, which are local gauges only, and which trips the SIS must carry (P&ID rev A–B).',
+  S3:'DCS displays, alarm limits and faceplates; SIS settings, permissives and resets; the operator round and the gauge locations by level.',
+  S4:'Is every loop, alarm and trip proven on the real plant? Can the operators start up, line out and restart after a trip from these screens and the round?',
+  S5:'Daily rounds and logs; which alarm or setting to change (by MOC); what a trip or a field check teaches; which drawing must be updated.'},
+ studies:[
+  {v:'operate',label:'DCS console',c:'#2563EB',why:'First, because it is where the operator sits: every loop, alarm and trend of the unit is on its five displays.',
+   goal:'Run the unit from the control room: read the bubbles, move the three loops through their faceplates, watch the trends and acknowledge the alarms.',
+   q:'What is the plant doing now, and what can I move from here?',inp:'The P&ID tags, the three loops (FIC-201, LIC-201, AIC-202) and their tuning, the alarm table',
+   out:'Live values, controller modes and set points, alarms and trends; the motor or valve that must be moved in the field',
+   m:'ISA-style bubbles, PID faceplates (MAN / AUTO), alarm summary, 8-pen trend groups',st:{S3:1,S4:2,S5:2},t:'60 min (estimate)'},
+  {v:'bms',label:'Safety system (SIS)',c:'#DC2626',why:'Second, because a trip overrides the console: the operator must know what stops the pumps and fans and what a restart needs.',
+   goal:'Show the trip variables, the start permissives and the first-out, and let the operator reset after the cause is gone or stop the unit by ESD.',
+   q:'What has tripped, why, and may I restart?',inp:'Trip settings (LSLL-201 8 % for 5 s, VSHH-212/213/214 11 mm/s for 3 s), permissives, the interlock schedule',
+   out:'SIS state (RUN / TRIPPED), first-out, permissives met or not; a reset that lets the motors be restarted',
+   m:'SIS-201 logic, de-energise to trip, latched trips, first-out, ESD pushbutton',st:{S3:1,S4:2,S5:2},t:'30 min (estimate)'},
+  {v:'field',label:'Field: pumps, valves, checks',c:'#059669',why:'Third, because the console and the SIS send the operator outside: motors are started and stopped and checks are made here.',
+   goal:'Start and stop the pumps, fans and dosing pumps, set the riser and filter valves, make the outside checks, take a lab sample and call the users.',
+   q:'What do I start, stop or check outside, and what do I see there?',inp:'Which motor or valve to move (from the console or SIS), the start permissives',
+   out:'Motor and valve states, local readings (level gauge, pump gauges, filter ΔP, cold-water fall), lab result, the users’ answer',
+   m:'Motor RUN / STOP, motor-operated valves (about 20 s stroke), outside checks, laboratory sample, telephone',st:{S4:2,S5:2},t:'45 min (estimate)'},
+  {v:'v3d',label:'Visual plant 3D',c:'#D97706',why:'Fourth, because the outside checks of the Field tab become a round you walk: every gauge, transmitter and hand valve where it stands.',
+   goal:'Walk the outside operator’s round of thirteen stations, find and read every item, work the hand valves and fill in the rounds sheet.',
+   q:'Where does each item stand, and what does it read on the round?',inp:'The layout and its coordinates, the tags of the EPC P&ID, the live simulator',
+   out:'Readings logged as Read tag = value, the 28-row rounds sheet checked against the plant, field checks for the exercises',
+   m:'Operator round, identification drill (target 90 %), rounds sheet, gauge locations by level',st:{S3:1,S4:2,S5:2},t:'90 min (estimate)',deck:'v3d'},
+  {v:'pid',label:'P&ID',c:'#7C3AED',why:'Last in this group as the reference you check against; in the course it is read first, in Part A.',
+   goal:'Give every line, valve, instrument, loop and trip its tag, its fail position and its interlock, on the screen drawing and on the EPC sheet rev 1.',
+   q:'What is connected to what, and what is each tag?',inp:'PFD, control scheme, safety requirements, design case (340 m³/h, 49.2 → 32.3 °C)',
+   out:'CWT-V1-PID-001 rev 0 (screen) and rev 1 (EPC), loop table, interlock schedule, open items',
+   m:'ISA-5.1 symbols, EPC drawing practice, interlock schedule',st:{S2:2,S3:2,S4:1,S5:1},t:'60 min (estimate)'}
+ ],
+ learnNote:'The tabs follow the operator’s day: sit at the <b>DCS console</b>, know what the <b>SIS</b> will do, go out through <b>Field</b>, walk the round in <b>Visual plant 3D</b>, and check every tag on the <b>P&amp;ID</b>. In the learning path the P&amp;ID is read in step 1 (Know the plant) and Visual plant 3D with Field in step 2 (Walk the plant); the console and the SIS are used in steps 3 and 5.',
+ projNote:'In a project the order is almost reversed. The <b>P&amp;ID</b> comes first: the DCS graphics, the SIS logic and the field round are all built from it. The <b>SIS</b> settings are fixed in detailed engineering from the safety studies, before the console displays are finished. The <b>field round</b> and the gauge locations come from the layout, and are walked first at pre-commissioning, before the DCS is live. The console and the SIS are then proven together at FAT and SAT, and the P&amp;ID is revised whenever the plant changes.',
+ proj:[
+  [1,'pid','S2 FEED','P&ID rev A–B from the PFD: the three loops, the trips and the local gauges are chosen.'],
+  [2,'pid','S3 Detailed','Issue the P&ID for design: line numbers, block and by-pass valves, interlock schedule I-1…I-5 and P-1.'],
+  [3,'bms','S3 Detailed','Configure the SIS from the interlock schedule: LSLL-201 8 % for 5 s, VSHH 11 mm/s for 3 s, reset levels, ESD.'],
+  [4,'operate','S3 Detailed','Build the DCS displays, faceplates, alarm limits and trend groups from the P&ID tags.'],
+  [5,'v3d','S3 – S4','Plan the operator round from the layout; check that every gauge and hand valve can be reached and read.'],
+  [6,'field','S4 Commissioning','Walk down the lines, line up the hand valves, bump-test the pumps and fans, prove the motor-operated valves.'],
+  [7,'bms','S4 Commissioning','Prove every trip and permissive at FAT and SAT before water goes to the users.'],
+  [8,'operate','S4 Start-up','Cold start-up from the console: fill the basin, establish circulation, put the loops in AUTO, line out.'],
+  [9,'v3d','S5 Operation','Rounds every shift with the rounds sheet; field checks after each upset.'],
+  [10,'operate','S5 Operation','Run the unit; any change of alarm, set point or tuning goes through MOC.'],
+  [11,'pid','S5 Change','Revise the drawing for every change (for example the open items of rev 1: LSLL-201B, local gauges at rev 2).']
+ ],
+ flow:{bw:170,h:290,
+  pos:{operate:[150,70],bms:[500,70],pid:[850,70],field:[250,215],v3d:[750,215]},
+  edges:[
+   ['operate','bms','trip lamp and the LSLL-201 bubble lead to the SIS screen','s'],
+   ['operate','field','which motor or valve to move, which check to make','s'],
+   ['bms','field','after a reset, motors are restarted from Field','s'],
+   ['field','v3d','outside checks become stations on a walked round','s'],
+   ['v3d','pid','local gauges and hand valves found on the round','s'],
+   ['pid','bms','interlock schedule: settings, effects, resets','d'],
+   ['v3d','operate','readings with no DCS signal (LG-201, PG-215…218)','d'],
+   ['pid','operate','tags, loops and fail positions behind every bubble','d','up']
+  ]},
+ threadTitle:'one basin level, read in five places',
+ threadIntro:'Basin T-201 holds the water the circulating pumps take their suction from. Its level is held near 90 % by LIC-201, watched by the SIS, seen on a level board in the field and drawn on the P&amp;ID. Follow that one quantity through the five tabs at design.',
+ thread:[
+  ['operate','LIC-201 bubble 89.9 % in AUTO; summary line “Basin LIC-201 / make-up FI-206: 89.9 % · 11.1 m³/h”. The bubble beside it, LI-201 50.0 %, is the acid day tank, not the basin.','The same level is the trip variable of LSLL-201 on the SIS screen.'],
+  ['bms','“LSLL-201 basin level (trip below 8 % for 5 s): 90.0 %”; LSL-201 pump start permissive healthy (15 %). No trip latched, 3 pumps and 3 fans running.','A pump start needs the basin at 15 % or more and no trip latched; the motors are started in Field.'],
+  ['field','Outside check “Basin T-201: level gauge 90 %, water clear”; P-215, P-216, P-217 running, local gauges 345 kPa; P-218 stopped.','The basin check becomes two stations of the walked round.'],
+  ['v3d','Station 4 (basin west): LT-201 transmitter display at +0.6 m, rounds sheet row 6. Station 8 (basin east): LG-201 level board at +0.8 m, row 16. The level board has no DCS signal.','Two tags, LT-201 and LG-201, to find on the drawing.'],
+  ['pid','T-201 90 m² × 2.0 m (180 m³), NLL 90 %, overflow, drain V-217 (LC). LT-201 → LIC-201 → LCV-201 (fail open). LSLL-201 reads LT-201 (note 8); I-1 trips at 8 % for 5 s, reset at ≥ 15 %. LG-201 is not on rev 1 yet (open item for rev 2).','Back to the console: every number on the LIC-201 and LSLL-201 bubbles has its tag, loop and setting here.']
+ ],
+ threadNote:'The same chain works for any changed setting: if the LSLL-201 trip level is raised (rev 1 lists a separate LSLL-201B as an open query), the SIS screen, the interlock schedule on the P&amp;ID, the start permissive and the operator’s procedures all change together, through management of change.',
+ nums:[
+  ['Basin normal level (LIC-201 set point)','90 %','P&ID (NLL), Control loop design','DCS console, Field, Visual plant 3D','The level every view should show at design.','pid'],
+  ['Basin size','90 m² × 2.0 m (180 m³)','P&ID','DCS console (Water and chemistry)','A large basin: the level moves slowly, so LIC-201 is tuned loose (Kc 5, Ti 600 s).','pid'],
+  ['LIC-201 alarm limits','LO 75 % · HI 97 %','Alarm table (Workbook)','DCS console','Alarm before the trip; the alarm summary lists them.','operate'],
+  ['LSLL-201 trip','below 8 % for 5 s, latched','P&ID interlock I-1','Safety system (SIS)','Stops P-215…P-218 with first-out.','bms'],
+  ['Pump start permissive LSL-201','basin ≥ 15 %','P&ID P-1','SIS, Field','No circulating pump or P-219 starts below it; the SIS reset needs it too.','bms'],
+  ['Fan vibration trip VSHH-212/213/214','11 mm/s for 3 s, reset < 7 mm/s','P&ID I-2…I-4','SIS, Visual plant 3D (VT-212…214)','Fans run at about 2.8 mm/s at design.','bms'],
+  ['Motor-operated valve stroke','about 20 s','P&ID note 4','Field, DCS console','HS-201…HS-204 do not move at once.','field'],
+  ['Circulating pump discharge gauges','345 kPa (P-215…P-217)','Field','Visual plant 3D (PG-215…PG-218)','Read only in the field; no DCS signal.','field'],
+  ['Operator round','13 stations, 28-row rounds sheet','Visual plant 3D','Exercises (field checks)','Every reading is logged and graded from the event log.','v3d']
+ ],
+ links:[
+  ['Process & Design','Control loop design','The pairing and tuning of FIC-201, LIC-201 and AIC-202 that the faceplates use.','control'],
+  ['Engineering (EPC)','Layout & isometrics','The coordinates and levels that build the 3D plant and the round.','lay'],
+  ['Engineering (EPC)','Instrumentation & control','Ranges, alarm and trip settings of LT-201, LSLL-201 and the other instruments on the console.','einst'],
+  ['Safety','C&E matrix','Every trip and permissive of the SIS tab as one row, proven on a copy of the simulator.','cem'],
+  ['Safety','SRS of SIF','What LSLL-201 and the fan trips must do, and the check of the 8 % setting.','srs'],
+  ['Operability','SOP','The start-up, shutdown and backwash steps carried out on the console, SIS and Field tabs.','sop'],
+  ['Train & Assess','Exercises','Exercises run on these tabs; each training exercise has a field check read in Visual plant 3D.','exercises'],
+  ['Train & Assess','Debrief and grading','Score, alarms, trips and the event log of what was done on these tabs.','debrief']
+ ],
+ qs:[
+  ['On the DCS console LI-201 reads 50.0 % next to LIC-201 at 89.9 %. Which one is the basin, and how does the P&ID deal with this?','LIC-201 (transmitter LT-201) is the basin T-201 level. LI-201 on the screen P&ID is the acid day tank D-283. Because two loops share the number 201, the EPC sheet rev 1 renumbers the acid tank LT/LI-283 so loop 201 is unique (note 9). The SIS tab, the field gauge and the 3D round all refer to the basin, at about 90 %.'],
+  ['After an LSLL-201 trip, what must be true before a circulating pump can run again, and in which tab is each step done?','On the SIS tab: the basin must be at 15 % or more (LSL-201) and the trip reset; no fan trip latched. The SIS tab also shows a return path open (a riser or HS-204), which the P&ID rev 1 lists as displayed but not in the start logic (note 6). The motors are then started from the Field tab or the drawing, and the console shows flow return.'],
+  ['Name three readings the outside operator makes that the DCS console cannot show. Where do you find each one, and how does the P&ID treat them?','The level board LG-201 (station 8), the pump discharge gauges PG-215…PG-218 (pump pit, station 10), the filter ΔP gauge PDG-281 (station 12) and the cold-water fall thermometers TH-201…TH-203 (station 9). Field gives them as outside checks, Visual plant 3D places them on the round and the rounds sheet. The P&ID rev 1 does not draw them yet: an open item for rev 2.'],
+  ['The SIS tab shows LSLL-201 trips below 8 %. What do the P&ID and the SIS tab tell you about the sensor behind it?','The SIS tab reads LSLL-201 from the basin level (90.0 % at design). The P&ID rev 1 draws it from LT-201, shared with LIC-201 (note 8), and lists a separate LSLL-201B as an open query (SRS setting 15 %). The fan trips, by contrast, have their own vibration switches (VSHH) beside the DCS VI bubbles.'],
+  ['In a cold start-up, which tab do you use to fill the basin, to start the first pump, and to put the level in automatic?','DCS console: LIC-201 in MAN with LCV-201 at 80 % or more to fill. SIS: the start permissive needs the basin at 15 % or more; the procedure waits for 20 %. Field: start P-215 with the bypass HS-204 open. DCS console again: LIC-201 to AUTO with set point 90 %. The P&ID shows why: LCV-201 is the only make-up valve and fails open.']
+ ]
+};
+
+/* Group overview engine. Data: const OV = {...} (schema in the ots-group-overview-tabs skill). */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ID=OV.id,R='#'+ID;
+const ST=OV.stages||[
+ ['S1','Concept / pre-FEED','process route chosen; BFD; plot area; materials and inventories known'],
+ ['S2','FEED (basic engineering)','PFD and HMB; P&ID rev A–B; equipment list; plot plan; relief philosophy'],
+ ['S3','Detailed engineering','P&ID issued for design → IFC; datasheets; SIS and DCS design; isometrics'],
+ ['S4','Construction, commissioning, start-up','FAT / SAT of the control and safety systems; pre-start-up safety review'],
+ ['S5','Operation and change','the plant runs; proof tests; management of change; revalidation; incidents']];
+const STU=OV.studies,BYV=Object.fromEntries(STU.map(s=>[s.v,s])),LEARN=STU.map(s=>s.v);
+const LAB=v=>(BYV[v]&&BYV[v].label)||v;
+const go=(v,t)=>`<a href="#" class="ovgo" data-ovgo="${v}">${esc(t||'open '+LAB(v)+' ›')}</a>`;
+let SEL=null,ORD='learn';
+function card(s,i){const main=Object.entries(s.st).filter(([k,v])=>v===2).map(([k])=>k);
+  return `<div class="ovcard" data-ov="${s.v}" tabindex="0" style="--sc:${s.c}"><div class="ovhd"><span class="ovno">${i+1}</span><b>${esc(s.label)}</b><span class="ovst">${main.map(k=>(ST.find(x=>x[0]===k)||[,k])[1]).join(' · ')}</span></div>
+   <div class="ovq">${esc(s.q)}</div><div class="small"><b>Goal.</b> ${esc(s.goal)}</div>
+   <div class="small"><b>Needs:</b> ${esc(s.inp)}</div><div class="small"><b>Hands on:</b> ${esc(s.out)}</div>
+   <div class="small muted">${esc(s.m)}</div><div>${go(s.v)}</div></div>`;}
+function life(){const W=1000,lw=200,cw=(W-lw-10)/ST.length,rh=34,top=58,H=top+STU.length*rh+14;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(OV.group)} across the project stages">`;
+  ST.forEach((x,i)=>{const X=lw+i*cw;const m=x[1].match(/^([^(,]+)[(,]?\s*(.*?)\)?$/)||[0,x[1],''];s+=`<rect x="${X+2}" y="4" width="${cw-4}" height="${H-8}" rx="6" class="ovcol${i%2?' alt':''}"/><text x="${X+cw/2}" y="22" class="ovtx b sm2" text-anchor="middle">${x[0]} · ${esc(m[1].trim())}</text><text x="${X+cw/2}" y="40" class="ovtx sm" text-anchor="middle">${esc(m[2])}</text>`;});
+  STU.forEach((t,j)=>{const y=top+j*rh;const ks=Object.keys(t.st).map(k=>ST.findIndex(x=>x[0]===k));const a=Math.min(...ks),b=Math.max(...ks);
+    s+=`<g class="ovrow" data-ov="${t.v}" tabindex="0"><rect x="4" y="${y}" width="${W-8}" height="${rh-4}" rx="4" class="ovhit"/><text x="12" y="${y+20}" class="ovtx b">${j+1} · ${esc(t.label.length>22?t.label.slice(0,21)+'…':t.label)}</text>`;
+    s+=`<line x1="${lw+a*cw+cw/2}" x2="${lw+b*cw+cw/2}" y1="${y+15}" y2="${y+15}" stroke="${t.c}" stroke-width="3" opacity=".45"/>`;
+    Object.entries(t.st).forEach(([k,v])=>{const X=lw+ST.findIndex(x=>x[0]===k)*cw+cw/2;s+=v===2?`<circle cx="${X}" cy="${y+15}" r="9" fill="${t.c}"/>`:`<circle cx="${X}" cy="${y+15}" r="7" fill="var(--panel)" stroke="${t.c}" stroke-width="2.5"/>`;});
+    s+='</g>';});
+  return s+'</svg>';}
+function stages(){return ST.map(x=>{const here=STU.filter(t=>t.st[x[0]]);
+  return `<tr><td><b>${x[0]}</b> ${esc(x[1])}</td><td>${esc(x[2])}</td><td>${here.map(t=>`<span class="ovchip${t.st[x[0]]===2?' main':''}" data-ov="${t.v}" style="--sc:${t.c}">${t.st[x[0]]===2?'●':'○'} ${esc(t.label)}</span>`).join(' ')||'<span class="muted">–</span>'}</td><td>${esc((OV.decisions||{})[x[0]]||'')}</td></tr>`;}).join('');}
+const stn=k=>{const s=BYV[k].st;return Object.keys(s).filter(x=>s[x]===2).join(', ');};
+const dk=s=>s.deck?`<a class="small" href="${/\.html$/.test(s.deck)?s.deck:'cwt-'+s.deck+'-deck.html'}" target="_blank" rel="noopener">${esc(/\.html$/.test(s.deck)?s.deck.replace(/\.html$/,''):'cwt-'+s.deck+'-deck')}</a>`:'–';
+function ordRows(){
+  if(ORD==='learn'){$(R+' .ovordnote').innerHTML=`<p class="small">${OV.learnNote}</p>`;
+    return LEARN.map((v,i)=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(s.label)}</b><br><span class="small muted">${esc(s.why||'')}</span></td><td>${esc(s.goal)}</td><td>${stn(v)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+  $(R+' .ovordnote').innerHTML=`<p class="small">${OV.projNote}</p>`;
+  return OV.proj.map(([n,v,stg,what])=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${n}</b></td><td><b>${esc(s.label)}</b></td><td>${esc(what)}</td><td>${esc(stg)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+function flow(){const F=OV.flow,bw=F.bw||170,bh=56,H=F.h||285;let P=F.pos;
+  if(!P){P={};const n=LEARN.length,r1=Math.ceil(n/2),r2=n-r1;LEARN.forEach((v,i)=>{const row=i<r1?0:1,k=row?i-r1:i,m=row?r2:r1;P[v]=[(k+0.5)*1000/m,row?215:70];});}
+  const side=(v,tx,ty)=>{const [x,y]=P[v],dx=tx-x,dy=ty-y;const sx=Math.abs(dx)/(bw/2),sy=Math.abs(dy)/(bh/2);const k=1/Math.max(sx,sy,1e-9);return [x+dx*k,y+dy*k];};
+  let s=`<svg viewBox="0 0 1000 ${H}" role="img" aria-label="What passes between the ${esc(OV.group)} tabs"><defs><marker id="${ID}Ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ovahf"/></marker></defs>`;
+  F.edges.forEach(([a,b,l,k,arc],i)=>{const [x1,y1]=P[a],[x2,y2]=P[b];let path,mx,my;
+    if(arc){const up=arc==='up',sx=x1+(x2>x1?20:-20),ex=x2+(x2>x1?-20:20),y0=up?Math.min(y1,y2)-bh/2:Math.max(y1,y2)+bh/2,dy=up?-38:38;
+      path=`M${sx} ${up?y1-bh/2:y1+bh/2} C ${sx} ${y0+dy}, ${ex} ${y0+dy}, ${ex} ${up?y2-bh/2:y2+bh/2}`;mx=(sx+ex)/2;my=y0+dy*0.75;}
+    else{const [sx,sy]=side(a,x2,y2),[ex,ey]=side(b,x1,y1);path=`M${sx} ${sy} L${ex} ${ey}`;mx=(sx+ex)/2;my=(sy+ey)/2;}
+    s+=`<path d="${path}" class="oved ${k}" data-a="${a}" data-b="${b}" marker-end="url(#${ID}Ah)"/><g class="ovebadge" data-a="${a}" data-b="${b}"><circle cx="${mx}" cy="${my}" r="10"/><text x="${mx}" y="${my+4}" text-anchor="middle">${i+1}</text></g>`;});
+  Object.entries(P).forEach(([v,[x,y]])=>{const t=BYV[v];const lb=t.label.length>20?t.label.slice(0,19)+'…':t.label;s+=`<g class="ovnode" data-ov="${v}" tabindex="0"><rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="8" style="stroke:${t.c}"/><text x="${x}" y="${y-4}" class="ovtx b" text-anchor="middle">${LEARN.indexOf(v)+1} · ${esc(lb)}</text><text x="${x}" y="${y+15}" class="ovtx sm" text-anchor="middle">${esc(t.q.length>30?t.q.slice(0,28)+'…':t.q)}</text></g>`;});
+  s+='</svg>';
+  return s+`<ol class="ovleg small">${F.edges.map(([a,b,l,k])=>`<li data-a="${a}" data-b="${b}"><b>${esc(LAB(a))} → ${esc(LAB(b))}</b>: ${esc(l)}${k==='d'?' <span class="muted">(fed back)</span>':''}</li>`).join('')}</ol>`;}
+function sel(v){SEL=SEL===v?null:v;$$(R+' [data-ov]').forEach(e=>e.classList.toggle('on',!!SEL&&e.dataset.ov===SEL));
+  $$(`${R} .oved,${R} .ovebadge,${R} .ovleg li`).forEach(e=>e.classList.toggle('on',!!SEL&&(e.dataset.a===SEL||e.dataset.b===SEL)));
+  $(R).classList.toggle('ovhas',!!SEL);}
+function build(){const d=$(R+' .ovdoc');const n=STU.length;
+  d.innerHTML=`<h2>${esc(OV.title)}</h2>
+  <nav class="toc small"><a href="#${ID}1">1 The question</a> · <a href="#${ID}2">2 ${n} tabs, ${n} goals</a> · <a href="#${ID}3">3 When in a project</a> · <a href="#${ID}4">4 Order: learning and project</a> · <a href="#${ID}5">5 What passes between tabs</a> · <a href="#${ID}6">6 One thread through the group</a> · <a href="#${ID}7">7 Numbers handed on</a> · <a href="#${ID}8">8 Links to the other groups</a> · <a href="#${ID}9">9 Check yourself</a></nav>
+  <h3 id="${ID}1">1 · The question of this group</h3>
+  <div class="callout ovbig"><b>${esc(OV.question)}</b></div>
+  <p>${OV.intro} Click a tab anywhere on this page (a card, a bar, a box) to highlight it everywhere; the <span class="ovgo">open</span> buttons go to the tab.</p>
+  <h3 id="${ID}2">2 · ${n} tabs, ${n} goals</h3>
+  <p class="small muted">Card = the tab's goal (what it must deliver), the question it answers, what it needs before it can start, what it hands on, the method or standard, and the project stage where that work is mainly done.</p>
+  <div class="ovgrid">${LEARN.map((v,i)=>card(BYV[v],i)).join('')}</div>
+  <h3 id="${ID}3">3 · When in a project this work is done</h3>
+  <p>${OV.stageNote} ● = the main time the work is done; ○ = it is repeated, updated or used there.</p>
+  <div class="ovbox">${life()}</div>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Stage</th><th>State of the design (what exists)</th><th>Work of this group done</th><th>Decisions it drives</th></tr></thead><tbody>${stages()}</tbody></table></div>
+  <h3 id="${ID}4">4 · Order: the order of the tabs and the order in a project</h3>
+  <div class="tbctl"><span class="small">Show:</span><button class="btn small on" data-ovord="learn">Learning order (the tabs)</button><button class="btn small" data-ovord="proj">Project order (real life)</button></div>
+  <div class="ovordnote"></div>
+  <div class="tscroll"><table class="tbl small ovord"><thead><tr><th>Step</th><th>Tab</th><th>Goal of the step</th><th>Project stage</th><th>Starts from (input)</th><th>Hands on (output)</th><th>Time in class</th><th>Deck</th></tr></thead><tbody></tbody></table></div>
+  <h3 id="${ID}5">5 · What passes from one tab to the next</h3>
+  <p class="small muted">Each numbered arrow carries a result. Solid = the next tab needs it to start; dashed = a check or a lesson fed back.</p>
+  <div class="ovbox">${flow()}</div>
+  <h3 id="${ID}6">6 · One thread through the group: ${esc(OV.threadTitle)}</h3>
+  <p>${OV.threadIntro}</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Step</th><th>Tab</th><th>What the tab says about it</th><th>So the next tab gets</th><th></th></tr></thead><tbody>${OV.thread.map(([v,a,b],i)=>`<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(LAB(v))}</b></td><td>${esc(a)}</td><td>${esc(b)}</td><td>${go(v,'open ›')}</td></tr>`).join('')}</tbody></table></div>
+  ${OV.threadNote?`<div class="callout small">${OV.threadNote}</div>`:''}
+  <h3 id="${ID}7">7 · Numbers handed on</h3>
+  <p class="small muted">A number is born in one tab and used in another. If it changes where it is born, every tab that uses it must be checked again (management of change).</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Number</th><th>Value</th><th>Born in</th><th>Used in</th><th>Why it matters there</th></tr></thead><tbody>${OV.nums.map(([nm,val,b,u,w,v])=>`<tr data-ov="${v}"><td>${esc(nm)}</td><td class="num"><b>${esc(val)}</b></td><td>${esc(b)}</td><td>${esc(u)}</td><td class="small">${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}8">8 · Links to the other groups</h3>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Group</th><th>Tab</th><th>What this group takes from it, or gives to it</th></tr></thead><tbody>${OV.links.map(([g,t,w,v])=>`<tr><td>${esc(g)}</td><td><a href="#" class="ovgo" data-ovgo="${v}">${esc(t)}</a></td><td>${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}9">9 · Check yourself</h3>
+  <p class="small muted">Each question needs at least two tabs of the group. Answer first, then open the model answer.</p>
+  ${OV.qs.map(([q,a],i)=>`<div class="ovqa"><p><b>Q${i+1}.</b> ${esc(q)}</p><details><summary>Model answer</summary><p class="small">${esc(a)}</p></details></div>`).join('')}`;
+  $(R+' .ovord tbody').innerHTML=ordRows();
+  const root=$(R);
+  root.addEventListener('click',e=>{const g=e.target.closest('[data-ovgo]');if(g){e.preventDefault();showView(g.dataset.ovgo);return;}
+    const o=e.target.closest('[data-ovord]');if(o){ORD=o.dataset.ovord;$$(R+' [data-ovord]').forEach(b=>b.classList.toggle('on',b===o));$(R+' .ovord tbody').innerHTML=ordRows();if(SEL){const k=SEL;SEL=null;sel(k);}return;}
+    const s=e.target.closest('[data-ov]');if(s&&!e.target.closest('a,summary'))sel(s.dataset.ov);});
+  root.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-ov]')){e.preventDefault();sel(e.target.dataset.ov);}});}
+TB.tab(ID,build,null);
+
+})();
+
+/* ove: group overview */
+(()=>{
+const OV = {
+ id:'ove', group:'Engineering (EPC)',
+ title:'Engineering (EPC) overview · how the 9 Engineering (EPC) tabs fit together, in what order, and when in a project',
+ question:'Which documents define this unit so that it can be bought, built, tested and started, and do they agree with each other and with the model?',
+ intro:'The nine Engineering tabs are the document set an EPC contractor would issue for the tower: the process engineer sets the duties (HMB, lines, pumps), the P&amp;ID and the layout fix what is connected and where it stands, and the mechanical, relief, instrument and electrical engineers turn those duties into things that can be bought. Procurement to commissioning then buys, tests and starts them, and Project &amp; deliverables keeps the register and the engineering queries where two documents disagree.',
+ stageNote:'Engineering documents are issued in revisions. The HMB and a first P&amp;ID come at FEED, most datasheets and lists in detailed engineering, the tests at construction and commissioning, and every change in operation goes back to the documents it touches.',
+ decisions:{
+  S1:'Process route and design case (340 m³/h, wet bulb 27 °C); plot area for the tower, the pump pit and the chemical area; which documents the project must produce.',
+  S2:'HMB cases and line sizes; P&ID rev A–B; pump count (3 + 1) and duty; plot plan and the pump elevation that sets the NPSH; long-lead items to order early.',
+  S3:'Design pressure and temperature of each item; datasheets and requisitions; relief devices; instrument list and I/O count; motors and cables; isometrics; P&ID issued for construction.',
+  S4:'Is each package tested (FAT, hydrotest, loop checks, SIS test against the C&E) before the first fill, and in what order are the systems handed over?',
+  S5:'Does a change (more flow, a new user, a bigger motor) reach every document that carries the number? Which open queries must be closed first?'},
+ studies:[
+  {v:'eproj',label:'Project & deliverables',c:'#2563EB',why:'First, because it shows the whole document set and the queries between documents before you open any one of them.',
+   goal:'Show how an EPC project delivers, register every document of the unit, and record each disagreement between documents as an engineering query.',
+   q:'Which documents define the unit, and where do they disagree?',inp:'Phases of an EPC project; every document of the other tabs; HAZOP and Safety-layer findings',
+   out:'Document register (13 documents, rev 0), deliverable tree, 12 engineering queries EQ-01…EQ-12',
+   m:'Document register and engineering query log (CWT-V1-PM-DOC-001)',st:{S1:1,S2:2,S3:2,S4:1,S5:1},t:'20 min (estimate)',deck:'eproj'},
+  {v:'eproc',label:'Process engineering',c:'#0891B2',why:'Second, because every other discipline starts from the flows, temperatures and pressures the process engineer fixes.',
+   goal:'Fix the heat and material balance for three cases, size the lines and set the duty of the circulating pumps.',
+   q:'What flows where, how hot, at what pressure, in which pipe size?',inp:'Design basis and PFD; model runs for the design, hot-day and turndown cases',
+   out:'HMB of 14 streams (CWT-V1-PE-HMB-001), line list with velocities, pump duty, shut-off and NPSH',
+   m:'Heat and water balance, line sizing at 0.6–2.5 m/s, pump hydraulics with NPSH',st:{S1:1,S2:2,S3:1,S5:1},t:'30 min (estimate)',deck:'eproc'},
+  {v:'pid',label:'P&ID',c:'#7C3AED',why:'After the HMB, because the P&ID draws the lines and loops the HMB sized; the rev 1 sheet adds every valve and the interlock schedule.',
+   goal:'Show every line, valve, instrument, control loop, fail position and interlock of the unit on one drawing.',
+   q:'What is connected to what, and what controls and trips it?',inp:'PFD, HMB and line list, control philosophy, trip logic of the model',
+   out:'CWT-V1-PID-001 rev 0 (screen) and rev 1 (EPC): line numbers, loops, interlocks I-1…I-5, open items',
+   m:'P&ID to EPC drawing practice, ISA-5.1 symbols, interlock schedule',st:{S2:2,S3:2,S4:1,S5:1},t:'30 min (estimate)'},
+  {v:'lay',label:'Layout & isometrics',c:'#059669',why:'After the P&ID, because the isometrics need its line numbers and valves; the plot plan itself is drawn as early as FEED.',
+   goal:'Place the equipment by spacing rules, fix the levels, and route each line in three dimensions.',
+   q:'Where does each item stand, and how does each pipe run?',inp:'Equipment list and sizes, P&ID rev 1 line numbers, spacing rules (assumed typical practice)',
+   out:'Plot plan, elevations (pump centreline −2.5 m), isometrics ISO-01…ISO-04, the coordinates of Visual plant 3D',
+   m:'Plot plan by spacing rules, elevation drawing, piping isometrics',st:{S2:2,S3:2,S4:1},t:'20 min (estimate)',deck:'lay'},
+  {v:'emech',label:'Mechanical',c:'#D97706',why:'After the duties and the layout, because the equipment list turns them into design pressures, temperatures and materials.',
+   goal:'List every item with its duty, design pressure and temperature and material, and write the datasheets that go to the vendors.',
+   q:'What exactly do we buy, and what must it withstand?',inp:'HMB and pump hydraulics, shut-off pressure, HAZOP dynamic runs (D2, D7)',
+   out:'Equipment list and datasheets CWT-V1-ME-EQL-001 (design 600 kPa g), cell rating, S-281 wall thickness',
+   m:'ASME VIII Div. 1 UG-27, CTI ATC-105 cell test, equipment datasheets',st:{S2:1,S3:2,S4:1},t:'20 min (estimate)',deck:'emech'},
+  {v:'erel',label:'Relief & vent',c:'#DC2626',why:'After Mechanical, because a relief case is judged against the design pressure the equipment list set.',
+   goal:'Give every item that can be over-pressured or overfilled a relief path sized for its worst credible case.',
+   q:'What can over-pressure or overfill, and what relieves it?',inp:'Design pressures, pump shut-off, model runs with the deviation forced and no operator',
+   out:'Relief load basis CWT-V1-PE-RLB-001: PSV-281, users’ TRVs, basin overflow, D-283 vent',
+   m:'API 520 liquid sizing, API 521 thermal relief, overflow orifice check',st:{S2:1,S3:2,S5:1},t:'20 min (estimate)',deck:'erel'},
+  {v:'einst',label:'Instrumentation & control',c:'#4F46E5',why:'After the P&ID and the relief basis, because each bubble on the drawing becomes a row with a range that must cover its alarms and trips.',
+   goal:'List every instrument with its range, alarm and trip settings, I/O type and fail action, and count the I/O.',
+   q:'What does each instrument measure, over what range, and through which I/O?',inp:'P&ID rev 1 bubbles, alarm and trip settings of the model, loop fail positions',
+   out:'Instrument list CWT-V1-IN-INL-001 and the I/O count with 20 % spare (AI 17, DO 20, DI 30, SIS DO 7)',
+   m:'Instrument list, 4–20 mA scaling, I/O count with spare',st:{S3:2,S4:1,S5:1},t:'20 min (estimate)',deck:'einst'},
+  {v:'eelec',label:'Electrical',c:'#DB2777',why:'After Mechanical and Instrumentation, because the load list needs the absorbed power of each motor and the UPS load of the DCS and SIS.',
+   goal:'Size every motor for its worst duty, size the cables for current and voltage drop, and check whether any area can be hazardous.',
+   q:'How much power, which motors and cables, and is any area hazardous?',inp:'Absorbed power at run-out, motor list from the P&ID, HAZID H05 for the fan deck',
+   out:'Electrical load list CWT-V1-EE-LL-001 (134.8 kW running), cable sizes, hazardous-area query EQ-10',
+   m:'I = P / (√3 V cos φ η), voltage drop within 5 %, area classification',st:{S2:1,S3:2,S4:1},t:'15 min (estimate)',deck:'eelec'},
+  {v:'ecomm',label:'Procurement to commissioning',c:'#475569',why:'Last, because it buys and tests what all the other documents specify, and starts the unit with the SOPs practised on the OTS.',
+   goal:'Group the equipment into packages with their inspections and tests, and order the pre-commissioning and commissioning steps.',
+   q:'How is it bought, tested and started, and in what order?',inp:'Datasheets, instrument list, load list, line list, C&E matrix, SOP register',
+   out:'Procurement and commissioning plan CWT-V1-CM-PLN-001: PK-01…PK-11, MC, PC-1…PC-6, C-1…C-5, hand-over',
+   m:'FAT / SAT, ISO 9906 pump test, ASME B31.3 hydrotest, CTI ATC-105',st:{S3:1,S4:2},t:'20 min (estimate)',deck:'ecomm'}
+ ],
+ learnNote:'The tabs follow the flow of information in an EPC office: the register first (what exists), then the duties (Process engineering), the drawings that carry them (P&amp;ID, Layout), the disciplines that turn duties into purchasable items (Mechanical, Relief, Instrumentation, Electrical), and last the buying and testing (Procurement to commissioning). The P&amp;ID and Layout tabs are also part of Part A; Workbook Part D gives about 1 h to the engineering checks, so the class times per tab are estimates of reading time.',
+ projNote:'In a real project the order differs in four places. The <b>plot plan</b> is drawn at FEED next to the PFD, because the pump elevation sets the NPSH the process engineer needs; only the isometrics wait for the P&amp;ID line numbers. <b>Long-lead packages</b> (the tower cells PK-01 and the pumps PK-02) are ordered during detailed engineering, before the instrument and electrical lists are finished, so vendor data flows back into the HMB and the load list. The <b>P&amp;ID</b> is issued twice or more (FEED, then issued for construction). <b>Project &amp; deliverables</b> is not a step but runs the whole time, and its query log is closed only at hand-over and reopened by every change.',
+ proj:[
+  [1,'eproj','S1 Concept','Set up the document register and numbering; agree the design case and which documents the unit needs.'],
+  [2,'eproc','S2 FEED','HMB for the design, hot-day and turndown cases; line sizes; pump count 3 + 1 and duty.'],
+  [3,'lay','S2 FEED','Plot plan and levels: pumps in a dry pit, centreline 0.5 m below the basin floor; spacing of the chemical area and the control room.'],
+  [4,'pid','S2 FEED','P&ID rev A–B from the PFD: lines, loops, fail positions, first interlocks.'],
+  [5,'emech','S3 Detailed','Equipment list, design pressure 600 kPa g, datasheets; requisitions for the long-lead cells and pumps.'],
+  [6,'erel','S3 Detailed','Relief load basis on the near-frozen P&ID, using the HAZOP dynamic runs.'],
+  [7,'einst','S3 Detailed','Instrument list, ranges against alarms and trips, I/O count for the DCS and SIS package.'],
+  [8,'eelec','S3 Detailed','Load list from the vendors’ absorbed power, cables, hazardous-area classification.'],
+  [9,'pid','S3 Detailed','P&ID issued for construction (rev 1): every valve, line number and the interlock schedule.'],
+  [10,'lay','S3 Detailed','Isometrics from the IFC line numbers; bills of materials for the piping package.'],
+  [11,'ecomm','S4 Start-up','FAT, mechanical completion, flushing, hydrotest, loop checks, SIS test, first fill and start-up, hand-over.'],
+  [12,'eproj','S5 Operation','Close the open queries, issue as-built documents, and send each change back to the documents it touches.']
+ ],
+ flow:{bw:170,h:430,
+  pos:{eproj:[150,70],eproc:[500,70],pid:[850,70],erel:[150,215],emech:[500,215],lay:[850,215],eelec:[150,360],einst:[500,360],ecomm:[850,360]},
+  edges:[
+   ['eproj','eproc','design case, document numbers, rev 0','s'],
+   ['eproc','pid','streams, line list and sizes, loops','s'],
+   ['eproc','emech','pump duty 119.2 m³/h at 33.1 m, shut-off 504.9 kPa g','s'],
+   ['pid','lay','line numbers and every valve for the isometrics','s'],
+   ['lay','eproc','pump 0.5 m below the basin floor sets the NPSH','d'],
+   ['emech','erel','design pressure 600 kPa g to judge each relief case','s'],
+   ['emech','eelec','absorbed power of each motor (pumps 13.69 kW, fans 30 kW)','s'],
+   ['pid','einst','every bubble and interlock I-1…I-5 becomes a list row','s'],
+   ['einst','eelec','UPS load of the DCS and SIS; SIS trips to the motor starters','s'],
+   ['lay','ecomm','isometrics and line lengths for the piping package PK-10','s'],
+   ['einst','ecomm','ranges for PK-07, loop checks PC-4, SIS test PC-6','s'],
+   ['erel','eproj','relief devices on HOLD become query EQ-11','d']
+  ]},
+ threadTitle:'the circulating pumps P-215…P-218 through the document set',
+ threadIntro:'One item followed through all nine tabs: the circulating pumps, three running and one spare. The process engineer sets their duty; every other document then carries a number that depends on it. If the duty changes, each of these numbers must be checked again.',
+ thread:[
+  ['eproj','The pumps appear in four documents: the HMB (hydraulics), the equipment list, the load list and the commissioning plan. Two queries concern them: EQ-01 (LSLL-201 at 8 % trips after the pumps lose head, below about 13 % in the model) and EQ-09 (that loss is submergence, not NPSH).','One item that several documents must describe with the same numbers.'],
+  ['eproc','Rated flow 119.2 m³/h per pump = (supply 340 + side stream 15 + blowdown 2.71) / 3. Differential 322.5 kPa = 33.1 m; absorbed 13.69 kW at η 0.78; shut-off 504.9 kPa g with the basin full; NPSH available 11.7 m at NLL and 10.1 m at the trip level against 3 m required (assumed); run-out 124.2 m³/h at FCV-201 100 %. Suctions DN200 at 1.00 m/s, discharges DN150 at 1.78 m/s.','The duty point and the line sizes for the P&ID and the datasheet.'],
+  ['pid','Rev 1: P-215…218, 3 + 1 spare, 113 m³/h, 345 kPa g; suction and discharge block valves and check valves NRV-201…NRV-204 on the discharges; lines DN200-CWS-207…210 and DN150-CWS-211…214. I-1: LSLL-201 below 8 % for 5 s stops P-215…P-218 (latched); P-1: no start below 15 %.','Line numbers for isometric ISO-03; the trip and permissive for the instrument list.'],
+  ['lay','Dry pump pit, floor −3.0 m, pump centreline −2.5 m: 0.5 m below the basin floor (−2.0 m) and below the trip level (−1.84 m), at most 3.9 m from the basin wall. ISO-03: suction DN200-CWS-207 3.8 m with 2 elbows, discharge DN150-CWS-211 5.9 m with 1 elbow.','The flooded suction that the NPSH and the datasheet assume.'],
+  ['emech','Equipment list: 119.2 m³/h at 33.1 m, operating 345 kPa g, design 600 kPa g and 80 °C, cast iron with bronze impeller. Datasheet: NPSHa 10.1 m at the trip level, absorbed 13.69 kW, motor 18.5 kW. Check: design 600 covers the shut-off 504.9 kPa g ✓.','The design pressure for the relief basis and the hydrotest; the absorbed power for the load list.'],
+  ['erel','Shut-off 504.9 kPa g is below the design 600 kPa g, so a blocked outlet is not a relief case for S-281 or the users; the model run D2 (FCV-201 shut) peaks at 502.0 kPa g. The governing cases are thermal relief (PSV-281, set 600 kPa g, DN20 × DN25) and the basin overflow.','No relief valve on the pump discharge; PSV-281 and the users’ TRVs stay on HOLD (EQ-11).'],
+  ['einst','PT-202 (supply) ranges 0–1000 kPa g with alarms 300 / 440, so it covers the shut-off. LT-201 ranges 0–105 %, trip 8 % for LSLL-201 (AI to the SIS, shared with LIC-201, latched). I/O count: SIS DO 7.','The SIS outputs that stop the pump motors through interposing relays in the MCC.'],
+  ['eelec','Load list: P-215…P-218 absorbed 13.63 kW, motor 18.5 kW, 400 V, 34.1 A, cable 10 mm² Cu, 3 running + 1 standby. Check: motor ≥ 1.15 × absorbed at run-out, 18.5 vs 15.7 kW ✓.','Motors, starters and cables for the MCC package PK-09.'],
+  ['ecomm','PK-02: pumps with motors, performance test to ISO 9906 grade 2B at the vendor with the NPSHr curve. PC-2: hydrotest at 900 kPa g (1.5 × 600). PC-5: motor rotation and uncoupled runs. C-1: first fill and cold start-up (SOP-02).','Vendor data back to the register: the NPSHr curve replaces the assumed 3 m and can help close EQ-09.']
+ ],
+ threadNote:'Read the thread as a management-of-change chain: if the users ask for more flow, the rated flow, run-out, absorbed power, motor and cable, line velocities and NPSH all move together. Two small differences are worth raising as queries yourself: the load list gives 13.63 kW absorbed while the HMB and equipment list give 13.69 kW, and the P&amp;ID title block gives 113 m³/h per pump while the datasheet rates 119.2 m³/h. NPSH required (3 m) and the PVC fill rating are assumed values in their tabs.',
+ nums:[
+  ['Design case','340 m³/h, 49.2 → 32.3 °C, 6.62 MW','Process engineering (HMB case D)','P&ID note 2, line list, cell rating','Every duty in the other documents starts here.','eproc'],
+  ['Rated flow and head per pump','119.2 m³/h at 33.1 m','Process engineering','Mechanical datasheet, PK-02','What the vendor must guarantee on test.','eproc'],
+  ['Pump shut-off','504.9 kPa g','Process engineering','Mechanical, Relief & vent','Sets the design pressure and rules out a blocked-outlet relief case.','eproc'],
+  ['Design pressure','600 kPa g (hydrotest 900 kPa g)','Mechanical','Relief & vent (PSV-281 set), Procurement (PC-2)','Relief set at or below it; tested at 1.5 times it.','emech'],
+  ['NPSH available','11.7 m at NLL, 10.1 m at the trip level','Process engineering','Mechanical datasheet, EQ-09','Needs the pump centreline 0.5 m below the basin floor.','eproc'],
+  ['Pump centreline','−2.5 m (basin floor −2.0 m)','Layout & isometrics','Process engineering (NPSH)','A flooded suction at every basin level.','lay'],
+  ['Pump motor','18.5 kW, 34.1 A, 10 mm² (run-out absorbed 15.7 kW)','Electrical','MCC package PK-09','Sized for the worst duty, not the normal one.','eelec'],
+  ['Running load','134.8 kW (live model 131.1 kW)','Electrical','MCC, UPS, PK-09','The load list adds the dosing pumps and the UPS.','eelec'],
+  ['I/O count','AI 17, DO 20, DI 30, SIS DO 7 (+20 % spare)','Instrumentation & control','DCS and SIS package PK-08','Sizes the control system before it is bought.','einst'],
+  ['Engineering queries','12 (EQ-01…EQ-12)','Project & deliverables','Every Engineering tab','Disagreements written down, not corrected silently.','eproj']
+ ],
+ links:[
+  ['Process & Design','PFD','The 14 streams of the HMB are the PFD streams.','pfd'],
+  ['Process & Design','Design of the unit operation','Cell section levels for the elevations; the fan-power estimate of about 8 kW behind EQ-07.','design'],
+  ['Process & Design','Control loop design','Loops, tuning and fail positions drawn on the P&ID; tuning query EQ-12.','control'],
+  ['Operability','Flexibility','Pump curve, system curve and FCV-201 installed characteristic; run-out 124.2 m³/h per pump.','flex'],
+  ['Operability','Operating windows','Hot-day HMB case (34.02 °C against the TI-202 alarm of 34) and the cell performance curve.','opwin'],
+  ['Safety','HAZOP','Dynamic runs D2, D6, D7 used by the relief basis and the design temperature; R05 and R12 behind EQ-10 and the LSLL-201B note.','hazop'],
+  ['Safety','SRS of SIF','The setting of a separate LSLL-201B (15 %) behind EQ-01.','srs'],
+  ['Safety','C&E matrix','CWT-V1-IN-CE-001: the SIS logic tested at FAT (PK-08) and in PC-6.','cem'],
+  ['Operability','SOP','SOP-01, -02, -03, -04, -10, -12 named in the commissioning steps.','sop'],
+  ['Operate','Visual plant 3D','Built from the plot-plan coordinates; the 13-station outside-operator round.','v3d']
+ ],
+ qs:[
+  ['Why is there no relief valve on the discharge of P-215…P-218?','Process engineering gives a shut-off of 504.9 kPa g with the basin full; Mechanical sets the design pressure of the pumps, S-281 and the supply side at 600 kPa g. Relief & vent therefore rules out a blocked outlet, and the model run D2 (FCV-201 shut) confirms 502.0 kPa g. If a bigger pump raised the shut-off above 600 kPa g, the design pressure, the relief basis and the hydrotest (900 kPa g) would all have to be reopened.'],
+  ['The pumps stand in a dry pit with their centreline at −2.5 m. Which numbers in other tabs depend on that choice?','Layout fixes the level (0.5 m below the basin floor, below the trip level of −1.84 m). Process engineering uses that static head in the NPSH available, 11.7 m at NLL and 10.1 m at the trip level, and the Mechanical datasheet repeats 10.1 m. Raising the pumps to grade would cut the static head by about the same height and move the comparison with the NPSH required.'],
+  ['Why is the pump motor 18.5 kW when the absorbed power at design is only 13.69 kW?','Electrical sizes the motor for the worst duty: at run-out (FCV-201 100 %, 124.2 m³/h per pump in Process engineering and Flexibility) the pump absorbs 15.7 kW, and the check asks for at least 1.15 × that, about 18.1 kW, so the next size, 18.5 kW, is chosen. The cable (10 mm²) is then picked for 1.25 × the 34.1 A full-load current.'],
+  ['If EQ-01 is accepted and a separate low-low switch is added, which Engineering documents change?','The P&ID (a new LSLL-201B with its own switch, interlock schedule I-1 and note 8), the instrument list and its SIS I/O count, the C&E matrix that the SIS package is tested against (PK-08 FAT and PC-6), and the query register, which can then close EQ-01 and EQ-02. The SRS of SIF in the Safety group gives the setting.'],
+  ['EQ-07 says the Design tab estimates about 8 kW per fan but the simulator charges 30 kW. Which documents carry the fan power, and who closes the query?','Mechanical (30 kW absorbed in the equipment list), Electrical (37 kW motor, 68.3 A, 25 mm² cable and the 134.8 kW running load) and Procurement (PK-01, FAT of the fan and gearbox). Only the vendor fan curve can close it; if it is nearer 8 kW, the three motors, their cables and the running load all fall.']
+ ]
+};
+
+/* Group overview engine. Data: const OV = {...} (schema in the ots-group-overview-tabs skill). */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ID=OV.id,R='#'+ID;
+const ST=OV.stages||[
+ ['S1','Concept / pre-FEED','process route chosen; BFD; plot area; materials and inventories known'],
+ ['S2','FEED (basic engineering)','PFD and HMB; P&ID rev A–B; equipment list; plot plan; relief philosophy'],
+ ['S3','Detailed engineering','P&ID issued for design → IFC; datasheets; SIS and DCS design; isometrics'],
+ ['S4','Construction, commissioning, start-up','FAT / SAT of the control and safety systems; pre-start-up safety review'],
+ ['S5','Operation and change','the plant runs; proof tests; management of change; revalidation; incidents']];
+const STU=OV.studies,BYV=Object.fromEntries(STU.map(s=>[s.v,s])),LEARN=STU.map(s=>s.v);
+const LAB=v=>(BYV[v]&&BYV[v].label)||v;
+const go=(v,t)=>`<a href="#" class="ovgo" data-ovgo="${v}">${esc(t||'open '+LAB(v)+' ›')}</a>`;
+let SEL=null,ORD='learn';
+function card(s,i){const main=Object.entries(s.st).filter(([k,v])=>v===2).map(([k])=>k);
+  return `<div class="ovcard" data-ov="${s.v}" tabindex="0" style="--sc:${s.c}"><div class="ovhd"><span class="ovno">${i+1}</span><b>${esc(s.label)}</b><span class="ovst">${main.map(k=>(ST.find(x=>x[0]===k)||[,k])[1]).join(' · ')}</span></div>
+   <div class="ovq">${esc(s.q)}</div><div class="small"><b>Goal.</b> ${esc(s.goal)}</div>
+   <div class="small"><b>Needs:</b> ${esc(s.inp)}</div><div class="small"><b>Hands on:</b> ${esc(s.out)}</div>
+   <div class="small muted">${esc(s.m)}</div><div>${go(s.v)}</div></div>`;}
+function life(){const W=1000,lw=200,cw=(W-lw-10)/ST.length,rh=34,top=58,H=top+STU.length*rh+14;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(OV.group)} across the project stages">`;
+  ST.forEach((x,i)=>{const X=lw+i*cw;const m=x[1].match(/^([^(,]+)[(,]?\s*(.*?)\)?$/)||[0,x[1],''];s+=`<rect x="${X+2}" y="4" width="${cw-4}" height="${H-8}" rx="6" class="ovcol${i%2?' alt':''}"/><text x="${X+cw/2}" y="22" class="ovtx b sm2" text-anchor="middle">${x[0]} · ${esc(m[1].trim())}</text><text x="${X+cw/2}" y="40" class="ovtx sm" text-anchor="middle">${esc(m[2])}</text>`;});
+  STU.forEach((t,j)=>{const y=top+j*rh;const ks=Object.keys(t.st).map(k=>ST.findIndex(x=>x[0]===k));const a=Math.min(...ks),b=Math.max(...ks);
+    s+=`<g class="ovrow" data-ov="${t.v}" tabindex="0"><rect x="4" y="${y}" width="${W-8}" height="${rh-4}" rx="4" class="ovhit"/><text x="12" y="${y+20}" class="ovtx b">${j+1} · ${esc(t.label.length>22?t.label.slice(0,21)+'…':t.label)}</text>`;
+    s+=`<line x1="${lw+a*cw+cw/2}" x2="${lw+b*cw+cw/2}" y1="${y+15}" y2="${y+15}" stroke="${t.c}" stroke-width="3" opacity=".45"/>`;
+    Object.entries(t.st).forEach(([k,v])=>{const X=lw+ST.findIndex(x=>x[0]===k)*cw+cw/2;s+=v===2?`<circle cx="${X}" cy="${y+15}" r="9" fill="${t.c}"/>`:`<circle cx="${X}" cy="${y+15}" r="7" fill="var(--panel)" stroke="${t.c}" stroke-width="2.5"/>`;});
+    s+='</g>';});
+  return s+'</svg>';}
+function stages(){return ST.map(x=>{const here=STU.filter(t=>t.st[x[0]]);
+  return `<tr><td><b>${x[0]}</b> ${esc(x[1])}</td><td>${esc(x[2])}</td><td>${here.map(t=>`<span class="ovchip${t.st[x[0]]===2?' main':''}" data-ov="${t.v}" style="--sc:${t.c}">${t.st[x[0]]===2?'●':'○'} ${esc(t.label)}</span>`).join(' ')||'<span class="muted">–</span>'}</td><td>${esc((OV.decisions||{})[x[0]]||'')}</td></tr>`;}).join('');}
+const stn=k=>{const s=BYV[k].st;return Object.keys(s).filter(x=>s[x]===2).join(', ');};
+const dk=s=>s.deck?`<a class="small" href="${/\.html$/.test(s.deck)?s.deck:'cwt-'+s.deck+'-deck.html'}" target="_blank" rel="noopener">${esc(/\.html$/.test(s.deck)?s.deck.replace(/\.html$/,''):'cwt-'+s.deck+'-deck')}</a>`:'–';
+function ordRows(){
+  if(ORD==='learn'){$(R+' .ovordnote').innerHTML=`<p class="small">${OV.learnNote}</p>`;
+    return LEARN.map((v,i)=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(s.label)}</b><br><span class="small muted">${esc(s.why||'')}</span></td><td>${esc(s.goal)}</td><td>${stn(v)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+  $(R+' .ovordnote').innerHTML=`<p class="small">${OV.projNote}</p>`;
+  return OV.proj.map(([n,v,stg,what])=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${n}</b></td><td><b>${esc(s.label)}</b></td><td>${esc(what)}</td><td>${esc(stg)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+function flow(){const F=OV.flow,bw=F.bw||170,bh=56,H=F.h||285;let P=F.pos;
+  if(!P){P={};const n=LEARN.length,r1=Math.ceil(n/2),r2=n-r1;LEARN.forEach((v,i)=>{const row=i<r1?0:1,k=row?i-r1:i,m=row?r2:r1;P[v]=[(k+0.5)*1000/m,row?215:70];});}
+  const side=(v,tx,ty)=>{const [x,y]=P[v],dx=tx-x,dy=ty-y;const sx=Math.abs(dx)/(bw/2),sy=Math.abs(dy)/(bh/2);const k=1/Math.max(sx,sy,1e-9);return [x+dx*k,y+dy*k];};
+  let s=`<svg viewBox="0 0 1000 ${H}" role="img" aria-label="What passes between the ${esc(OV.group)} tabs"><defs><marker id="${ID}Ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ovahf"/></marker></defs>`;
+  F.edges.forEach(([a,b,l,k,arc],i)=>{const [x1,y1]=P[a],[x2,y2]=P[b];let path,mx,my;
+    if(arc){const up=arc==='up',sx=x1+(x2>x1?20:-20),ex=x2+(x2>x1?-20:20),y0=up?Math.min(y1,y2)-bh/2:Math.max(y1,y2)+bh/2,dy=up?-38:38;
+      path=`M${sx} ${up?y1-bh/2:y1+bh/2} C ${sx} ${y0+dy}, ${ex} ${y0+dy}, ${ex} ${up?y2-bh/2:y2+bh/2}`;mx=(sx+ex)/2;my=y0+dy*0.75;}
+    else{const [sx,sy]=side(a,x2,y2),[ex,ey]=side(b,x1,y1);path=`M${sx} ${sy} L${ex} ${ey}`;mx=(sx+ex)/2;my=(sy+ey)/2;}
+    s+=`<path d="${path}" class="oved ${k}" data-a="${a}" data-b="${b}" marker-end="url(#${ID}Ah)"/><g class="ovebadge" data-a="${a}" data-b="${b}"><circle cx="${mx}" cy="${my}" r="10"/><text x="${mx}" y="${my+4}" text-anchor="middle">${i+1}</text></g>`;});
+  Object.entries(P).forEach(([v,[x,y]])=>{const t=BYV[v];const lb=t.label.length>20?t.label.slice(0,19)+'…':t.label;s+=`<g class="ovnode" data-ov="${v}" tabindex="0"><rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="8" style="stroke:${t.c}"/><text x="${x}" y="${y-4}" class="ovtx b" text-anchor="middle">${LEARN.indexOf(v)+1} · ${esc(lb)}</text><text x="${x}" y="${y+15}" class="ovtx sm" text-anchor="middle">${esc(t.q.length>30?t.q.slice(0,28)+'…':t.q)}</text></g>`;});
+  s+='</svg>';
+  return s+`<ol class="ovleg small">${F.edges.map(([a,b,l,k])=>`<li data-a="${a}" data-b="${b}"><b>${esc(LAB(a))} → ${esc(LAB(b))}</b>: ${esc(l)}${k==='d'?' <span class="muted">(fed back)</span>':''}</li>`).join('')}</ol>`;}
+function sel(v){SEL=SEL===v?null:v;$$(R+' [data-ov]').forEach(e=>e.classList.toggle('on',!!SEL&&e.dataset.ov===SEL));
+  $$(`${R} .oved,${R} .ovebadge,${R} .ovleg li`).forEach(e=>e.classList.toggle('on',!!SEL&&(e.dataset.a===SEL||e.dataset.b===SEL)));
+  $(R).classList.toggle('ovhas',!!SEL);}
+function build(){const d=$(R+' .ovdoc');const n=STU.length;
+  d.innerHTML=`<h2>${esc(OV.title)}</h2>
+  <nav class="toc small"><a href="#${ID}1">1 The question</a> · <a href="#${ID}2">2 ${n} tabs, ${n} goals</a> · <a href="#${ID}3">3 When in a project</a> · <a href="#${ID}4">4 Order: learning and project</a> · <a href="#${ID}5">5 What passes between tabs</a> · <a href="#${ID}6">6 One thread through the group</a> · <a href="#${ID}7">7 Numbers handed on</a> · <a href="#${ID}8">8 Links to the other groups</a> · <a href="#${ID}9">9 Check yourself</a></nav>
+  <h3 id="${ID}1">1 · The question of this group</h3>
+  <div class="callout ovbig"><b>${esc(OV.question)}</b></div>
+  <p>${OV.intro} Click a tab anywhere on this page (a card, a bar, a box) to highlight it everywhere; the <span class="ovgo">open</span> buttons go to the tab.</p>
+  <h3 id="${ID}2">2 · ${n} tabs, ${n} goals</h3>
+  <p class="small muted">Card = the tab's goal (what it must deliver), the question it answers, what it needs before it can start, what it hands on, the method or standard, and the project stage where that work is mainly done.</p>
+  <div class="ovgrid">${LEARN.map((v,i)=>card(BYV[v],i)).join('')}</div>
+  <h3 id="${ID}3">3 · When in a project this work is done</h3>
+  <p>${OV.stageNote} ● = the main time the work is done; ○ = it is repeated, updated or used there.</p>
+  <div class="ovbox">${life()}</div>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Stage</th><th>State of the design (what exists)</th><th>Work of this group done</th><th>Decisions it drives</th></tr></thead><tbody>${stages()}</tbody></table></div>
+  <h3 id="${ID}4">4 · Order: the order of the tabs and the order in a project</h3>
+  <div class="tbctl"><span class="small">Show:</span><button class="btn small on" data-ovord="learn">Learning order (the tabs)</button><button class="btn small" data-ovord="proj">Project order (real life)</button></div>
+  <div class="ovordnote"></div>
+  <div class="tscroll"><table class="tbl small ovord"><thead><tr><th>Step</th><th>Tab</th><th>Goal of the step</th><th>Project stage</th><th>Starts from (input)</th><th>Hands on (output)</th><th>Time in class</th><th>Deck</th></tr></thead><tbody></tbody></table></div>
+  <h3 id="${ID}5">5 · What passes from one tab to the next</h3>
+  <p class="small muted">Each numbered arrow carries a result. Solid = the next tab needs it to start; dashed = a check or a lesson fed back.</p>
+  <div class="ovbox">${flow()}</div>
+  <h3 id="${ID}6">6 · One thread through the group: ${esc(OV.threadTitle)}</h3>
+  <p>${OV.threadIntro}</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Step</th><th>Tab</th><th>What the tab says about it</th><th>So the next tab gets</th><th></th></tr></thead><tbody>${OV.thread.map(([v,a,b],i)=>`<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(LAB(v))}</b></td><td>${esc(a)}</td><td>${esc(b)}</td><td>${go(v,'open ›')}</td></tr>`).join('')}</tbody></table></div>
+  ${OV.threadNote?`<div class="callout small">${OV.threadNote}</div>`:''}
+  <h3 id="${ID}7">7 · Numbers handed on</h3>
+  <p class="small muted">A number is born in one tab and used in another. If it changes where it is born, every tab that uses it must be checked again (management of change).</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Number</th><th>Value</th><th>Born in</th><th>Used in</th><th>Why it matters there</th></tr></thead><tbody>${OV.nums.map(([nm,val,b,u,w,v])=>`<tr data-ov="${v}"><td>${esc(nm)}</td><td class="num"><b>${esc(val)}</b></td><td>${esc(b)}</td><td>${esc(u)}</td><td class="small">${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}8">8 · Links to the other groups</h3>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Group</th><th>Tab</th><th>What this group takes from it, or gives to it</th></tr></thead><tbody>${OV.links.map(([g,t,w,v])=>`<tr><td>${esc(g)}</td><td><a href="#" class="ovgo" data-ovgo="${v}">${esc(t)}</a></td><td>${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}9">9 · Check yourself</h3>
+  <p class="small muted">Each question needs at least two tabs of the group. Answer first, then open the model answer.</p>
+  ${OV.qs.map(([q,a],i)=>`<div class="ovqa"><p><b>Q${i+1}.</b> ${esc(q)}</p><details><summary>Model answer</summary><p class="small">${esc(a)}</p></details></div>`).join('')}`;
+  $(R+' .ovord tbody').innerHTML=ordRows();
+  const root=$(R);
+  root.addEventListener('click',e=>{const g=e.target.closest('[data-ovgo]');if(g){e.preventDefault();showView(g.dataset.ovgo);return;}
+    const o=e.target.closest('[data-ovord]');if(o){ORD=o.dataset.ovord;$$(R+' [data-ovord]').forEach(b=>b.classList.toggle('on',b===o));$(R+' .ovord tbody').innerHTML=ordRows();if(SEL){const k=SEL;SEL=null;sel(k);}return;}
+    const s=e.target.closest('[data-ov]');if(s&&!e.target.closest('a,summary'))sel(s.dataset.ov);});
+  root.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-ov]')){e.preventDefault();sel(e.target.dataset.ov);}});}
+TB.tab(ID,build,null);
+
+})();
 
 /* sov: group overview */
 (()=>{
@@ -3783,6 +4421,429 @@ const OV = {
   ['Why does LSLL-201 get no credit in LOPA L2 even though it is a SIL-rated trip on the P&ID?','The SRS shows it uses LT-201, the same transmitter as LIC-201. In L2 the initiating event is LT-201 failing high, so the trip shares its sensor with the cause and is not independent. That is why the HAZOP and LOPA recommend a separate switch, LSLL-201B (SIF-03).'],
   ['Why does the operator response to FI-202 LO get no credit in LOPA L1, but could get credit for a fan stop?','LOPA needs about 10 minutes between the alarm and the harm. The dynamic check of the simulator shows a power dip reaches TI-203 HI at the users in 3 s, while one fan stopping takes about 7 min (D3) and is slow enough to consider. The time, not the alarm itself, decides the credit.'],
   ['Incident C5 named the procedures and management of change as failed layers. Where in the Safety tabs do you see the same weak points on this unit?','HAZOP N9 (procedures) and R07 ask to sample the return before restarting the fans; the SRS of SIF-04 resets only after the water is sampled clear; the stage table puts every change (new user, new chemical) back into HAZOP and LOPA through MOC. A procedure gets no LOPA credit, so the trip and the procedure are both needed.']
+ ]
+};
+
+/* Group overview engine. Data: const OV = {...} (schema in the ots-group-overview-tabs skill). */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ID=OV.id,R='#'+ID;
+const ST=OV.stages||[
+ ['S1','Concept / pre-FEED','process route chosen; BFD; plot area; materials and inventories known'],
+ ['S2','FEED (basic engineering)','PFD and HMB; P&ID rev A–B; equipment list; plot plan; relief philosophy'],
+ ['S3','Detailed engineering','P&ID issued for design → IFC; datasheets; SIS and DCS design; isometrics'],
+ ['S4','Construction, commissioning, start-up','FAT / SAT of the control and safety systems; pre-start-up safety review'],
+ ['S5','Operation and change','the plant runs; proof tests; management of change; revalidation; incidents']];
+const STU=OV.studies,BYV=Object.fromEntries(STU.map(s=>[s.v,s])),LEARN=STU.map(s=>s.v);
+const LAB=v=>(BYV[v]&&BYV[v].label)||v;
+const go=(v,t)=>`<a href="#" class="ovgo" data-ovgo="${v}">${esc(t||'open '+LAB(v)+' ›')}</a>`;
+let SEL=null,ORD='learn';
+function card(s,i){const main=Object.entries(s.st).filter(([k,v])=>v===2).map(([k])=>k);
+  return `<div class="ovcard" data-ov="${s.v}" tabindex="0" style="--sc:${s.c}"><div class="ovhd"><span class="ovno">${i+1}</span><b>${esc(s.label)}</b><span class="ovst">${main.map(k=>(ST.find(x=>x[0]===k)||[,k])[1]).join(' · ')}</span></div>
+   <div class="ovq">${esc(s.q)}</div><div class="small"><b>Goal.</b> ${esc(s.goal)}</div>
+   <div class="small"><b>Needs:</b> ${esc(s.inp)}</div><div class="small"><b>Hands on:</b> ${esc(s.out)}</div>
+   <div class="small muted">${esc(s.m)}</div><div>${go(s.v)}</div></div>`;}
+function life(){const W=1000,lw=200,cw=(W-lw-10)/ST.length,rh=34,top=58,H=top+STU.length*rh+14;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(OV.group)} across the project stages">`;
+  ST.forEach((x,i)=>{const X=lw+i*cw;const m=x[1].match(/^([^(,]+)[(,]?\s*(.*?)\)?$/)||[0,x[1],''];s+=`<rect x="${X+2}" y="4" width="${cw-4}" height="${H-8}" rx="6" class="ovcol${i%2?' alt':''}"/><text x="${X+cw/2}" y="22" class="ovtx b sm2" text-anchor="middle">${x[0]} · ${esc(m[1].trim())}</text><text x="${X+cw/2}" y="40" class="ovtx sm" text-anchor="middle">${esc(m[2])}</text>`;});
+  STU.forEach((t,j)=>{const y=top+j*rh;const ks=Object.keys(t.st).map(k=>ST.findIndex(x=>x[0]===k));const a=Math.min(...ks),b=Math.max(...ks);
+    s+=`<g class="ovrow" data-ov="${t.v}" tabindex="0"><rect x="4" y="${y}" width="${W-8}" height="${rh-4}" rx="4" class="ovhit"/><text x="12" y="${y+20}" class="ovtx b">${j+1} · ${esc(t.label.length>22?t.label.slice(0,21)+'…':t.label)}</text>`;
+    s+=`<line x1="${lw+a*cw+cw/2}" x2="${lw+b*cw+cw/2}" y1="${y+15}" y2="${y+15}" stroke="${t.c}" stroke-width="3" opacity=".45"/>`;
+    Object.entries(t.st).forEach(([k,v])=>{const X=lw+ST.findIndex(x=>x[0]===k)*cw+cw/2;s+=v===2?`<circle cx="${X}" cy="${y+15}" r="9" fill="${t.c}"/>`:`<circle cx="${X}" cy="${y+15}" r="7" fill="var(--panel)" stroke="${t.c}" stroke-width="2.5"/>`;});
+    s+='</g>';});
+  return s+'</svg>';}
+function stages(){return ST.map(x=>{const here=STU.filter(t=>t.st[x[0]]);
+  return `<tr><td><b>${x[0]}</b> ${esc(x[1])}</td><td>${esc(x[2])}</td><td>${here.map(t=>`<span class="ovchip${t.st[x[0]]===2?' main':''}" data-ov="${t.v}" style="--sc:${t.c}">${t.st[x[0]]===2?'●':'○'} ${esc(t.label)}</span>`).join(' ')||'<span class="muted">–</span>'}</td><td>${esc((OV.decisions||{})[x[0]]||'')}</td></tr>`;}).join('');}
+const stn=k=>{const s=BYV[k].st;return Object.keys(s).filter(x=>s[x]===2).join(', ');};
+const dk=s=>s.deck?`<a class="small" href="${/\.html$/.test(s.deck)?s.deck:'cwt-'+s.deck+'-deck.html'}" target="_blank" rel="noopener">${esc(/\.html$/.test(s.deck)?s.deck.replace(/\.html$/,''):'cwt-'+s.deck+'-deck')}</a>`:'–';
+function ordRows(){
+  if(ORD==='learn'){$(R+' .ovordnote').innerHTML=`<p class="small">${OV.learnNote}</p>`;
+    return LEARN.map((v,i)=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(s.label)}</b><br><span class="small muted">${esc(s.why||'')}</span></td><td>${esc(s.goal)}</td><td>${stn(v)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+  $(R+' .ovordnote').innerHTML=`<p class="small">${OV.projNote}</p>`;
+  return OV.proj.map(([n,v,stg,what])=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${n}</b></td><td><b>${esc(s.label)}</b></td><td>${esc(what)}</td><td>${esc(stg)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+function flow(){const F=OV.flow,bw=F.bw||170,bh=56,H=F.h||285;let P=F.pos;
+  if(!P){P={};const n=LEARN.length,r1=Math.ceil(n/2),r2=n-r1;LEARN.forEach((v,i)=>{const row=i<r1?0:1,k=row?i-r1:i,m=row?r2:r1;P[v]=[(k+0.5)*1000/m,row?215:70];});}
+  const side=(v,tx,ty)=>{const [x,y]=P[v],dx=tx-x,dy=ty-y;const sx=Math.abs(dx)/(bw/2),sy=Math.abs(dy)/(bh/2);const k=1/Math.max(sx,sy,1e-9);return [x+dx*k,y+dy*k];};
+  let s=`<svg viewBox="0 0 1000 ${H}" role="img" aria-label="What passes between the ${esc(OV.group)} tabs"><defs><marker id="${ID}Ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ovahf"/></marker></defs>`;
+  F.edges.forEach(([a,b,l,k,arc],i)=>{const [x1,y1]=P[a],[x2,y2]=P[b];let path,mx,my;
+    if(arc){const up=arc==='up',sx=x1+(x2>x1?20:-20),ex=x2+(x2>x1?-20:20),y0=up?Math.min(y1,y2)-bh/2:Math.max(y1,y2)+bh/2,dy=up?-38:38;
+      path=`M${sx} ${up?y1-bh/2:y1+bh/2} C ${sx} ${y0+dy}, ${ex} ${y0+dy}, ${ex} ${up?y2-bh/2:y2+bh/2}`;mx=(sx+ex)/2;my=y0+dy*0.75;}
+    else{const [sx,sy]=side(a,x2,y2),[ex,ey]=side(b,x1,y1);path=`M${sx} ${sy} L${ex} ${ey}`;mx=(sx+ex)/2;my=(sy+ey)/2;}
+    s+=`<path d="${path}" class="oved ${k}" data-a="${a}" data-b="${b}" marker-end="url(#${ID}Ah)"/><g class="ovebadge" data-a="${a}" data-b="${b}"><circle cx="${mx}" cy="${my}" r="10"/><text x="${mx}" y="${my+4}" text-anchor="middle">${i+1}</text></g>`;});
+  Object.entries(P).forEach(([v,[x,y]])=>{const t=BYV[v];const lb=t.label.length>20?t.label.slice(0,19)+'…':t.label;s+=`<g class="ovnode" data-ov="${v}" tabindex="0"><rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="8" style="stroke:${t.c}"/><text x="${x}" y="${y-4}" class="ovtx b" text-anchor="middle">${LEARN.indexOf(v)+1} · ${esc(lb)}</text><text x="${x}" y="${y+15}" class="ovtx sm" text-anchor="middle">${esc(t.q.length>30?t.q.slice(0,28)+'…':t.q)}</text></g>`;});
+  s+='</svg>';
+  return s+`<ol class="ovleg small">${F.edges.map(([a,b,l,k])=>`<li data-a="${a}" data-b="${b}"><b>${esc(LAB(a))} → ${esc(LAB(b))}</b>: ${esc(l)}${k==='d'?' <span class="muted">(fed back)</span>':''}</li>`).join('')}</ol>`;}
+function sel(v){SEL=SEL===v?null:v;$$(R+' [data-ov]').forEach(e=>e.classList.toggle('on',!!SEL&&e.dataset.ov===SEL));
+  $$(`${R} .oved,${R} .ovebadge,${R} .ovleg li`).forEach(e=>e.classList.toggle('on',!!SEL&&(e.dataset.a===SEL||e.dataset.b===SEL)));
+  $(R).classList.toggle('ovhas',!!SEL);}
+function build(){const d=$(R+' .ovdoc');const n=STU.length;
+  d.innerHTML=`<h2>${esc(OV.title)}</h2>
+  <nav class="toc small"><a href="#${ID}1">1 The question</a> · <a href="#${ID}2">2 ${n} tabs, ${n} goals</a> · <a href="#${ID}3">3 When in a project</a> · <a href="#${ID}4">4 Order: learning and project</a> · <a href="#${ID}5">5 What passes between tabs</a> · <a href="#${ID}6">6 One thread through the group</a> · <a href="#${ID}7">7 Numbers handed on</a> · <a href="#${ID}8">8 Links to the other groups</a> · <a href="#${ID}9">9 Check yourself</a></nav>
+  <h3 id="${ID}1">1 · The question of this group</h3>
+  <div class="callout ovbig"><b>${esc(OV.question)}</b></div>
+  <p>${OV.intro} Click a tab anywhere on this page (a card, a bar, a box) to highlight it everywhere; the <span class="ovgo">open</span> buttons go to the tab.</p>
+  <h3 id="${ID}2">2 · ${n} tabs, ${n} goals</h3>
+  <p class="small muted">Card = the tab's goal (what it must deliver), the question it answers, what it needs before it can start, what it hands on, the method or standard, and the project stage where that work is mainly done.</p>
+  <div class="ovgrid">${LEARN.map((v,i)=>card(BYV[v],i)).join('')}</div>
+  <h3 id="${ID}3">3 · When in a project this work is done</h3>
+  <p>${OV.stageNote} ● = the main time the work is done; ○ = it is repeated, updated or used there.</p>
+  <div class="ovbox">${life()}</div>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Stage</th><th>State of the design (what exists)</th><th>Work of this group done</th><th>Decisions it drives</th></tr></thead><tbody>${stages()}</tbody></table></div>
+  <h3 id="${ID}4">4 · Order: the order of the tabs and the order in a project</h3>
+  <div class="tbctl"><span class="small">Show:</span><button class="btn small on" data-ovord="learn">Learning order (the tabs)</button><button class="btn small" data-ovord="proj">Project order (real life)</button></div>
+  <div class="ovordnote"></div>
+  <div class="tscroll"><table class="tbl small ovord"><thead><tr><th>Step</th><th>Tab</th><th>Goal of the step</th><th>Project stage</th><th>Starts from (input)</th><th>Hands on (output)</th><th>Time in class</th><th>Deck</th></tr></thead><tbody></tbody></table></div>
+  <h3 id="${ID}5">5 · What passes from one tab to the next</h3>
+  <p class="small muted">Each numbered arrow carries a result. Solid = the next tab needs it to start; dashed = a check or a lesson fed back.</p>
+  <div class="ovbox">${flow()}</div>
+  <h3 id="${ID}6">6 · One thread through the group: ${esc(OV.threadTitle)}</h3>
+  <p>${OV.threadIntro}</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Step</th><th>Tab</th><th>What the tab says about it</th><th>So the next tab gets</th><th></th></tr></thead><tbody>${OV.thread.map(([v,a,b],i)=>`<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(LAB(v))}</b></td><td>${esc(a)}</td><td>${esc(b)}</td><td>${go(v,'open ›')}</td></tr>`).join('')}</tbody></table></div>
+  ${OV.threadNote?`<div class="callout small">${OV.threadNote}</div>`:''}
+  <h3 id="${ID}7">7 · Numbers handed on</h3>
+  <p class="small muted">A number is born in one tab and used in another. If it changes where it is born, every tab that uses it must be checked again (management of change).</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Number</th><th>Value</th><th>Born in</th><th>Used in</th><th>Why it matters there</th></tr></thead><tbody>${OV.nums.map(([nm,val,b,u,w,v])=>`<tr data-ov="${v}"><td>${esc(nm)}</td><td class="num"><b>${esc(val)}</b></td><td>${esc(b)}</td><td>${esc(u)}</td><td class="small">${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}8">8 · Links to the other groups</h3>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Group</th><th>Tab</th><th>What this group takes from it, or gives to it</th></tr></thead><tbody>${OV.links.map(([g,t,w,v])=>`<tr><td>${esc(g)}</td><td><a href="#" class="ovgo" data-ovgo="${v}">${esc(t)}</a></td><td>${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}9">9 · Check yourself</h3>
+  <p class="small muted">Each question needs at least two tabs of the group. Answer first, then open the model answer.</p>
+  ${OV.qs.map(([q,a],i)=>`<div class="ovqa"><p><b>Q${i+1}.</b> ${esc(q)}</p><details><summary>Model answer</summary><p class="small">${esc(a)}</p></details></div>`).join('')}`;
+  $(R+' .ovord tbody').innerHTML=ordRows();
+  const root=$(R);
+  root.addEventListener('click',e=>{const g=e.target.closest('[data-ovgo]');if(g){e.preventDefault();showView(g.dataset.ovgo);return;}
+    const o=e.target.closest('[data-ovord]');if(o){ORD=o.dataset.ovord;$$(R+' [data-ovord]').forEach(b=>b.classList.toggle('on',b===o));$(R+' .ovord tbody').innerHTML=ordRows();if(SEL){const k=SEL;SEL=null;sel(k);}return;}
+    const s=e.target.closest('[data-ov]');if(s&&!e.target.closest('a,summary'))sel(s.dataset.ov);});
+  root.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-ov]')){e.preventDefault();sel(e.target.dataset.ov);}});}
+TB.tab(ID,build,null);
+
+})();
+
+/* ovo: group overview */
+(()=>{
+const OV = {
+ id:'ovo', group:'Operability',
+ title:'Operability overview · how the 6 Operability tabs fit together, in what order, and when in a project',
+ question:'Where can the cooling water tower run, how is it moved and kept there, how often does it fail the users, at what cost, and how do the operators do it the same way every time?',
+ intro:'The six Operability tabs answer that question in steps. Operating windows says <i>where</i> the unit can run and which bound closes first; Flexibility says which <i>handles</i> move it and how much spare they have; Transition operation shows how it is <i>moved</i> from one state to another; Process reliability counts how often the users <i>lose</i> their cooling; Efficiency puts a price on energy, water and chemicals <i>inside</i> the window; SOP writes all of it down as steps the crew can check.',
+ stageNote:'Operability is decided early and used for the life of the plant. The variability the design must cover (weather, load) is set at concept; spare capacity, handles and the number of pumps and cells are fixed at FEED; transitions and SOPs are written in detailed engineering and proven at start-up; in operation every change of load, weather or water is checked against the window again.',
+ decisions:{
+  S1:'Which weather and load range the tower must cover (wet bulb 18–32 °C and 40–140 % of design assumed); how many cells and pumps; single-speed or variable-speed fans.',
+  S2:'Spare capacity of each handle (FCV-201 about 71 % open at design, LCV-201 and FV-222 sizes, a spare pump); the integrity operating windows that become alarms; the value of a lost hour of cooling.',
+  S3:'Equipment that exists only for transitions (bypass HS-204, a start permissive on the basin level, LCV-201 sized to fill the basin); the start-up, shutdown and power-dip sequences; the twelve SOPs.',
+  S4:'Is the first start-up done by the SOP, judged on the result (TI-202, TI-203, flow, level), with the alarms that are normal for the transition known in advance?',
+  S5:'Can a new load, a hotter season or a cycles change stay inside the window? Which spare, auto-start or VSD pays for itself? Which SOP must be revised after the change?'},
+ studies:[
+  {v:'opwin',label:'Operating windows',c:'#2563EB',why:'First, because every later tab needs to know the bounds and which one breaks first.',
+   goal:'Map the conditions where every bound is met (users’ outlet, supply and return temperatures, flow, pressure, valve openings, pump suction) over weather, load and the handles.',
+   q:'Where can this unit run, and which bound closes first?',inp:'Design state of the model, alarm and trip settings, the range of wet bulb and users’ load (assumed)',
+   out:'Bounds and margins now; load range at a given wet bulb (70–109 % at 27 °C, 3 fans); window over weather and load from 30-min runs; Monte Carlo share inside',
+   m:'Operating window (series plant), Type I and Type III windows, Monte Carlo on the model',st:{S1:1,S2:2,S3:1,S5:2},t:'60 min (estimate)',deck:'opwin'},
+  {v:'flex',label:'Flexibility',c:'#7C3AED',why:'After the window, because a handle only matters if it can move the plant back inside a bound.',
+   goal:'List every handle with its spare capacity, measure its gain on the model and decide which handle holds which variable.',
+   q:'Which handles move the window, and how far can they go?',inp:'The bounds from Operating windows, the degrees of freedom from Control loop design, pump and valve curves',
+   out:'Register of handles and spare capacity; gains of each handle (one fan ≈ 4.6 °C on TI-202); the pairing fans ↔ temperature, FIC-201 ↔ flow; recommendations (fan VSD, spare-pump auto-start)',
+   m:'Gain matrix from 30-min model runs, relative gain array, installed valve characteristic',st:{S2:2,S3:2,S5:1},t:'60 min (estimate)',deck:'flex'},
+  {v:'trans',label:'Transition operation',c:'#DB2777',why:'After the handles, because a transition is a planned sequence of handle moves that keeps the plant inside its bounds on the way.',
+   goal:'Show how the unit is started, shut down, restarted after a power dip, changed (cycles 4 → 5) and run with equipment out, with the reason and the safety concern of each step.',
+   q:'How is the unit moved safely from one state to another?',inp:'The window and the handles, the trips and permissives (C&E matrix), the HAZID and HAZOP concerns',
+   out:'Step lists with reasons; scripted runs (start-up lined out at 68 min, shutdown with 6 alarms, power-dip peaks at four delays, cycles change); blocked-operation plans',
+   m:'Scripted runs on a copy of the model; order rules (suction before pumps, cooling before heat)',st:{S3:2,S4:2,S5:1},t:'90 min (estimate)',deck:'trans'},
+  {v:'relia',label:'Process reliability',c:'#DC2626',why:'After transitions, because the downtime of each stop comes from how long the restart takes.',
+   goal:'Count how often and for how long the users lose their cooling, find the element that dominates, and test which spare or redesign is worth it.',
+   q:'How often do the users lose their cooling, and for how long?',inp:'Failure rates (assumed), the window with one fan or one pump less, restart times from Transition operation, the value of an hour',
+   out:'The unit as a series system: about 4.0 stops and 25.8 lost h a year, 84 % from fan trips; how many pumps pay; maintenance strategy per item',
+   m:'R = e^(−λt), A = MTTF/(MTTF+MTTR), k-of-N and standby structures, Weibull',st:{S1:1,S2:2,S3:1,S5:2},t:'60 min (estimate)',deck:'relia'},
+  {v:'effic',label:'Efficiency',c:'#059669',why:'After reliability, because efficiency is the fifth priority: a saving that costs the users their cooling is not a saving.',
+   goal:'Measure energy, water and chemicals per MW of heat rejected, check the rules of thumb against the model and size the savings options.',
+   q:'What does each MW of cooling cost, and what can be saved inside the window?',inp:'The live model (heat, kW, make-up, cycles), prices (0.12 per kWh, 0.8 per m³), the window and the handles',
+   out:'19.8 kW/MW and 1.69 m³/h per MW at design; fans and circulation at design; pump VSD and fan VSD savings; water cost against the cycles',
+   m:'Heat and water balance, cube law for fans (estimate), system curve, cost per year',st:{S1:1,S2:2,S5:2},t:'60 min (estimate)',deck:'effic'},
+  {v:'sop',label:'SOP',c:'#D97706',why:'Last, because an SOP writes down what the other five tabs decided: the order, the limits, the holds and the reasons.',
+   goal:'Give every task that matters an approved procedure: steps with expected response and reason, hold points, cautions, abnormal situations, and practice on the simulator.',
+   q:'How do the operators do each task the same, safe way every time?',inp:'Transition sequences, the window and alarm limits, the trips (SOP-05), HAZOP recommendations, OSHA PSM content list',
+   out:'Register of twelve SOPs (SOP-01 to SOP-12), four of them graded on the simulator; writing rules; the life cycle of an SOP',
+   m:'OSHA PSM 1910.119(f), CCPS; hold points and cautions; annual review and MOC',st:{S3:1,S4:2,S5:2},t:'60 min (estimate)',deck:'sop'}
+ ],
+ learnNote:'The tabs follow the questions an operator and a designer ask in turn: <i>where</i> can it run (Operating windows), <i>what moves it</i> (Flexibility), <i>how is it moved</i> (Transition operation), <i>how often does it fail the users</i> (Process reliability), <i>what does it cost</i> (Efficiency), and <i>how is it written down</i> (SOP). Each tab reuses the numbers of the tabs before it, so read them in this order the first time.',
+ projNote:'In a real project the order differs in three places. <b>Reliability and efficiency</b> come early: the number of pumps and cells and the choice of single-speed fans are made at concept and FEED, before anyone draws an operating window on a detailed model. The <b>operating window</b> is drawn twice: roughly at FEED to size the handles, and again on the detailed model once the valves and pumps are chosen. <b>SOPs</b> are drafted in detailed engineering, reviewed in the HAZOP and practised before start-up, then reopened after every change.',
+ proj:[
+  [1,'opwin','S1 Concept','Write the design basis of the variability: wet bulb range (design 27 °C), users’ load range, city-water quality.'],
+  [2,'relia','S1 – S2','Decide how many pumps (3 + 1 spare) and cells (3, no spare), weighing lost hours against the capital.'],
+  [3,'effic','S2 FEED','Choose single-speed fans, cycles of concentration 4 and the treatment programme; price energy and water.'],
+  [4,'flex','S2 FEED','Size the handles with spare capacity: FCV-201 about 71 % open at design, LCV-201 to 70 m³/h, FV-222 to 5.4 m³/h.'],
+  [5,'opwin','S2 – S3','Draw the window over weather and load on the model; the integrity operating windows become alarm settings.'],
+  [6,'trans','S3 Detailed','Script start-up, shutdown and power-dip restart; add the equipment transitions need (bypass HS-204, start permissive).'],
+  [7,'sop','S3 – S4','Write SOP-01 to SOP-12, review them in the HAZOP, practise the graded ones on the OTS.'],
+  [8,'trans','S4 Start-up','First start-up by SOP-02; line-out judged on TI-202, TI-203, flow and level, not on pumps running.'],
+  [9,'opwin','S5 Operation','Check each new load or a hotter season against the window before agreeing to it (MOC).'],
+  [10,'effic','S5 Operation','Track kW per MW and water per MW; plan a cycles change with SOP-10.'],
+  [11,'relia','S5 Operation','Log lost hours per cause; trend fan vibration; decide on auto-start, a fan VSD or a fourth cell.'],
+  [12,'sop','S5 Operation','Annual review of every SOP and a revision after each change or incident.']
+ ],
+ flow:{bw:170,h:290,
+  pos:{opwin:[100,70],flex:[366,70],trans:[633,70],sop:[900,70],relia:[366,215],effic:[633,215]},
+  edges:[
+   ['opwin','flex','the bound that breaks first and its margin','s'],
+   ['flex','trans','handles, their gains and limits','s'],
+   ['trans','sop','step order, holds and the alarms to expect','s'],
+   ['opwin','trans','where a cell can come out; the load range','s','up'],
+   ['flex','relia','spare capacity: pumps 3 + 1, no spare fan','s'],
+   ['trans','relia','restart times that set the downtime','s'],
+   ['opwin','relia','with one fan less the users run above 47 °C','s'],
+   ['relia','effic','value of a lost hour of cooling','s'],
+   ['effic','sop','targets and limits for rounds and SOP-10','s']
+  ]},
+ threadTitle:'the users ask for 10 % more heat duty',
+ threadIntro:'One planned change followed through all six tabs: the process units want to run at 110 % of the design heat load (about 7.3 MW instead of 6.62 MW) for a campaign. Each tab answers one part of “can we say yes, and how?”. Where a number at 110 % is not shown in a tab, it is a linear estimate from that tab’s own gains and is marked so.',
+ thread:[
+  ['opwin','At a wet bulb of 27 °C with 3 fans the window runs from 70 % to 109 % of design load (turndown 1.56 : 1). The bound that closes the top is the users’ outlet TI-203 high (≤ 47 °C; 45.0 °C at design). 110 % is just outside on a design day.','The bound to beat (TI-203 high) and the fact that weather moves the window.'],
+  ['flex','Users’ load +5 % gives TI-203 +1.11 °C, so +10 % gives about 47.2 °C (estimate). All three fans already run: no spare. FIC-201 set point +5 % (357 m³/h) gives TI-203 −0.67 °C; at 373 m³/h FCV-201 is 100 % open and TI-203 is 43.8 °C instead of 45.0 at design load. A wet bulb 1 °C lower gives −0.44 °C.','A plan: a little more circulation, a cooler day, and FCV-201 out of its 60–85 % band.'],
+  ['trans','A load change is a transition: the users ramp over 15 min, as in start-up step 9, and line-out is judged on TI-202 29.5–34 °C and TI-203 ≤ 47 °C. One cell out at design load already takes TI-203 to 47.5 °C, so at 110 % no cell maintenance except on a cool day or at reduced load.','Which stops the users would feel at once, and how long a restart takes.'],
+  ['relia','A fan trip (0.9 /yr) gives 21.6 of the 25.8 lost h/yr (84 %), because with two fans the users run above 47 °C at design weather; a running pump trip passes 47 °C in 80 s at design (D1). At 110 % there is less margin for either. A lost hour is valued at 1200 (default, near the simulator’s margin of 1167 /h).','The value of a lost hour to weigh against any saving, and the case for a fan VSD or a fourth cell.'],
+  ['effic','At design: 6.62 MW for 131 kW (19.8 kW/MW) and 11.18 m³/h make-up (1.69 m³/h per MW). At 110 %, the same fans and pumps reject about 7.3 MW (about 18 kW/MW); evaporation rises from 8.40 to about 9.2 m³/h and make-up at 4 cycles to about 12.3 m³/h (estimates by the tab’s balance). Above about 370 m³/h FCV-201 runs out of range.','The limits to write into the steps: no fan stopped, no cell out, make-up and blowdown watched.'],
+  ['sop','The register of twelve SOPs has none for a planned load change. SOP-02 step 12 is the pattern: a HOLD, the users load over 15 min, expected TI-202 29.5–34 °C and TI-203 ≤ 47 °C, then step 13 holds the line-out for 10 min. SOP-07 (a cell out) must be checked against the new load.','A new or revised SOP goes through the life cycle (draft, HAZOP and MOC review, approve, practise on the OTS), and the window is checked again at the next change.']
+ ],
+ threadNote:'Read the thread as a management-of-change chain: the answer depends on the weather, so the same request is a yes on a cool week and a no on a design day. The estimates at 110 % add the tabs’ 30-minute gains in a straight line; check a point on the model (Operating windows, section 5) before relying on them.',
+ nums:[
+  ['Load range at 27 °C wet bulb, 3 fans','70–109 % of design (turndown 1.56 : 1)','Operating windows','Flexibility, Transition operation, Efficiency','How far the users’ load can move before a bound breaks.','opwin'],
+  ['Users’ outlet TI-203 high bound','≤ 47 °C (45.0 °C at design; users’ spec 46 °C)','Operating windows','Transition operation, Process reliability, SOP','The bound that closes the window at high load and with a fan out.','opwin'],
+  ['Gain of one fan','about 4.6 °C on TI-202, 30 kW','Flexibility','Process reliability, Efficiency','The only temperature handle, in steps of a third of the tower.','flex'],
+  ['FCV-201 at 100 % open','373 m³/h with 3 pumps; 417 m³/h with 4','Flexibility','Efficiency, Transition operation','The end of the circulation handle; above about 370 m³/h there is no control margin.','flex'],
+  ['One cell out at design','TI-203 45.0 → 47.5 °C','Transition operation','Process reliability, SOP-07','Cell maintenance needs a cool day or a lower load.','trans'],
+  ['Power-dip restart after 1 min / 5 min','TI-203 peak 76.6 / 94.7 °C; TI-201 52.6 / 63.3 °C','Transition operation','Process reliability, SOP-04, LOPA L1','After about 5 min the return passes the fill limit of 60 °C (assumed).','trans'],
+  ['Lost cooling per year','about 4.0 stops, 25.8 h; 84 % from fan trips','Process reliability','Efficiency, Flexibility','The fan, not the pump, is the weak point; the spare pump already pays.','relia'],
+  ['Electric power per heat','131 kW for 6.62 MW = 19.8 kW/MW','Efficiency','Operating windows, SOP-12','The baseline any energy saving is measured from.','effic'],
+  ['Make-up at 4 cycles','11.2 m³/h (10.36 after cycles 4 → 5)','Efficiency, Transition operation','SOP-10, Process reliability','Sets the water cost and how long the basin rides through a make-up outage.','effic']
+ ],
+ links:[
+  ['Process & Design','Design of the unit operation','Design wet bulb 27 °C, 6.6 MW and the TI-202 rise toward 34 °C at wet bulbs of 28–30 °C, which the window starts from.','design'],
+  ['Process & Design','Control loop design','Five degrees of freedom; the fans are manual in steps of a third; TIC-202 over fan VSDs is the upgrade Flexibility recommends.','control'],
+  ['Engineering (EPC)','Process engineering','The line list maxima (373 and 417 m³/h) and the design HMB behind the efficiency figures.','eproc'],
+  ['Safety','HAZOP','R01 (spare-pump auto-start and auto-restart), R06 (slow restart, water hammer) and R08 (no fan on a closed riser) shape the start-up and the SOPs.','hazop'],
+  ['Safety','LOPA','The time available from the simulator (D1 80 s, D7 3 s) and scenario L1 use the restart times of Transition operation.','lopa'],
+  ['Safety','C&E matrix','The trips and start permissive proven before start-up (SOP-01) and answered by SOP-05.','cem'],
+  ['Engineering (EPC)','Procurement to commissioning','The commissioning steps are mapped to the SOPs and load the graded procedures.','ecomm'],
+  ['Operate','Field: pumps, valves, checks','The telephone to the process units: ask how their coolers are doing or ask them to change their heat load.','field'],
+  ['Train & Assess','Exercises','Graded procedures (start-up, shutdown, power dip, backwash) are the SOPs practised with scoring.','exercises']
+ ],
+ qs:[
+  ['The users ask for 110 % of design load. Operating windows says 70–109 % at a wet bulb of 27 °C. Which other tabs do you open, and what can you offer them?','Flexibility: the fans are all running, so the only handle left is circulation; raising FIC-201 toward 373 m³/h cools the users by about 1.2 °C (43.8 against 45.0 °C at design load), but FCV-201 is then wide open with no control margin. A cooler day helps (−0.44 °C on TI-203 per °C of wet bulb). Transition operation: the change is a 15-min ramp and no cell may come out. Efficiency: the same kW reject more heat, but make-up rises. So: yes on a cool week, with a raised set point, and the window checked again on a design day.'],
+  ['Why does Process reliability find that fan trips cost far more lost hours than pump trips, although there are three of each running?','Flexibility shows the pumps have a spare (P-218) and the fans none; Operating windows and Efficiency show that with two fans the users’ outlet is 48.6 °C at design, outside the window. A pump trip lasts until someone starts the spare (0.25 h/yr); a fan trip lasts until the fan is repaired (24 h assumed), giving 21.6 of 25.8 lost h/yr. The levers are the repair time, a fourth cell or fan VSDs.'],
+  ['Efficiency says each fan stopped saves 30 kW. When may an operator stop one, and which tabs decide it?','Only inside the window. Efficiency shows that at design weather and load one fan less breaks TI-203 high and TI-202 high. Operating windows (window over weather and load) and Flexibility (supply temperature against wet bulb for 1–3 fans) show where two fans are enough: a lower wet bulb or a lower load. Process reliability adds that with two fans running, a further fan trip has no margin left.'],
+  ['Cycles of concentration are to be raised from 4 to 5. What do Transition operation, Efficiency and SOP each add?','Efficiency: make-up falls about 0.70 m³/h, about 4.9 thousand a year at 0.8 per m³, if the water treatment allows it. Transition operation: the AIC-202 step peaks at 1319 µS/cm and a 2-day ramp peaks the same, so the tuning, not the ramp, sets how gently it goes; make-up falls from 11.20 to about 10.36 m³/h. SOP: SOP-10 is done by the panel operator with the water-treatment adviser, and the change goes through review before it is made.'],
+  ['Transition operation shows the peaks after a power dip for four restart delays. Where are those numbers used in the other Operability tabs?','Process reliability uses about 8 min to restart (pumps and fans) as the downtime of a power dip and offers an auto-restart option. SOP-04 (graded) writes the restart as five steps for the panel operator. Flexibility and the HAZOP both recommend that a spare or a restart act faster than an operator can: after 5 min the return reaches 63.3 °C, above the 60 °C fill limit (assumed).']
+ ]
+};
+
+/* Group overview engine. Data: const OV = {...} (schema in the ots-group-overview-tabs skill). */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ID=OV.id,R='#'+ID;
+const ST=OV.stages||[
+ ['S1','Concept / pre-FEED','process route chosen; BFD; plot area; materials and inventories known'],
+ ['S2','FEED (basic engineering)','PFD and HMB; P&ID rev A–B; equipment list; plot plan; relief philosophy'],
+ ['S3','Detailed engineering','P&ID issued for design → IFC; datasheets; SIS and DCS design; isometrics'],
+ ['S4','Construction, commissioning, start-up','FAT / SAT of the control and safety systems; pre-start-up safety review'],
+ ['S5','Operation and change','the plant runs; proof tests; management of change; revalidation; incidents']];
+const STU=OV.studies,BYV=Object.fromEntries(STU.map(s=>[s.v,s])),LEARN=STU.map(s=>s.v);
+const LAB=v=>(BYV[v]&&BYV[v].label)||v;
+const go=(v,t)=>`<a href="#" class="ovgo" data-ovgo="${v}">${esc(t||'open '+LAB(v)+' ›')}</a>`;
+let SEL=null,ORD='learn';
+function card(s,i){const main=Object.entries(s.st).filter(([k,v])=>v===2).map(([k])=>k);
+  return `<div class="ovcard" data-ov="${s.v}" tabindex="0" style="--sc:${s.c}"><div class="ovhd"><span class="ovno">${i+1}</span><b>${esc(s.label)}</b><span class="ovst">${main.map(k=>(ST.find(x=>x[0]===k)||[,k])[1]).join(' · ')}</span></div>
+   <div class="ovq">${esc(s.q)}</div><div class="small"><b>Goal.</b> ${esc(s.goal)}</div>
+   <div class="small"><b>Needs:</b> ${esc(s.inp)}</div><div class="small"><b>Hands on:</b> ${esc(s.out)}</div>
+   <div class="small muted">${esc(s.m)}</div><div>${go(s.v)}</div></div>`;}
+function life(){const W=1000,lw=200,cw=(W-lw-10)/ST.length,rh=34,top=58,H=top+STU.length*rh+14;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(OV.group)} across the project stages">`;
+  ST.forEach((x,i)=>{const X=lw+i*cw;const m=x[1].match(/^([^(,]+)[(,]?\s*(.*?)\)?$/)||[0,x[1],''];s+=`<rect x="${X+2}" y="4" width="${cw-4}" height="${H-8}" rx="6" class="ovcol${i%2?' alt':''}"/><text x="${X+cw/2}" y="22" class="ovtx b sm2" text-anchor="middle">${x[0]} · ${esc(m[1].trim())}</text><text x="${X+cw/2}" y="40" class="ovtx sm" text-anchor="middle">${esc(m[2])}</text>`;});
+  STU.forEach((t,j)=>{const y=top+j*rh;const ks=Object.keys(t.st).map(k=>ST.findIndex(x=>x[0]===k));const a=Math.min(...ks),b=Math.max(...ks);
+    s+=`<g class="ovrow" data-ov="${t.v}" tabindex="0"><rect x="4" y="${y}" width="${W-8}" height="${rh-4}" rx="4" class="ovhit"/><text x="12" y="${y+20}" class="ovtx b">${j+1} · ${esc(t.label.length>22?t.label.slice(0,21)+'…':t.label)}</text>`;
+    s+=`<line x1="${lw+a*cw+cw/2}" x2="${lw+b*cw+cw/2}" y1="${y+15}" y2="${y+15}" stroke="${t.c}" stroke-width="3" opacity=".45"/>`;
+    Object.entries(t.st).forEach(([k,v])=>{const X=lw+ST.findIndex(x=>x[0]===k)*cw+cw/2;s+=v===2?`<circle cx="${X}" cy="${y+15}" r="9" fill="${t.c}"/>`:`<circle cx="${X}" cy="${y+15}" r="7" fill="var(--panel)" stroke="${t.c}" stroke-width="2.5"/>`;});
+    s+='</g>';});
+  return s+'</svg>';}
+function stages(){return ST.map(x=>{const here=STU.filter(t=>t.st[x[0]]);
+  return `<tr><td><b>${x[0]}</b> ${esc(x[1])}</td><td>${esc(x[2])}</td><td>${here.map(t=>`<span class="ovchip${t.st[x[0]]===2?' main':''}" data-ov="${t.v}" style="--sc:${t.c}">${t.st[x[0]]===2?'●':'○'} ${esc(t.label)}</span>`).join(' ')||'<span class="muted">–</span>'}</td><td>${esc((OV.decisions||{})[x[0]]||'')}</td></tr>`;}).join('');}
+const stn=k=>{const s=BYV[k].st;return Object.keys(s).filter(x=>s[x]===2).join(', ');};
+const dk=s=>s.deck?`<a class="small" href="${/\.html$/.test(s.deck)?s.deck:'cwt-'+s.deck+'-deck.html'}" target="_blank" rel="noopener">${esc(/\.html$/.test(s.deck)?s.deck.replace(/\.html$/,''):'cwt-'+s.deck+'-deck')}</a>`:'–';
+function ordRows(){
+  if(ORD==='learn'){$(R+' .ovordnote').innerHTML=`<p class="small">${OV.learnNote}</p>`;
+    return LEARN.map((v,i)=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(s.label)}</b><br><span class="small muted">${esc(s.why||'')}</span></td><td>${esc(s.goal)}</td><td>${stn(v)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+  $(R+' .ovordnote').innerHTML=`<p class="small">${OV.projNote}</p>`;
+  return OV.proj.map(([n,v,stg,what])=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${n}</b></td><td><b>${esc(s.label)}</b></td><td>${esc(what)}</td><td>${esc(stg)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+function flow(){const F=OV.flow,bw=F.bw||170,bh=56,H=F.h||285;let P=F.pos;
+  if(!P){P={};const n=LEARN.length,r1=Math.ceil(n/2),r2=n-r1;LEARN.forEach((v,i)=>{const row=i<r1?0:1,k=row?i-r1:i,m=row?r2:r1;P[v]=[(k+0.5)*1000/m,row?215:70];});}
+  const side=(v,tx,ty)=>{const [x,y]=P[v],dx=tx-x,dy=ty-y;const sx=Math.abs(dx)/(bw/2),sy=Math.abs(dy)/(bh/2);const k=1/Math.max(sx,sy,1e-9);return [x+dx*k,y+dy*k];};
+  let s=`<svg viewBox="0 0 1000 ${H}" role="img" aria-label="What passes between the ${esc(OV.group)} tabs"><defs><marker id="${ID}Ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ovahf"/></marker></defs>`;
+  F.edges.forEach(([a,b,l,k,arc],i)=>{const [x1,y1]=P[a],[x2,y2]=P[b];let path,mx,my;
+    if(arc){const up=arc==='up',sx=x1+(x2>x1?20:-20),ex=x2+(x2>x1?-20:20),y0=up?Math.min(y1,y2)-bh/2:Math.max(y1,y2)+bh/2,dy=up?-38:38;
+      path=`M${sx} ${up?y1-bh/2:y1+bh/2} C ${sx} ${y0+dy}, ${ex} ${y0+dy}, ${ex} ${up?y2-bh/2:y2+bh/2}`;mx=(sx+ex)/2;my=y0+dy*0.75;}
+    else{const [sx,sy]=side(a,x2,y2),[ex,ey]=side(b,x1,y1);path=`M${sx} ${sy} L${ex} ${ey}`;mx=(sx+ex)/2;my=(sy+ey)/2;}
+    s+=`<path d="${path}" class="oved ${k}" data-a="${a}" data-b="${b}" marker-end="url(#${ID}Ah)"/><g class="ovebadge" data-a="${a}" data-b="${b}"><circle cx="${mx}" cy="${my}" r="10"/><text x="${mx}" y="${my+4}" text-anchor="middle">${i+1}</text></g>`;});
+  Object.entries(P).forEach(([v,[x,y]])=>{const t=BYV[v];const lb=t.label.length>20?t.label.slice(0,19)+'…':t.label;s+=`<g class="ovnode" data-ov="${v}" tabindex="0"><rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="8" style="stroke:${t.c}"/><text x="${x}" y="${y-4}" class="ovtx b" text-anchor="middle">${LEARN.indexOf(v)+1} · ${esc(lb)}</text><text x="${x}" y="${y+15}" class="ovtx sm" text-anchor="middle">${esc(t.q.length>30?t.q.slice(0,28)+'…':t.q)}</text></g>`;});
+  s+='</svg>';
+  return s+`<ol class="ovleg small">${F.edges.map(([a,b,l,k])=>`<li data-a="${a}" data-b="${b}"><b>${esc(LAB(a))} → ${esc(LAB(b))}</b>: ${esc(l)}${k==='d'?' <span class="muted">(fed back)</span>':''}</li>`).join('')}</ol>`;}
+function sel(v){SEL=SEL===v?null:v;$$(R+' [data-ov]').forEach(e=>e.classList.toggle('on',!!SEL&&e.dataset.ov===SEL));
+  $$(`${R} .oved,${R} .ovebadge,${R} .ovleg li`).forEach(e=>e.classList.toggle('on',!!SEL&&(e.dataset.a===SEL||e.dataset.b===SEL)));
+  $(R).classList.toggle('ovhas',!!SEL);}
+function build(){const d=$(R+' .ovdoc');const n=STU.length;
+  d.innerHTML=`<h2>${esc(OV.title)}</h2>
+  <nav class="toc small"><a href="#${ID}1">1 The question</a> · <a href="#${ID}2">2 ${n} tabs, ${n} goals</a> · <a href="#${ID}3">3 When in a project</a> · <a href="#${ID}4">4 Order: learning and project</a> · <a href="#${ID}5">5 What passes between tabs</a> · <a href="#${ID}6">6 One thread through the group</a> · <a href="#${ID}7">7 Numbers handed on</a> · <a href="#${ID}8">8 Links to the other groups</a> · <a href="#${ID}9">9 Check yourself</a></nav>
+  <h3 id="${ID}1">1 · The question of this group</h3>
+  <div class="callout ovbig"><b>${esc(OV.question)}</b></div>
+  <p>${OV.intro} Click a tab anywhere on this page (a card, a bar, a box) to highlight it everywhere; the <span class="ovgo">open</span> buttons go to the tab.</p>
+  <h3 id="${ID}2">2 · ${n} tabs, ${n} goals</h3>
+  <p class="small muted">Card = the tab's goal (what it must deliver), the question it answers, what it needs before it can start, what it hands on, the method or standard, and the project stage where that work is mainly done.</p>
+  <div class="ovgrid">${LEARN.map((v,i)=>card(BYV[v],i)).join('')}</div>
+  <h3 id="${ID}3">3 · When in a project this work is done</h3>
+  <p>${OV.stageNote} ● = the main time the work is done; ○ = it is repeated, updated or used there.</p>
+  <div class="ovbox">${life()}</div>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Stage</th><th>State of the design (what exists)</th><th>Work of this group done</th><th>Decisions it drives</th></tr></thead><tbody>${stages()}</tbody></table></div>
+  <h3 id="${ID}4">4 · Order: the order of the tabs and the order in a project</h3>
+  <div class="tbctl"><span class="small">Show:</span><button class="btn small on" data-ovord="learn">Learning order (the tabs)</button><button class="btn small" data-ovord="proj">Project order (real life)</button></div>
+  <div class="ovordnote"></div>
+  <div class="tscroll"><table class="tbl small ovord"><thead><tr><th>Step</th><th>Tab</th><th>Goal of the step</th><th>Project stage</th><th>Starts from (input)</th><th>Hands on (output)</th><th>Time in class</th><th>Deck</th></tr></thead><tbody></tbody></table></div>
+  <h3 id="${ID}5">5 · What passes from one tab to the next</h3>
+  <p class="small muted">Each numbered arrow carries a result. Solid = the next tab needs it to start; dashed = a check or a lesson fed back.</p>
+  <div class="ovbox">${flow()}</div>
+  <h3 id="${ID}6">6 · One thread through the group: ${esc(OV.threadTitle)}</h3>
+  <p>${OV.threadIntro}</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Step</th><th>Tab</th><th>What the tab says about it</th><th>So the next tab gets</th><th></th></tr></thead><tbody>${OV.thread.map(([v,a,b],i)=>`<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(LAB(v))}</b></td><td>${esc(a)}</td><td>${esc(b)}</td><td>${go(v,'open ›')}</td></tr>`).join('')}</tbody></table></div>
+  ${OV.threadNote?`<div class="callout small">${OV.threadNote}</div>`:''}
+  <h3 id="${ID}7">7 · Numbers handed on</h3>
+  <p class="small muted">A number is born in one tab and used in another. If it changes where it is born, every tab that uses it must be checked again (management of change).</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Number</th><th>Value</th><th>Born in</th><th>Used in</th><th>Why it matters there</th></tr></thead><tbody>${OV.nums.map(([nm,val,b,u,w,v])=>`<tr data-ov="${v}"><td>${esc(nm)}</td><td class="num"><b>${esc(val)}</b></td><td>${esc(b)}</td><td>${esc(u)}</td><td class="small">${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}8">8 · Links to the other groups</h3>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Group</th><th>Tab</th><th>What this group takes from it, or gives to it</th></tr></thead><tbody>${OV.links.map(([g,t,w,v])=>`<tr><td>${esc(g)}</td><td><a href="#" class="ovgo" data-ovgo="${v}">${esc(t)}</a></td><td>${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}9">9 · Check yourself</h3>
+  <p class="small muted">Each question needs at least two tabs of the group. Answer first, then open the model answer.</p>
+  ${OV.qs.map(([q,a],i)=>`<div class="ovqa"><p><b>Q${i+1}.</b> ${esc(q)}</p><details><summary>Model answer</summary><p class="small">${esc(a)}</p></details></div>`).join('')}`;
+  $(R+' .ovord tbody').innerHTML=ordRows();
+  const root=$(R);
+  root.addEventListener('click',e=>{const g=e.target.closest('[data-ovgo]');if(g){e.preventDefault();showView(g.dataset.ovgo);return;}
+    const o=e.target.closest('[data-ovord]');if(o){ORD=o.dataset.ovord;$$(R+' [data-ovord]').forEach(b=>b.classList.toggle('on',b===o));$(R+' .ovord tbody').innerHTML=ordRows();if(SEL){const k=SEL;SEL=null;sel(k);}return;}
+    const s=e.target.closest('[data-ov]');if(s&&!e.target.closest('a,summary'))sel(s.dataset.ov);});
+  root.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-ov]')){e.preventDefault();sel(e.target.dataset.ov);}});}
+TB.tab(ID,build,null);
+
+})();
+
+/* ovd: group overview */
+(()=>{
+const OV = {
+ id:'ovd', group:'Process & Design',
+ title:'Process & Design overview · how the 6 Process & Design tabs fit together, in what order, and when in a project',
+ question:'What does this cooling water circuit do, why are its design numbers what they are, and how are they drawn and controlled?',
+ intro:'The six Process &amp; Design tabs go from the idea to the drawing. The process and Design of the unit operation explain <i>why</i> 340 m³/h is cooled from 49.2 to 32.3 °C and how the tower is sized for it; BFD and PFD put those numbers on streams and equipment; Control loop design decides <i>which</i> numbers are held automatically, and the P&amp;ID draws every valve, instrument, loop and trip that does it.',
+ stageNote:'The design basis is fixed at concept, the PFD and its heat and material balance at FEED, the control scheme and the P&amp;ID are finished in detailed engineering, and the loops are tuned at commissioning. When the plant changes (more users, a new duty), the chain is opened again from the design basis.',
+ decisions:{
+  S1:'Duty, circulation, return and supply temperatures agreed with the users; design wet bulb; tower type, flow arrangement and number of cells; the overall water balance.',
+  S2:'Air rate and fill from the Merkel number; cell size, basin volume, pump number and head; the PFD and its stream flags; which variables are controlled and by which valve.',
+  S3:'Fail position of every control valve; the trips and permissives on the P&ID; line numbers and sizes; the alarm settings.',
+  S4:'Are the loops tuned and in AUTO, and does the unit line out at the design point of the stream table?',
+  S5:'Does a new user, a new duty or an upgrade (fan VSDs, automatic pH) change the design basis, the PFD, the loops or the P&ID?'},
+ studies:[
+  {v:'process',label:'The process',c:'#2563EB',why:'First, because every later tab assumes you know what the circuit does and what range, approach and cycles mean.',
+   goal:'Explain how the circuit rejects the users’ heat to the air, and show the live streams, units and balances against design.',
+   q:'What does the circuit do, and how is it running now?',inp:'The unit as built: equipment, the simulator at design',
+   out:'Principles (Merkel, range, approach, cycles), 14 streams, unit table and heat, water and salt balances',
+   m:'Evaporative cooling, Merkel driving force, water and solids balances',st:{S1:2,S2:1,S4:1,S5:2},t:'90 min (estimate)'},
+  {v:'design',label:'Design of the unit operation',c:'#7C3AED',why:'Second, because it shows why the design point of the process tab is what it is, and sizes the tower from it.',
+   goal:'Work the Merkel model at design, set each operating condition and its limits, record the design basis and decisions, and size the tower.',
+   q:'Why these numbers, and how big must the tower be?',inp:'Duty, circulation, return and supply temperatures, design weather, water quality',
+   out:'Design basis, 10 design decisions, L/G 0.931, air 33.6 kg/s per cell, basin 162 m³, 3 + 1 pumps at 345 kPa g',
+   m:'Merkel number (Chebyshev), fill characteristic, pump and system curves, rules of thumb',st:{S1:2,S2:2,S5:1},t:'2 × 90 min (estimate)',deck:'design'},
+  {v:'bfd',label:'BFD',c:'#0891B2',why:'After the design, because it puts the design flows on six blocks and closes the balances round each one.',
+   goal:'Show the circuit as blocks with numbered streams and prove that water, heat and salts balance round every block.',
+   q:'What goes in and out of each block, and does it balance?',inp:'Design basis and the water balance (E, D, B, M)',
+   out:'14 numbered streams, block in/out table, boundary balances (design and now)',
+   m:'Block flow diagram, boundary mass and energy balances',st:{S1:2,S2:1,S5:1},t:'45 min (estimate)',deck:'bfdpfd'},
+  {v:'pfd',label:'PFD',c:'#059669',why:'After the BFD, because each block opens into its equipment and the streams get flags.',
+   goal:'Draw every main item and the control valves that define the process, with flow, temperature and pressure flags that agree with the model.',
+   q:'Which equipment, and what flow, T and P on each line?',inp:'BFD streams, the heat and material balance, equipment choices',
+   out:'CWT-V1-PFD-001: 8 equipment items, 20 numbered streams, 20 of 20 flags checked',
+   m:'Turton-style PFD with stream flags; heat and material balance',st:{S2:2,S3:1,S5:1},t:'45 min (estimate)',deck:'bfdpfd'},
+  {v:'control',label:'Control loop design',c:'#D97706',why:'After the PFD, because the loops act on the control valves the PFD has placed.',
+   goal:'Decide what must be held, count the degrees of freedom, pair each CV with a valve, choose fail positions and tune the loops.',
+   q:'Which numbers are held automatically, by which valve?',inp:'PFD control valves, the operating conditions and limits from the design tab',
+   out:'3 loops (FIC-201, LIC-201, AIC-202), the manual handles, fail positions, tuning',
+   m:'Degrees of freedom, pairing tests, PI tuning, lambda tuning on step tests',st:{S2:2,S3:2,S4:1,S5:1},t:'2 × 90 min (estimate)',deck:'control'},
+  {v:'pid',label:'P&ID',c:'#475569',why:'Last, because it draws everything the earlier tabs decided: equipment, lines, loops, fail positions and trips.',
+   goal:'Show every valve, instrument, loop, interlock and fail position, first as the screen drawing, then to EPC standard with line numbers and open items.',
+   q:'What exactly is built, valve by valve and instrument by instrument?',inp:'PFD, control scheme, trip list',
+   out:'CWT-V1-PID-001 rev 0 and rev 1, interlock schedule I-1…I-5 and P-1, open items',
+   m:'ISA-5.1 symbols, EPC drawing practice',st:{S2:1,S3:2,S4:1,S5:1},t:'60 min (estimate)'}
+ ],
+ learnNote:'The tabs follow the path from purpose to drawing: what the circuit does (The process), why its numbers and size (Design), the same numbers on blocks and then on equipment (BFD, PFD), how they are held (Control loop design), and what is built (P&amp;ID).',
+ projNote:'In a real project the order differs in two places. The <b>BFD</b> and the first water balance come at concept, together with the design basis, before any sizing. The <b>control scheme and the P&amp;ID</b> grow together: rev A of the P&amp;ID is drawn at FEED while the loops are still being chosen, and the loops are only <b>tuned</b> at commissioning. The process description is written last in a project (in the operating manual), though it is read first in class.',
+ proj:[
+  [1,'design','S1 Concept','Agree the design basis with the users: 6.6 MW, 340 m³/h, 49.2 / 32.3 °C, design wet bulb 27 °C (assumed); choose induced draft, counter-flow, 3 cells.'],
+  [2,'bfd','S1 Concept','Draw the blocks and close the overall water balance: make-up 11.2 = evaporation 8.40 + drift 0.07 + blowdown 2.71 m³/h.'],
+  [3,'design','S2 FEED','Size the tower: Merkel number 1.40 at L/G 0.931, air 33.6 kg/s per cell, cell side 3.38 m, basin 162 m³, pumps 3 + 1.'],
+  [4,'pfd','S2 FEED','Issue the PFD with the heat and material balance on 20 stream flags and the equipment list.'],
+  [5,'control','S2 FEED','Set the control objectives, count the degrees of freedom (5) and pair the loops with FCV-201, LCV-201 and FV-222.'],
+  [6,'pid','S2 – S3','P&ID from rev A to issue: fail positions, interlocks I-1…I-5, line numbers and sizes, open items.'],
+  [7,'control','S3 Detailed','Alarm settings and the operator handles (fans, cells, pH dosing) fixed; upgrades (TIC-202 with VSDs) recorded as options.'],
+  [8,'control','S4 Start-up','Tune FIC-201, LIC-201 and AIC-202 on step tests and put them in AUTO.'],
+  [9,'pid','S4 Start-up','Check the as-built plant against the P&ID; close the TBC and HOLD items.'],
+  [10,'process','S4 – S5','Write the process description and the design and now tables for the operators; check the unit lines out at the design point.'],
+  [11,'bfd','S5 Operation','Use the boundary balances to see whether the plant still runs on its design balance.'],
+  [12,'design','S5 Change','Re-rate the tower for a new duty or circulation (the sizing calculator) before any change is approved.']
+ ],
+ flow:{bw:170,h:300,
+  pos:{process:[170,70],design:[500,70],bfd:[830,70],pfd:[830,215],control:[500,215],pid:[170,215]},
+  edges:[
+   ['process','design','duty 6.6 MW; range set by users, approach by the tower','s'],
+   ['design','bfd','design basis and water balance (E, D, B, M)','s'],
+   ['bfd','pfd','blocks open into equipment; 14 streams carried on','s'],
+   ['design','pfd','113 m³/h per cell, 345 kPa g pump head, 3 + 1 pumps','s'],
+   ['design','control','operating conditions, their limits and order','s'],
+   ['pfd','control','the control valves FCV-201, LCV-201, FV-222','s'],
+   ['control','pid','loops, fail positions, trips kept separate','s'],
+   ['pfd','pid','equipment and streams become lines with numbers','s','down'],
+   ['pid','design','open items (line sizes, city-water pressure) back to the basis','d']
+  ]},
+ threadTitle:'why 340 m³/h is cooled from 49.2 to 32.3 °C',
+ threadIntro:'One design point followed through all six tabs: 340 m³/h of water comes back from the users at 49.2 °C and goes out again at 32.3 °C. Each tab explains one more reason why those numbers, and shows where they end up on the drawing.',
+ thread:[
+  ['process','The users put 6.62 MW into the water; at 340 m³/h that is a range of 16.9 °C. Range is set by the users’ heat and the circulation, approach by the tower and the weather: 32.3 − 27.0 = 5.3 °C. The cells deliver 32.5 °C; the basin is at 32.32 °C.','A design point to explain: why this range, why this approach.'],
+  ['design','Design basis: 340 m³/h and 49.2 / 32.3 °C from the legacy booklet, wet bulb 27 °C (assumed, about the 1 % summer value). Q = 993 × 340/3600 × 4.18 × 16.9 = 6.63 MW. Merkel number 1.40 at L/G 0.931 → 33.6 kg/s of air per cell (simulator 32.0 kg/s). Approach 5.3 °C is above the 2.8 °C typical minimum.','The water balance (E 8.59, B 2.80, M 11.45 m³/h by hand) and the per-cell and pump numbers.'],
+  ['bfd','Stream 1: 340.0 m³/h at 49.2 °C, 305 kPa g; stream 10: 340.0 m³/h at 32.3 °C, 345 kPa g. Whole circuit: 11.20 in, 11.18 out m³/h; heat 6.62 MW in, 6.54 out in the cells + 0.08 to the make-up and basin.','Blocks that balance, ready to open into equipment.'],
+  ['pfd','The flags: stream 1 = 340 / 49.2 / 305; 113.3 m³/h to each cell; 110.6 m³/h at 32.5 °C from each cell; pump suction 358 m³/h at 32.3 °C, 22.5 kPa g; supply 340 / 32.3 / 345. 20 of 20 flags agree with the model.','Three control valves to place in loops: FCV-201, LCV-201, FV-222.'],
+  ['control','340 m³/h is a set point: FIC-201 holds it through FCV-201 (fail open, 71 % open, Kc 0.3, Ti 5 s). 32.3 °C is not: the single-speed fans move the supply only in steps of about a third, so TI-202 is held by the operator against alarms at 28 and 34 °C.','Which loop, which valve and which fail position to draw.'],
+  ['pid','Rev 1 note 2 states the design case: 340 m³/h, 49.2 → 32.3 °C, wet bulb 27 °C, 6.62 MW. FIC-201 → FCV-201 (FO), TI-202 with no automatic loop (fans on/off), cells 113 m³/h each, DN250 headers at about 1.9 m/s.','The design point is now a built line, a loop and a drawing note.']
+ ],
+ threadNote:'Read the thread as a chain of change: if the users ask for more duty or a colder supply, the range, the approach, the Merkel number, the air rate, the stream flags, the FIC-201 set point and the P&amp;ID note all move together. The design wet bulb, cycles and drift in the design basis are labelled assumed in the Design tab.',
+ nums:[
+  ['Circulation','340 m³/h','Design (design basis, legacy booklet)','PFD stream 1 and 17, FIC-201 set point, P&ID note 2','Carries 6.62 MW at a 16.9 °C range with three pumps on their curve.','design'],
+  ['Return / supply temperature','49.2 / 32.3 °C','Design (design basis)','Process, BFD, PFD flags, P&ID note 2','Range 16.9 °C sets the duty; the supply sets the approach.','design'],
+  ['Design wet bulb','27.0 °C (assumed)','Design (design weather)','Process (approach 5.3 °C), Control (TI-231 as a measured disturbance)','The floor the water can never reach; the approach is measured from it.','design'],
+  ['Duty','6.62 MW (6.63 by hand)','The process (users in the model)','Design, BFD heat balance, P&ID note 2','Q = ρ F cp R ties the circulation to the range.','process'],
+  ['Design L/G and air per cell','0.931 · 33.6 kg/s (simulator 0.977 · 32.0 kg/s)','Design (Merkel against the fill)','The process unit table, PFD exhaust air','Sizing on the basin temperature asks for about 5 % more air than the cells run.','design'],
+  ['Make-up / evaporation / blowdown','11.20 / 8.40 / 2.71 m³/h','The process (model)','BFD whole-circuit balance, Control (LIC-201, AIC-202), P&ID note 2','Evaporation is not measured; only FI-206 and FI-222 are.','bfd'],
+  ['Water per cell','113 m³/h (113.3 on the PFD)','Design (3 cells)','PFD streams 3, 5, 6; P&ID cells E-201/202/203','One cell out leaves two thirds of the capacity.','pfd'],
+  ['Supply header pressure','345 kPa g (FCV-201 takes 132.5 kPa, 54 % of the dynamic loss)','Design (pump and system curves)','PFD stream 17, FIC-201 at 71 % open, P&ID pump rating','The valve keeps enough of the loss to control the flow.','design'],
+  ['Basin level','90 % (162 m³); permissive 15 %; trip 8 %','Design (basin and operating conditions)','LIC-201 set point, P&ID I-1 and P-1','Suction head for the pumps and 12.9 h to the trip if the make-up stops.','design'],
+  ['Cycles of concentration','4.0 (1000 µS/cm, assumed)','Design (design basis)','AIC-202 set point, P&ID note 6','Sets the blowdown and so the make-up.','control']
+ ],
+ links:[
+  ['Operate','Operating windows','Takes the limits set in the Design tab (circulation, wet bulb, level, cycles) and maps where all of them are met.','opwin'],
+  ['Operate','Flexibility','Takes the handles counted in Control loop design and measures how far each one moves TI-202 and TI-203.','flex'],
+  ['Operate','Efficiency','Takes the fan and pump power at design (90 kW fans, 41 kW pumps) and prices them.','effic'],
+  ['Engineering (EPC)','Process engineering','Turns the BFD streams into the heat and material balance CWT-V1-PE-HMB-001, the line list and the pump hydraulics.','eproc'],
+  ['Engineering (EPC)','Instrumentation & control','Every bubble on the P&ID becomes a row with its range, alarm and trip settings.','einst'],
+  ['Safety','HAZID','Splits the PFD into study areas and starts its hazard register from it.','hazid'],
+  ['Safety','HAZOP','Needs the P&ID and the design intent of each node from the design point.','hazop'],
+  ['Safety','Safety layers','Draws the loops and trips of Control loop design and the P&ID as layers of protection.','safety'],
+  ['Operate','DCS console','Where the design values of the stream tables are read live, tag by tag.','operate']
+ ],
+ qs:[
+  ['The design basis fixes 340 m³/h and 49.2 → 32.3 °C. Which of these numbers does the tower set, and which do the users set?','The users set the duty (6.62 MW). With the circulation fixed at 340 m³/h by FIC-201, the range is Q / (ρ F cp) = 16.9 °C, whatever the tower does. The tower and the weather set the approach (5.3 °C above the 27 °C wet bulb), so they set the supply 32.3 °C; the return is then supply + range = 49.2 °C. The process tab gives the principle, the Design tab the arithmetic, and the control tab shows which of them is a set point.'],
+  ['The Design tab sizes the cells for 33.6 kg/s of air at L/G 0.931, but the process tab shows 32.0 kg/s at L/G 0.98. Is one of them wrong?','No. The hand sizing aims at the basin temperature (32.3 °C). In the model the cells deliver 32.5 °C and the basin is 0.21 °C colder, cooled by the make-up and the basin surface. Sizing on the basin temperature therefore asks for about 5 % more air than the simulator’s cells run. The fill characteristic (C 1.34, n 0.6) is fitted to the simulator, not taken from a vendor.'],
+  ['Evaporation is 8.40 m³/h on the BFD, but no instrument measures it. How do the Design and BFD tabs let you check it?','By hand: 0.15 % of the circulation per °C of range gives 0.15 × 16.9 = 2.5 % of 340 m³/h, about 8.6 m³/h, and the Merkel air balance gives 8.59 m³/h. By balance: evaporation = FI-206 − FI-222 − drift = 11.20 − 2.71 − 0.07 = 8.42 m³/h. The two agree within a few per cent, so the design water balance holds.'],
+  ['The circulation of 340 m³/h has a controller, but the supply temperature of 32.3 °C does not. Why, and where do you see it on the P&ID?','Control loop design pairs each CV with a direct, fast valve of one sign. FCV-201 moves the flow in seconds, so FIC-201 holds it. The fans are single speed (a design decision for simplicity), so they move TI-202 only in steps of about a third: there is no smooth handle for feedback, and the operator holds TI-202 against alarms at 28 and 34 °C. The P&ID shows it in note 2 (no fan speed or pitch control) and in rev 1, where TI-202 / fans has no automatic loop. TIC-202 with fan VSDs is recorded as an upgrade.'],
+  ['FCV-201 takes 132.5 kPa of the 345 kPa g at the pumps. Why design a valve that wastes so much head, and why does the P&ID make it fail open?','The Design tab checks that the valve takes at least 25 % of the dynamic loss (here 54 %), so it still has authority to control the flow; at 71 % open FIC-201 has room both ways. The flow sits where the pump curve meets the system curve, and the valve takes the surplus head, so a fourth pump raises the header pressure but the flow only as far as the valve allows. Fail open (Control loop design, P&ID note 3) keeps cooling water flowing to the users if the instrument air fails.']
  ]
 };
 
