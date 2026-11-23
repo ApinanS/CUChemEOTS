@@ -581,6 +581,42 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
 #hztPanel td,#hztPanel th{padding:1px 6px;border-bottom:1px solid var(--edge);text-align:left;font-variant-numeric:tabular-nums}
 @media (max-width:700px){#hztPanel .hztgrid{grid-template-columns:minmax(0,1fr)}}
 #hzsBox .btn{text-decoration:none}
+/* group overview styles */
+.ovx .doc{max-width:none}
+.ovx .ovbig{font-size:1.05em}
+.ovx .ovgo{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);text-decoration:none;border:1px solid var(--accent);border-radius:12px;padding:0 8px;margin-top:2px;white-space:nowrap}
+.ovx .ovgo:hover{background:var(--accent);color:var(--accent-ink)}
+.ovx .ovgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin:6px 0 10px}
+.ovx .ovcard{border:1px solid var(--edge);border-top:4px solid var(--sc);border-radius:8px;background:var(--panel-2);padding:8px 10px;display:flex;flex-direction:column;gap:4px;cursor:pointer;min-width:0}
+.ovx .ovcard:hover,.ovx .ovcard:focus{border-color:var(--sc);outline:none}
+.ovx .ovhd{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.ovx .ovno{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--sc);color:#fff;font-weight:700;font-size:12px}
+.ovx .ovst{margin-left:auto;font-size:11px;color:var(--muted)}
+.ovx .ovq{font-style:italic}
+.ovx .ovbox{border:1px solid var(--edge);border-radius:6px;padding:6px;background:var(--field);overflow-x:auto;margin:6px 0}
+.ovx .ovbox svg{width:100%;min-width:720px;height:auto;display:block}
+.ovx .ovtx{fill:currentColor;font-size:13px}.ovx .ovtx.sm{font-size:11px;opacity:.85}.ovx .ovtx.sm2{font-size:12px}.ovx .ovtx.b{font-weight:700}
+.ovx .ovcol{fill:var(--panel);stroke:var(--edge)}.ovx .ovcol.alt{fill:var(--panel-2)}
+.ovx .ovhit{fill:transparent;cursor:pointer}.ovx .ovrow:hover .ovhit{fill:var(--panel-2)}
+.ovx .ovnode{cursor:pointer}.ovx .ovnode rect{fill:var(--panel);stroke-width:2.5;cursor:pointer}
+.ovx .oved{stroke:var(--muted);stroke-width:1.8;fill:none}.ovx .oved.d{stroke-dasharray:6 4}
+.ovx .ovahf{fill:var(--muted)}
+.ovx .ovchip{display:inline-block;border:1px solid var(--sc);color:var(--sc);border-radius:10px;padding:0 6px;margin:1px 2px;font-size:12px;cursor:pointer;white-space:nowrap}
+.ovx .ovchip.main{background:var(--sc);color:#fff}
+.ovx .ovqa{border-left:3px solid var(--accent);padding:2px 10px;margin:6px 0}
+.ovx .ovqa p{margin:2px 0}
+.ovx.ovhas [data-ov]:not(.on){opacity:.35}
+.ovx.ovhas .oved:not(.on){opacity:.2}
+.ovx .oved.on{stroke:var(--accent);stroke-width:3}
+.ovx .ovcard.on{outline:2px solid var(--sc)}
+.ovx .ovnode.on rect{stroke-width:4;fill:var(--field)}
+.ovx tr.on td{background:var(--field)}
+.ovx .ovebadge circle{fill:var(--panel);stroke:var(--muted);stroke-width:1.5}.ovx .ovebadge text{fill:currentColor;font-size:11px;font-weight:700}
+.ovx .ovebadge.on circle{stroke:var(--accent);fill:var(--field)}
+.ovx .ovleg{columns:2;column-gap:24px;margin:6px 0 4px 18px}.ovx .ovleg li{break-inside:avoid;margin:2px 0}
+.ovx.ovhas .ovleg li:not(.on),.ovx.ovhas .ovebadge:not(.on){opacity:.3}
+@media (max-width:800px){.ovx .ovst{margin-left:0}.ovx .ovleg{columns:1}}
+
 </style>
 </head>
 <body>
@@ -629,6 +665,7 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
   <button class="tab" role="tab" aria-selected="false" data-view="sop">SOP</button>
  </div>
  <div class="subrow" data-group="gsafety" role="tablist">
+  <button class="tab" role="tab" aria-selected="false" data-view="sov">Safety overview</button>
   <button class="tab" role="tab" aria-selected="false" data-view="hazid">HAZID</button>
   <button class="tab" role="tab" aria-selected="false" data-view="hazop">HAZOP</button>
   <button class="tab" role="tab" aria-selected="false" data-view="hzs">HAZOP Studio</button>
@@ -665,6 +702,7 @@ a.btn{text-decoration:none;color:inherit;display:inline-flex;align-items:center}
  </div>
 </nav>
 <main>
+<section class="view ovx" id="sov"><div class="panel doc wide ovdoc"></div></section>
 <section class="view" id="howto">
  <div class="panel doc">
   <h2>How to use the simulator</h2>
@@ -3610,7 +3648,237 @@ var TB={tabs:{},built:{},
   enter(v){const t=this.tabs[v];if(!t)return;if(!this.built[v]){this.built[v]=true;try{t.build&&t.build();}catch(e){console.error(e);}}},
   live(v){const t=this.tabs[v];if(t&&t.live&&this.built[v]){try{t.live();}catch(e){console.error(e);}}}};
 (function(){const _r=render;render=function(){const s=document.querySelector('.view.show');if(s)TB.enter(s.id);_r.apply(this,arguments);if(s&&tick%2===0)TB.live(s.id);};})();
-var TAB_GROUPS=[["gstart", "Start", ["howto", "workbook"]], ["gdesign", "Process & Design", ["process", "design", "bfd", "pfd", "control", "pid"]], ["gop", "Operability", ["opwin", "flex", "trans", "relia", "effic", "sop"]], ["gsafety", "Safety", ["hazid", "hazop", "hzs", "cq", "safety", "lopa", "srs", "cem", "inc"]], ["geng", "Engineering (EPC)", ["eproj", "eproc", "pid", "lay", "emech", "erel", "einst", "eelec", "ecomm"]], ["grun", "Operate", ["operate", "bms", "field", "v3d", "pid"]], ["gtrain", "Train & Assess", ["exercises", "sps", "debrief", "export"]]], TAB_PRIMARY={"pid": "gdesign"};
+var TAB_GROUPS=[["gstart", "Start", ["howto", "workbook"]], ["gdesign", "Process & Design", ["process", "design", "bfd", "pfd", "control", "pid"]], ["gop", "Operability", ["opwin", "flex", "trans", "relia", "effic", "sop"]], ["gsafety", "Safety", ["sov", "hazid", "hazop", "hzs", "cq", "safety", "lopa", "srs", "cem", "inc"]], ["geng", "Engineering (EPC)", ["eproj", "eproc", "pid", "lay", "emech", "erel", "einst", "eelec", "ecomm"]], ["grun", "Operate", ["operate", "bms", "field", "v3d", "pid"]], ["gtrain", "Train & Assess", ["exercises", "sps", "debrief", "export"]]], TAB_PRIMARY={"pid": "gdesign"};
+
+/* sov: group overview */
+(()=>{
+const OV = {
+ id:'sov', group:'Safety',
+ title:'Safety overview · how the 9 Safety tabs fit together, in what order, and when in a project',
+ question:'What can go wrong at the cooling water tower, how bad and how likely is it, and which independent layers stop it?',
+ intro:'The nine Safety tabs answer that question in steps. HAZID and HAZOP <i>find</i> the hazards; Consequence analysis says <i>how bad</i>; Safety layers and LOPA say <i>what stops them</i> and whether that is enough; the SRS and the C&amp;E matrix turn a needed trip into something an engineer can build and test; Incident cases show what happened when these steps were missed at real towers.',
+ stageNote:'Safety work is not done once. HAZID starts at concept, HAZOP needs a frozen P&amp;ID, the SIS documents are written in detailed engineering and proven at commissioning, and every study is reopened when the plant changes.',
+ decisions:{
+  S1:'Which hazards rule out a layout or a chemical; how far the chemical area sits from the cells; which studies the project must fund.',
+  S2:'Major accident hazards (6 MAH here) and the safety philosophy; which hazards need a consequence model; first list of trips and detectors.',
+  S3:'Every HAZOP recommendation accepted or rejected; SIL target of each SIF; the SRS and the C&E that the SIS vendor builds to.',
+  S4:'Is every HAZOP action closed and every trip proven at FAT and SAT before water is put through the users?',
+  S5:'Does a change (new chemical, new user, bypass) reopen a node, a LOPA scenario or a trip setting? What does a new incident teach?'},
+ studies:[
+  {v:'hazid',label:'HAZID',c:'#2563EB',why:'First, because it uses only the PFD and the plot plan and decides which hazards the later studies must look at.',
+   goal:'List every way the cooling water system can hurt people, the asset or the environment, rank them, and flag the major accident hazards.',
+   q:'What can hurt people here, from any cause?',inp:'BFD / PFD, plot plan, chemicals list, site weather; incident lessons',
+   out:'Hazard register (28 hazards, 6 MAH), study areas A1–A8, actions and the studies still needed',
+   m:'ISO 17776 checklist, 12 categories × 8 study areas, 5 × 5 risk matrix',st:{S1:2,S2:2,S3:1,S5:1},t:'90 min (estimate)',deck:'hazid'},
+  {v:'hazop',label:'HAZOP',c:'#7C3AED',why:'After HAZID, because it needs the P&ID and works line by line on the process deviations HAZID could only name.',
+   goal:'Find every deviation from the design intent, its causes, consequences and safeguards, and recommend what is missing.',
+   q:'What happens when the plant does not do what it was designed to do?',inp:'P&ID, design intent per node, C&E, procedures; the HAZID register',
+   out:'Worksheets: 9 nodes, 48 rows, 22 recommendations (R01–R22); High rows for LOPA',
+   m:'IEC 61882 guide words × parameters, CCPS worksheet',st:{S2:1,S3:2,S4:1,S5:1},t:'2 × 90 min (estimate)',deck:'hazop'},
+  {v:'hzs',label:'HAZOP Studio',c:'#DB2777',why:'Right after reading the HAZOP, so the class runs its own study with the same nodes, guide words and safeguards.',
+   goal:'Let a team record its own HAZOP (and in the Full edition a LOPA), run a deviation on the DCS console and hand in a study file.',
+   q:'Can our team do the HAZOP ourselves and check it on the simulator?',inp:'The HAZOP tab (nodes, guide words, risk matrix), the worked example of node N1',
+   out:'The team study file (.json), Excel and report; deviations proven on the simulator',
+   m:'PHA Studio Simple / Full, ▶ OTS tests t01–t21',st:{S3:2,S5:1},t:'90 min workshop (estimate)',deck:'PHA_Studio_CWT-V1_deck.html'},
+  {v:'cq',label:'Consequence analysis',c:'#DC2626',why:'After the hazard studies, because it sizes only the hazards they ranked as serious.',
+   goal:'Put a number on how bad the worst credible events are: distance to a toxic or flammable limit, heat flux, people affected.',
+   q:'How bad is it, in metres and people?',inp:'HAZID hazards with S4–S5 (H05, H06, H07, H13), inventories, weather, people density',
+   out:'Scenarios S1–S4 with effect distances and a RAST level, compared with the HAZID severity',
+   m:'CHEF source, Pasquill–Gifford dispersion, ERPG, LFL, kW/m²; RAST',st:{S2:2,S3:1,S5:1},t:'60 min (estimate)',deck:'cq'},
+  {v:'safety',label:'Safety layers',c:'#059669',why:'Before LOPA, because LOPA can only credit a layer you can name and show is independent.',
+   goal:'Show every layer of protection on the P&ID, from process design to emergency response, and mark the gaps.',
+   q:'What stands between each hazard and harm, and is each layer independent?',inp:'P&ID, alarm and trip list, HAZID and HAZOP safeguards and recommendations',
+   out:'Register of 42 items in 7 layers (11 recommended) and the gaps per hazard',
+   m:'CCPS layers of protection (the onion), IEC 61511 independence',st:{S2:1,S3:2,S4:1,S5:1},t:'60 min (estimate)',deck:'safety'},
+  {v:'lopa',label:'LOPA',c:'#D97706',why:'After the layers, because it multiplies their failure probabilities for one cause–consequence pair.',
+   goal:'Decide, for each serious scenario, whether the independent layers bring its frequency below the tolerable one, and what a new layer must achieve.',
+   q:'Is the protection enough, and if not, how much more is needed?',inp:'High HAZOP rows, severity from HAZID / consequence, the layers and their independence',
+   out:'Scenarios L1–L5 with the gap; SIL target of each SIF (SIL 1 for LSLL-201B, VSHH-21x, ASHH-201)',
+   m:'CCPS LOPA (2001, 2015), IEC 61511 PFDavg = λDU·TI/2',st:{S3:2,S5:1},t:'90 min (estimate)',deck:'lopa'},
+  {v:'srs',label:'SRS of SIF',c:'#0891B2',why:'After LOPA, because LOPA sets the SIL target the specification must meet.',
+   goal:'Write down what each SIF must do: what it measures, its setting, safe state, response time against the process safety time, proof test, reset and bypass.',
+   q:'What exactly must each trip do, how fast and how reliably?',inp:'LOPA SIL targets, the trip settings, process safety time from the simulator',
+   out:'SRS of SIF-01 to SIF-04 (20 items each) and the checks of the settings',
+   m:'IEC 61511-1 §10.3',st:{S3:2,S4:1,S5:1},t:'60 min (estimate)',deck:'srs'},
+  {v:'cem',label:'C&E matrix',c:'#4F46E5',why:'After the SRS, because the matrix is the one-page form of every trip, fail position, permissive and alarm the SRS describes.',
+   goal:'Show in one matrix what every cause does to every motor and valve, and prove each row on the simulator.',
+   q:'If this happens, what stops, opens or closes?',inp:'SRS of each SIF, valve fail positions, permissives, alarm list',
+   out:'The C&E matrix, the proof of each row on the live simulator, and the gaps found',
+   m:'Cause-and-effect chart (ISA-5.2 style), FAT / SAT proof',st:{S3:2,S4:2,S5:1},t:'45 min (estimate)',deck:'cem'},
+  {v:'inc',label:'Incident cases',c:'#475569',why:'Last in the tabs, so the cases can be read against layers you now know; in a project they are read first.',
+   goal:'Learn from eight published incidents at cooling towers which layers failed, and take the questions back to this unit.',
+   q:'What has already gone wrong at real cooling towers?',inp:'Published reports (CSB, health agencies, company reports)',
+   out:'Lessons per layer and questions for this unit, linked to the HAZID, HAZOP and LOPA items',
+   m:'Case study against the layers of protection',st:{S1:1,S2:1,S3:1,S5:2},t:'45 min (estimate)',deck:'inc'}
+ ],
+ learnNote:'The tabs follow the logic of the questions: find (HAZID, HAZOP and your own HAZOP in HAZOP Studio), size (Consequence analysis), protect (Safety layers, LOPA), specify (SRS, C&amp;E), and learn (Incident cases). Incident cases come last only so that you can read each case against the layers.',
+ projNote:'In a real project the order differs in three places. <b>Incident cases</b> are read first, to feed the HAZID checklist. <b>Consequence analysis</b> starts at FEED, before the HAZOP, because the MAHs need effect distances for the layout. The <b>safety philosophy</b> (which layers the plant will carry) is set at FEED and finished after the HAZOP. HAZOP is then repeated before start-up and at each revalidation.',
+ proj:[
+  [1,'inc','S1 Concept','Read past cooling-tower incidents (chlorine from mixed chemicals, Legionella, fill fires, hydrocarbon in the water) to build the checklist.'],
+  [2,'hazid','S1 – S2','HAZID on the BFD / PFD and plot plan: 28 hazards, 6 MAH, and the list of studies the project needs.'],
+  [3,'cq','S2 FEED','Screen the consequences of the MAHs: chlorine, acid, hydrocarbon in the cells, fill fire; check the spacing of the chemical area.'],
+  [4,'safety','S2 FEED','Write the safety philosophy: which layers the design will carry (trips, detectors, bunds, emergency response).'],
+  [5,'hazop','S3 Detailed','HAZOP on the frozen P&ID: 9 nodes, 48 rows, 22 recommendations.'],
+  [6,'hzs','S3 Detailed','Record the sessions in the PHA tool, track each recommendation to its owner.'],
+  [7,'lopa','S3 Detailed','LOPA of the High rows (L1–L5) and the SIL target of each SIF.'],
+  [8,'srs','S3 Detailed','SRS of each SIF and the SIL verification of the chosen hardware.'],
+  [9,'cem','S3 – S4','Issue the C&E matrix; prove every row at FAT and SAT.'],
+  [10,'hazop','S4 Start-up','Close every HAZOP action before start-up (pre-start-up safety review).'],
+  [11,'srs','S5 Operation','Proof-test each SIF at its interval; log every bypass.'],
+  [12,'hazop','S5 Operation','Revalidate the HAZOP (about every 5 years) and re-run the nodes a change touches (MOC).']
+ ],
+ flow:{bw:170,h:290,
+  pos:{inc:[100,70],hazid:[300,70],hazop:[500,70],hzs:[700,70],cq:[900,70],safety:[300,215],lopa:[500,215],srs:[700,215],cem:[900,215]},
+  edges:[
+   ['inc','hazid','real cases: what can happen at a cooling tower','s'],
+   ['hazid','hazop','hazard register, MAH list; H05 asks for a HAZOP of the users’ interface','s'],
+   ['hazop','hzs','nodes, guide words, safeguards and the worked node N1','s'],
+   ['hazid','cq','hazards to size (H05, H06, H07, H13); the result re-checks S','s','up'],
+   ['inc','safety','which layers failed in the real cases','d'],
+   ['hazop','safety','safeguards and gaps per worksheet row','s'],
+   ['hazop','lopa','High rows become scenarios L1–L5','s'],
+   ['cq','lopa','severity and the chance a cloud reaches the deck (0.1)','s'],
+   ['safety','lopa','which layers are independent and can be credited','s'],
+   ['lopa','srs','SIL target of each SIF','s'],
+   ['srs','cem','setting, action, reset of each trip become a matrix row','s']
+  ]},
+ threadTitle:'hydrocarbon from a users’ exchanger reaches the cells',
+ threadIntro:'One hazard followed through all nine tabs: a tube leak in a users’ cooler puts process hydrocarbon into the cooling water; the fans strip it in the cells, where the motors and lights can ignite it. The tower has no detector for it today.',
+ thread:[
+  ['inc','C5 (2013): hydrocarbon from a leaking exchanger collected in a cooling-water line and was released at a new tower cell; 29 deaths.','Never assume the cooling water is only water: the HAZID checklist must ask what the users can leak into it.'],
+  ['hazid','H05, area A8: hydrocarbon leak from a users’ exchanger. S5 × L2 = 10 High, flagged MAH. Action: a hydrocarbon monitor on the CW return, area classification of the fan deck.','A major accident hazard for the HAZOP of node N1 and for consequence scenario S3.'],
+  ['hazop','Row N1.5, composition AS WELL AS: process fluid in the cooling water. Risk 10 High. R04: hydrocarbon monitor with a high-high trip of the fans (ASHH-201); R05: area classification; R07: sample before restarting the fans.','A High row for LOPA, and a recommended trip that does not exist on the P&ID yet.'],
+  ['hzs','The worked example of node N1 in PHA Studio carries row N1.5 with its LOPA: 0.01 × 1 × 0.1 × 0.5 × 0.1 = 5 × 10⁻⁵ /yr.','The class can reproduce the row and the LOPA numbers in its own study file.'],
+  ['cq','S3: a 5 mm leak gives 0.34 kg/s and 0.12 vol % in each cell, 10 % of LFL (RAST 2). A 25 mm tube rupture gives 8.39 kg/s and 238 % of LFL (RAST 4).','Only a large leak is flammable at the deck: conditional modifier 0.1 in LOPA, and a question back to the HAZID S5.'],
+  ['safety','Hydrocarbon in the cells: no BPCS, no alarm, no trip. Gap: no detection at all; ASHH-201 recommended in layer 3.','LOPA can credit no existing layer for this scenario.'],
+  ['lopa','L3: 0.01 /yr × 1 × 0.1 × 0.5 × 0.1 = 5 × 10⁻⁵ /yr against a tolerable 10⁻⁵ /yr for S5: 5 times too frequent. With ASHH-201 (PFD 0.1) it is 5 × 10⁻⁶ /yr. SIL verification: PFDavg 3.5 × 10⁻², RRF 28, SIL 1.','SIF-04 needs SIL 1.'],
+  ['srs','SIF-04 ASHH-201: detector on the return header, trip at 50 % LEL (assumed), stop the three fans, latched. Process safety time 10.6 min (60 m³ ÷ 340 m³/h); response 110 s ≤ PST/2 = 5.3 min. Proof test every 6 months.','The cause, the setting and the action of a new C&E row.'],
+  ['cem','The matrix today has no ASHH-201 row, because R04 is not built. When it is: ASHH-201 → STOP P-212, P-213, P-214, first-out on the SIS tab, fans blocked while latched.','A row to prove at FAT and SAT like the others.']
+ ],
+ threadNote:'Read the thread as a management-of-change chain: if the trip setting, the loop volume or the leak size changes, the consequence, the LOPA, the SRS and the C&amp;E row must all be checked again. The tolerable frequencies and screening values here are teaching values, labelled assumed in their tabs.',
+ nums:[
+  ['Risk of H05 (S × L)','5 × 2 = 10 High','HAZID','HAZOP N1.5, LOPA L3','Flags the MAH that the later tabs follow.','hazid'],
+  ['HAZOP size','9 nodes · 48 rows · 22 recommendations','HAZOP','HAZOP Studio, LOPA','The rows the class reproduces; High rows go to LOPA.','hazop'],
+  ['Hydrocarbon in each cell, 5 mm leak','0.12 vol % (10 % of LFL)','Consequence analysis','LOPA L3','Sets the conditional modifier 0.1 that a cloud reaches the deck.','cq'],
+  ['Tolerable frequency for S5','10⁻⁵ /yr (teaching value)','LOPA','LOPA L3','The target the layers must reach.','lopa'],
+  ['L3 frequency, existing layers','5 × 10⁻⁵ /yr','LOPA','SRS SIF-04','Gap × 5: a SIL 1 layer is needed.','lopa'],
+  ['ASHH-201 PFDavg','3.5 × 10⁻² (RRF 28, SIL 1)','LOPA (SIF verification)','SRS SIF-04','The hardware meets the SIL 1 target with a 6-month proof test.','lopa'],
+  ['Process safety time of SIF-04','10.6 min','SRS (loop volume 60 m³ ÷ 340 m³/h)','SRS, C&E','Response 110 s must stay below half of it.','srs'],
+  ['LSLL-201 trip setting','8 % for 5 s','P&ID / SIS','SRS SIF-01, C&E','The SRS shows it lies inside the cavitation range (pumps lose head below 13 %).','srs'],
+  ['Layer register','42 items, 11 recommended','Safety layers','LOPA, C&E','Only items that exist and are independent get credit.','safety']
+ ],
+ links:[
+  ['Process & Design','P&ID','HAZOP nodes, layers and the C&E are drawn on it; every tag here must exist there.','pid'],
+  ['Process & Design','Control loop design','FIC-201, LIC-201, AIC-202 are layer 1; a BPCS loop failure is an initiating event in LOPA.','control'],
+  ['Operability','SOP','HAZOP node N9 (procedures) and R07 (sample before restarting the fans) change the procedures.','sop'],
+  ['Engineering (EPC)','Relief & vent','The relief devices of layer 4 and their sizing cases.','erel'],
+  ['Engineering (EPC)','Instrumentation & control','The SIS hardware and the detectors that the SRS specifies.','einst'],
+  ['Operate','Safety system (SIS)','The live trips, first-out and reset that the C&E describes.','bms'],
+  ['Operate','DCS console','Where HAZOP Studio runs its ▶ OTS tests and the dynamic checks give the times LOPA uses.','operate'],
+  ['Train & Assess','Debrief and grading','Trips and alarms during an exercise are scored; the SIS tabs explain why they acted.','debrief']
+ ],
+ qs:[
+  ['HAZID gives H05 severity S5, but consequence scenario S3 gives only RAST 2 for a 5 mm leak. Which one should LOPA use, and what does it change?','Severity follows the worst credible case: a 25 mm tube rupture gives 238 % of LFL (RAST 4) in the consequence tab, so S5 can stay. The small leak is handled in LOPA by the conditional modifier (0.1 that a flammable cloud reaches the deck), not by lowering the severity. If the team decided the rupture is not credible, the HAZID S, the LOPA target and the SIL would all drop together.'],
+  ['The HAZOP recommends ASHH-201 (R04). Which tabs must be updated before it can be credited in LOPA L3?','Safety layers (it becomes an existing layer 3 item, with its own detector), LOPA (credited with PFD 0.1 only if independent of the cause and of other layers), SRS (SIF-04 with setting, PST, response time, proof test) and C&E (a new row that stops P-212, P-213, P-214), proven at FAT/SAT. Until then it stays "recommended" and gets no credit.'],
+  ['Why does LSLL-201 get no credit in LOPA L2 even though it is a SIL-rated trip on the P&ID?','The SRS shows it uses LT-201, the same transmitter as LIC-201. In L2 the initiating event is LT-201 failing high, so the trip shares its sensor with the cause and is not independent. That is why the HAZOP and LOPA recommend a separate switch, LSLL-201B (SIF-03).'],
+  ['Why does the operator response to FI-202 LO get no credit in LOPA L1, but could get credit for a fan stop?','LOPA needs about 10 minutes between the alarm and the harm. The dynamic check of the simulator shows a power dip reaches TI-203 HI at the users in 3 s, while one fan stopping takes about 7 min (D3) and is slow enough to consider. The time, not the alarm itself, decides the credit.'],
+  ['Incident C5 named the procedures and management of change as failed layers. Where in the Safety tabs do you see the same weak points on this unit?','HAZOP N9 (procedures) and R07 ask to sample the return before restarting the fans; the SRS of SIF-04 resets only after the water is sampled clear; the stage table puts every change (new user, new chemical) back into HAZOP and LOPA through MOC. A procedure gets no LOPA credit, so the trip and the procedure are both needed.']
+ ]
+};
+
+/* Group overview engine. Data: const OV = {...} (schema in the ots-group-overview-tabs skill). */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ID=OV.id,R='#'+ID;
+const ST=OV.stages||[
+ ['S1','Concept / pre-FEED','process route chosen; BFD; plot area; materials and inventories known'],
+ ['S2','FEED (basic engineering)','PFD and HMB; P&ID rev A–B; equipment list; plot plan; relief philosophy'],
+ ['S3','Detailed engineering','P&ID issued for design → IFC; datasheets; SIS and DCS design; isometrics'],
+ ['S4','Construction, commissioning, start-up','FAT / SAT of the control and safety systems; pre-start-up safety review'],
+ ['S5','Operation and change','the plant runs; proof tests; management of change; revalidation; incidents']];
+const STU=OV.studies,BYV=Object.fromEntries(STU.map(s=>[s.v,s])),LEARN=STU.map(s=>s.v);
+const LAB=v=>(BYV[v]&&BYV[v].label)||v;
+const go=(v,t)=>`<a href="#" class="ovgo" data-ovgo="${v}">${esc(t||'open '+LAB(v)+' ›')}</a>`;
+let SEL=null,ORD='learn';
+function card(s,i){const main=Object.entries(s.st).filter(([k,v])=>v===2).map(([k])=>k);
+  return `<div class="ovcard" data-ov="${s.v}" tabindex="0" style="--sc:${s.c}"><div class="ovhd"><span class="ovno">${i+1}</span><b>${esc(s.label)}</b><span class="ovst">${main.map(k=>(ST.find(x=>x[0]===k)||[,k])[1]).join(' · ')}</span></div>
+   <div class="ovq">${esc(s.q)}</div><div class="small"><b>Goal.</b> ${esc(s.goal)}</div>
+   <div class="small"><b>Needs:</b> ${esc(s.inp)}</div><div class="small"><b>Hands on:</b> ${esc(s.out)}</div>
+   <div class="small muted">${esc(s.m)}</div><div>${go(s.v)}</div></div>`;}
+function life(){const W=1000,lw=200,cw=(W-lw-10)/ST.length,rh=34,top=58,H=top+STU.length*rh+14;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(OV.group)} across the project stages">`;
+  ST.forEach((x,i)=>{const X=lw+i*cw;const m=x[1].match(/^([^(,]+)[(,]?\s*(.*?)\)?$/)||[0,x[1],''];s+=`<rect x="${X+2}" y="4" width="${cw-4}" height="${H-8}" rx="6" class="ovcol${i%2?' alt':''}"/><text x="${X+cw/2}" y="22" class="ovtx b sm2" text-anchor="middle">${x[0]} · ${esc(m[1].trim())}</text><text x="${X+cw/2}" y="40" class="ovtx sm" text-anchor="middle">${esc(m[2])}</text>`;});
+  STU.forEach((t,j)=>{const y=top+j*rh;const ks=Object.keys(t.st).map(k=>ST.findIndex(x=>x[0]===k));const a=Math.min(...ks),b=Math.max(...ks);
+    s+=`<g class="ovrow" data-ov="${t.v}" tabindex="0"><rect x="4" y="${y}" width="${W-8}" height="${rh-4}" rx="4" class="ovhit"/><text x="12" y="${y+20}" class="ovtx b">${j+1} · ${esc(t.label.length>22?t.label.slice(0,21)+'…':t.label)}</text>`;
+    s+=`<line x1="${lw+a*cw+cw/2}" x2="${lw+b*cw+cw/2}" y1="${y+15}" y2="${y+15}" stroke="${t.c}" stroke-width="3" opacity=".45"/>`;
+    Object.entries(t.st).forEach(([k,v])=>{const X=lw+ST.findIndex(x=>x[0]===k)*cw+cw/2;s+=v===2?`<circle cx="${X}" cy="${y+15}" r="9" fill="${t.c}"/>`:`<circle cx="${X}" cy="${y+15}" r="7" fill="var(--panel)" stroke="${t.c}" stroke-width="2.5"/>`;});
+    s+='</g>';});
+  return s+'</svg>';}
+function stages(){return ST.map(x=>{const here=STU.filter(t=>t.st[x[0]]);
+  return `<tr><td><b>${x[0]}</b> ${esc(x[1])}</td><td>${esc(x[2])}</td><td>${here.map(t=>`<span class="ovchip${t.st[x[0]]===2?' main':''}" data-ov="${t.v}" style="--sc:${t.c}">${t.st[x[0]]===2?'●':'○'} ${esc(t.label)}</span>`).join(' ')||'<span class="muted">–</span>'}</td><td>${esc((OV.decisions||{})[x[0]]||'')}</td></tr>`;}).join('');}
+const stn=k=>{const s=BYV[k].st;return Object.keys(s).filter(x=>s[x]===2).join(', ');};
+const dk=s=>s.deck?`<a class="small" href="${/\.html$/.test(s.deck)?s.deck:'cwt-'+s.deck+'-deck.html'}" target="_blank" rel="noopener">${esc(/\.html$/.test(s.deck)?s.deck.replace(/\.html$/,''):'cwt-'+s.deck+'-deck')}</a>`:'–';
+function ordRows(){
+  if(ORD==='learn'){$(R+' .ovordnote').innerHTML=`<p class="small">${OV.learnNote}</p>`;
+    return LEARN.map((v,i)=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(s.label)}</b><br><span class="small muted">${esc(s.why||'')}</span></td><td>${esc(s.goal)}</td><td>${stn(v)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+  $(R+' .ovordnote').innerHTML=`<p class="small">${OV.projNote}</p>`;
+  return OV.proj.map(([n,v,stg,what])=>{const s=BYV[v];return `<tr data-ov="${v}"><td class="num"><b>${n}</b></td><td><b>${esc(s.label)}</b></td><td>${esc(what)}</td><td>${esc(stg)}</td><td>${esc(s.inp)}</td><td>${esc(s.out)}</td><td>${esc(s.t)}</td><td>${dk(s)}</td></tr>`;}).join('');}
+function flow(){const F=OV.flow,bw=F.bw||170,bh=56,H=F.h||285;let P=F.pos;
+  if(!P){P={};const n=LEARN.length,r1=Math.ceil(n/2),r2=n-r1;LEARN.forEach((v,i)=>{const row=i<r1?0:1,k=row?i-r1:i,m=row?r2:r1;P[v]=[(k+0.5)*1000/m,row?215:70];});}
+  const side=(v,tx,ty)=>{const [x,y]=P[v],dx=tx-x,dy=ty-y;const sx=Math.abs(dx)/(bw/2),sy=Math.abs(dy)/(bh/2);const k=1/Math.max(sx,sy,1e-9);return [x+dx*k,y+dy*k];};
+  let s=`<svg viewBox="0 0 1000 ${H}" role="img" aria-label="What passes between the ${esc(OV.group)} tabs"><defs><marker id="${ID}Ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ovahf"/></marker></defs>`;
+  F.edges.forEach(([a,b,l,k,arc],i)=>{const [x1,y1]=P[a],[x2,y2]=P[b];let path,mx,my;
+    if(arc){const up=arc==='up',sx=x1+(x2>x1?20:-20),ex=x2+(x2>x1?-20:20),y0=up?Math.min(y1,y2)-bh/2:Math.max(y1,y2)+bh/2,dy=up?-38:38;
+      path=`M${sx} ${up?y1-bh/2:y1+bh/2} C ${sx} ${y0+dy}, ${ex} ${y0+dy}, ${ex} ${up?y2-bh/2:y2+bh/2}`;mx=(sx+ex)/2;my=y0+dy*0.75;}
+    else{const [sx,sy]=side(a,x2,y2),[ex,ey]=side(b,x1,y1);path=`M${sx} ${sy} L${ex} ${ey}`;mx=(sx+ex)/2;my=(sy+ey)/2;}
+    s+=`<path d="${path}" class="oved ${k}" data-a="${a}" data-b="${b}" marker-end="url(#${ID}Ah)"/><g class="ovebadge" data-a="${a}" data-b="${b}"><circle cx="${mx}" cy="${my}" r="10"/><text x="${mx}" y="${my+4}" text-anchor="middle">${i+1}</text></g>`;});
+  Object.entries(P).forEach(([v,[x,y]])=>{const t=BYV[v];const lb=t.label.length>20?t.label.slice(0,19)+'…':t.label;s+=`<g class="ovnode" data-ov="${v}" tabindex="0"><rect x="${x-bw/2}" y="${y-bh/2}" width="${bw}" height="${bh}" rx="8" style="stroke:${t.c}"/><text x="${x}" y="${y-4}" class="ovtx b" text-anchor="middle">${LEARN.indexOf(v)+1} · ${esc(lb)}</text><text x="${x}" y="${y+15}" class="ovtx sm" text-anchor="middle">${esc(t.q.length>30?t.q.slice(0,28)+'…':t.q)}</text></g>`;});
+  s+='</svg>';
+  return s+`<ol class="ovleg small">${F.edges.map(([a,b,l,k])=>`<li data-a="${a}" data-b="${b}"><b>${esc(LAB(a))} → ${esc(LAB(b))}</b>: ${esc(l)}${k==='d'?' <span class="muted">(fed back)</span>':''}</li>`).join('')}</ol>`;}
+function sel(v){SEL=SEL===v?null:v;$$(R+' [data-ov]').forEach(e=>e.classList.toggle('on',!!SEL&&e.dataset.ov===SEL));
+  $$(`${R} .oved,${R} .ovebadge,${R} .ovleg li`).forEach(e=>e.classList.toggle('on',!!SEL&&(e.dataset.a===SEL||e.dataset.b===SEL)));
+  $(R).classList.toggle('ovhas',!!SEL);}
+function build(){const d=$(R+' .ovdoc');const n=STU.length;
+  d.innerHTML=`<h2>${esc(OV.title)}</h2>
+  <nav class="toc small"><a href="#${ID}1">1 The question</a> · <a href="#${ID}2">2 ${n} tabs, ${n} goals</a> · <a href="#${ID}3">3 When in a project</a> · <a href="#${ID}4">4 Order: learning and project</a> · <a href="#${ID}5">5 What passes between tabs</a> · <a href="#${ID}6">6 One thread through the group</a> · <a href="#${ID}7">7 Numbers handed on</a> · <a href="#${ID}8">8 Links to the other groups</a> · <a href="#${ID}9">9 Check yourself</a></nav>
+  <h3 id="${ID}1">1 · The question of this group</h3>
+  <div class="callout ovbig"><b>${esc(OV.question)}</b></div>
+  <p>${OV.intro} Click a tab anywhere on this page (a card, a bar, a box) to highlight it everywhere; the <span class="ovgo">open</span> buttons go to the tab.</p>
+  <h3 id="${ID}2">2 · ${n} tabs, ${n} goals</h3>
+  <p class="small muted">Card = the tab's goal (what it must deliver), the question it answers, what it needs before it can start, what it hands on, the method or standard, and the project stage where that work is mainly done.</p>
+  <div class="ovgrid">${LEARN.map((v,i)=>card(BYV[v],i)).join('')}</div>
+  <h3 id="${ID}3">3 · When in a project this work is done</h3>
+  <p>${OV.stageNote} ● = the main time the work is done; ○ = it is repeated, updated or used there.</p>
+  <div class="ovbox">${life()}</div>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Stage</th><th>State of the design (what exists)</th><th>Work of this group done</th><th>Decisions it drives</th></tr></thead><tbody>${stages()}</tbody></table></div>
+  <h3 id="${ID}4">4 · Order: the order of the tabs and the order in a project</h3>
+  <div class="tbctl"><span class="small">Show:</span><button class="btn small on" data-ovord="learn">Learning order (the tabs)</button><button class="btn small" data-ovord="proj">Project order (real life)</button></div>
+  <div class="ovordnote"></div>
+  <div class="tscroll"><table class="tbl small ovord"><thead><tr><th>Step</th><th>Tab</th><th>Goal of the step</th><th>Project stage</th><th>Starts from (input)</th><th>Hands on (output)</th><th>Time in class</th><th>Deck</th></tr></thead><tbody></tbody></table></div>
+  <h3 id="${ID}5">5 · What passes from one tab to the next</h3>
+  <p class="small muted">Each numbered arrow carries a result. Solid = the next tab needs it to start; dashed = a check or a lesson fed back.</p>
+  <div class="ovbox">${flow()}</div>
+  <h3 id="${ID}6">6 · One thread through the group: ${esc(OV.threadTitle)}</h3>
+  <p>${OV.threadIntro}</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Step</th><th>Tab</th><th>What the tab says about it</th><th>So the next tab gets</th><th></th></tr></thead><tbody>${OV.thread.map(([v,a,b],i)=>`<tr data-ov="${v}"><td class="num"><b>${i+1}</b></td><td><b>${esc(LAB(v))}</b></td><td>${esc(a)}</td><td>${esc(b)}</td><td>${go(v,'open ›')}</td></tr>`).join('')}</tbody></table></div>
+  ${OV.threadNote?`<div class="callout small">${OV.threadNote}</div>`:''}
+  <h3 id="${ID}7">7 · Numbers handed on</h3>
+  <p class="small muted">A number is born in one tab and used in another. If it changes where it is born, every tab that uses it must be checked again (management of change).</p>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Number</th><th>Value</th><th>Born in</th><th>Used in</th><th>Why it matters there</th></tr></thead><tbody>${OV.nums.map(([nm,val,b,u,w,v])=>`<tr data-ov="${v}"><td>${esc(nm)}</td><td class="num"><b>${esc(val)}</b></td><td>${esc(b)}</td><td>${esc(u)}</td><td class="small">${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}8">8 · Links to the other groups</h3>
+  <div class="tscroll"><table class="tbl small"><thead><tr><th>Group</th><th>Tab</th><th>What this group takes from it, or gives to it</th></tr></thead><tbody>${OV.links.map(([g,t,w,v])=>`<tr><td>${esc(g)}</td><td><a href="#" class="ovgo" data-ovgo="${v}">${esc(t)}</a></td><td>${esc(w)}</td></tr>`).join('')}</tbody></table></div>
+  <h3 id="${ID}9">9 · Check yourself</h3>
+  <p class="small muted">Each question needs at least two tabs of the group. Answer first, then open the model answer.</p>
+  ${OV.qs.map(([q,a],i)=>`<div class="ovqa"><p><b>Q${i+1}.</b> ${esc(q)}</p><details><summary>Model answer</summary><p class="small">${esc(a)}</p></details></div>`).join('')}`;
+  $(R+' .ovord tbody').innerHTML=ordRows();
+  const root=$(R);
+  root.addEventListener('click',e=>{const g=e.target.closest('[data-ovgo]');if(g){e.preventDefault();showView(g.dataset.ovgo);return;}
+    const o=e.target.closest('[data-ovord]');if(o){ORD=o.dataset.ovord;$$(R+' [data-ovord]').forEach(b=>b.classList.toggle('on',b===o));$(R+' .ovord tbody').innerHTML=ordRows();if(SEL){const k=SEL;SEL=null;sel(k);}return;}
+    const s=e.target.closest('[data-ov]');if(s&&!e.target.closest('a,summary'))sel(s.dataset.ov);});
+  root.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-ov]')){e.preventDefault();sel(e.target.dataset.ov);}});}
+TB.tab(ID,build,null);
+
+})();
 var curGroup=null,lastInGroup={};
 function groupsOf(v){return TAB_GROUPS.filter(g=>g[2].includes(v)).map(g=>g[0]);}
 function visibleIn(g,v){const b=document.querySelector(`.subrow[data-group="${g}"] .tab[data-view="${v}"]`);return b&&!b.hidden;}
