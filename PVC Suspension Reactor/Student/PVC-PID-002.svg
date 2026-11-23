@@ -417,7 +417,7 @@
 <text x="1303" y="670" font-size="6.5">HS-001 ESD PUSHBUTTON</text>
 <text x="1423" y="670" font-size="6.5">MANUAL</text>
 <text x="1515" y="670" font-size="6.5">A + XV-108</text>
-<text x="1280" y="691.1" font-size="6.4">A = SHORT-STOP XV-104, CLOSE XV-101/102/103, FV-103 TO 0,</text>
+<text x="1280" y="691.1" font-size="6.4">A = SHORT-STOP XV-104, CLOSE XV-101/102/109, FV-103 TO 0,</text>
 <text x="1280" y="698.7" font-size="6.4">      FORCE TV-110B / FV-120 / FV-130 OPEN.  B = CLOSE XV-101/102, FV-103.</text>
 <line x1="1280" y1="712" x2="1610" y2="712" stroke="#000000" stroke-width="1"/>
 <line x1="1280" y1="727.5" x2="1610" y2="727.5" stroke="#000000" stroke-width="1"/>
@@ -442,7 +442,7 @@
 <text x="1283" y="783.8" font-size="6.7">Q REACTION AT 2 h</text>
 <text x="1438" y="783.8" font-size="6.7">2.71 MW (PEAK 3.43)</text>
 <text x="1283" y="799.2" font-size="6.7">JACKET / BAFFLES / E-101</text>
-<text x="1438" y="799.2" font-size="6.7">1.48 / 0.40 / 0.98 MW</text>
+<text x="1438" y="799.2" font-size="6.7">1.50 / 0.40 / 0.97 MW</text>
 <text x="1283" y="814.8" font-size="6.7">END POINT</text>
 <text x="1438" y="814.8" font-size="6.7">dP 1.8 bar, X 0.85</text>
 <text x="1283" y="830.2" font-size="6.7">PVC PER BATCH / TIME</text>
@@ -451,11 +451,11 @@
 <text x="50" y="962.2" font-size="7.2">1. SEE PVC-PID-001 NOTES 1-3 FOR THE DESIGN BASIS AND RECIPE, NOTE 8 AND THE SIS TABLE FOR TRIPS. THIS SHEET SHOWS THE R-101 HEAT-REMOVAL SYSTEMS AND THE TEMPERATURE CONTROL.</text>
 <text x="50" y="970.8" font-size="7.2">2. JACKET: CLOSED TEMPERED-WATER LOOP, P-101A/B 470 m3/h (ONE RUNNING; B STARTED BY OPERATOR - AUTO-START TBC). CW 32 C INJECTED THROUGH TV-110B (FAIL OPEN) AND LP STEAM THROUGH TV-110A (FAIL CLOSED) + STEAM MIXER SM-101;</text>
 <text x="50" y="979.5" font-size="7.2">   THE SAME MASS SPILLS TO CWR THROUGH BACK-PRESSURE REGULATOR PCV-112 (LOOP 4 barg). FSLL-110 &lt; 120 m3/h FOR 30 s WHILE REACTING -&gt; SIS I-4 (SHORT-STOP).</text>
-<text x="50" y="988.2" font-size="7.2">3. TEMPERATURE CONTROL: TIC-100 (MASTER, R-101 CONTENTS; Kc 10, Ti 1500 s, Td 120 s) SETS TIC-110 (SLAVE, JACKET INLET; Kc 2, Ti 40 s). TY-110 SPLIT RANGE: OUTPUT 0 % = FULL STEAM, 50 % = BOTH SHUT, 100 % = FULL CW.</text>
+<text x="50" y="988.2" font-size="7.2">3. TEMPERATURE CONTROL: TIC-100 (MASTER, R-101 CONTENTS; Kc 12, Ti 900 s, Td 120 s) SETS TIC-110 (SLAVE, JACKET INLET; Kc 2, Ti 40 s). TY-110 SPLIT RANGE: OUTPUT 0 % = FULL STEAM, 50 % = BOTH SHUT, 100 % = FULL CW.</text>
 <text x="50" y="996.8" font-size="7.2">4. VPC-130 = VALVE-POSITION CONTROL: HOLDS TV-110B NEAR 50 % OPEN BY RESETTING FIC-130, SO THE JACKET KEEPS ITS TRIM MARGIN AND THE REFLUX CONDENSER TAKES THE GROWING LOAD. FIC-130 SP HIGH LIMIT = 12 m3/h PER % OF XI-100</text>
 <text x="50" y="1005.5" font-size="7.2">   (ANTI-FOAM: TOO MUCH BOIL-UP BEFORE ~10 % CONVERSION CARRIES FOAM AND PVC INTO E-101).</text>
 <text x="50" y="1014.2" font-size="7.2">5. BAFFLES: FOUR ADJUSTABLE WATER-COOLED BAFFLES (22 m2) ON ONCE-THROUGH CW, FIC-120 80 m3/h.</text>
-<text x="50" y="1022.8" font-size="7.2">6. DESIGN DUTIES AT 2 h (X = 26 %): REACTION 2.71 MW + AGITATOR 0.29 MW = JACKET 1.48 + BAFFLES 0.40 + E-101 0.98 MW. PEAK REACTION 3.43 MW NEAR X = 0.7; THE JACKET ALONE (MAX ~1.8 MW) CANNOT CARRY IT - E-101 ADDS THE MISSING AREA.</text>
+<text x="50" y="1022.8" font-size="7.2">6. DESIGN DUTIES AT 2 h (X = 26 %): REACTION 2.71 MW + AGITATOR 0.29 MW = JACKET 1.50 + BAFFLES 0.40 + E-101 0.97 MW. PEAK REACTION 3.43 MW NEAR X = 0.7; THE JACKET ALONE (MAX ~1.6 MW) CANNOT CARRY IT - E-101 ADDS THE MISSING AREA.</text>
 <text x="50" y="1031.5" font-size="7.2">7. CW SUPPLY 32 C (TROPICAL DESIGN). E-101 CW RETURN APPROACHES 55 C AT LOW FLOW: MINIMUM-FLOW / SCALING LIMIT TBC WITH THE CW TREATMENT VENDOR.</text>
 <text x="50" y="1040.2" font-size="7.2">8. LINE SIZES AND MATERIALS PRELIMINARY - TBC BY PIPING. SERVICE CODES AS PVC-PID-001; LS = LP STEAM.</text>
 <line x1="1285" y1="945" x2="1619" y2="945" stroke="#000000" stroke-width="1"/>
@@ -468,9 +468,12 @@
 <text x="1302.5" y="961.5" font-size="7.6" font-weight="bold" text-anchor="middle">REV</text>
 <text x="1427" y="961.5" font-size="7.6" font-weight="bold" text-anchor="middle">DESCRIPTION</text>
 <text x="1576.5" y="961.5" font-size="7.6" font-weight="bold" text-anchor="middle">DATE</text>
-<text x="1302.5" y="990" font-size="7.6" text-anchor="middle">A</text>
-<text x="1427" y="990" font-size="7.6" text-anchor="middle">ISSUED FOR OTS DEVELOPMENT (REVIEW)</text>
-<text x="1576.5" y="990" font-size="7.6" text-anchor="middle">25-SEP-26</text>
+<text x="1302.5" y="981" font-size="7" text-anchor="middle">A</text>
+<text x="1427" y="981" font-size="7" text-anchor="middle">ISSUED FOR OTS DEVELOPMENT (REVIEW)</text>
+<text x="1576.5" y="981" font-size="7" text-anchor="middle">25-SEP-26</text>
+<text x="1302.5" y="995" font-size="7" font-weight="bold" text-anchor="middle">B</text>
+<text x="1427" y="995" font-size="7" font-weight="bold" text-anchor="middle">REV 17: VALUES ALIGNED WITH MODEL</text>
+<text x="1576.5" y="995" font-size="7" font-weight="bold" text-anchor="middle">23-NOV-26</text>
 <rect x="1285" y="1002" width="334" height="132" fill="#FFFFFF" stroke="#000000" stroke-width="1.9"/>
 <line x1="1285" y1="1036" x2="1619" y2="1036" stroke="#000000" stroke-width="1"/>
 <line x1="1285" y1="1072" x2="1619" y2="1072" stroke="#000000" stroke-width="1"/>
@@ -489,7 +492,7 @@
 <text x="1326.8" y="1115.7" font-size="7.6" font-weight="bold" text-anchor="middle">DWG NO.</text>
 <text x="1326.8" y="1124.9" font-size="7.6" font-weight="bold" text-anchor="middle">PVC-PID-002</text>
 <text x="1410.2" y="1115.7" font-size="7.6" text-anchor="middle">REV</text>
-<text x="1410.2" y="1124.9" font-size="7.6" text-anchor="middle">A</text>
+<text x="1410.2" y="1124.9" font-size="7.6" text-anchor="middle">B</text>
 <text x="1493.8" y="1115.7" font-size="7.6" text-anchor="middle">SCALE</text>
 <text x="1493.8" y="1124.9" font-size="7.6" text-anchor="middle">N.T.S.</text>
 <text x="1577.2" y="1115.7" font-size="7.6" text-anchor="middle">SHEET</text>
