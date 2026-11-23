@@ -1,0 +1,1136 @@
+{
+ "v": 2,
+ "unit": "v_1",
+ "meta": {
+  "title": "HAZOP and LOPA of the V-1 unit",
+  "group": "",
+  "date": "2026-11-23",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "V-1",
+  "pid": "",
+  "scope": "From the crude charge pumps P-1A/B through the cold preheat (E-1, E-3, E-2, E-14), the desalters V-3 // S-1, the booster pumps P-2A/B and the hot preheat (E-15, E-4 … E-8/E-18), the two-pass fired heater H-1 with its fuel gas and fuel oil systems and EMS UY-105, the transfer line, the 30-tray crude tower V-1 with the MPA and BPA pumparounds, the diesel and AGO strippers V-2A/B, the bottoms pumps P-3A/B, and the overhead E-9/E-10, reflux drum V-4 and off-gas; utilities: steam, cooling, instrument air, power.",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "Design case: 218.75 m³/h of light crude (33 000 bbl/d); heater outlet 388 °C; tower top 136 °C; reflux drum 13.8 kPa g. Trained operators. Risk matrix and target event frequencies are those of the OTS HAZOP and LOPA tabs (teaching values, CCPS style).",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Runs the sessions, keeps the method, judges completeness (Not from the design team)",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every deviation in full (full recording), keeps the action list (Types into the worksheet live)",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, balances, relief and line sizes (Design of the unit operation, PFD tabs)",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the unit is really run, start-up and upsets (Operate, Heater EMS, Procedures)",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Loops, alarms, trips, fail positions (Control loop design, P&ID)",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety / loss-prevention engineer",
+   "name": "",
+   "duty": "Consequences, risk ranking, LOPA follow-up (HAZID, Consequence analysis)",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists (as needed)",
+   "name": "",
+   "duty": "Fired-heater / burner, materials and corrosion, electrical (desalter transformers), rotating equipment (Called for nodes N2, N4, N5)",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "PFD PFD-ACU-01 (ACU-PFD.pdf)",
+   "where": "PFD tab (Process & Design)",
+   "use": "Design intent, streams, node boundaries"
+  },
+  {
+   "ref": "P&ID ACU-PID-000 … 008 (ACU-PID-SET.pdf)",
+   "where": "P&ID tab (Process & Design; also Operate)",
+   "use": "Tags, valves, fail positions, the heater trips"
+  },
+  {
+   "ref": "Heat and material balance ACU-PE-HMB-001",
+   "where": "Process engineering tab (Engineering)",
+   "use": "Flows, temperatures and pressures of the design case"
+  },
+  {
+   "ref": "Relief load basis ACU-PE-RLB-001",
+   "where": "Relief & vent tab (Engineering)",
+   "use": "PSV-108, PSV-102, PSV-114: governing cases and set pressures"
+  },
+  {
+   "ref": "Instrument list ACU-IN-INL-001 and C&E ACU-IN-CE-001",
+   "where": "Instrumentation & control and C&E matrix tabs",
+   "use": "Alarm and trip settings, cause and effect of UY-105"
+  },
+  {
+   "ref": "Equipment list ACU-ME-EQL-001",
+   "where": "Mechanical tab (Engineering)",
+   "use": "Design pressures and temperatures"
+  },
+  {
+   "ref": "HAZID register",
+   "where": "HAZID tab (Safety)",
+   "use": "Major-accident hazards to carry into the HAZOP"
+  },
+  {
+   "ref": "HAZOP report ACU-HAZOP-Report.pdf",
+   "where": "HAZOP tab (Safety)",
+   "use": "The existing study: ten nodes, R01–R29, dynamic checks D1–D10"
+  },
+  {
+   "ref": "Consequence analysis (CHEF / RAST)",
+   "where": "Consequence analysis tab (Safety)",
+   "use": "Severity: hot residue and naphtha releases, transfer-line fire, desalter burst, fuel gas"
+  },
+  {
+   "ref": "Safety layers, LOPA and SRS",
+   "where": "Safety layers, LOPA and SRS of SIF tabs",
+   "use": "Independent protection layers, SIF PFDs, target frequencies"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP, Transition operation and Exercises tabs",
+   "use": "Cold start-up through the EMS, shutdown, emergency shutdown"
+  },
+  {
+   "ref": "Incident cases",
+   "where": "Incident cases tab (Safety)",
+   "use": "Lessons from crude-unit and fired-heater accidents"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No crude charge",
+    "causes": "P-1A trips and the standby P-1B is not started\ntank outlet or suction valve closed\nFCV-129 and FCV-130 both closed",
+    "events": "",
+    "grp": [],
+    "cons": "Desalters and both heater passes lose flow; with the heater still firing the coils overheat (see N4-01)",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R01"
+    ],
+    "park": [],
+    "notes": "Worked example\nLOPA (worked example): rates and IPL rules from the OTS LOPA tab, scenario L1 (loss of flow in a heater pass), for the cause \"P-1A trips, P-1B not started\" only. Credited: FSL-105A/B (SIF-01/02), independent of a pump stop (PFD 0.0295 from the SRS / LOPA tabs). Not credited: the FIC-114 and pass low-flow alarms, because the model gives about 12 s from the trip point to the assumed tube limit, far below an operator response time. f_unmit = 0.1 × 1 × 0.1 = 0.01 per year; f_mit = 0.01 × 0.0295 = 2.95e-04 per year against TEL 0.001 for S4. For the cause \"FT-105A/B reads high\" the SIF shares the transmitter and gets no credit: that is why the OTS LOPA tab recommends own SIS flow transmitters (SIF-01R/02R).",
+    "lopa": {
+     "on": true,
+     "ie": [
+      {
+       "d": "P-1A trips and the standby P-1B is not started (generic pump stop, OTS LOPA tab L1 rate)",
+       "f": "0.1"
+      }
+     ],
+     "en": [],
+     "cm": [
+      {
+       "d": "Ignition of crude released in a firebox (OTS LOPA tab, L1; assumed: certain)",
+       "p": "1"
+      },
+      {
+       "d": "Person in the heater area (OTS LOPA tab, L1; assumed occupancy)",
+       "p": "0.1"
+      }
+     ],
+     "ipl": [
+      "S003"
+     ]
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "More crude than the set point",
+    "causes": "FT-114 reads low so FIC-114 drives the flow up\nset-point error",
+    "events": "",
+    "grp": [],
+    "cons": "Heater at maximum firing, outlet temperature falls; column vapour load up, flooding; off-spec products",
+    "cat": "PER",
+    "sg": [
+     "S005",
+     "S006",
+     "S007"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less crude than the set point",
+    "causes": "FT-114 reads high\nP-1 wear\nsuction strainer plugged",
+    "events": "",
+    "grp": [],
+    "cons": "Pass flows fall towards the trip point; low velocity in the coils speeds up coking",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S008",
+     "S003"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Cold train dead-headed",
+    "causes": "FCV-129 closes with FCV-130 closed\ndesalter inlet valve shut",
+    "events": "",
+    "grp": [],
+    "cons": "P-1 runs at shut-off: seal overheats and leaks crude; flange leak in the exchanger train",
+    "cat": "PER",
+    "sg": [
+     "S009",
+     "S010",
+     "S011"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Temperature",
+    "gw": "LESS",
+    "dev": "Cold crude to the desalters",
+    "causes": "Cold crude from storage\nE-1 fouled\noverhead load low at reduced rate",
+    "events": "",
+    "grp": [],
+    "cons": "Desalting efficiency falls; salts reach the column and corrode the overhead; heater duty rises",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013",
+     "S014"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Blocked-in exchanger heated by its hot side",
+    "causes": "Crude side of E-1 isolated while the overhead vapour still flows",
+    "events": "",
+    "grp": [],
+    "cons": "Thermal expansion of trapped crude: gasket or tube failure, crude release",
+    "cat": "PER",
+    "sg": [
+     "S015",
+     "S016"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Composition",
+    "gw": "OTHER THAN",
+    "dev": "Heavy crude or a water slug from the tank",
+    "causes": "Tank switch to heavy crude\ntank water bottoms drawn",
+    "events": "",
+    "grp": [],
+    "cons": "Desalter emulsion and oil under-carry; water flashing in the heater and column, pressure surge and tray damage",
+    "cat": "PER",
+    "sg": [
+     "S017",
+     "S018",
+     "S007"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Back-flow through the stopped charge pump",
+    "causes": "P-1A trips while P-1B runs and its check valve passes",
+    "events": "",
+    "grp": [],
+    "cons": "Pump spins backwards, seal damage and a small leak",
+    "cat": "PER",
+    "sg": [
+     "S019"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Salts, H₂S or sediment above design in the crude",
+    "causes": "Crude source changes",
+    "events": "",
+    "grp": [],
+    "cons": "Fouling of the cold train, overhead chloride corrosion",
+    "cat": "PER",
+    "sg": [
+     "S020",
+     "S021"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": [],
+  "N10": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FIC-114 LO alarm 15.4 m³/h",
+   "tag": "FIC-114",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S002",
+   "text": "PIC-108 LO alarm 551.6 kPa g",
+   "tag": "PIC-108",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S003",
+   "text": "FSL-105A/B trips < 40 m³/h for 5 s (SIF-01/02)",
+   "tag": "FSL-105A",
+   "type": "Interlock (SIS)",
+   "pfd": "0.0295"
+  },
+  {
+   "id": "S004",
+   "text": "standby pump P-1B",
+   "tag": "",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "FIC-114 HI alarm 295 m³/h",
+   "tag": "FIC-114",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S006",
+   "text": "FIC-105A HI alarm 155.4 m³/h",
+   "tag": "FIC-105A",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S007",
+   "text": "PDI-115 HI alarm 45 kPa",
+   "tag": "PDI-115",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S008",
+   "text": "FIC-105A LO alarm 51.3 m³/h",
+   "tag": "FIC-105A",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S009",
+   "text": "P-1 shut-off 1550 kPa g below the design pressure of the train (assumed)",
+   "tag": "",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "PIC-108 HI alarm 1310 kPa g",
+   "tag": "PIC-108",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S011",
+   "text": "PSV-108 set 1400 kPa g",
+   "tag": "PSV-108",
+   "type": "Relief (PRD)",
+   "pfd": "0.01"
+  },
+  {
+   "id": "S012",
+   "text": "TI-170 LO alarm 38.3 °C",
+   "tag": "TI-170",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S013",
+   "text": "TI-171 LO alarm 102.2 °C",
+   "tag": "TI-171",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S014",
+   "text": "TI-180 LO alarm 98.9 °C",
+   "tag": "TI-180",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S015",
+   "text": "Isolation procedure",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "thermal relief TBC",
+   "tag": "",
+   "type": "Relief (PRD)",
+   "pfd": "0.01"
+  },
+  {
+   "id": "S017",
+   "text": "Tank dewatering procedure",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "LIC-103 alarms LO 10 / HI 25 %",
+   "tag": "LIC-103",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S019",
+   "text": "Check valve on each pump discharge (typical, PID-000)",
+   "tag": "PID-000",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "TI-171 LO alarm 102.2 °C (fouling shows as low outlet)",
+   "tag": "TI-171",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S021",
+   "text": "laboratory analysis of the crude",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Add a low-flow alarm on P-1A/B discharge and auto-start of the standby pump; at present loss of a charge pump is seen only on FIC-114.",
+   "by": "Process / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Train every panel operator on the dynamic-check scenarios of this study in the OTS and record the response times.",
+   "by": "Training",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Make FSL-105A/B independent of the control transmitters FT-105A/B (separate flow elements, or 2oo3 voting).",
+   "by": "Instrument / SIS",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Confirm thermal relief on every exchanger side that can be blocked in while the other side is hot (E-1 … E-14, E-15 … E-8/E-18); add to the relief study.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Overhead corrosion control: boot-water pH and chloride monitoring, neutraliser and inhibitor injection, exchanger tube-leak sampling.",
+   "by": "Process / Materials",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Water management: drain condensate from steam lines before use, steam traps at low points, dewater crude tanks; procedure for water in a hot column.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "P-1A trips and the standby P-1B is not started",
+   "tank outlet or suction valve closed",
+   "FCV-129 and FCV-130 both closed",
+   "FT-114 reads low so FIC-114 drives the flow up",
+   "set-point error",
+   "FT-114 reads high",
+   "P-1 wear",
+   "suction strainer plugged",
+   "FCV-129 closes with FCV-130 closed",
+   "desalter inlet valve shut",
+   "Cold crude from storage",
+   "E-1 fouled",
+   "overhead load low at reduced rate",
+   "Crude side of E-1 isolated while the overhead vapour still flows",
+   "Tank switch to heavy crude",
+   "tank water bottoms drawn",
+   "P-1A trips while P-1B runs and its check valve passes",
+   "Crude source changes"
+  ],
+  "cons": [
+   "Desalters and both heater passes lose flow",
+   "with the heater still firing the coils overheat (see N4-01)",
+   "Heater at maximum firing, outlet temperature falls",
+   "column vapour load up, flooding",
+   "off-spec products",
+   "Pass flows fall towards the trip point",
+   "low velocity in the coils speeds up coking",
+   "P-1 runs at shut-off: seal overheats and leaks crude",
+   "flange leak in the exchanger train",
+   "Desalting efficiency falls",
+   "salts reach the column and corrode the overhead",
+   "heater duty rises",
+   "Thermal expansion of trapped crude: gasket or tube failure, crude release",
+   "Desalter emulsion and oil under-carry",
+   "water flashing in the heater and column, pressure surge and tray damage",
+   "Pump spins backwards, seal damage and a small leak",
+   "Fouling of the cold train, overhead chloride corrosion"
+  ],
+  "safe": [
+   "FIC-114 LO alarm 15.4 m³/h",
+   "PIC-108 LO alarm 551.6 kPa g",
+   "FSL-105A/B trips < 40 m³/h for 5 s (SIF-01/02)",
+   "standby pump P-1B",
+   "FIC-114 HI alarm 295 m³/h",
+   "FIC-105A HI alarm 155.4 m³/h",
+   "PDI-115 HI alarm 45 kPa",
+   "FIC-105A LO alarm 51.3 m³/h",
+   "P-1 shut-off 1550 kPa g below the design pressure of the train (assumed)",
+   "PIC-108 HI alarm 1310 kPa g",
+   "PSV-108 set 1400 kPa g",
+   "TI-170 LO alarm 38.3 °C",
+   "TI-171 LO alarm 102.2 °C",
+   "TI-180 LO alarm 98.9 °C",
+   "Isolation procedure",
+   "thermal relief TBC",
+   "Tank dewatering procedure",
+   "LIC-103 alarms LO 10 / HI 25 %",
+   "Check valve on each pump discharge (typical, PID-000)",
+   "TI-171 LO alarm 102.2 °C (fouling shows as low outlet)",
+   "laboratory analysis of the crude",
+   "PIC-108 HI alarm 1310 kPa g (same transmitter as the loop)",
+   "PSV-108 set 1400 kPa g to flare",
+   "P-1 shut-off 1550 kPa g",
+   "operating pressure well above the bubble point",
+   "LIC-103 HI alarm 25 %",
+   "LIC-161 HI alarm 25 %",
+   "LIC-103 LO alarm 10 %",
+   "LIC-161 LO alarm 10 %",
+   "oil under-carry alarm on LIC-103/161",
+   "FIC-103 and FIC-133 indication (no alarm in the alarm list)",
+   "TI-180 HI alarm 260 °C",
+   "TI-1010 HI alarm 260 °C",
+   "FIC-132 HI alarm 199 m³/h",
+   "FI-131 indication",
+   "Transformer protection (electrical, assumed)",
+   "FIC-105B LO alarm 51.3 m³/h",
+   "standby P-2B",
+   "TI-184 LO alarm 182.8 °C",
+   "TI-185 LO alarm 193.1 °C",
+   "TI-1003 indication",
+   "TIC-101 LO alarm 378 °C",
+   "TI-184 HI alarm 260 °C",
+   "TI-185 HI alarm 260 °C",
+   "pass flow control FIC-105A/B",
+   "FCV-105A/B fail open (FO)",
+   "minimum-flow line (typical)",
+   "TI-1014 / TI-1009 indication",
+   "product analysers AI-102 / AI-104",
+   "FI-135 indication",
+   "Fire water and monitors (assumed)",
+   "operator rounds",
+   "FSL-105A trip < 40 m³/h for 5 s (SIF-01)",
+   "TI-1007A HI alarm 393 °C",
+   "FCV-105A fails open (FO)",
+   "TI-1007B HI alarm 393 °C",
+   "PI-105B indication",
+   "TIC-101 HI alarm 395 °C",
+   "TSHH-1007A/B trip > 410 °C for 10 s (SIF-03)",
+   "TSHH-1007A/B trip > 410 °C for 10 s (SIF-03) (outlet, not skin)",
+   "AI-104 LO alarm 315.6 °C",
+   "PI-105A/B indication",
+   "HS-105B manual ESD",
+   "snuffing steam",
+   "FCV-105A/B fail open (cannot isolate the pass)",
+   "Pressure profile (V-1 far below pass inlet)",
+   "check valve at P-2",
+   "FIC-105A alarms LO 51.3 / HI 155.4 m³/h",
+   "Alarm “low-flow trips bypassed (HS-105A)”",
+   "start-up procedure",
+   "BSL-105 flame-failure trip after 3 s (SIF-04)",
+   "SDV-106 and SDV-112 close (FC)",
+   "purge 120 s before any relight",
+   "FIC-106 HI alarm 4500 Nm³/h",
+   "FI-107 indication",
+   "PDC-111 control (no alarm)",
+   "EMS admits oil only with PDC-111 ≥ 150 kPa",
+   "Knock-out drum on the fuel-gas header (off the drawing, assumed)",
+   "SDV-106 / SDV-112 isolate on HS-105B manual ESD",
+   "fire water (assumed)",
+   "None on the P&ID (draft and O₂ are HOLD)",
+   "Check valve (typical)",
+   "PDC-111",
+   "1oo2 on fuel: SDV plus FCV-106 / PCV-112 driven to 0 % (FC) by the EMS",
+   "proof test",
+   "LIC-107 LO alarm 20 % (same transmitter as the loop)",
+   "FIC-1102 indication",
+   "spare P-3B",
+   "LIC-107 HI alarm 80 %",
+   "FIC-1102 LO alarm 46.7 m³/h",
+   "FIC-109 LO alarm 70 kg/h",
+   "manual bypass BYP-109",
+   "FIC-109 HI alarm 6520 kg/h",
+   "PIC-102 HI alarm 30 kPa g",
+   "PI-114 indication",
+   "PSV-114 (set TBC — HOLD)",
+   "TI-1018 indication",
+   "FIC-1102 HI alarm 165.8 m³/h",
+   "Spare P-3B",
+   "fire water and monitors (assumed)",
+   "no remote isolation on the P&ID",
+   "FIC-108 LO alarm 51.3 m³/h",
+   "TIC-102 HI alarm 162.8 °C",
+   "FIC-104 LO alarm 63.8 m³/h",
+   "spare P-9B",
+   "FIC-104 HI alarm 195 m³/h",
+   "FIC-108 HI alarm 134.2 m³/h",
+   "Product analysers AI-102 / AI-103",
+   "LIC-108 LO alarm 20 %",
+   "spare P-8B",
+   "AI-102 HI alarm 315.6 °C",
+   "LIC-108 alarms LO 20 / HI 80 %",
+   "LIC-108 HI alarm 80 %",
+   "LIC-109 LO alarm 20 %",
+   "spare P-7B",
+   "FIC-111 LO alarm 24.5 kg/h",
+   "AI-103 LO alarm 198.9 °C",
+   "manual bypass BYP-111",
+   "FIC-112 LO alarm 18.2 kg/h",
+   "manual bypass BYP-112",
+   "FIC-102 flow indication only",
+   "no rundown temperature alarm",
+   "Steam traps (typical)",
+   "product sampling",
+   "PV-102B to flare (FO)",
+   "PSV-102 set 350 kPa g to flare",
+   "PIC-102 LO alarm 5 kPa g",
+   "TI-1015 HI alarm 51.7 °C",
+   "FI-119 HI alarm 100 Nm³/h",
+   "FIC-101 LO alarm 60.9 m³/h",
+   "AI-101 HI alarm 215.6 °C",
+   "LIC-101 HI alarm 80 %",
+   "spare P-6B",
+   "LIC-102 HI alarm 80 %",
+   "LIC-102 LO alarm 20 %",
+   "Closed drains (assumed)",
+   "personal H₂S monitors",
+   "FI-155 LO alarm 100 Nm³/h",
+   "PV-102B to flare",
+   "Boot water sampling (assumed)",
+   "EMS sequence: light-off only from PURGED after 120 s with all permissives",
+   "10 s trial then EMS trip “flame failure on light-off”",
+   "reset and purge needed",
+   "EMS oil permissive PDC-111 ≥ 150 kPa",
+   "firing on gas first",
+   "Purge permissive: both passes ≥ 40 m³/h or HS-105A",
+   "bypass alarm",
+   "Shutdown procedure",
+   "TI-1007A/B indication",
+   "Dewatering at low temperature",
+   "slow warm-up",
+   "Permit-to-work",
+   "Alarm priorities",
+   "first-out display of the EMS",
+   "FIC-114 LO alarm 15.4 (crude feed)",
+   "FIC-114 HI alarm 295 (crude feed)",
+   "FIC-105A LO alarm 51.3 (pass A crude)",
+   "FIC-105A HI alarm 155.4 (pass A crude)",
+   "FIC-105B LO alarm 51.3 (pass B crude)",
+   "FIC-105B HI alarm 155.4 (pass B crude)",
+   "FIC-129 HI alarm 296 (crude through E-1)",
+   "FIC-130 HI alarm 159 (e-1 bypass)",
+   "PIC-108 LO alarm 551.6 (desalter pressure)",
+   "PIC-108 HI alarm 1310 (desalter pressure)",
+   "LIC-103 LO alarm 10 (v-3 interface level)",
+   "LIC-103 HI alarm 25 (v-3 interface level)",
+   "LIC-161 LO alarm 10 (s-1 interface level)",
+   "LIC-161 HI alarm 25 (s-1 interface level)",
+   "FIC-132 HI alarm 199 (crude to S-1)",
+   "TI-170 LO alarm 38.3 (crude from storage)",
+   "TI-171 LO alarm 102.2 (crude out of E-1)",
+   "TI-180 LO alarm 98.9 (desalter inlet)",
+   "TI-180 HI alarm 260 (desalter inlet)",
+   "TI-1010 LO alarm 93.3 (desalter outlet)",
+   "TI-1010 HI alarm 260 (desalter outlet)",
+   "TI-184 LO alarm 182.8 (crude out of E-4)",
+   "TI-184 HI alarm 260 (crude out of E-4)",
+   "TI-185 LO alarm 193.1 (crude out of E-5)",
+   "TI-185 HI alarm 260 (crude out of E-5)",
+   "TIC-101 LO alarm 378 (heater outlet)",
+   "TIC-101 HI alarm 395 (heater outlet)",
+   "TI-1007A HI alarm 393 (pass A outlet)",
+   "TI-1007B HI alarm 393 (pass B outlet)",
+   "FIC-106 HI alarm 4500 (fuel gas)",
+   "PIC-112 HI alarm 1000 (fuel oil pressure)",
+   "FIC-109 LO alarm 70 (bottom stripping steam)",
+   "FIC-109 HI alarm 6520 (bottom stripping steam)",
+   "LIC-107 LO alarm 20 (v-1 bottoms level)",
+   "LIC-107 HI alarm 80 (v-1 bottoms level)",
+   "FIC-1102 LO alarm 46.7 (atmospheric residue)",
+   "FIC-1102 HI alarm 165.8 (atmospheric residue)",
+   "FIC-104 LO alarm 63.8 (mid pumparound)",
+   "FIC-104 HI alarm 195 (mid pumparound)",
+   "FIC-108 LO alarm 51.3 (bottom pumparound)",
+   "FIC-108 HI alarm 134.2 (bottom pumparound)",
+   "TIC-102 LO alarm 121.1 (tower top)",
+   "TIC-102 HI alarm 162.8 (tower top)",
+   "FIC-101 LO alarm 60.9 (top reflux)",
+   "FIC-101 HI alarm 151.8 (top reflux)",
+   "TI-1015 HI alarm 51.7 (reflux temperature)",
+   "TI-103 LO alarm 204.4 (diesel draw)",
+   "TI-103 HI alarm 260 (diesel draw)",
+   "TI-104 LO alarm 260 (aGO draw)",
+   "TI-104 HI alarm 348.9 (aGO draw)",
+   "LIC-108 LO alarm 20 (diesel stripper level)",
+   "LIC-108 HI alarm 80 (diesel stripper level)",
+   "LIC-109 LO alarm 20 (aGO stripper level)",
+   "LIC-109 HI alarm 80 (aGO stripper level)",
+   "FIC-111 LO alarm 24.5 (diesel stripper steam)",
+   "FIC-111 HI alarm 2453 (diesel stripper steam)",
+   "FIC-112 LO alarm 18.2 (aGO stripper steam)",
+   "FIC-112 HI alarm 480 (aGO stripper steam)",
+   "FIC-102 HI alarm 89 (diesel product)",
+   "FIC-113 HI alarm 42.6 (aGO product)",
+   "AI-102 LO alarm 293.3 (diesel 90 % point)",
+   "AI-102 HI alarm 315.6 (diesel 90 % point)",
+   "AI-103 LO alarm 198.9 (diesel 5 % point)",
+   "AI-103 HI alarm 221.1 (diesel 5 % point)",
+   "AI-104 LO alarm 315.6 (aGO 10 % point)",
+   "AI-104 HI alarm 337.8 (aGO 10 % point)",
+   "LIC-101 LO alarm 20 (reflux drum level)",
+   "LIC-101 HI alarm 80 (reflux drum level)",
+   "LIC-102 LO alarm 20 (sour water boot level)",
+   "LIC-102 HI alarm 80 (sour water boot level)",
+   "PIC-102 LO alarm 5 (reflux drum pressure)",
+   "PIC-102 HI alarm 30 (reflux drum pressure)",
+   "FIC-100 LO alarm 36.8 (naphtha to debutanizer)",
+   "FIC-100 HI alarm 128 (naphtha to debutanizer)",
+   "AI-100 LO alarm 39.2 (naphtha IBP)",
+   "AI-100 HI alarm 51.7 (naphtha IBP)",
+   "AI-101 LO alarm 193.3 (naphtha end point)",
+   "AI-101 HI alarm 215.6 (naphtha end point)",
+   "FI-119 HI alarm 100 (off-gas to flare)",
+   "FI-155 LO alarm 100 (off-gas to compressor)",
+   "DP-V1 HI alarm 45 (tower ΔP high (flooding))"
+  ],
+  "recs": [
+   "Add a low-flow alarm on P-1A/B discharge and auto-start of the standby pump; at present loss of a charge pump is seen only on FIC-114.",
+   "Train every panel operator on the dynamic-check scenarios of this study in the OTS and record the response times.",
+   "Make FSL-105A/B independent of the control transmitters FT-105A/B (separate flow elements, or 2oo3 voting).",
+   "Confirm thermal relief on every exchanger side that can be blocked in while the other side is hot (E-1 … E-14, E-15 … E-8/E-18); add to the relief study.",
+   "Overhead corrosion control: boot-water pH and chloride monitoring, neutraliser and inhibitor injection, exchanger tube-leak sampling.",
+   "Water management: drain condensate from steam lines before use, steam traps at low points, dewater crude tanks; procedure for water in a hot column."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Minor",
+    "First aid",
+    "< 0.1 MTHB",
+    "Spill inside the bund"
+   ],
+   [
+    2,
+    "Moderate",
+    "Medical treatment",
+    "0.1–1 MTHB",
+    "Small reportable release"
+   ],
+   [
+    3,
+    "Serious",
+    "Lost-time injury",
+    "1–10 MTHB",
+    "Release beyond the unit, short term"
+   ],
+   [
+    4,
+    "Major",
+    "Single fatality or permanent disability",
+    "10–100 MTHB, shutdown > 1 week",
+    "Major release, clean-up needed"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "> 100 MTHB",
+    "Off-site impact"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the life of the unit",
+    "< 1e-4 /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Could happen once in the life of the industry's units",
+    "1e-4 – 1e-3 /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Could happen in the life of this unit",
+    "1e-3 – 1e-2 /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Expected a few times in the life of this unit",
+    "1e-2 – 1e-1 /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Expected about once a year or more",
+    "> 1e-1 /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1",
+   "2": "0.1",
+   "3": "0.01",
+   "4": "0.001",
+   "5": "0.0001"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 9,
+ "sgseq": 21,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}
