@@ -3250,7 +3250,7 @@ svg .hot.on rect,svg .hot.on circle{stroke:var(--red); stroke-width:3}
       <div class="hs-panel" id="p3fp"></div>
     </div>
   </div>
-  <p class="simsum">These are <b>open findings</b>, not errors to erase: each goes to the document owner as a query.</p>
+  <p class="simsum">F1<p class="simsum">These are <b>open findings</b>, not errors to erase: each goes to the document owner as a query.</p>ndash;F4 are <b>open findings</b>, not errors to erase: each goes to the document owner as a query.</p>
 </section>
 
 <section class="slide" data-title="Part 3 summary">
@@ -3259,7 +3259,7 @@ svg .hot.on rect,svg .hot.on circle{stroke:var(--red); stroke-width:3}
     <li>BFD: blocks and balances. PFD: <b>equipment, numbered streams, control valves</b>. P&amp;ID: everything built.</li>
     <li>Eight BFD streams become <b>ten</b>: the demulsifier splits, the steam becomes a utility.</li>
     <li>Five valves define the process; loops, trips and relief wait for the <b>P&amp;ID</b>.</li>
-    <li>Five findings stay <b>open</b> until the owners answer.</li>
+    <li>Four findings stay <b>open</b> until the owners answer; F5 is closed.</li>
   </ul>
 </section>
 
@@ -4052,7 +4052,7 @@ tex($id('p2s1b'), `$\\dot m_1=${nf((P0.Qo * P0.rO + P0.Qw * P0.rW) / 1000, 2)}+3
     ['98 40 118 70', () => { ring(L.g, 110, 92, 6.5); box(L.g, 144, 77.5, 72, 27.5); },
       `<h3>F4 &middot; design temperature</h3><p>The equipment list gives V-101 <b>80 &deg;C</b>; the LP steam condenses at <b>148 &deg;C</b>.</p><p style="margin-top:6px">Query EQ-EP-2: at low flow E-101 can heat beyond 80 &deg;C. Raise the design temperature or add protection.</p>`],
     ['6 50 140 80', () => { ring(L.g, 27, 92, 4); ring(L.g, 110, 66, 4); },
-      `<h3>F5 &middot; named but not drawn</h3><p>The BFD tab says the choke block becomes <b>SDV-101 + HV-100</b> and the heater gains <b>TV-102</b>.</p><p style="margin-top:6px">SEP-PFD-101 draws neither. Decide which document changes.</p>`] ];
+      `<h3>F5 &middot; closed: what the PFD leaves out</h3><p>SEP-PFD-101 draws <b>HV-100</b> but not <b>SDV-101</b> or the steam valve <b>TV-102</b>.</p><p style="margin-top:6px">The BFD tab text was corrected to match: shutdown and utility valves first appear on the P&amp;ID.</p>`] ];
   zoomWrap('p3fd');
   chips('p3fc', v => { const f = F[+v]; L.clear(); svg.setAttribute('viewBox', f[0]); f[1](); $id('p3fp').innerHTML = f[2]; });
 })();
