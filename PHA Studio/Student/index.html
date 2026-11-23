@@ -26,7 +26,7 @@ h1{margin:0 0 16px;font-size:48px;line-height:1.1;font-weight:700;letter-spacing
 .steps .n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--soft);color:var(--navy);font-weight:700;display:flex;align-items:center;justify-content:center}
 .steps li:first-child .n{background:#E3F1E8;color:var(--green)}
 .steps b{display:block;font-weight:600;margin-bottom:4px}.steps small{display:block;font-size:14px;line-height:1.5;color:var(--muted)}
-main{padding-top:40px;padding-bottom:64px}
+main{padding-top:44px;padding-bottom:64px}
 .tools{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-bottom:20px}
 h2{margin:0 0 4px;font-size:24px}.count{margin:0;font-size:14px;color:var(--muted)}
 .ctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
@@ -50,6 +50,13 @@ a.sec:hover{background:#E8ECF2}.sec.none{border-style:dashed;border-color:#D5DAE
 .foot{display:flex;flex-wrap:wrap;gap:4px 14px;padding-top:12px;border-top:1px solid #EEF0F3;font-size:13px;margin-top:auto}.foot a{text-decoration:none}.foot a:hover{text-decoration:underline}
 .empty{margin-top:16px;padding:40px 24px;text-align:center;background:#fff;border:1px dashed var(--line2);border-radius:14px;color:var(--muted)}
 footer{border-top:1px solid var(--line);background:#fff}footer .wrap{padding-top:24px;padding-bottom:56px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:13px;color:var(--muted)}
+.open{margin-top:28px}.obox{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--green);border-radius:14px;padding:22px 24px;display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center}
+.otxt{flex:999 1 420px;min-width:0}.otxt h2{margin:6px 0 6px}.otxt p{margin:0;font-size:14px;line-height:1.6;color:var(--muted)}
+.badge{display:inline-block;font-size:12px;font-weight:600;color:var(--green);background:#E3F1E8;border-radius:999px;padding:2px 10px}
+.oact{flex:1 1 300px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.obtn{display:flex;flex-direction:column;gap:2px;justify-content:center;min-height:64px;padding:10px 14px;border:1px solid var(--line2);border-radius:10px;text-decoration:none;color:var(--navy)}.obtn b{font-size:15px}.obtn span{font-size:12.5px;color:var(--muted)}
+.obtn.pri{background:var(--navy);border-color:var(--navy);color:#fff!important}.obtn.pri span{color:var(--hi)}.obtn:hover{filter:brightness(.95)}a.obtn:not(.pri):hover{background:#E8ECF2}
+.oguide{grid-column:1/-1;font-size:14px;font-weight:600;text-decoration:none;color:var(--green)!important}.oguide:hover{text-decoration:underline}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 @media (max-width:600px){.wrap,.steps{padding-left:16px;padding-right:16px}h1{font-size:36px}.lead{font-size:16px}.search,.search input{width:100%}.ctrl{width:100%}.grid{grid-template-columns:1fr}}
 </style></head><body>
@@ -73,6 +80,14 @@ footer{border-top:1px solid var(--line);background:#fff}footer .wrap{padding-top
 <li><span class="n">2</span><div><b>ทำโหนดที่เหลือเอง</b><small>ใช้ Simple สำหรับ workshop ในห้อง หรือ Full สำหรับ LOPA เต็มรูปแบบ</small></div></li>
 <li><span class="n">3</span><div><b>บันทึกและส่งงาน</b><small>File → Save ได้ไฟล์ .json หรือส่งออกเป็น Excel และรายงาน</small></div></li>
 </ol>
+
+<section class="wrap open" aria-labelledby="openT">
+<div class="obox"><div class="otxt"><span class="badge">ใหม่</span><h2 id="openT">ใช้กับกระบวนการของคุณเอง</h2>
+<p>เปิด PHA Studio แบบเปล่า ตั้งโหนดของกระบวนการเองได้ (เพิ่ม แก้ชื่อ ลบ) แล้วทำ HAZOP และ LOPA ได้ครบเหมือนหน่วยใน OTS ระหว่างทำกดปุ่ม <b>Guideline</b> ในโปรแกรม เพื่อเปิดดูโหนดตัวอย่างที่ทำเสร็จแล้วจาก OTS ทั้ง 21 หน่วย หรือโหลดเข้ามาเทียบเป็นโหนด EX ก็ได้</p></div>
+<div class="oact"><a class="obtn pri" href="Open%20Process/hazop-studio.html"><b>Workshop</b><span>ฉบับ Simple สำหรับทำเป็นกลุ่มในห้อง</span></a>
+<a class="obtn" href="Open%20Process/pha-studio-full.html"><b>Full · LOPA</b><span>ฉบับเต็ม มี LOPA และรายงาน</span></a>
+<a class="oguide" href="Open%20Process/hazop-studio.html?guide">เปิดพร้อม Guideline ตัวอย่าง →</a></div></div>
+</section>
 
 <main class="wrap">
 <div class="tools">
