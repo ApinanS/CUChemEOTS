@@ -1,0 +1,969 @@
+{
+ "v": 2,
+ "unit": "R-101",
+ "meta": {
+  "title": "HAZOP and LOPA of the R-101 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "R-101",
+  "pid": "",
+  "scope": "From the demineralised-water, PVA, VCM and initiator charges into R-101, through the reaction with its jacket loop, baffles and reflux condenser E-101, to the short-stop, relief, degassing to VCM recovery and discharge to D-102, including utilities (cooling water, LP steam, N₂, instrument air, electrical power) and the batch procedures.",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Nitrogen, instrument air and power are available at start-up. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Guides the team through nodes, parameters and guide words; keeps to the method; not from the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every deviation (full recording) in the worksheet",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, the batch recipe, the heat balance and the kinetics",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the batch is really run: charging, initiation, end point, degassing, opening the reactor",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Alarms, trips, fail positions, the C&E and the SIS",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety engineer",
+   "name": "",
+   "duty": "Risk matrix, relief and runaway cases, follow-up to LOPA",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Polymerisation chemist (initiators, short-stop), mechanical (vessel, agitator), electrical (essential power)",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID PVC-PID-001 and PVC-PID-002",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, valves, relief"
+  },
+  {
+   "ref": "PFD-100 and HMB PVC-V1-PE-HMB-001",
+   "where": "Process / PFD / Process engineering tabs",
+   "use": "Design intent, recipe, flows, duties"
+  },
+  {
+   "ref": "C&E PVC-V1-IN-CE-001",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects"
+  },
+  {
+   "ref": "Instrument list PVC-V1-IN-INL-001",
+   "where": "Instrumentation & control tab",
+   "use": "Tags, ranges, fail positions"
+  },
+  {
+   "ref": "Relief load basis PVC-V1-PE-RLB-001",
+   "where": "Relief & vent tab",
+   "use": "PSV-100 set pressure and governing case"
+  },
+  {
+   "ref": "Equipment list PVC-V1-ME-EQL-001",
+   "where": "Mechanical tab",
+   "use": "Design pressures and temperatures"
+  },
+  {
+   "ref": "HAZOP report PVC-V1-SA-HZP-001",
+   "where": "HAZOP tab",
+   "use": "The team's study (reference)"
+  },
+  {
+   "ref": "SRS of SIF, LOPA",
+   "where": "SRS of SIF / LOPA tabs",
+   "use": "SIL targets, trips, independence"
+  },
+  {
+   "ref": "Operating procedures (SOP)",
+   "where": "SOP / Exercises tabs",
+   "use": "Start-up, end of batch, ESD, runaway response"
+  },
+  {
+   "ref": "Dynamic model",
+   "where": "this OTS (DCS console)",
+   "use": "Deviation runs with the safeguards active"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No water reaches R-101",
+    "causes": "XV-101 or FV-101 fails closed\ndemineralised-water supply lost\nFQI-101 preset left at zero",
+    "events": "",
+    "grp": [],
+    "cons": "Batch cannot start; cycle time lost (operability only)",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003"
+    ],
+    "S": "1",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "Too much water charged",
+    "causes": "FQI-101 preset entered too high\ntotaliser miscounts\nXV-101 fails to close at the preset",
+    "events": "",
+    "grp": [],
+    "cons": "Reactor overfilled: after VCM and heating the vapour space vanishes, liquid reaches E-101 and the vessel can go liquid-full → hydraulic overpressure",
+    "cat": "PER",
+    "sg": [
+     "S004",
+     "S005",
+     "S006",
+     "S007"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R01",
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less water than the recipe",
+    "causes": "FQI-101 preset low\nheader pressure low and the charge stopped early",
+    "events": "",
+    "grp": [],
+    "cons": "Higher solids and viscosity, lower jacket heat transfer, hotter batch, more lumps",
+    "cat": "PER",
+    "sg": [
+     "S008",
+     "S009",
+     "S010"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Charge water hotter than 55 °C",
+    "causes": "Demineralised-water heater controller fault",
+    "events": "",
+    "grp": [],
+    "cons": "VCM flashes when charged, pressure rises early; heat-up faster (small effect)",
+    "cat": "PER",
+    "sg": [
+     "S011",
+     "S012"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Temperature",
+    "gw": "LESS",
+    "dev": "Charge water cold",
+    "causes": "Heater out of service",
+    "events": "",
+    "grp": [],
+    "cons": "Longer heat-up on LP steam (operability)",
+    "cat": "PER",
+    "sg": [
+     "S013",
+     "S014"
+    ],
+    "S": "1",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Composition",
+    "gw": "PART OF",
+    "dev": "Only part of the PVA reaches the reactor",
+    "causes": "HV-107 opened late or not at all\nPVA pot not refilled\nwrong concentration",
+    "events": "",
+    "grp": [],
+    "cons": "Unstable suspension: droplets coalesce, lumps grow, agitator power and wall fouling rise, jacket U falls; bottom valve may block at discharge",
+    "cat": "PER",
+    "sg": [
+     "S015",
+     "S016"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R04",
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Dissolved oxygen or air with the charge",
+    "causes": "Water not de-aerated\nair drawn in through the charge line",
+    "events": "",
+    "grp": [],
+    "cons": "Induction period (oxygen inhibits), inerts that later blanket E-101, polyperoxide formation",
+    "cat": "PER",
+    "sg": [
+     "S017",
+     "S018"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Composition",
+    "gw": "OTHER THAN",
+    "dev": "Wrong water quality",
+    "causes": "Raw or softened water instead of demineralised\niron or chloride carry-over",
+    "events": "",
+    "grp": [],
+    "cons": "Fouling and off-colour PVC, porosity out of specification (quality)",
+    "cat": "PER",
+    "sg": [
+     "S019"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Reactor contents back into the water header",
+    "causes": "XV-101 and FV-101 passing while R-101 runs at 8.6 bar g, above the header pressure",
+    "events": "",
+    "grp": [],
+    "cons": "VCM enters the demineralised-water system and is released at other users (exposure, fire)",
+    "cat": "PER",
+    "sg": [
+     "S020",
+     "S021"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": [],
+  "N10": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FQI-101 totaliser",
+   "tag": "FQI-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "batch sequence shows the charge step",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "VCM charge blocked until water ≥ 95 % of preset",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "LSHH-100 94 %, 5 s → charge valves and injection closed",
+   "tag": "LSHH-100",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "LIC-100 HI 88 % / LO 74 %",
+   "tag": "LIC-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "water charge refused above 85 % level",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "PSV-100 set 15 bar g to dump tank D-103 (vessel design 15.2 bar g / 93 °C)",
+   "tag": "PSV-100",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "VCM charge permissive (water ≥ 95 % of preset)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "LIC-100 LO alarm",
+   "tag": "LIC-100",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "JI-100 HI alarm",
+   "tag": "JI-100",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "PI-100 and TI-100 indication",
+   "tag": "PI-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "operator",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "TI-100 indication",
+   "tag": "TI-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "heat-up step in the procedure",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "Start-up procedure step (PVA ≥ 95 % of recipe)",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "JI-100 LO 150 kW / HI 420 kW",
+   "tag": "JI-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "VCM charge permissive: PI-100 below water vapour pressure + 0.15 bar a (reactor evacuated)",
+   "tag": "PI-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "TI-132 LO 46 °C (inerts at the E-101 top)",
+   "tag": "TI-132",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "Laboratory checks of the demineralised water",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "XV-101 and FV-101 both fail closed and closed by the sequence/SIS",
+   "tag": "XV-101",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S021",
+   "text": "header pressure alarm (utility)",
+   "tag": "",
+   "type": "Alarm",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Confirm LSHH-100 uses its own level sensor (not LT-100) and add a check of LIC-100 against the load cells WI-100.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Vacuum-hold test (pressure rise over 5 min) before the VCM charge; oxygen check of recovered VCM before re-use.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Recipe presets (FQI-101, FQI-102, initiator) downloaded from a recipe system and checked by a second person before the charge.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Measure the PVA charge (flow totaliser or TK-107 load cell) and make it a VCM-charge permissive.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Check valves plus the FC charge valves on every line into R-101 (water, VCM, initiator); confirm back-flow protection because R-101 runs above the water header and the storage pressure.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "XV-101 or FV-101 fails closed",
+   "demineralised-water supply lost",
+   "FQI-101 preset left at zero",
+   "FQI-101 preset entered too high",
+   "totaliser miscounts",
+   "XV-101 fails to close at the preset",
+   "FQI-101 preset low",
+   "header pressure low and the charge stopped early",
+   "Demineralised-water heater controller fault",
+   "Heater out of service",
+   "HV-107 opened late or not at all",
+   "PVA pot not refilled",
+   "wrong concentration",
+   "Water not de-aerated",
+   "air drawn in through the charge line",
+   "Raw or softened water instead of demineralised",
+   "iron or chloride carry-over",
+   "XV-101 and FV-101 passing while R-101 runs at 8.6 bar g, above the header pressure"
+  ],
+  "cons": [
+   "Batch cannot start",
+   "cycle time lost (operability only)",
+   "Reactor overfilled: after VCM and heating the vapour space vanishes, liquid reaches E-101 and the vessel can go liquid-full → hydraulic overpressure",
+   "Higher solids and viscosity, lower jacket heat transfer, hotter batch, more lumps",
+   "VCM flashes when charged, pressure rises early",
+   "heat-up faster (small effect)",
+   "Longer heat-up on LP steam (operability)",
+   "Unstable suspension: droplets coalesce, lumps grow, agitator power and wall fouling rise, jacket U falls",
+   "bottom valve may block at discharge",
+   "Induction period (oxygen inhibits), inerts that later blanket E-101, polyperoxide formation",
+   "Fouling and off-colour PVC, porosity out of specification (quality)",
+   "VCM enters the demineralised-water system and is released at other users (exposure, fire)"
+  ],
+  "safe": [
+   "FQI-101 totaliser",
+   "batch sequence shows the charge step",
+   "VCM charge blocked until water ≥ 95 % of preset",
+   "LSHH-100 94 %, 5 s → charge valves and injection closed",
+   "LIC-100 HI 88 % / LO 74 %",
+   "water charge refused above 85 % level",
+   "PSV-100 set 15 bar g to dump tank D-103 (vessel design 15.2 bar g / 93 °C)",
+   "VCM charge permissive (water ≥ 95 % of preset)",
+   "LIC-100 LO alarm",
+   "JI-100 HI alarm",
+   "PI-100 and TI-100 indication",
+   "TI-100 indication",
+   "heat-up step in the procedure",
+   "Start-up procedure step (PVA ≥ 95 % of recipe)",
+   "JI-100 LO 150 kW / HI 420 kW",
+   "VCM charge permissive: PI-100 below water vapour pressure + 0.15 bar a (reactor evacuated)",
+   "TI-132 LO 46 °C (inerts at the E-101 top)",
+   "Laboratory checks of the demineralised water",
+   "XV-101 and FV-101 both fail closed and closed by the sequence/SIS",
+   "header pressure alarm (utility)",
+   "Charge refused with the missing permissive named",
+   "VCM charge refused with XV-109 open",
+   "Operator stops P-103 after the charge",
+   "XV-102 fail closed (closed by any trip)",
+   "FV-102 fail closed",
+   "XV-102 closes at the preset (FQI-102)",
+   "XV-102 and FV-102 fail closed",
+   "Laboratory analysis of fresh VCM",
+   "VPC-130 moves E-101 water (FIC-130, FV-130 fail open) to hold TV-110B near 50 %",
+   "TIC-100 HI 58 °C / LO 56 °C",
+   "TI-101 HI 60 °C (independent TE-101)",
+   "TSHH-101 on TE-101 (independent of TE-100) at 63 °C, 10 s → short-stop XV-104, charges closed, TV-110B/FV-120/FV-130 forced open",
+   "PSHH-101 on PT-101 (independent of PT-100) at 12.5 bar g, 5 s → short-stop",
+   "XI-100 against the reference batch",
+   "heat-balance display",
+   "XI-100 stays at zero",
+   "Initiation permissive: FQI-102 ≥ 95 % and TI-100 ≥ 54 °C",
+   "TIC-110 HI 75 °C alarm while the initiator is in (first hour)",
+   "Chilled pot and store",
+   "small pot inventory",
+   "temperature indication at the store",
+   "XV-103 fail closed and closed after the 60-s dose",
+   "dosing pump positive displacement",
+   "TIC-100 → TIC-110 cascade, split range TV-110A steam (fail closed) / TV-110B CW (fail open)",
+   "PI-100 HI 11 bar g",
+   "HIC-135 inert vent",
+   "PI-101 (independent SIS transmitter) on the display",
+   "XI-100 conversion estimate",
+   "XS-101 agitator stopped while reacting, 15 s → short-stop",
+   "TIC-100 via more jacket CW and E-101 water",
+   "FIC-103 HI 8 m³/h",
+   "WI-100 load cells",
+   "VPC-130 anti-foam limit (12 m³/h per % XI-100)",
+   "XA-133 foam alarm",
+   "wall cleaning between batches",
+   "Agitator seal with barrier fluid (assumed)",
+   "XV-106 fail closed",
+   "ESD HS-001 closes the charges",
+   "FI-110 LO 300 m³/h",
+   "FSLL-110 jacket circulation below 120 m³/h while reacting, 30 s → short-stop",
+   "spare P-101B (manual start)",
+   "TIC-110 compensates with more CW",
+   "TIC-110 corrects with TV-110B",
+   "TV-110B position on the DCS",
+   "FIC-120 LO 15 m³/h",
+   "TI-120 HI 35 °C (CW supply)",
+   "TIC-100 master corrects",
+   "TI-111 comparison",
+   "Open overflow to CW return",
+   "LP steam pressure below the jacket design",
+   "FIC-120 opens FV-120",
+   "TI-121",
+   "TIC-100 corrects with the jacket",
+   "Cleaning between batches",
+   "TI-121 trend",
+   "TI-121 indication",
+   "VPC-130 moves E-101 water (FIC-130, FV-130 fail open) to hold TV-110B near 50 % (no effect when the water is blocked)",
+   "TI-131 HI 58 °C (E-101 CW return)",
+   "VPC-130 anti-foam limit",
+   "FI-135 indication",
+   "recovery operator",
+   "TV-110B on the DCS",
+   "Operator ESD HS-001",
+   "XV-104 proof test",
+   "Operator can inject again from a refilled pot",
+   "PSV-100",
+   "XS-101 agitator stopped while reacting, 15 s → short-stop (injects at once)",
+   "emergency vent XV-108",
+   "Independent trip transmitters",
+   "trip first-out display",
+   "D-103 catch tank",
+   "inspection of the relief line",
+   "TV-110B, FV-120, FV-130 fail open (full cooling)",
+   "charge valves fail closed",
+   "Administrative control only",
+   "Operator throttles HIC-105",
+   "FI-105 indication",
+   "Discharge interlock (PI-100 below 2.0 bar g)",
+   "Warning alarm \"XV-105 OPEN\" while reacting",
+   "XV-106 discharge blocked above 2.0 bar g and with the agitator stopped",
+   "D-102 level indication (local)",
+   "XV-105 closed by procedure below 2 bar g",
+   "End-of-batch procedure step (HV-141 closed)",
+   "XV-109 refused above 1.0 bar g",
+   "VCM permissive: water ≥ 95 % of preset",
+   "PD-100 END alarm",
+   "PI-101 comparison",
+   "PD-100 display",
+   "XI-100",
+   "Permit to work with gas test",
+   "respiratory protection",
+   "Confined-space permit",
+   "positive isolation and lock-out of M-101",
+   "standby person",
+   "Operator check against the recipe sheet"
+  ],
+  "recs": [
+   "Confirm LSHH-100 uses its own level sensor (not LT-100) and add a check of LIC-100 against the load cells WI-100.",
+   "Vacuum-hold test (pressure rise over 5 min) before the VCM charge; oxygen check of recovered VCM before re-use.",
+   "Recipe presets (FQI-101, FQI-102, initiator) downloaded from a recipe system and checked by a second person before the charge.",
+   "Measure the PVA charge (flow totaliser or TK-107 load cell) and make it a VCM-charge permissive.",
+   "Check valves plus the FC charge valves on every line into R-101 (water, VCM, initiator); confirm back-flow protection because R-101 runs above the water header and the storage pressure."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "Batch delayed < 1 day, no damage",
+    "No release"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid",
+    "Off-grade batch (K-value), minor repair",
+    "Small VCM release to the vent or recovery"
+   ],
+   [
+    3,
+    "Moderate",
+    "Medical treatment",
+    "Batch lost, reactor cleaning (lumps), days lost",
+    "Reportable VCM release on site"
+   ],
+   [
+    4,
+    "Major",
+    "Lost-time or serious injury",
+    "Major damage to R-101 or its jacket, weeks lost",
+    "VCM release off site, short term"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Fatality",
+    "Runaway, vessel rupture, VCM fire or explosion",
+    "Major off-site impact"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not known in the industry",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in the industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Has happened in the company / similar plants",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Expected once in the life of the unit",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Several times per year",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 9,
+ "sgseq": 21,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

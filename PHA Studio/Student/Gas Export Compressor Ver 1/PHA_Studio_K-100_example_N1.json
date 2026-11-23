@@ -1,0 +1,1073 @@
+{
+ "v": 2,
+ "unit": "K-100",
+ "meta": {
+  "title": "HAZOP and LOPA of the K-100 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "K-100",
+  "pid": "",
+  "scope": "From the production header (XV-001) through K-100, the coolers and ESDV-113 to the export pipeline and the onshore arrival, including GT-100 and its fuel gas, lube oil and seals, the cooling medium, blowdown and the flare.",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Nitrogen, instrument air and power are available at start-up. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Guides the team through nodes, parameters and guide words; keeps to the method; not from the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every deviation (full recording) in the worksheet",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, the heat and material balance, the compressor maps and the operating window",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative (control-room and outside operator)",
+   "name": "",
+   "duty": "How the unit is really run: start-up, loading, trips, restart, field rounds",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Loops, anti-surge control, the SIS (I-1, I-2), alarm and trip settings, fail positions",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Rotating-equipment engineer",
+   "name": "",
+   "duty": "K-100, GT-100, seals, lube oil, vibration and overspeed protection",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety engineer",
+   "name": "",
+   "duty": "Risk matrix, relief and blowdown, fire and gas, consequence of releases",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID KC-PID-100 rev B",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, valves, relief"
+  },
+  {
+   "ref": "PFD KC-PFD-100 and HMB KC-V1-PE-HMB-001",
+   "where": "PFD and Process engineering tabs",
+   "use": "Design intent, flows, conditions"
+  },
+  {
+   "ref": "C&E KC-V1-IN-CE-001",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects"
+  },
+  {
+   "ref": "SRS KC-V1-IN-SRS-001",
+   "where": "SRS of SIF tab",
+   "use": "The SIFs, their set points and response"
+  },
+  {
+   "ref": "Relief load basis KC-V1-PE-RLB-001",
+   "where": "Relief & vent tab",
+   "use": "PSVs, blowdown, flare"
+  },
+  {
+   "ref": "Equipment list KC-V1-ME-EQL-001",
+   "where": "Mechanical tab",
+   "use": "Design pressures and temperatures"
+  },
+  {
+   "ref": "Instrument list KC-V1-IN-INL-001",
+   "where": "Instrumentation & control tab",
+   "use": "Ranges, I/O, fail positions"
+  },
+  {
+   "ref": "Plot plan KC-V1-PI-LAY-001",
+   "where": "Layout & isometrics tab",
+   "use": "Positions, escape routes, ignition sources"
+  },
+  {
+   "ref": "HAZOP report KC-V1-SA-HZP-001",
+   "where": "HAZOP tab",
+   "use": "The reference study (instructor)"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP tab",
+   "use": "Start-up, shutdown, ESD, restart"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No production gas",
+    "causes": "Wells shut in by production control or by XV-001 (PSHH-001, ESD-2)\nHP separator trip upstream",
+    "events": "",
+    "grp": [],
+    "cons": "Suction pressure falls while K-100 runs: the machine slows to minimum speed and recycles; below the PSLL-101 setting it trips; export stops and the pipeline line-pack falls (sales lost).",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R09"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Production falls fast",
+    "causes": "Wells cut back (fault library: production falls by up to 55 %)\nwell work\nchoke change upstream",
+    "events": "",
+    "grp": [],
+    "cons": "K-100 turns down; both operating points move toward surge. If the anti-surge loops do not keep up the sections surge: flow reversal, thrust reversal, seal and bearing damage, possible gas release at the seals.",
+    "cat": "PER",
+    "sg": [
+     "S002",
+     "S004",
+     "S005",
+     "S006",
+     "S007"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R09",
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "Production above the design rate",
+    "causes": "New well on line (fault library: production rises by up to 15 %)\nwell test diverted to the header",
+    "events": "",
+    "grp": [],
+    "cons": "GT-100 reaches its power limit; suction pressure rises and PV-102 flares the excess; the discharge and the pipeline pack toward PSHH-112.",
+    "cat": "PER",
+    "sg": [
+     "S008",
+     "S001",
+     "S009",
+     "S010",
+     "S011"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Header overpressure when K-100 stops",
+    "causes": "K-100 trips (any I-1 cause) with PV-102 failing to open: PIC-102 left in MAN at a low output, PV-102 stuck, flare line blocked",
+    "events": "",
+    "grp": [],
+    "cons": "Full production into a closed 150 m³ header: the pressure climbs toward the wells' shut-in pressure (59 barg in the model) — far above the header rating; flange or vessel failure, large gas release on the module, fire or explosion. With PSHH-001 also failed the model header peaks at 36.5 barg with PSV-001 relieving.",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013",
+     "S014",
+     "S015"
+    ],
+    "S": "5",
+    "L": "2",
+    "recs": [
+     "R01",
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Pressure",
+    "gw": "LESS",
+    "dev": "Header pressure falls: gas to flare",
+    "causes": "PV-102 fails open (loss of air, fail-open design)\nPV-102 seat passing (fault library)\nPIC-102 set point entered too low",
+    "events": "",
+    "grp": [],
+    "cons": "Production gas burnt in the flare instead of exported (lost sales and CO₂); suction pressure falls, K-100 slows and can trip on PSLL-101.",
+    "cat": "PER",
+    "sg": [
+     "S016",
+     "S001",
+     "S003"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Production gas hotter than design",
+    "causes": "HP separator or upstream cooler upset",
+    "events": "",
+    "grp": [],
+    "cons": "Hotter suction: more polytropic head per bar, higher discharge temperatures and shaft power; toward the TSHH-104 setting and the GT limit.",
+    "cat": "PER",
+    "sg": [
+     "S017",
+     "S018",
+     "S019",
+     "S008"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Composition",
+    "gw": "OTHER THAN",
+    "dev": "Richer (heavier) gas",
+    "causes": "New well with heavier gas (fault library: MW 22.3 → 24.7)",
+    "events": "",
+    "grp": [],
+    "cons": "Lower speed of sound and more condensate in the coolers: higher V-102 level, liquids toward the fuel gas; the export gas can leave its hydrocarbon dew-point specification; volumetric meters read low.",
+    "cat": "PER",
+    "sg": [
+     "S020",
+     "S021",
+     "S022",
+     "S023"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Free water with CO₂-rich gas",
+    "causes": "Dehydration upset upstream (outside the scope)\nwater carried from the HP separator",
+    "events": "",
+    "grp": [],
+    "cons": "Wet CO₂ (12 mol %) corrodes carbon-steel header, coolers and pipeline; hydrates where the gas expands (HV-101, BDVs, PV-102).",
+    "cat": "PER",
+    "sg": [
+     "S024",
+     "S025",
+     "S026",
+     "S027"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Integrity",
+    "gw": "OTHER THAN",
+    "dev": "Leak from the header",
+    "causes": "Flange or small-bore failure, PSV-001 inlet, corrosion",
+    "events": "",
+    "grp": [],
+    "cons": "Gas release at about 30 barg on the compressor module: jet fire or explosion if ignited.",
+    "cat": "PER",
+    "sg": [
+     "S028",
+     "S025",
+     "S029"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R08"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": [],
+  "N10": [],
+  "N11": [],
+  "N12": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "PIC-101 LO 28.5 / HI 31.5 barg",
+   "tag": "PIC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "UIC-103 anti-surge (control line 10 % margin, fast opening below 5 %) → UV-103 cooled recycle, fail open",
+   "tag": "UIC-103",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "PSLL-101 at 20 barg for 5 s → I-1 (armed in RUN)",
+   "tag": "PSLL-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "UIC-108 anti-surge (control line 10 % margin, fast opening below 5 %) → UV-108 cooled recycle, fail open",
+   "tag": "UIC-108",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "UIC-103 margin LO 7 % and SURGE alarm",
+   "tag": "UIC-103",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "SURGE alarms UIC-103 / UIC-108 (flow reversal)",
+   "tag": "UIC-103",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "VSHH-105 at 90 µm for 3 s → I-1",
+   "tag": "VSHH-105",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "GT power-limit alarm (FV-100 ≥ 98 %)",
+   "tag": "FV-100",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "PIC-102 (SP 32 barg) → PV-102 to flare, fail open",
+   "tag": "PIC-102",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "PI-112 HI 126 barg",
+   "tag": "PI-112",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "PSHH-112 at 132 barg for 2 s → I-1",
+   "tag": "PSHH-112",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "PIC-102 HI 32.5 barg",
+   "tag": "PIC-102",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "Trip feed-forward: on I-1 PIC-102 output goes to ≥ 80 % (production flared at once)",
+   "tag": "PIC-102",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "PSHH-001 at 34.5 barg for 3 s → XV-001 shuts the wells",
+   "tag": "PSHH-001",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "PSV-001 set 36 barg on the production header → flare",
+   "tag": "PSV-001",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "FI-109 flare flow HI 5 t/h",
+   "tag": "FI-109",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "TI-101 indication",
+   "tag": "TI-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "TI-104 HI 125 °C",
+   "tag": "TI-104",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "TSHH-104 at 150 °C for 3 s → I-1",
+   "tag": "TSHH-104",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "AI-115 molar mass HI 23.5 kg/kmol",
+   "tag": "AI-115",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S021",
+   "text": "LIC-107 → LV-107 to closed drain (fail closed)",
+   "tag": "LIC-107",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S022",
+   "text": "LIC-107 LO 20 / HI 65 %",
+   "tag": "LIC-107",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S023",
+   "text": "LSHH-107 at 85 % for 3 s → I-1",
+   "tag": "LSHH-107",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S024",
+   "text": "Upstream dehydration (outside the scope",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S025",
+   "text": "assumed)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S026",
+   "text": "LIC-101 → LV-101 to closed drain (fail closed)",
+   "tag": "LIC-101",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S027",
+   "text": "LIC-101 LO 20 / HI 65 %",
+   "tag": "LIC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S028",
+   "text": "Fire and gas detection and ESD (not on KC-PID-100",
+   "tag": "PID-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S029",
+   "text": "Operator ESD-1 / ESD-2 on the SIS screen",
+   "tag": "",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Relief and flare study: confirm PSV-001 for the blocked-outlet case with the full production (K-100 tripped and PV-102 shut), and the flare header and tip for PV-102 at full production plus simultaneous blowdown (back-pressure on PSV-001 and the BDVs, radiation on the deck).",
+   "by": "Process / Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Specify the seat-leak class of PV-102 and test it at each shutdown; report flared gas as a loss figure (valued at the training gas price).",
+   "by": "Mechanical / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Give PSHH-001 its own pressure transmitter: today PT-001 serves the PI-001 indication, PIC-102 and PSHH-001.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Independent surge detection: surge counter that trips I-1 on repeated surge cycles (for example 3 in 30 s), with the cycles logged for the rotating-equipment engineer.",
+   "by": "Instrument / Rotating",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Export gas quality: hydrocarbon dew-point limit on TIC-111 and the export gas, and a response plan for an AI-115 high alarm (new wells).",
+   "by": "Process / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Corrosion management for wet CO₂ (12 mol %): water dew-point monitoring at the inlet, inhibitor, corrosion coupons in the header and the pipeline.",
+   "by": "Materials / Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Operating envelope for the operators: production that K-100 can take against ambient temperature and fuel-gas pressure (GT available power).",
+   "by": "Operations / Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R08",
+   "text": "Cover gas release, fire and gas detection and the ESD response of the compressor module in the fire-and-gas study (not on KC-PID-100).",
+   "by": "Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R09",
+   "text": "Feed-forward of the production flow FI-001 to UIC-103/UIC-108 (or rate-of-change limits) so a fast production cut does not drive the margins below the fast-opening line.",
+   "by": "Instrument / Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "Wells shut in by production control or by XV-001 (PSHH-001, ESD-2)",
+   "HP separator trip upstream",
+   "Wells cut back (fault library: production falls by up to 55 %)",
+   "well work",
+   "choke change upstream",
+   "New well on line (fault library: production rises by up to 15 %)",
+   "well test diverted to the header",
+   "K-100 trips (any I-1 cause) with PV-102 failing to open: PIC-102 left in MAN at a low output, PV-102 stuck, flare line blocked",
+   "PV-102 fails open (loss of air, fail-open design)",
+   "PV-102 seat passing (fault library)",
+   "PIC-102 set point entered too low",
+   "HP separator or upstream cooler upset",
+   "New well with heavier gas (fault library: MW 22.3 → 24.7)",
+   "Dehydration upset upstream (outside the scope)",
+   "water carried from the HP separator",
+   "Flange or small-bore failure, PSV-001 inlet, corrosion"
+  ],
+  "cons": [
+   "Suction pressure falls while K-100 runs: the machine slows to minimum speed and recycles",
+   "below the PSLL-101 setting it trips",
+   "export stops and the pipeline line-pack falls (sales lost).",
+   "K-100 turns down",
+   "both operating points move toward surge. If the anti-surge loops do not keep up the sections surge: flow reversal, thrust reversal, seal and bearing damage, possible gas release at the seals.",
+   "GT-100 reaches its power limit",
+   "suction pressure rises and PV-102 flares the excess",
+   "the discharge and the pipeline pack toward PSHH-112.",
+   "Full production into a closed 150 m³ header: the pressure climbs toward the wells' shut-in pressure (59 barg in the model) — far above the header rating",
+   "flange or vessel failure, large gas release on the module, fire or explosion. With PSHH-001 also failed the model header peaks at 36.5 barg with PSV-001 relieving.",
+   "Production gas burnt in the flare instead of exported (lost sales and CO₂)",
+   "suction pressure falls, K-100 slows and can trip on PSLL-101.",
+   "Hotter suction: more polytropic head per bar, higher discharge temperatures and shaft power",
+   "toward the TSHH-104 setting and the GT limit.",
+   "Lower speed of sound and more condensate in the coolers: higher V-102 level, liquids toward the fuel gas",
+   "the export gas can leave its hydrocarbon dew-point specification",
+   "volumetric meters read low.",
+   "Wet CO₂ (12 mol %) corrodes carbon-steel header, coolers and pipeline",
+   "hydrates where the gas expands (HV-101, BDVs, PV-102).",
+   "Gas release at about 30 barg on the compressor module: jet fire or explosion if ignited."
+  ],
+  "safe": [
+   "PIC-102 (SP 32 barg) → PV-102 to flare, fail open",
+   "Trip feed-forward: on I-1 PIC-102 output goes to ≥ 80 % (production flared at once)",
+   "PIC-102 HI 32.5 barg",
+   "FI-109 flare flow HI 5 t/h",
+   "PSHH-001 at 34.5 barg for 3 s → XV-001 shuts the wells",
+   "PSV-001 set 36 barg on the production header → flare",
+   "PIC-101 LO 28.5 / HI 31.5 barg",
+   "PSLL-101 at 20 barg for 5 s → I-1 (armed in RUN)",
+   "LIC-101 → LV-101 to closed drain (fail closed); LIC-101 LO 20 / HI 65 %",
+   "LSHH-101 at 85 % for 3 s → I-1",
+   "ESDV-101 shuts on I-1 and ESD",
+   "ESDV-101 open permissive: ΔP across the valve < 3 bar (pressurise with HV-101 first)",
+   "UIC-103 anti-surge (control line 10 % margin, fast opening below 5 %) → UV-103 cooled recycle, fail open",
+   "UIC-103 margin LO 7 % and SURGE alarm",
+   "UIC-108 anti-surge (control line 10 % margin, fast opening below 5 %) → UV-108 cooled recycle, fail open",
+   "UIC-108 margin LO 7 % and SURGE alarm",
+   "On I-1 UV-103 and UV-108 go to 100 % (trip opening)",
+   "TI-104 HI 125 °C",
+   "TSHH-104 at 150 °C for 3 s → I-1",
+   "TI-109 HI 130 °C",
+   "TSHH-109 at 150 °C for 3 s → I-1",
+   "VI-105 HI 60 µm",
+   "VSHH-105 at 90 µm for 3 s → I-1",
+   "VI-110 HI 60 µm",
+   "VSHH-110 at 90 µm for 3 s → I-1",
+   "Stonewall alarm (impeller throat Mach ≥ 0.95)",
+   "TIC-106 (SP 40 °C) → TV-106 fail open; TIC-106 LO 30 / HI 48 °C",
+   "TIC-111 (SP 45 °C) → TV-111 fail open; TIC-111 LO 30 / HI 55 °C",
+   "LIC-107 → LV-107 to closed drain (fail closed); LIC-107 LO 20 / HI 65 %",
+   "LSHH-107 at 85 % for 3 s → I-1",
+   "PI-112 HI 126 barg",
+   "PSHH-112 at 132 barg for 2 s → I-1",
+   "PSV-112 138 barg on the discharge (KC-PID-100 note 3: on hold, not drawn — not credited until installed)",
+   "PSV-107 80 barg on V-102 (KC-PID-100 note 3: on hold, not drawn — not credited until installed)",
+   "Check valve (NRV) upstream of ESDV-113",
+   "ESDV-113 shuts on I-1 and ESD",
+   "ESDV-113 SHUT alarm with the compressor running",
+   "FI-114 export LO 150 MMSCFD",
+   "PI-900 arrival pressure telemetry from the onshore terminal (indication only, no alarm)",
+   "AI-115 molar mass HI 23.5 kg/kmol",
+   "SIC-100 LO 72 / HI 104 %",
+   "SSHH-100 at 110 % for 0.5 s → I-1",
+   "GT-100 flame-out trips I-1; XV-100 shuts the fuel",
+   "GT power-limit alarm (FV-100 ≥ 98 %)",
+   "TI-100 exhaust HI 650 °C",
+   "FV-100 fuel valve fail closed; XV-100 fuel ESD valve",
+   "GT start permissives (SIS reset, PI-150 ≥ 2.0 barg, P-160 running, ESDV-101 open with suction ≥ 20 barg, UV-103/108 ≥ 90 %, scrubber levels < 60 %, BDVs closed) and the 30 s crank-purge before ignition",
+   "PI-150 LO 1.8 barg; P-150B auto-starts at 1.8 barg (selector AUTO)",
+   "PSLL-150 at 1.2 barg for 2 s → I-1",
+   "TI-151 bearing HI 95 °C",
+   "P-150B RUN alarm (main pump stopped)",
+   "P-160 STOP alarm with the unit running",
+   "TI-160 cooling-medium supply indication (no alarm)",
+   "ESD-2: BDV-101 and BDV-112 open to flare (fail open, RO 45 mm, choked), XV-001 shuts the wells",
+   "BDV OPEN alarm",
+   "HV-102 manual vent to flare (HIC-102)",
+   "Operator ESD-1 / ESD-2 on the SIS screen",
+   "Written procedures (Exercises tab: cold start-up, normal shutdown, ESD with blowdown, GT trip restart)",
+   "Suction side designed for 80 barg (KC-PID-100 note 3, TBC), above the settle-out pressure",
+   "SIS reset refused while a trip condition stands or the train still turns (> 5 %)",
+   "Flare header FL-100 and flare tip",
+   "SURGE alarms UIC-103 / UIC-108 (flow reversal)",
+   "Fire and gas detection and ESD (not on KC-PID-100; assumed)",
+   "Seal-gas panel with its own alarms (separate sheet, not modelled; assumed)",
+   "Closed-drain system (separate sheet; assumed)",
+   "TI-101 indication",
+   "LIC-107 → LV-107 to closed drain (fail closed)",
+   "LIC-107 LO 20 / HI 65 %",
+   "Upstream dehydration (outside the scope; assumed)",
+   "LIC-101 → LV-101 to closed drain (fail closed)",
+   "LIC-101 LO 20 / HI 65 %",
+   "PIC-101 LO 28.5 / HI 31.5 barg (same transmitter)",
+   "PSLL-101 at 20 barg for 5 s → I-1 (armed in RUN) (same transmitter)",
+   "HIC-101 output on the DCS",
+   "On I-1 UV-103 and UV-108 go to 100 % (trip opening) (fails with the stuck valve)",
+   "TIC-106 (SP 40 °C) → TV-106 fail open",
+   "TIC-106 LO 30 / HI 48 °C",
+   "GT-100 flame-out trips I-1",
+   "XV-100 shuts the fuel",
+   "TIC-111 (SP 45 °C) → TV-111 fail open",
+   "TIC-111 LO 30 / HI 55 °C",
+   "PI-114 / FI-114 indications",
+   "FV-100 fuel valve fail closed",
+   "XV-100 fuel ESD valve",
+   "PI-150 LO 1.8 barg",
+   "P-150B auto-starts at 1.8 barg (selector AUTO)",
+   "Oil sampling and reservoir vent (assumed)",
+   "Cooling-medium system design (separate sheet; assumed)",
+   "Flare lines LTCS, MDMT −46 °C (KC-PID-100 note 3, TBC)",
+   "HIC-102 output on the DCS",
+   "Flare knock-out drum (outside the scope; assumed)",
+   "Flare pilots (assumed)",
+   "Permit to work (assumed)",
+   "Operator response to the alarm",
+   "Written procedure (SOP) and checklist",
+   "Start-up permissives in the SIS",
+   "Field round by the outside operator",
+   "Gas detection and ESD from the fire-and-gas system",
+   "Fire protection and emergency response"
+  ],
+  "recs": [
+   "Relief and flare study: confirm PSV-001 for the blocked-outlet case with the full production (K-100 tripped and PV-102 shut), and the flare header and tip for PV-102 at full production plus simultaneous blowdown (back-pressure on PSV-001 and the BDVs, radiation on the deck).",
+   "Specify the seat-leak class of PV-102 and test it at each shutdown; report flared gas as a loss figure (valued at the training gas price).",
+   "Give PSHH-001 its own pressure transmitter: today PT-001 serves the PI-001 indication, PIC-102 and PSHH-001.",
+   "Independent surge detection: surge counter that trips I-1 on repeated surge cycles (for example 3 in 30 s), with the cycles logged for the rotating-equipment engineer.",
+   "Export gas quality: hydrocarbon dew-point limit on TIC-111 and the export gas, and a response plan for an AI-115 high alarm (new wells).",
+   "Corrosion management for wet CO₂ (12 mol %): water dew-point monitoring at the inlet, inhibitor, corrosion coupons in the header and the pipeline.",
+   "Operating envelope for the operators: production that K-100 can take against ambient temperature and fuel-gas pressure (GT available power).",
+   "Cover gas release, fire and gas detection and the ESD response of the compressor module in the fire-and-gas study (not on KC-PID-100).",
+   "Feed-forward of the production flow FI-001 to UIC-103/UIC-108 (or rate-of-change limits) so a fast production cut does not drive the margins below the fast-opening line."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "Production loss < 1 day, no damage",
+    "No release"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid",
+    "Flaring or reduced export for hours, minor repair",
+    "Small release, flared or vented"
+   ],
+   [
+    3,
+    "Moderate",
+    "Medical treatment",
+    "Repair of one item (seals, bearings), days of lost export",
+    "Reportable release on the platform"
+   ],
+   [
+    4,
+    "Major",
+    "Lost-time or serious injury",
+    "Major damage to K-100, GT-100 or a cooler; weeks lost",
+    "Release to sea or air, short term"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Fatality",
+    "Fire or explosion on the module; loss of the platform",
+    "Major release, pipeline or riser rupture"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not known in the industry",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in the industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Has happened in the company or on similar platforms",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Expected once in the life of the unit",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Several times per year",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 9,
+ "sgseq": 29,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

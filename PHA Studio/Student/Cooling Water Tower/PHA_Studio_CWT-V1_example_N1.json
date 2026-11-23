@@ -1,0 +1,871 @@
+{
+ "v": 2,
+ "unit": "cwt_v1",
+ "meta": {
+  "title": "HAZOP and LOPA of the CWT-V1 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "CWT-V1",
+  "pid": "",
+  "scope": "The cooling water system of the CWT-V1 OTS: from the CW return at the users' battery limit through FCV-201, the riser header, risers and the three induced-draft cells E-201/202/203 (fans P-212/213/214), the basin T-201 with make-up LCV-201, the circulating pumps P-215…P-218 and the supply header back to the battery limit, with the blowdown FV-222, the side-stream filter S-281 and backwash, the chemical dosing (acid, caustic, chlorine, biocide) and the utility connections at their valves (power, instrument air, city water).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The system is operated by trained staff at the design point (340 m³/h, return 49.2 °C, supply 32.3 °C at 27 °C wet bulb, basin 90 %). Power, instrument air and city water are available at start-up. The users' exchangers are lumped into one; their process side may be at the higher pressure. Trips LSLL-201 and VSHH-212/213/214 are proof-tested on the maintenance plan.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "Leader (independent)",
+   "name": "",
+   "duty": "Runs the method, keeps the pace and the scope; not from the design team so assumptions get challenged",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every row in the team's words while the team watches the screen (full recording)",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, the heat and mass balance CWT-V1-PE-HMB-001, the cell duty, approach and range",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations",
+   "name": "",
+   "duty": "How the system is really run: start-up, shutdown, cell line-up, backwash, chemical deliveries, what goes wrong on shift",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control",
+   "name": "",
+   "duty": "Loops FIC-201, LIC-201, AIC-202, fail positions, alarm limits, the trips LSLL-201 and VSHH-212/213/214 and their independence",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety / loss prevention",
+   "name": "",
+   "duty": "Consequence judgement, the risk matrix, the link to LOPA and SIL",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Water-treatment chemist, fan and gearbox specialist, electrical, the users' process engineers",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID CWT-V1-PID-001",
+   "where": "P&ID tab (Process & Design; also Operate); file CWT-V1-PID-001.pdf",
+   "use": "Node boundaries, tags, valves, trips, fail positions"
+  },
+  {
+   "ref": "PFD CWT-V1-PFD-001 and HMB CWT-V1-PE-HMB-001",
+   "where": "PFD tab; Process engineering tab (Engineering EPC)",
+   "use": "Design intent, flows, temperatures, pressures"
+  },
+  {
+   "ref": "Equipment list CWT-V1-ME-EQL-001",
+   "where": "Mechanical tab (Engineering EPC)",
+   "use": "Cells, fans, pumps, basin, filter, tanks"
+  },
+  {
+   "ref": "Relief basis CWT-V1-PE-RLB-001",
+   "where": "Process engineering tab",
+   "use": "Relief cases of the system"
+  },
+  {
+   "ref": "Instrument index CWT-V1-IN-INL-001 and C&E CWT-V1-IN-CE-001",
+   "where": "Instrument tab; C&E matrix tab (Safety)",
+   "use": "Alarm limits, trips LSLL-201, VSHH-212/213/214, ESD"
+  },
+  {
+   "ref": "Electrical load list CWT-V1-EE-LL-001",
+   "where": "Electrical tab",
+   "use": "Motors on each bus: what a power dip stops"
+  },
+  {
+   "ref": "HAZOP report CWT-V1-SA-HZP-001",
+   "where": "HAZOP tab",
+   "use": "The reference study of this unit (compare your study with it after the workshop)"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP tab (Operability) and the Operate group",
+   "use": "Start-up, shutdown, cell line-up, backwash, chemical delivery (node N9)"
+  },
+  {
+   "ref": "The simulator",
+   "where": "DCS console (Operate) and the ▶ OTS chips",
+   "use": "Run a deviation and see what the alarms and trips do"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No return flow",
+    "causes": "FCV-201 closed (FIC-201 in MAN at 0 % or a wrong set point)\nusers' isolation valves shut\nall circulating pumps stopped",
+    "events": "",
+    "grp": [],
+    "cons": "Users lose cooling: process outlets rise past 47 °C and the plant must cut rate; pumps running against a closed path heat up (deadhead)",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R01",
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less return flow than 340 m³/h",
+    "causes": "one circulating pump trips\nFCV-201 sticks\nrisers partly closed\nusers' valves throttled",
+    "events": "",
+    "grp": [],
+    "cons": "Return warmer, range larger, users' outlets warmer; TI-201 can pass 55 °C (salts deposit on hot surfaces)",
+    "cat": "PER",
+    "sg": [
+     "S004",
+     "S005",
+     "S006"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "More return flow than design",
+    "causes": "FIC-201 set point too high\nFCV-201 opens on instrument-air failure (fails open)\nfourth pump started",
+    "events": "",
+    "grp": [],
+    "cons": "More pump power; higher L/G on each cell so the supply warms a little; header pressures fall",
+    "cat": "PER",
+    "sg": [
+     "S007",
+     "S008"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Return temperature above 55 °C",
+    "causes": "users' heat load higher than design\ncirculation low\na users' cooler bypassed",
+    "events": "",
+    "grp": [],
+    "cons": "Scale and deposits in the users' hot tubes; more evaporation and drift; fill damage above about 55 °C (PVC fill)",
+    "cat": "PER",
+    "sg": [
+     "S006",
+     "S009"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Process fluid in the cooling water (users' tube leak)",
+    "causes": "tube or tube-sheet leak in a users' exchanger with the process side at higher pressure\ncorrosion",
+    "events": "",
+    "grp": [],
+    "cons": "Hydrocarbon carried to the cells and stripped by the fans: flammable vapour at the deck, cell fire; toxic process fluid in the drift; oil fouls the fill and the users",
+    "cat": "PER",
+    "sg": [
+     "S010",
+     "S011"
+    ],
+    "S": "5",
+    "L": "2",
+    "recs": [
+     "R04",
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example\nLOPA (worked example): values from the OTS LOPA tab, scenario L3, and teaching defaults. No existing layer is independent and able to stop the scenario: the FI-202 / FIC-201 comparison sees only an out-leak and the laboratory sample is too slow, so neither is credited. The OTS LOPA tab uses a TMEL of 1e-05 /y for severity 5; PHA Studio's teaching default is 1e-06 /y, so the gap is larger here. R04 (ASHH-201 hydrocarbon high-high stops the fans, SIL 1, PFD 0.1) closes the OTS-tab gap but not the PHA Studio one: the team must add a second layer or change the design (R05).",
+    "lopa": {
+     "on": true,
+     "ie": [
+      {
+       "d": "Tube leak in a users' cooler with the process side at the higher pressure (0.01 /yr screening value, OTS LOPA tab scenario L3)",
+       "f": "0.01"
+      }
+     ],
+     "en": [
+      {
+       "d": "Process side above the CW pressure (assumed design; R05 asks the team to check it)",
+       "p": "1"
+      }
+     ],
+     "cm": [
+      {
+       "d": "A flammable cloud reaches the fan deck (consequence screening: only a larger leak is flammable; LOPA tab L3)",
+       "p": "0.1"
+      },
+      {
+       "d": "Ignition by the fan motors or lights (not rated for a hazardous area, HAZID H16; assumed)",
+       "p": "0.5"
+      },
+      {
+       "d": "A person on the fan deck (rounds and maintenance; assumed)",
+       "p": "0.1"
+      }
+     ],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Return header pressure high",
+    "causes": "FCV-201 closed quickly with pumps running\nwater hammer after a restart",
+    "events": "",
+    "grp": [],
+    "cons": "Pressure surge on the users' exchangers and joints: leaks, a burst flexible joint",
+    "cat": "PER",
+    "sg": [
+     "S012"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Process fluid flows back into the CW return",
+    "causes": "CW pressure lost (all pumps stopped) while a users' exchanger tube leaks",
+    "events": "",
+    "grp": [],
+    "cons": "Process fluid fills part of the CW return: on restart it goes to the tower (as the AS WELL AS row)",
+    "cat": "PER",
+    "sg": [
+     "S013"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R04",
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FIC-201 LO alarm at 300 m³/h",
+   "tag": "FIC-201",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S002",
+   "text": "FI-202 LO alarm at 300 m³/h",
+   "tag": "FI-202",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S003",
+   "text": "TI-203 HI alarm at 47 °C",
+   "tag": "TI-203",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S004",
+   "text": "FIC-201 LO alarm",
+   "tag": "FIC-201",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S005",
+   "text": "spare pump P-218",
+   "tag": "P-218",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "TI-201 HI alarm at 55 °C",
+   "tag": "TI-201",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S007",
+   "text": "FIC-201 HI alarm at 390 m³/h",
+   "tag": "FIC-201",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S008",
+   "text": "PI-202 LO alarm at 300 kPa",
+   "tag": "PI-202",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S009",
+   "text": "telephone to the users",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "FI-202 against FIC-201 shows a water loss when the CW side leaks out (not an in-leak)",
+   "tag": "FI-202",
+   "type": "BPCS control",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S011",
+   "text": "laboratory samples",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "Pump curve limits the pressure to about 503 kPa g at shut-off",
+   "tag": "",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "Restart procedure: check the return for hydrocarbon before starting the fans",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Auto-start the spare circulating pump on low supply pressure (PI-202) and add an auto-restart sequence after a power dip; the users lose cooling within minutes when all pumps stop.",
+   "by": "Instrument / Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Agree with the users the time they can run without cooling water and their own trips; record it as the process safety time of loss of circulation (LOPA).",
+   "by": "Process / Users",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Keep TI-201 under 55 °C: limit the users' load or start the spare pump when TI-201 HI alarms; write it into the operating instructions.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Install a hydrocarbon (LEL or oil-in-water) monitor on the CW return with an alarm and a high-high trip of the fans (ASHH-201).",
+   "by": "Instrument / Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Review the area classification of the fan deck and the fan motors for a credible hydrocarbon in-leak; specify the exchangers so the process side is at the lower pressure where possible.",
+   "by": "Electrical / Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Restart the pumps slowly onto drained headers (one pump, FCV-201 partly closed) to avoid water hammer; consider a surge analysis.",
+   "by": "Process / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Before restarting the fans after a stop, sample the CW return for hydrocarbons.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "FCV-201 closed (FIC-201 in MAN at 0 % or a wrong set point)",
+   "users' isolation valves shut",
+   "all circulating pumps stopped",
+   "one circulating pump trips",
+   "FCV-201 sticks",
+   "risers partly closed",
+   "users' valves throttled",
+   "FIC-201 set point too high",
+   "FCV-201 opens on instrument-air failure (fails open)",
+   "fourth pump started",
+   "users' heat load higher than design",
+   "circulation low",
+   "a users' cooler bypassed",
+   "tube or tube-sheet leak in a users' exchanger with the process side at higher pressure",
+   "corrosion",
+   "FCV-201 closed quickly with pumps running",
+   "water hammer after a restart",
+   "CW pressure lost (all pumps stopped) while a users' exchanger tube leaks"
+  ],
+  "cons": [
+   "Users lose cooling: process outlets rise past 47 °C and the plant must cut rate",
+   "pumps running against a closed path heat up (deadhead)",
+   "Return warmer, range larger, users' outlets warmer",
+   "TI-201 can pass 55 °C (salts deposit on hot surfaces)",
+   "More pump power",
+   "higher L/G on each cell so the supply warms a little",
+   "header pressures fall",
+   "Scale and deposits in the users' hot tubes",
+   "more evaporation and drift",
+   "fill damage above about 55 °C (PVC fill)",
+   "Hydrocarbon carried to the cells and stripped by the fans: flammable vapour at the deck, cell fire",
+   "toxic process fluid in the drift",
+   "oil fouls the fill and the users",
+   "Pressure surge on the users' exchangers and joints: leaks, a burst flexible joint",
+   "Process fluid fills part of the CW return: on restart it goes to the tower (as the AS WELL AS row)"
+  ],
+  "safe": [
+   "FIC-201 LO alarm at 300 m³/h",
+   "FIC-201 HI alarm at 390 m³/h",
+   "FI-202 LO alarm at 300 m³/h",
+   "FI-202 HI alarm at 400 m³/h",
+   "LIC-201 LO alarm at 75 %",
+   "LIC-201 HI alarm at 97 %",
+   "TI-202 LO alarm at 28 °C",
+   "TI-202 HI alarm at 34 °C",
+   "TI-201 HI alarm at 55 °C",
+   "PI-202 LO alarm at 300 kPa g",
+   "PI-202 HI alarm at 440 kPa g",
+   "PDI-201 HI alarm at 35 kPa",
+   "AI-201 LO alarm at 7.5 pH",
+   "AI-201 HI alarm at 8.8 pH",
+   "AIC-202 LO alarm at 600 µS/cm",
+   "AIC-202 HI alarm at 1400 µS/cm",
+   "LI-201 LO alarm at 20 %",
+   "LI-201 HI alarm at 90 %",
+   "TI-203 LO alarm at 38 °C",
+   "TI-203 HI alarm at 47 °C",
+   "LSLL-201 basin low-low stops the circulating pumps (SIS)",
+   "VSHH-212 / 213 / 214 fan vibration high-high stops the fan (SIS)",
+   "HS-ESD operator emergency shutdown",
+   "SIS start permissive: basin ≥ 15 %",
+   "Spare circulating pump P-218 on stand-by",
+   "FCV-201 fails open (instrument air)",
+   "LCV-201 fails open (instrument air)",
+   "FV-222 fails closed (instrument air)",
+   "Basin overflow to the drain",
+   "Non-return valve on each pump discharge",
+   "Field round with the rounds sheet",
+   "Operator response to the alarm",
+   "Written procedure (SOP) and checklist",
+   "Permit to work, lock-out and isolation",
+   "Laboratory sampling of the CW (hydrocarbon, pH, chlorine, bacteria)",
+   "Telephone to the users",
+   "FIC-201 LO alarm",
+   "spare pump P-218",
+   "PI-202 LO alarm at 300 kPa",
+   "telephone to the users",
+   "FI-202 against FIC-201 shows a water loss when the CW side leaks out (not an in-leak)",
+   "laboratory samples",
+   "Pump curve limits the pressure to about 503 kPa g at shut-off",
+   "Restart procedure: check the return for hydrocarbon before starting the fans",
+   "Operating rule: take a whole cell out (fan off and riser closed together)",
+   "field check",
+   "PI-201 rises at the same flow",
+   "hand thermometer at each cell",
+   "TI-203 HI alarm",
+   "TI-202 HI alarm",
+   "spare cells normally in service",
+   "VSHH trip latches and alarms",
+   "None on the training P&ID (hydrocarbon detection recommended)",
+   "VI-21x HI",
+   "VSHH-212/213/214 trip each fan at 11 mm/s after 3 s (latched)",
+   "Hot-work permit with the fill wetted (procedure)",
+   "fire water",
+   "LSLL-201 trip (shares the LIC-201 signal in this simulator)",
+   "about 13 h of reserve",
+   "LIC-201 LO alarm",
+   "FI-206 indication",
+   "Laboratory analysis of the make-up (not continuous)",
+   "Laboratory checks of free chlorine and bacteria",
+   "louvres keep sunlight out",
+   "power-dip restart procedure",
+   "spare pump P-218 started by the operator",
+   "PI-202 HI alarm at 440 kPa",
+   "pump shut-off head about 503 kPa g",
+   "FI-202 LO alarm",
+   "minimum-flow protection not provided",
+   "Check valve on each discharge (assumed, typical practice)",
+   "FI-222 indication",
+   "Dosing procedure",
+   "laboratory turbidity",
+   "Backwash procedure (graded procedure TS-B)",
+   "PDI-201 HI alarm",
+   "AI-201 LO alarm at 7.5",
+   "dose-and-wait rule",
+   "AI-201 HI alarm at 8.8",
+   "Delivery supervised by an operator",
+   "Laboratory free-chlorine checks",
+   "Power-dip restart procedure",
+   "Fail positions chosen for the safe side",
+   "LIC-201 HI alarm",
+   "SIS permissive: basin ≥ 15 %",
+   "SIS permissive: a return path open",
+   "Reset blocked while vibration is above 7 mm/s (SIS)",
+   "Permit to work and motor lock-out",
+   "Shift handover checks"
+  ],
+  "recs": [
+   "Auto-start the spare circulating pump on low supply pressure (PI-202) and add an auto-restart sequence after a power dip; the users lose cooling within minutes when all pumps stop.",
+   "Agree with the users the time they can run without cooling water and their own trips; record it as the process safety time of loss of circulation (LOPA).",
+   "Keep TI-201 under 55 °C: limit the users' load or start the spare pump when TI-201 HI alarms; write it into the operating instructions.",
+   "Install a hydrocarbon (LEL or oil-in-water) monitor on the CW return with an alarm and a high-high trip of the fans (ASHH-201).",
+   "Review the area classification of the fan deck and the fan motors for a credible hydrocarbon in-leak; specify the exchangers so the process side is at the lower pressure where possible.",
+   "Restart the pumps slowly onto drained headers (one pump, FCV-201 partly closed) to avoid water hammer; consider a surge analysis.",
+   "Before restarting the fans after a stop, sample the CW return for hydrocarbons."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "Small off-spec batch, under 10 k$",
+    "No release beyond the unit"
+   ],
+   [
+    2,
+    "Minor",
+    "First-aid case",
+    "Short outage or contained spill, under 100 k$",
+    "Small spill or emission, contained"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "Unit down for days, under 1 M$",
+    "Reportable release"
+   ],
+   [
+    4,
+    "Major",
+    "Single fatality or permanent disability",
+    "Major equipment damage, under 10 M$",
+    "Off-site effect"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "Loss of the unit, over 10 M$",
+    "Major off-site impact"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the life of the industry",
+    "below 10⁻⁴ /y"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Heard of in the industry",
+    "10⁻⁴ – 10⁻³ /y"
+   ],
+   [
+    3,
+    "Possible",
+    "Has happened in the company",
+    "10⁻³ – 10⁻² /y"
+   ],
+   [
+    4,
+    "Likely",
+    "Once in the life of the unit",
+    "10⁻² – 10⁻¹ /y"
+   ],
+   [
+    5,
+    "Frequent",
+    "Several times in the life of the unit",
+    "above 10⁻¹ /y"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 7,
+ "sgseq": 13,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

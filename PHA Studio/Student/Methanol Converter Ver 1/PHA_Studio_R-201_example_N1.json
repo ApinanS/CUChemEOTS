@@ -1,0 +1,1015 @@
+{
+ "v": 2,
+ "unit": "R-201",
+ "meta": {
+  "title": "HAZOP and LOPA of the R-201 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "R-201",
+  "pid": "",
+  "scope": "From the make-up gas battery limit (XV-202) round the synthesis loop: C-201, E-202, E-201, E-204, R-201 with its quench, E-203, V-201, the purge PV-203, blowdown HV-205 and PSV-201 to the let-down of crude methanol by LV-204; including the utilities (instrument air, cooling water, start-up steam, power).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Nitrogen, instrument air and power are available at start-up. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Guides the team through nodes, parameters and guide words; keeps to the method; not from the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every deviation (full recording) in the worksheet",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, the heat and mass balance, the converter and the loop",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the loop is really run: start-up, catalyst reduction, the alarms the panel operator sees",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Alarms, trips, fail positions, the C&E matrix and SIS-201",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety engineer",
+   "name": "",
+   "duty": "Risk matrix, relief and fire cases (PSV-201, HV-205), follow-up to LOPA",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Catalyst supplier (reduction, ageing), machinery (C-201), materials (hydrogen service)",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID MEOH-PID-001 and MEOH-PID-002 rev A",
+   "where": "P&ID tab (EPC version)",
+   "use": "Node boundaries, tags, valves, relief"
+  },
+  {
+   "ref": "PFD-201 and HMB MEOH-V1-PE-HMB-001",
+   "where": "Process & Design tabs",
+   "use": "Design intent, flows, conditions"
+  },
+  {
+   "ref": "C&E matrix MEOH-V1-IN-CE-001",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects"
+  },
+  {
+   "ref": "Instrument list MEOH-V1-IN-INL-001",
+   "where": "Instrumentation & control tab",
+   "use": "Instrument tags and ranges"
+  },
+  {
+   "ref": "Relief-load summary MEOH-V1-PE-RLB-001",
+   "where": "Relief & vent tab",
+   "use": "PSV-201 set pressure and governing case; HV-205"
+  },
+  {
+   "ref": "Equipment list MEOH-V1-ME-EQL-001",
+   "where": "Mechanical tab",
+   "use": "Design pressures and temperatures"
+  },
+  {
+   "ref": "HAZOP report MEOH-V1-SA-HZP-001",
+   "where": "HAZOP tab",
+   "use": "The reference study of this OTS"
+  },
+  {
+   "ref": "SIS-201 logic, permissives, trips",
+   "where": "SIS tab",
+   "use": "Arming, reset, first-out"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "Exercises tab (procedures), SOP tab",
+   "use": "Start-up, shutdown, ESD, recovery"
+  },
+  {
+   "ref": "Dynamic model",
+   "where": "HAZOP tab part 9 and the DCS console",
+   "use": "Deviation runs with the safeguards active"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No make-up gas",
+    "causes": "Front-end syngas compressor trip\nXV-202 closed by a trip or spurious closure\nFV-202 fails closed (instrument air)",
+    "events": "",
+    "grp": [],
+    "cons": "Production stops; the loop keeps circulating and the beds cool until the reaction dies; loop pressure falls as the purge continues; restart needs the permissives",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "More make-up than the loop can convert",
+    "causes": "FIC-202 SP raised (production push)\nFT-202 reads low\nFV-202 opened in MAN",
+    "events": "",
+    "grp": [],
+    "cons": "More heat released in beds 1 and 2 → bed exits towards the catalyst limit; more purge and inerts",
+    "cat": "PER",
+    "sg": [
+     "S004",
+     "S005",
+     "S006",
+     "S007"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R01",
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less make-up",
+    "causes": "Front-end rate cut\nFV-202 sticking",
+    "events": "",
+    "grp": [],
+    "cons": "Lower production; beds cooler; purge falls",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002"
+    ],
+    "S": "1",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Composition",
+    "gw": "OTHER THAN",
+    "dev": "CO-rich make-up",
+    "causes": "Reformer or shift upset: CO up, CO₂ down",
+    "events": "",
+    "grp": [],
+    "cons": "Much more heat per kmol converted in beds 1 and 2: bed exits approach the trip; sintering; by-products",
+    "cat": "PER",
+    "sg": [
+     "S008",
+     "S005",
+     "S009",
+     "S010"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R03",
+     "R01"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Composition",
+    "gw": "OTHER THAN",
+    "dev": "CO₂-rich make-up",
+    "causes": "Reformer upset: CO down, CO₂ up",
+    "events": "",
+    "grp": [],
+    "cons": "Less reaction heat, more water in the crude, production falls",
+    "cat": "PER",
+    "sg": [
+     "S011",
+     "S002"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Methane slip (more inerts)",
+    "causes": "Reformer methane slip",
+    "events": "",
+    "grp": [],
+    "cons": "Inerts build up; lower reactant partial pressure; purge rises; production and carbon efficiency fall",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Poisons or metal carbonyls",
+    "causes": "Sulfur or chloride slip from the front end\nFe/Ni carbonyls from carbon steel in cold CO service",
+    "events": "",
+    "grp": [],
+    "cons": "Top of bed 1 loses activity; heat release moves down; faster ageing; wax and hot spots from Fe/Ni deposits",
+    "cat": "PER",
+    "sg": [
+     "S014",
+     "S015"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Loop pressure driven up by the make-up",
+    "causes": "Loop not consuming gas (reaction stopped) while make-up flows\nfront-end compressor at its maximum",
+    "events": "",
+    "grp": [],
+    "cons": "Loop pressure rises towards the make-up pressure 86 bar g: flange leaks, rupture if relief fails",
+    "cat": "PER",
+    "sg": [
+     "S016",
+     "S017",
+     "S018"
+    ],
+    "S": "5",
+    "L": "1",
+    "recs": [
+     "R02",
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Loop gas back into the front end",
+    "causes": "Front-end pressure falls below the loop with FV-202 open and XV-202 still open",
+    "events": "",
+    "grp": [],
+    "cons": "Loop depressures backwards; surge of the front-end compressor",
+    "cat": "PER",
+    "sg": [
+     "S019",
+     "S020"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r10",
+    "param": "Safety system",
+    "gw": "OTHER THAN",
+    "dev": "XV-202 fails to close on demand",
+    "causes": "Stuck valve, solenoid failure: one final element serves every trip",
+    "events": "",
+    "grp": [],
+    "cons": "Every trip that relies on stopping the make-up fails: runaway, overpressure or blow-by continue",
+    "cat": "PER",
+    "sg": [
+     "S021",
+     "S022"
+    ],
+    "S": "5",
+    "L": "1",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r11",
+    "param": "Utility",
+    "gw": "OTHER THAN",
+    "dev": "Instrument air failure",
+    "causes": "Air compressor trip, header break",
+    "events": "",
+    "grp": [],
+    "cons": "All valves to fail positions: FV-202, PV-203, LV-204 shut; TV-211 and quench valves open → reaction dies, level rises slowly (see section 9)",
+    "cat": "PER",
+    "sg": [
+     "S023",
+     "S024"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FIC-202 L 330 kNm³/h",
+   "tag": "FIC-202",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "XI-210 L 105 t/h",
+   "tag": "XI-210",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "PIC-203 closes the purge",
+   "tag": "PIC-203",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "FIC-202 H 400 kNm³/h",
+   "tag": "FIC-202",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "TI-214 H 275 °C",
+   "tag": "TI-214",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "TI-224/234/244 H 285 °C",
+   "tag": "TI-224",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "TSHH I-1 at 300 °C closes XV-202",
+   "tag": "XV-202",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "TIC-211/221/231/241",
+   "tag": "TIC-211",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "TI-224 H 285 °C",
+   "tag": "TI-224",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "TSHH I-1 at 300 °C",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "AI-206 indication",
+   "tag": "AI-206",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "AI-207 H 13 %",
+   "tag": "AI-207",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "FI-203 H 150 kNm³/h",
+   "tag": "FI-203",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "Front-end guard beds (outside scope)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "bed-1 profile TI-212/213/214",
+   "tag": "TI-212",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "PIC-203 H 78 bar g",
+   "tag": "PIC-203",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "PSHH-203 I-4 at 85 bar g closes XV-202",
+   "tag": "PSHH-203",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "PSV-201 88 bar g",
+   "tag": "PSV-201",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "XV-202 closes only on a loop trip",
+   "tag": "XV-202",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "check valve on the make-up line (assumed)",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S021",
+   "text": "FIC-202 is also driven to MAN 0 % by the trip (FV-202 closes)",
+   "tag": "FIC-202",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S022",
+   "text": "proof testing",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S023",
+   "text": "Fail positions (FC/FO) chosen for a safe state",
+   "tag": "",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S024",
+   "text": "XV-202 de-energise-to-trip",
+   "tag": "XV-202",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "TSHH 2oo3: three elements per bed exit (TE-214A/B/C …) voted 2oo3, independent of the indication thermocouples.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "XV-202B: second make-up shut-off valve in series (1oo2) so one stuck valve does not defeat every trip; proof-test both.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Make-up composition analyzer (CO, CO₂) with alarm and a written response to a reformer upset (cut FIC-202, raise quench margins).",
+   "by": "Instrument / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Confirm PSV-201 relief cases (fire, blocked purge with make-up at maximum pressure, E-201/E-204 tube rupture) and car-seal the relief isolation valves.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Start-up procedure: admit make-up in MAN at ≤ 25 %, raise slowly while watching bed 1–2 exits; close E-204 steam and its block valve once self-sustaining; train on the simulator.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Verify on site that every valve goes to its fail position on instrument-air loss; keep XV-202 de-energise-to-trip.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Restart procedure after a trip: find the cause, reset only when the trip condition has cleared, reheat through E-204, then admit make-up per R22.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "Front-end syngas compressor trip",
+   "XV-202 closed by a trip or spurious closure",
+   "FV-202 fails closed (instrument air)",
+   "FIC-202 SP raised (production push)",
+   "FT-202 reads low",
+   "FV-202 opened in MAN",
+   "Front-end rate cut",
+   "FV-202 sticking",
+   "Reformer or shift upset: CO up, CO₂ down",
+   "Reformer upset: CO down, CO₂ up",
+   "Reformer methane slip",
+   "Sulfur or chloride slip from the front end",
+   "Fe/Ni carbonyls from carbon steel in cold CO service",
+   "Loop not consuming gas (reaction stopped) while make-up flows",
+   "front-end compressor at its maximum",
+   "Front-end pressure falls below the loop with FV-202 open and XV-202 still open",
+   "Stuck valve, solenoid failure: one final element serves every trip",
+   "Air compressor trip, header break"
+  ],
+  "cons": [
+   "Production stops",
+   "the loop keeps circulating and the beds cool until the reaction dies",
+   "loop pressure falls as the purge continues",
+   "restart needs the permissives",
+   "More heat released in beds 1 and 2 → bed exits towards the catalyst limit",
+   "more purge and inerts",
+   "Lower production",
+   "beds cooler",
+   "purge falls",
+   "Much more heat per kmol converted in beds 1 and 2: bed exits approach the trip",
+   "sintering",
+   "by-products",
+   "Less reaction heat, more water in the crude, production falls",
+   "Inerts build up",
+   "lower reactant partial pressure",
+   "purge rises",
+   "production and carbon efficiency fall",
+   "Top of bed 1 loses activity",
+   "heat release moves down",
+   "faster ageing",
+   "wax and hot spots from Fe/Ni deposits",
+   "Loop pressure rises towards the make-up pressure 86 bar g: flange leaks, rupture if relief fails",
+   "Loop depressures backwards",
+   "surge of the front-end compressor",
+   "Every trip that relies on stopping the make-up fails: runaway, overpressure or blow-by continue",
+   "All valves to fail positions: FV-202, PV-203, LV-204 shut",
+   "TV-211 and quench valves open → reaction dies, level rises slowly (see section 9)"
+  ],
+  "safe": [
+   "FIC-201 L at 1700 kNm³/h (Converter feed (circulation))",
+   "FIC-202 L at 330 kNm³/h (Make-up syngas)",
+   "FIC-202 H at 400 kNm³/h (Make-up syngas)",
+   "PIC-203 L at 72 bar g (Loop pressure)",
+   "PIC-203 H at 78 bar g (Loop pressure)",
+   "LIC-204 L at 25 % (V-201 level)",
+   "LIC-204 H at 75 % (V-201 level)",
+   "TIC-211 L at 212 °C (Bed 1 inlet)",
+   "TIC-211 H at 228 °C (Bed 1 inlet)",
+   "TIC-221 L at 218 °C (Bed 2 inlet)",
+   "TIC-221 H at 232 °C (Bed 2 inlet)",
+   "TIC-231 L at 223 °C (Bed 3 inlet)",
+   "TIC-231 H at 237 °C (Bed 3 inlet)",
+   "TIC-241 L at 228 °C (Bed 4 inlet)",
+   "TIC-241 H at 242 °C (Bed 4 inlet)",
+   "TI-214 H at 275 °C (Bed 1 exit high)",
+   "TI-224 H at 285 °C (Bed 2 exit high)",
+   "TI-234 H at 285 °C (Bed 3 exit high)",
+   "TI-244 H at 285 °C (Bed 4 exit high)",
+   "TI-253 H at 45 °C (Separator hot (methanol recycled))",
+   "AI-207 H at 13 % CH₄ (Inerts (CH4) high in loop)",
+   "AI-208 L at 3.8 % CH₃OH (Converter outlet CH3OH low)",
+   "FI-203 H at 150 kNm³/h (Purge flow high)",
+   "PDI-235 H at 1.3 bar (Bed 3 pressure drop high)",
+   "XI-210 L at 105 t/h (Methanol production low)",
+   "TSHH-2xx at 300 °C, any bed thermocouple (SIS I-1) closes XV-202",
+   "FSLL-201 below 45 % of design circulation (SIS I-2) closes XV-202 — uses FT-201 of FIC-201",
+   "LSHH-204 at 90 % (SIS I-3) closes XV-202 and stops C-201",
+   "PSHH-203 at 85 bar g (SIS I-4) closes XV-202",
+   "ESD push-button HS-200 (I-5) closes XV-202 and stops C-201",
+   "XV-202 de-energise-to-trip; FIC-202 driven to MAN 0 % by any trip (FV-202 closes)",
+   "SIS start permissives (reset blocked until every trip condition has cleared)",
+   "PSV-201 at 88 bar g on V-201 to flare (whole loop)",
+   "HV-205 manual blowdown to flare (restriction orifice)",
+   "FV-202 fails closed (air failure)",
+   "PV-203 fails closed",
+   "LV-204 fails closed",
+   "TV-211 fails open (bypass)",
+   "TV-221 / TV-231 / TV-241 quench valves fail open",
+   "Check valve on the make-up line (assumed)",
+   "Operator response to the alarm (DCS console)",
+   "Lab check of the crude and the loop gas"
+  ],
+  "recs": [
+   "TSHH 2oo3: three elements per bed exit (TE-214A/B/C …) voted 2oo3, independent of the indication thermocouples.",
+   "XV-202B: second make-up shut-off valve in series (1oo2) so one stuck valve does not defeat every trip; proof-test both.",
+   "Make-up composition analyzer (CO, CO₂) with alarm and a written response to a reformer upset (cut FIC-202, raise quench margins).",
+   "Confirm PSV-201 relief cases (fire, blocked purge with make-up at maximum pressure, E-201/E-204 tube rupture) and car-seal the relief isolation valves.",
+   "Start-up procedure: admit make-up in MAN at ≤ 25 %, raise slowly while watching bed 1–2 exits; close E-204 steam and its block valve once self-sustaining; train on the simulator.",
+   "Verify on site that every valve goes to its fail position on instrument-air loss; keep XV-202 de-energise-to-trip.",
+   "Restart procedure after a trip: find the cause, reset only when the trip condition has cleared, reheat through E-204, then admit make-up per R22."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Minor",
+    "First aid",
+    "Small production loss",
+    "No release"
+   ],
+   [
+    2,
+    "Moderate",
+    "Medical treatment",
+    "Short outage",
+    "Small contained release"
+   ],
+   [
+    3,
+    "Serious",
+    "Lost-time injury",
+    "Loop shut down for days; catalyst damage",
+    "Local release"
+   ],
+   [
+    4,
+    "Major",
+    "Permanent disability or a single fatality",
+    "Major equipment or catalyst loss",
+    "Fire"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "Vessel rupture",
+    "Major fire or explosion"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not known in the industry",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in the industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Has happened in the company or on similar loops",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Expected once in the life of the unit",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Several times in the life of the unit",
+    "> 0.1 /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 11,
+ "sgseq": 24,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}
