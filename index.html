@@ -659,5 +659,9 @@ html{scroll-behavior:smooth}
     <div><h4>Status</h4><p>Student edition. Last updated 22 November 2026. Every unit now runs as a full version; the Studios section links the troubleshooting, PHA and economics workshop tools.</p></div>
   </div>
 </footer>
+<script>/* Opened from the Drive folder (OTS System/OTS Library/): point the links at the sibling unit folders */
+(function(){if(location.protocol!=='file:'||!/\/OTS%20Library\/[^\/]*$/i.test(location.pathname))return;
+var M={'TSWorkbook%20Studio/Student/index.html':'TSWorkbook%20Studio/Student/TSWorkbook.html','Economics%20Studio/Student/index.html':'Economics%20Studio/Student/Economics_Studio.html','CAPEX%20Studio/Student/index.html':'CAPEX%20Studio/Student/capex-studio.html','OPEX%20Studio/Student/index.html':'OPEX%20Studio/Student/OPEX_Studio.html','PHA%20Studio/Student/index.html':'PHA%20Studio/Student/'};
+document.querySelectorAll('main a[href]').forEach(function(a){var h=a.getAttribute('href');if(/^(#|[a-z]+:|\.\.\/|\/)/i.test(h))return;a.setAttribute('href','../'+(M[h]||h));});})();</script>
 </body>
 </html>
