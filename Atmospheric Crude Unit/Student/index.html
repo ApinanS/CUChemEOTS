@@ -1648,6 +1648,7 @@ tr.hgrp th{background:var(--panel-2);text-align:left;padding-top:8px}
 <section class="view" id="opwin">
  <div class="panel doc">
   <h2>Operating windows · where the crude unit can run</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>Where the crude unit can run, and why it stops &middot; 28 slides</span><a href="https://claude.ai/artifact/Fbv79TA5jcW4AaL6YNQi5c" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/ACU-V1-opwin-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
   <p class="small muted">Every number comes from the simulator's own model (engine of this page) run offline as a private copy at design — never the running simulator. Grids were precomputed with the same engine (<code>tools/compute.js</code>); the point check runs the model live. Limits that the model does not hold are labelled <i>assumed</i>. <span id="owMissing" class="tbbad"></span></p>
   <nav class="toc small"><a href="#ow1">1 Operability</a> · <a href="#ow2">2 CV, MV, DV</a> · <a href="#ow3">3 Variability</a> · <a href="#ow4">4 Bounds</a> · <a href="#ow5">5 Point check</a> · <a href="#ow6">6 Capacity and turndown</a> · <a href="#ow7">7 Type I</a> · <a href="#ow8">8 Type II/III</a> · <a href="#ow9">9 Monte Carlo</a> · <a href="#ow10">10 n vs m</a> · <a href="#ow11">11 Limitations</a></nav>
 
@@ -1732,6 +1733,7 @@ tr.hgrp th{background:var(--panel-2);text-align:left;padding-top:8px}
 <section class="view" id="flex">
  <div class="panel doc">
   <h2>Flexibility · the handles that absorb variability</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>The handles that absorb variability &middot; 26 slides</span><a href="https://claude.ai/artifact/KqzvMs3RW9fUXYnqZ1vRi2" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/ACU-V1-flex-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
   <p class="small muted">Numbers are model runs with the Operating-windows engine (a private copy of the simulator at design, never the running one) or the model's own equations; anything else is labelled <i>illustration</i> or <i>assumed</i>. <span id="fxMissing" class="tbbad"></span></p>
   <nav class="toc small"><a href="#fx1">1 What it is</a> · <a href="#fx2">2 Register</a> · <a href="#fx3">3 How many</a> · <a href="#fx4">4 Where: gains and interaction</a> · <a href="#fx5">5 Fluid flow</a> · <a href="#fx6">6 Heat transfer</a> · <a href="#fx7">7 Production rate</a> · <a href="#fx8">8 How much</a> · <a href="#fx9">9 Recommendations</a></nav>
 
@@ -2265,6 +2267,7 @@ tr.hgrp th{background:var(--panel-2);text-align:left;padding-top:8px}
 <section class="view" id="trans">
  <div class="panel doc">
   <h2>Transition operation · atmospheric crude unit</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>Moving the unit safely between operating states &middot; 24 slides</span><a href="https://claude.ai/artifact/39mY5G7FRoR58WjFvZkFhS" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/ACU-V1-trans-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
   <p class="small muted">Rev 0 · Issued for teaching. A transition is any time the unit moves between operating states: startup, shutdown, a rate change, a crude switch, regeneration or a by-passed item. Most incidents and most off-spec product happen in transitions, not at steady state. Every number below comes from scripted runs of this OTS model on an offline copy (the running simulator is never touched), or is labelled assumed.</p>
   <div id="trLiveBox" class="trlive"></div>
   <nav class="toc small"><a href="#tr1">1 Kinds</a> · <a href="#tr2">2 Before startup</a> · <a href="#tr3">3 Startup and shutdown steps</a> · <a href="#tr4">4 Startup and shutdown runs</a> · <a href="#tr5">5 Load following</a> · <a href="#tr6">6 Crude switch</a> · <a href="#tr7">7 Storage sizing</a> · <a href="#tr8">8 Regeneration</a> · <a href="#tr9">9 Limitations</a></nav>
@@ -2358,6 +2361,7 @@ tr.hgrp th{background:var(--panel-2);text-align:left;padding-top:8px}
 <section class="view" id="relia">
  <div class="panel doc">
   <h2>Process reliability · atmospheric crude unit</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>How often the unit stops, and what would make it stop less &middot; 23 slides</span><a href="https://claude.ai/artifact/4pw8bVHVZcp6EesLwF2noY" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/ACU-V1-relia-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
   <p class="small muted">Rev 0 · Issued for teaching. How often the unit stops making product, why, and what would make it stop less. Every model number comes from runs on private copies of the simulator (never the running one); generic failure rates and human response times are assumed and labelled so.</p>
   <div class="rlnote small"><b>Production, not safety.</b> This tab counts <b>outages per year</b>: heater trips, forced shutdowns and the hours of lost crude processing. Whether a safeguard works when it is needed (probability of failure on demand, risk reduction) is a different question with different numbers: see the <a href="#" data-rlgo="lopa">LOPA tab</a>. A design change can help one and hurt the other: a second trip sensor voted 1oo2 is safer and trips more often.</div>
   <nav class="toc small"><a href="#rl1">1 Definitions</a> · <a href="#rl2">2 Availability vs reliability</a> · <a href="#rl3">3 Weibull and the bathtub</a> · <a href="#rl4">4 Structures</a> · <a href="#rl5">5 Standby pumps here</a> · <a href="#rl6">6 The unit as a series system</a> · <a href="#rl7">7 Design for reliability</a> · <a href="#rl8">8 Tube-skin life</a> · <a href="#rl9">9 Inventory</a> · <a href="#rl10">10 Maintenance strategies</a> · <a href="#rl11">11 Pump life-cycle cost</a> · <a href="#rl12">12 Fired-heater audit</a></nav>
@@ -2441,6 +2445,7 @@ tr.hgrp th{background:var(--panel-2);text-align:left;padding-top:8px}
 <section class="view" id="effic">
  <div class="panel doc">
   <h2>Efficiency · atmospheric crude unit</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>Where the energy goes, and what wasting it costs &middot; 24 slides</span><a href="https://claude.ai/artifact/KjWJJYv22nskaNcHGHivNV" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/ACU-V1-effic-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
   <p class="small muted">Rev 0 · Issued for teaching. Where the energy of this unit goes and what it costs to waste it. Model numbers come from sweeps run offline on the unit's own model (design warm start, one change, one hour, mean of the last five minutes) or from runs on a private copy in the page; the running simulator is only read, never changed. Anything the model does not compute is a labelled calculation on assumed values.</p>
   <nav class="toc small"><a href="#ef1">1 Definition and priorities</a> · <a href="#ef2">2 Chains multiply</a> · <a href="#ef3">3 Heater efficiency</a> · <a href="#ef4">4 Whole-unit energy</a> · <a href="#ef5">5 Excess air</a> · <a href="#ef6">6 Preheat fouling</a> · <a href="#ef7">7 Crude temperature</a> · <a href="#ef8">8 Pumparounds</a> · <a href="#ef9">9 Stripping steam</a> · <a href="#ef10">10 Fuel-saving options</a> · <a href="#ef11">11 Throttling vs VSD</a> · <a href="#ef12">12 Constraint pushing</a> · <a href="#ef13">13 One live point</a> · <a href="#ef14">14 KEV dashboard</a></nav>
 
@@ -2520,6 +2525,7 @@ tr.hgrp th{background:var(--panel-2);text-align:left;padding-top:8px}
 <section class="view" id="sop">
  <div class="panel doc">
   <h2>SOP · standard operating procedures of the crude unit</h2>
+<div class="tdeckbox"><b>Teaching deck</b><span>Procedures an operator can follow at 3 a.m. &middot; 24 slides</span><a href="https://claude.ai/artifact/HTNusajnffYgx9obB4EGHL" target="_blank" rel="noopener">Open the slide deck &#8599;</a><a class="dl" href="decks/ACU-V1-sop-deck.html" download>&#11015; Deck HTML</a><span class="muted">The HTML file works offline (arrow keys, T for contents).</span></div>
   <p class="small muted">Rev 0 · Issued for teaching. Thirteen SOPs for the atmospheric crude unit, written around this simulator: every limit, trip setting, set point and EMS permissive in a step is read from the running page (alarm list, <code>K</code>, the design snapshot, the EMS logic and the model procedures), and the Safety, HAZOP, LOPA and Transition tab results are quoted where they exist. Values marked "assumed" are not in the design data.</p>
   <p id="spSum" class="small"></p>
   <nav class="toc small"><a href="#sp1">1 What an SOP is</a> · <a href="#sp2">2 Format</a> · <a href="#sp3">3 Register</a> · <a href="#spView">4 Viewer</a> · <a href="#sp5">5 Writing rules</a> · <a href="#sp6">6 Life cycle</a></nav>
