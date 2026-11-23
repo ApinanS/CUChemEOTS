@@ -1,0 +1,1115 @@
+{
+ "v": 2,
+ "unit": "R-601",
+ "meta": {
+  "title": "HAZOP and LOPA of the R-601 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "R-601",
+  "pid": "",
+  "scope": "From the gas packs and the ethanol tank to the cold vent and the product tank T-601, including utilities (instrument air, N₂, chilled water, electrical power).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Nitrogen, instrument air and power are available at start-up. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Guides the team through nodes, parameters and guide words; keeps to the method; not from the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every deviation (full recording) in the worksheet",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, the heat and mass balance, the kinetics and the operating window",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the unit is really run: procedures, pack changes, alarms the operators see",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Alarms, trips, fail positions, the C&E and the SIS",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety engineer",
+   "name": "",
+   "duty": "Risk matrix, relief and fire cases, follow-up to LOPA",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Catalyst supplier, electrical (band heaters, power), mechanical (pressure ratings)",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID 2407-PE-PID-001 A6",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, valves, relief"
+  },
+  {
+   "ref": "PFD 2407-PE-PFD-001 and HMB 2407-PE-HMB-001",
+   "where": "Process tab",
+   "use": "Design intent, flows, conditions"
+  },
+  {
+   "ref": "C&E 2407-IN-CE-001 A2",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects"
+  },
+  {
+   "ref": "Instrument list 2407-IN-INL-001 R4",
+   "where": "P&ID / C&E tabs",
+   "use": "Instrument tags and ranges"
+  },
+  {
+   "ref": "Relief-load 2407-PE-RLB-001 A3",
+   "where": "this tab (safeguards)",
+   "use": "PSV set pressures and governing cases"
+  },
+  {
+   "ref": "Equipment list 2407-ME-EQL-001 A1",
+   "where": "Design tab",
+   "use": "Design pressures and temperatures"
+  },
+  {
+   "ref": "Kinetic report (pilot TBR scale-up)",
+   "where": "Operating windows tab",
+   "use": "Dew point, fitted window, hot spots"
+  },
+  {
+   "ref": "SIS logic, permissives, trips",
+   "where": "SIS tab",
+   "use": "Arming, bypass, first-out"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "Exercises tab (procedures)",
+   "use": "Start-up, shutdown, ESD, pack changeover"
+  },
+  {
+   "ref": "Dynamic model",
+   "where": "this tab, part 9",
+   "use": "Deviation runs with the safeguards active"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "More H₂ flow than set",
+    "causes": "FIC-201 MFC or its output failing high\ncontroller left in MAN at a high output\nset-point entry error\nFY-100 ratio set wrong",
+    "events": "",
+    "grp": [],
+    "cons": "H₂:CO₂ well above 5; more gas through BPV-601 to the cold vent (larger H₂-rich vent plume); bed temperature rises a few degrees; operation outside the fitted kinetic window",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004",
+     "S005"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R01"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less or no H₂ flow",
+    "causes": "H₂ pack running down\nPR-202 failing closed\nXV-201 closing (solenoid or air fault)\nMFC failing low\nfilter F201 plugging",
+    "events": "",
+    "grp": [],
+    "cons": "H₂:CO₂ falls, methanol yield falls while the ester route continues; MFC loses its pressure drop before any alarm because PAL-203 is below the 30 bar g reactor pressure; if the supply falls below the reactor, back-flow (see N1.6)",
+    "cat": "PER",
+    "sg": [
+     "S006",
+     "S007",
+     "S008",
+     "S009"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less real CO₂ than indicated",
+    "causes": "FT-101 calibration drifting high, so FIC-101 cuts the real CO₂\nMFC failing low\nPR-102 freezing",
+    "events": "",
+    "grp": [],
+    "cons": "H₂:CO₂ above 5 unseen by the operator; yield per CO₂ and the reported conversion are wrong; the FAL/FAH-101 deviation alarms use the same transmitter and cannot see the error",
+    "cat": "PER",
+    "sg": [
+     "S010",
+     "S011",
+     "S012",
+     "S013"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Pressure",
+    "gw": "LESS",
+    "dev": "Low CO₂ supply pressure",
+    "causes": "CO₂ pack cold (cylinder cooling during draw-off), pack empty, regulator PR-101 icing",
+    "events": "",
+    "grp": [],
+    "cons": "CO₂ flow falls, H₂:CO₂ rises; regulator icing can make the pressure swing; loss of CO₂ trips the unit",
+    "cat": "PER",
+    "sg": [
+     "S013",
+     "S014",
+     "S015"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R02",
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Full pack pressure downstream of the regulators",
+    "causes": "First and second-stage regulator (PR-202, PR-102 or PR-402) failing open or set wrong",
+    "events": "",
+    "grp": [],
+    "cons": "MFCs, XVs and tubing see full pack pressure; R-601 pressure rises if the MFC passes; overpressure of components rated for the regulated pressure; H₂ release at a fitting",
+    "cat": "PER",
+    "sg": [
+     "S016",
+     "S002",
+     "S017",
+     "S018"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Back-flow from the reactor into a gas supply",
+    "causes": "Supply pressure below the reactor (empty pack with XV open\nCO₂ supply drawn down)\nMFC open during a pressure test",
+    "events": "",
+    "grp": [],
+    "cons": "Reactor gas and ethanol vapour into the CO₂ or N₂ manifold and packs; flammable gas in the CO₂ system; contamination of the pack",
+    "cat": "PER",
+    "sg": [
+     "S019",
+     "S008",
+     "S014",
+     "S020"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "N₂ in the feed during operation",
+    "causes": "XV-401 or FV-401 passing\nFIC-401 left with a set point after start-up",
+    "events": "",
+    "grp": [],
+    "cons": "N₂ dilutes the feed, H₂ partial pressure and yield fall slowly; vent rate rises; no safety consequence",
+    "cat": "PER",
+    "sg": [
+     "S021",
+     "S022",
+     "S023"
+    ],
+    "S": "1",
+    "L": "3",
+    "recs": [
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Composition",
+    "gw": "OTHER THAN",
+    "dev": "Wrong gas connected to a feed line",
+    "causes": "Wrong pack or cylinder connected at changeover (air, O₂ or another gas on the H₂ or CO₂ line)\npigtail not purged",
+    "events": "",
+    "grp": [],
+    "cons": "Air or O₂ with H₂ over hot reduced Cu catalyst: flammable mixture, fast exotherm, catalyst oxidation, possible explosion in R-601",
+    "cat": "PER",
+    "sg": [
+     "S024",
+     "S025",
+     "S026"
+    ],
+    "S": "5",
+    "L": "1",
+    "recs": [
+     "R08",
+     "R11"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Pressure",
+    "gw": "LESS",
+    "dev": "Low N₂ supply pressure",
+    "causes": "N₂ pack running down unnoticed\nPR-402 failing closed",
+    "events": "",
+    "grp": [],
+    "cons": "The N₂ purge that every trip relies on is not available: H₂ stays in R-601 after a trip; no inert for a shutdown",
+    "cat": "PER",
+    "sg": [
+     "S027",
+     "S028"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R09"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r10",
+    "param": "Composition",
+    "gw": "OTHER THAN",
+    "dev": "Impurity in the CO₂ or H₂",
+    "causes": "Off-specification gas (sulphur or chloride in CO₂, moisture)",
+    "events": "",
+    "grp": [],
+    "cons": "Slow poisoning of the Cu/ZnO/Al₂O₃ catalyst; activity and yield fall over days; no immediate hazard",
+    "cat": "PER",
+    "sg": [
+     "S029",
+     "S030",
+     "S031"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [
+     "R10"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FAH-201 at 105 % of SP (only while FIC-201 is in AUTO)",
+   "tag": "FAH-201",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "PAH-601 32 bar g",
+   "tag": "PAH-601",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "TAH-605 158 °C",
+   "tag": "TAH-605",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "MFC full scale 100 NL/min limits the flow",
+   "tag": "",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "BPV-601 holds the pressure",
+   "tag": "BPV-601",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "FAL-201 at 95 % of SP",
+   "tag": "FAL-201",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "PAL-203 27 bar g",
+   "tag": "PAL-203",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "PALL-203 trip at 24 bar g (2 s delay)",
+   "tag": "PALL-203",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "spare H₂ pack (PACK B) with changeover in the field",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "FAL/FAH-101 ±5 % of SP (same transmitter)",
+   "tag": "FAH-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "GC AI-611 CO₂ in the vent gas every 240 s",
+   "tag": "AI-611",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "AY-620 yield soft sensor",
+   "tag": "AY-620",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "PAL-103 27 bar g",
+   "tag": "PAL-103",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "PALL-103 trip at 24 bar g (2 s delay, opens XV-603)",
+   "tag": "PALL-103",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "FAL-101 at 95 % of SP",
+   "tag": "FAL-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "Two regulators in series",
+   "tag": "",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "PAHH-601 trip at 33 bar g (1 s delay, opens XV-603)",
+   "tag": "PAHH-601",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "PSV-601 36 bar g on E-601/R-601 (no relief valve on the feed manifold in 2407-PE-RLB-001)",
+   "tag": "PSV-601",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "Check valves CK201, CK101, CK401",
+   "tag": "CK201",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "the trips close XV-201/101, which also fail closed",
+   "tag": "XV-201",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S021",
+   "text": "FT-401 indication",
+   "tag": "FT-401",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S022",
+   "text": "GC AI-613 N₂ in the vent gas",
+   "tag": "AI-613",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S023",
+   "text": "start-up step \"stop the N₂\"",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S024",
+   "text": "Gas-specific pack connections (assumed)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S025",
+   "text": "pack labels",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S026",
+   "text": "GC on the vent gas (after the event)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S027",
+   "text": "PAL-403 24 bar g",
+   "tag": "PAL-403",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S028",
+   "text": "XV-401 and FV-401 fail open (purge path open on a trip). N₂ is not among the start-up permissives",
+   "tag": "XV-401",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S029",
+   "text": "Supplier certificate (assumed)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S030",
+   "text": "AY-620 yield trend",
+   "tag": "AY-620",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S031",
+   "text": "GC",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Add an absolute high-flow alarm on FT-201 (and FT-101) that works in every controller mode, and an H₂:CO₂ ratio deviation alarm on FY-100.",
+   "by": "Instrument / Control",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Raise PAL-203 and PAL-103 above the reactor pressure plus the MFC pressure drop (now 27 bar g, below the 30 bar g reactor), and review PALL-203/103 against the pressure at which the MFCs lose control.",
+   "by": "Process / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Check FT-101 and FT-201 against a reference meter each campaign and reconcile the CO₂ feed with a GC carbon balance.",
+   "by": "Operations / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Protect the CO₂ pack regulator against cooling and icing (heated or insulated PR-101) and fit a switch-over manifold.",
+   "by": "Process / Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Confirm the pressure rating of the MFCs, XVs and tubing downstream of PR-202, PR-102 and PR-402 against full pack pressure, or add relief valves there (none in 2407-PE-RLB-001).",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Put the check valves CK101, CK201, CK301, CK302, CK401 and CK601 in the inspection and proof-test plan.",
+   "by": "Maintenance",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Add a high alarm on FT-401 while the SIS is in RUN (N₂ passing into the feed).",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R08",
+   "text": "Use gas-specific pack connections and labels, with a two-person check at every pack change.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R09",
+   "text": "Add the N₂ supply (PT-403 above PAL-403) to the start-up permissives, because every trip relies on the N₂ purge.",
+   "by": "Instrument / Control",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R10",
+   "text": "Check the supplier certificate (sulphur, chloride, moisture) for every CO₂ and H₂ pack received.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R11",
+   "text": "Vent-purge the pigtail with N₂ at every pack changeover (written step).",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "FIC-201 MFC or its output failing high",
+   "controller left in MAN at a high output",
+   "set-point entry error",
+   "FY-100 ratio set wrong",
+   "H₂ pack running down",
+   "PR-202 failing closed",
+   "XV-201 closing (solenoid or air fault)",
+   "MFC failing low",
+   "filter F201 plugging",
+   "FT-101 calibration drifting high, so FIC-101 cuts the real CO₂",
+   "PR-102 freezing",
+   "CO₂ pack cold (cylinder cooling during draw-off), pack empty, regulator PR-101 icing",
+   "First and second-stage regulator (PR-202, PR-102 or PR-402) failing open or set wrong",
+   "Supply pressure below the reactor (empty pack with XV open",
+   "CO₂ supply drawn down)",
+   "MFC open during a pressure test",
+   "XV-401 or FV-401 passing",
+   "FIC-401 left with a set point after start-up",
+   "Wrong pack or cylinder connected at changeover (air, O₂ or another gas on the H₂ or CO₂ line)",
+   "pigtail not purged",
+   "N₂ pack running down unnoticed",
+   "PR-402 failing closed",
+   "Off-specification gas (sulphur or chloride in CO₂, moisture)"
+  ],
+  "cons": [
+   "H₂:CO₂ well above 5",
+   "more gas through BPV-601 to the cold vent (larger H₂-rich vent plume)",
+   "bed temperature rises a few degrees",
+   "operation outside the fitted kinetic window",
+   "H₂:CO₂ falls, methanol yield falls while the ester route continues",
+   "MFC loses its pressure drop before any alarm because PAL-203 is below the 30 bar g reactor pressure",
+   "if the supply falls below the reactor, back-flow (see N1.6)",
+   "H₂:CO₂ above 5 unseen by the operator",
+   "yield per CO₂ and the reported conversion are wrong",
+   "the FAL/FAH-101 deviation alarms use the same transmitter and cannot see the error",
+   "CO₂ flow falls, H₂:CO₂ rises",
+   "regulator icing can make the pressure swing",
+   "loss of CO₂ trips the unit",
+   "MFCs, XVs and tubing see full pack pressure",
+   "R-601 pressure rises if the MFC passes",
+   "overpressure of components rated for the regulated pressure",
+   "H₂ release at a fitting",
+   "Reactor gas and ethanol vapour into the CO₂ or N₂ manifold and packs",
+   "flammable gas in the CO₂ system",
+   "contamination of the pack",
+   "N₂ dilutes the feed, H₂ partial pressure and yield fall slowly",
+   "vent rate rises",
+   "no safety consequence",
+   "Air or O₂ with H₂ over hot reduced Cu catalyst: flammable mixture, fast exotherm, catalyst oxidation, possible explosion in R-601",
+   "The N₂ purge that every trip relies on is not available: H₂ stays in R-601 after a trip",
+   "no inert for a shutdown",
+   "Slow poisoning of the Cu/ZnO/Al₂O₃ catalyst",
+   "activity and yield fall over days",
+   "no immediate hazard"
+  ],
+  "safe": [
+   "PAL-203 at 27 bar g (H₂ supply pressure)",
+   "PAL-103 at 27 bar g (CO₂ supply pressure)",
+   "PAL-403 at 24 bar g (N₂ supply pressure)",
+   "PAL-301 at 53 bar g (Ethanol supply pressure)",
+   "PAH-301 at 59 bar g (Ethanol supply pressure)",
+   "FAL/FAH-101 at ±5 % of SP (CO₂ flow)",
+   "FAL/FAH-201 at ±5 % of SP (H₂ flow)",
+   "FAL/FAH-301 at ±5 % of SP (Ethanol flow)",
+   "LAL-301 at 20 % (Ethanol storage level)",
+   "LAH-301 at 80 % (Ethanol storage level)",
+   "PAL-601 at 29 bar g (R-601 inlet pressure)",
+   "PAH-601 at 32 bar g (R-601 inlet pressure)",
+   "PAH-608 at 32 bar g (D-601 pressure)",
+   "TAH-601 at 158 °C (E-601 temperature)",
+   "TAL-602 at 110 °C (R-601 inlet temperature)",
+   "TAH-602 at 158 °C (R-601 inlet temperature)",
+   "TAH-605 at 158 °C (R-601 bottom temperature)",
+   "LAL-601 at 20 % (D-601 level)",
+   "LAH-601 at 60 % (D-601 level)",
+   "LAL-602 at 20 % (D-602 level)",
+   "LAH-602 at 60 % (D-602 level)",
+   "FAL-701 at 63.65 L/min (Chilled water flow)",
+   "TAL-609 at 8 °C (E-602 outlet temperature)",
+   "TAH-609 at 32 °C (E-602 outlet temperature)",
+   "PAL-902 at 1.2 bar g (Instrument air header)",
+   "PAH-902 at 4.8 bar g (Instrument air header)",
+   "TAH on TIC-611 at 260 °C (E1 heater wall high, assumed)",
+   "TAH on TIC-612 at 260 °C (E2 heater wall high, assumed)",
+   "TAH on TIC-613 at 260 °C (E3 heater wall high, assumed)",
+   "PALL-203 H₂ supply pressure low-low (24 bar g) – SIS trip, 2 s delay",
+   "PALL-103 CO₂ supply pressure low-low (24 bar g) – SIS trip, 2 s delay",
+   "PAHH-301 ethanol supply pressure high-high (62 bar g) – SIS trip, 1 s delay",
+   "PALL-301 ethanol supply pressure low-low (50 bar g) – SIS trip, 2 s delay, armed in RUN only",
+   "PALL-601 R-601 inlet pressure low-low (27 bar g) – SIS trip, 2 s delay, armed in RUN only",
+   "PAHH-601 R-601 inlet pressure high-high (33 bar g) – SIS trip, 1 s delay",
+   "PAHH-608 D-601 pressure high-high (33 bar g) – SIS trip, 1 s delay",
+   "TAHH-601 E-601 temperature high-high (167 °C) – SIS trip, 2 s delay",
+   "TAHH-602 R-601 inlet temperature high-high (167 °C) – SIS trip, 2 s delay",
+   "TAHH-605 R-601 outlet (bottom) temperature high-high (167 °C) – SIS trip, 2 s delay",
+   "LALL-601 D-601 level low-low (10 %) – SIS trip, 5 s delay, armed in RUN only",
+   "LAHH-601 D-601 level high-high (80 %) – SIS trip, 5 s delay",
+   "LAHH-605 (LS-605) D-601 level high-high (85 %) – SIS trip, 5 s delay",
+   "LALL-602 D-602 level low-low (10 %) – SIS trip, 5 s delay, armed in RUN only",
+   "LAHH-602 D-602 level high-high (80 %) – SIS trip, 5 s delay",
+   "FALL-701 chilled water flow low-low (60.3 L/min) – SIS trip, 5 s delay, armed in RUN only",
+   "TAHH-609 E-602 outlet temperature high-high (34 °C) – SIS trip, 5 s delay",
+   "PALL-902 instrument air header low-low (0.9 bar g) – SIS trip, 2 s delay",
+   "PAHH-902 instrument air header high-high (5.1 bar g) – SIS trip, 2 s delay",
+   "XV-101/201/301 fail closed",
+   "XV-401 and FV-401 fail open",
+   "XV-601/602 fail closed",
+   "XV-603 fails open",
+   "PSV-601 set 36 bar g on E-601/R-601 (to vent)",
+   "PSV-301 set 2 bar g on T-301 (fire case)",
+   "PSV-302 set 36 bar g on P-301 discharge (blocked outlet)",
+   "PSV-602 set 4 bar g on E-602 chilled-water side (tube rupture)",
+   "PSV-603 set 36 bar g on D-601 (fire case)",
+   "BPV-601 back-pressure valve holds the loop pressure",
+   "Check valves CK-201 / CK-101 / CK-401",
+   "Spare gas pack with field changeover",
+   "Operator response to the alarm",
+   "Written procedure (SOP) and checklist",
+   "Start-up permissives in the SIS",
+   "N₂ purge (XV-401 / FV-401 open on trip)",
+   "Pressure test / leak test before start-up",
+   "Gas detection and ventilation",
+   "Fire extinguishers and emergency response"
+  ],
+  "recs": [
+   "Add an absolute high-flow alarm on FT-201 (and FT-101) that works in every controller mode, and an H₂:CO₂ ratio deviation alarm on FY-100.",
+   "Raise PAL-203 and PAL-103 above the reactor pressure plus the MFC pressure drop (now 27 bar g, below the 30 bar g reactor), and review PALL-203/103 against the pressure at which the MFCs lose control.",
+   "Check FT-101 and FT-201 against a reference meter each campaign and reconcile the CO₂ feed with a GC carbon balance.",
+   "Protect the CO₂ pack regulator against cooling and icing (heated or insulated PR-101) and fit a switch-over manifold.",
+   "Confirm the pressure rating of the MFCs, XVs and tubing downstream of PR-202, PR-102 and PR-402 against full pack pressure, or add relief valves there (none in 2407-PE-RLB-001).",
+   "Put the check valves CK101, CK201, CK301, CK302, CK401 and CK601 in the inspection and proof-test plan.",
+   "Add a high alarm on FT-401 while the SIS is in RUN (N₂ passing into the feed).",
+   "Use gas-specific pack connections and labels, with a two-person check at every pack change.",
+   "Add the N₂ supply (PT-403 above PAL-403) to the start-up permissives, because every trip relies on the N₂ purge.",
+   "Check the supplier certificate (sulphur, chloride, moisture) for every CO₂ and H₂ pack received.",
+   "Vent-purge the pigtail with N₂ at every pack changeover (written step)."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "Production loss < 1 day, no damage",
+    "No release"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid",
+    "Off-spec product, minor repair",
+    "Small release inside the bund or vent"
+   ],
+   [
+    3,
+    "Moderate",
+    "Medical treatment",
+    "Repair of one item, days lost",
+    "Reportable release on site"
+   ],
+   [
+    4,
+    "Major",
+    "Lost-time or serious injury",
+    "Major damage to R-601 or the skid",
+    "Release off site, short term"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Fatality",
+    "Fire or explosion destroying the unit",
+    "Major off-site impact"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not known in the industry",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in the industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Has happened in the company / similar pilots",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Expected once in the life of the unit",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Several times per year",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 10,
+ "sgseq": 31,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

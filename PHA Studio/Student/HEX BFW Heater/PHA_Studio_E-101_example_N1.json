@@ -1,0 +1,944 @@
+{
+ "v": 2,
+ "unit": "E-101",
+ "meta": {
+  "title": "HAZOP and LOPA of the E-101 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "E-101",
+  "pid": "",
+  "scope": "From TK-101 and the BFW pumps P-101A/B through E-101 to the BFW delivery to the boiler house, and from the flash-steam header (PI-105) through XV-100 and FV-104 to the shell with its vent V-104, vacuum breaker VB-101 and PSV-100, and the condensate trap set to the return header; the SIS (XV-100 trips) and the utilities (instrument air, electrical power). Excluded: the upstream flash-steam plant, the condensate return beyond the header and the boiler house (recorded as causes and consequences at the interfaces).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Nitrogen, instrument air and power are available at start-up. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (chair)",
+   "name": "",
+   "duty": "Independent of the design; runs the method, keeps the team on the node, decides when a deviation is covered",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe (recorder)",
+   "name": "",
+   "duty": "Writes the worksheet live, reads back recommendations",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer (designer)",
+   "name": "",
+   "duty": "Design intent, heat and mass balance, shell and tube design pressures, relief cases",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the heater is really run: start-up venting and warm-up, trap checks, rounds, boiler-house communication",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Cascade TIC-101 → FIC-104, fail positions, SIS logic and trip independence",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety / risk engineer",
+   "name": "",
+   "duty": "Risk matrix, LOPA follow-up, regulations",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Mechanical (tube bundle, water hammer, vacuum rating), water treatment, boiler-house and upstream flash-plant representatives",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID BFWH-V1-PID-001 rev D",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, valves, relief"
+  },
+  {
+   "ref": "PFD BFW-PFD-100 and HMB BFWH-V1-PE-HMB-001",
+   "where": "PFD and Process engineering tabs",
+   "use": "Design intent, flows, conditions"
+  },
+  {
+   "ref": "C&E BFWH-V1-IN-CE-001",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects"
+  },
+  {
+   "ref": "SRS of the three XV-100 trips",
+   "where": "SRS of SIF tab",
+   "use": "Set points, delays, response times"
+  },
+  {
+   "ref": "Equipment list and datasheets BFWH-V1-ME-EQL-001",
+   "where": "Mechanical tab",
+   "use": "Design pressures and temperatures (some TBC)"
+  },
+  {
+   "ref": "Relief load summary BFWH-V1-PE-RLB-001",
+   "where": "Relief & vent tab",
+   "use": "PSV-100 cases, tube rupture, vacuum"
+  },
+  {
+   "ref": "Instrument list BFWH-V1-IN-INL-001",
+   "where": "Instrumentation & control tab",
+   "use": "Ranges, fail positions"
+  },
+  {
+   "ref": "Layout BFWH-V1-PI-LAY-001",
+   "where": "Layout & isometrics tab",
+   "use": "Where the heater, trap and valves stand"
+  },
+  {
+   "ref": "HAZID register",
+   "where": "HAZID tab",
+   "use": "Major hazards to cover"
+  },
+  {
+   "ref": "Start-up, shutdown and ESD procedures",
+   "where": "SOP tab and Exercises tab",
+   "use": "Sequence and procedure deviations (node N6)"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No BFW from the pumps",
+    "causes": "Running pump P-101A trips (motor, power)\nP-101B unavailable (motor fault) or not started\nTK-101 empty\nsuction valve closed",
+    "events": "",
+    "grp": [],
+    "cons": "No BFW to the boiler house: boiler low drum level, boiler trip or dry firing (outside the unit). Steam on stagnant water in the E-101 tubes: local boiling and hammer. Shell drawn to vacuum once the steam is cut",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004"
+    ],
+    "S": "4",
+    "L": "3",
+    "recs": [
+     "R01",
+     "R02",
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less BFW from the pumps",
+    "causes": "Pump wear or cavitation\nlow TK-101 level\npartly closed suction valve",
+    "events": "",
+    "grp": [],
+    "cons": "BFW short at the boiler house; hotter outlet at the same steam; pump damage",
+    "cat": "PER",
+    "sg": [
+     "S002",
+     "S005",
+     "S006"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R02",
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Level",
+    "gw": "LESS",
+    "dev": "Low level in TK-101",
+    "causes": "Make-up to TK-101 stopped\ntank drain left open",
+    "events": "",
+    "grp": [],
+    "cons": "Pump cavitation, then no flow (see N1 Flow NO)",
+    "cat": "PER",
+    "sg": [
+     "S007"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Level",
+    "gw": "MORE",
+    "dev": "High level in TK-101",
+    "causes": "Make-up more than consumption\nrecycle high at low demand",
+    "events": "",
+    "grp": [],
+    "cons": "Overflow of treated water with chemicals to drain",
+    "cat": "PER",
+    "sg": [
+     "S008"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Pump deadheaded",
+    "causes": "Valve closed downstream of E-101 or at the boiler house while FIC-101 drives FV-101A open and FV-101B shut",
+    "events": "",
+    "grp": [],
+    "cons": "Pump at shut-off (1030 kPa g) with no flow: water overheats, seal fails, hot-water spray",
+    "cat": "PER",
+    "sg": [
+     "S009",
+     "S010"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Pressure",
+    "gw": "LESS",
+    "dev": "Low suction pressure (cavitation)",
+    "causes": "Low TK-101 level\nhot BFW in TK-101\nplugged suction",
+    "events": "",
+    "grp": [],
+    "cons": "Cavitation, noise, flow loss, pump damage",
+    "cat": "PER",
+    "sg": [
+     "S011",
+     "S002"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Reverse flow through the idle pump",
+    "causes": "Passing check valve on the idle pump",
+    "events": "",
+    "grp": [],
+    "cons": "Recirculation through the idle pump, less forward flow, idle pump spins backwards",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S002"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Hot BFW in TK-101",
+    "causes": "Hot make-up or condensate routed to the tank\nBFW inlet up to 15 °C hotter",
+    "events": "",
+    "grp": [],
+    "cons": "Less NPSH; outlet control keeps 70 °C with less steam",
+    "cat": "PER",
+    "sg": [
+     "S011",
+     "S005"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Temperature",
+    "gw": "LESS",
+    "dev": "Cold BFW (cold week)",
+    "causes": "Cold make-up water",
+    "events": "",
+    "grp": [],
+    "cons": "More steam needed (14.6 % more in the model, shell 153 kPa g): FV-104 loses its margin; outlet may fall below target",
+    "cat": "PER",
+    "sg": [
+     "S013",
+     "S014",
+     "S015"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r10",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Oxygen, hardness or wrong treatment chemical in the BFW",
+    "causes": "Dosing upset\npoor make-up quality",
+    "events": "",
+    "grp": [],
+    "cons": "Corrosion or scale in the tubes (tube leak later), boiler deposits; exposure when sampling",
+    "cat": "PER",
+    "sg": [
+     "S016"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r11",
+    "param": "Maintenance",
+    "gw": "OTHER THAN",
+    "dev": "Pump change-over done wrongly",
+    "causes": "Spare started against a closed discharge\nrunning pump stopped first",
+    "events": "",
+    "grp": [],
+    "cons": "BFW interrupted: FSLL-101 closes XV-100; boiler house loses BFW",
+    "cat": "PER",
+    "sg": [
+     "S017",
+     "S018"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R01"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FSLL-101 trip closes XV-100 (< 30 m³/h, 5 s) (model: trip at 7.5 s)",
+   "tag": "FSLL-101",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "FIC-101 LO alarm (80 m³/h)",
+   "tag": "FIC-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "P-101B spare (manual start)",
+   "tag": "P-101B",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "VB-101",
+   "tag": "VB-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "TIC-101 cuts the steam",
+   "tag": "TIC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "TIAH-108 HI alarm (85 °C)",
+   "tag": "TIAH-108",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "Operator rounds only (no level instrument on the P&ID)",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "Tank overflow line (make-up system)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "FV-101B complementary recycle (protects only against FV-101A closing)",
+   "tag": "FV-101B",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "PI-106 local reading",
+   "tag": "PI-106",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "TI-103 HI alarm (25 °C)",
+   "tag": "TI-103",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "Check valves (assumed, not shown)",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "TI-103 LO alarm (12 °C)",
+   "tag": "TI-103",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "TIC-101 adds steam",
+   "tag": "TIC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "TIC-101 LO alarm (67 °C)",
+   "tag": "TIC-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "Water-quality sampling programme",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "Change-over procedure",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "FSLL-101 trip closes XV-100 (< 30 m³/h, 5 s)",
+   "tag": "FSLL-101",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Auto-start P-101B on a P-101A trip or low discharge pressure (PI-106 transmitter, recommended addition), completing inside the FSLL-101 delay; test the spare start monthly.",
+   "by": "Instrument / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Add level transmitter LT-101 (recommended addition) on TK-101 with a low-level alarm and a low-low pump trip, and a high-level alarm for overfill.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Provide a fixed minimum-flow line with restriction orifice from the pump discharge to TK-101, independent of FV-101B, so a blocked outlet downstream of E-101 cannot deadhead the running pump.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Confirm a check valve on each pump discharge and on the BFW line to the boiler house; add them to the inspection plan.",
+   "by": "Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Agree the interface with the boiler house: shared alarms for FIC-101 LO and TIAH-108 HI, a call-out procedure, and include loss of BFW and hot BFW from E-101 in the boiler-house HAZOP.",
+   "by": "Operations / Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Water-treatment control: BFW hardness and oxygen-scavenger sampling programme; closed sampling point and PPE for treatment chemicals.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "Running pump P-101A trips (motor, power)",
+   "P-101B unavailable (motor fault) or not started",
+   "TK-101 empty",
+   "suction valve closed",
+   "Pump wear or cavitation",
+   "low TK-101 level",
+   "partly closed suction valve",
+   "Make-up to TK-101 stopped",
+   "tank drain left open",
+   "Make-up more than consumption",
+   "recycle high at low demand",
+   "Valve closed downstream of E-101 or at the boiler house while FIC-101 drives FV-101A open and FV-101B shut",
+   "Low TK-101 level",
+   "hot BFW in TK-101",
+   "plugged suction",
+   "Passing check valve on the idle pump",
+   "Hot make-up or condensate routed to the tank",
+   "BFW inlet up to 15 °C hotter",
+   "Cold make-up water",
+   "Dosing upset",
+   "poor make-up quality",
+   "Spare started against a closed discharge",
+   "running pump stopped first"
+  ],
+  "cons": [
+   "No BFW to the boiler house: boiler low drum level, boiler trip or dry firing (outside the unit). Steam on stagnant water in the E-101 tubes: local boiling and hammer. Shell drawn to vacuum once the steam is cut",
+   "BFW short at the boiler house",
+   "hotter outlet at the same steam",
+   "pump damage",
+   "Pump cavitation, then no flow (see N1 Flow NO)",
+   "Overflow of treated water with chemicals to drain",
+   "Pump at shut-off (1030 kPa g) with no flow: water overheats, seal fails, hot-water spray",
+   "Cavitation, noise, flow loss, pump damage",
+   "Recirculation through the idle pump, less forward flow, idle pump spins backwards",
+   "Less NPSH",
+   "outlet control keeps 70 °C with less steam",
+   "More steam needed (14.6 % more in the model, shell 153 kPa g): FV-104 loses its margin",
+   "outlet may fall below target",
+   "Corrosion or scale in the tubes (tube leak later), boiler deposits",
+   "exposure when sampling",
+   "BFW interrupted: FSLL-101 closes XV-100",
+   "boiler house loses BFW"
+  ],
+  "safe": [
+   "FIC-101 LO alarm at 80 m³/h (BFW flow)",
+   "FIC-101 HI alarm at 120 m³/h (BFW flow)",
+   "TIC-101 LO alarm at 67 °C (BFW outlet TT-101)",
+   "TIC-101 HI alarm at 74 °C (BFW outlet TT-101)",
+   "TIAH-108 HI alarm at 85 °C (BFW outlet, independent TT-108)",
+   "PI-100 HI alarm at 200 kPa g (shell pressure)",
+   "PI-105 LO alarm at 150 kPa g (steam header pressure)",
+   "PI-105 HI alarm at 240 kPa g (steam header pressure)",
+   "FIC-104 HI alarm at 13 000 kg/h (steam flow)",
+   "TI-103 LO alarm at 12 °C (BFW inlet temperature)",
+   "TI-103 HI alarm at 25 °C (BFW inlet temperature)",
+   "PDI-109 HI alarm at 80 kPa (tube-side ΔP)",
+   "FSLL-101 trip closes XV-100 (< 30 m³/h, 5 s)",
+   "TSHH-108 trip closes XV-100 (> 95 °C, 5 s)",
+   "PSHH-100 trip closes XV-100 (> 250 kPa g, 3 s)",
+   "XV-100 fails closed (de-energise to trip); first-out on the SIS panel",
+   "XV-100 start permissive: BFW ≥ 50 m³/h and FIC-104 in MAN ≤ 10 %",
+   "ESD push-button closes XV-100",
+   "PSV-100 on the E-101 shell (set TBC, EQ-02)",
+   "VB-101 vacuum breaker on the shell (admits air below −2.5 kPa g)",
+   "Air vent V-104 at the far end of the shell (manual)",
+   "FV-101A fails open (keeps water through the tubes)",
+   "FV-101B recycle = 100 − FIC-101 output (pump minimum flow)",
+   "FV-104 fails closed (steam off on loss of air or signal)",
+   "TIC-101 → FIC-104 cascade cuts the steam on a high outlet",
+   "P-101B spare pump (manual start)",
+   "Check valves on the pump discharges (assumed, not shown on the P&ID)",
+   "Strainer Y-101 ahead of trap ST-101",
+   "Trap bypass V-103 (manual, normally closed)",
+   "Shell drain V-105 (manual, normally closed)",
+   "Block valves V-101 / V-102 around the trap set",
+   "Field rounds: local gauges, trap and hotwell check",
+   "Start-up procedure: vent, warm-up at FIC-104 ≤ 10 %, then raise steam (SOP tab)",
+   "Shutdown procedure: steam off before the BFW is stopped (SOP tab)",
+   "Permit to work with isolation and depressuring before opening (SOP tab)"
+  ],
+  "recs": [
+   "Auto-start P-101B on a P-101A trip or low discharge pressure (PI-106 transmitter, recommended addition), completing inside the FSLL-101 delay; test the spare start monthly.",
+   "Add level transmitter LT-101 (recommended addition) on TK-101 with a low-level alarm and a low-low pump trip, and a high-level alarm for overfill.",
+   "Provide a fixed minimum-flow line with restriction orifice from the pump discharge to TK-101, independent of FV-101B, so a blocked outlet downstream of E-101 cannot deadhead the running pump.",
+   "Confirm a check valve on each pump discharge and on the BFW line to the boiler house; add them to the inspection plan.",
+   "Agree the interface with the boiler house: shared alarms for FIC-101 LO and TIAH-108 HI, a call-out procedure, and include loss of BFW and hot BFW from E-101 in the boiler-house HAZOP.",
+   "Water-treatment control: BFW hardness and oxygen-scavenger sampling programme; closed sampling point and PPE for treatment chemicals."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "First aid",
+    "Minor damage",
+    "No release"
+   ],
+   [
+    2,
+    "Minor",
+    "Medical treatment",
+    "Short loss of hot BFW",
+    "Small contained release"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury (scald)",
+    "Heater out of service for days; boiler-house upset",
+    "Hot-water or steam release on site"
+   ],
+   [
+    4,
+    "Major",
+    "Permanent disability or single fatality",
+    "Major exchanger damage; boiler trip or damage",
+    "Large steam and hot-water release"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "Shell rupture",
+    "Large steam and hot-water release beyond the unit"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the life of the plant",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Could happen in the plant life",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Several times in the plant life",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Yearly or more",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 11,
+ "sgseq": 18,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

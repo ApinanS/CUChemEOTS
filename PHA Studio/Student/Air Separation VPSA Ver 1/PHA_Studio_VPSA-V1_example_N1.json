@@ -1,0 +1,930 @@
+{
+ "v": 2,
+ "unit": "VPSA-V1",
+ "meta": {
+  "title": "HAZOP and LOPA of the VPSA-V1 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "VPSA-V1",
+  "pid": "",
+  "scope": "From the air intake F-100 and compressor K-100 through E-100, V-100, the adsorbers V-101A/B and the switching valves to the O2 buffer V-102 and the customer battery limit at XV-126 (off-spec vent XV-127); the vacuum system K-101, seal water and V-104 to the N2-rich buffer V-103 and the user battery limit at PV-133 / HV-136; the KS-140 sequencer, the SIS and the procedures. Utilities (instrument air, chilled water, power) are causes.",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Instrument air, chilled water, seal water and power are available at start-up; the customer takes O2 at about 3 bar a. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (chair)",
+   "name": "",
+   "duty": "Independent of the design; runs the method, keeps the team on the node, decides when a deviation is covered",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe (recorder)",
+   "name": "",
+   "duty": "Writes the worksheet live, reads back recommendations",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer (designer)",
+   "name": "",
+   "duty": "Design intent, the cycle and its pressures, isotherms and front position, heat and mass balances",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the unit is really run: rounds, start-up and V-102 sweep, trips and restarts, the customer interface",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Loops, the sequencer and its limit switches, fail positions, trips and permissives, which transmitter each trip reads",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety / risk engineer",
+   "name": "",
+   "duty": "Risk matrix, LOPA follow-up, oxygen and asphyxiation hazards, regulations",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Rotating equipment (K-100 screw, K-101 liquid ring), oxygen-service materials, adsorbent vendor (zeolite handling and change-out), pressure-vessel fatigue",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID PSA-PID-001 / PSA-PID-002 rev C",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, valves, relief, fail positions"
+  },
+  {
+   "ref": "PFD VPSA-PFD-100 and HMB VPSA-V1-PE-HMB-001",
+   "where": "Process, PFD and Process engineering tabs",
+   "use": "Design intent, flows, conditions"
+  },
+  {
+   "ref": "C&E VPSA-V1-IN-CE-001",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects"
+  },
+  {
+   "ref": "Instrument list VPSA-V1-IN-INL-001",
+   "where": "Instrumentation & control tab",
+   "use": "Instrument tags and ranges"
+  },
+  {
+   "ref": "Relief load basis VPSA-V1-PE-RLB-001",
+   "where": "Relief & vent tab",
+   "use": "PSV set pressures and governing cases"
+  },
+  {
+   "ref": "Equipment list VPSA-V1-ME-EQL-001",
+   "where": "Mechanical tab",
+   "use": "Design pressures and temperatures"
+  },
+  {
+   "ref": "KS-140 step table, SIS trips and permissives",
+   "where": "Sequencer and SIS tab",
+   "use": "Valve pattern per step, I-1 … I-6, first-out"
+  },
+  {
+   "ref": "Design basis and operating windows",
+   "where": "Design of the unit operation and Operating windows tabs",
+   "use": "Isotherms, cycle, front position, limits"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "Exercises and SOP tabs",
+   "use": "Cold start-up, restart, shutdown, ESD"
+  },
+  {
+   "ref": "HAZOP report VPSA-V1-SA-HZP-001",
+   "where": "HAZOP tab",
+   "use": "The reference study of this unit (instructor)"
+  },
+  {
+   "ref": "Dynamic model",
+   "where": "HAZOP tab, part 9, and the ▶ OTS tests",
+   "use": "Deviation runs with the safeguards active"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No feed air",
+    "causes": "K-100 motor trip (fault library)\npower failure\nVSD fault\nESD",
+    "events": "",
+    "grp": [],
+    "cons": "No air for the beds; if the cycle went on stepping the beds would only be evacuated; O2 production stops and the customer loses supply once the buffer is used.",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R01",
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Feed below its set point",
+    "causes": "Intake filter F-100 plugging (fault library)\nworn screw rotors (fault library)\nhot ambient air (fault library) using up the speed margin",
+    "events": "",
+    "grp": [],
+    "cons": "Less air per half cycle: lower production and higher power per Nm³ of O2; the customer is short when the speed reaches its limit.",
+    "cat": "PER",
+    "sg": [
+     "S005",
+     "S003",
+     "S006"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "Feed above design",
+    "causes": "FIC-101 set point raised to make more O2 (fault library: production push)\nFT-101 reading low",
+    "events": "",
+    "grp": [],
+    "cons": "More N2 per half cycle than the beds can take: the N2 front leaves the bed top and off-spec O2 reaches V-102 and the customer.",
+    "cat": "PER",
+    "sg": [
+     "S003",
+     "S007",
+     "S008",
+     "S009"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Pressure",
+    "gw": "LESS",
+    "dev": "Suction pressure low across F-100",
+    "causes": "Filter element heavily loaded (dust storm, fault library)\nelement collapsed after a long overrun",
+    "events": "",
+    "grp": [],
+    "cons": "Collapse of the element: dust and debris into K-100 (rotor damage) and on to the zeolite.",
+    "cat": "PER",
+    "sg": [
+     "S005",
+     "S010"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Compressor discharge hot",
+    "causes": "Hot afternoon (fault library)\ninternal cooling of K-100 fouled\nrecirculation at high speed",
+    "events": "",
+    "grp": [],
+    "cons": "Hotter air into E-100 and more load on the chilled water; rotor coating damage in the oil-free screw.",
+    "cat": "PER",
+    "sg": [
+     "S011",
+     "S012"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Contaminants in the intake air",
+    "causes": "Intake close to the N2-rich vents (PSV-103, HV-136)\nvehicle exhaust or hydrocarbon vapour near the intake\nhigher humidity",
+    "events": "",
+    "grp": [],
+    "cons": "N2-rich vent gas lowers the O2 in the feed (less production); hydrocarbons concentrate in the oxygen-rich zone of the beds and in V-102: ignition risk in oxygen service.",
+    "cat": "PER",
+    "sg": [
+     "S013",
+     "S014"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Composition",
+    "gw": "OTHER THAN",
+    "dev": "Oil in the compressed air",
+    "causes": "Bearing or gearbox seal failure on the oil-free compressor\nwrong machine or lubricant after maintenance",
+    "events": "",
+    "grp": [],
+    "cons": "Oil films on the zeolite and in the product lines: fire or explosion in oxygen service at PV-122, FV-125 or V-102; loss of bed capacity.",
+    "cat": "PER",
+    "sg": [
+     "S015",
+     "S013"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R06",
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Back-flow from V-100 through the stopped compressor",
+    "causes": "K-100 trip or stop with V-100 at up to 5.5 bar a\nno or failed non-return valve on the discharge",
+    "events": "",
+    "grp": [],
+    "cons": "Screw driven backwards; V-100 depressurises through K-100 to the intake; dust blown back into the filter.",
+    "cat": "PER",
+    "sg": [
+     "S016",
+     "S002"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R08"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "I-3 K-100 stopped while cycling, 2 s → cycle held, product diverted",
+   "tag": "K-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "K-100 STOP / K-101 STOP and KS-140 HOLD annunciations",
+   "tag": "K-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "FIC-101 LO 1600 / HI 2100 Nm³/h",
+   "tag": "FIC-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "O2 buffer V-102 (50 m³)",
+   "tag": "V-102",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "PDI-100 HI 40 mbar",
+   "tag": "PDI-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "SI-100 speed and XI-142 specific power indication",
+   "tag": "SI-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "AIC-124 trims the adsorption step (330–530 s), a slow loop (ti 3600 s)",
+   "tag": "AIC-124",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "AIC-124 LO 95 % O2",
+   "tag": "AIC-124",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "I-6 AT-124 < 90 % O2 for 10 s → product diverted (XV-126 shut, XV-127 open), not a trip",
+   "tag": "AT-124",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "Filter change-over by procedure",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "K-100 package protections (vendor, assumed — not on the screen P&ID)",
+   "tag": "K-100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "TIC-102 LO 15 / HI 30 °C",
+   "tag": "TIC-102",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "P&ID note: oxygen service, clean lines, no oil, vents at safe locations",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "Intake location chosen at design (to confirm)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "Oil-free compressor design",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "Discharge non-return valve (assumed — not shown on the screen P&ID)",
+   "tag": "",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Agree a back-up O2 supply with the customer (liquid-O2 tank and vaporiser with automatic change-over on low supply pressure), sized for a restart after a trip and for a cold start-up.",
+   "by": "Process / Owner",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Confirm the K-100 package protections (discharge temperature, vibration, motor) and wire them to the DCS so they appear as the cause of a K-100 STOP / I-3 first-out.",
+   "by": "Instrument / Rotating",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Duplex intake filter F-100 with on-line change-over, and a PDI-100 high-high alarm before the element can collapse.",
+   "by": "Mechanical / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Limit the FIC-101 set point range in the DCS (operator range around design; higher only through an engineering review of the cycle) so production pushes cannot drive the N2 front through the beds.",
+   "by": "Control / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Review the air-intake location: away from the PSV-103 and HV-136 discharges, the V-104 vent, vehicle routes and hydrocarbon sources; check the intake air for hydrocarbons where the product use requires it.",
+   "by": "Process / Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Oil-free certification of K-100 and a periodic oil-in-air check downstream of E-100; after any oil carry-over, a clean-for-oxygen inspection of the product side before restart.",
+   "by": "Rotating / Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Oxygen-compatibility review (materials, valve trims, velocity limits, adiabatic compression; ASTM G88/G94, EIGA Doc 13 / CGA G-4.4) of PV-122, FV-121, FV-125, XV-113/114/126/127 and V-102, and a clean-for-oxygen procedure after every intervention.",
+   "by": "Mechanical / Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R08",
+   "text": "Confirm a non-return valve on the K-100 discharge (not shown on the screen P&ID) so V-100 cannot back-flow through the stopped compressor.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "K-100 motor trip (fault library)",
+   "power failure",
+   "VSD fault",
+   "ESD",
+   "Intake filter F-100 plugging (fault library)",
+   "worn screw rotors (fault library)",
+   "hot ambient air (fault library) using up the speed margin",
+   "FIC-101 set point raised to make more O2 (fault library: production push)",
+   "FT-101 reading low",
+   "Filter element heavily loaded (dust storm, fault library)",
+   "element collapsed after a long overrun",
+   "Hot afternoon (fault library)",
+   "internal cooling of K-100 fouled",
+   "recirculation at high speed",
+   "Intake close to the N2-rich vents (PSV-103, HV-136)",
+   "vehicle exhaust or hydrocarbon vapour near the intake",
+   "higher humidity",
+   "Bearing or gearbox seal failure on the oil-free compressor",
+   "wrong machine or lubricant after maintenance",
+   "K-100 trip or stop with V-100 at up to 5.5 bar a",
+   "no or failed non-return valve on the discharge"
+  ],
+  "cons": [
+   "No air for the beds",
+   "if the cycle went on stepping the beds would only be evacuated",
+   "O2 production stops and the customer loses supply once the buffer is used.",
+   "Less air per half cycle: lower production and higher power per Nm³ of O2",
+   "the customer is short when the speed reaches its limit.",
+   "More N2 per half cycle than the beds can take: the N2 front leaves the bed top and off-spec O2 reaches V-102 and the customer.",
+   "Collapse of the element: dust and debris into K-100 (rotor damage) and on to the zeolite.",
+   "Hotter air into E-100 and more load on the chilled water",
+   "rotor coating damage in the oil-free screw.",
+   "N2-rich vent gas lowers the O2 in the feed (less production)",
+   "hydrocarbons concentrate in the oxygen-rich zone of the beds and in V-102: ignition risk in oxygen service.",
+   "Oil films on the zeolite and in the product lines: fire or explosion in oxygen service at PV-122, FV-125 or V-102",
+   "loss of bed capacity.",
+   "Screw driven backwards",
+   "V-100 depressurises through K-100 to the intake",
+   "dust blown back into the filter."
+  ],
+  "safe": [
+   "FIC-101 LO 1600 / HI 2100 Nm³/h (Feed air flow)",
+   "TIC-102 LO 15 / HI 30 °C (Air temperature after E-100)",
+   "PIC-103 LO 2.2 / HI 6 bar a (Air receiver V-100 pressure)",
+   "PDI-100 HI 40 mbar (Intake filter F-100 dirty)",
+   "PI-115A HI 5 bar a (Adsorber V-101A pressure high)",
+   "PI-115B HI 5 bar a (Adsorber V-101B pressure high)",
+   "AIC-124 LO 95 % O2 (O2 product purity low)",
+   "XI-143 LO 94 % O2 (O2 made in the last half cycle below 94 %)",
+   "PIC-123 LO 3 / HI 4.2 bar a (O2 buffer V-102 pressure)",
+   "FIC-125 LO 150 Nm³/h (O2 product to customer low)",
+   "XI-146 HI 0.15 bar a (Poor vacuum at the end of evacuation)",
+   "TI-132 HI 30 °C (K-101 seal water hot)",
+   "PIC-133 HI 1.8 bar a (N2-rich buffer V-103 pressure high)",
+   "AI-135 LO 85 % N2 (N2-rich gas purity low)",
+   "TI-116A LO 5 / HI 35 °C (Bed A bottom temperature)",
+   "TI-116B LO 5 / HI 35 °C (Bed B bottom temperature)",
+   "XI-141 LO 40 % (O2 recovery low)",
+   "I-1 PSHH-115A/B (own pressure switches) > 5.5 bar a for 3 s → cycle held (all XV shut), K-100 stopped, product diverted",
+   "I-2 K-101 stopped or seal water low (FSLL-137) while cycling, 2 s → cycle held, K-100 and K-101 stopped, product diverted",
+   "I-3 K-100 stopped while cycling, 2 s → cycle held, product diverted",
+   "I-4 PSHH-123 V-102 > 5.2 bar a for 5 s → cycle held, K-100 stopped, product diverted",
+   "ESD push-button I-5: cycle held, K-100 and K-101 stopped, product diverted",
+   "I-6 AT-124 < 90 % O2 for 10 s → product diverted (XV-126 shut, XV-127 open), not a trip",
+   "Routing to the customer refused below AT-124 93 % O2",
+   "Cycle-start permissives: SIS reset, K-101 running with seal water, K-100 running with V-100 ≥ 4 bar a, PIC-122 and FIC-121 in AUTO, instrument air healthy",
+   "PSV-100 on V-100 set 7 bar a",
+   "PSV-110A/B on the adsorbers set 6.5 bar a",
+   "PSV-102 on V-102 set 6 bar a",
+   "PSV-103 on V-103 set 2 bar a",
+   "PIC-103 → PV-103 blow-off at 6.2 bar a (PV-103 fail open)",
+   "ZSO/ZSC limit switches on every XV-111…114 with a discrepancy alarm after 5 s",
+   "Switching valves XV-111…114 fail closed",
+   "K-100 STOP / K-101 STOP and KS-140 HOLD annunciations",
+   "XV-127 DIVERT annunciation",
+   "O2 buffer V-102 (50 m³)",
+   "AIC-124 trims the adsorption step (330–530 s), a slow loop (ti 3600 s)",
+   "P&ID note: oxygen service, clean lines, no oil, vents at safe locations",
+   "Written procedures (Exercises tab: cold start-up, restart, shutdown, ESD)",
+   "Local gauges PG-103, PG-115A/B, PG-123, PG-131, PG-133 and TG-132 on rounds",
+   "PV-103, TV-102 and XV-127 fail open; PV-122, FV-121, FV-125 and PV-133 fail closed (instrument air)",
+   "SI-100 speed and XI-142 specific power indication",
+   "Filter change-over by procedure",
+   "K-100 package protections (vendor, assumed — not on the screen P&ID)",
+   "Intake location chosen at design (to confirm)",
+   "Oil-free compressor design",
+   "Discharge non-return valve (assumed — not shown on the screen P&ID)",
+   "TV-102 fails open",
+   "HV-104 drain bypass (manual)",
+   "Operator rounds at V-100",
+   "Every trip stops K-100",
+   "Cycle-start permissive V-100 ≥ 4 bar a",
+   "Design to the pressure-vessel code (fatigue analysis assumed)",
+   "Periodic inspection (assumed)",
+   "FI-101 vs production (XI-144)",
+   "Product filters on each bed outlet",
+   "XV stroke about 2 s (model)",
+   "Bed hold-down (assumed)",
+   "Operator rounds",
+   "PG-115A/B local gauges",
+   "Cycle-start permissive FIC-121 in AUTO",
+   "PV-122 is a back-pressure valve (fail closed)",
+   "model assumes forward flow only — non-return valve to confirm",
+   "Zero and span check of AT-124 (Field)",
+   "Customer's own analyser (assumed)",
+   "ESD procedure: vent V-102 through FV-125 to below 1.5 bar a (Exercises)",
+   "Portable O2 detector on rounds",
+   "FV-125 and XV-126 fail closed",
+   "Valve stroke times (actuators)",
+   "FSLL-137 → I-2 K-101 stopped or seal water low (FSLL-137) while cycling, 2 s → cycle held, K-100 and K-101 stopped, product diverted",
+   "CV-130 is a check valve",
+   "V-104 level indication (assumed — confirm on PSA-PID-002)",
+   "Seal-water flow cools the ring",
+   "HV-136 hand vent",
+   "FI-134 indication",
+   "None instrumented (no O2-deficiency detection on the P&ID)",
+   "Permit to work",
+   "PV-133 fails closed",
+   "CV-130 check valve",
+   "V-104 separator",
+   "Step clamped at 530 s",
+   "Manual step advance from the SIS faceplate",
+   "Relief valves PSV-110A/B, PSV-102, PSV-103 remain",
+   "Alarms ahead of each trip",
+   "Trip and diversion delays (I-2 2 s, I-6 10 s)",
+   "PV-103, TV-102 and XV-127 fail open",
+   "Cycle-start permissive \"instrument air healthy\"",
+   "Procedure: sweep V-102 with FIC-125 in MAN ≥ 80 % until AT-124 ≥ 95.5 %",
+   "Shutdown procedure: hold at a step boundary — step 4 or 8 (BD/PR) or the first minute of step 1 or 5",
+   "SIS reset refused while an I-1 or I-4 condition is active",
+   "Permit to work and confined-space entry (assumed)",
+   "Vendor loading procedure (assumed)",
+   "ESD procedure (Exercises tab)"
+  ],
+  "recs": [
+   "Agree a back-up O2 supply with the customer (liquid-O2 tank and vaporiser with automatic change-over on low supply pressure), sized for a restart after a trip and for a cold start-up.",
+   "Confirm the K-100 package protections (discharge temperature, vibration, motor) and wire them to the DCS so they appear as the cause of a K-100 STOP / I-3 first-out.",
+   "Duplex intake filter F-100 with on-line change-over, and a PDI-100 high-high alarm before the element can collapse.",
+   "Limit the FIC-101 set point range in the DCS (operator range around design; higher only through an engineering review of the cycle) so production pushes cannot drive the N2 front through the beds.",
+   "Review the air-intake location: away from the PSV-103 and HV-136 discharges, the V-104 vent, vehicle routes and hydrocarbon sources; check the intake air for hydrocarbons where the product use requires it.",
+   "Oil-free certification of K-100 and a periodic oil-in-air check downstream of E-100; after any oil carry-over, a clean-for-oxygen inspection of the product side before restart.",
+   "Oxygen-compatibility review (materials, valve trims, velocity limits, adiabatic compression; ASTM G88/G94, EIGA Doc 13 / CGA G-4.4) of PV-122, FV-121, FV-125, XV-113/114/126/127 and V-102, and a clean-for-oxygen procedure after every intervention.",
+   "Confirm a non-return valve on the K-100 discharge (not shown on the screen P&ID) so V-100 cannot back-flow through the stopped compressor."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "Energy or gas wasted; short upset",
+    "Normal vent flows only"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid",
+    "Production or purity below target for hours; damage repaired on line",
+    "Small O2-rich or N2-rich release at a vent"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "Off-spec O2 delivered or the customer's supply lost; zeolite poisoned; unit stopped for days",
+    "O2-enriched or N2-rich gas in a work area"
+   ],
+   [
+    4,
+    "Major",
+    "Permanent disability or single fatality (oxygen-fed fire, asphyxiation, vessel rupture)",
+    "Major equipment damage",
+    "Release affecting the whole site"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "Fire or rupture spreading beyond the unit",
+    "Off-site impact"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the life of the plant",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Could happen in the plant life",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Several times in the plant life",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Yearly or more",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 8,
+ "sgseq": 16,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

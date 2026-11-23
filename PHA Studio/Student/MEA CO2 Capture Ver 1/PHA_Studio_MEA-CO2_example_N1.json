@@ -1,0 +1,797 @@
+{
+ "v": 2,
+ "unit": "MEA-CO2",
+ "meta": {
+  "title": "HAZOP and LOPA of the MEA-CO2 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "MEA-CO2",
+  "pid": "",
+  "scope": "From the DCC outlet (flue gas battery limit) through the absorber T-101, the solvent circuit and the stripper T-102 to the stack and the CO2 battery limit, including utilities (LP steam, cooling water, demin make-up water, instrument air, electrical power).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. LP steam, cooling water, demin water, instrument air and power are available at start-up. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Guides the team through nodes, parameters and guide words; keeps to the method; not from the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every deviation (full recording) in the worksheet",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, the heat and mass balance (MEA-PE-HMB-001), solvent loadings, the operating window",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the unit is really run: start-up, shutdown, ESD, the alarms the operators see",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Control loops, alarms, trips I-1/I-2/I-3, fail positions, the C&E and the SRS",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety engineer",
+   "name": "",
+   "duty": "Risk matrix, relief and vent cases, follow-up to LOPA",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Solvent chemistry and corrosion, rotating equipment (K-101, pumps), electrical (MCC, power loss)",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID CC-PID-101 rev A",
+   "where": "P&ID tab (Process & Design; also Operate); EPC P&ID PDF on the P&ID tab",
+   "use": "Node boundaries, tags, valves, fail positions (note F), interlocks I-1/I-2/I-3; PSVs HOLD (note 5)"
+  },
+  {
+   "ref": "PFD MEA-PFD-001 rev 0 and HMB MEA-PE-HMB-001 rev 0",
+   "where": "PFD tab (Process & Design); Process engineering tab (Engineering EPC)",
+   "use": "Design intent, flows, conditions, line sizes"
+  },
+  {
+   "ref": "C&E matrix MEA-IN-CE-001 rev 0",
+   "where": "C&E matrix tab (Safety)",
+   "use": "Alarm and trip settings, delays and effects"
+  },
+  {
+   "ref": "SRS of SIF MEA-IN-SRS-001 rev 0",
+   "where": "SRS of SIF tab (Safety)",
+   "use": "SIF-1 … SIF-5, SIL, PFDavg, proof tests"
+  },
+  {
+   "ref": "Relief load basis MEA-PE-RLB-001 rev 0",
+   "where": "Relief & vent tab (Engineering EPC)",
+   "use": "PSV-301, PSV-207, TSV-501…504: cases and set pressures (still HOLD on the P&ID)"
+  },
+  {
+   "ref": "Equipment list MEA-ME-EQL-001 rev 0",
+   "where": "Mechanical tab (Engineering EPC)",
+   "use": "Design pressures and temperatures, materials"
+  },
+  {
+   "ref": "Instrument list MEA-IN-INL-001 rev 0",
+   "where": "Instrumentation & control tab (Engineering EPC)",
+   "use": "Instrument tags, ranges, control-valve check"
+  },
+  {
+   "ref": "Electrical load list MEA-EE-LL-001 rev 0",
+   "where": "Electrical tab (Engineering EPC)",
+   "use": "Motors, power loss, MCC"
+  },
+  {
+   "ref": "HAZOP study MEA-SA-HZP-001 rev A",
+   "where": "HAZOP tab (Safety): worksheets of the existing study; the report PDF is issued with the instructor copy",
+   "use": "Revalidation baseline; recommendations already raised"
+  },
+  {
+   "ref": "LOPA and Safety layers (study)",
+   "where": "LOPA and Safety layers tabs (Safety)",
+   "use": "IPL credits, PFDs, layer register"
+  },
+  {
+   "ref": "Document register MEA-PM-DOC-001 rev 0",
+   "where": "Project & deliverables tab (Engineering EPC)",
+   "use": "Revisions and open engineering queries (EQ)"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP tab (Operability) and the procedures on the Exercises tab",
+   "use": "Start-up, shutdown, ESD, pump change-over"
+  },
+  {
+   "ref": "Dynamic model",
+   "where": "DCS console (Operate): the ▶ OTS tests of this program",
+   "use": "Deviation runs with the safeguards active"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No flue gas to T-101",
+    "causes": "K-101 motor trip\nVFD failure\nXV-101 spurious closure\nFIC-101 transmitter fails high (speed cut back)",
+    "events": "",
+    "grp": [],
+    "cons": "No CO2 captured: the whole slip-stream CO2 goes to the stack. The stripper keeps steaming with no CO2 load (over-stripping, steam wasted, overhead hot).",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R01",
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "More flue gas than design",
+    "causes": "Power-plant load push: FIC-101 set point raised\nFIC-101 transmitter reads low\nSet-point error",
+    "events": "",
+    "grp": [],
+    "cons": "L/G falls and capture drops below 90 %; T-101 approaches flood, ΔP and liquid entrainment to the wash and stack rise (amine emission); K-101 power rises.",
+    "cat": "PER",
+    "sg": [
+     "S004",
+     "S005",
+     "S006",
+     "S007"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R03",
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "High pressure at the T-101 gas inlet",
+    "causes": "Absorber flooding or plugged packing/demister\nK-101 at high speed against a restriction",
+    "events": "",
+    "grp": [],
+    "cons": "Duct and expansion joints over-pressured; flue gas (low O2, CO, NOx) leaks at grade — asphyxiation hazard; T-101 shell above its low design pressure.",
+    "cat": "PER",
+    "sg": [
+     "S006",
+     "S005",
+     "S008"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Reverse flow from T-101 into the duct and blower",
+    "causes": "K-101 trips with XV-101 still open (XV-101 closes only on I-1)\nT-101 sump level up to the gas inlet",
+    "events": "",
+    "grp": [],
+    "cons": "Wet, amine-laden gas or liquid amine back into the blower casing and duct: corrosion, liquid slug and blower damage on restart, amine spill at duct drains.",
+    "cat": "PER",
+    "sg": [
+     "S009",
+     "S010",
+     "S011"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Composition",
+    "gw": "MORE",
+    "dev": "More CO2 in the flue gas",
+    "causes": "Gas turbine at part load / duct firing: CO2 up to 6 mol%",
+    "events": "",
+    "grp": [],
+    "cons": "Rich loading rises (corrosion of the hot rich side), capture falls unless the lean rate and steam follow.",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013",
+     "S007",
+     "S014"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": [],
+  "N10": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FIC-101 LO alarm 150 kNm³/h",
+   "tag": "FIC-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "K-101 stop alarm (DCS)",
+   "tag": "K-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "JI-101 blower power indication",
+   "tag": "JI-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "FIC-101 HI alarm 205 kNm³/h",
+   "tag": "FIC-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "AY-102 HI alarm 80 %",
+   "tag": "AY-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "PDI-102 HI alarm 6 kPa",
+   "tag": "PDI-102",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "AY-112 LO alarm 88 %",
+   "tag": "AY-112",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "K-101 VFD speed range (FIC-101 output 0–100 %)",
+   "tag": "K-101",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "LSHH-109 90 % → I-1 unit trip: K-101 stop, XV-101 and XV-207 shut (5 s)",
+   "tag": "LSHH-109",
+   "type": "Interlock (SIS)",
+   "pfd": "0.0401"
+  },
+  {
+   "id": "S010",
+   "text": "LIC-109 HI alarm 70 %",
+   "tag": "LIC-109",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S011",
+   "text": "XV-101 fails closed (FC) on I-1",
+   "tag": "XV-101",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "AI-101 HI alarm 5 mol%",
+   "tag": "AI-101",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "AI-113 HI alarm 0.485 mol/mol",
+   "tag": "AI-113",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "Procedure: raise FIC-201 and keep TIC-206 (OTS procedure)",
+   "tag": "FIC-201",
+   "type": "Procedure / human",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Write and train a loss-of-flue-gas response (K-101 trip): cut the steam to hot standby, keep the solvent circulating and the overhead in AUTO.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Close XV-101 (or fit a non-return damper) when K-101 stops, not only on I-1.",
+   "by": "I&C",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Add an L/G ratio (lean set point from the measured flue gas) with high and low limits, and an operator guide for CO2 changes.",
+   "by": "Process / I&C",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Add a flood override: on PDI-102 or AY-102 high-high, hold or cut back the FIC-101 set point automatically.",
+   "by": "I&C",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Show the T-101 inlet pressure (PI-101, in the DCS) on CC-PID-101 with a high alarm; confirm duct and T-101 design pressure against the K-101 shut-off head.",
+   "by": "Process / Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "K-101 motor trip",
+   "VFD failure",
+   "XV-101 spurious closure",
+   "FIC-101 transmitter fails high (speed cut back)",
+   "Power-plant load push: FIC-101 set point raised",
+   "FIC-101 transmitter reads low",
+   "Set-point error",
+   "Absorber flooding or plugged packing/demister",
+   "K-101 at high speed against a restriction",
+   "K-101 trips with XV-101 still open (XV-101 closes only on I-1)",
+   "T-101 sump level up to the gas inlet",
+   "Gas turbine at part load / duct firing: CO2 up to 6 mol%"
+  ],
+  "cons": [
+   "No CO2 captured: the whole slip-stream CO2 goes to the stack. The stripper keeps steaming with no CO2 load (over-stripping, steam wasted, overhead hot).",
+   "L/G falls and capture drops below 90 %",
+   "T-101 approaches flood, ΔP and liquid entrainment to the wash and stack rise (amine emission)",
+   "K-101 power rises.",
+   "Duct and expansion joints over-pressured",
+   "flue gas (low O2, CO, NOx) leaks at grade — asphyxiation hazard",
+   "T-101 shell above its low design pressure.",
+   "Wet, amine-laden gas or liquid amine back into the blower casing and duct: corrosion, liquid slug and blower damage on restart, amine spill at duct drains.",
+   "Rich loading rises (corrosion of the hot rich side), capture falls unless the lean rate and steam follow."
+  ],
+  "safe": [
+   "FIC-101 LO alarm 150 kNm³/h",
+   "FIC-101 HI alarm 205 kNm³/h",
+   "AI-101 LO alarm 3.2 mol%",
+   "AI-101 HI alarm 5 mol%",
+   "AY-112 LO alarm 88 %",
+   "AI-111 HI alarm 0.55 mol%",
+   "PDI-102 HI alarm 6 kPa",
+   "AY-102 HI alarm 80 %",
+   "LIC-109 LO alarm 30 %",
+   "LIC-109 HI alarm 70 %",
+   "TIC-110 HI alarm 45 °C",
+   "FIC-201 LO alarm 220 t/h",
+   "FIC-201 HI alarm 330 t/h",
+   "TIC-202 HI alarm 45 °C",
+   "AI-203 HI alarm 0.28 mol/mol",
+   "AI-113 HI alarm 0.485 mol/mol",
+   "TIC-206 LO alarm 117 °C",
+   "TIC-206 HI alarm 123 °C",
+   "LIC-208 LO alarm 30 %",
+   "LIC-208 HI alarm 70 %",
+   "AY-210 HI alarm 80 %",
+   "PIC-301 LO alarm 165 kPa a",
+   "PIC-301 HI alarm 190 kPa a",
+   "TIC-302 HI alarm 50 °C",
+   "LIC-303 LO alarm 25 %",
+   "LIC-303 HI alarm 75 %",
+   "AY-212 HI alarm 4.3 GJ/t",
+   "AIT-213 LO alarm 28 wt%",
+   "AIT-213 HI alarm 32 wt%",
+   "K-101 stop alarm (DCS)",
+   "JI-101 blower power indication",
+   "K-101 VFD speed range (FIC-101 output 0–100 %)",
+   "LSHH-109 90 % → I-1 unit trip: K-101 stop, XV-101 and XV-207 shut (5 s)",
+   "XV-101 fails closed (FC) on I-1",
+   "TI-101 indication (no alarm)",
+   "Procedure: raise FIC-201 and keep TIC-206 (OTS procedure)",
+   "TI-103…TI-107 profile (bulge position)",
+   "LSHH-109 90 % → I-1 unit trip: K-101 stop, XV-101 and XV-207 shut (5 s) — own level sensor, independent of LT-109",
+   "P-101 stop alarm (DCS)",
+   "LSLL-109 5 % → I-3 stops P-101 (3 s)",
+   "FI-109 indication",
+   "LSHH-109 90 % / LSLL-109 5 % on their own sensor (true level)",
+   "LSLL-208 10 % → I-2 XV-207 shut and P-102 stop (5 s)",
+   "TI-103…TI-107",
+   "P-104 stop alarm (DCS)",
+   "TV-110 fails open (FO)",
+   "PDI-102 HI alarm 6 kPa (spans the wash section)",
+   "TI-204 indication",
+   "PDI-209 indication",
+   "P-102 stop alarm (DCS)",
+   "FV-208 fails closed (FC)",
+   "TI-211 indication",
+   "PIC-301 indication (LO 165 kPa a alarm suppressed with the steam off)",
+   "PV-301 fails open (FO)",
+   "TSHH-206 130 °C → I-2 XV-207 steam shut (5 s)",
+   "FV-207 fails closed (FC)",
+   "PSHH-301 250 kPa a → I-2 XV-207 steam shut (3 s)",
+   "TSHH-206 130 °C on its own sensor (true temperature)",
+   "No instrument on CC-PID-101 (steam header pressure not measured)",
+   "XV-207 fails closed (FC) on I-2",
+   "Relief valves HOLD (P&ID note 5) — not credited",
+   "TV-302 fails open (FO)",
+   "P-103 stop alarm (DCS)",
+   "FV-303 fails closed (FC)",
+   "AY-112 LO alarm 88 % (suppressed only with no flue gas)",
+   "TV-202 fails open (FO)",
+   "TI-205 indication",
+   "None on CC-PID-101",
+   "XV-101 / XV-207 open permissives: T-101 sump < 80 %, FIC-201 ≥ 120 t/h, P-101 running, T-102 sump > 20 %, PIC-301 < 230 kPa a, TIC-206 < 128 °C",
+   "Procedure step and P&ID note D: strip to AIT-203 ≤ 0.26 before admitting gas",
+   "Procedure step: cool the reboiler below 100 °C with the solvent circulating",
+   "TIC-206 indication",
+   "I-1 reset blocked while the T-101 sump is within 2 % of LSHH-109",
+   "I-2 reset blocked within 5 kPa / 2 °C / 5 % of its trips",
+   "ESD push button → I-1 unit trip",
+   "None on CC-PID-101 (permit to work outside the scope)",
+   "FV-201 fails open (FO)",
+   "FV-109 fails closed (FC)",
+   "PSV-301 on T-102, E-102 shell (process side), E-103 process side, V-101, set 350 kPa a (not on CC-PID-101 rev A, note 5 HOLD: not credited)",
+   "PSV-207 on E-102 steam side, condensate pot, set ≤ steam-side design pressure (not on CC-PID-101 rev A, note 5 HOLD: not credited)",
+   "TSV-501 on E-101 rich side (not on CC-PID-101 rev A, note 5 HOLD: not credited)",
+   "TSV-502 on E-104 CW side (not on CC-PID-101 rev A, note 5 HOLD: not credited)",
+   "TSV-503 on E-103 CW side (not on CC-PID-101 rev A, note 5 HOLD: not credited)",
+   "TSV-504 on E-105 CW side (not on CC-PID-101 rev A, note 5 HOLD: not credited)",
+   "TIC-206 → FIC-207 steam cascade holds 120 °C (BPCS)",
+   "Operator response to the alarm",
+   "Written procedure (SOP) and checklist",
+   "Permit to work, isolation and draining procedure",
+   "Field round with the rounds sheet (Visual plant)",
+   "PPE for hot amine (face shield, gloves)"
+  ],
+  "recs": [
+   "Write and train a loss-of-flue-gas response (K-101 trip): cut the steam to hot standby, keep the solvent circulating and the overhead in AUTO.",
+   "Close XV-101 (or fit a non-return damper) when K-101 stops, not only on I-1.",
+   "Add an L/G ratio (lean set point from the measured flue gas) with high and low limits, and an operator guide for CO2 changes.",
+   "Add a flood override: on PDI-102 or AY-102 high-high, hold or cut back the FIC-101 set point automatically.",
+   "Show the T-101 inlet pressure (PI-101, in the DCS) on CC-PID-101 with a high alarm; confirm duct and T-101 design pressure against the K-101 shut-off head."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "No damage; production loss < 1 h",
+    "Within permit"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid",
+    "Minor damage; loss < 1 shift; capture below target",
+    "Short emission above target, no report"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "Equipment damage; loss of days",
+    "Reportable emission or contained spill"
+   ],
+   [
+    4,
+    "Major",
+    "Serious injury / disability",
+    "Major damage (column, compressor); loss of weeks",
+    "Release beyond the bund"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Fatality or multiple serious injuries",
+    "Loss of the unit",
+    "Major off-site release"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not heard of in the industry",
+    "< 10⁻⁴ /y"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Has happened in the industry",
+    "10⁻⁴ – 10⁻³ /y"
+   ],
+   [
+    3,
+    "Possible",
+    "Could happen in the life of this unit",
+    "10⁻³ – 10⁻² /y"
+   ],
+   [
+    4,
+    "Likely",
+    "Expected a few times in the life of the unit",
+    "10⁻² – 10⁻¹ /y"
+   ],
+   [
+    5,
+    "Frequent",
+    "Several times a year",
+    "> 10⁻¹ /y"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 5,
+ "sgseq": 14,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

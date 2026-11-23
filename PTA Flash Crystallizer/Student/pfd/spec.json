@@ -1,0 +1,474 @@
+{
+ "title": "PROCESS FLOW DIAGRAM",
+ "subtitle": "PTA MULTISTAGE FLASH CRYSTALLIZER TRAIN V-201 TO V-204",
+ "project": "PTA FLASH CRYSTALLIZER OTS VER 1 - TEACHING UNIT",
+ "drawing_no": "PTA-PFD-001",
+ "rev": "0",
+ "sheet": "1 OF 1",
+ "scale": "NTS",
+ "drawn_by": "Apinan Soottitantawat",
+ "checked_by": "",
+ "date": "2026-11-13",
+ "page": "A4",
+ "orientation": "landscape",
+ "show_legend": true,
+ "notes": [
+  "Flows in t/h; temperatures in deg C; pressures in bar a. Values: simulator design point.",
+  "Slurry cascades by pressure difference, no pumps. V-201..V-204: ID 3.0 m, T/T 10 m, agitated.",
+  "E-211..E-231 utility side assumed BFW (steam generation); E-241 cooling water. Condensate route not simulated.",
+  "Relief, isolation, drains and instrument loops: see P&ID PTA-PID-201."
+ ],
+ "panels": [
+  {
+   "title": "DESIGN BASIS",
+   "lines": [
+    "Feed 250 t/h, 30 wt% TA dissolved, 285 deg C from R-101 at 72 bar a",
+    "Stage T: 269.5 / 243.5 / 218.1 / 180.0 deg C",
+    "Stage P: 48.66 / 34.47 / 23.09 / 10.85 bar a",
+    "TA crystallized 50 / 85 / 95 / 99 % cumulative; product 74.2 t/h crystals in 169 t/h slurry"
+   ]
+  }
+ ],
+ "flag_order": [
+  "m",
+  "t",
+  "p"
+ ],
+ "flag_units": {
+  "m": "Mass Flow (t/h)",
+  "t": "Temperature (deg C)",
+  "p": "Pressure (bar a)"
+ },
+ "equipment": [
+  {
+   "tag": "V-201",
+   "name": "Flash Crystallizer 1 (agitated, M-201)",
+   "type": "reactor_stirred",
+   "x": 78,
+   "y": 98,
+   "real": {
+    "d": 3,
+    "h": 10
+   }
+  },
+  {
+   "tag": "E-211",
+   "name": "Heat Recovery Exchanger 1 (38 bar a header)",
+   "type": "hx",
+   "x": 92,
+   "y": 44,
+   "opts": {
+    "utility": "bfw"
+   }
+  },
+  {
+   "tag": "V-202",
+   "name": "Flash Crystallizer 2 (agitated, M-202)",
+   "type": "reactor_stirred",
+   "x": 130,
+   "y": 98,
+   "real": {
+    "d": 3,
+    "h": 10
+   }
+  },
+  {
+   "tag": "E-221",
+   "name": "Heat Recovery Exchanger 2 (25 bar a header)",
+   "type": "hx",
+   "x": 144,
+   "y": 44,
+   "opts": {
+    "utility": "bfw"
+   }
+  },
+  {
+   "tag": "V-203",
+   "name": "Flash Crystallizer 3 (agitated, M-203)",
+   "type": "reactor_stirred",
+   "x": 182,
+   "y": 98,
+   "real": {
+    "d": 3,
+    "h": 10
+   }
+  },
+  {
+   "tag": "E-231",
+   "name": "Heat Recovery Exchanger 3 (15 bar a header)",
+   "type": "hx",
+   "x": 196,
+   "y": 44,
+   "opts": {
+    "utility": "bfw"
+   }
+  },
+  {
+   "tag": "V-204",
+   "name": "Flash Crystallizer 4 (agitated, M-204)",
+   "type": "reactor_stirred",
+   "x": 234,
+   "y": 98,
+   "real": {
+    "d": 3,
+    "h": 10
+   }
+  },
+  {
+   "tag": "E-241",
+   "name": "Vapour Condenser (5 bar a header)",
+   "type": "condenser",
+   "x": 248,
+   "y": 44,
+   "opts": {
+    "utility": "cw"
+   }
+  }
+ ],
+ "terminals": [
+  {
+   "id": "FEED",
+   "kind": "offpage",
+   "ref": "R-101",
+   "label": "Feed from R-101",
+   "x": "left",
+   "y": 98,
+   "dir": "E"
+  },
+  {
+   "id": "PW",
+   "label": "Purge Water (DIW)",
+   "x": "left",
+   "y": 142,
+   "dir": "E",
+   "note": [
+    "65 bar a, 40 deg C"
+   ]
+  },
+  {
+   "id": "COND",
+   "label": "Flash Condensate to Recovery",
+   "x": "right",
+   "y": 28,
+   "dir": "W"
+  },
+  {
+   "id": "PROD",
+   "label": "Product Slurry to Receiver",
+   "x": "right",
+   "y": 122,
+   "dir": "W",
+   "note": [
+    "4 bar a, to centrifuges"
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "id": "NC1",
+   "x": 104,
+   "y": 28
+  },
+  {
+   "id": "NP1",
+   "x": 71.7,
+   "y": 142
+  },
+  {
+   "id": "NC2",
+   "x": 156,
+   "y": 28
+  },
+  {
+   "id": "NP2",
+   "x": 123.7,
+   "y": 142
+  },
+  {
+   "id": "NC3",
+   "x": 208,
+   "y": 28
+  },
+  {
+   "id": "NP3",
+   "x": 175.7,
+   "y": 142
+  },
+  {
+   "id": "NC4",
+   "x": 260,
+   "y": 28
+  },
+  {
+   "id": "NP4",
+   "x": 227.7,
+   "y": 142
+  }
+ ],
+ "streams": [
+  {
+   "bfd": 1,
+   "from": "FEED",
+   "to": "V-201:W@0.5",
+   "control_valve": 0.3,
+   "valve": 0.55,
+   "flags": {
+    "m": 250,
+    "t": 285,
+    "p": 72
+   },
+   "flags_side": "above",
+   "flags_frac": 0.78,
+   "id_at": 0.9,
+   "n": 1
+  },
+  {
+   "bfd": 6,
+   "from": "V-201:N@0.2",
+   "to": "E-211:W",
+   "control_valve": 0.35,
+   "flags": {
+    "m": 31.4,
+    "t": 269.5,
+    "p": 48.66
+   },
+   "label": "PCV-210",
+   "id_at": 0.72,
+   "n": 2
+  },
+  {
+   "from": "E-211:E",
+   "to": "NC1:S",
+   "n": 3
+  },
+  {
+   "from": "NC1:E",
+   "to": "NC2:W",
+   "n": 4
+  },
+  {
+   "bfd": 2,
+   "from": "V-201:S",
+   "to": "V-202:W@0.5",
+   "control_valve": 0.45,
+   "flags": {
+    "m": 221.1,
+    "t": 269.5,
+    "p": 48.66
+   },
+   "label": "LCV-211",
+   "id_at": 0.7,
+   "n": 5
+  },
+  {
+   "bfd": 10,
+   "from": "NP1:N",
+   "to": "V-201:S@0.15",
+   "kind": "utility",
+   "flags": {
+    "m": 2.5
+   },
+   "flags_frac": 0.22,
+   "flags_side": "right",
+   "label": "FV-213",
+   "id_at": 0.62,
+   "n": 6
+  },
+  {
+   "from": "PW",
+   "to": "NP1:W",
+   "kind": "utility",
+   "arrow": false
+  },
+  {
+   "bfd": 7,
+   "from": "V-202:N@0.2",
+   "to": "E-221:W",
+   "control_valve": 0.35,
+   "flags": {
+    "m": 28.2,
+    "t": 243.5,
+    "p": 34.47
+   },
+   "label": "PCV-220",
+   "id_at": 0.72,
+   "n": 7
+  },
+  {
+   "from": "E-221:E",
+   "to": "NC2:S",
+   "n": 8
+  },
+  {
+   "from": "NC2:E",
+   "to": "NC3:W",
+   "n": 9
+  },
+  {
+   "bfd": 3,
+   "from": "V-202:S",
+   "to": "V-203:W@0.5",
+   "control_valve": 0.45,
+   "flags": {
+    "m": 195.1,
+    "t": 243.5,
+    "p": 34.47
+   },
+   "label": "LCV-221",
+   "id_at": 0.7,
+   "n": 10
+  },
+  {
+   "bfd": 11,
+   "from": "NP2:N",
+   "to": "V-202:S@0.15",
+   "kind": "utility",
+   "flags": {
+    "m": 2.2
+   },
+   "flags_frac": 0.22,
+   "flags_side": "right",
+   "label": "FV-223",
+   "id_at": 0.62,
+   "n": 11
+  },
+  {
+   "from": "NP1:E",
+   "to": "NP2:W",
+   "kind": "utility",
+   "arrow": false
+  },
+  {
+   "bfd": 8,
+   "from": "V-203:N@0.2",
+   "to": "E-231:W",
+   "control_valve": 0.35,
+   "flags": {
+    "m": 14.9,
+    "t": 218.1,
+    "p": 23.09
+   },
+   "label": "PCV-230",
+   "id_at": 0.72,
+   "n": 12
+  },
+  {
+   "from": "E-231:E",
+   "to": "NC3:S",
+   "n": 13
+  },
+  {
+   "from": "NC3:E",
+   "to": "NC4:W",
+   "n": 14
+  },
+  {
+   "bfd": 4,
+   "from": "V-203:S",
+   "to": "V-204:W@0.5",
+   "control_valve": 0.45,
+   "flags": {
+    "m": 182.3,
+    "t": 218.1,
+    "p": 23.09
+   },
+   "label": "LCV-231",
+   "id_at": 0.7,
+   "n": 15
+  },
+  {
+   "bfd": 12,
+   "from": "NP3:N",
+   "to": "V-203:S@0.15",
+   "kind": "utility",
+   "flags": {
+    "m": 2.1
+   },
+   "flags_frac": 0.22,
+   "flags_side": "right",
+   "label": "FV-233",
+   "id_at": 0.62,
+   "n": 16
+  },
+  {
+   "from": "NP2:E",
+   "to": "NP3:W",
+   "kind": "utility",
+   "arrow": false
+  },
+  {
+   "bfd": 9,
+   "from": "V-204:N@0.2",
+   "to": "E-241:W",
+   "control_valve": 0.35,
+   "flags": {
+    "m": 14.8,
+    "t": 180,
+    "p": 10.85
+   },
+   "label": "PCV-240",
+   "id_at": 0.72,
+   "n": 17
+  },
+  {
+   "from": "E-241:E",
+   "to": "NC4:S",
+   "n": 18
+  },
+  {
+   "from": "NC4:E",
+   "to": "COND",
+   "n": 19
+  },
+  {
+   "bfd": 5,
+   "from": "V-204:S",
+   "to": "PROD",
+   "control_valve": 0.45,
+   "flags": {
+    "m": 169.3,
+    "t": 180,
+    "p": 4
+   },
+   "label": "LCV-241",
+   "id_at": 0.7,
+   "flags_frac": 0.82,
+   "flags_side": "below",
+   "n": 20
+  },
+  {
+   "bfd": 13,
+   "from": "NP4:N",
+   "to": "V-204:S@0.15",
+   "kind": "utility",
+   "flags": {
+    "m": 1.8
+   },
+   "flags_frac": 0.22,
+   "flags_side": "right",
+   "label": "FV-243",
+   "id_at": 0.62,
+   "n": 21
+  },
+  {
+   "from": "NP3:E",
+   "to": "NP4:W",
+   "kind": "utility",
+   "arrow": false
+  }
+ ],
+ "labels": [
+  {
+   "text": "PCV-102",
+   "x": 38,
+   "y": 105,
+   "size": 5
+  },
+  {
+   "text": "XV-105",
+   "x": 52,
+   "y": 105,
+   "size": 5
+  }
+ ]
+}

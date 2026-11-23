@@ -1,0 +1,465 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="297.0mm" height="210.0mm" viewBox="0 0 297.0 210.0">
+<rect width="297.0" height="210.0" fill="#ffffff"/>
+<g stroke="#000000" stroke-linecap="round" stroke-linejoin="round" font-family="Helvetica, Arial, sans-serif">
+<rect x="7.000" y="7.000" width="283.000" height="196.000" fill="none" stroke-width="0.250"/>
+<text x="24.500" y="9.500" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">V-101</text>
+<text x="24.500" y="11.332" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none">Inlet Scrubber</text>
+<text x="55.500" y="9.500" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">K-100 S1</text>
+<text x="55.500" y="11.332" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none">Export Compressor Section 1 (LP)</text>
+<text x="86.500" y="9.500" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">E-101</text>
+<text x="86.500" y="11.332" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none">Intercooler</text>
+<text x="117.500" y="9.500" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">V-102</text>
+<text x="117.500" y="11.332" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none">Interstage Scrubber</text>
+<text x="148.500" y="9.500" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">K-100 S2</text>
+<text x="148.500" y="11.332" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none">Export Compressor Section 2 (HP)</text>
+<text x="179.500" y="9.500" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">E-102</text>
+<text x="179.500" y="11.332" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none">Aftercooler</text>
+<text x="210.500" y="9.500" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">GT-100</text>
+<text x="210.500" y="11.332" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none">Gas Turbine Driver (22 MW ISO)</text>
+<text x="241.500" y="9.500" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">V-900</text>
+<text x="241.500" y="11.332" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none">Flare KO Drum (PID-900)</text>
+<text x="272.500" y="9.500" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">P-160</text>
+<text x="272.500" y="11.332" font-size="1.552" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none">Cooling Medium Pump</text>
+<line x1="7.000" y1="14.163" x2="290.000" y2="14.163" stroke-width="0.150"/>
+<rect x="196.000" y="172.000" width="94.000" height="31.000" fill="#ffffff" stroke-width="0.250"/>
+<line x1="196.000" y1="176.600" x2="290.000" y2="176.600" stroke-width="0.150"/>
+<line x1="196.000" y1="187.600" x2="290.000" y2="187.600" stroke-width="0.150"/>
+<line x1="196.000" y1="194.600" x2="290.000" y2="194.600" stroke-width="0.150"/>
+<text x="198.000" y="173.200" font-size="1.376" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">GAS EXPORT COMPRESSOR VER 1 · OPERATOR TRAINING SIMULATOR</text>
+<text x="243.000" y="181.000" font-size="2.328" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none" font-weight="bold">PROCESS FLOW DIAGRAM</text>
+<text x="243.000" y="185.200" font-size="1.411" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">GAS EXPORT COMPRESSOR K-100 — TWO SECTIONS, GT-100 DRIVER</text>
+<text x="197.400" y="188.600" font-size="1.164" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">DRAWING No.</text>
+<text x="197.400" y="193.200" font-size="1.482" text-anchor="start" dominant-baseline="alphabetic" fill="#000" stroke="none">KC-PFD-100</text>
+<line x1="235.480" y1="187.600" x2="235.480" y2="194.600" stroke-width="0.150"/>
+<text x="236.880" y="188.600" font-size="1.164" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">REV.</text>
+<text x="236.880" y="193.200" font-size="1.482" text-anchor="start" dominant-baseline="alphabetic" fill="#000" stroke="none">A</text>
+<line x1="252.400" y1="187.600" x2="252.400" y2="194.600" stroke-width="0.150"/>
+<text x="253.800" y="188.600" font-size="1.164" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">SIZE</text>
+<text x="253.800" y="193.200" font-size="1.482" text-anchor="start" dominant-baseline="alphabetic" fill="#000" stroke="none">A4</text>
+<line x1="267.440" y1="187.600" x2="267.440" y2="194.600" stroke-width="0.150"/>
+<text x="268.840" y="188.600" font-size="1.164" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">SHEET</text>
+<text x="268.840" y="193.200" font-size="1.482" text-anchor="start" dominant-baseline="alphabetic" fill="#000" stroke="none">1 OF 1</text>
+<text x="197.400" y="195.600" font-size="1.164" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">DRAWN</text>
+<text x="197.400" y="200.200" font-size="1.482" text-anchor="start" dominant-baseline="alphabetic" fill="#000" stroke="none">Apinan Soottitantawat</text>
+<line x1="235.480" y1="194.600" x2="235.480" y2="201.600" stroke-width="0.150"/>
+<text x="236.880" y="195.600" font-size="1.164" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">CHECKED</text>
+<text x="236.880" y="200.200" font-size="1.482" text-anchor="start" dominant-baseline="alphabetic" fill="#000" stroke="none"></text>
+<line x1="252.400" y1="194.600" x2="252.400" y2="201.600" stroke-width="0.150"/>
+<text x="253.800" y="195.600" font-size="1.164" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">SCALE</text>
+<text x="253.800" y="200.200" font-size="1.482" text-anchor="start" dominant-baseline="alphabetic" fill="#000" stroke="none">NTS</text>
+<line x1="267.440" y1="194.600" x2="267.440" y2="201.600" stroke-width="0.150"/>
+<text x="268.840" y="195.600" font-size="1.164" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">DATE</text>
+<text x="268.840" y="200.200" font-size="1.482" text-anchor="start" dominant-baseline="alphabetic" fill="#000" stroke="none">2026-10-11</text>
+<rect x="7.000" y="174.800" width="188.000" height="28.200" fill="#ffffff" stroke-width="0.250"/>
+<text x="9.000" y="176.800" font-size="1.623" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">LEGEND</text>
+<polygon points="10.950,180.596 15.050,180.596 16.500,182.196 15.050,183.796 10.950,183.796 9.500,182.196" fill="#ffffff" stroke-width="0.150"/>
+<text x="13.000" y="182.196" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none"></text>
+<text x="18.000" y="182.196" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Gas Flow (MMSCFD)</text>
+<polygon points="41.733,180.596 47.833,180.596 45.933,183.796 39.833,183.796" fill="#ffffff" stroke-width="0.150"/>
+<text x="43.833" y="182.196" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none"></text>
+<text x="48.833" y="182.196" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Mass Flow (t/h)</text>
+<polygon points="71.167,180.596 78.167,180.596 78.167,183.796 71.167,183.796" fill="#ffffff" stroke-width="0.150"/>
+<text x="74.667" y="182.196" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none"></text>
+<text x="79.667" y="182.196" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Temperature (°C)</text>
+<polygon points="103.400,180.596 107.600,180.596 109.000,183.796 102.000,183.796" fill="#ffffff" stroke-width="0.150"/>
+<text x="105.500" y="182.196" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none"></text>
+<text x="110.500" y="182.196" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Pressure (barg)</text>
+<line x1="132.733" y1="182.196" x2="139.933" y2="182.196" stroke-width="0.320"/>
+<text x="141.333" y="182.196" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Process Line</text>
+<line x1="163.567" y1="182.196" x2="170.767" y2="182.196" stroke-width="0.180"/>
+<text x="172.167" y="182.196" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Utility Line</text>
+<polygon points="10.700,187.796 10.700,191.396 13.000,189.596" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="15.300,187.796 15.300,191.396 13.000,189.596" fill="#ffffff" stroke-width="0.150"/>
+<line x1="13.000" y1="189.596" x2="13.000" y2="185.226" stroke-width="0.150"/>
+<line x1="11.488" y1="185.226" x2="14.512" y2="185.226" stroke-width="0.150"/>
+<text x="18.000" y="189.596" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Block Valve</text>
+<polygon points="41.533,187.796 41.533,191.396 43.833,189.596" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="46.133,187.796 46.133,191.396 43.833,189.596" fill="#ffffff" stroke-width="0.150"/>
+<line x1="43.833" y1="189.596" x2="43.833" y2="185.226" stroke-width="0.150"/>
+<polygon points="42.753,185.226 44.913,185.226 44.553,183.714 43.113,183.714" fill="#ffffff" stroke-width="0.150"/>
+<text x="48.833" y="189.596" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Control Valve</text>
+<circle cx="74.667" cy="189.596" r="1.800" fill="#ffffff" stroke-width="0.250"/>
+<path d="M 74.667 189.596 L 74.667 191.396 A 1.800 1.800 0 0 1 74.667 187.796 Z" fill="#000000" stroke="#000" stroke-width="0.250"/>
+<text x="79.667" y="189.596" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Process Input / Output</text>
+<polygon points="105.500,187.196 107.900,189.596 105.500,191.996 103.100,189.596" fill="#ffffff" stroke-width="0.250"/>
+<text x="105.500" y="189.596" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none"></text>
+<text x="110.500" y="189.596" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Stream Number</text>
+<line x1="132.733" y1="189.596" x2="139.933" y2="189.596" stroke-width="0.320"/>
+<line x1="136.333" y1="186.596" x2="136.333" y2="188.296" stroke-width="0.320"/>
+<line x1="136.333" y1="190.896" x2="136.333" y2="192.596" stroke-width="0.320"/>
+<text x="141.333" y="189.596" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Line Crossing</text>
+<rect x="165.167" y="186.496" width="4.000" height="6.200" rx="2.000" ry="2.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="172.167" y="189.596" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Separator</text>
+<polygon points="10.000,194.796 16.000,195.896 16.000,198.096 10.000,199.196" fill="#ffffff" stroke-width="0.250"/>
+<text x="18.000" y="196.996" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Compressor</text>
+<circle cx="43.833" cy="196.996" r="2.500" fill="#ffffff" stroke-width="0.250"/>
+<polyline points="43.833,195.696 44.983,196.216 42.683,196.996 44.983,197.776 43.833,198.296" fill="none" stroke-width="0.150"/>
+<text x="48.833" y="196.996" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Heat Exchanger</text>
+<polygon points="71.667,195.896 77.667,194.796 77.667,199.196 71.667,198.096" fill="#ffffff" stroke-width="0.250"/>
+<text x="79.667" y="196.996" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Turbine / Expander</text>
+<rect x="102.000" y="195.296" width="7.000" height="3.400" rx="1.700" ry="1.700" fill="#ffffff" stroke-width="0.250"/>
+<text x="110.500" y="196.996" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Vessel / Drum</text>
+<circle cx="136.333" cy="196.398" r="1.656" fill="#ffffff" stroke-width="0.250"/>
+<line x1="134.677" y1="196.398" x2="136.333" y2="196.398" stroke-width="0.150"/>
+<line x1="135.307" y1="197.690" x2="134.429" y2="198.965" stroke-width="0.150"/>
+<line x1="137.360" y1="197.690" x2="138.238" y2="198.965" stroke-width="0.150"/>
+<line x1="134.263" y1="198.965" x2="138.403" y2="198.965" stroke-width="0.150"/>
+<text x="141.333" y="196.996" font-size="1.305" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">Centrifugal Pump</text>
+<rect x="7.000" y="155.000" width="187.000" height="18.800" fill="#ffffff" stroke-width="0.250"/>
+<text x="9.000" y="157.000" font-size="1.623" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">NOTES</text>
+<text x="9.000" y="159.596" font-size="1.376" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">1. Flags: OTS design state (200 MMSCFD, PIC-101 30.0 barg → SIC-100 speed; UV-103, UV-108, PV-102 shut). Pressures in barg.</text>
+<text x="9.000" y="162.160" font-size="1.376" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">2. K-100 sections 1 and 2: one casing, one shaft, direct drive by GT-100. UV-103/UV-108 recycle cooled gas (anti-surge).</text>
+<text x="9.000" y="164.724" font-size="1.376" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">3. Relief, blowdown, vent and bypass lines (PSV-001, PV-102, BDV-101/112, HV-101/102) drawn light. Trips and line sizes: P&amp;ID KC-PID-100.</text>
+<text x="9.000" y="167.288" font-size="1.376" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">4. Symbol sizes indicative. Flare KO drum and stack on PID-900 (tag V-900 assumed). Fuel-gas skid and seawater CM cooler not shown.</text>
+<rect x="84.500" y="102.000" width="11.000" height="24.000" rx="5.500" ry="5.500" fill="#ffffff" stroke-width="0.250"/>
+<line x1="84.500" y1="106.320" x2="95.500" y2="106.320" stroke-width="0.150"/>
+<line x1="84.500" y1="107.520" x2="95.500" y2="107.520" stroke-width="0.150"/>
+<line x1="85.100" y1="116.400" x2="94.900" y2="113.520" stroke-width="0.150"/>
+<polygon points="110.000,57.500 126.000,60.750 126.000,67.250 110.000,70.500" fill="#ffffff" stroke-width="0.250"/>
+<circle cx="143.000" cy="114.000" r="4.500" fill="#ffffff" stroke-width="0.250"/>
+<polyline points="143.000,111.660 145.070,112.596 140.930,114.000 145.070,115.404 143.000,116.340" fill="none" stroke-width="0.150"/>
+<line x1="143.000" y1="109.500" x2="143.000" y2="111.660" stroke-width="0.150"/>
+<line x1="143.000" y1="118.500" x2="143.000" y2="116.340" stroke-width="0.150"/>
+<rect x="160.500" y="102.000" width="11.000" height="24.000" rx="5.500" ry="5.500" fill="#ffffff" stroke-width="0.250"/>
+<line x1="160.500" y1="106.320" x2="171.500" y2="106.320" stroke-width="0.150"/>
+<line x1="160.500" y1="107.520" x2="171.500" y2="107.520" stroke-width="0.150"/>
+<line x1="161.100" y1="116.400" x2="170.900" y2="113.520" stroke-width="0.150"/>
+<polygon points="184.000,57.500 200.000,60.750 200.000,67.250 184.000,70.500" fill="#ffffff" stroke-width="0.250"/>
+<circle cx="214.000" cy="114.000" r="4.500" fill="#ffffff" stroke-width="0.250"/>
+<polyline points="214.000,111.660 216.070,112.596 211.930,114.000 216.070,115.404 214.000,116.340" fill="none" stroke-width="0.150"/>
+<line x1="214.000" y1="109.500" x2="214.000" y2="111.660" stroke-width="0.150"/>
+<line x1="214.000" y1="118.500" x2="214.000" y2="116.340" stroke-width="0.150"/>
+<polygon points="256.000,60.750 272.000,57.500 272.000,70.500 256.000,67.250" fill="#ffffff" stroke-width="0.250"/>
+<rect x="254.940" y="26.590" width="16.120" height="6.820" rx="3.410" ry="3.410" fill="#ffffff" stroke-width="0.250"/>
+<circle cx="254.000" cy="135.900" r="3.600" fill="#ffffff" stroke-width="0.250"/>
+<line x1="257.600" y1="135.900" x2="254.000" y2="135.900" stroke-width="0.150"/>
+<line x1="251.768" y1="138.708" x2="249.860" y2="141.480" stroke-width="0.150"/>
+<line x1="256.232" y1="138.708" x2="258.140" y2="141.480" stroke-width="0.150"/>
+<line x1="249.500" y1="141.480" x2="258.500" y2="141.480" stroke-width="0.150"/>
+<circle cx="15.000" cy="114.000" r="2.300" fill="#ffffff" stroke-width="0.250"/>
+<path d="M 15.000 114.000 L 15.000 116.300 A 2.300 2.300 0 0 1 15.000 111.700 Z" fill="#000000" stroke="#000" stroke-width="0.250"/>
+<circle cx="15.000" cy="148.000" r="2.300" fill="#ffffff" stroke-width="0.250"/>
+<path d="M 15.000 148.000 L 15.000 150.300 A 2.300 2.300 0 0 1 15.000 145.700 Z" fill="#000000" stroke="#000" stroke-width="0.250"/>
+<circle cx="282.000" cy="114.000" r="2.300" fill="#ffffff" stroke-width="0.250"/>
+<path d="M 282.000 114.000 L 282.000 116.300 A 2.300 2.300 0 0 1 282.000 111.700 Z" fill="#000000" stroke="#000" stroke-width="0.250"/>
+<circle cx="282.000" cy="30.000" r="2.300" fill="#ffffff" stroke-width="0.250"/>
+<path d="M 282.000 30.000 L 282.000 32.300 A 2.300 2.300 0 0 1 282.000 27.700 Z" fill="#000000" stroke="#000" stroke-width="0.250"/>
+<circle cx="282.000" cy="64.000" r="2.300" fill="#ffffff" stroke-width="0.250"/>
+<path d="M 282.000 64.000 L 282.000 66.300 A 2.300 2.300 0 0 1 282.000 61.700 Z" fill="#000000" stroke="#000" stroke-width="0.250"/>
+<circle cx="282.000" cy="136.000" r="2.300" fill="#ffffff" stroke-width="0.250"/>
+<path d="M 282.000 136.000 L 282.000 138.300 A 2.300 2.300 0 0 1 282.000 133.700 Z" fill="#000000" stroke="#000" stroke-width="0.250"/>
+<circle cx="143.000" cy="101.000" r="2.300" fill="#ffffff" stroke-width="0.250"/>
+<path d="M 143.000 101.000 L 143.000 103.300 A 2.300 2.300 0 0 1 143.000 98.700 Z" fill="#000000" stroke="#000" stroke-width="0.250"/>
+<circle cx="214.000" cy="101.000" r="2.300" fill="#ffffff" stroke-width="0.250"/>
+<path d="M 214.000 101.000 L 214.000 103.300 A 2.300 2.300 0 0 1 214.000 98.700 Z" fill="#000000" stroke="#000" stroke-width="0.250"/>
+<circle cx="44.000" cy="114.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="56.000" cy="114.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="74.000" cy="114.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="90.000" cy="48.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="122.800" cy="114.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="166.000" cy="92.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="166.000" cy="84.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="230.000" cy="114.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="242.000" cy="114.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="90.000" cy="148.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="44.000" cy="30.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="56.000" cy="30.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="80.000" cy="30.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="90.000" cy="30.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="242.000" cy="30.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<circle cx="214.000" cy="136.000" r="0.750" fill="#000000" stroke-width="0.250"/>
+<polyline points="17.300,114.000 44.000,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="20.340,112.200 20.340,115.800 22.640,114.000" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="24.940,112.200 24.940,115.800 22.640,114.000" fill="#ffffff" stroke-width="0.150"/>
+<line x1="22.640" y1="114.000" x2="22.640" y2="109.630" stroke-width="0.150"/>
+<line x1="21.128" y1="109.630" x2="24.152" y2="109.630" stroke-width="0.150"/>
+<polygon points="29.315,111.200 32.115,114.000 29.315,116.800 26.515,114.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="29.315" y="114.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">1</text>
+<line x1="37.325" y1="114.000" x2="37.325" y2="110.400" stroke-width="0.150"/>
+<polygon points="34.475,94.800 40.175,94.800 41.625,96.750 40.175,98.700 34.475,98.700 33.025,96.750" fill="#ffffff" stroke-width="0.150"/>
+<text x="37.325" y="96.750" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">200.0</text>
+<polygon points="34.425,98.700 42.125,98.700 40.225,102.600 32.525,102.600" fill="#ffffff" stroke-width="0.150"/>
+<text x="37.325" y="100.650" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">222.3</text>
+<polygon points="33.025,102.600 41.625,102.600 41.625,106.500 33.025,106.500" fill="#ffffff" stroke-width="0.150"/>
+<text x="37.325" y="104.550" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">35.0</text>
+<polygon points="34.425,106.500 40.225,106.500 41.625,110.400 33.025,110.400" fill="#ffffff" stroke-width="0.150"/>
+<text x="37.325" y="108.450" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">30.3</text>
+<polyline points="44.000,114.000 56.000,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="50.000,111.200 52.800,114.000 50.000,116.800 47.200,114.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="50.000" y="114.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">2</text>
+<polyline points="56.000,114.000 74.000,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="64.500,112.200 64.500,115.800 66.800,114.000" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="69.100,112.200 69.100,115.800 66.800,114.000" fill="#ffffff" stroke-width="0.150"/>
+<line x1="66.800" y1="114.000" x2="66.800" y2="109.630" stroke-width="0.150"/>
+<line x1="65.288" y1="109.630" x2="68.312" y2="109.630" stroke-width="0.150"/>
+<polygon points="60.500,111.200 63.300,114.000 60.500,116.800 57.700,114.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="60.500" y="114.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">3</text>
+<polyline points="74.000,114.000 84.500,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="84.500,114.000 81.900,114.920 81.900,113.080" fill="#000000" stroke-width="0.150"/>
+<polygon points="79.250,111.200 82.050,114.000 79.250,116.800 76.450,114.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="79.250" y="114.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">4</text>
+<polyline points="90.000,102.138 90.000,93.350" fill="none" stroke-width="0.320"/>
+<polyline points="90.000,90.650 90.000,48.000" fill="none" stroke-width="0.320"/>
+<polygon points="90.000,72.269 92.800,75.069 90.000,77.869 87.200,75.069" fill="#ffffff" stroke-width="0.250"/>
+<text x="90.000" y="75.069" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">5</text>
+<polyline points="90.000,48.000 113.200,48.000 113.200,58.150" fill="none" stroke-width="0.320"/>
+<polygon points="113.200,58.150 112.280,55.550 114.120,55.550" fill="#000000" stroke-width="0.150"/>
+<polygon points="106.675,45.200 109.475,48.000 106.675,50.800 103.875,48.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="106.675" y="48.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">6</text>
+<line x1="103.340" y1="48.000" x2="103.340" y2="51.600" stroke-width="0.150"/>
+<polygon points="100.440,51.600 108.140,51.600 106.240,55.500 98.540,55.500" fill="#ffffff" stroke-width="0.150"/>
+<text x="103.340" y="53.550" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">222.3</text>
+<polygon points="99.040,55.500 107.640,55.500 107.640,59.400 99.040,59.400" fill="#ffffff" stroke-width="0.150"/>
+<text x="103.340" y="57.450" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">34.4</text>
+<polygon points="100.440,59.400 106.240,59.400 107.640,63.300 99.040,63.300" fill="#ffffff" stroke-width="0.150"/>
+<text x="103.340" y="61.350" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">30.0</text>
+<polyline points="122.800,67.900 122.800,74.650" fill="none" stroke-width="0.320"/>
+<polyline points="122.800,77.350 122.800,90.650" fill="none" stroke-width="0.320"/>
+<polyline points="122.800,93.350 122.800,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="122.800,79.852 125.600,82.652 122.800,85.452 120.000,82.652" fill="#ffffff" stroke-width="0.250"/>
+<text x="122.800" y="82.652" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">7</text>
+<line x1="122.800" y1="84.035" x2="126.400" y2="84.035" stroke-width="0.150"/>
+<polygon points="127.800,78.185 135.500,78.185 133.600,82.085 125.900,82.085" fill="#ffffff" stroke-width="0.150"/>
+<text x="130.700" y="80.135" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">222.3</text>
+<polygon points="126.400,82.085 135.000,82.085 135.000,85.985 126.400,85.985" fill="#ffffff" stroke-width="0.150"/>
+<text x="130.700" y="84.035" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">105.2</text>
+<polygon points="127.800,85.985 133.600,85.985 135.000,89.885 126.400,89.885" fill="#ffffff" stroke-width="0.150"/>
+<text x="130.700" y="87.935" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">60.9</text>
+<polyline points="122.800,114.000 138.500,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="138.500,114.000 135.900,114.920 135.900,113.080" fill="#000000" stroke-width="0.150"/>
+<polygon points="130.650,111.200 133.450,114.000 130.650,116.800 127.850,114.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="130.650" y="114.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">8</text>
+<polyline points="147.500,114.000 160.500,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="160.500,114.000 157.900,114.920 157.900,113.080" fill="#000000" stroke-width="0.150"/>
+<polygon points="154.000,111.200 156.800,114.000 154.000,116.800 151.200,114.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="154.000" y="114.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">9</text>
+<line x1="152.050" y1="114.000" x2="152.050" y2="110.400" stroke-width="0.150"/>
+<polygon points="149.150,98.700 156.850,98.700 154.950,102.600 147.250,102.600" fill="#ffffff" stroke-width="0.150"/>
+<text x="152.050" y="100.650" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">222.3</text>
+<polygon points="147.750,102.600 156.350,102.600 156.350,106.500 147.750,106.500" fill="#ffffff" stroke-width="0.150"/>
+<text x="152.050" y="104.550" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">40.0</text>
+<polygon points="149.150,106.500 154.950,106.500 156.350,110.400 147.750,110.400" fill="#ffffff" stroke-width="0.150"/>
+<text x="152.050" y="108.450" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">60.4</text>
+<polyline points="166.000,102.138 166.000,92.000" fill="none" stroke-width="0.320"/>
+<polygon points="166.000,94.269 168.800,97.069 166.000,99.869 163.200,97.069" fill="#ffffff" stroke-width="0.250"/>
+<text x="166.000" y="97.069" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">10</text>
+<polyline points="166.000,92.000 166.000,84.000" fill="none" stroke-width="0.320"/>
+<polygon points="166.000,85.200 168.800,88.000 166.000,90.800 163.200,88.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="166.000" y="88.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">11</text>
+<polyline points="166.000,84.000 166.000,77.350" fill="none" stroke-width="0.320"/>
+<polyline points="166.000,74.650 166.000,65.350" fill="none" stroke-width="0.320"/>
+<polyline points="166.000,62.650 166.000,52.000 187.200,52.000 187.200,58.150" fill="none" stroke-width="0.320"/>
+<polygon points="187.200,58.150 186.280,55.550 188.120,55.550" fill="#000000" stroke-width="0.150"/>
+<polygon points="166.000,51.525 168.800,54.325 166.000,57.125 163.200,54.325" fill="#ffffff" stroke-width="0.250"/>
+<text x="166.000" y="54.325" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">12</text>
+<line x1="177.325" y1="52.000" x2="177.325" y2="48.400" stroke-width="0.150"/>
+<polygon points="174.425,36.700 182.125,36.700 180.225,40.600 172.525,40.600" fill="#ffffff" stroke-width="0.150"/>
+<text x="177.325" y="38.650" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">216.9</text>
+<polygon points="173.025,40.600 181.625,40.600 181.625,44.500 173.025,44.500" fill="#ffffff" stroke-width="0.150"/>
+<text x="177.325" y="42.550" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">40.0</text>
+<polygon points="174.425,44.500 180.225,44.500 181.625,48.400 173.025,48.400" fill="#ffffff" stroke-width="0.150"/>
+<text x="177.325" y="46.450" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">60.4</text>
+<polyline points="196.800,67.900 196.800,74.650" fill="none" stroke-width="0.320"/>
+<polyline points="196.800,77.350 196.800,82.650" fill="none" stroke-width="0.320"/>
+<polyline points="196.800,85.350 196.800,114.000 209.500,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="209.500,114.000 206.900,114.920 206.900,113.080" fill="#000000" stroke-width="0.150"/>
+<polygon points="196.800,94.500 199.600,97.300 196.800,100.100 194.000,97.300" fill="#ffffff" stroke-width="0.250"/>
+<text x="196.800" y="97.300" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">13</text>
+<line x1="196.800" y1="104.356" x2="193.200" y2="104.356" stroke-width="0.150"/>
+<polygon points="186.000,98.506 193.700,98.506 191.800,102.406 184.100,102.406" fill="#ffffff" stroke-width="0.150"/>
+<text x="188.900" y="100.456" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">216.9</text>
+<polygon points="184.600,102.406 193.200,102.406 193.200,106.306 184.600,106.306" fill="#ffffff" stroke-width="0.150"/>
+<text x="188.900" y="104.356" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">115.7</text>
+<polygon points="186.000,106.306 191.800,106.306 193.200,110.206 184.600,110.206" fill="#ffffff" stroke-width="0.150"/>
+<text x="188.900" y="108.256" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">121.6</text>
+<polyline points="218.500,114.000 230.000,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="224.250,111.200 227.050,114.000 224.250,116.800 221.450,114.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="224.250" y="114.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">14</text>
+<line x1="222.525" y1="114.000" x2="222.525" y2="110.400" stroke-width="0.150"/>
+<polygon points="219.625,98.700 227.325,98.700 225.425,102.600 217.725,102.600" fill="#ffffff" stroke-width="0.150"/>
+<text x="222.525" y="100.650" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">216.9</text>
+<polygon points="218.225,102.600 226.825,102.600 226.825,106.500 218.225,106.500" fill="#ffffff" stroke-width="0.150"/>
+<text x="222.525" y="104.550" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">45.0</text>
+<polygon points="219.625,106.500 225.425,106.500 226.825,110.400 218.225,110.400" fill="#ffffff" stroke-width="0.150"/>
+<text x="222.525" y="108.450" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">120.9</text>
+<polyline points="230.000,114.000 242.000,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="236.000,111.200 238.800,114.000 236.000,116.800 233.200,114.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="236.000" y="114.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">15</text>
+<polyline points="242.000,114.000 279.700,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="279.700,114.000 277.100,114.920 277.100,113.080" fill="#000000" stroke-width="0.150"/>
+<polygon points="252.895,112.200 252.895,115.800 255.195,114.000" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="257.495,112.200 257.495,115.800 255.195,114.000" fill="#ffffff" stroke-width="0.150"/>
+<line x1="255.195" y1="114.000" x2="255.195" y2="109.630" stroke-width="0.150"/>
+<line x1="253.683" y1="109.630" x2="256.707" y2="109.630" stroke-width="0.150"/>
+<polygon points="267.636,111.200 270.436,114.000 267.636,116.800 264.836,114.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="267.636" y="114.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">16</text>
+<line x1="255.195" y1="114.000" x2="255.195" y2="110.400" stroke-width="0.150"/>
+<polygon points="252.345,94.800 258.045,94.800 259.495,96.750 258.045,98.700 252.345,98.700 250.895,96.750" fill="#ffffff" stroke-width="0.150"/>
+<text x="255.195" y="96.750" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">195.2</text>
+<polygon points="252.295,98.700 259.995,98.700 258.095,102.600 250.395,102.600" fill="#ffffff" stroke-width="0.150"/>
+<text x="255.195" y="100.650" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">216.9</text>
+<polygon points="250.895,102.600 259.495,102.600 259.495,106.500 250.895,106.500" fill="#ffffff" stroke-width="0.150"/>
+<text x="255.195" y="104.550" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">45.0</text>
+<polygon points="252.295,106.500 258.095,106.500 259.495,110.400 250.895,110.400" fill="#ffffff" stroke-width="0.150"/>
+<text x="255.195" y="108.450" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">120.1</text>
+<polyline points="166.000,84.000 264.000,84.000 264.000,68.875" fill="none" stroke-width="0.320"/>
+<polygon points="264.000,68.875 264.920,71.475 263.080,71.475" fill="#000000" stroke-width="0.150"/>
+<polygon points="250.806,82.200 250.806,85.800 253.106,84.000" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="255.406,82.200 255.406,85.800 253.106,84.000" fill="#ffffff" stroke-width="0.150"/>
+<line x1="253.106" y1="84.000" x2="253.106" y2="79.630" stroke-width="0.150"/>
+<polygon points="252.026,79.630 254.186,79.630 253.826,78.118 252.386,78.118" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="222.562,81.200 225.363,84.000 222.562,86.800 219.762,84.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="222.562" y="84.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">17</text>
+<line x1="205.594" y1="84.000" x2="205.594" y2="87.600" stroke-width="0.150"/>
+<polygon points="202.694,87.600 210.394,87.600 208.494,91.500 200.794,91.500" fill="#ffffff" stroke-width="0.150"/>
+<text x="205.594" y="89.550" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">4.97</text>
+<polygon points="201.294,91.500 209.894,91.500 209.894,95.400 201.294,95.400" fill="#ffffff" stroke-width="0.150"/>
+<text x="205.594" y="93.450" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">40.0</text>
+<polygon points="202.694,95.400 208.494,95.400 209.894,99.300 201.294,99.300" fill="#ffffff" stroke-width="0.150"/>
+<text x="205.594" y="97.350" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">25.0</text>
+<polyline points="166.000,92.000 74.000,92.000 74.000,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="99.860,90.200 99.860,93.800 102.160,92.000" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="104.460,90.200 104.460,93.800 102.160,92.000" fill="#ffffff" stroke-width="0.150"/>
+<line x1="102.160" y1="92.000" x2="102.160" y2="87.630" stroke-width="0.150"/>
+<polygon points="101.080,87.630 103.240,87.630 102.880,86.118 101.440,86.118" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="143.200,89.200 146.000,92.000 143.200,94.800 140.400,92.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="143.200" y="92.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">18</text>
+<polyline points="230.000,114.000 230.000,85.350" fill="none" stroke-width="0.320"/>
+<polyline points="230.000,82.650 230.000,76.000 114.000,76.000 114.000,90.650" fill="none" stroke-width="0.320"/>
+<polyline points="114.000,93.350 114.000,114.000 122.800,114.000" fill="none" stroke-width="0.320"/>
+<polygon points="205.460,74.200 205.460,77.800 207.760,76.000" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="210.060,74.200 210.060,77.800 207.760,76.000" fill="#ffffff" stroke-width="0.150"/>
+<line x1="207.760" y1="76.000" x2="207.760" y2="71.630" stroke-width="0.150"/>
+<polygon points="206.680,71.630 208.840,71.630 208.480,70.118 207.040,70.118" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="177.640,73.200 180.440,76.000 177.640,78.800 174.840,76.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="177.640" y="76.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">19</text>
+<polyline points="90.000,125.862 90.000,148.000" fill="none" stroke-width="0.320"/>
+<polygon points="88.200,134.631 91.800,134.631 90.000,136.931" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="88.200,139.231 91.800,139.231 90.000,136.931" fill="#ffffff" stroke-width="0.150"/>
+<line x1="90.000" y1="136.931" x2="94.370" y2="136.931" stroke-width="0.150"/>
+<polygon points="94.370,135.851 94.370,138.011 95.882,137.651 95.882,136.211" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="90.000,127.490 92.800,130.290 90.000,133.090 87.200,130.290" fill="#ffffff" stroke-width="0.250"/>
+<text x="90.000" y="130.290" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">20</text>
+<polyline points="166.000,125.862 166.000,134.650" fill="none" stroke-width="0.320"/>
+<polyline points="166.000,137.350 166.000,148.000 90.000,148.000" fill="none" stroke-width="0.320"/>
+<polygon points="164.200,138.283 167.800,138.283 166.000,140.583" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="164.200,142.883 167.800,142.883 166.000,140.583" fill="#ffffff" stroke-width="0.150"/>
+<line x1="166.000" y1="140.583" x2="170.370" y2="140.583" stroke-width="0.150"/>
+<polygon points="170.370,139.503 170.370,141.663 171.882,141.303 171.882,139.863" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="139.069,145.200 141.869,148.000 139.069,150.800 136.269,148.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="139.069" y="148.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">21</text>
+<line x1="153.790" y1="148.000" x2="153.790" y2="144.400" stroke-width="0.150"/>
+<polygon points="150.890,136.600 158.590,136.600 156.690,140.500 148.990,140.500" fill="#ffffff" stroke-width="0.150"/>
+<text x="153.790" y="138.550" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">0.40</text>
+<polygon points="149.490,140.500 158.090,140.500 158.090,144.400 149.490,144.400" fill="#ffffff" stroke-width="0.150"/>
+<text x="153.790" y="142.450" font-size="1.552" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">40.0</text>
+<polyline points="90.000,148.000 12.700,148.000" fill="none" stroke-width="0.320"/>
+<polygon points="12.700,148.000 15.300,147.080 15.300,148.920" fill="#000000" stroke-width="0.150"/>
+<polygon points="51.350,145.200 54.150,148.000 51.350,150.800 48.550,148.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="51.350" y="148.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">22</text>
+<polyline points="44.000,114.000 44.000,30.000" fill="none" stroke-width="0.180"/>
+<polygon points="42.200,69.700 45.800,69.700 44.000,72.000" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="42.200,74.300 45.800,74.300 44.000,72.000" fill="#ffffff" stroke-width="0.150"/>
+<line x1="44.000" y1="72.000" x2="48.370" y2="72.000" stroke-width="0.150"/>
+<line x1="48.370" y1="70.488" x2="48.370" y2="73.512" stroke-width="0.150"/>
+<polyline points="56.000,114.000 56.000,30.000" fill="none" stroke-width="0.180"/>
+<polygon points="54.200,69.700 57.800,69.700 56.000,72.000" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="54.200,74.300 57.800,74.300 56.000,72.000" fill="#ffffff" stroke-width="0.150"/>
+<line x1="56.000" y1="72.000" x2="60.370" y2="72.000" stroke-width="0.150"/>
+<polygon points="60.370,70.920 60.370,73.080 61.882,72.720 61.882,71.280" fill="#ffffff" stroke-width="0.150"/>
+<polyline points="56.000,114.000 56.000,124.000 74.000,124.000 74.000,114.000" fill="none" stroke-width="0.180"/>
+<polygon points="62.700,122.200 62.700,125.800 65.000,124.000" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="67.300,122.200 67.300,125.800 65.000,124.000" fill="#ffffff" stroke-width="0.150"/>
+<line x1="65.000" y1="124.000" x2="65.000" y2="119.630" stroke-width="0.150"/>
+<line x1="63.488" y1="119.630" x2="66.512" y2="119.630" stroke-width="0.150"/>
+<polyline points="90.000,48.000 90.000,30.000" fill="none" stroke-width="0.180"/>
+<polygon points="88.200,36.700 91.800,36.700 90.000,39.000" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="88.200,41.300 91.800,41.300 90.000,39.000" fill="#ffffff" stroke-width="0.150"/>
+<line x1="90.000" y1="39.000" x2="94.370" y2="39.000" stroke-width="0.150"/>
+<line x1="94.370" y1="37.488" x2="94.370" y2="40.512" stroke-width="0.150"/>
+<polyline points="90.000,48.000 80.000,48.000 80.000,30.000" fill="none" stroke-width="0.180"/>
+<polygon points="78.200,38.900 81.800,38.900 80.000,41.200" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="78.200,43.500 81.800,43.500 80.000,41.200" fill="#ffffff" stroke-width="0.150"/>
+<line x1="80.000" y1="41.200" x2="84.370" y2="41.200" stroke-width="0.150"/>
+<line x1="84.370" y1="39.688" x2="84.370" y2="42.712" stroke-width="0.150"/>
+<polyline points="242.000,114.000 242.000,85.350" fill="none" stroke-width="0.180"/>
+<polyline points="242.000,82.650 242.000,65.350" fill="none" stroke-width="0.180"/>
+<polyline points="242.000,62.650 242.000,30.000" fill="none" stroke-width="0.180"/>
+<polygon points="240.200,93.220 243.800,93.220 242.000,95.520" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="240.200,97.820 243.800,97.820 242.000,95.520" fill="#ffffff" stroke-width="0.150"/>
+<line x1="242.000" y1="95.520" x2="246.370" y2="95.520" stroke-width="0.150"/>
+<line x1="246.370" y1="94.008" x2="246.370" y2="97.032" stroke-width="0.150"/>
+<polyline points="44.000,30.000 56.000,30.000" fill="none" stroke-width="0.180"/>
+<polyline points="56.000,30.000 80.000,30.000" fill="none" stroke-width="0.180"/>
+<polyline points="80.000,30.000 90.000,30.000" fill="none" stroke-width="0.180"/>
+<polyline points="90.000,30.000 242.000,30.000" fill="none" stroke-width="0.180"/>
+<polyline points="242.000,30.000 255.025,30.000" fill="none" stroke-width="0.320"/>
+<polygon points="255.025,30.000 252.425,30.920 252.425,29.080" fill="#000000" stroke-width="0.150"/>
+<polygon points="248.513,27.200 251.313,30.000 248.513,32.800 245.713,30.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="248.513" y="30.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">23</text>
+<polyline points="270.975,30.000 279.700,30.000" fill="none" stroke-width="0.320"/>
+<polygon points="279.700,30.000 277.100,30.920 277.100,29.080" fill="#000000" stroke-width="0.150"/>
+<polygon points="274.639,27.200 277.439,30.000 274.639,32.800 271.839,30.000" fill="#ffffff" stroke-width="0.250"/>
+<text x="274.639" y="30.000" font-size="1.905" text-anchor="middle" dominant-baseline="central" fill="#000" stroke="none">24</text>
+<polyline points="126.000,64.000 184.000,64.000" fill="none" stroke-width="0.180"/>
+<polyline points="200.000,64.000 256.000,64.000" fill="none" stroke-width="0.180"/>
+<polyline points="272.000,64.000 279.700,64.000" fill="none" stroke-width="0.180"/>
+<polygon points="279.700,64.000 277.100,64.920 277.100,63.080" fill="#000000" stroke-width="0.150"/>
+<polyline points="279.700,136.000 257.600,135.900" fill="none" stroke-width="0.180"/>
+<polygon points="257.600,135.900 260.204,134.992 260.196,136.832" fill="#000000" stroke-width="0.150"/>
+<polyline points="250.400,135.900 214.000,136.000" fill="none" stroke-width="0.180"/>
+<polyline points="214.000,136.000 214.000,118.500" fill="none" stroke-width="0.180"/>
+<polygon points="214.000,118.500 214.920,121.100 213.080,121.100" fill="#000000" stroke-width="0.150"/>
+<polygon points="212.200,124.950 215.800,124.950 214.000,127.250" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="212.200,129.550 215.800,129.550 214.000,127.250" fill="#ffffff" stroke-width="0.150"/>
+<line x1="214.000" y1="127.250" x2="218.370" y2="127.250" stroke-width="0.150"/>
+<polygon points="218.370,126.170 218.370,128.330 219.882,127.970 219.882,126.530" fill="#ffffff" stroke-width="0.150"/>
+<polyline points="214.000,136.000 143.000,136.000 143.000,118.500" fill="none" stroke-width="0.180"/>
+<polygon points="143.000,118.500 143.920,121.100 142.080,121.100" fill="#000000" stroke-width="0.150"/>
+<polygon points="180.725,134.200 180.725,137.800 183.025,136.000" fill="#ffffff" stroke-width="0.150"/>
+<polygon points="185.325,134.200 185.325,137.800 183.025,136.000" fill="#ffffff" stroke-width="0.150"/>
+<line x1="183.025" y1="136.000" x2="183.025" y2="131.630" stroke-width="0.150"/>
+<polygon points="181.945,131.630 184.105,131.630 183.745,130.118 182.305,130.118" fill="#ffffff" stroke-width="0.150"/>
+<polyline points="143.000,109.500 143.000,103.300" fill="none" stroke-width="0.180"/>
+<polygon points="143.000,103.300 143.920,105.900 142.080,105.900" fill="#000000" stroke-width="0.150"/>
+<polyline points="214.000,109.500 214.000,103.300" fill="none" stroke-width="0.180"/>
+<polygon points="214.000,103.300 214.920,105.900 213.080,105.900" fill="#000000" stroke-width="0.150"/>
+<text x="84.000" y="127.262" font-size="1.905" text-anchor="end" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">V-101</text>
+<text x="109.500" y="71.900" font-size="1.905" text-anchor="end" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">K-100 S1</text>
+<text x="138.000" y="119.900" font-size="1.905" text-anchor="end" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">E-101</text>
+<text x="148.000" y="119.900" font-size="1.482" text-anchor="start" dominant-baseline="hanging" fill="#000" stroke="none">cm</text>
+<text x="160.000" y="127.262" font-size="1.905" text-anchor="end" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">V-102</text>
+<text x="183.500" y="71.900" font-size="1.905" text-anchor="end" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">K-100 S2</text>
+<text x="209.000" y="119.900" font-size="1.905" text-anchor="end" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">E-102</text>
+<text x="207.900" y="108.900" font-size="1.482" text-anchor="end" dominant-baseline="alphabetic" fill="#000" stroke="none">cm</text>
+<text x="255.500" y="71.900" font-size="1.905" text-anchor="end" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">GT-100</text>
+<text x="263.000" y="34.810" font-size="1.905" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">V-900</text>
+<text x="254.000" y="143.132" font-size="1.905" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none" font-weight="bold">P-160</text>
+<text x="23.937" y="117.700" font-size="1.834" text-anchor="middle" dominant-baseline="hanging" fill="#000" stroke="none">Production Gas from HP Separator</text>
+<text x="15.205" y="144.300" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">To Closed Drain</text>
+<text x="278.200" y="110.300" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">Export Gas to Pipeline</text>
+<text x="282.000" y="26.300" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">To Flare Stack</text>
+<text x="282.000" y="60.300" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">GT Exhaust</text>
+<text x="282.000" y="132.300" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">CM Supply</text>
+<text x="139.100" y="101.000" font-size="1.834" text-anchor="end" dominant-baseline="central" fill="#000" stroke="none">CM Return</text>
+<text x="210.100" y="101.000" font-size="1.834" text-anchor="end" dominant-baseline="central" fill="#000" stroke="none">CM Return</text>
+<text x="22.000" y="105.500" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">XV-001</text>
+<text x="67.000" y="105.500" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">ESDV-101</text>
+<text x="255.000" y="120.500" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">ESDV-113</text>
+<text x="252.000" y="89.500" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">FV-100</text>
+<text x="101.000" y="83.000" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">UV-103</text>
+<text x="217.800" y="73.800" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">UV-108</text>
+<text x="93.000" y="131.397" font-size="1.834" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">LV-101</text>
+<text x="176.000" y="141.000" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">LV-107</text>
+<text x="35.000" y="72.000" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">PSV-001</text>
+<text x="66.000" y="72.000" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">PV-102</text>
+<text x="53.000" y="123.500" font-size="1.834" text-anchor="end" dominant-baseline="central" fill="#000" stroke="none">HV-101</text>
+<text x="99.000" y="39.000" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">BDV-101</text>
+<text x="83.000" y="51.000" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">HV-102</text>
+<text x="245.000" y="93.000" font-size="1.834" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">BDV-112</text>
+<text x="128.000" y="27.800" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">Flare Header</text>
+<text x="140.500" y="61.800" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">Shaft</text>
+<text x="214.000" y="61.800" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">Shaft</text>
+<text x="217.000" y="131.625" font-size="1.834" text-anchor="start" dominant-baseline="central" fill="#000" stroke="none">TV-111</text>
+<text x="191.875" y="133.800" font-size="1.834" text-anchor="middle" dominant-baseline="alphabetic" fill="#000" stroke="none">TV-106</text>
+</g></svg>

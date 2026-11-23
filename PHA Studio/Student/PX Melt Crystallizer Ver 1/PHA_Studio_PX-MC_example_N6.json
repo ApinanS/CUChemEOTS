@@ -1,0 +1,896 @@
+{
+ "v": 2,
+ "unit": "px_mc",
+ "meta": {
+  "title": "HAZOP and LOPA of the PX-MC unit",
+  "group": "",
+  "date": "2026-11-16",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "PX-MC",
+  "pid": "",
+  "scope": "From the fresh-feed battery limit (FV-101, XV-100) through the three crystallization stages (V-102 / E-101, V-202 / E-201 / C-204, V-302 / E-301 / C-304), the wash column W-104 with its melt loop (P-106, E-105), the melt drum V-401 with P-402 and the melt return, to the PX product, the reject filtrate to isomerization and the propylene jackets up to the K-501 suction header (the compressor package itself is studied by its vendor); utilities: LP steam, instrument air, power, N₂.",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "Design case: 40 t/h feed at 40 wt% PX and 20 °C; stages at 3 / −4 / −29 °C; product 99.7 wt% PX. Trained operators. Design pressures, PSVs, N₂ blankets and the MDMT are assumed where the OTS marks them so. Instruments and trips are proof tested yearly (LOPA tab, T = 1 yr). Risk matrix and target event frequencies are those of the OTS HAZID and LOPA tabs (teaching values).",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Runs the sessions and keeps to the method (IEC 61882); not from the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every meaningful deviation in the worksheet (full recording)",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, the heat and mass balance (PX-MC-PE-HMB-001), the phase diagram and staging, the operating windows",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the unit is really run: start-up with the melt return first, the K-501 trip procedure, cold restart, the DCS and Field tabs",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Control loops and fail positions, alarms, the SIS (XV-100, XV-x18, W-104 stop), the C&E matrix and the SRS",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety engineer",
+   "name": "",
+   "duty": "Risk matrix, consequence analysis (propylene, xylene pool fire), relief cases, follow-up to LOPA",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Refrigeration package (K-501), centrifuge and wash-column vendors, mechanical (MDMT, settle-out, jackets)",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "PFD PX-PFD-001 rev 0",
+   "where": "PFD tab (Process & Design)",
+   "use": "Design intent, streams, node boundaries"
+  },
+  {
+   "ref": "P&IDs PX-PID-301/302/303 rev A (reference)",
+   "where": "P&ID tab (Process & Design; also Operate)",
+   "use": "The drawings the DCS and the exercises use: tags, valves, trips"
+  },
+  {
+   "ref": "EPC P&ID PX-MC-PID-001 rev A (4 sheets)",
+   "where": "P&ID tab, Alternative version (PDF, SVG, PNG)",
+   "use": "Hand valves, fail positions, interlock schedule (sheet 4)"
+  },
+  {
+   "ref": "Heat and material balance PX-MC-PE-HMB-001",
+   "where": "Process engineering tab (Engineering)",
+   "use": "Flows, temperatures and compositions of the design case"
+  },
+  {
+   "ref": "Relief load basis PX-MC-PE-RLB-001",
+   "where": "Relief & vent tab (Engineering)",
+   "use": "PSV cases: settle-out, boil-off, blocked-in liquid"
+  },
+  {
+   "ref": "Instrument list PX-MC-IN-INL-001 and C&E PX-MC-IN-CE-001",
+   "where": "Instrumentation & control and C&E matrix tabs",
+   "use": "Alarm and trip settings, cause and effect"
+  },
+  {
+   "ref": "Equipment list PX-MC-ME-EQL-001",
+   "where": "Mechanical tab (Engineering)",
+   "use": "Design pressures and temperatures, MDMT"
+  },
+  {
+   "ref": "Plot plan PX-MC-PL-LAY-001",
+   "where": "Layout & isometrics tab",
+   "use": "Where a release goes; access; centrifuge floor"
+  },
+  {
+   "ref": "HAZID register",
+   "where": "HAZID tab (Safety)",
+   "use": "Major-accident hazards to carry into the HAZOP"
+  },
+  {
+   "ref": "HAZOP report PX-MC-SA-HZP-001 rev A",
+   "where": "HAZOP tab (Safety)",
+   "use": "The existing study: revalidation baseline, R01–R22"
+  },
+  {
+   "ref": "Consequence analysis",
+   "where": "Consequence analysis tab (Safety)",
+   "use": "Severity of propylene and xylene releases"
+  },
+  {
+   "ref": "Safety layers, LOPA and SRS",
+   "where": "Safety layers, LOPA and SRS of SIF tabs",
+   "use": "Independent protection layers, SIF PFDs, target frequencies"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP and Exercises tabs",
+   "use": "Start-up, shutdown, K-501 trip, rate change"
+  },
+  {
+   "ref": "Incident cases",
+   "where": "Incident cases tab",
+   "use": "Lessons (Williams Geismar, Longford) used in the deviations"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N6": [
+   {
+    "id": "r1",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Melt drum hot",
+    "causes": "TV-403 fails open on instrument-air failure (TI-403 137 °C at 30 min, model)\nTIC-403 transmitter low",
+    "events": "",
+    "grp": [],
+    "cons": "Xylene above its flash point and close to boiling: vapour from the vent or PSV, fire; overpressure of V-401",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002"
+    ],
+    "S": "4",
+    "L": "3",
+    "recs": [
+     "R01",
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example\nLOPA (worked example): values from the OTS LOPA tab, scenario L2. No IPL is credited in the present design: TIC-403 is the loop that failed (no air), there is no high-temperature alarm, and PSV-401 protects V-401 against rupture, not against vapour leaving the vent. TEL for S4 = 1e-3 per year (the OTS LOPA tab). After R01 the new SIF-07 (TSHH-403 → steam XV, PFD 0.01725, SIL 1) gives f_mit = 2.59e-04 per year, which meets the TEL.",
+    "lopa": {
+     "on": true,
+     "ie": [
+      {
+       "d": "Instrument-air failure: TV-403 fails open and heats V-401 (OTS LOPA tab, scenario L2; utility data, assumed)",
+       "f": "0.1"
+      }
+     ],
+     "en": [],
+     "cm": [
+      {
+       "d": "Probability of ignition of hot xylene vapour at the drum roof (LOPA tab L2, assumed)",
+       "p": "0.3"
+      },
+      {
+       "d": "Probability that a person is present (LOPA tab L2, assumed)",
+       "p": "0.5"
+      }
+     ],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Temperature",
+    "gw": "LESS",
+    "dev": "Melt drum cold",
+    "causes": "LP steam pressure low (TI-403 9.5 °C, model)\nsteam trap failed",
+    "events": "",
+    "grp": [],
+    "cons": "Cakes not melted: crystals return to V-102; P-402 handles slurry",
+    "cat": "PER",
+    "sg": [
+     "S003"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Level",
+    "gw": "LESS",
+    "dev": "V-401 low",
+    "causes": "Cakes lost (centrifuge trip)\nratio trim at its limit",
+    "events": "",
+    "grp": [],
+    "cons": "P-402 cavitation (flow falls below 1 m, model); stage 1 starves",
+    "cat": "PER",
+    "sg": [
+     "S004"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Level",
+    "gw": "MORE",
+    "dev": "V-401 high",
+    "causes": "P-402 stops\nFV-402 stuck",
+    "events": "",
+    "grp": [],
+    "cons": "Overfill to the vent",
+    "cat": "PER",
+    "sg": [
+     "S005",
+     "S006"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No melt return",
+    "causes": "P-402 trips\nFV-402 fails closed",
+    "events": "",
+    "grp": [],
+    "cons": "Stage 1 cannot crystallize at 40 wt% feed: product stops",
+    "cat": "PER",
+    "sg": [
+     "S007",
+     "S008"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Coil side blocked in with liquid and heated",
+    "causes": "Isolation valves shut with steam on (maintenance)",
+    "events": "",
+    "grp": [],
+    "cons": "Thermal-expansion rupture (Williams Geismar 2013 lesson)",
+    "cat": "PER",
+    "sg": [
+     "S009"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Propylene in the melt",
+    "causes": "Jacket wall leak upstream",
+    "events": "",
+    "grp": [],
+    "cons": "Propylene flashes in the warm drum: vapour and pressure",
+    "cat": "PER",
+    "sg": [
+     "S002"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N1": [],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N7": [],
+  "N8": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "TIC-403 only (no high alarm)",
+   "tag": "TIC-403",
+   "type": "BPCS control",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "PSV (assumed)",
+   "tag": "",
+   "type": "Relief (PRD)",
+   "pfd": "0.01"
+  },
+  {
+   "id": "S003",
+   "text": "TAL-403 15 °C",
+   "tag": "TAL-403",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S004",
+   "text": "LAL-401 30 %",
+   "tag": "LAL-401",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S005",
+   "text": "LAH-401 85 %",
+   "tag": "LAH-401",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S006",
+   "text": "LSHH-405 closes XV-100",
+   "tag": "LSHH-405",
+   "type": "Interlock (SIS)",
+   "pfd": "0.02225"
+  },
+  {
+   "id": "S007",
+   "text": "FIC-402",
+   "tag": "FIC-402",
+   "type": "BPCS control",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "LIC-401",
+   "tag": "LIC-401",
+   "type": "BPCS control",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "Procedure only (no credit)",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Add TAH-403 and an independent TSHH-403 that closes a steam shut-off valve on the V-401 coil; change TV-403 to fail closed. On the model an air failure takes TI-403 to 137 °C in 30 min (xylene boils at ≈ 138 °C).",
+   "by": "Process / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Thermal relief, or car-sealed-open valves under MOC, wherever a steam-heated side can be blocked in with liquid (E-105 process side, V-401 coil).",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Low-level protection for P-402 on V-401 (LSLL stopping P-402) and a check of the existing low-flow behaviour.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "LSHH-405 must also stop C-204 and C-304 (the cake feeding V-401). Closing the feed alone lets V-401 reach 128 % on the model; stopping the centrifuges holds it at 93 %. (Raised by the SRS review.)",
+   "by": "Process / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Start-up sequence: open the melt return (FIC-402) before the feed and confirm DIC-115 in cascade; add a permissive on FI-402.",
+   "by": "Operations / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Detect propylene in the slurry (jacket leak): V-401 vent hydrocarbon monitor or periodic analysis; route the V-401 vent to a safe place.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "TV-403 fails open on instrument-air failure (TI-403 137 °C at 30 min, model)",
+   "TIC-403 transmitter low",
+   "LP steam pressure low (TI-403 9.5 °C, model)",
+   "steam trap failed",
+   "Cakes lost (centrifuge trip)",
+   "ratio trim at its limit",
+   "P-402 stops",
+   "FV-402 stuck",
+   "P-402 trips",
+   "FV-402 fails closed",
+   "Isolation valves shut with steam on (maintenance)",
+   "Jacket wall leak upstream"
+  ],
+  "cons": [
+   "Xylene above its flash point and close to boiling: vapour from the vent or PSV, fire",
+   "overpressure of V-401",
+   "Cakes not melted: crystals return to V-102",
+   "P-402 handles slurry",
+   "P-402 cavitation (flow falls below 1 m, model)",
+   "stage 1 starves",
+   "Overfill to the vent",
+   "Stage 1 cannot crystallize at 40 wt% feed: product stops",
+   "Thermal-expansion rupture (Williams Geismar 2013 lesson)",
+   "Propylene flashes in the warm drum: vapour and pressure"
+  ],
+  "safe": [
+   "FI-101 LO alarm 30 t/h (fresh feed)",
+   "FI-101 HI alarm 46 t/h (fresh feed)",
+   "TI-102 HI alarm 26 °C (feed temperature)",
+   "AI-103 LO alarm 37 wt% (PX in the feed)",
+   "PI-105 HI alarm 12 bar g (W-104 hydraulic pressure)",
+   "ZI-107 LO alarm 20 % (W-104 wash front)",
+   "ZI-107 HI alarm 85 % (W-104 wash front)",
+   "TI-109 LO alarm 15 °C (W-104 melt loop temperature)",
+   "TI-109 HI alarm 25 °C (W-104 melt loop temperature)",
+   "AI-120 LO alarm 99.7 wt% (PX product purity)",
+   "AI-324 HI alarm 31 wt% (PX lost in the reject filtrate)",
+   "LI-401 LO alarm 30 % (V-401 melt drum level)",
+   "LI-401 HI alarm 85 % (V-401 melt drum level)",
+   "TI-403 LO alarm 15 °C (V-401 melt temperature)",
+   "AI-404 LO alarm 85 wt% (PX in the melt)",
+   "PI-501 HI alarm 1.45 bar a (propylene suction pressure)",
+   "TI-110 LO alarm 1.5 °C (V-102 slurry temperature)",
+   "TI-110 HI alarm 4.5 °C (V-102 slurry temperature)",
+   "LI-113 LO alarm 30 % (V-102 level)",
+   "LI-113 HI alarm 85 % (V-102 level)",
+   "DI-115 LO alarm 2 wt% (V-102 crystal content)",
+   "DI-115 HI alarm 8 wt% (V-102 crystal content)",
+   "JI-106 HI alarm 123 A (scraper M-101 current)",
+   "AI-116 LO alarm 180 µm (V-102 mean crystal size)",
+   "TI-210 LO alarm -5.5 °C (V-202 slurry temperature)",
+   "TI-210 HI alarm -2.5 °C (V-202 slurry temperature)",
+   "LI-213 LO alarm 30 % (V-202 level)",
+   "LI-213 HI alarm 85 % (V-202 level)",
+   "DI-215 HI alarm 36 wt% (V-202 crystal content)",
+   "JI-206 HI alarm 86 A (scraper M-201 current)",
+   "TI-310 LO alarm -31 °C (V-302 slurry temperature)",
+   "TI-310 HI alarm -27 °C (V-302 slurry temperature)",
+   "LI-313 LO alarm 30 % (V-302 level)",
+   "LI-313 HI alarm 85 % (V-302 level)",
+   "DI-315 HI alarm 36 wt% (V-302 crystal content)",
+   "JI-306 HI alarm 79 A (scraper M-301 current)",
+   "Feed flow control (40 t/h): FV-101 (fail closed)",
+   "Purity-stage temperature cascade (DIC-115 → TIC-110 → PIC-111) (3 °C, 4.1 wt%): PV-111 (fail closed)",
+   "Scavenger temperature cascade (TIC-210 → PIC-211) (−4 °C): PV-211 (fail closed)",
+   "Recovery temperature cascade (TIC-310 → PIC-311) (−29 °C): PV-311 (fail closed)",
+   "Growth-vessel levels LIC-113/213/313 (60 %): FV-114/214/314 (fail closed)",
+   "Wash-front control (50 %): FV-108 (fail closed)",
+   "Melt-loop temperature (18 °C): TV-109 (fail open)",
+   "Filtrate recycles FIC-220/320 (31 / 48 t/h): FV-220/320 (fail open)",
+   "Melt return on ratio, LIC-401 trim (2.76 × FI-101): FV-402 (fail closed)",
+   "Melt-drum temperature (18 °C): TV-403 (fail open)",
+   "K-501 suction pressure (package) (1.25 bar a): Compressor capacity",
+   "LSHH-117/217/317 growth-vessel level high-high (92 %, 5 s): XV-100 closes (feed shutdown)",
+   "LSHH-405 melt-drum level high-high (92 %, 5 s): XV-100 closes",
+   "TSLL-119/219/319 freeze-up (−2 / −10 / −40 °C, 10 s): XV-118/218/318 close",
+   "JSHH-106/206/306 scraper overload (rated current, 10 s): XV-x18 close",
+   "Scraper or circulation-pump stopped (1 s): XV-x18 close",
+   "PSHH-105 wash-column pressure high-high; P-106 stopped (16 bar g, 3 s): W-104 stops; FV-114 and FV-108 shut",
+   "XV-100 feed shut-off valve: Closes on any feed trip",
+   "XV-118/218/318 refrigerant shut-off valves: Close on the stage trips",
+   "Logic solver and ESD push-button HS-001: First-out, reset, permissives",
+   "PSVs on the jackets and suction header (20 bar g): To flare",
+   "PSV on the W-104 hydraulic system (20 bar g): To closed drain",
+   "PSV on V-401 (3.5 bar g): To flare",
+   "Bunds and kerbs round the vessels (110 % of the largest vessel): Contain spills",
+   "N₂ blanket on vessels and centrifuges (≈ 0.1 bar g): Keeps air out",
+   "Closed drain system: Collects spills",
+   "Fire-water ring, hydrants and monitors: Cooling and fire fighting",
+   "Muster point, windsock, siren: Evacuation",
+   "FAL-101 30 t/h",
+   "XV-100 status on the SIS display",
+   "FAH-101 46 t/h",
+   "LIC-x13",
+   "PAH-105 12 bar g",
+   "FAL-101",
+   "Check valve (assumed)",
+   "XV-100 closes on trip",
+   "TAH-102 26 °C",
+   "TIC-110 cascade",
+   "AAL-103 37 wt%",
+   "DIC-115",
+   "JAH-x06",
+   "JSHH-x06 trip (indirect)",
+   "Line design",
+   "LAH-113 85 %",
+   "LSHH-117 92 % closes XV-100",
+   "LAL-113 30 %",
+   "LSLL-125 shuts FV-114",
+   "Pump stop closes XV-118 (freeze protection, 1 s)",
+   "TAL-110 1.5 °C",
+   "TSLL-119 −2 °C closes XV-118",
+   "TAH-110 4.5 °C",
+   "DAL-115 2 wt%",
+   "AAL-116 180 µm",
+   "PAH-105",
+   "Scraper stop closes XV-118",
+   "JSHH-106",
+   "JAH-106",
+   "JSHH-106 closes XV-118",
+   "PSHH-105 16 bar g stops W-104",
+   "TAL-109 15 °C",
+   "start permissive ≥ 14.3 °C",
+   "TAH-109 25 °C",
+   "ZAL-107 20 %",
+   "AAL-120 99.70 wt%",
+   "ZAH-107 85 %",
+   "tracing on the product line",
+   "AAL-120",
+   "lab sample",
+   "ZIC-107",
+   "Start permissive (P-106 running, loop ≥ 14.3 °C)",
+   "LAH-213 85 %",
+   "LSHH-217 closes XV-100",
+   "LSHH-217 (own switch)",
+   "DAH-215",
+   "JAH-206",
+   "JSHH-206",
+   "Restart blocked until the solids are lowered (model)",
+   "N₂ blanket (assumed)",
+   "earthing",
+   "TAL-210",
+   "TSLL-219",
+   "Permit, gas test, LOTO",
+   "TAL-310 −31 °C (on the same transmitter)",
+   "TSLL-319 −40 °C (own element)",
+   "TAH-310 −27 °C",
+   "AAH-324",
+   "LAH-313",
+   "LSHH-317",
+   "JI-304 trend",
+   "MDMT −46 °C (assumed)",
+   "TSLL-319",
+   "Scraper stop closes XV-318",
+   "TIC-403 only (no high alarm)",
+   "PSV (assumed)",
+   "TAL-403 15 °C",
+   "LAL-401 30 %",
+   "LAH-401 85 %",
+   "LSHH-405 closes XV-100",
+   "FIC-402",
+   "LIC-401",
+   "Procedure only (no credit)",
+   "PAH-501 1.45 bar a",
+   "PSVs to flare (assumed)",
+   "Package control",
+   "XV status on SIS display",
+   "TSLL-x19",
+   "K-501 suction knock-out (assumed)",
+   "Inspection",
+   "PSVs (assumed)",
+   "MDMT (assumed)",
+   "Start-up procedure",
+   "permissives (no FI-402 check)",
+   "Scraper stop closes XV-x18",
+   "Tracing",
+   "permit",
+   "Procedure (no credit)",
+   "Alarm priorities (assumed)"
+  ],
+  "recs": [
+   "Add TAH-403 and an independent TSHH-403 that closes a steam shut-off valve on the V-401 coil; change TV-403 to fail closed. On the model an air failure takes TI-403 to 137 °C in 30 min (xylene boils at ≈ 138 °C).",
+   "Thermal relief, or car-sealed-open valves under MOC, wherever a steam-heated side can be blocked in with liquid (E-105 process side, V-401 coil).",
+   "Low-level protection for P-402 on V-401 (LSLL stopping P-402) and a check of the existing low-flow behaviour.",
+   "LSHH-405 must also stop C-204 and C-304 (the cake feeding V-401). Closing the feed alone lets V-401 reach 128 % on the model; stopping the centrifuges holds it at 93 %. (Raised by the SRS review.)",
+   "Start-up sequence: open the melt return (FIC-402) before the feed and confirm DIC-115 in cascade; add a permissive on FI-402.",
+   "Detect propylene in the slurry (jacket leak): V-401 vent hydrocarbon monitor or periodic analysis; route the V-401 vent to a safe place."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Minor",
+    "First aid",
+    "< 0.1 MTHB damage, no lost production",
+    "Release contained on site, cleaned in a shift"
+   ],
+   [
+    2,
+    "Moderate",
+    "Medical treatment, restricted work",
+    "0.1–1 MTHB, < 1 day lost",
+    "Small release, local clean-up"
+   ],
+   [
+    3,
+    "Serious",
+    "Lost-time injury",
+    "1–10 MTHB, days lost",
+    "Release off the plot, reportable"
+   ],
+   [
+    4,
+    "Major",
+    "One fatality or permanent disability",
+    "10–100 MTHB, weeks lost",
+    "Off-site release, short-term harm"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Several fatalities or off-site injury",
+    "> 100 MTHB, months lost",
+    "Major off-site damage, long-term harm"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not known in the industry",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Has happened in the industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Has happened in the company",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Several times in the industry each year",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Expected in the life of the unit",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1",
+   "2": "0.1",
+   "3": "0.01",
+   "4": "0.001",
+   "5": "0.0001"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 7,
+ "sgseq": 9,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

@@ -1,0 +1,1079 @@
+{
+ "v": 2,
+ "unit": "H-100",
+ "meta": {
+  "title": "HAZOP and LOPA of the H-100 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "H-100",
+  "pid": "",
+  "scope": "From TK-101 and the feed pumps P-100A/B through E-100, the FV-010 feed control and the H-100 coil to the outlet line to V-200; the fuel-oil train V-121 → FV-300 → burner; combustion air F-100 → FV-200; firebox, convection section, stack and damper HV-400; the BMS (SIS-100) and the start-up and shutdown procedures.",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The heater is operated by trained staff at the design point (feed 6.8 L/s, 180 → 350 °C, fuel oil 243 kg/h, air 3892 kg/h). Instrument air, power and heating fluid from Unit A are available at start-up. Trips, the BMS and PSV-101 are proof-tested on the maintenance plan.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (chair)",
+   "name": "",
+   "duty": "Independent of the design; runs the method, keeps the team on the node, decides when a deviation is covered",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe (recorder)",
+   "name": "",
+   "duty": "Writes the worksheet live, reads back recommendations",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer (designer)",
+   "name": "",
+   "duty": "Explains the design intent, balances and limits",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the heater is really run: start-up, upsets, rounds, procedures",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Loops, fail positions, BMS logic, trip independence",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety / risk engineer",
+   "name": "",
+   "duty": "Risk matrix, LOPA follow-up, regulations",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Combustion / burner vendor, mechanical (tubes, refractory), maintenance",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID NDFH-V1-PID-001 rev E (and the screen P&ID)",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, hand valves, relief"
+  },
+  {
+   "ref": "PFD-100 and the stream table",
+   "where": "PFD and Process tabs",
+   "use": "Design intent, flows, conditions"
+  },
+  {
+   "ref": "HMB NDFH-V1-PE-HMB-001",
+   "where": "Process engineering tab",
+   "use": "Design and off-design cases"
+  },
+  {
+   "ref": "C&E NDFH-V1-IN-CE-001",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects"
+  },
+  {
+   "ref": "SRS of SIF",
+   "where": "SRS of SIF tab",
+   "use": "SIF set points, response, process safety time"
+  },
+  {
+   "ref": "Instrument list NDFH-V1-IN-INL-001",
+   "where": "Instrumentation & control tab",
+   "use": "Ranges, fail positions"
+  },
+  {
+   "ref": "Relief load basis NDFH-V1-PE-RLB-001",
+   "where": "Relief & vent tab",
+   "use": "PSV-101, PSV-103 query, explosion doors"
+  },
+  {
+   "ref": "Equipment list and datasheets NDFH-V1-ME-EQL-001",
+   "where": "Mechanical tab",
+   "use": "Design pressure and temperature"
+  },
+  {
+   "ref": "Operating procedures and SOPs",
+   "where": "Exercises and SOP tabs",
+   "use": "Start-up, purge, light-off, shutdown (node N9)"
+  },
+  {
+   "ref": "HAZOP report NDFH-V1-SA-HZP-001",
+   "where": "HAZOP tab",
+   "use": "The reference study of the OTS"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No feed flow to E-100",
+    "causes": "Running pump P-100A trips (motor, power)\nsuction valve closed\nTK-101 empty\nP-100B fails to start",
+    "events": "",
+    "grp": [],
+    "cons": "Coil loses its coolant while firing → tube overheating, coking, rupture and fire in the firebox",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R01",
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less feed flow",
+    "causes": "Pump wear or cavitation\npartly closed suction valve\nsuction strainer plugged\nlow TK-101 level",
+    "events": "",
+    "grp": [],
+    "cons": "Higher coil outlet temperature and skin temperature at the same firing; production shortfall",
+    "cat": "PER",
+    "sg": [
+     "S004",
+     "S005",
+     "S006"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "More feed flow",
+    "causes": "Operator raises FIC-003 SP\nFV-010 fails open (FO)",
+    "events": "",
+    "grp": [],
+    "cons": "More duty required; fuel rises; air may not follow (rev A) → fuel-rich firebox, CO, smoke",
+    "cat": "PER",
+    "sg": [
+     "S007",
+     "S008",
+     "S009",
+     "S010"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R05",
+     "R08"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Reverse flow through the idle pump",
+    "causes": "Passing check valve on P-100B discharge",
+    "events": "",
+    "grp": [],
+    "cons": "Recirculation through the idle pump, less flow forward, idle pump spins backwards",
+    "cat": "PER",
+    "sg": [
+     "S011",
+     "S005"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "High discharge pressure",
+    "causes": "FV-010 or downstream valve closed (deadhead)\nV-200 blocked",
+    "events": "",
+    "grp": [],
+    "cons": "Pump overheats at no flow; possible seal failure and leak (fire)",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R03",
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Pressure",
+    "gw": "LESS",
+    "dev": "Low suction pressure",
+    "causes": "Low TK-101 level\nplugged suction strainer\nhot feed near bubble point",
+    "events": "",
+    "grp": [],
+    "cons": "Cavitation, pump damage, flow loss → see NO flow",
+    "cat": "PER",
+    "sg": [
+     "S014",
+     "S015"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Level",
+    "gw": "LESS",
+    "dev": "Low level in TK-101",
+    "causes": "Supply from upstream stopped\ntank drained",
+    "events": "",
+    "grp": [],
+    "cons": "Pumps lose suction → no flow",
+    "cat": "PER",
+    "sg": [
+     "S016"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Level",
+    "gw": "MORE",
+    "dev": "High level in TK-101",
+    "causes": "Upstream supply more than consumption",
+    "events": "",
+    "grp": [],
+    "cons": "Tank overflow, spill, fire risk (outside this node)",
+    "cat": "PER",
+    "sg": [
+     "S017"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Water in the feed",
+    "causes": "Tank bottoms water carried over",
+    "events": "",
+    "grp": [],
+    "cons": "Water flashes in the coil: pressure surges, hammer, flow upset, TIC-030 disturbance",
+    "cat": "PER",
+    "sg": [
+     "S018"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r10",
+    "param": "Maintenance",
+    "gw": "OTHER THAN",
+    "dev": "Pump change-over done incorrectly",
+    "causes": "Spare started with discharge valve closed, or running pump stopped first",
+    "events": "",
+    "grp": [],
+    "cons": "Flow interruption → FSLL-008 trip of the heater",
+    "cat": "PER",
+    "sg": [
+     "S019",
+     "S020"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R09"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": [],
+  "N9": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FSLL-008 trips the burner (< 3.4 L/s, 5 s)",
+   "tag": "FSLL-008",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "FIAL-008 LO alarm",
+   "tag": "FIAL-008",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "P-100B spare (manual start)",
+   "tag": "P-100B",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "TIC-030 cuts fuel",
+   "tag": "TIC-030",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "FIAL-008 LO",
+   "tag": "FIAL-008",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "FSLL-008 at 3.4 L/s",
+   "tag": "FSLL-008",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "TIC-030",
+   "tag": "TIC-030",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "AI-028 O₂ LO alarm",
+   "tag": "AI-028",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "AI-026 CO HI alarm",
+   "tag": "AI-026",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "operator raises air first",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "Check valves",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "Pump shut-off head below piping design pressure",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "PI-002",
+   "tag": "PI-002",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "PI-001 (local)",
+   "tag": "PI-001",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "operator rounds",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "Operator monitoring only (no level instrument on the P&ID)",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "Tank overflow line (upstream system)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "None specific",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "Procedure",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "FSLL-008",
+   "tag": "FSLL-008",
+   "type": "Alarm",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Auto-start spare P-100B on low discharge pressure (PI-002) or P-100A trip, with the start completing inside the FSLL-008 delay; test the spare monthly.",
+   "by": "Instrument / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Add level transmitter LT-101 on TK-101 with low-level alarm LAL and low-low pump trip LSLL to protect P-100A/B from running dry.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Provide minimum-flow recirculation (restriction orifice back to TK-101) on P-100A/B so a closed FV-010 cannot deadhead the running pump.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Confirm a check valve on each pump discharge; include in the inspection plan (passing check valve spins the idle pump backwards).",
+   "by": "Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Implement cross-limiting (lead–lag) air/fuel control: fuel demand limited by measured air, air demand not below that needed for measured fuel.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Confirm coil design pressure ≥ pump shut-off head; otherwise add overpressure protection. Add high-pressure alarm on PI-005 (blocked outlet to V-200).",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Water-draw and sampling procedure for the fuel-oil tank; alarm on water in fuel if available.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R08",
+   "text": "Written response procedure for high CO (AI-026) and low O₂ (AI-028): raise air first, then cut fuel; train on the simulator.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R09",
+   "text": "Start-up and shutdown procedures reviewed against this HAZOP; operators qualified on the simulator before first light-off.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "Running pump P-100A trips (motor, power)",
+   "suction valve closed",
+   "TK-101 empty",
+   "P-100B fails to start",
+   "Pump wear or cavitation",
+   "partly closed suction valve",
+   "suction strainer plugged",
+   "low TK-101 level",
+   "Operator raises FIC-003 SP",
+   "FV-010 fails open (FO)",
+   "Passing check valve on P-100B discharge",
+   "FV-010 or downstream valve closed (deadhead)",
+   "V-200 blocked",
+   "Low TK-101 level",
+   "plugged suction strainer",
+   "hot feed near bubble point",
+   "Supply from upstream stopped",
+   "tank drained",
+   "Upstream supply more than consumption",
+   "Tank bottoms water carried over",
+   "Spare started with discharge valve closed, or running pump stopped first"
+  ],
+  "cons": [
+   "Coil loses its coolant while firing → tube overheating, coking, rupture and fire in the firebox",
+   "Higher coil outlet temperature and skin temperature at the same firing",
+   "production shortfall",
+   "More duty required",
+   "fuel rises",
+   "air may not follow (rev A) → fuel-rich firebox, CO, smoke",
+   "Recirculation through the idle pump, less flow forward, idle pump spins backwards",
+   "Pump overheats at no flow",
+   "possible seal failure and leak (fire)",
+   "Cavitation, pump damage, flow loss → see NO flow",
+   "Pumps lose suction → no flow",
+   "Tank overflow, spill, fire risk (outside this node)",
+   "Water flashes in the coil: pressure surges, hammer, flow upset, TIC-030 disturbance",
+   "Flow interruption → FSLL-008 trip of the heater"
+  ],
+  "safe": [
+   "HS-001 trip (Emergency shutdown push-button (BMS panel / DCS))",
+   "FIAL-008 alarm at 5.0 L/s (Feed flow to coil low alarm (FT-008))",
+   "FSLL-008 trip at 3.4 L/s, 5 s (Feed flow to coil low-low trip (FT-008))",
+   "TI-010 alarm at 170 °C (Feed after E-100 low alarm)",
+   "TIC-030 alarm at 344 °C (Heater outlet deviation alarm low (TT-040))",
+   "TIC-030 alarm at 356 °C (Heater outlet deviation alarm high (TT-040))",
+   "TIAH-025 alarm at 360 °C (Heater outlet high alarm (independent TE-025))",
+   "TSHH-025 trip at 375 °C, 5 s (Heater outlet high-high trip (TE-025))",
+   "TIAH-023 alarm at 1100 °C (Firebox temperature high alarm)",
+   "TI-024 alarm at 430 °C (Radiant tube skin temperature high alarm)",
+   "TI-021 alarm at 470 °C (Stack temperature high alarm)",
+   "PIAL-020 alarm at 100 kPa g (Fuel pressure at burner gun low alarm (PT-020))",
+   "PIAL-020 alarm at 1400 kPa g (Fuel pressure at burner gun high alarm (PT-020))",
+   "PSLL-020 trip at 40 kPa g, 3 s (Fuel pressure at burner gun low-low trip (PT-020))",
+   "PIAL-030 alarm at 1.5 mmH₂O (Windbox draft low alarm (PT-030))",
+   "PSLL-030 trip at 0.5 mmH₂O, 3 s (Windbox draft low-low trip (PT-030))",
+   "PI-003 alarm at -0.5 mmH₂O (Firebox pressure high alarm (arch))",
+   "AI-028 alarm at 1.0 % O₂ (Firebox O₂ low alarm)",
+   "AI-028 alarm at 6.0 % O₂ (Firebox O₂ high alarm)",
+   "AI-029 alarm at 1.5 % O₂ (Stack O₂ low alarm)",
+   "AI-029 alarm at 7.0 % O₂ (Stack O₂ high alarm)",
+   "AI-026 alarm at 200 ppm (Flue gas CO high alarm)",
+   "BSLL-005 trip at No flame, 2 s (Flame failure (scanner BS-005) while firing)",
+   "BSLL-005 trip at 10 s trial s (Flame not proven at end of trial for ignition)",
+   "FV-010 fails open (feed flow on air failure)",
+   "FV-300 fails closed (fuel)",
+   "FV-200 fails open (combustion air)",
+   "HV-400 fails open (stack damper)",
+   "XV-301 / XV-302 double block, XV-303 bleed (fail closed / open)",
+   "PSV-101 on E-100 tube side, set 1700 kPa g",
+   "Explosion doors on the firebox",
+   "BMS purge 300 s at ≥ 1700 kg/h air before light-off",
+   "Trial for ignition with flame proving (BSLL-005)",
+   "Snuffing steam HV-221 (manual)",
+   "P-100B spare pump (manual start)",
+   "Check valves on the P-100A/B discharge",
+   "Operator response to an alarm (trained, SOP-H100)",
+   "FSLL-008 trips the burner (< 3.4 L/s, 5 s)",
+   "FIAL-008 LO alarm",
+   "P-100B spare (manual start)",
+   "TIC-030 cuts fuel",
+   "FIAL-008 LO",
+   "FSLL-008 at 3.4 L/s",
+   "TIC-030",
+   "AI-028 O₂ LO alarm",
+   "AI-026 CO HI alarm",
+   "operator raises air first",
+   "Check valves",
+   "Pump shut-off head below piping design pressure",
+   "PI-002",
+   "PI-001 (local)",
+   "operator rounds",
+   "Operator monitoring only (no level instrument on the P&ID)",
+   "Tank overflow line (upstream system)",
+   "None specific",
+   "Procedure",
+   "FSLL-008",
+   "TI-010 LO alarm 170 °C",
+   "TIC-030 adds fuel",
+   "TI-024 HI 430 °C",
+   "burner turndown",
+   "TI-010 LO alarm",
+   "AI-028, AI-026 alarms",
+   "PSV-101",
+   "PSV-101 (if feed is the low-pressure side)",
+   "product quality checks",
+   "cleaning programme",
+   "FSLL-008 trip (independent element, 5 s)",
+   "FV-010 fails open on air failure",
+   "FIAL-008 LO 5.0 L/s",
+   "FSLL-008 3.4 L/s",
+   "AI-028/AI-026 alarms",
+   "Pump discharge check valves",
+   "Separate FSLL-008 element",
+   "TIC-030 HI 356 °C",
+   "TIAH-025 HI 360 °C",
+   "TSHH-025 trip 375 °C (independent element)",
+   "TIC-030 LO 344 °C",
+   "AI-028 O₂ LO",
+   "AI-026 CO HI",
+   "PI-005 indication only",
+   "TIAH-023 HI",
+   "PI-003 HI",
+   "FSLL-008 as flow drops",
+   "snuffing steam HV-221",
+   "ESD",
+   "—",
+   "TI-024 trend",
+   "decoking programme",
+   "Independent TIAH-025 / TSHH-025",
+   "PSLL-020 and BSLL-005 trips",
+   "BMS requires purge before relight",
+   "PIAL-020 LO 100 kPa",
+   "PSLL-020 trip 40 kPa",
+   "TIC-030 LO alarm",
+   "TIC-030 HI",
+   "TSHH-025",
+   "AI-028 LO",
+   "FV-300 FC",
+   "Double block and bleed",
+   "BMS purge (5 min) before light-off",
+   "PIAL-020 HI 1400 kPa",
+   "Operator observation",
+   "AI-028 O₂",
+   "BSLL-005 flame failure trip",
+   "AI-028 O₂ as independent check",
+   "Fire detection and fire fighting",
+   "V-121 isolation",
+   "PSLL-030 trip (< 0.5 mmH₂O draft, 3 s)",
+   "BSLL-005",
+   "FV-200 fails open",
+   "AI-028 LO 1.0 %",
+   "AI-026 CO HI 200 ppm",
+   "operator",
+   "FY-005 ratio when added",
+   "AI-028 HI 6 %",
+   "AI-029 HI 7 %",
+   "FIC-005 compensates while FV-200 has range",
+   "AI-028",
+   "PIAL-030 LO 1.5",
+   "PSLL-030 trip 0.5 mmH₂O",
+   "AI-028 O₂ independent check",
+   "rev B trim",
+   "BSLL-005 trip (2 s) closes XV-301/302",
+   "purge required before relight",
+   "explosion doors",
+   "TIAH-023 HI 1100 °C",
+   "Burner turndown limit",
+   "PI-003 HI −0.5 mmH₂O alarm",
+   "FO damper",
+   "AI-028 vs AI-029 comparison",
+   "rounds",
+   "TIAH-023",
+   "PI-003",
+   "HV-221 snuffing steam",
+   "BSLL-005 trip",
+   "HV-221 normally closed",
+   "Administrative control",
+   "PIAL-030 LO",
+   "PSLL-030 trip",
+   "AI-029 HI",
+   "operator adjusts HV-400",
+   "TI-021 HI 470 °C",
+   "AI-026",
+   "None (no low alarm)",
+   "control uses firebox AI-028",
+   "BMS purge permissives and timer",
+   "Purge permissives (air, damper, draft) stop the timer",
+   "BMS low-fire permissive (10–20 % MAN)",
+   "10-s trial for ignition then trip",
+   "purge before retry",
+   "FSLL-008 as purge permissive and trip",
+   "procedure \"air leads on increase\"",
+   "FSLL-008 trip",
+   "BMS forces trip reset and full purge",
+   "permit to work"
+  ],
+  "recs": [
+   "Auto-start spare P-100B on low discharge pressure (PI-002) or P-100A trip, with the start completing inside the FSLL-008 delay; test the spare monthly.",
+   "Add level transmitter LT-101 on TK-101 with low-level alarm LAL and low-low pump trip LSLL to protect P-100A/B from running dry.",
+   "Provide minimum-flow recirculation (restriction orifice back to TK-101) on P-100A/B so a closed FV-010 cannot deadhead the running pump.",
+   "Confirm a check valve on each pump discharge; include in the inspection plan (passing check valve spins the idle pump backwards).",
+   "Implement cross-limiting (lead–lag) air/fuel control: fuel demand limited by measured air, air demand not below that needed for measured fuel.",
+   "Confirm coil design pressure ≥ pump shut-off head; otherwise add overpressure protection. Add high-pressure alarm on PI-005 (blocked outlet to V-200).",
+   "Water-draw and sampling procedure for the fuel-oil tank; alarm on water in fuel if available.",
+   "Written response procedure for high CO (AI-026) and low O₂ (AI-028): raise air first, then cut fuel; train on the simulator.",
+   "Start-up and shutdown procedures reviewed against this HAZOP; operators qualified on the simulator before first light-off."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "First aid",
+    "minor damage",
+    "no release"
+   ],
+   [
+    2,
+    "Minor",
+    "Medical treatment",
+    "short outage",
+    "small contained release"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "heater shutdown for days",
+    "local release"
+   ],
+   [
+    4,
+    "Major",
+    "Permanent disability or single fatality",
+    "major heater damage",
+    "fire"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "firebox explosion",
+    "fire spreading beyond the unit"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the life of the plant",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in industry",
+    "10⁻⁴–10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Could happen in the plant life",
+    "10⁻³–10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Several times in the plant life",
+    "10⁻²–10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Yearly or more",
+    "≥ 1 /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 10,
+ "sgseq": 20,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

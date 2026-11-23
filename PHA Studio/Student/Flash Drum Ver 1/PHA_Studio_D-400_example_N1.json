@@ -1,0 +1,1180 @@
+{
+ "v": 2,
+ "unit": "D-400",
+ "meta": {
+  "title": "HAZOP and LOPA of the D-400 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "D-400",
+  "pid": "",
+  "scope": "From the feed battery limit (upstream of XV-408) through E-400 (both sides, from XV-409), D-400 with PSV-400 and the N₂ blanket, to the vapour battery limit (downstream of HV-421) and the liquid battery limit (downstream of HV-411), including utilities (hot oil, N₂, instrument air).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "The unit is operated by trained staff at the design conditions. Nitrogen, instrument air and power are available at start-up. Instruments and relief valves are tested on the plan in the maintenance procedure.",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (chair)",
+   "name": "",
+   "duty": "Independent of the design; runs the method, keeps the team on the node, decides when a deviation is covered",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe (recorder)",
+   "name": "",
+   "duty": "Writes the worksheet live and reads back each recommendation",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer (designer)",
+   "name": "",
+   "duty": "Design intent, balances, bubble-point margins, relief cases",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How D-400 is really run: start-up with N₂ sweep, rounds, draining, tank switches",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "Loops, fail positions (FC/FO), SIS logic, independence of LSHH-416, LSLL-417, PSHH-426",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety / risk engineer",
+   "name": "",
+   "duty": "Risk matrix, LOPA follow-up, regulations",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Mechanical (E-400, vessel ratings), utilities (hot oil, N₂, instrument air), downstream and header owners",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "P&ID FD-400-PID-001 sheet 1",
+   "where": "P&ID tab",
+   "use": "Node boundaries, tags, valves, fail positions, PSV-400"
+  },
+  {
+   "ref": "P&ID FD-400-PID-002 sheet 2",
+   "where": "P&ID tab",
+   "use": "Loop data and the SIS cause-and-effect chart"
+  },
+  {
+   "ref": "PFD FD-400-PFD-001 and heat and mass balance FD-V1-PE-HMB-001",
+   "where": "PFD, Process and Process engineering tabs",
+   "use": "Design intent, flows, conditions"
+  },
+  {
+   "ref": "C&E matrix FD-V1-IN-CE-001",
+   "where": "C&E matrix tab",
+   "use": "Alarm and trip settings, effects"
+  },
+  {
+   "ref": "Instrument index FD-V1-IN-INL-001",
+   "where": "Instrumentation & control tab",
+   "use": "Tags, ranges, fail positions"
+  },
+  {
+   "ref": "Relief load summary FD-V1-PE-RLB-001",
+   "where": "Relief & vent tab",
+   "use": "PSV-400 set pressure and governing case"
+  },
+  {
+   "ref": "Equipment list and data sheets FD-V1-ME-EQL-001 / DS-001",
+   "where": "Mechanical tab",
+   "use": "Design pressures and temperatures"
+  },
+  {
+   "ref": "SIS logic, trips and resets",
+   "where": "SIS tab",
+   "use": "I-1, I-2 and the ESD push-button HS-400"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP and Exercises tabs",
+   "use": "Start-up with N₂ sweep, shutdown, ESD, draining"
+  },
+  {
+   "ref": "Dynamic model",
+   "where": "HAZOP Studio tests (▶ OTS)",
+   "use": "Deviation runs with the safeguards active"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N1": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "No feed to D-400",
+    "causes": "HV-401 feed block valve gate drops (fails closed)\nFCV-400 shut (FIC-400 fault, positioner or instrument-air failure: fail closed)\nXV-408 closes spuriously\nsupply pump trips upstream",
+    "events": "",
+    "grp": [],
+    "cons": "Production stops. E-400 tubes hold stagnant feed while hot oil still flows: the feed heats toward the hot-oil temperature, vaporises and, if blocked in, over-pressures the tube side. D-400 level and pressure fall toward the N2 blanket.",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R01",
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Less feed than set",
+    "causes": "Supply pressure falls (upstream pump loses head) until FCV-400 runs out of travel\nFT-400 reads high (drift, plugged impulse line)\nFCV-400 stiction after packing work\nHV-401 partly closed",
+    "events": "",
+    "grp": [],
+    "cons": "Lower throughput. At low flow the E-400 outlet runs hotter for the same oil, TIC-401 gain and dead time grow and the loop cycles; flow swings reach the drum as vapour-rate swings.",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S005",
+     "S006"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R04",
+     "R06"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "MORE",
+    "dev": "More feed than design",
+    "causes": "FCV-400 fails wide open (positioner fault, FIC-400 in MAN at a high output)\nFT-400 reads low\nset point entered too high\nglobe bypass HV-403 opened with FCV-400 in service",
+    "events": "",
+    "grp": [],
+    "cons": "E-400 cannot heat the extra feed (hot feed colder, less vapour per tonne) while the total vapour and liquid rates rise well above design (see dynamic check): level rises, mesh-pad overload and carry-over, header and downstream receiver overloaded.",
+    "cat": "PER",
+    "sg": [
+     "S007",
+     "S008",
+     "S009",
+     "S010",
+     "S011"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Flow",
+    "gw": "REVERSE",
+    "dev": "Back-flow from E-400 and D-400 toward the supply",
+    "causes": "Supply pump stops with D-400 at pressure and XV-408 open\nsupply pressure below drum pressure during start-up",
+    "events": "",
+    "grp": [],
+    "cons": "Hot, light hydrocarbon flows back into the supply line and tank; flashing and hammer in the supply line; D-400 inventory lost.",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S013"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [
+     "R03"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Feed line or E-400 tubes over-pressured",
+    "causes": "FCV-400, HV-403 and HV-401 closed with the supply pump running (shut-off 650 kPa g)\nliquid blocked in between XV-408 and FCV-400 and heated by hot oil",
+    "events": "",
+    "grp": [],
+    "cons": "Shut-off head alone is within the line rating, but blocked-in liquid heated by hot oil rises in pressure without limit: flange leak or tube rupture, release and fire.",
+    "cat": "PER",
+    "sg": [
+     "S014",
+     "S015"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R01",
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Pressure",
+    "gw": "LESS",
+    "dev": "Low supply pressure",
+    "causes": "Upstream pump losing head\nlow supply-tank level\nplugged strainer",
+    "events": "",
+    "grp": [],
+    "cons": "FCV-400 opens to hold the flow and loses its margin unseen; lower pressure in E-400 lowers the bubble point of the hot feed (vapour ahead of FCV-400).",
+    "cat": "PER",
+    "sg": [
+     "S016",
+     "S017"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R04"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Warm feed (TI-400 high)",
+    "causes": "Feed from a sun-heated tank\nupstream cooler out of service",
+    "events": "",
+    "grp": [],
+    "cons": "E-400 needs less duty (TCV-401 closes); feed nearer its bubble point in the supply line: upstream pump cavitation.",
+    "cat": "PER",
+    "sg": [
+     "S018",
+     "S019"
+    ],
+    "S": "1",
+    "L": "4",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Composition",
+    "gw": "MORE",
+    "dev": "Feed lighter (more C4)",
+    "causes": "Tank switch to a lighter feed (butane toward 45 wt%)",
+    "events": "",
+    "grp": [],
+    "cons": "More vapour and higher drum pressure demand on PCV-420; liquid product C4 above the 28 wt% spec sent downstream.",
+    "cat": "PER",
+    "sg": [
+     "S020",
+     "S010",
+     "S021"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Composition",
+    "gw": "LESS",
+    "dev": "Feed heavier (less C4)",
+    "causes": "Tank switch to a heavier feed (butane toward 25 wt%)",
+    "events": "",
+    "grp": [],
+    "cons": "Less vapour, more liquid; vapour carries more C6 so AI-420 falls toward its 75 wt% spec; LCV-400 opens further.",
+    "cat": "PER",
+    "sg": [
+     "S022",
+     "S023",
+     "S024"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r10",
+    "param": "Composition",
+    "gw": "AS WELL AS",
+    "dev": "Free water in the feed",
+    "causes": "Water carried from tank bottoms after a tank switch",
+    "events": "",
+    "grp": [],
+    "cons": "Water boils in E-400 and D-400 (pressure surges), collects in the drum bottom and goes to the downstream unit; ice or hydrate in the let-down valve at low temperature; corrosion.",
+    "cat": "PER",
+    "sg": [
+     "S025",
+     "S026"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R08"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r11",
+    "param": "Measurement",
+    "gw": "OTHER THAN",
+    "dev": "FT-400 reads wrong",
+    "causes": "Orifice plate damaged\nimpulse line leak or plugged\nwrong range after calibration",
+    "events": "",
+    "grp": [],
+    "cons": "FIC-400 holds the wrong flow; the true feed rate is unknown; balances do not close and faults are misread.",
+    "cat": "PER",
+    "sg": [
+     "S027",
+     "S028"
+    ],
+    "S": "2",
+    "L": "3",
+    "recs": [
+     "R09"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "FIC-400 LO alarm 5 m³/h",
+   "tag": "FIC-400",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "TIC-401 HI alarm 79 °C and TIC-401 moves TCV-401 to bypass",
+   "tag": "TIC-401",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S003",
+   "text": "LIC-400 closes LCV-400",
+   "tag": "LIC-400",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S004",
+   "text": "PCV-430 N2 blanket 30 kPa g",
+   "tag": "PCV-430",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "FIC-400 opens FCV-400",
+   "tag": "FIC-400",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "TIC-401 HI/LO alarms",
+   "tag": "TIC-401",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S007",
+   "text": "FIC-400 HI alarm 20 m³/h",
+   "tag": "FIC-400",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S008",
+   "text": "LIC-400 opens LCV-400",
+   "tag": "LIC-400",
+   "type": "Passive / mechanical",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "LIC-400 HI alarm 80 %",
+   "tag": "LIC-400",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "FI-420 HI alarm 900 Nm³/h",
+   "tag": "FI-420",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S011",
+   "text": "LSHH-416 I-1 at 90 %",
+   "tag": "LSHH-416",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S012",
+   "text": "FIC-400 LO alarm (FIC-400 then opens FCV-400 further, which helps the back-flow)",
+   "tag": "FIC-400",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "XV-408 closes only on SIS I-1",
+   "tag": "XV-408",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S014",
+   "text": "No relief on the E-400 tube side on the P&ID",
+   "tag": "E-400",
+   "type": "Relief (PRD)",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "TIC-401 cuts TCV-401 when TT-401 sees the heat (not when flow is zero at the element)",
+   "tag": "TIC-401",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "FIC-400 LO alarm (only after FCV-400 saturates)",
+   "tag": "FIC-400",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S017",
+   "text": "TIC-401",
+   "tag": "TIC-401",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S018",
+   "text": "TI-400 indication",
+   "tag": "TI-400",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S019",
+   "text": "TIC-401 reduces the hot oil",
+   "tag": "TIC-401",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S020",
+   "text": "AI-410 HI alarm 28 wt%",
+   "tag": "AI-410",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S021",
+   "text": "PIC-420",
+   "tag": "PIC-420",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S022",
+   "text": "AI-420 LO alarm 75 wt%",
+   "tag": "AI-420",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S023",
+   "text": "FI-420 LO alarm 300 Nm³/h",
+   "tag": "FI-420",
+   "type": "Alarm",
+   "pfd": ""
+  },
+  {
+   "id": "S024",
+   "text": "LIC-400",
+   "tag": "LIC-400",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S025",
+   "text": "None specific",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S026",
+   "text": "HV-415 drain",
+   "tag": "HV-415",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S027",
+   "text": "FI-410 + FI-420 as a rough balance",
+   "tag": "FI-410",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S028",
+   "text": "LIC-400 trend",
+   "tag": "LIC-400",
+   "type": "Other",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Interlock the hot oil to the feed: close XV-409 on low-low feed flow (an element independent of FT-400) and whenever XV-408 closes, so E-400 is never heated with the tube side blocked in or stagnant.",
+   "by": "Process / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Fit a thermal relief valve on the E-400 tube side (between XV-408 and FCV-400), sized for blocked-in liquid heated by hot oil at 180 °C, discharging to a closed system.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Add a check valve in the feed line downstream of XV-408 so D-400 and E-400 cannot flow back into the supply when the supply pump stops.",
+   "by": "Process / Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Add a feed supply pressure indicator with low alarm upstream of FCV-400 and a FIC-400 output-high alarm, so loss of supply head is seen before FCV-400 runs out of travel.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Limit the feed with FCV-400 wide open (travel stop or restriction orifice), or show that D-400, the mesh pad, PCV-420 and the downstream receiver handle that flow.",
+   "by": "Process",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Run the Rev B cascades (TIC-401 → FIC-405, LIC-400 → FIC-410) as the normal configuration; state the minimum stable feed rate for TIC-401 in the start-up procedure.",
+   "by": "Instrument / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "Sample the feed at every tank switch and the products each shift; add a flat-line (frozen signal) alarm on AI-410 and AI-420.",
+   "by": "Operations / Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R08",
+   "text": "Draw water from the feed tank before a switch and check the feed for free water; include a D-400 low-point water check in the rounds.",
+   "by": "Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R09",
+   "text": "Add a DCS material balance (FT-400 against FI-410 + FI-420) with a deviation alarm, to reveal meter errors and a passing PSV-400.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "HV-401 feed block valve gate drops (fails closed)",
+   "FCV-400 shut (FIC-400 fault, positioner or instrument-air failure: fail closed)",
+   "XV-408 closes spuriously",
+   "supply pump trips upstream",
+   "Supply pressure falls (upstream pump loses head) until FCV-400 runs out of travel",
+   "FT-400 reads high (drift, plugged impulse line)",
+   "FCV-400 stiction after packing work",
+   "HV-401 partly closed",
+   "FCV-400 fails wide open (positioner fault, FIC-400 in MAN at a high output)",
+   "FT-400 reads low",
+   "set point entered too high",
+   "globe bypass HV-403 opened with FCV-400 in service",
+   "Supply pump stops with D-400 at pressure and XV-408 open",
+   "supply pressure below drum pressure during start-up",
+   "FCV-400, HV-403 and HV-401 closed with the supply pump running (shut-off 650 kPa g)",
+   "liquid blocked in between XV-408 and FCV-400 and heated by hot oil",
+   "Upstream pump losing head",
+   "low supply-tank level",
+   "plugged strainer",
+   "Feed from a sun-heated tank",
+   "upstream cooler out of service",
+   "Tank switch to a lighter feed (butane toward 45 wt%)",
+   "Tank switch to a heavier feed (butane toward 25 wt%)",
+   "Water carried from tank bottoms after a tank switch",
+   "Orifice plate damaged",
+   "impulse line leak or plugged",
+   "wrong range after calibration"
+  ],
+  "cons": [
+   "Production stops. E-400 tubes hold stagnant feed while hot oil still flows: the feed heats toward the hot-oil temperature, vaporises and, if blocked in, over-pressures the tube side. D-400 level and pressure fall toward the N2 blanket.",
+   "Lower throughput. At low flow the E-400 outlet runs hotter for the same oil, TIC-401 gain and dead time grow and the loop cycles",
+   "flow swings reach the drum as vapour-rate swings.",
+   "E-400 cannot heat the extra feed (hot feed colder, less vapour per tonne) while the total vapour and liquid rates rise well above design (see dynamic check): level rises, mesh-pad overload and carry-over, header and downstream receiver overloaded.",
+   "Hot, light hydrocarbon flows back into the supply line and tank",
+   "flashing and hammer in the supply line",
+   "D-400 inventory lost.",
+   "Shut-off head alone is within the line rating, but blocked-in liquid heated by hot oil rises in pressure without limit: flange leak or tube rupture, release and fire.",
+   "FCV-400 opens to hold the flow and loses its margin unseen",
+   "lower pressure in E-400 lowers the bubble point of the hot feed (vapour ahead of FCV-400).",
+   "E-400 needs less duty (TCV-401 closes)",
+   "feed nearer its bubble point in the supply line: upstream pump cavitation.",
+   "More vapour and higher drum pressure demand on PCV-420",
+   "liquid product C4 above the 28 wt% spec sent downstream.",
+   "Less vapour, more liquid",
+   "vapour carries more C6 so AI-420 falls toward its 75 wt% spec",
+   "LCV-400 opens further.",
+   "Water boils in E-400 and D-400 (pressure surges), collects in the drum bottom and goes to the downstream unit",
+   "ice or hydrate in the let-down valve at low temperature",
+   "corrosion.",
+   "FIC-400 holds the wrong flow",
+   "the true feed rate is unknown",
+   "balances do not close and faults are misread."
+  ],
+  "safe": [
+   "FIC-400 LO alarm at 5 m³/h: Feed flow",
+   "FIC-400 HI alarm at 20 m³/h: Feed flow",
+   "TIC-401 LO alarm at 69 °C: Hot feed temperature",
+   "TIC-401 HI alarm at 79 °C: Hot feed temperature",
+   "LIC-400 LO alarm at 20 %: D-400 level",
+   "LIC-400 HI alarm at 80 %: D-400 level",
+   "PIC-420 LO alarm at 70 kPa g: D-400 pressure",
+   "PIC-420 HI alarm at 130 kPa g: D-400 pressure",
+   "FI-420 LO alarm at 300 Nm³/h: Overhead vapour flow",
+   "FIC-410 LO alarm at 8 m³/h: Bottoms liquid flow",
+   "FIC-410 HI alarm at 18 m³/h: Bottoms liquid flow",
+   "AI-410 HI alarm at 28 wt% C4: Bottoms butane (spec ≤ 28 wt%)",
+   "AI-420 LO alarm at 75 wt% C4: Overhead butane (spec ≥ 75 wt%)",
+   "AI-400 HI alarm at 5 % N₂: N2 in drum vapour",
+   "TI-410 LO alarm at 40 °C: Flash temperature (drum liquid)",
+   "TI-410 HI alarm at 60 °C: Flash temperature (drum liquid)",
+   "PDI-406 LO alarm at 100 kPa: Hot-oil header ΔP",
+   "PDI-406 HI alarm at 200 kPa: Hot-oil header ΔP",
+   "LSHH-416 at 90 % (5 s) – SIS I-1: XV-408 and XV-409 close",
+   "PSHH-426 at 250 kPa g (3 s) – SIS I-1: XV-408 and XV-409 close",
+   "LSLL-417 at 5 % – SIS I-2: XV-418 closes (latched)",
+   "ESD push-button HS-400 – XV-408, XV-409 and XV-418 close",
+   "PSV-400 set 450 kPa g to flare",
+   "PCV-430 N₂ blanket at 30 kPa g",
+   "FCV-400 fails closed",
+   "TCV-401 (3-way) fails to full bypass",
+   "LCV-400 fails closed",
+   "PCV-420 fails open",
+   "XV-408, XV-409 and XV-418 fail closed",
+   "LG-400 gauge glass (local level)",
+   "Operator rounds (field)",
+   "FIC-400 LO alarm 5 m³/h",
+   "TIC-401 HI alarm 79 °C and TIC-401 moves TCV-401 to bypass",
+   "LIC-400 closes LCV-400",
+   "PCV-430 N2 blanket 30 kPa g",
+   "FIC-400 opens FCV-400",
+   "TIC-401 HI/LO alarms",
+   "FIC-400 HI alarm 20 m³/h",
+   "LIC-400 opens LCV-400",
+   "LIC-400 HI alarm 80 %",
+   "FI-420 HI alarm 900 Nm³/h",
+   "LSHH-416 I-1 at 90 %",
+   "FIC-400 LO alarm (FIC-400 then opens FCV-400 further, which helps the back-flow)",
+   "XV-408 closes only on SIS I-1",
+   "No relief on the E-400 tube side on the P&ID",
+   "TIC-401 cuts TCV-401 when TT-401 sees the heat (not when flow is zero at the element)",
+   "FIC-400 LO alarm (only after FCV-400 saturates)",
+   "TIC-401",
+   "TI-400 indication",
+   "TIC-401 reduces the hot oil",
+   "AI-410 HI alarm 28 wt%",
+   "PIC-420",
+   "AI-420 LO alarm 75 wt%",
+   "FI-420 LO alarm 300 Nm³/h",
+   "LIC-400",
+   "None specific",
+   "HV-415 drain",
+   "FI-410 + FI-420 as a rough balance",
+   "LIC-400 trend",
+   "TIC-401 HI alarm 79 °C",
+   "TI-410 HI alarm 60 °C",
+   "AI-420 LO alarm",
+   "PIC-420 opens PCV-420",
+   "PSHH-426 I-1 at 250 kPa g",
+   "PSV-400",
+   "TIC-401 LO alarm 69 °C",
+   "TI-410 LO alarm 40 °C",
+   "PIC-420 LO alarm 70 kPa g",
+   "AI-410 HI alarm",
+   "TI-403 rises (indirect)",
+   "no second element on the E-400 outlet",
+   "TI-403 trend",
+   "SIS I-1 closes XV-409 with XV-408 (not on FCV-400 or HV-401 closure)",
+   "TIC-401 moves TCV-401 to bypass when TT-401 rises",
+   "no tube-side thermal relief on the P&ID",
+   "AI-410",
+   "hot-oil system relief (off-plot, not on the P&ID)",
+   "Rev B cascade TIC-401 → FIC-405",
+   "tuning records (Tuning lab)",
+   "PDI-406 LO alarm 100 kPa (header failure only)",
+   "TIC-401 LO alarm",
+   "TI-410 LO alarm",
+   "PIC-420 LO alarm",
+   "PCV-430 N2 blanket",
+   "PDI-406 LO alarm 100 kPa",
+   "Rev B FIC-405 rejects header swings",
+   "PDI-406 HI alarm 200 kPa",
+   "PSHH-426",
+   "TI-402 indication only (no alarm)",
+   "TIC-401 closes TCV-401",
+   "TI-402 indication (no alarm)",
+   "PDI-406 HI alarm",
+   "XV-408 closes the feed",
+   "TIC-401 moves TCV-401 to bypass",
+   "LG-400",
+   "LSHH-416 (own sensor) > 90 % for 5 s → I-1 closes XV-408 and XV-409",
+   "LIC-400 LO alarm 20 %",
+   "LSLL-417 (own sensor) < 5 % for 5 s → I-2 closes XV-418",
+   "LCV-400 fail closed",
+   "PIC-420 HI alarm 130 kPa g",
+   "PSHH-426 (own sensor) > 250 kPa g for 3 s → I-1",
+   "PSV-400 set 450 kPa g (fire case to be verified)",
+   "PSHH-426 I-1 stops feed and hot oil",
+   "closed drain",
+   "LIC-400 HI alarm",
+   "FI-420 HI alarm",
+   "LSHH-416",
+   "header knock-out (off-plot)",
+   "AI-400 HI alarm 5 mol%",
+   "HV-430 isolation",
+   "Start-up N2 sweep procedure",
+   "AI-400 (measures N2, not O2)",
+   "N2 blanket",
+   "LG-400 gauge glass (rounds)",
+   "LSHH-416 and LSLL-417 have their own sensors",
+   "PSHH-426 own sensor",
+   "TI-410 against the bubble point",
+   "PSV tail-pipe temperature (field)",
+   "material balance",
+   "header pressure control (off-plot)",
+   "PIC-420 HI alarm",
+   "header relief (off-plot)",
+   "None: no check valve in the vapour line on the P&ID",
+   "HV-421 manual",
+   "Line routing (to confirm)",
+   "none on the P&ID",
+   "None on the P&ID (no gas detection)",
+   "field rounds",
+   "FIC-410 LO alarm 8 m³/h",
+   "LSHH-416 I-1",
+   "FIC-410 HI alarm 18 m³/h",
+   "LIC-400 LO alarm",
+   "LSLL-417 I-2 closes XV-418",
+   "receiver relief (off-plot)",
+   "XV-418 closes only on low level",
+   "no check valve on the bottoms line",
+   "Rev B FIC-410",
+   "FIC-410 alarms",
+   "Lab samples",
+   "TI-410 as an inferential check",
+   "Procedure hold point",
+   "AI-400 (N2 only)",
+   "Procedure: TIC-401 in MAN at 0 % and XV-409 closed until feed flows",
+   "Procedure",
+   "TIC-401 moves TCV-401 to bypass on a high TT-401",
+   "XV-418 permissive: level above 10 % (SIS)",
+   "LSLL-417 I-2",
+   "Procedure feed step (Exercises tab)",
+   "TIC-401 HI alarm",
+   "HV-415 normally closed",
+   "Permit to work",
+   "lock-out",
+   "Reset permissives (level below 85 %, pressure below 230 kPa g)",
+   "XV-418 permissive above 10 %"
+  ],
+  "recs": [
+   "Interlock the hot oil to the feed: close XV-409 on low-low feed flow (an element independent of FT-400) and whenever XV-408 closes, so E-400 is never heated with the tube side blocked in or stagnant.",
+   "Fit a thermal relief valve on the E-400 tube side (between XV-408 and FCV-400), sized for blocked-in liquid heated by hot oil at 180 °C, discharging to a closed system.",
+   "Add a check valve in the feed line downstream of XV-408 so D-400 and E-400 cannot flow back into the supply when the supply pump stops.",
+   "Add a feed supply pressure indicator with low alarm upstream of FCV-400 and a FIC-400 output-high alarm, so loss of supply head is seen before FCV-400 runs out of travel.",
+   "Limit the feed with FCV-400 wide open (travel stop or restriction orifice), or show that D-400, the mesh pad, PCV-420 and the downstream receiver handle that flow.",
+   "Run the Rev B cascades (TIC-401 → FIC-405, LIC-400 → FIC-410) as the normal configuration; state the minimum stable feed rate for TIC-401 in the start-up procedure.",
+   "Sample the feed at every tank switch and the products each shift; add a flat-line (frozen signal) alarm on AI-410 and AI-420.",
+   "Draw water from the feed tank before a switch and check the feed for free water; include a D-400 low-point water check in the rounds.",
+   "Add a DCS material balance (FT-400 against FI-410 + FI-420) with a deviation alarm, to reveal meter errors and a passing PSV-400."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "Minor upset",
+    "No release"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid",
+    "Off-spec product; short outage",
+    "Small contained release"
+   ],
+   [
+    3,
+    "Moderate",
+    "Lost-time injury",
+    "Unit down for days",
+    "Local release or small fire"
+   ],
+   [
+    4,
+    "Major",
+    "Single fatality or permanent disability",
+    "Major equipment damage",
+    "Fire or release within the unit"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "Vessel rupture or explosion",
+    "Fire or release beyond the unit"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the plant life",
+    "< 10⁻⁴ /yr"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in the industry",
+    "10⁻⁴ – 10⁻³ /yr"
+   ],
+   [
+    3,
+    "Possible",
+    "Possible in the plant life",
+    "10⁻³ – 10⁻² /yr"
+   ],
+   [
+    4,
+    "Likely",
+    "Several times in the plant life",
+    "10⁻² – 10⁻¹ /yr"
+   ],
+   [
+    5,
+    "Frequent",
+    "Several times per year",
+    "> 10⁻¹ /yr"
+   ]
+  ],
+  "tel": {
+   "1": "1e-2",
+   "2": "1e-3",
+   "3": "1e-4",
+   "4": "1e-5",
+   "5": "1e-6"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 11,
+ "sgseq": 28,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}

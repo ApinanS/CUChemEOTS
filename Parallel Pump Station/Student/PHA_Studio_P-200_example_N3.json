@@ -1,0 +1,988 @@
+{
+ "v": 2,
+ "unit": "p_200",
+ "meta": {
+  "title": "HAZOP and LOPA of the P-200 unit",
+  "group": "",
+  "date": "2026-11-22",
+  "course": "",
+  "company": "",
+  "bu": "",
+  "facility": "P-200",
+  "pid": "",
+  "scope": "From the tank-farm transfer (HIC-199) into T200, through V200, strainer S-200 and the common suction header, the two pump legs P-200A and P-200B (suction valves, pumps and motors, check valves NRV-210/220, discharge valves V201/V205), the discharge header with FE-100 and V100 (FRC-100), preheater E-100 with TV-110 on LP steam, to the cat-cracker feed drum D-150; utilities: LP steam, instrument air, power (MCC).",
+  "objective": "Identify the hazards and operability problems of the unit, judge their risk, and decide what must be added or changed. For the scenarios that need more than the existing safeguards, check the risk reduction by LOPA.",
+  "assump": "Design case: gas oil at 60 °C, 14 L/s with pump A running and B lined up as the spare, feed heated to 150 °C, D-150 at about 50 %. Trained operators. Risk matrix and target event frequencies are those of the OTS HAZOP and LOPA tabs (teaching values).",
+  "procName": "",
+  "procNo": "",
+  "procRev": "",
+  "dateStart": "",
+  "dateEnd": "",
+  "comments": "",
+  "protocol": "Method: HAZOP to IEC 61882 with full recording. The team takes one node at a time, states its design intent, and applies the guide words to each parameter to find deviations. For each deviation it records the causes, the events that follow, the consequences without credit for safeguards, the existing safeguards, and the risk after safeguards (S × L). Rows above the tolerable level go to LOPA in the same worksheet: initiating-event frequency, enabling conditions and conditional modifiers, independent protection layers with their PFD, and the mitigated frequency compared with the tolerable event likelihood for the severity. Open points go to the Parking Lot; actions become recommendations with an owner and a due date.",
+  "notes": ""
+ },
+ "team": [
+  {
+   "role": "HAZOP leader (independent)",
+   "name": "",
+   "duty": "Runs the sessions and keeps to the method (IEC 61882); not from the design team",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Scribe",
+   "name": "",
+   "duty": "Records every meaningful deviation in the worksheet (full recording)",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Process engineer",
+   "name": "",
+   "duty": "Design intent, the pump and system curves, NPSH, parallel operation, the heat balance of E-100",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Operations representative",
+   "name": "",
+   "duty": "How the station is really run: venting and priming, change-over, the spare on standby, the Field tab rounds",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Instrument / control engineer",
+   "name": "",
+   "duty": "FRC-100 and TIC-110, fail positions, alarms, the SIS (LSLL-200, LSHH-150, ESD), motor protection, the C&E matrix",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Safety engineer",
+   "name": "",
+   "duty": "Risk matrix, consequence analysis (gas-oil fire at the pump slab, tank fire), relief, follow-up to LOPA",
+   "org": "",
+   "email": ""
+  },
+  {
+   "role": "Specialists as needed",
+   "name": "",
+   "duty": "Rotating equipment (API 610 pumps, seals), electrical (MCC, overload relays), the cat-cracker console",
+   "org": "",
+   "email": ""
+  }
+ ],
+ "sessions": [],
+ "attend": {},
+ "dwgs": [
+  {
+   "ref": "PFD-100",
+   "where": "PFD tab (Process & Design)",
+   "use": "Design intent, streams, node boundaries"
+  },
+  {
+   "ref": "P&ID PPS-PID-001",
+   "where": "P&ID tab",
+   "use": "Tags, valves, check valves, fail positions, trips"
+  },
+  {
+   "ref": "Heat and material balance PPS-V1-PE-HMB-001",
+   "where": "Process engineering tab (Engineering)",
+   "use": "Flows, temperatures and heads of the design case"
+  },
+  {
+   "ref": "Relief load basis PPS-V1-PE-RLB-001",
+   "where": "Relief & vent tab (Engineering)",
+   "use": "Relief cases of E-100 and the lines"
+  },
+  {
+   "ref": "Instrument list PPS-V1-IN-INL-001 and C&E PPS-V1-IN-CE-001",
+   "where": "Instrumentation & control and C&E matrix tabs",
+   "use": "Alarm and trip settings, cause and effect"
+  },
+  {
+   "ref": "Equipment list PPS-V1-ME-EQL-001 and pump datasheets",
+   "where": "Mechanical tab (Engineering), Pump curves tab",
+   "use": "Pump curves, shut-off heads, design pressures"
+  },
+  {
+   "ref": "HAZID register",
+   "where": "HAZID tab (Safety)",
+   "use": "Major-accident hazards to carry into the HAZOP"
+  },
+  {
+   "ref": "HAZOP report PPS-V1-SA-HZP-001",
+   "where": "HAZOP tab (Safety)",
+   "use": "The existing study: revalidation baseline, R01–R33, dynamic checks D1–D10"
+  },
+  {
+   "ref": "Consequence analysis",
+   "where": "Consequence analysis tab (Safety)",
+   "use": "Severity: pool fire at the pump slab, tank fire"
+  },
+  {
+   "ref": "Safety layers, LOPA and SRS",
+   "where": "Safety layers, LOPA and SRS of SIF tabs",
+   "use": "Independent protection layers, SIF PFDs, target frequencies"
+  },
+  {
+   "ref": "Operating procedures",
+   "where": "SOP and Exercises tabs",
+   "use": "Start-up, change-over, shutdown, maintenance of the spare"
+  },
+  {
+   "ref": "Incident cases",
+   "where": "Incident cases tab",
+   "use": "Pump-seal fires, deadheaded pumps, back-flow through a spare"
+  }
+ ],
+ "moc": [],
+ "inc": [],
+ "hist": [],
+ "rows": {
+  "N3": [
+   {
+    "id": "r1",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "Running pump stops",
+    "causes": "Motor A trips (protection relay, fault library)\npower dip\nsingle-phasing trips the overload",
+    "events": "",
+    "grp": [],
+    "cons": "Feed to the cat cracker lost; D-150 empties and the cat cracker trips its charge pump; with the steam still on, the oil standing in E-100 heats toward the steam temperature.",
+    "cat": "PER",
+    "sg": [
+     "S001",
+     "S002",
+     "S003",
+     "S004",
+     "S005"
+    ],
+    "S": "3",
+    "L": "4",
+    "recs": [
+     "R01",
+     "R02"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r2",
+    "param": "Flow",
+    "gw": "NO",
+    "dev": "Pump running against a blocked discharge (deadhead)",
+    "causes": "V201 closed in the field by mistake (fault library)\nV100 closed by air failure, ESD or LSHH-150",
+    "events": "",
+    "grp": [],
+    "cons": "All motor power goes into the casing liquid (about 6 °C per minute): seal faces flash, the seal fails, hot gas oil is released; prolonged deadhead can damage the casing.",
+    "cat": "PER",
+    "sg": [
+     "S006",
+     "S007",
+     "S002"
+    ],
+    "S": "4",
+    "L": "3",
+    "recs": [
+     "R03",
+     "R04",
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example\nLOPA (worked example): values from the OTS LOPA tab, scenario L1 (deadheaded pump), for the cause \"discharge block valve closed in the field\" only. Credited: TSHH-212 → motor A tripped (PFD 0.007). Not credited: the TI-212 HI alarm, because it shares TE-212 with the trip. Conditional modifier: probability of ignition 0.1. f_mit = 0.1 × 0.1 × 0.007 = 7.00e-05 per year against TEL 0.001 for S4. The other causes of L1 (instrument-air failure, the cat cracker stopping) are worked on the OTS LOPA tab.",
+    "lopa": {
+     "on": true,
+     "ie": [
+      {
+       "d": "Discharge block valve of the running pump closed in the field (wrong valve, work permit) (OTS LOPA tab, scenario L1; Assumed (human error))",
+       "f": "0.1"
+      }
+     ],
+     "en": [],
+     "cm": [
+      {
+       "d": "Probability of ignition of the released gas oil (Assumed (gas oil above its flash point, below autoignition))",
+       "p": "0.1"
+      }
+     ],
+     "ipl": [
+      "S007"
+     ]
+    }
+   },
+   {
+    "id": "r3",
+    "param": "Flow",
+    "gw": "LESS",
+    "dev": "Pump delivers less than its curve",
+    "causes": "Wear rings worn (fault library)\nimpeller damage\nV201 disc parted from its stem (fault library)",
+    "events": "",
+    "grp": [],
+    "cons": "FRC-100 opens V100 to the limit and the feed is still short; at low flow the pump runs rough and hot.",
+    "cat": "PER",
+    "sg": [
+     "S002",
+     "S008"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R06",
+     "R07"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r4",
+    "param": "Rotation",
+    "gw": "REVERSE",
+    "dev": "Pump A turns backwards",
+    "causes": "Two supply phases swapped after electrical work (fault library)",
+    "events": "",
+    "grp": [],
+    "cons": "About 60 % of the head and far less flow; the impeller nut can work loose on reverse rotation and wreck the pump.",
+    "cat": "PER",
+    "sg": [
+     "S002",
+     "S009"
+    ],
+    "S": "3",
+    "L": "3",
+    "recs": [
+     "R08"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r5",
+    "param": "Current",
+    "gw": "MORE",
+    "dev": "Motor current high",
+    "causes": "Single-phasing (fault library)\nrunning out at high flow in parallel with V100 wide open\nmechanical binding",
+    "events": "",
+    "grp": [],
+    "cons": "Motor windings overheat: insulation damage, motor fire.",
+    "cat": "PER",
+    "sg": [
+     "S010",
+     "S011"
+    ],
+    "S": "3",
+    "L": "2",
+    "recs": [],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r6",
+    "param": "Temperature",
+    "gw": "MORE",
+    "dev": "Casing hot from dry running",
+    "causes": "Casing not vented before the start (air lock)\nsuction valve closed\nloss of prime",
+    "events": "",
+    "grp": [],
+    "cons": "Seal faces run dry and fail within about a minute (model): gas oil sprays from the seal, fire.",
+    "cat": "PER",
+    "sg": [
+     "S012",
+     "S007",
+     "S013"
+    ],
+    "S": "4",
+    "L": "2",
+    "recs": [
+     "R09"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r7",
+    "param": "Pressure",
+    "gw": "MORE",
+    "dev": "Header pressure at shut-off",
+    "causes": "Discharge blocked (V100 or V201 closed) with the pump running",
+    "events": "",
+    "grp": [],
+    "cons": "The header rises to the shut-off head plus the suction head; above the piping rating only if the rating was set for the operating point.",
+    "cat": "PER",
+    "sg": [
+     "S014",
+     "S015"
+    ],
+    "S": "2",
+    "L": "2",
+    "recs": [
+     "R05"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r8",
+    "param": "Integrity",
+    "gw": "OTHER THAN",
+    "dev": "Seal leak",
+    "causes": "Worn or damaged mechanical seal after cavitation, dry running or vibration",
+    "events": "",
+    "grp": [],
+    "cons": "Gas oil at 60 °C sprays or pools under the pump; ignition on the hot motor or coupling gives a pool fire that can spread to the spare.",
+    "cat": "PER",
+    "sg": [
+     "S013",
+     "S016"
+    ],
+    "S": "4",
+    "L": "3",
+    "recs": [
+     "R10",
+     "R11"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   },
+   {
+    "id": "r9",
+    "param": "Measurement",
+    "gw": "NO",
+    "dev": "No remote view of the pump head",
+    "causes": "PI-210 is a local gauge\nII-210 is the only remote pump signal",
+    "events": "",
+    "grp": [],
+    "cons": "Loss of head, wear or reverse rotation is seen late, from the flow and the valve position only.",
+    "cat": "PER",
+    "sg": [
+     "S010",
+     "S017"
+    ],
+    "S": "2",
+    "L": "4",
+    "recs": [
+     "R12",
+     "R13"
+    ],
+    "park": [],
+    "notes": "Worked example",
+    "lopa": {
+     "on": false,
+     "ie": [],
+     "en": [],
+     "cm": [],
+     "ipl": []
+    }
+   }
+  ],
+  "N1": [],
+  "N2": [],
+  "N4": [],
+  "N5": [],
+  "N6": [],
+  "N7": [],
+  "N8": []
+ },
+ "sg": [
+  {
+   "id": "S001",
+   "text": "Motor-trip alarm in the DCS for each pump",
+   "tag": "",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S002",
+   "text": "FRC-100 LO 12.6 / HI 17 L/s (while the cat cracker draws)",
+   "tag": "FRC-100",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S003",
+   "text": "LI-150 LO 30 % / HI 80 %",
+   "tag": "LI-150",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S004",
+   "text": "LALL-150 at 10 % → cat-cracker charge pump tripped (cat-cracker side)",
+   "tag": "LALL-150",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S005",
+   "text": "Spare pump lined up for a manual start",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S006",
+   "text": "TI-212 HI 85 °C (casing A)",
+   "tag": "TI-212",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S007",
+   "text": "TSHH-212 casing > 110 °C for 5 s → motor A tripped",
+   "tag": "TSHH-212",
+   "type": "Interlock (SIS)",
+   "pfd": "0.007"
+  },
+  {
+   "id": "S008",
+   "text": "V100 output on the faceplate",
+   "tag": "V100",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S009",
+   "text": "Commissioning checks after electrical work (procedure)",
+   "tag": "",
+   "type": "Procedure / human",
+   "pfd": ""
+  },
+  {
+   "id": "S010",
+   "text": "II-210 HI 20 A",
+   "tag": "II-210",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S011",
+   "text": "Overload relay 49-210: > 21.7 A for 10 s → motor A tripped",
+   "tag": "",
+   "type": "Interlock (SIS)",
+   "pfd": "0.015"
+  },
+  {
+   "id": "S012",
+   "text": "Start permissives: SIS reset, T200 ≥ 15 %, no motor trip latched, suction valve open and casing vented (both confirmed in the field)",
+   "tag": "T200",
+   "type": "Interlock (SIS)",
+   "pfd": ""
+  },
+  {
+   "id": "S013",
+   "text": "Seal-leak alarm (gas detector at each pump)",
+   "tag": "",
+   "type": "Alarm",
+   "pfd": "0.1"
+  },
+  {
+   "id": "S014",
+   "text": "Shut-off head A 45 m, B 46.5 m: the pumps cannot raise the header above shut-off plus the suction head",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S015",
+   "text": "Piping rated for the shut-off head (to confirm)",
+   "tag": "",
+   "type": "Other",
+   "pfd": ""
+  },
+  {
+   "id": "S016",
+   "text": "ESD push-button: both pumps stopped, V100 and TV-110 closed",
+   "tag": "V100",
+   "type": "Interlock (SIS)",
+   "pfd": "0.013"
+  },
+  {
+   "id": "S017",
+   "text": "Local gauges PI-209 / PI-210 / PI-220 on operator rounds",
+   "tag": "PI-209",
+   "type": "Procedure / human",
+   "pfd": ""
+  }
+ ],
+ "recs": [
+  {
+   "id": "R01",
+   "text": "Auto-start of the spare pump on loss of the running pump (motor trip or low header pressure), with the zero-speed permissive of R15.",
+   "by": "Instrument / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R02",
+   "text": "Steam cut-off: close TV-110 automatically when the feed flow is lost (FT-100 low or both pumps stopped).",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R03",
+   "text": "Minimum-flow recycle from each pump discharge (upstream of the check valve) back to T200, sized for the API 610 minimum continuous flow.",
+   "by": "Process / Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R04",
+   "text": "Low-flow trip of the running pump (flow in each pump leg, or FT-100 low with V100 closed, time-delayed) so a blocked discharge stops the motor before the casing gets hot.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R05",
+   "text": "Header pressure transmitter PIT-100 upstream of FE-100/V100 with a high alarm (blocked outlet, pump at shut-off) and a low alarm (pump lost).",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R06",
+   "text": "Pump condition monitoring: performance test against the curve every quarter, wear-ring clearances at overhaul.",
+   "by": "Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R07",
+   "text": "FRC-100 output-high alarm (V100 above 95 % = loop saturated) and a high clamp on the remote set point.",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R08",
+   "text": "Rotation (bump) test and phase-sequence check in the close-out of any electrical work on the pump motors.",
+   "by": "Electrical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R09",
+   "text": "Dry-run protection: under-power relay on each motor, and a vent sight glass to prove the casing is liquid-full before a start.",
+   "by": "Electrical / Operations",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R10",
+   "text": "Remotely operated, fire-safe emergency isolation valve EIV-200 on the T200 outlet, closable from the control room.",
+   "by": "Process / Safety",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R11",
+   "text": "Dual mechanical seals (API 682) with seal-leak detection; seal drip pans with a kerb to the oily-water sewer.",
+   "by": "Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R12",
+   "text": "Casing pressure transmitters PIT-210/220 with a high alarm on the idle pump (Rev C option on the SIS tab).",
+   "by": "Instrument",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  },
+  {
+   "id": "R13",
+   "text": "Vibration transmitters on P-200A/B with DCS alarms (VI-210/220 are local today).",
+   "by": "Instrument / Mechanical",
+   "due": "",
+   "status": "Open",
+   "resp": ""
+  }
+ ],
+ "park": [],
+ "qe": {
+  "causes": [
+   "Motor A trips (protection relay, fault library)",
+   "power dip",
+   "single-phasing trips the overload",
+   "V201 closed in the field by mistake (fault library)",
+   "V100 closed by air failure, ESD or LSHH-150",
+   "Wear rings worn (fault library)",
+   "impeller damage",
+   "V201 disc parted from its stem (fault library)",
+   "Two supply phases swapped after electrical work (fault library)",
+   "Single-phasing (fault library)",
+   "running out at high flow in parallel with V100 wide open",
+   "mechanical binding",
+   "Casing not vented before the start (air lock)",
+   "suction valve closed",
+   "loss of prime",
+   "Discharge blocked (V100 or V201 closed) with the pump running",
+   "Worn or damaged mechanical seal after cavitation, dry running or vibration",
+   "PI-210 is a local gauge",
+   "II-210 is the only remote pump signal"
+  ],
+  "cons": [
+   "Feed to the cat cracker lost",
+   "D-150 empties and the cat cracker trips its charge pump",
+   "with the steam still on, the oil standing in E-100 heats toward the steam temperature.",
+   "All motor power goes into the casing liquid (about 6 °C per minute): seal faces flash, the seal fails, hot gas oil is released",
+   "prolonged deadhead can damage the casing.",
+   "FRC-100 opens V100 to the limit and the feed is still short",
+   "at low flow the pump runs rough and hot.",
+   "About 60 % of the head and far less flow",
+   "the impeller nut can work loose on reverse rotation and wreck the pump.",
+   "Motor windings overheat: insulation damage, motor fire.",
+   "Seal faces run dry and fail within about a minute (model): gas oil sprays from the seal, fire.",
+   "The header rises to the shut-off head plus the suction head",
+   "above the piping rating only if the rating was set for the operating point.",
+   "Gas oil at 60 °C sprays or pools under the pump",
+   "ignition on the hot motor or coupling gives a pool fire that can spread to the spare.",
+   "Loss of head, wear or reverse rotation is seen late, from the flow and the valve position only."
+  ],
+  "safe": [
+   "LSLL-200 at 10 % for 5 s → both pumps tripped (SIS, first-out)",
+   "LSL-200 start permissive: T200 ≥ 15 %",
+   "LI-200 LO 20 % / HI 85 %",
+   "TSHH-212 casing > 110 °C for 5 s → motor A tripped",
+   "TSHH-222 casing > 110 °C for 5 s → motor B tripped",
+   "TI-212 HI 85 °C (casing A)",
+   "TI-222 HI 85 °C (casing B)",
+   "Overload relay 49-210: > 21.7 A for 10 s → motor A tripped",
+   "Overload relay 49-220: > 21.7 A for 10 s → motor B tripped",
+   "II-210 HI 20 A",
+   "II-220 HI 20 A",
+   "FRC-100 LO 12.6 / HI 17 L/s (while the cat cracker draws)",
+   "TI-110 LO 140 °C (with flow) / HI 165 °C",
+   "LI-150 LO 30 % / HI 80 %",
+   "LSHH-150 at 95 % → V100 forced closed (latched until reset)",
+   "LALL-150 at 10 % → cat-cracker charge pump tripped (cat-cracker side)",
+   "V100 fails closed (instrument air, ESD, LSHH-150)",
+   "TV-110 fails closed (instrument air, ESD)",
+   "ESD push-button: both pumps stopped, V100 and TV-110 closed",
+   "Motor-trip alarm in the DCS for each pump",
+   "Seal-leak alarm (gas detector at each pump)",
+   "Start permissives: SIS reset, T200 ≥ 15 %, no motor trip latched, suction valve open and casing vented (both confirmed in the field)",
+   "Spare pump lined up for a manual start",
+   "Swing check valve NRV-210 / NRV-220 on each pump discharge",
+   "Local gauges PI-209 / PI-210 / PI-220 on operator rounds",
+   "Permit to work with isolation of the equipment (written procedure)",
+   "Written procedures: start-up, change-over A → B, shutdown (Exercises tab)",
+   "Reset rules: refused while T200 < 15 %, a casing > 85 °C, a protection relay still tripped or D-150 > 90 %",
+   "Shut-off head A 45 m, B 46.5 m: the pumps cannot raise the header above shut-off plus the suction head",
+   "FI-199 indication",
+   "Hold-up: hours of feed at design",
+   "Operator rounds at the tank",
+   "FI-199 vs FRC-100 mismatch seen by the operator",
+   "Field level gauge on rounds (assumed)",
+   "Tank-farm operator watches the transfer",
+   "Local vibration and noise at the pumps on rounds",
+   "T200 water draw-off by procedure (assumed)",
+   "Tank vent (not shown on PPS-PID-001)",
+   "V200 hand valve (local only)",
+   "Operator rounds",
+   "Local vibration and noise on rounds",
+   "Strainer inspection at cleaning (procedure)",
+   "V100 output on the faceplate",
+   "Commissioning checks after electrical work (procedure)",
+   "Piping rated for the shut-off head (to confirm)",
+   "Procedure: start against a closed V205",
+   "None specific",
+   "PI-111 and FI-112 indication",
+   "Shell design pressure (to confirm)",
+   "D-150 relief on the cat-cracker unit (not on PPS-PID-001)",
+   "FI-151 indication",
+   "FI-151 vs FRC-100 seen by the operator",
+   "Procedure: open within 2 min"
+  ],
+  "recs": [
+   "Auto-start of the spare pump on loss of the running pump (motor trip or low header pressure), with the zero-speed permissive of R15.",
+   "Steam cut-off: close TV-110 automatically when the feed flow is lost (FT-100 low or both pumps stopped).",
+   "Minimum-flow recycle from each pump discharge (upstream of the check valve) back to T200, sized for the API 610 minimum continuous flow.",
+   "Low-flow trip of the running pump (flow in each pump leg, or FT-100 low with V100 closed, time-delayed) so a blocked discharge stops the motor before the casing gets hot.",
+   "Header pressure transmitter PIT-100 upstream of FE-100/V100 with a high alarm (blocked outlet, pump at shut-off) and a low alarm (pump lost).",
+   "Pump condition monitoring: performance test against the curve every quarter, wear-ring clearances at overhaul.",
+   "FRC-100 output-high alarm (V100 above 95 % = loop saturated) and a high clamp on the remote set point.",
+   "Rotation (bump) test and phase-sequence check in the close-out of any electrical work on the pump motors.",
+   "Dry-run protection: under-power relay on each motor, and a vent sight glass to prove the casing is liquid-full before a start.",
+   "Remotely operated, fire-safe emergency isolation valve EIV-200 on the T200 outlet, closable from the control room.",
+   "Dual mechanical seals (API 682) with seal-leak detection; seal drip pans with a kerb to the oily-water sewer.",
+   "Casing pressure transmitters PIT-210/220 with a high alarm on the idle pump (Rev C option on the SIS tab).",
+   "Vibration transmitters on P-200A/B with DCS alarms (VI-210/220 are local today)."
+  ]
+ },
+ "set": {
+  "cut": [
+   4,
+   9,
+   16
+  ],
+  "S": [
+   [
+    1,
+    "Negligible",
+    "No injury",
+    "Short feed upset",
+    "No release"
+   ],
+   [
+    2,
+    "Minor",
+    "First aid",
+    "Feed off target or a pump damaged",
+    "Small spill contained"
+   ],
+   [
+    3,
+    "Serious",
+    "Lost-time injury",
+    "Cat cracker loses its feed (unit trip); pump out for days",
+    "Local release"
+   ],
+   [
+    4,
+    "Major",
+    "Permanent disability or single fatality",
+    "Gas-oil fire at the pumps or the tank; major damage",
+    "Release beyond the slab"
+   ],
+   [
+    5,
+    "Catastrophic",
+    "Multiple fatalities",
+    "Tank fire spreading beyond the bund; escalation to the cat cracker",
+    "Major off-site impact"
+   ]
+  ],
+  "L": [
+   [
+    1,
+    "Remote",
+    "Not expected in the life of the plant",
+    "< 1e-4 /y"
+   ],
+   [
+    2,
+    "Unlikely",
+    "Known in industry",
+    "1e-4 to 1e-3 /y"
+   ],
+   [
+    3,
+    "Possible",
+    "Could happen in the plant life",
+    "1e-3 to 1e-2 /y"
+   ],
+   [
+    4,
+    "Likely",
+    "Several times in the plant life",
+    "1e-2 to 1e-1 /y"
+   ],
+   [
+    5,
+    "Frequent",
+    "Yearly or more",
+    "> 1e-1 /y"
+   ]
+  ],
+  "tel": {
+   "1": "1",
+   "2": "0.1",
+   "3": "0.01",
+   "4": "0.001",
+   "5": "0.0001"
+  },
+  "ie": [
+   [
+    "BPCS control loop failure",
+    0.1
+   ],
+   [
+    "Pressure regulator failure",
+    0.1
+   ],
+   [
+    "Control valve mechanical failure",
+    0.1
+   ],
+   [
+    "Pump or compressor seal failure",
+    0.1
+   ],
+   [
+    "Gasket or flange leak",
+    0.01
+   ],
+   [
+    "Hose or flexible connection failure",
+    0.1
+   ],
+   [
+    "Loss of utility (power, cooling, instrument air)",
+    0.1
+   ],
+   [
+    "Operator error, per opportunity",
+    0.01
+   ]
+  ],
+  "ipl": [
+   [
+    "BPCS control loop independent of the initiating cause",
+    0.1,
+    "BPCS control"
+   ],
+   [
+    "Operator response to an alarm (10 min or more, trained)",
+    0.1,
+    "Procedure / human"
+   ],
+   [
+    "SIF, SIL 1",
+    0.1,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 2",
+    0.01,
+    "Interlock (SIS)"
+   ],
+   [
+    "SIF, SIL 3",
+    0.001,
+    "Interlock (SIS)"
+   ],
+   [
+    "Pressure relief valve, clean service",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Rupture disk",
+    0.01,
+    "Relief (PRD)"
+   ],
+   [
+    "Dike or bund",
+    0.01,
+    "Passive / mechanical"
+   ],
+   [
+    "Check valve, in the proof-test plan",
+    0.1,
+    "Passive / mechanical"
+   ]
+  ],
+  "cm": [
+   [
+    "Probability of ignition",
+    0.1
+   ],
+   [
+    "Occupancy: a person is in the affected area",
+    0.1
+   ],
+   [
+    "Probability of fatal injury if exposed",
+    0.5
+   ]
+  ]
+ },
+ "seq": 9,
+ "sgseq": 17,
+ "rseq": 0,
+ "pseq": 0,
+ "saved": null,
+ "views": [
+  {
+   "name": "Worksheet View 1",
+   "lopa": false,
+   "only": false,
+   "hide": []
+  },
+  {
+   "name": "LOPA View",
+   "lopa": true,
+   "only": false,
+   "hide": [
+    "notes"
+   ]
+  },
+  {
+   "name": "Compact View",
+   "lopa": false,
+   "only": false,
+   "hide": [
+    "events",
+    "cat",
+    "notes",
+    "freq"
+   ]
+  }
+ ],
+ "vsel": 1,
+ "groups": [],
+ "gseq": 0
+}
