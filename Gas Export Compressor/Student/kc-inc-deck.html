@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LOPA · Gas Export Compressor</title>
+<title>Incident cases · Gas Export Compressor</title>
 
 <!-- Fonts: Montserrat (Latin) + Prompt (Thai) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -263,39 +263,29 @@ img.zoomable{cursor:zoom-in}
 .sim.wide{grid-template-columns:1fr 2fr} .sim.half{grid-template-columns:1fr 1fr}
 .sim-out.tight{padding:12px 14px}
 .katex{white-space:nowrap}
-/* LOPA deck (K-100) */
-svg text{font-family:'Montserrat',sans-serif}
-.sim-out.tight{padding:12px 14px; text-align:left}
+/* Process reliability deck (K-100) */
+.sim-controls .sl{margin-bottom:10px}
+.sim-controls label{font-size:18px; margin-bottom:2px}
+.sim-controls input[type=range]{height:26px}
+.sim-controls .eq-recall{font-size:19px; margin-bottom:10px; padding:6px 10px}
+.sim-controls .chips{margin:2px 0 10px}
 .sim-controls .chip{font-size:14px; padding:4px 11px}
-.chips.btncol .chip{border-radius:9px}
-.sim-controls .sl{margin-bottom:14px}
-.sim-controls label{font-size:18px}
-.sim-controls .eq-recall{font-size:19px; margin-bottom:12px}
-.sim-controls label.chk{font-size:14px !important; margin:3px 0; line-height:1.25}
-.sim.wsim{grid-template-columns:330px 1fr; gap:20px}
-.wsh{font-size:16px; color:var(--navy); margin-bottom:6px}
-table.ws td,table.ws th{font-size:13.5px; padding:4px 6px}
-table.ws s{color:#9CA3AF}
-.tbl td,.tbl th{font-size:15px}
-.btbar{display:flex; flex-wrap:wrap; gap:4px 16px; align-items:center}
-.btbar .chips{margin:0}
-#btEsc .chip{font-size:13px; padding:3px 10px; border-color:#DC2626; color:#DC2626}
-#btEsc .chip.on{background:#DC2626; color:#fff}
-.sim-out.btout{padding:4px; flex:1; min-height:0; display:flex; margin-top:6px}
-.sim-out.btout svg{width:100%; height:100%; max-height:100%}
-#s-bt .rd{margin-top:4px; font-size:16px}
-#s-bt .simsum{margin-top:6px; padding-top:6px}
-.cmp .eq-step{padding:7px 6px; font-size:22px}
-.cmp .eq-box{padding:6px 12px; margin:0}
-.cmp .symtab{gap:2px 22px}
-.cmp .stack>*+*{margin-top:12px}
-#sfSel{font:inherit; font-size:16px; padding:3px 6px; max-width:220px}
-#wsChips .chip{font-size:13px; padding:3px 10px}
-#s-rrf .sim-controls .sl{margin-bottom:8px}
-#s-rrf .sim-controls label{font-size:16px}
-#s-fe .chips.btncol .chip{font-size:15px}
-#sevTab td,#sevTab th{padding:6px 10px}
-#feSvg text,#tmSvg text{paint-order:stroke; stroke:#fff; stroke-width:3px; stroke-linejoin:round}
+.sim-controls label.chk{font-size:17px !important; margin:3px 0; font-weight:500}
+.sim-out.tight{padding:10px 12px}
+.sim-out .rd{font-size:16px; line-height:1.4; text-align:left; margin-top:6px}
+.sim-controls .rd{font-size:16px; line-height:1.4}
+.kpis{display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin:6px 0}
+.sim-out .kpis{grid-template-columns:repeat(4,1fr)}
+.kpi{background:#fff; border:1px solid var(--line); border-radius:10px; padding:6px 8px; text-align:center}
+.kpi b{display:block; font-size:22px; color:var(--navy); font-variant-numeric:tabular-nums}
+.kpi span{font-size:13px; color:var(--muted); line-height:1.25; display:block}
+.kpi.up b{color:var(--green)} .kpi.dn b{color:var(--red)}
+.sim.wide{grid-template-columns:1fr 1.9fr; gap:28px}
+table.compare.tight td, table.compare.tight th{font-size:17px; padding:8px 10px}
+.compare td.num{font-variant-numeric:tabular-nums}
+.figbox svg{max-height:330px}
+svg text{font-family:'Montserrat',sans-serif}
+.cards.c2.big .card{padding:22px 24px} .cards.c2.big .card h3{font-size:24px} .cards.c2.big .card p{font-size:21px; line-height:1.4}
 
 </style>
 
@@ -307,369 +297,278 @@ table.ws s{color:#9CA3AF}
 </head>
 <body>
 <div id="stage">
+<style>
+.mini{font-size:15px;color:#5F6B7A}
+.icm{text-align:center;font-size:18px}
+.b2{color:#C8102E;font-weight:700}.b1{color:#E07B00}
+.mx th.v{writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;padding:6px 2px;white-space:nowrap}
+.mx td,.mx th{padding:4px 6px!important;font-size:14px}
+.mx th.v.on{background:#FFF1B8}
+.mx td.on{background:#FFF8DA}
+.stp{font-size:17px;line-height:1.45;text-align:left;background:#fff;border:1px solid #DCE2EA;border-radius:10px;padding:12px 16px;margin:6px 0}
+.stp b{color:#C8102E}
+.kcp{font-size:16px;line-height:1.5;text-align:left;margin:0 0 8px}
+.tagl{display:inline-block;font-size:13px;background:#EEF1F5;border-radius:6px;padding:2px 8px;margin:2px 3px 2px 0;color:#1B2430}
+.svgbox svg{width:100%;height:auto;background:#fff;border:1px solid #DCE2EA;border-radius:8px}
+.chips.small .chip{font-size:14px;padding:5px 10px}
+</style>
+
 <section class="slide title-slide" data-title="Title">
-  <span class="pill">GAS EXPORT COMPRESSOR OTS · LOPA</span>
-  <h1>Reliability, LOPA and bow-ties for the Gas Export Compressor K-100</h1>
+  <span class="pill">GAS EXPORT COMPRESSOR OTS · INCIDENT CASES</span>
+  <h1>What do eight gas accidents say about K-100?</h1>
   <div class="rule"></div>
-  <p class="who"><b>Apinan Soottitantawat</b><br>Department of Chemical Engineering, Faculty of Engineering<br>Chulalongkorn University</p>
+  <p class="who"><b>Apinan Soottitantawat</b><br>Department of Chemical Engineering, Faculty of Engineering, Chulalongkorn University</p>
 </section>
 
-<section class="slide" data-title="Agenda" data-defines="LOPA,IPL,IPLs,IEF,CM,PFD,PFDavg,RRF,SIL,SIF,SIFs,SIS,BPCS,MTTF,RBD,DCS,ESD,ESDV,ESDVs,BDV,BDVs,XV,XY,PT,TE,PI,TI,VI,FT,PSHH,PSLL,LSHH,TSHH,VSHH,SSHH,UZHH,FSHH,PIAH,PICAH,PIAL,TIAH,LIAH,UICAL,SICAH,UIC,SIC,PIC,LIC,TIC,UV,PV,LV,FV,TV,PSV,NRV,SDV,GT,LO,CM,HP,KC,PID,CCPS,IEC,HAZOP,ISA,API,DU,HH,LL,MAN,AUTO,USD,MW,LHV,F&amp;G,FG,LEL,GC,1oo1,1oo2,2oo2,2oo3,I-1,I-2,RO,PSD,HOLD,CO,OK">
+<section class="slide" data-title="Agenda" data-defines="ESD,ESDV,BDV,PSV,SIS,SSIV,MOC,PSSR,HAZID,HAZOP,LOPA,SIMOPS,TR,CSB,NTSB,HSE,OTS,GT,HP,LP,SIF,SRS,ASEA,PTTEP,DN,LFL,HD,PIC,PSHH,PT,PV,HV,UIC,TIC,FT">
   <div class="s-head"><p class="kicker">Three parts</p><h2>What we will answer</h2></div>
   <div class="grow agenda">
-    <a class="agenda-item" href="#/3"><span class="no">1</span><span class="qq">How likely is a trip to fail when it is needed?</span><span class="go">&#8594;</span></a>
-    <a class="agenda-item" href="#/15"><span class="no">2</span><span class="qq">Are the compressor's layers of protection enough for each scenario?</span><span class="go">&#8594;</span></a>
-    <a class="agenda-item" href="#/26"><span class="no">3</span><span class="qq">How do threats, barriers and consequences fit in one picture?</span><span class="go">&#8594;</span></a>
+    <a class="agenda-item" href="#/5"><span class="no">1</span><span class="qq">How do we read an accident without hunting for someone to blame?</span><span class="go">&#8594;</span></a>
+    <a class="agenda-item" href="#/12"><span class="no">2</span><span class="qq">Which barriers failed, and which failed most often?</span><span class="go">&#8594;</span></a>
+    <a class="agenda-item" href="#/19"><span class="no">3</span><span class="qq">Where could each pattern happen on K-100, and what stops it?</span><span class="go">&#8594;</span></a>
   </div>
-  <p class="tagnote">LOPA = layer of protection analysis · IPL = independent protection layer · SIF = safety instrumented function (one trip, sensor to final element) · PFD = probability of failure on demand · RRF = risk reduction factor still needed · SIL = safety integrity level. Tags follow KC-PID-100 (ISA letters: P pressure, T temperature, L level, S speed, U anti-surge; A alarm, S trip, H/L high/low).</p>
+  <p class="tagnote">Facts come from the investigation reports listed in the Incident cases tab; the K-100 reading is the author's.</p>
 </section>
 
-
-<section class="slide section-slide" id="part1" data-title="Part 1 · Reliability for safety" data-sec="Part 1 · Reliability for safety">
-  <div class="big">1</div><p class="lbl">Part 1 · Reliability for safety</p>
-  <p class="q">How likely is a trip to fail when it is needed?</p>
+<section class="slide" data-title="Words used · acronyms" data-defines="ESD,ESDV,BDV,PSV,SSIV,MOC,PSSR,SIMOPS,TR,CSB,NTSB,HSE">
+  <div class="s-head"><p class="kicker">Words used · acronyms</p><h2>Twelve names you will meet</h2></div>
+  <div class="grow"><table class="compare tight">
+    <tbody>
+      <tr><td><b>ESD</b></td><td>emergency shutdown</td><td><b>ESDV</b></td><td>ESD valve</td></tr>
+      <tr><td><b>BDV</b></td><td>blowdown valve to flare</td><td><b>PSV</b></td><td>pressure safety valve</td></tr>
+      <tr><td><b>SSIV</b></td><td>subsea isolation valve</td><td><b>TR</b></td><td>temporary refuge</td></tr>
+      <tr><td><b>MOC</b></td><td>management of change</td><td><b>PSSR</b></td><td>pre-start-up safety review</td></tr>
+      <tr><td><b>SIMOPS</b></td><td>simultaneous operations</td><td><b>CSB</b></td><td>US Chemical Safety Board</td></tr>
+      <tr><td><b>NTSB</b></td><td>US transport safety board</td><td><b>HSE</b></td><td>UK Health and Safety Executive</td></tr>
+    </tbody></table></div>
 </section>
 
-<section class="slide" data-title="Part 1 · the plan" data-outline-for="Part 1 · Reliability for safety">
-  <div class="s-head"><p class="kicker">Part 1 · the plan</p><h2>From failure counts to a trip's PFD</h2></div>
+<section class="slide" data-title="Words used · barriers">
+  <div class="s-head"><p class="kicker">Words used · barriers</p><h2>Six layers and the system that keeps them working</h2></div>
+  <div class="grow"><table class="compare tight">
+    <thead><tr><th class="l">Layer (Safety layers tab)</th><th class="l">Management element</th></tr></thead>
+    <tbody>
+      <tr><td class="l">L1 process control</td><td class="l">MOC / PSSR</td></tr>
+      <tr><td class="l">L2 alarms and operator</td><td class="l">hazard study and its actions</td></tr>
+      <tr><td class="l">L3 SIS / ESD</td><td class="l">inspection and integrity</td></tr>
+      <tr><td class="l">L4 relief / blowdown</td><td class="l">procedures and training</td></tr>
+      <tr><td class="l">L5 physical protection</td><td class="l">permit / isolation · layout</td></tr>
+      <tr><td class="l">L6 emergency response</td><td class="l">safety culture</td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="slide section-slide" id="part1" data-title="Part 1 · Reading a case" data-sec="Part 1 · Reading a case">
+  <div class="big">1</div><p class="lbl">Part 1 · Reading a case</p>
+  <p class="q">How do we read an accident without hunting for someone to blame?</p>
+</section>
+
+<section class="slide" data-title="Part 1 · the plan" data-outline-for="Part 1 · Reading a case">
+  <div class="s-head"><p class="kicker">Part 1 · the plan</p><h2>From a news story to a barrier</h2></div>
   <div class="grow"><ol class="sec-outline">
-    <li><b>Words of risk</b><span class="so">hazard, risk, reliability, PFD</span></li>
-    <li><b>A failure rate from a population</b><span class="so">Weibull, and when λ is constant</span></li>
-    <li><b>PFD and proof testing</b><span class="so">why λT/2, and the saw-tooth</span></li>
-    <li><b>Block diagrams</b><span class="so">the PFD of a whole K-100 trip, and its final element</span></li>
+    <li><b>Three questions</b><span class="so">what, why, so what</span></li>
+    <li><b>Eight cases</b><span class="so">1988 to 2018</span></li>
+    <li><b>One case, minute by minute</b><span class="so">Piper Alpha</span></li>
+    <li><b>Holes in the cheese</b><span class="so">several barriers at once</span></li>
   </ol></div>
 </section>
 
-<section class="slide" data-title="Words of risk">
-  <div class="s-head"><p class="kicker">Definitions, on K-100</p><h2>Risk is consequence times frequency</h2></div>
-  <div class="grow"><table class="compare tight">
-    <tr><th>Term</th><th>Meaning</th><th>K-100 example</th></tr>
-    <tr><td>Hazard</td><td>can cause harm</td><td id="wrHaz">HP gas in the loop</td></tr>
-    <tr><td>Risk</td><td>$C \times F$</td><td>jet fire × per year</td></tr>
-    <tr><td>Reliability $R(t)$</td><td>still working at $t$</td><td>dry gas seal survives one year</td></tr>
-    <tr><td>PFD</td><td>fails when demanded</td><td>PSHH-112 on a blocked outlet</td></tr>
-  </table><p class="eq-note orange">$C$ consequence severity, $F$ frequency per year.</p></div>
+<section class="slide" data-title="Three questions">
+  <div class="s-head"><p class="kicker">Method</p><h2>Ask three questions of every case</h2></div>
+  <div class="grow"><div class="cards c3">
+    <div class="card card-blue"><h3>What happened</h3><p>The sequence, with times.</p></div>
+    <div class="card card-orange"><h3>Why</h3><p>The immediate cause, then each barrier that failed or was weak.</p></div>
+    <div class="card card-red"><h3>So what for K-100</h3><p>Is the same barrier here, independent and tested?</p></div>
+  </div><p class="bridge"><b>So</b> the target is a barrier, never a person.</p></div>
 </section>
 
-<section class="slide" data-title="Interactive · population lab" id="s-pop" data-defines="N_s,N_f">
-  <div class="s-head"><p class="kicker">Interactive · 100 dry gas seals on test</p><h2>Count the failures, get a rate</h2></div>
-  <div class="sim">
-    <div class="sim-controls">
-      <div class="sl"><label><span>Shape $\beta$</span> <span class="val" id="pbV"></span></label><input type="range" id="pb" min="0.5" max="4" step="0.1" value="1"></div>
-      <div class="sl"><label><span>Scale $\alpha$</span> <span class="val" id="paV"></span></label><input type="range" id="pa" min="1" max="10" step="0.5" value="5"></div>
-      <div class="sl"><label><span>Time $t$</span> <span class="val" id="ptV"></span></label><input type="range" id="pt" min="0" max="15" step="0.5" value="3"></div>
-      <p class="rd" id="pTxt"></p>
-    </div>
-    <div class="sim-out tight"><svg id="pSvg" viewBox="0 0 620 360" style="width:100%"></svg></div>
-  </div>
-  <p class="simsum">With $\beta = 1$ the failure rate stays flat: <b>a constant λ</b>, the assumption behind every PFD that follows.</p>
-</section>
-
-<section class="slide" data-title="Weibull · symbols">
-  <div class="s-head"><p class="kicker">From the population to a formula</p><h2>The Weibull hazard rate<span class="stepno">step 1 of 2</span></h2></div>
-  <div class="grow stack">
-    <div class="symtab">
-      <div class="sy">$h(t)$</div><div>failure rate of survivors at time $t$</div><div class="un">1/yr</div>
-      <div class="sy">$\beta$</div><div>shape: &lt; 1 early, = 1 random, &gt; 1 wear-out</div><div class="un">–</div>
-      <div class="sy">$\alpha$</div><div>scale: characteristic life</div><div class="un">yr</div>
-      <div class="sy">$R(t)$</div><div>fraction still working</div><div class="un">–</div>
-    </div>
-    <div class="eq-step">$h(t)=\dfrac{\beta}{\alpha}\left(\dfrac{t}{\alpha}\right)^{\beta-1}$<span class="why">fitted to failure counts like the lab's</span></div>
-    <div class="eq-step">$R(t)=e^{-(t/\alpha)^{\beta}}$<span class="why">survivors under that hazard rate</span></div>
-  </div>
-</section>
-
-<section class="slide" data-title="Weibull · constant rate" data-defines="λ">
-  <div class="s-head"><p class="kicker">The useful-life region</p><h2>Set β = 1: a constant failure rate<span class="stepno">step 2 of 2</span></h2></div>
-  <div class="grow stack">
-    <div class="eq-recall"><span class="rl">From the previous slide</span>$h(t)=\dfrac{\beta}{\alpha}\left(\dfrac{t}{\alpha}\right)^{\beta-1},\quad R(t)=e^{-(t/\alpha)^{\beta}}$</div>
-    <div class="eq-step">$h(t)=\dfrac{1}{\alpha}\equiv\lambda$<span class="why">the exponent β − 1 = 0 removes time</span></div>
-    <div class="eq-step">$R(t)=e^{-\lambda t},\quad F(t)=1-e^{-\lambda t}$<span class="why">F = fraction failed = 1 − R</span></div>
-    <p class="eq-note orange">Valid between burn-in and wear-out; $\lambda$ in failures per year.</p>
-  </div>
-</section>
-
-<section class="slide cmp" data-title="PFD · derivation" data-defines="T">
-  <div class="s-head"><p class="kicker">A trip waits on standby</p><h2>Why the average PFD is λT/2</h2></div>
-  <div class="grow stack">
-    <p class="bridge">A trip does not run; it waits, and a hidden failure waits with it.</p>
-    <div class="eq-recall"><span class="rl">Constant rate, previous slide</span>$F(t)=1-e^{-\lambda t}$</div>
-    <div class="eq-step">$PFD(t)=F(t)\approx\lambda t$<span class="why">a hidden failure stays until tested; λt ≪ 1</span></div>
-    <div class="eq-step">$PFD_{avg}=\dfrac{1}{T}\displaystyle\int_0^T\lambda t\,dt=\dfrac{\lambda T}{2}$<span class="why">average over one proof-test interval T</span></div>
-    <div class="eq-step">exact: $1-\dfrac{1-e^{-\lambda T}}{\lambda T}$<span class="why">use it when λT is not small</span></div>
-    <p class="eq-note green">$T$ proof-test interval, yr; $PFD(t)$ chance the trip is already dead at $t$.</p>
-  </div>
-</section>
-
-<section class="slide" data-title="Interactive · proof testing" id="s-saw">
-  <div class="s-head"><p class="kicker">Interactive · test more often</p><h2>Proof testing resets the PFD to zero</h2></div>
-  <div class="sim">
-    <div class="sim-controls">
-      <div class="eq-recall"><span class="rl">Just derived</span>$PFD_{avg}\approx\lambda T/2$</div>
-      <div class="sl"><label>Dangerous failure rate λ <span class="val" id="swLv"></span></label><input type="range" id="swL" min="-3" max="0" step="any" value="-1.6"></div>
-      <div class="sl"><label>Proof-test interval T <span class="val" id="swTv"></span></label><input type="range" id="swT" min="0.25" max="5" step="0.25" value="1"></div>
-      <p class="rd" id="swTxt"></p>
-    </div>
-    <div class="sim-out tight"><svg id="swSvg" style="width:100%"></svg></div>
-  </div>
-  <p class="simsum">Halving T halves the average PFD; <b>an untested trip drifts towards certain failure</b>. Start λ = XV-100 with its solenoid.</p>
-</section>
-
-<section class="slide" data-title="Block diagram rules">
-  <div class="s-head"><p class="kicker">Reliability block diagrams</p><h2>Series adds, redundancy multiplies</h2></div>
-  <div class="grow"><table class="compare tight">
-    <tr><th>Structure</th><th>Acts when</th><th>$PFD_{avg}$</th></tr>
-    <tr><td>Series, 1oo1</td><td>every block works</td><td>$\sum \lambda_i T/2$</td></tr>
-    <tr><td>Parallel, 1oo2</td><td>either channel</td><td>$(\lambda T)^2/3$</td></tr>
-    <tr><td>2oo3</td><td>two of three</td><td>$(\lambda T)^2$</td></tr>
-    <tr><td>2oo2</td><td>both must act</td><td>$\lambda T$</td></tr>
-  </table><p class="eq-note orange" id="rbdNote"></p></div>
-</section>
-
-<section class="slide" data-title="Interactive · SIF calculator" id="s-sif">
-  <div class="s-head"><p class="kicker">Interactive · pick a K-100 trip</p><h2>Which block dominates the PFD?</h2></div>
+<section class="slide" data-title="Interactive · eight cases" id="s-tl">
+  <div class="s-head"><p class="kicker">Interactive · click a case</p><h2>Eight cases, thirty years, 214 dead</h2></div>
   <div class="sim wide">
-    <div class="sim-controls">
-      <div class="ssrow"><span>Trip</span><select id="sfSel"></select></div>
-      <div class="sim-controls chips" data-group="sfV"><button class="chip" data-v="0">sensor as built</button><button class="chip" data-v="1">sensor 1oo2</button></div>
-      <div class="sl"><label>Proof-test interval T <span class="val" id="sfTv"></span></label><input type="range" id="sfT" min="0.25" max="4" step="0.25" value="1"></div>
-    </div>
-    <div class="sim-out tight"><svg id="sfSvg" viewBox="0 0 700 330" style="width:100%"></svg><p class="rd" id="sfTxt"></p></div>
+    <div class="sim-controls"><div class="chips btncol small" id="tlB"></div></div>
+    <div class="sim-out tight"><div class="svgbox" id="tlSvg"></div><div class="rd" id="tlOut"></div></div>
   </div>
-  <p class="simsum">XV-100 with its solenoid dominates most trips (TSHH-109: 89 %): <b>a second sensor barely helps</b>, except on PSHH-112. Rates: course SIS grade, some assumed.</p>
+  <p class="simsum">Gas compression, offshore platforms and gas lines: the same fluids as K-100.</p>
 </section>
 
-<section class="slide" data-title="Interactive · final element" id="s-fe">
-  <div class="s-head"><p class="kicker">Interactive · let only one final element act</p><h2>The diagram must name the right valve</h2></div>
+<section class="slide" data-title="Interactive · Piper Alpha step by step" id="s-piper">
+  <div class="s-head"><p class="kicker">Interactive · step through</p><h2>Piper Alpha: one leak became a platform loss</h2></div>
   <div class="sim">
     <div class="sim-controls">
-      <div class="sim-controls chips btncol" data-group="feK"><button class="chip" data-v="L1">PSHH-112 · blocked outlet</button><button class="chip" data-v="L2">LSHH-101 · liquid slug</button><button class="chip" data-v="L3">TSHH-109 · loss of cooling</button></div>
-      <p class="rd" id="feTxt"></p>
+      <div class="sl"><label>Step <span class="val" id="ppSv"></span></label><input type="range" id="ppS" min="1" max="8" step="1" value="1"></div>
+      <div class="rd" id="ppTag"></div>
     </div>
-    <div class="sim-out tight"><svg id="feSvg" viewBox="0 0 620 330" style="width:100%"></svg></div>
+    <div class="sim-out tight"><div class="stp" id="ppOut"></div></div>
   </div>
-  <p class="simsum">Model runs, one element at a time: <b>LSHH-101 needs ESDV-101, TSHH-109 needs XV-100</b>. That choice sets each block diagram.</p>
+  <p class="simsum">Permit, isolation, layout and escape all failed, one after another.</p>
+</section>
+
+<section class="slide" data-title="Interactive · holes in the cheese" id="s-cheese">
+  <div class="s-head"><p class="kicker">Interactive · pick a case</p><h2>Every case needed several holes at once</h2></div>
+  <div class="sim wide">
+    <div class="sim-controls"><div class="chips btncol small" id="chzB"></div><div class="rd" id="chzOut"></div></div>
+    <div class="sim-out tight"><div class="svgbox" id="chzSvg"></div></div>
+  </div>
+  <p class="simsum">Red: failed or missing. Orange: weak. The hazard passes only where holes line up.</p>
 </section>
 
 <section class="slide" data-title="What part 1 settled">
   <div class="s-head"><p class="kicker">Part 1 · summary</p><h2>What part 1 settled</h2></div>
   <div class="grow"><ul class="clean">
-    <li>Constant λ holds between burn-in and wear-out.</li>
-    <li>A standby trip averages $PFD \approx \lambda T/2$ between tests.</li>
-    <li>Series blocks add; the trip valve usually dominates.</li>
-    <li>PSHH-112 reaches SIL 2; most other trips SIL 1.</li>
+    <li>Read a case as what, why and so what for K-100.</li>
+    <li>Eight cases killed 214 people with K-100's own fluids.</li>
+    <li>No case had a single cause; several barriers failed together.</li>
   </ul></div>
 </section>
 
-
-<section class="slide section-slide" id="part2" data-title="Part 2 · LOPA" data-sec="Part 2 · LOPA">
-  <div class="big">2</div><p class="lbl">Part 2 · LOPA</p>
-  <p class="q">Are the compressor's layers of protection enough for each scenario?</p>
+<section class="slide section-slide" id="part2" data-title="Part 2 · Barriers" data-sec="Part 2 · Barriers">
+  <div class="big">2</div><p class="lbl">Part 2 · Barriers</p>
+  <p class="q">Which barriers failed, and which failed most often?</p>
 </section>
 
-<section class="slide" data-title="Part 2 · the plan" data-outline-for="Part 2 · LOPA">
-  <div class="s-head"><p class="kicker">Part 2 · the plan</p><h2>One equation, eight scenarios</h2></div>
+<section class="slide" data-title="Part 2 · the plan" data-outline-for="Part 2 · Barriers">
+  <div class="s-head"><p class="kicker">Part 2 · the plan</p><h2>From eight stories to one table</h2></div>
   <div class="grow"><ol class="sec-outline">
-    <li><b>The LOPA equation</b><span class="so">frequency of the consequence</span></li>
-    <li><b>The lecture example</b><span class="so">from frequency to the RRF still needed</span></li>
-    <li><b>What counts as an IPL</b><span class="so">independent, specific, dependable, auditable</span></li>
-    <li><b>The K-100 worksheet</b><span class="so">eight scenarios, time and shared sensors</span></li>
+    <li><b>The barrier matrix</b><span class="so">case by barrier</span></li>
+    <li><b>Counting the holes</b><span class="so">failed or weak</span></li>
+    <li><b>Hardware against management</b><span class="so">which side fails more</span></li>
+    <li><b>Recurring themes</b><span class="so">overpressure, risers, procedures</span></li>
   </ol></div>
 </section>
 
-<section class="slide cmp" data-title="LOPA equation">
-  <div class="s-head"><p class="kicker">One initiating event, one consequence</p><h2>The LOPA equation</h2></div>
-  <div class="grow stack">
-    <p class="bridge">Part 1 gave each layer a PFD; LOPA multiplies them.</p>
-    <div class="symtab">
-      <div class="sy">$f_{IE}$</div><div>initiating-event frequency</div><div class="un">1/yr</div>
-      <div class="sy">$PFD_j$</div><div>PFD of independent protection layer $j$</div><div class="un">–</div>
-      <div class="sy">$CM$</div><div>conditional modifiers: ignition, release</div><div class="un">–</div>
-      <div class="sy">$f_{tgt}$</div><div>tolerable frequency for the severity</div><div class="un">1/yr</div>
-    </div>
-    <div class="eq-box">$$f_C = f_{IE}\,\prod_j PFD_j\,\prod CM,\qquad RRF=\dfrac{f_C}{f_{tgt}}$$</div>
-    <p class="eq-note green">RRF ≤ 1 means tolerable; above 1 another layer is needed.</p>
+<section class="slide" data-title="Interactive · barrier matrix" id="s-mx">
+  <div class="s-head"><p class="kicker">Interactive · click a barrier</p><h2>The matrix shows which barriers failed where</h2></div>
+  <div class="sim wide">
+    <div class="sim-controls"><div class="chips btncol small" id="mxB"></div></div>
+    <div class="sim-out tight"><table class="compare mx" id="mxT"></table><div class="rd" id="mxOut"></div></div>
   </div>
+  <p class="simsum">● failed or missing · ○ a weakness the investigation named.</p>
 </section>
 
-<section class="slide" data-title="Lecture example" data-symbols="prev">
-  <div class="s-head"><p class="kicker">The course lecture's example</p><h2>From frequency to the layer still needed</h2></div>
-  <div class="grow stack">
-    <div class="eq-recall"><span class="rl">LOPA equation</span>$f_C = f_{IE}\prod PFD_j\prod CM,\quad RRF=f_C/f_{tgt}$</div>
-    <div class="eq-step">$f_C=0.1\times0.1\times0.01\times0.1=10^{-5}\ \text{/yr}$<span class="why">initiating event, alarm, SIF, ignition</span></div>
-    <div class="eq-step">$RRF=10^{-5}/10^{-6}=10$<span class="why">target for that severity</span></div>
-    <div class="eq-step">$PFD_{new}\le 1/RRF=0.1$<span class="why">one more IPL of PFD 0.1 closes it</span></div>
-  </div>
-</section>
-
-<section class="slide" data-title="Interactive · RRF lab" id="s-rrf">
-  <div class="s-head"><p class="kicker">Interactive · scenario L1, blocked discharge</p><h2>Move each factor, watch the RRF</h2></div>
-  <div class="sim">
+<section class="slide" data-title="Interactive · counting the holes" id="s-cnt">
+  <div class="s-head"><p class="kicker">Interactive · failed only, or weak too</p><h2>Culture, procedures and hazard study lead</h2></div>
+  <div class="sim wide">
     <div class="sim-controls">
-      <div class="eq-recall"><span class="rl">LOPA equation</span>$f_C=f_{IE}\,PFD_1\,PFD_2\,PFD_3\,CM$</div>
-      <div class="sl"><label><span>$f_{IE}$</span> <span class="val" id="rfIv"></span></label><input type="range" id="rfI" min="-2" max="1" step="any" value="-0.8"></div>
-      <div class="sl"><label><span>$PFD_1$ PIAH-112 (1 = no credit)</span> <span class="val" id="rfAv"></span></label><input type="range" id="rfA" min="-2" max="0" step="any" value="0"></div>
-      <div class="sl"><label><span>$PFD_2$ PSHH-112</span> <span class="val" id="rfSv"></span></label><input type="range" id="rfS" min="-4" max="0" step="any" value="-2.5"></div>
-      <div class="sl"><label><span>$PFD_3$ PSV-112 (1 = on HOLD)</span> <span class="val" id="rfPv"></span></label><input type="range" id="rfP" min="-3" max="0" step="any" value="0"></div>
-      <div class="sl"><label><span>$CM$ ignition</span> <span class="val" id="rfCv"></span></label><input type="range" id="rfC" min="-2" max="0" step="any" value="-0.5"></div>
+      <div class="chips" id="cnB"><button class="chip on" data-m="f">Failed only</button><button class="chip" data-m="fw">Failed + weak</button></div>
+      <div class="rd" id="cnOut"></div>
     </div>
-    <div class="sim-out tight"><svg id="rfSvg" viewBox="0 0 600 330" style="width:100%"></svg><p class="rd" id="rfTxt"></p></div>
+    <div class="sim-out tight"><div class="svgbox" id="cnSvg"></div></div>
   </div>
-  <p class="simsum">Start values are L1's: 0.146 /yr × 3.2×10⁻³ × 0.3 = 1.4×10⁻⁴, <b>above the 10⁻⁴ target despite a SIL 2 trip</b>.</p>
+  <p class="simsum">Counted from the case data of the Incident cases tab.</p>
 </section>
 
-<section class="slide" data-title="Criteria">
-  <div class="s-head"><p class="kicker">Course risk criteria</p><h2>Severity sets the tolerable frequency</h2></div>
-  <div class="grow"><table class="compare tight" id="sevTab"></table><p class="eq-note orange">A jet fire on the compressor module is severity 5: target 10⁻⁴ /yr.</p></div>
-</section>
-
-<section class="slide" data-title="What counts as an IPL">
-  <div class="s-head"><p class="kicker">IPL rules</p><h2>Four tests before a safeguard gets credit</h2></div>
-  <div class="grow"><div class="cards c2">
-    <div class="card"><h3>Independent</h3><p>Shares no sensor, valve or cause with the event or another credited layer.</p></div>
-    <div class="card"><h3>Specific</h3><p>Designed to stop this scenario.</p></div>
-    <div class="card"><h3>Dependable</h3><p>Acts in time: an operator needs ≥ 10 min.</p></div>
-    <div class="card"><h3>Auditable</h3><p>Proof-tested and documented.</p></div>
-  </div><p class="eq-note orange" id="iplNote"></p></div>
-</section>
-
-<section class="slide" data-title="Interactive · worksheet" id="s-ws">
-  <div class="s-head"><p class="kicker">Interactive · the K-100 worksheet</p><h2>Eight scenarios, one RRF each</h2></div>
-  <div class="sim wsim">
-    <div class="sim-controls">
-      <div class="sim-controls chips" data-group="wsK" id="wsChips"></div>
-      <div class="chkl" id="wsIpl"></div>
-      <div class="sim-controls chips" data-group="wsB"><button class="chip" data-v="base">As built</button><button class="chip" data-v="rec">All recommendations</button></div>
-    </div>
-    <div class="sim-out tight"><div id="wsOut"></div></div>
+<section class="slide" data-title="Interactive · hardware or management" id="s-hm">
+  <div class="s-head"><p class="kicker">Interactive · pick a case</p><h2>Management holes outnumber layer holes</h2></div>
+  <div class="sim wide">
+    <div class="sim-controls"><div class="chips btncol small" id="hmB"></div></div>
+    <div class="sim-out tight"><div class="kpis" id="hmK"></div><div class="rd" id="hmOut"></div></div>
   </div>
-  <p class="simsum">Six of eight exceed the target as built; <b>with the recommendations all eight are tolerable</b>. Struck credits break a rule.</p>
+  <p class="simsum">A layer works only while inspection, procedures and permits keep it working.</p>
 </section>
 
-<section class="slide" data-title="Interactive · time to act" id="s-time">
-  <div class="s-head"><p class="kicker">Interactive · how long does your operator need?</p><h2>An alarm counts only if there is time</h2></div>
-  <div class="sim">
-    <div class="sim-controls">
-      <div class="sl"><label>Time the operator needs <span class="val" id="tmV"></span></label><input type="range" id="tm" min="1" max="30" step="1" value="10"></div>
-      <p class="rd" id="tmTxt"></p>
-    </div>
-    <div class="sim-out tight"><svg id="tmSvg" viewBox="0 0 640 420" style="width:100%"></svg></div>
+<section class="slide" data-title="Interactive · recurring themes" id="s-th">
+  <div class="s-head"><p class="kicker">Interactive · pick a theme</p><h2>Some themes come back again and again</h2></div>
+  <div class="sim wide">
+    <div class="sim-controls"><div class="chips small" id="thB"></div></div>
+    <div class="sim-out tight"><div class="rd" id="thOut"></div></div>
   </div>
-  <p class="simsum">A compressor moves fast: <b>only a stuck level valve leaves an operator 10 minutes</b> from alarm to harm.</p>
-</section>
-
-<section class="slide" data-title="Shared sensor">
-  <div class="s-head"><p class="kicker">Scenario L6: K-100 trips, header overpressure</p><h2>One transmitter, one credit</h2></div>
-  <div class="grow stack">
-    <div class="eq-recall"><span class="rl">LOPA equation</span>$f_C=f_{IE}\prod PFD_j\prod CM$</div>
-    <div class="eq-step">$f_C=8.78\times0.1\times0.022\times0.3=5.8\times10^{-3}$<span class="why">PV-102 and PSV-001; PSHH-001 shares PT-001</span></div>
-    <div class="eq-step">$f_C=5.8\times10^{-3}\times0.015=8.7\times10^{-5}$<span class="why">own PT-001B gives PSHH-001 its credit (R03)</span></div>
-    <p class="eq-note orange">RRF 58 → 0.87 against 10⁻⁴: separation fixes it, a better SIL would not.</p>
-  </div>
+  <p class="simsum">Overpressure, risers and procedures each appear in three cases.</p>
 </section>
 
 <section class="slide" data-title="What part 2 settled">
   <div class="s-head"><p class="kicker">Part 2 · summary</p><h2>What part 2 settled</h2></div>
   <div class="grow"><ul class="clean">
-    <li>$f_C = f_{IE}\prod PFD\prod CM$; RRF compares it with the target.</li>
-    <li>Credit only independent, specific, dependable, auditable layers.</li>
-    <li>Compressor alarms rarely leave 10 minutes: no credit.</li>
-    <li>Shared transmitters and missing relief drive the K-100 gaps.</li>
+    <li>Safety culture was weak in seven of the eight cases.</li>
+    <li>Procedures and hazard study each failed or were weak in six.</li>
+    <li>Management holes outnumber holes in the hardware layers.</li>
+    <li>Overpressure from a higher source recurs across decades.</li>
   </ul></div>
 </section>
 
-
-<section class="slide section-slide" id="part3" data-title="Part 3 · Bow-tie" data-sec="Part 3 · Bow-tie">
-  <div class="big">3</div><p class="lbl">Part 3 · Bow-tie</p>
-  <p class="q">How do threats, barriers and consequences fit in one picture?</p>
+<section class="slide section-slide" id="part3" data-title="Part 3 · So what for K-100" data-sec="Part 3 · So what for K-100">
+  <div class="big">3</div><p class="lbl">Part 3 · So what for K-100</p>
+  <p class="q">Where could each pattern happen on K-100, and what stops it?</p>
 </section>
 
-<section class="slide" data-title="Part 3 · the plan" data-outline-for="Part 3 · Bow-tie">
-  <div class="s-head"><p class="kicker">Part 3 · the plan</p><h2>From one scenario to the whole hazard</h2></div>
+<section class="slide" data-title="Part 3 · the plan" data-outline-for="Part 3 · So what for K-100">
+  <div class="s-head"><p class="kicker">Part 3 · the plan</p><h2>From the case to our own valves</h2></div>
   <div class="grow"><ol class="sec-outline">
-    <li><b>Swiss cheese</b><span class="so">barriers in series, each with holes</span></li>
-    <li><b>Anatomy of a bow-tie</b><span class="so">threat, top event, consequence, escalation</span></li>
-    <li><b>Three K-100 bow-ties</b><span class="so">fail a barrier, fit the recommendations</span></li>
-    <li><b>Bow-tie and LOPA</b><span class="so">why the numbers differ</span></li>
+    <li><b>Where on K-100</b><span class="so">eight markers on the flow path</span></li>
+    <li><b>Case by case</b><span class="so">the K-100 barrier</span></li>
+    <li><b>Three groups</b><span class="so">overpressure, isolation, venting</span></li>
+    <li><b>A local note</b><span class="so">Montara</span></li>
   </ol></div>
 </section>
 
-<section class="slide" data-title="Interactive · Swiss cheese" id="s-sw">
-  <div class="s-head"><p class="kicker">Interactive · a dry-gas seal failure, slice by slice</p><h2>Line up the holes and harm gets through</h2></div>
+<section class="slide" data-title="Interactive · where on K-100" id="s-sk">
+  <div class="s-head"><p class="kicker">Interactive · click a marker</p><h2>Each pattern has a place on K-100</h2></div>
   <div class="sim">
-    <div class="sim-controls">
-      <div class="sim-controls chips btncol" id="swcChips"></div>
-      <p class="rd" id="swcTxt"></p>
-    </div>
-    <div class="sim-out tight"><svg id="swcSvg" viewBox="0 0 660 340" style="width:100%"></svg></div>
+    <div class="sim-out tight" style="grid-column:1/-1"><div class="svgbox" id="skSvg"></div><div class="rd" id="skOut"></div></div>
   </div>
-  <p class="simsum">Each working slice divides the frequency by 1/PFD; <b>a failed slice is a hole straight through</b>.</p>
+  <p class="simsum">Every marker sits on a K-100 valve, line or trip you can find on the P&amp;ID tab.</p>
 </section>
 
-<section class="slide" data-title="Bow-tie anatomy">
-  <div class="s-head"><p class="kicker">Reading a bow-tie</p><h2>Prevention on the left, mitigation on the right</h2></div>
-  <div class="grow"><table class="compare tight">
-    <tr><th>Part</th><th>HP gas bow-tie (BT1)</th></tr>
-    <tr><td>Threat</td><td>blocked outlet, seal failure, surge, liquid</td></tr>
-    <tr><td>Prevention barrier</td><td>PSHH-112, LSHH-101, anti-surge</td></tr>
-    <tr><td>Top event</td><td>HP gas released from the loop</td></tr>
-    <tr><td>Mitigation barrier</td><td>gas detection, ESD-2 blowdown, ESDV-113</td></tr>
-    <tr><td>Escalation factor</td><td>one PT-112 defeats alarm and trip</td></tr>
-  </table></div>
-</section>
-
-<section class="slide" data-title="Interactive · bow-tie" id="s-bt">
-  <div class="s-head"><p class="kicker">Interactive · click a barrier to fail it</p><h2>Three K-100 bow-ties</h2></div>
-  <div class="sim-controls btbar">
-    <div class="sim-controls chips" data-group="btK" id="btChips"></div>
-    <div class="sim-controls chips" data-group="btR"><button class="chip" data-v="0">As built</button><button class="chip" data-v="1">Fit recommended</button></div>
-    <div class="chips" id="btEsc"></div>
+<section class="slide" data-title="Interactive · the K-100 lesson" id="s-kc">
+  <div class="s-head"><p class="kicker">Interactive · pick a case, then a point</p><h2>Each case names a K-100 barrier to check</h2></div>
+  <div class="sim wide">
+    <div class="sim-controls"><div class="chips btncol small" id="kcB"></div><div class="chips" id="kcP"></div></div>
+    <div class="sim-out tight"><div id="kcOut"></div></div>
   </div>
-  <div class="sim-out btout"><svg id="btSvg" viewBox="-4 -4 1150 392"></svg></div>
-  <p class="rd" id="btTxt"></p>
-  <p class="simsum">Colours = safety layers, dashed = recommended, ⚡ = escalation: <b>one factor can remove two barriers</b>.</p>
+  <p class="simsum">Tags match the P&amp;ID tab; HAZID numbers match the HAZID tab.</p>
 </section>
 
-<section class="slide" data-title="Bow-tie and LOPA">
-  <div class="s-head"><p class="kicker">Same seal failure, two methods</p><h2>The bow-tie is only as strict as its lines</h2></div>
+<section class="slide" data-title="Overpressure from a higher source">
+  <div class="s-head"><p class="kicker">Group 1 · Sonat, Merrimack, San Bruno</p><h2>A higher source can overpressure a weaker part</h2></div>
+  <div class="grow"><div class="cards c3">
+    <div class="card card-red"><h3>Wells into V-101</h3><p>PV-102 to flare, PSHH-001 shuts the wells, PSV-001 last.</p></div>
+    <div class="card card-orange"><h3>One transmitter</h3><p>PSHH-001 shares PT-001 with PIC-102 (HAZID HD-01).</p></div>
+    <div class="card card-blue"><h3>Export line</h3><p>PSHH-112 trips at 132 barg (HAZID HD-29).</p></div>
+  </div><p class="bridge"><b>Check</b> every vessel that can see a higher pressure has its own relief.</p></div>
+</section>
+
+<section class="slide" data-title="Isolation and the line pack">
+  <div class="s-head"><p class="kicker">Group 2 · Piper Alpha, Mumbai High North, San Bruno</p><h2>The pipeline keeps feeding a fire unless isolated</h2></div>
+  <div class="grow"><div class="cards c3">
+    <div class="card card-red"><h3>Line pack</h3><p>≈ 57 t of gas in the teaching export line.</p></div>
+    <div class="card card-orange"><h3>ESDV-113</h3><p>Isolates the topsides from the riser.</p></div>
+    <div class="card card-blue"><h3>Manual valves</h3><p>San Bruno took 95 minutes to isolate.</p></div>
+  </div><p class="bridge"><b>So</b> riser guards, ESDV tests and blowdown limit what feeds a fire.</p></div>
+</section>
+
+<section class="slide" data-title="Venting and fuel gas">
+  <div class="s-head"><p class="kicker">Group 3 · Kleen Energy, Abkatun</p><h2>A planned release is no safer than a leak</h2></div>
+  <div class="grow"><div class="cards c3">
+    <div class="card card-red"><h3>Vent to flare</h3><p>HV-102 vents the loop to the flare header, never to air.</p></div>
+    <div class="card card-orange"><h3>Same cloud</h3><p>A 7 kg/s discharge leak reaches ½LFL at ≈ 85 m.</p></div>
+    <div class="card card-blue"><h3>GT enclosure</h3><p>90 air changes per hour keep a 5 mm leak near 0.5 vol %.</p></div>
+  </div><p class="bridge"><b>Check</b> idle lines and planned vents under the same permit rules.</p></div>
+</section>
+
+<section class="slide" data-title="A local note">
+  <div class="s-head"><p class="kicker">Local note · not a compression event</p><h2>Montara 2009: a well barrier left out</h2></div>
   <div class="grow stack">
-    <p class="bridge">The bow-tie multiplies every barrier on a line; LOPA strikes dependent ones.</p>
-    <div class="cards c2">
-      <div class="card"><h3>Bow-tie seal line, all fitted</h3><p id="cmpBt"></p></div>
-      <div class="card card-red"><h3>LOPA L8, all fitted</h3><p id="cmpLp"></p></div>
-    </div>
-    <p class="eq-note orange">Apply LOPA's independence rules before trusting a bow-tie number.</p>
-  </div>
-</section>
-
-<section class="slide" data-title="When fixes are not enough">
-  <div class="s-head"><p class="kicker">BT2 · surge or mechanical failure</p><h2>Some consequences stay red</h2></div>
-  <div class="grow stack">
-    <div class="cards c2">
-      <div class="card card-red"><h3>Rotor wrecked (economic, S5)</h3><p id="bt2Txt"></p></div>
-      <div class="card"><h3>What is left</h3><p>Fewer demands: slug handling (R04), GT reliability, or another independent layer.</p></div>
-    </div>
-    <p class="eq-note orange">GT trips and slugs dominate the top event: prevention beats more mitigation.</p>
+    <p class="callout">PTTEP Australasia's H1 well in the Timor Sea blew out for about 75 days; 69 workers were evacuated.</p>
+    <p class="eq-note">The inquiry: the cemented casing shoe failed and a pressure cap was never reinstalled. "Montara was preventable."</p>
   </div>
 </section>
 
 <section class="slide" data-title="What part 3 settled">
   <div class="s-head"><p class="kicker">Part 3 · summary</p><h2>What part 3 settled</h2></div>
   <div class="grow"><ul class="clean">
-    <li>Barriers are slices in series; each reduces the frequency.</li>
-    <li>A bow-tie joins all threats and consequences of one top event.</li>
-    <li>Escalation factors defeat barriers that share a part.</li>
-    <li>Check bow-tie lines with LOPA's independence rules.</li>
+    <li>Every case points to a named K-100 valve, trip or procedure.</li>
+    <li>Overpressure needs separate sensing and its own relief.</li>
+    <li>Isolation at the riser limits the fuel for a fire.</li>
+    <li>Vent only to the flare, under the same permit rules.</li>
   </ul></div>
 </section>
 
-<section class="slide" data-title="Key takeaways">
+<section class="slide" data-title="Key Takeaways">
   <div class="s-head"><p class="kicker">This deck</p><h2>Key Takeaways</h2></div>
   <div class="grow">
-    <div class="tk"><div class="n">1</div><p>Proof-test standby trips: their PFD grows until tested.</p></div>
-    <div class="tk"><div class="n">2</div><p>Find the dominant block and the right final element first.</p></div>
-    <div class="tk"><div class="n">3</div><p>Credit a layer only if it is independent and in time.</p></div>
-    <div class="tk"><div class="n">4</div><p>Fix shared transmitters and missing relief before adding SIL.</p></div>
+    <div class="tk"><div class="n">1</div><p>Read a case as what, why and so what; target barriers, not people.</p></div>
+    <div class="tk"><div class="n">2</div><p>Every case needed several barriers to fail at once.</p></div>
+    <div class="tk"><div class="n">3</div><p>Culture, procedures and hazard study failed most often.</p></div>
+    <div class="tk"><div class="n">4</div><p>On K-100, check relief, separate trip sensing and riser isolation.</p></div>
+    <div class="tk"><div class="n">5</div><p>Treat planned vents and idle lines like any other release.</p></div>
   </div>
 </section>
 
@@ -846,564 +745,110 @@ function bindSlider(id, fn){
   return s;
 }
 
+var IC=[{"id": "piper", "title": "Piper Alpha platform explosion and fire", "place": "Piper oilfield, UK sector of the North Sea, about 120 miles (190 km) north-east of Aberdeen", "date": "1988-07-06", "year": 1988, "unit": "Piper Alpha production platform, operated by Occidental Petroleum (Caledonia) Ltd", "equipment": "Condensate pump A (under maintenance, PSV #504 removed, open pipe closed only by a hand-tightened blind flange); condensate pump B; firewalls; diesel fire pumps; control room; gas risers of the Tartan, MCP-01 and Claymore pipelines", "fluid": "Gas condensate (initial leak), then crude oil (module B pool fire) and high-pressure gas from pipeline risers (jet fire)", "dead": 167, "deadTxt": "167", "inj": 0, "injTxt": "", "other": "61 survivors of 226 on board (Wikipedia); 62 survivors (JESIP summary). 30 bodies never recovered. Insured loss about GBP 1.7 billion. Platform produced just under 125,000 bbl/d, about 10% of UK-sector North Sea output. Industry spent in the order of GBP 1 billion on safety measures before the Cullen report.", "steps": ["07:45 - Permits issued for overhaul of condensate pump A and removal of its PSV #504; the open pipe was sealed only by a hand-tightened blind flange.", "18:00 - Night shift began; the PSV permit, warning that pump A must not be started, was left in the control centre and later went missing.", "19:00 - The diesel fire pumps were placed under manual control.", "21:45 - Condensate pump B stopped and could not be restarted (likely hydrates); about 21:55 staff found only the overhaul permit and believed pump A could be restarted.", "About 22:00 - Pump A was started, gas leaked past the loose flange, ignited and exploded; firewalls were breached, the control room destroyed, PA and general alarm impaired.", "22:06 - Crude oil pipework in module B ruptured, creating a pool fire.", "22:20 - The Tartan gas riser ruptured, producing a massive jet fire; MCP-01 failed at 22:50 and the Claymore gas line at 23:20.", "About 23:45 the platform began to collapse; by 00:45 on 7 July only module A remained. No evacuation was ordered; about 70-80 men gathered in the smoke-filled accommodation/canteen."], "cause": "Attempted start-up of condensate pump A, which was under maintenance and not mechanically isolated; its removed PSV had been replaced by a loosely fitted blind flange, which leaked gas condensate when the pipework was pressurised. Ignition source never confirmed.", "why": ["Cullen Inquiry (report November 1990) found Occidental's maintenance and safety procedures inadequate (Wikipedia).", "Permit-to-work and shift handover failures allowed a pump under maintenance to be restarted; company audits missed the systemic weaknesses (Wikipedia).", "The platform was converted from oil-only to gas production without proper assessment, placing gas facilities next to the control room (Wikipedia).", "The platform was not blast-proof and emergency systems were not survivable; safety-critical systems (fire pumps, lifeboats, emergency lighting) received inadequate attention (Wikipedia).", "A 1986 report had warned Occidental that a riser fire would be virtually impossible to fight (Wikipedia).", "Cullen made 106 recommendations, the key one being a safety case regime: Offshore Installations (Safety Case) Regulations 1992; enforcement moved to the HSE (JESIP summary; Wikipedia)."], "bar": {"L3": 1, "L5": 2, "L6": 2, "moc": 2, "haz": 1, "mi": 1, "proc": 1, "permit": 2, "layout": 2, "culture": 1}, "th": ["maintenance & isolation", "relief", "fire & escalation", "risers & pipelines"], "pat": [1, 7], "kc": ["A pump with its relief valve removed was started because the second permit was not seen at shift change. On K-100 the same trap is the relief on the discharge: <b>PSV-107 and PSV-112 are still HOLD<\/b> on KC-PID-100 rev B, and HAZID <b>HD-16<\/b> says high-pressure gas is isolated only by ESD valves for maintenance. Positive isolation (spades, double block and bleed) and one permit board for every isolation are the lessons; see the <a data-goto=\"pid\">P&amp;ID<\/a> and <a data-goto=\"sop\">SOP<\/a> tabs.", "The fire grew from a module fire to a platform loss when the gas risers from Tartan and MCP-01 failed: other platforms kept exporting into the burning complex. K-100's export riser holds the line pack (≈ 57 t in the teaching pipeline volume); <b>ESDV-113<\/b> at the riser and the blowdown limit what can feed a fire. The <a data-goto=\"cq\">Consequence analysis<\/a> tab shows that a discharge leak already reaches the control room and the TR.", "Firewalls were built for fire, not blast; the control room sat next to the gas compression the platform had been converted to. The <a data-goto=\"safety\">Safety layers<\/a> tab (L5 physical protection) and HAZID area A8 cover the K-100 equivalents."], "kcS": null, "tryit": [["pr:esd", "Emergency shutdown with blowdown (ESD-2)"]], "vids": [["r7R7D0nr1Vo", "Marana Global Services Limited", "Piper Alpha Disaster"]], "src": [["HSE - The Public Inquiry into the Piper Alpha Disaster (index page; Vol 1/2 PDFs could not be read)", "https://www.hse.gov.uk/offshore/piper-alpha-disaster-public-inquiry.htm"], ["JESIP incident reports library - Piper Alpha Explosion (Cullen inquiry outcomes)", "https://jesip.org.uk/uploads/media/incident_reports_and_inquiries/Piper Alpha Explosion.pdf"], ["Wikipedia - Piper Alpha", "https://en.wikipedia.org/wiki/Piper_Alpha"]], "notes": "Survivors: 61 of 226 (Wikipedia) vs 62 (JESIP). Injured count not stated by either source. Cullen recommendation split: Wikipedia gives 57 regulator / 40 operators / 8 industry / 1 standby ship owners; JESIP gives the same split but later says '48 operator recommendations'. L3 = 1 is based on JESIP listing relocation of pipeline ESD valves and subsea pipeline isolation as post-accident actions and Wikipedia stating the gas riser design offered no protection against the fire; the Cullen report text itself was not readable. Videos: the CinemaLover and Disaster Documentaries uploads appear to be re-uploads of broadcast documentaries, not the broadcasters' own channels.", "q": ["Pump A at Piper Alpha was started although its relief valve had been removed. Which barrier failed first?", ["The relief valve set pressure was too high for the pump", "The permit and the shift handover lost the isolation status", "The gas detectors were switched off for the maintenance work", "The deluge pumps were in manual mode during the night shift"], 1, "The PSV permit, warning that pump A must not be started, was not seen at the 18:00 handover; staff found only the overhaul permit and restarted the pump. The deluge pumps in manual made the fire worse, but came later."]}, {"id": "longford", "title": "Esso Longford Gas Plant 1 explosion and fire", "place": "Longford, Victoria, Australia", "date": "1998-09-25", "year": 1998, "unit": "Esso Australia Resources Ltd, Longford Gas Plant 1 (GP1), lean-oil absorption plant built 1969", "equipment": "Heat exchanger GP905 (brittle fracture of shell), lean oil pumps GP1201, absorbers, demethaniser, fired heaters about 170 m away (ignition source), pipe rack", "fluid": "Hydrocarbon vapour and liquid; about 10 tonnes released initially (Wikipedia)", "dead": 2, "deadTxt": "2", "inj": 8, "injTxt": "8", "other": "Victoria's gas supply severely disrupted: 20 days, full supply restored 14 Oct 1998 (Wikipedia) / 19 days (AIDR); about 1.4 million households and 89,000 businesses affected; industry losses about A$1.3 billion; property damage US$443 million (Wikipedia). Esso fined A$2 million (2001); A$32 million class-action settlement (2004).", "steps": ["Morning - Liquid overflow from the demethaniser raised levels in a process drum and the lean oil pumps (GP1201) supplying heated lean oil to GP905 tripped; they were not restarted for some hours.", "Cold condensate kept flowing; GP905, normally warm, fell to as low as about -48 C and ice formed on its shell; GP1 was shut down.", "About 12:17 - One lean oil pump was restarted and hot lean oil (230 C per Wikipedia) entered the embrittled exchanger.", "About 12:25-12:26 - The GP905 shell ruptured by brittle fracture, releasing hydrocarbon vapour and liquid.", "60-90 s later the cloud reached fired heaters about 170 m away, ignited, and burned back to the leak as a jet fire.", "13:00-13:32 - Flames attacked a pipe rack, causing three more releases and a full plant fire.", "Isolating the feeds took nearly two and a half days; fire extinguished 17:30 on 27 September."], "cause": "Loss of lean oil circulation let GP905 chill to about -48 C; reintroducing hot lean oil caused brittle fracture of the exchanger (low-temperature embrittlement and thermal stress).", "why": ["Operators and supervisors lacked knowledge of the dangers of loss of lean oil flow; training was inadequate and there were no current operating procedures for the upset (Royal Commission, as summarised by the Coroner).", "No HAZOP was done on GP1, although budgeted for 1995-1998; the 1994 risk assessment was limited and a later one postponed (Coroner).", "Many nuisance alarms with no prioritisation of critical ones; the low-flow alarm may have been ignored (Coroner; Wikipedia).", "Verbal, inadequate shift handover and incomplete log books; abnormal conditions in Absorber B were not passed on (Coroner).", "Plant engineers were relocated to Melbourne without a risk assessment and operating data were not monitored by qualified engineers; changes were not properly risk-assessed (Coroner).", "Esso's OIMS requirements were not implemented or audited; a similar loss-of-lean-oil incident on 28 August 1998 was not reported (Coroner)."], "bar": {"L1": 1, "L2": 2, "L3": 1, "moc": 2, "haz": 2, "proc": 2, "culture": 1}, "th": ["cold & brittle fracture", "restart", "procedures & training", "hazard study"], "pat": [2], "kc": ["Loss of the hot lean oil let a heat exchanger chill to about −48 °C; re-admitting hot oil fractured the embrittled steel. K-100 has its own cold case: blowdown of the HP loop chills the flare header (the HAZID tab gives ≈ −21 °C at the BDV outlet in the model, HAZID <b>HD-05<\/b>, design MDMT −46 °C assumed). Check the minimum temperature before a restart, and warm cold equipment slowly.", "Operators did not know the hazard of a cold exchanger and there was no procedure for the upset. The K-100 <a data-goto=\"sop\">SOP<\/a> tab and the <a data-goto=\"trans\">Transition operation<\/a> tab (settle-out and restart after a trip) give the order and the reason for each step.", "No HAZOP had been done on the plant and nuisance alarms hid the critical ones. Compare the K-100 <a data-goto=\"hazop\">HAZOP<\/a> nodes and the alarm limits on the <a data-goto=\"cem\">C&amp;E matrix<\/a> tab."], "kcS": null, "tryit": [["pr:esd", "Emergency shutdown with blowdown"], ["tr:7", "Cooling medium pump P-160 trips"]], "vids": [["-XFHJa2dpNc", "Plainly Difficult", "One of Australia's Worst Industrial Disasters: The Esso Longford Explosion"]], "src": [["Coroner's findings, inquest into deaths of P. B. Wilson and J. F. Lowery and the Longford GP1 fire (summarises Royal Commission findings)", "https://pub-5798f27b849f42c3add9cc1e88d7a2a6.r2.dev/pdfs/vic/vic-legacy-longford.pdf"], ["AIDR Australian Disaster Resilience Knowledge Hub - Longford gas explosion", "https://knowledge.aidr.org.au/resources/industrial-longford-gas-explosion/"], ["Wikipedia - 1998 Esso Longford fire", "https://en.wikipedia.org/wiki/1998_Esso_Longford_fire"]], "notes": "The Royal Commission report itself (Longford Royal Commission, Commissioner Daryl Dawson, hearings 12 Nov 1998-15 Apr 1999) was not fetched; its findings are taken as summarised by the Coroner. Gas outage: 20 days (Wikipedia) vs 19 days (AIDR). GP905 normal temperature: 60-230 C (Wikipedia) vs 'in the vicinity of 100 C' (Coroner). Rupture time: 12:26 (Wikipedia) vs about 12:25 brittle fracture / 12:26 release (Coroner). The Coroner says the Commission called the failure to isolate absorber outlets after restart attempts failed the 'real' cause (mapped to L3 = 1).", "q": ["Why did the GP905 exchanger at Longford rupture when hot lean oil was restarted?", ["The hot oil pump had a higher discharge pressure than the shell design", "Steel chilled to about −48 °C had lost its toughness and fractured", "The hot oil reacted with hydrate crystals that had formed in the tubes", "The relief valve on the shell was isolated for maintenance that morning"], 1, "Brittle fracture: the exchanger was far below its minimum design temperature, and the thermal stress of hot oil broke the embrittled shell (Royal Commission, as summarised by the Coroner)."]}, {"id": "sonat", "title": "Sonat Exploration Co. catastrophic vessel overpressurization", "place": "Near Pitkin, Louisiana, USA", "date": "1998-03-04", "year": 1998, "unit": "Temple 22-1 Common Point Separation Facility (Bulk Train), Sonat Exploration Co.", "equipment": "Third-stage oil/gas separator rated for atmospheric service only (MAWP 0 psig), with no inlet valve, no pressure-relief device and no pressure sensor or alarm; adjacent bypass line with bypass valves 11 and 13; two water storage tanks; two-mile pipeline purged with well fluid from the Temple 24-1 well", "fluid": "Natural gas / well fluids (purge gas potentially as high as 800 psig); oil and gas from damaged tanks and piping", "dead": 4, "deadTxt": "4", "inj": 0, "injTxt": "0", "other": "Facility sustained significant damage. Two other workers present survived without injury.", "steps": ["Early afternoon - Separation vessels were purged of air using well fluids.", "Valves were realigned to purge the two-mile pipeline through a bypass line and two water storage tanks, venting out a tank roof hatch.", "A supervisor monitored oxygen content near the header; pressure was raised a third and final time and 800 psig was recorded downstream.", "A final oxygen reading showed the purge nearly complete.", "About 6:15 p.m. - The third-stage separator ruptured from overpressure; released gas ignited in a large fireball and leaking oil and gas from damaged tanks and piping also ignited.", "Post-incident inspection found the two bypass valves (11 and 13) closed when they should have been open; when and why they were closed could not be determined."], "cause": "With the bypass valves and outlet valves closed, high-pressure purge gas entered and overpressurized a separator rated for 0 psig that had no inlet isolation valve and no pressure-relief device.", "why": ["Root cause: Sonat management did not use a formal engineering design review process or require effective hazard analyses (CSB).", "Root cause: Sonat engineering specifications did not ensure that equipment potentially exposed to high pressure was protected - the separator had no relief device, contrary to API 12J (CSB).", "Contributing cause: no written operating procedures for start-up and operation; valve realignments made without procedures or checklists (CSB).", "No documented P&ID existed before the incident, so neither design review nor hazard analysis could be effectively done (CSB).", "No evaluation program for on-the-job training; contract workers could not have been properly trained, though this was not necessarily causal (CSB).", "Sonat had operated similar third-stage separators without relief systems at other facilities for over a year (CSB board presentation)."], "bar": {"L2": 1, "L4": 2, "haz": 2, "proc": 2, "culture": 1}, "th": ["overpressure & relief", "procedures & training", "hazard study"], "pat": [3], "kc": ["A low-pressure separator with no relief device was overpressured by gas from a higher-pressure source when two valves were found closed. K-100's production header and V-101 face the same threat when the compressor stops and the wells keep flowing: HAZID <b>HD-01<\/b>, LOPA <b>L6<\/b>, PV-102 to the flare, PSHH-001 shutting the wells and <b>PSV-001<\/b> as the last layer.", "The <a data-goto=\"cq\">Consequence analysis<\/a> tab, scenario S4, shows what a header rupture at the wells' shut-in pressure means: ≈ 730 kg TNT and S5. Every vessel that can see a higher pressure needs its own relief path; see the <a data-goto=\"lopa\">LOPA<\/a> and <a data-goto=\"safety\">Safety layers<\/a> tabs.", "There were no written start-up procedures and no P&amp;ID. Valve line-ups on K-100 follow the <a data-goto=\"sop\">SOP<\/a> tab."], "kcS": null, "tryit": [["tr:1", "Gas turbine GT-100 trips (header pressure rises)"]], "vids": [], "src": [["CSB - Sonat Exploration Co. Catastrophic Vessel Overpressurization (investigation page)", "https://csb.gov/sonat-exploration-co-catastrophic-vessel-overpressurization"], ["CSB - Final investigation report (approved 21 Sep 2000)", "https://www.csb.gov/assets/1/20/Final_Report.pdf?13871"], ["CSB - Board presentation on Sonat investigation findings, 15 Sep 2000", "https://www.csb.gov/assets/1/20/9_15_00-slide-presentation-on-sonat-investigation-findings.pdf?13875"]], "notes": "No Wikipedia article found; three CSB documents used instead. The CSB report does not mention MOC or PSSR, so those keys are left empty. L2 = 1 because the report states the separator had no pressure sensor or alarm. Sonat had called the vessel a 'Vapor Recovery Tower'/storage tank; CSB determined it was a separator not designed for oil storage. No verified video (no CSB video found for this case).", "q": ["What made the Sonat separator rupture during the pipeline purge?", ["Corrosion had thinned the shell over many years of service", "A fire under the vessel weakened the steel before the purge", "Gas at up to 800 psig entered a vessel with no relief device", "The level controller let liquid overfill the vessel into the vent"], 2, "With the bypass and outlet valves closed, high-pressure purge gas entered a separator rated near 0 psig that had no inlet isolation and no pressure-relief device (CSB)."]}, {"id": "mhn", "title": "Mumbai High North platform riser rupture and fire", "place": "Mumbai High North complex, Arabian Sea, off Mumbai, India", "date": "2005-07-27", "year": 2005, "unit": "ONGC Mumbai High North (MHN) processing platform, bridge-linked to NA (wellhead), MHF (accommodation) and MNW/MHW; jack-up Noble Charlie Yester over NA", "equipment": "Gas export / gas lift risers on the MHN jacket; riser guards near the waterline; ESDVs; multipurpose support vessel Samudra Suraksha (about 100 m) with stern helideck and azimuth thrusters; platform cranes", "fluid": "Natural gas (riser inventory), then hydrocarbon fire; about 10 nautical mile oil spill", "dead": 22, "deadTxt": "22", "inj": 0, "injTxt": "", "other": "384 on board the complex and rig; 362 rescued over about 15 hours; 11 bodies recovered, 11 missing. Whole North complex (MHN, MHF, NA, rig) a total loss; loss about USD 370 million. Complex capacity 180,000 bbl/d, about 40% of India's domestic production (Wikipedia). Samudra Suraksha sank on 1 Aug 2005 under tow.", "steps": ["About 14:00 - A cook on the MSV Samudra Suraksha cut two fingers; monsoon weather had grounded helicopters, so a transfer to MHN by crane basket was chosen.", "MHN's leeward crane was out of service, so the vessel approached the windward side in about 35-knot wind, 5 m swell and 3-knot current (FABIG).", "The vessel's thrusters / DP were faulty; it came in stern-first under manual emergency control and the casualty was lifted off.", "About 16:05 - Swell pushed the vessel against the platform; its helideck struck and severed one or more gas export risers.", "The gas ignited almost immediately as a jet fire; adjacent risers without fire protection failed and the fire engulfed MHN and MHF.", "MHN was destroyed and its topsides collapsed within about two hours; NA and the jack-up were badly affected by radiant heat.", "Only two of eight lifeboats and one of ten liferafts were launched; six divers in the MSV saturation chamber were rescued about 36 hours later."], "cause": "Collision of the support vessel's stern helideck with the gas export risers during a heave while approaching under manual control in monsoon conditions, rupturing a riser that released gas which ignited.", "why": ["Risers were vulnerable relative to loading zones; riser guards were designed for smaller supply vessels, not large MSVs, and none were fitted at the top of the riser section (LMA; Wikipedia).", "Risers had no active or passive fire protection, allowing the fire to spread and be sustained (LMA; Wikipedia).", "ESDVs were activated but the inventory below them fed the fire; a risk-based study should have assessed a subsea isolation valve (SSIV); HAZID/HAZOP needed at design and operation (LMA).", "OIM and vessel master were under pressure to complete the medevac and may have overlooked risk assessment and weather; no alternative medevac method was identified (LMA; Wikipedia).", "The safety management system did not cover vessel/installation bridging aspects; some contract workers lacked valid HUET training (LMA).", "No official investigation report has been publicly issued by Indian authorities or ONGC; OISD was later given stronger offshore powers (Wikipedia)."], "bar": {"L3": 1, "L5": 2, "L6": 2, "haz": 1, "proc": 1, "layout": 2, "culture": 1}, "th": ["risers & pipelines", "fire & escalation", "layout & siting", "emergency response"], "pat": [4], "kc": ["A vessel's helideck struck the gas export risers in monsoon weather. K-100's export riser and the subsea line are HAZID <b>HD-28<\/b> (riser rupture) and <b>HD-36<\/b> (ship collision): riser guards sized for the vessels that come alongside, loading zones on the side away from the risers, and weather limits for marine operations.", "The ESD valves closed, but the gas below them kept feeding the fire; the investigation pointed to a subsea isolation valve (SSIV). On K-100 <b>ESDV-113<\/b> isolates the topsides from the riser; the pipeline inventory (≈ 57 t in the teaching volume) is on the subsea side.", "Only two of eight lifeboats were launched. Escape routes and lifeboats against the effect zones are on the <a data-goto=\"cq\">Consequence analysis<\/a> plot plan."], "kcS": null, "tryit": [["pr:esd", "Emergency shutdown with blowdown"]], "vids": [["MBtWyZerNhQ", "Master of Disaster", "Mumbai High North Explosion : India's Worst Oil Disaster"]], "src": [["LMA (Lloyd's Market Association) - LON 002 Mumbai High North lessons", "https://lmalloyds.com/wp-content/uploads/2025/06/LON-002-Mumbai-High-North-1.pdf"], ["FABIG - Industrial accidents: Mumbai High North, India", "https://www.fabig.com/industrial-accidents/mumbai-high-north-india/"], ["Wikipedia - 2005 Mumbai High fire", "https://en.wikipedia.org/wiki/2005_Mumbai_High_fire"]], "notes": "No official inquiry report available (Wikipedia). Deaths: 22 = 11 recovered + 11 missing (Wikipedia body text, LMA, FABIG); Wikipedia infobox shows 'Deaths: 11, Missing: 11'. Distance offshore: about 100 km (Wikipedia, FABIG) vs about 160 km (LMA). Collision time 16:05 from LMA only. Injured: FABIG lists 0 while also saying vessel personnel were injured; left empty. Vessel spelled 'Samundra' and 'Samudra' on FABIG. Videos are from non-official channels.", "q": ["After the riser at Mumbai High North was severed, why did closing the ESD valves not stop the fire?", ["The ESD valves failed to close because their actuators were damaged", "The gas held below the ESD valves in the riser kept feeding the fire", "The fire pumps had been isolated by the operator for maintenance", "The blowdown valves sent the platform gas back to the riser"], 1, "ESDVs were activated, but the inventory below them fed the fire; LMA lessons point to a risk-based study of subsea isolation."]}, {"id": "kleen", "title": "Kleen Energy natural gas explosion (gas blow)", "place": "Middletown, Connecticut, USA", "date": "2010-02-07", "year": 2010, "unit": "Kleen Energy Systems power plant under construction (620 MW Siemens combined cycle, per Wikipedia)", "equipment": "Newly installed fuel gas piping being cleaned by 'gas blows'; open-ended, nearly horizontal vent pipes less than 20 ft above ground beside the south wall of the power generation building, between two heat recovery steam generators", "fluid": "Natural gas at about 650 psig; just over 2 million scf released that morning, about 480,000 scf in the final 10 minutes", "dead": 6, "deadTxt": "6", "inj": 50, "injTxt": "at least 50", "other": "About 150 workers on site. OSHA proposed fines of USD 16.6 million against 17 companies for 371 violations, 225 considered deliberate (Wikipedia).", "steps": ["Morning - Crews carried out 15 planned natural gas blows on different pipe sections over about four hours to clear debris from new fuel gas piping.", "Gas at about 650 psig was vented to atmosphere through open pipe ends less than 20 ft above ground in a congested area next to the power generation building.", "No safety meeting was held on the gas blow hazards and the procedure was not reviewed; some contractors learned of the blows only that morning.", "Non-essential personnel were kept out of the area south of the building, but more than 50 people remained inside it; welders were working and diesel heaters running.", "In the final 10 minutes about 480,000 scf were released, forming a flammable cloud in the congested area.", "About 11:15 a.m. - The cloud ignited and exploded, killing six workers and injuring at least 50."], "cause": "Ignition of a large flammable natural gas cloud formed by venting high-pressure fuel gas to atmosphere during a pipe-cleaning gas blow, in a congested area near workers and ignition sources (welding, powered equipment, heaters, possibly debris sparks or static).", "why": ["Releasing flammable gas to clean piping is inherently hazardous; safe, feasible alternatives exist (compressed air, nitrogen, steam, pigging) (CSB).", "The flammable cloud in congested areas next to the building was the fundamental hazard; the CSB did not focus on pinpointing the ignition source (CSB).", "Ignition sources were present inside the building - live power, active welders and running diesel heaters (CSB urgent recommendations).", "No safety meeting and no review of the gas blow procedure; inconsistent communication to contractors; non-essential personnel not removed from the building (CSB).", "No federal standard prohibited planned natural gas releases into workplaces; NFPA 54 exempted power plants and piping above 125 psig (CSB).", "CSB issued urgent recommendations to OSHA, NFPA, ASME, EPRI, turbine manufacturers and Connecticut to ban gas blows and require inherently safer cleaning (CSB)."], "bar": {"haz": 1, "proc": 2, "permit": 2, "layout": 1, "culture": 1}, "th": ["venting", "procedures & training", "permit & SIMOPS"], "pat": [5], "kc": ["High-pressure natural gas was vented to atmosphere in a congested area to blow debris out of new piping, with welders and heaters nearby. On K-100 gas is vented only to the flare: <b>HV-102<\/b> vents the loop to the flare header, never to atmosphere, and purging before a start-up uses nitrogen.", "More than 50 people stayed in the building during the gas blows: simultaneous operations (HAZID <b>HD-42<\/b>) and hot-work permits must stop when gas is released. See the <a data-goto=\"sop\">SOP<\/a> tab for the vent to header pressure and the <a data-goto=\"trans\">Transition operation<\/a> tab for the start-up.", "A 7 kg/s leak on the K-100 discharge forms a ½LFL cloud of ≈ 85 m (Consequence analysis, S1): a planned release is no safer than an accidental one of the same size."], "kcS": null, "tryit": [["pr:shutdown", "Normal shutdown and vent to header pressure"]], "vids": [["rjxBtwl8-Tc", "USCSB", "Deadly Practices"]], "src": [["CSB - Kleen Energy Natural Gas Explosion (investigation page)", "https://www.csb.gov/kleen-energy-natural-gas-explosion/"], ["CSB - Urgent Recommendations document", "https://www.csb.gov/file.aspx?DocumentId=5895"], ["CSB - Written testimony of John S. Bresland, 28 Jun 2010", "https://csb.gov/assets/1/20/final_bresland_written_testimony_kleen_energy.pdf?13949="], ["Wikipedia - 2010 Connecticut power plant explosion", "https://en.wikipedia.org/wiki/2010_Connecticut_power_plant_explosion"]], "notes": "Time: about 11:15 a.m. (CSB) vs 11:17 a.m. EST (Wikipedia). Injured: 'at least 50' (CSB, noting conflicting company reports) vs 'at least fifty' in Wikipedia summary and 'fewer than 50' per a deputy fire marshal quoted on Wikipedia; Bresland testimony says only 'many others'. Wikipedia: five died in the blast and one later in hospital. The 'permit' key (2) covers hot work and failure to remove non-essential workers/ignition sources from the area during the release; 'haz' (1) reflects CSB's inherently-safer-alternative finding.", "q": ["What did the CSB recommend instead of natural gas blows for cleaning new fuel-gas piping?", ["Venting the gas at a higher pressure to clear the debris faster", "Using air, nitrogen, steam or pigging rather than flammable gas", "Doing the blows at night when fewer people are on the site", "Fitting longer vent pipes so the gas leaves at a greater height"], 1, "Releasing flammable gas to clean piping is inherently hazardous; safe, feasible alternatives exist (CSB urgent recommendations)."]}, {"id": "sanbruno", "title": "PG&E natural gas transmission pipeline rupture and fire, San Bruno", "place": "Crestmoor neighbourhood, San Bruno, California, USA (Earl Avenue and Glenview Drive, mile point 39.28 of Line 132)", "date": "2010-09-09", "year": 2010, "unit": "PG&E Line 132, 30-inch intrastate natural gas transmission pipeline; Milpitas Terminal (upstream pressure control)", "equipment": "Line 132 segment 180: six short pipe sections ('pups') installed in a 1956 relocation, one with a partially welded longitudinal seam (records wrongly listed seamless X42); Milpitas Terminal UPS, 24 V power supplies, regulating and monitor valves; SCADA; manual mainline valves", "fluid": "Natural gas; PG&E estimated 47.6 million scf released", "dead": 8, "deadTxt": "8", "inj": 58, "injTxt": "58", "other": "38 homes destroyed and 70 damaged (NTSB). Crater 72 ft x 26 ft; a 28 ft, about 3,000 lb pipe section was ejected about 100 ft. More than 900 responders. CPUC fined PG&E USD 1.6 billion (2015); federal criminal conviction on six counts (2016) (Wikipedia).", "steps": ["Afternoon - Electrical work to replace a UPS at the Milpitas Terminal under a work clearance; regulating valves were put in manual and returned to automatic.", "A local control panel lost power; erratic 24 V supply voltages sent a false low-pressure signal and the regulating valves opened fully.", "5:22 p.m. - Over 60 SCADA alarms within seconds; SCADA lost valid pressure and valve-position data from the terminal; Line 132 pressure rose to about 386 psig (MAOP 400 psig, MOP 375 psig).", "About 6:11 p.m. - The defective seam weld in the 1956 pup failed; the pipe ruptured and the released gas ignited.", "Gas control staff were uncertain for much of the evening whether a pipeline had failed (some suspected a plane crash).", "7:29 p.m. - Downstream valves closed remotely; 7:30 p.m. upstream valve closed manually; by 7:46 p.m. the section was isolated - 95 minutes after rupture."], "cause": "Rupture of a substandard, partially welded seam in a pipe section installed in 1956, during a pressure increase caused by poorly planned electrical work at the Milpitas Terminal.", "why": ["Probable cause: PG&E's inadequate quality assurance and quality control during the 1956 Line 132 relocation project (NTSB).", "Probable cause: PG&E's inadequate integrity management program, which relied on incomplete and inaccurate records, ignored known seam cracks and used methods that could not detect seam defects (NTSB).", "Contributing: CPUC and US DOT exemptions of existing pipelines from pressure testing, and CPUC failure to detect integrity management inadequacies (NTSB).", "Contributing: lack of automatic shutoff or remote control valves; the 95 minutes taken to isolate the rupture was excessive (NTSB).", "Contributing: PG&E's flawed emergency response procedures; no detailed procedure or clear command structure for large-scale emergencies (NTSB).", "Recurring deficiencies (including the 2008 Rancho Cordova and 1981 San Francisco incidents) are evidence of a systemic problem (NTSB)."], "bar": {"L1": 1, "L2": 1, "L3": 2, "L6": 2, "mi": 2, "permit": 1, "culture": 1}, "th": ["risers & pipelines", "overpressure & relief", "inspection & integrity", "emergency response"], "pat": [6], "kc": ["Electrical work at a terminal made the regulators open fully and the line pressure rose to about 386 psig, where a defective 1956 seam weld failed. K-100 protects its export pipeline with <b>PSHH-112<\/b> (132 barg) and the pipeline's maximum allowable pressure (HAZID <b>HD-29<\/b>); the onshore arrival pressure <b>PI-900<\/b> is the far end of the same line.", "Isolating the rupture took 95 minutes with manual valves. K-100 has ESDV-113 at the riser and an I-2 blowdown; the <a data-goto=\"srs\">SRS of SIF<\/a> tab gives their response times.", "Integrity management relied on incomplete records. The <a data-goto=\"relia\">Process reliability<\/a> and HAZID (HD-31, internal corrosion and hydrates in the export line) tabs cover inspection."], "kcS": ["Electrical work at a terminal made the regulators open fully and the line pressure rose to about 386 psig, where a defective 1956 seam weld failed. K-100 protects its export pipeline with <b>PSHH-112<\/b> (132 barg) and the pipeline's maximum allowable pressure (HAZID <b>HD-29<\/b>).", "Isolating the rupture took 95 minutes with manual valves. K-100 has ESDV-113 at the riser and an I-2 blowdown; the <a data-goto=\"srs\">SRS of SIF<\/a> tab gives their response times.", "Integrity management relied on incomplete records. The <a data-goto=\"relia\">Process reliability<\/a> and HAZID (HD-31, internal corrosion and hydrates in the export line) tabs cover inspection."], "tryit": [["tr:13", "Onshore arrival pressure rises"], ["te:TE-6", "Think EQUIPPED TE-6"]], "vids": [["g-qDKVduoXU", "NTSBgov", "San Bruno Pipeline Explosion"], ["n4QOj7nxGlU", "The Failure Record", "San Bruno Pipeline Fire: The Pipe in the Records Never Existed"]], "src": [["NTSB - Investigation DCA10MP008 page", "https://www.ntsb.gov/investigations/Pages/DCA10MP008.aspx"], ["NTSB - Pipeline Accident Report NTSB/PAR-11/01", "https://www.ntsb.gov/investigations/AccidentReports/Reports/PAR1101.pdf"], ["NTSB - Safety recommendation letter P-11-008 to -020", "https://www.ntsb.gov/safety/safety-recs/recletters/P-11-008-020.pdf"], ["Wikipedia - 2010 San Bruno pipeline explosion", "https://en.wikipedia.org/wiki/2010_San_Bruno_pipeline_explosion"]], "notes": "Injured: NTSB report gives 10 serious + 48 minor = 58 (the fetch summary also said '66 total', which appears to add the 8 dead; 58 used here); the NTSB web page and letter say only 'many'. Homes: 38 destroyed / 70 damaged (NTSB) vs 35 or 37 leveled and at least 8 damaged (Wikipedia). Pressure at rupture: about 386 psig (NTSB SCADA) and 386-386.4 psi (Wikipedia); NTSB text also mentions a peak of 396 psig. Crater: 72 ft (NTSB report) vs 167 ft in an earlier NTSB briefing (Wikipedia). Time to shut off: 95 minutes (NTSB) vs 60-90 minutes (fire chief, Wikipedia). The numbered NTSB findings section was not readable; findings above are from the executive summary, probable cause and narrative.", "q": ["What raised the pressure in Line 132 just before it ruptured?", ["A compressor upstream was started without its anti-surge control", "Thermal expansion of blocked-in gas on a hot summer afternoon", "Regulators opened fully after a power fault in electrical work", "A pig became stuck in the line and blocked the flow downstream"], 2, "A local panel lost power during UPS work; erratic supply voltages sent a false low-pressure signal and the regulating valves opened fully (NTSB)."]}, {"id": "merrimack", "title": "Columbia Gas of Massachusetts overpressurization of natural gas distribution system, Merrimack Valley", "place": "Lawrence, Andover and North Andover, Massachusetts, USA", "date": "2018-09-13", "year": 2018, "unit": "Columbia Gas of Massachusetts (NiSource subsidiary) low-pressure natural gas distribution system", "equipment": "Cast iron main being abandoned and replaced by a new polyethylene main (tie-in at Salem and South Union Streets, Lawrence); Winthrop Avenue regulator station about 0.5 mile away whose regulator sensing lines remained on the abandoned cast iron main; customer gas appliances", "fluid": "Natural gas: about 75 psig supply let into a system normally at about 12 in. w.c. (0.5 psig); 2.5 psi measured at a home at 5:19 p.m.", "dead": 1, "deadTxt": "1", "inj": 22, "injTxt": "22", "other": "131 structures damaged including at least 5 homes destroyed; 10,894 customers affected (8,447 in the immediate area, 2,447 shut off as a precaution) (NTSB). About 30,000 evacuated; over 80 individual fires (Wikipedia). Settlements USD 143 million; Columbia Gas fined USD 53 million after guilty plea (Wikipedia).", "steps": ["Shortly before 4:00 p.m. - A contractor crew, with a Columbia Gas inspector, isolated the cast iron main and cut the bypass as part of a Columbia Gas-designed replacement project.", "The Winthrop Avenue regulator sensing lines were still attached to the now depressurised cast iron main; the regulators sensed low pressure and opened fully.", "3:57 p.m. - The NiSource monitoring center in Columbus, Ohio recorded a sudden pressure rise on SCADA.", "4:04-4:08 p.m. - High-pressure, rate-of-change and high-high alarms at South Lawrence and Riverina stations; the controller called the on-call technician at 4:06.", "From about 4:00 p.m. - Over-pressured gas fed appliances, causing a series of fires and several explosions in homes across three communities.", "4:30 p.m. - A technician at Winthrop Avenue adjusted setpoints, isolated the regulators and reduced flow.", "7:24 p.m. - All valves confirmed closed to shut down the system; all 14 regulator stations locked in by 6:27 a.m. on 14 September."], "cause": "A cast iron main was abandoned before the regulator sensing lines were relocated to the new polyethylene main, so the regulators opened fully and released high-pressure gas into the low-pressure distribution system.", "why": ["Probable cause: weak engineering management that did not adequately plan, review, sequence and oversee the construction project (NTSB).", "Contributing: the low-pressure system was designed and operated without adequate overpressure protection (NTSB).", "No work package addressed the sensing lines; constructability reviews were signed without M&R signatures (NTSB).", "No professional engineer was in responsible charge and no documents were stamped; Massachusetts had a PE industrial exemption (NTSB).", "Safety issues investigated: regulations, project documentation, constructability review, project management, risk assessment, safety management systems, PE approval and emergency response (NTSB).", "Deficiencies in management and oversight led to the overpressurization (NTSB press release)."], "bar": {"L4": 2, "L6": 1, "haz": 2, "proc": 2, "culture": 1}, "th": ["control & measurement", "overpressure & relief", "MOC & hazard study"], "pat": [7], "kc": ["The regulators measured the pressure on a main that had just been abandoned, saw it fall, and opened fully. A controller that measures the wrong place drives the plant to its limit: on K-100 the same thing happens if <b>FT-103<\/b> reads high (the anti-surge loop thinks it has margin) or <b>TT-106<\/b> reads low (TIC-106 throttles the cooling).", "HAZID <b>HD-01<\/b> recommends a separate transmitter for <b>PSHH-001<\/b>, which today shares PT-001 with PIC-102: a single wrong measurement then defeats both the control and the trip. See the <a data-goto=\"control\">Control loop design<\/a> and <a data-goto=\"safety\">Safety layers<\/a> tabs.", "The project had no engineering review of the sensing lines: changes to instrument connections need MOC like any other change (<a data-goto=\"hazop\">HAZOP<\/a> node procedures)."], "kcS": ["The regulators measured the pressure on a main that had just been abandoned, saw it fall, and opened fully. A controller that measures the wrong place drives the plant to its limit: every K-100 loop (PIC-101, the anti-surge controllers UIC-103 / UIC-108, the cooler controllers TIC-106 / TIC-111) trusts one transmitter. Ask, for each loop on the <a data-goto=\"control\">Control loop design<\/a> tab: what does it do if its measurement is wrong, and what else would show it?", "HAZID <b>HD-01<\/b> recommends a separate transmitter for <b>PSHH-001<\/b>, which today shares PT-001 with PIC-102: a single wrong measurement then defeats both the control and the trip. See the <a data-goto=\"safety\">Safety layers<\/a> tab.", "The project had no engineering review of the sensing lines: changes to instrument connections need MOC like any other change (<a data-goto=\"hazop\">HAZOP<\/a> node procedures)."], "tryit": [["tr:11", "FT-103 anti-surge flow transmitter reads high"], ["tr:18", "TT-106 reads low"]], "vids": [["fprX6l9kI48", "NTSBgov", "NTSB Board Meeting on natural gas fires in Merrimack Valley, Mass"]], "src": [["NTSB - Investigation PLD18MR003 page", "https://www.ntsb.gov/investigations/Pages/pld18mr003.aspx"], ["NTSB - Pipeline Accident Report NTSB/PAR-19/02", "https://www.ntsb.gov/investigations/AccidentReports/Reports/PAR1902.pdf"], ["NTSB - Press release 24 Sep 2019", "https://www.ntsb.gov/news/press-releases/Pages/NR20190924.aspx"], ["Wikipedia - Merrimack Valley gas explosions", "https://en.wikipedia.org/wiki/Merrimack_Valley_gas_explosions"]], "notes": "Injured: 22 transported to hospital including 3 firefighters, plus 7 other firefighters with minor injuries (NTSB) vs '25+' (Wikipedia). Start time: about 4:00 p.m. (NTSB) vs about 4:15 p.m. (Wikipedia). Customers: 10,894 (NTSB) vs about 8,000 residents / 8,600 customers (Wikipedia). Homes: at least 5 destroyed (NTSB) vs '60-100 homes' (infobox) and 'as many as 40 homes' (text) (Wikipedia). Fires: Wikipedia gives 'over 80' and 'between 40 and 80'. The NTSB report text fetched has no separate MOC section, so the moc key is left empty. No NTSB animation was found; the verified video is the NTSB board meeting recording.", "q": ["Why did the Merrimack Valley regulators open fully?", ["Their sensing lines were still on the abandoned, falling main", "Their pilot springs failed in the cold weather of that afternoon", "The SCADA operator raised their set points by mistake from Ohio", "A power cut stopped the electric actuators in the open position"], 0, "The cast-iron main was abandoned before the regulator sensing lines were moved to the new main; the regulators sensed falling pressure and opened (NTSB)."]}, {"id": "abkatun", "title": "PEMEX Abkatun-A Permanente processing platform explosion and fire", "place": "Abkatun-Pol-Chuc complex, Bay of Campeche, Gulf of Mexico, about 132 km north-east of Dos Bocas, between Campeche and Tabasco", "date": "2015-04-01", "year": 2015, "unit": "Abkatun A Permanente (dehydration and pumping / processing platform), PEMEX", "equipment": "Rarely used fuel gas line (corroded); dehydration and pumping section", "fluid": "Fuel gas (leak and ignition); crude oil in the pipeline produced the smoke (PEMEX via OE Digital)", "dead": 4, "deadTxt": "4", "inj": 16, "injTxt": "16", "other": "About 300 evacuated (World Oil: 300; OE Digital: 301; Reuters/Maritime Executive: 302). Platform processing of about 40,000 bbl/d suspended (Reuters/Maritime Executive). Feeder-field output fell 67% to about 43,500 bbl/d by end April (El Universal). No oil spill reported by PEMEX.", "steps": ["About 3:40 a.m. CST, 1 April 2015 - Explosion and fire in the dehydration and pumping section of the Abkatun A Permanente processing platform (PEMEX via OE Digital).", "About 300 workers were evacuated; eight firefighting boats were brought in (Reuters via Maritime Executive).", "Contractor Cotemar was reported to be installing thermal insulating equipment on the platform at the time (source not linking it to the fire) (World Oil).", "About 8 p.m. - PEMEX declared the fire out (Reuters via Maritime Executive).", "PGR, ASEA and the labour ministry opened investigations (OE Digital).", "October 2015 - ASEA reported the cause: a leak from a corroded, rarely used fuel gas line (OE Digital; El Universal)."], "cause": "Rupture of a rarely used fuel gas line that had suffered unusual accelerated corrosion due to microorganisms and sulfuric acid within the gas; the escaping gas ignited (ASEA, as reported by OE Digital and El Universal).", "why": ["The fuel gas line had corroded due to the presence of microorganisms and sulfuric acid within the gas, then ruptured and the gas ignited (ASEA via OE Digital / El Universal).", "ASEA found no failure to comply with applicable regulations, so no sanctions or fines were imposed on PEMEX (OE Digital; El Universal).", "Corrective measure: review of dozens of km of similar gas lines (OE Digital; El Universal).", "This was ASEA's first investigation after the energy reform (El Universal)."], "bar": {"mi": 2}, "th": ["inspection & integrity", "fire & escalation"], "pat": [8], "kc": ["A rarely used fuel-gas line corroded from inside (microorganisms and sulphuric acid in the gas, per the regulator) and ruptured. K-100's fuel gas is taken from V-102 to GT-100; HAZID <b>HD-17<\/b> (fuel-gas leak in the GT enclosure) and <b>HD-14<\/b> (internal corrosion by wet CO₂) are its equivalents. Idle and rarely used lines need inspection as much as the main ones.", "The <a data-goto=\"cq\">Consequence analysis<\/a> tab, scenario S2, shows why the GT enclosure ventilation is the barrier: with 90 air changes per hour a 5 mm leak stays at ≈ 0.5 vol %, with 5 per hour it passes LFL.", "There is no matching failure in the simulator (no corrosion model); use the HAZID and consequence tabs."], "kcS": null, "tryit": [], "vids": [["Pcb-afUbslY", "TeleSUR English", "Mexico: Several injured and dead after oil rig fire"], ["CjDe5oBNQiM", "CBS Evening News", "Deadly fire consumes Mexican oil rig"]], "src": [["OE Digital - Deadly PEMEX fire under investigation", "https://www.oedigital.com/news/453030-deadly-pemex-fire-under-investigation"], ["OE Digital - Cause of deadly Pemex Abkatun fire determined", "https://www.oedigital.com/news/451134-cause-of-deadly-pemex-abkat-n-fire-determined"], ["El Universal (English) - Mexico oil safety agency says no penalty for Pemex April blast", "https://www.eluniversal.com.mx/articulo/english/2015/10/15/mexico-oil-safety-agency-says-no-penalty-pemex-april-blast/"], ["Maritime Executive (Reuters) - Fire engulfs Pemex oil platform, 300 evacuated", "https://maritime-executive.com/article/fire-engulfs-pemex-oil-platform-300-evacuated"], ["World Oil - Fire at Pemex platform kills four workers, injures 16", "https://worldoil.com/news/2015/4/1/fire-at-pemex-platform-kills-four-workers-injures-16/"], ["NOAA IncidentNews - Pemex oil platform, Bay of Campeche", "https://incidentnews.noaa.gov/incident/8902"], ["Oil & Gas Journal - Fire kills three on Abkatun A platform (Feb 2016, separate event; states 7 killed in April 2015)", "https://www.ogj.com/drilling-production/article/17251544/fire-kills-three-on-abkatun-a-platform-in-bay-of-campeche"]], "notes": "No ASEA report and no Wikipedia article were found; all facts are from news reports of PEMEX/ASEA statements. Killed: 4 confirmed plus 3 missing (OE Digital, April 2015) vs 7 killed (El Universal Oct 2015; OGJ 2016). Injured: 16 (World Oil, OE Digital; 2 serious) vs 45 treated / 16 hospitalized (Reuters via Maritime Executive) vs 45 injured (El Universal). Evacuated: 300 / 301 / 302. Do not confuse with the separate February 2016 Abkatun A compression-unit fire (3 killed). Only the mechanical-integrity barrier is supported by the sources.", "q": ["What did the Mexican regulator ASEA give as the cause of the April 2015 Abkatun-A fire?", ["A blowout of a well that was being worked over on the platform deck", "Internal corrosion of a rarely used fuel-gas line that ruptured", "A lightning strike on the flare that ignited a liquid carry-over", "Hot work on the deck next to a leaking flange during maintenance"], 1, "ASEA reported a leak from a corroded, rarely used fuel-gas line: microorganisms and sulphuric acid in the gas had caused accelerated corrosion (as reported by OE Digital and El Universal)."]}];
+var IC_BAR=[["L1", "L1 process control"], ["L2", "L2 alarms and operator"], ["L3", "L3 SIS / ESD"], ["L4", "L4 relief / blowdown"], ["L5", "L5 physical protection"], ["L6", "L6 emergency response"], ["moc", "MOC / PSSR"], ["haz", "Hazard study and actions"], ["mi", "Inspection and integrity"], ["proc", "Procedures and training"], ["permit", "Permit / isolation"], ["layout", "Layout and siting"], ["culture", "Safety culture"]];
+var IC_LOCAL={"sh": "montara", "title": "Montara wellhead platform blowout (well H1)", "place": "Montara field, Timor Sea, off the northern coast of Western Australia", "date": "2009-08-21", "operator": "PTTEP Australasia (PTTEPAA), subsidiary of PTT Exploration and Production (Thailand)", "what": "On 21 August 2009 the H1 well on the Montara wellhead platform, with the Seadrill jack-up West Atlas over it, kicked (first detected about 05:30) and about two hours later blew out, releasing oil and gas into the Timor Sea for about 75 days until the leak was stopped on 3 November 2009 by pumping mud via the relief well (drilled by West Triton). Sixty-nine workers were evacuated with no injuries or fatalities.", "inquiry": "Montara Commission of Inquiry, Commissioner David Borthwick AO PSM; report to the Minister 17 June 2010, released with the government's draft response 24 November 2010; 100 findings and 105 recommendations (92 accepted, 10 noted, 3 not accepted).", "findings": ["The primary well barrier, the cemented 9 5/8 in casing shoe of H1, failed / was defectively installed (Wikipedia; LMA).", "The 13 3/8 in pressure-containing corrosion cap (PCCC) was never installed and the 9 5/8 in PCCC was removed during tie-back work and not reinstalled, leaving the well without its secondary barrier (LMA).", "PTTEPAA did not observe sensible oilfield practices; the predominant root cause was non-compliance with its own well construction/integrity standards and barrier policy; the regulator (Northern Territory Designated Authority) also failed - 'Montara was preventable' (LMA; Minister's statement via Scoop)."], "notes": "Leak stopped 3 Nov 2009 (Wikipedia; industry.gov.au gives the leak period 21 Aug-3 Nov) vs relief well interception on 1 Nov 2009 (LMA). Release rate: up to 2,000 bbl/d (Department estimate) vs 400 bbl/d (PTTEPAA) (Wikipedia).", "src": [["Australian Government DISR - Montara Commission of Inquiry", "https://www.industry.gov.au/publications/montara-commission-inquiry"], ["Scoop - Final report of the Montara Commission of Inquiry released (ministerial statement)", "https://www.scoop.co.nz/stories/WO1011/S00540/aus-final-report-of-the-montara-commission-of-inquiry-released.htm"], ["LMA - LON 008 Lessons learnt Montara 2009", "https://lmalloyds.com/wp-content/uploads/2025/06/LON-008-Lessons-Learnt-Montara-2009-1.pdf"], ["Wikipedia - Montara oil spill", "https://en.wikipedia.org/wiki/Montara_oil_spill"]]};
 
-/* generated by decks/lopa/tools/mkdata.js from src/model.js (K) and src/ui1.js (ALM) — do not edit */
-var K={"Wd":61.75,"MW":22.275,"cpm":40.53,"Tprod":35,"Tamb":30,"Tcm":30,"Nrpm":9500,"V":{"S0":150,"S1":25,"D1":40,"D2":30,"PL":450},"Pd":{"S0":31.31,"S1":31.013,"D1":61.41,"D2":122.1,"PL":121.3,"arr":71.013},"dPc1":0.5,"dPc2":0.7,"Ttd":{"S1":35,"D1":40,"D2":45},"Wfuel":1.38,"Wcond":0.11,"Wliq101":0.222,"qs":0.62,"qmax":3,"M0":0.74,"Pres":60,"GTiso":22,"Prated":17,"LHV":35800000,"taum":90,"mu":0.45,"dPesdv":0.3,"dPexp":0.8,"Lhh":85,"Thh":150,"Vhh":90,"Pllo":1.2,"Nhh":110,"Phh":132,"Pll":20,"Pwhh":34.5,"Psv":36,"UAw":0.06,"W2":60.26,"Wexp":60.26,"Pshaft":16530561.184760105,"kc1":0.00013112819420085561,"kc2":0.00019277015001593382,"Kesdv":0.06565828640634597,"Kexp":0.01894478987558652,"Kw":2.6632143086893403,"Auv103":0.007780334715473985,"Auv108":0.003719911724607278,"Apv102":0.011206763410167075,"Apsv":0.014592488970389554,"Ahv101":0.0004783086674045939,"Abdv":0.0013518665887478577,"Ahv102":0.0005401848630805046,"UAmargin":1.5,"UA1":394170.73511938646,"UA2":324011.5546205208,"Wcm1":77.9136010404467,"Wcm2":81.83654362018613,"cpcm":3800,"Q1":7401792.098842436,"Q2":7774471.6439176835,"Mlq101":1600,"Mlq107":975,"Wlv101":0.5549999999999999,"Wlv107":0.27499999999999997,"Atip":0.866};
-var ALM=[{"tag":"PIC-102","lo":-1,"hi":32.5,"desc":"Production header pressure high (flaring)"},{"tag":"FI-109","lo":-1,"hi":5,"desc":"Gas to flare"},{"tag":"PIC-101","lo":28.5,"hi":31.5,"desc":"Suction pressure"},{"tag":"LIC-101","lo":20,"hi":65,"desc":"V-101 liquid level"},{"tag":"LIC-107","lo":20,"hi":65,"desc":"V-102 liquid level"},{"tag":"UIC-103","lo":7,"hi":99999,"desc":"Section 1 surge margin low"},{"tag":"UIC-108","lo":7,"hi":99999,"desc":"Section 2 surge margin low"},{"tag":"TI-104","lo":-1,"hi":125,"desc":"Section 1 discharge temperature high"},{"tag":"TI-109","lo":-1,"hi":130,"desc":"Section 2 discharge temperature high"},{"tag":"TIC-106","lo":30,"hi":48,"desc":"Intercooler outlet temperature"},{"tag":"TIC-111","lo":30,"hi":55,"desc":"Export gas temperature"},{"tag":"PI-112","lo":-1,"hi":126,"desc":"Discharge pressure high"},{"tag":"VI-105","lo":-1,"hi":60,"desc":"Section 1 vibration high"},{"tag":"VI-110","lo":-1,"hi":60,"desc":"Section 2 vibration high"},{"tag":"SIC-100","lo":72,"hi":104,"desc":"Compressor speed"},{"tag":"PI-150","lo":1.8,"hi":99999,"desc":"Lube-oil pressure low"},{"tag":"TI-151","lo":-1,"hi":95,"desc":"Bearing temperature high"},{"tag":"TI-100","lo":-1,"hi":650,"desc":"GT exhaust temperature high"},{"tag":"AI-115","lo":-1,"hi":23.5,"desc":"Export gas molar mass high (rich gas)"},{"tag":"FI-114","lo":150,"hi":99999,"desc":"Export flow low"}];
-var almBy={};ALM.forEach(a=>almBy[a.tag]=a);
-
-/* tabs/lopa/lopa.data.js with runs.json and LP_DLY filled in by decks/lopa/tools/mkdata.js — do not edit */
-/* ===== LOPA tab data and pure maths (reliability for safety · LOPA · bow-tie of the Gas Export Compressor K-100) — node-testable =====
-   LP_R     model runs (runs.json, tools/runs.js): timings, peaks, process-safety-time hints; every number quoted below comes from it or from K / ALM
-   LP_LCOL  safety-layer colours (Safety layers tab: 0 process/CM grey, 1 BPCS, 2 alarms, 3 SIS, 4 relief, 5 containment, 6 ER, 7 procedure)
-   LP_RATES [equipment, mode/context, generic λ /yr (or a probability text), SIS-grade λ_DU /yr, source]   course table + K-100 items labelled "assumed"
-   LP_SEV   [level, name, target /yr, health & safety, environment, economic]       course consequence criteria
-   LP_LIK   [level, name, typical /yr]
-   LP_SIF   {key:{name, tag, T (yr), set, hz, lopa, rec, floor, subs:[[subsystem, arch, λ_DU per channel /yr]]}}  sensor → logic → final element in series.
-            One entry per K-100 SIF (tshh104 … esd2) + recommended ones (rec:true). The SRS of SIF tab computes PFDavg with lpSifPfd(LP_SIF[key]).
-   LP_SC    [{id, hz, dyn, title, cons, S, ies:[[cause, IEF /yr, source]], ipl:[[name, type|'sif:KEY', floorPFD, note, excludedIEs, recommended,
-            replacesIndex, dependsOn[], slow (true | [IE indices])]], cm:[[name, value, note]], rec, recIds}]
-   LP_BT    [{id, name, hazard, top, bar:{id:[name, layer, PFD|'sif:KEY', recommended, replacesId]}, thr:[[name, f0 /yr | 'sc:Lx', [barrier ids]]],
-            con:[[name, S, [barrier ids]]], esc:[[name, [barrier ids]]]}]
-   Settings (trip points, delays, alarm limits) are read from the model (K, sisStep, ALM) so they never drift from the simulator.
-   Safety (dangerous-undetected, SIS-grade) rates are kept apart from the production failure rates of the Reliability tab. */
-var LP_R={"made":"tabs/lopa/tools/runs.js","lim":{"acc":151.8,"pdes":138,"seal":175,"full":99.9,"brg":120,"surgeN":20,"hdrDes":36,"hdrAcc":39.6,"nDes":115,"cmLow":null},"alm":{"PI-112":{"lo":-1,"hi":126},"LIC-101":{"lo":20,"hi":65},"LIC-107":{"lo":20,"hi":65},"TI-109":{"lo":-1,"hi":130},"PI-150":{"lo":1.8,"hi":null},"PIC-102":{"lo":-1,"hi":32.5},"SIC-100":{"lo":72,"hi":104},"UIC-103":{"lo":7,"hi":null},"TI-151":{"lo":-1,"hi":95},"TI-104":{"lo":-1,"hi":125}},"sc":{"L1":{"tAl":4,"tTrip":9.25,"peakOn":135.85,"t132":7,"t138":10.75,"tAcc":22.25,"p300":180.31,"alarmToTrip":5.25,"only":{"xv100":[138.72,12.25],"esdv101":[139.8,12.5],"uv":[136.08,9.75]}},"L2":{"slug":{"tAl":33.75,"tHH":61.25,"tFull":81.75,"tTrip":64.25,"Lmax":87.3,"alarmToHH":27.5,"alarmToFull":48},"only":{"xv100":{"full":81.75,"Lmax":100,"Nfull":87.17},"esdv101":{"Lmax":87.3,"Nfull":null},"uv":{"full":81.75,"Lmax":100,"Nfull":99.63}},"lv101":{"tAl":1804.75,"tHH":3246.25,"tFull":4320,"alarmToHH":1441.5},"lv107":{"tAl":2219.25,"tHH":3992.25,"tFull":5313,"alarmToHH":1773}},"L3":{"cm":{"tAl":46.75,"t150":84.75,"tSeal":147.25,"peakNoTrip":205.19,"peakOn":152.61,"tTrip":88,"alarmToSeal":100.5},"tv106":{"tAl":54.5,"t150":94.5,"tSeal":167,"alarmToSeal":112.5},"only":{"xv100":[163.83,121],"esdv101":[314.76,563.25],"uv":[294.13,553]}},"L4":{"tAl":1.5,"tP12":2.75,"tB95":28.25,"tBrg":88.5,"brgNoTrip":134.46,"brgOn":92.32,"tTrip":5,"tRest":434.25,"piMinAuto":1.78},"L5":{"d9":{"tAl":20.75,"s1":21.5,"s3":23.5,"t150":50,"s20":104,"tTrip":53.25,"first":"TSHH-104 section 1 discharge ≥ 150 °C","cyclesAtTrip":10,"alarmToHaz":83.25},"auto":{"minMargin":3.47,"t":24,"surges":0},"gt":{"surges":0},"gtStuck":{"s1":1.75,"s20":34.5,"TI104":217.45},"partial":{"surges":34,"trip":"RUN","TI104":119.65}},"L6":{"peakOn":36.01,"tShut":11,"peakNoPshh":36.51,"tAl":4,"t345":8,"tAcc":19,"peak30":58.99,"peakPvOk":32,"alarmToHaz":15},"L7":{"govMax":108.83,"lossAutoMax":99.96,"tAl":12.5,"t110":25.5,"tHaz":37,"firstOn":"PSLL-101 suction ≤ 20 barg","tTripOn":20.25,"peakOn":107.74}},"sif":{"pshh112":{"demand":"ESDV-113 closes at full load","trip":7,"hazard":22.25,"hazLabel":"PI-112 above 151.8 barg (110 % of an assumed 138-barg design)","resp":3.75,"pst":15.25,"verdict":"OK"},"lshh101":{"demand":"Liquid slug 12 kg/s for 2 min","trip":61.25,"hazard":81.75,"hazLabel":"V-101 liquid full: carry-over into section 1","resp":7.75,"pst":20.5,"verdict":"OK"},"lshh107":{"demand":"LV-107 stuck shut","trip":3992.25,"hazard":5313,"hazLabel":"V-102 liquid full: carry-over into section 2","resp":4.75,"pst":1320.75,"verdict":"OK"},"tshh109":{"demand":"P-160 stops (no cooling medium)","trip":84.75,"hazard":147.25,"hazLabel":"TI-109 above 175 °C (casing / seal limit, assumed)","resp":4.75,"pst":62.5,"verdict":"OK"},"tshh104":{"demand":"Production −55 % with UIC-103 in MAN 0 % (surge)","trip":50,"hazard":104,"hazLabel":"20 surge cycles (assumed damage threshold)","resp":4.75,"pst":54,"verdict":"OK"},"psll150":{"demand":"P-150A stops, P-150B does not start","trip":2.75,"hazard":88.5,"hazLabel":"TI-151 above 120 °C (bearing white metal, assumed)","resp":3.75,"pst":85.75,"verdict":"OK"},"sshh100":{"demand":"Governor fails to full fuel and ESDV-101 closes (load lost)","trip":25.5,"hazard":37,"hazLabel":"speed 115 % (rotor design overspeed, assumed; the model clamps there)","resp":2.25,"pst":11.5,"verdict":"OK"},"pshh001":{"demand":"GT trip with PV-102 held shut (PIC-102 MAN 0 %), PSV-001 out","trip":8,"hazard":19,"hazLabel":"PI-001 above 39.6 barg (110 % of an assumed 36-barg header design)","resp":7.75,"pst":11,"verdict":"Check"},"vshh105":{"demand":"none in the model reaches 90 µm (surge peaks 88 µm)","trip":null,"hazard":null,"hazLabel":"rotor rub: not modelled","resp":4.75,"pst":null,"verdict":"n/a"},"vshh110":{"demand":"none in the model reaches 90 µm (surge peaks 88 µm)","trip":null,"hazard":null,"hazLabel":"rotor rub: not modelled","resp":4.75,"pst":null,"verdict":"n/a"},"psll101":{"demand":"none in the model: with ESDV-101 shut the governor and recycles hold the loop near 30 barg","trip":null,"hazard":null,"hazLabel":"deep surge / ratio beyond the map: not reached","resp":6.75,"pst":null,"verdict":"n/a"},"esd2":{"demand":"operator-initiated (fire, gas release)","trip":null,"hazard":null,"hazLabel":"set by fire escalation, not modelled","resp":2.75,"pst":null,"verdict":"n/a"},"pshh001b":{"demand":"GT trip with PV-102 held shut (PIC-102 MAN 0 %), PSV-001 out","trip":8,"hazard":19,"hazLabel":"PI-001 above 39.6 barg (110 % of an assumed 36-barg header design)","resp":7.75,"pst":11,"verdict":"Check"},"psll101b":{"demand":"none in the model: with ESDV-101 shut the governor and recycles hold the loop near 30 barg","trip":null,"hazard":null,"hazLabel":"deep surge / ratio beyond the map: not reached","resp":6.75,"pst":null,"verdict":"n/a"},"uzhh":{"demand":"Production −55 % with UIC-103 in MAN 0 % (surge)","trip":23.5,"hazard":104,"hazLabel":"20 surge cycles (assumed)","resp":1.75,"pst":80.5,"verdict":"OK"},"sshhv":{"demand":"Governor fails to full fuel and ESDV-101 closes (load lost)","trip":25.5,"hazard":37,"hazLabel":"speed 115 % (rotor design overspeed, assumed; the model clamps there)","resp":2.25,"pst":11.5,"verdict":"OK"},"uvtrip":{"demand":"GT trip with a recycle valve stuck","trip":0.25,"hazard":34.5,"hazLabel":"20 surge cycles in the coast-down (assumed)","resp":1.75,"pst":34.25,"verdict":"OK"},"sealv":{"demand":"seal leak: not modelled","trip":null,"hazard":null,"hazLabel":"gas in the module: not modelled","resp":7.75,"pst":null,"verdict":"n/a"}},"dly":{"lshh101":3,"lshh107":3,"tshh104":3,"tshh109":3,"vshh105":3,"vshh110":3,"psll150":2,"sshh100":0.5,"pshh112":2,"psll101":5},"fe":{"xv100":1,"esdv":4,"xv001":4,"bdv":2,"uv":1},"design":{"Pshaft":16.69,"PI150":3,"FI100":4.97,"TI100":573.62,"PI112":120.93,"TI109":115.72,"TI151":74.46},"inv":{"S0":4.43,"loop":6.94,"PL":57.16}};
-var LP_LCOL=['#6B7280','#15803D','#CA8A04','#EA580C','#DC2626','#7C3AED','#1D4ED8','#475569'];
-/* trip delays parsed from sisStep (tripConditions order) and the PSHH-001 delay — never typed */
-var LP_DLY={"lshh101":3,"lshh107":3,"tshh104":3,"tshh109":3,"vshh105":3,"vshh110":3,"psll150":2,"sshh100":0.5,"pshh112":2,"psll101":5,"pshh001":3};   /* parsed from sisStep by tools/mkdata.js */
-function lpAl(tag,dir){const a=(typeof almBy!=='undefined'&&almBy[tag])||null;if(!a)return null;return dir==='lo'?a.lo:a.hi;}
-function lpS(x){return x==null?"—":String(+(+x).toFixed(x>=1000?0:x>=10?1:2));}            /* plain number for texts */
-function lpMm(s){if(s==null)return '—';s=Math.round(s);return s>=90?(s/60).toFixed(1)+' min':s+' s';}
-var LP_RATES=[
- ['Centrifugal pump','fails while running',2,null,'course generic'],['Control valve','all modes',0.6,null,'course generic'],
- ['Pressure relief valve','all modes (fail to open on demand)',0.022,null,'course generic'],
- ['Solenoid valve','all modes',0.42,0.004,'course generic / SIS grade'],['Sensor (pressure)','all modes',1.41,0.005,'course generic / SIS grade'],
- ['Sensor (flow)','all modes',1.14,0.010,'course generic / SIS grade'],['Sensor (level)','all modes',1.7,0.015,'course generic / SIS grade'],
- ['Sensor (temperature)','thermocouple',0.52,0.002,'course generic / SIS grade'],['Controller / logic solver','all modes',0.2,0.001,'course generic / SIS grade'],
- ['Shutdown valve (on/off, ESD)','dangerous undetected',null,0.020,'course SIS grade'],
- ['Leak: seal','loss of containment',0.007,null,'course generic'],['Leak: control valve','loss of containment',0.0175,null,'course generic'],
- ['Leak: 1000 m of pipework','loss of containment',0.3,null,'course generic'],['Operator response','alarm 10 /yr × 10 % error',1.0,null,'course generic'],
- ['Shaft vibration probe and monitor (API 670)','fails to see high vibration',1.0,0.010,'assumed (all-mode rate as the Reliability tab)'],
- ['Speed pickup (magnetic)','reads low or fails',0.5,0.005,'assumed (all-mode rate as the Reliability tab)'],
- ['ESD push-button and hard-wired loop','fails to act',null,0.005,'assumed'],
- ['ESD valve, BDV or XV with its solenoid','fails to move on demand (valve 0.020 + solenoid 0.004)',null,0.024,'course SIS grade (sum)'],
- ['Anti-surge valve with an SIS trip solenoid','fails to open on demand (valve 0.020 + solenoid 0.004)',null,0.024,'assumed SIS-rated (course SIS grade)'],
- ['Point gas detector','fails to detect',null,0.02,'assumed'],
- ['GT-100 trip','flame-out, GT protection',2.5,null,'assumed (same as the Reliability tab)'],
- ['K-100 unplanned stops','all causes, as built',8.78,null,'Reliability tab (assumed rates)'],
- ['Dry gas seal (primary)','fails',0.6,null,'assumed (same as the Reliability tab)'],
- ['Lube-oil console','filters, cooler, pressure control, oil',0.4,null,'assumed (same as the Reliability tab)'],
- ['Platform utilities','instrument air or main power lost',0.5,null,'assumed (same as the Reliability tab)'],
- ['Standby oil pump P-150B','does not take over on demand (monthly test)','8.8 % per demand',null,'Reliability tab (assumed rates)'],
- ['Production wells','fast production cut (well trip, wellhead ESD)',1.0,null,'assumed'],['Liquid slug from production','well tests, pigging',0.5,null,'assumed'],
- ['BPCS instrument loop','fails in one direction',0.1,null,'assumed (CCPS range 1–0.01 /yr)'],['Human error','controller left in MAN, valve closed in error',0.1,null,'assumed'],
- ['Locked-open block valve','closed in error',0.01,null,'assumed'],['Check valve (export NRV)','stuck shut',0.01,null,'assumed'],
- ['Fuel-gas or lube-oil leak in the GT enclosure','flange, fitting, small bore',0.05,null,'assumed'],
- ['GT start','ignition without a complete purge (10⁻³ per start × ≈ 9 starts /yr)',0.009,null,'assumed']];
-var LP_SEV=[
- [1,'Negligible',1,'No injury or illness','Release < 4 L (3 kg)','Loss < 2,000 USD'],
- [2,'Low',0.1,'Injury without lost time','Release < 38 L (34 kg)','Loss ≤ 100,000 USD'],
- [3,'Medium',0.01,'Lost-time injury or work modification','Release < 190 L (170 kg)','Loss ≤ 500,000 USD'],
- [4,'High',0.001,'Permanent injury or amputation','Release > 190 L (170 kg)','Loss ≤ 1,000,000 USD'],
- [5,'Extreme',0.0001,'Fatality or life support','Fatality, major environmental impact','Loss > 1,000,000 USD']];
-var LP_LIK=[[1,'Almost impossible',0.001],[2,'Rare',0.01],[3,'Possible',0.1],[4,'Likely',1],[5,'Most likely',10]];
-function lpLik(f){return f>=3?5:f>=0.3?4:f>=0.03?3:f>=0.003?2:1;}
-function lpRiskCat(r){return r>=25?['Extreme','#111827','#fff']:r>=15?['High','#DC2626','#fff']:r>=8?['Medium','#FACC15','#111']:r>=2?['Low','#16A34A','#fff']:['Negligible','#1D4ED8','#fff'];}
-/* PFDavg of one subsystem (IEC 61508 simplified: no common cause, repair ≪ T).  2oo2 = both channels must act = series */
-function lpSub(arch,lam,T){const x=lam*T;return arch==='1oo2'?x*x/3:arch==='2oo3'?x*x:arch==='2oo2'?x:x/2;}
-function lpSil(p){return p<1e-4?'SIL 4 range':p<1e-3?'SIL 3':p<1e-2?'SIL 2':p<1e-1?'SIL 1':'no SIL (PFD ≥ 0.1)';}
-function lpPfdExact(lam,T){const x=lam*T;return x<1e-9?x/2:1-(1-Math.exp(-x))/x;}
-/* ---- K-100 SIFs (KC-PID-100: I-1 compressor trip, I-2 ESD-2, PSHH-001 wells shut-in), SIS-grade λ_DU, proof test T = 1 yr ---- */
-var LP_LS=['SIS logic solver (I-1 / I-2)','1oo1',0.001];
-var LP_XV100=['XV-100 fuel shut-off valve + solenoid (fail closed)','1oo1',0.024];
-var LP_ESD101=['ESDV-101 suction ESD valve + solenoid XY-101 (fail closed)','1oo1',0.024];
-var LP_XV001=['XV-001 production inlet valve + solenoid XY-001 (fail closed)','1oo1',0.024];
-var LP_BDV=['BDV-101 / BDV-112 + solenoids (both must open: 2oo2 = series)','2oo2',0.024];
-var LP_SIF={
- pshh112:{name:'PSHH-112 discharge pressure high-high → I-1 (blocked outlet)',tag:'PSHH-112',T:1,set:`> ${K.Phh} barg for ${LP_DLY.pshh112} s`,hz:'N6.1, N7.1',lopa:'L1',
-  subs:[['Pressure transmitter PI-112 (also PIAH-112)','1oo1',0.005],LP_LS,['XV-100 + solenoid / ESDV-101 + solenoid (either unloads the discharge in the model: 1oo2)','1oo2',0.024]]},
- lshh101:{name:'LSHH-101 V-101 level high-high → I-1 (liquid to section 1)',tag:'LSHH-101',T:1,set:`> ${K.Lhh} % for ${LP_DLY.lshh101} s`,hz:'N2.1',lopa:'L2',
-  subs:[['Level switch LSHH-101 on its own taps','1oo1',0.015],LP_LS,LP_ESD101]},
- lshh107:{name:'LSHH-107 V-102 level high-high → I-1 (liquid to section 2)',tag:'LSHH-107',T:1,set:`> ${K.Lhh} % for ${LP_DLY.lshh107} s`,hz:'N4.3',lopa:'L2',
-  subs:[['Level switch LSHH-107 on its own taps','1oo1',0.015],LP_LS,LP_XV100]},
- tshh104:{name:'TSHH-104 section 1 discharge temperature high-high → I-1',tag:'TSHH-104',T:1,set:`> ${K.Thh} °C for ${LP_DLY.tshh104} s`,hz:'N3.1, N3.6',lopa:'L5',
-  subs:[['Temperature element TE-104 (also TIAH-104)','1oo1',0.002],LP_LS,LP_XV100]},
- tshh109:{name:'TSHH-109 section 2 discharge temperature high-high → I-1',tag:'TSHH-109',T:1,set:`> ${K.Thh} °C for ${LP_DLY.tshh109} s`,hz:'N10.1, N5.3',lopa:'L3',
-  subs:[['Temperature element TE-109 (also TIAH-109)','1oo1',0.002],LP_LS,LP_XV100]},
- vshh105:{name:'VSHH-105 section 1 shaft vibration high-high → I-1',tag:'VSHH-105',T:1,set:`> ${K.Vhh} µm for ${LP_DLY.vshh105} s`,hz:'N3.7',lopa:'BT2',
-  subs:[['Vibration probe and monitor VT-105 (also VIAH-105)','1oo1',0.010],LP_LS,LP_XV100]},
- vshh110:{name:'VSHH-110 section 2 shaft vibration high-high → I-1',tag:'VSHH-110',T:1,set:`> ${K.Vhh} µm for ${LP_DLY.vshh110} s`,hz:'N5.4',lopa:'BT2',
-  subs:[['Vibration probe and monitor VT-110 (also VIAH-110)','1oo1',0.010],LP_LS,LP_XV100]},
- psll150:{name:'PSLL-150 lube-oil pressure low-low → I-1',tag:'PSLL-150',T:1,set:`< ${K.Pllo} barg for ${LP_DLY.psll150} s while the train turns`,hz:'N9.1, N9.2',lopa:'L4',
-  subs:[['Pressure transmitter PT-150 (also PIAL-150 and the P-150B auto-start)','1oo1',0.005],LP_LS,LP_XV100]},
- sshh100:{name:'SSHH-100 overspeed → I-1 (governor speed signal)',tag:'SSHH-100',T:1,set:`≥ ${K.Nhh} % for ${LP_DLY.sshh100} s`,hz:'N8.3',lopa:'L7',
-  subs:[['Speed pickup of the governor SIC-100 (shared with the speed control)','1oo1',0.005],LP_LS,LP_XV100]},
- psll101:{name:'PSLL-101 suction pressure low-low → I-1 (armed in RUN)',tag:'PSLL-101',T:1,set:`< ${K.Pll} barg for ${LP_DLY.psll101} s above 60 % speed`,hz:'N2.3',lopa:'— (SRS)',
-  subs:[['Pressure transmitter PT-101 (also PIC-101 and PICAL-101)','1oo1',0.005],LP_LS,LP_XV100]},
- pshh001:{name:'PSHH-001 production header high-high → XV-001 shuts in the wells',tag:'PSHH-001',T:1,set:`> ${K.Pwhh} barg for ${LP_DLY.pshh001} s`,hz:'N1.4',lopa:'L6',
-  subs:[['Pressure transmitter PT-001 (also PIC-102 and PICAH-102)','1oo1',0.005],LP_LS,LP_XV001]},
- esd2:{name:'ESD-2 push-button → I-2: trip, blowdown, wells shut in',tag:'ESD-2',T:1,set:'manual push-button',hz:'N11.1, N11.5',lopa:'BT1, BT3',
-  subs:[['ESD-2 push-button and hard-wired loop','1oo1',0.005],LP_LS,LP_BDV]},
- pshh001b:{name:'PSHH-001 on its own transmitter PT-001B (recommended, HAZOP R03)',tag:'PSHH-001B',T:1,rec:true,set:`> ${K.Pwhh} barg for ${LP_DLY.pshh001} s`,hz:'N1.4',lopa:'L6',
-  subs:[['Own pressure transmitter PT-001B (independent of PIC-102)','1oo1',0.005],LP_LS,LP_XV001]},
- psll101b:{name:'PSLL-101 on its own transmitter PT-101B (recommended, HAZOP R06)',tag:'PSLL-101B',T:1,rec:true,set:`< ${K.Pll} barg for ${LP_DLY.psll101} s`,hz:'N2.3',lopa:'— (SRS)',
-  subs:[['Own pressure transmitter PT-101B (independent of PIC-101)','1oo1',0.005],LP_LS,LP_XV100]},
- uzhh:{name:'Surge counter on each section → I-1 on 3 cycles in 30 s (recommended, HAZOP R12)',tag:'UZHH-103/108',T:1,rec:true,set:'3 surge cycles in 30 s (assumed)',hz:'N3.1, N3.2, N5.2',lopa:'L5',
-  subs:[['Fast flow transmitter / fast ΔP transmitter (own, either sees a cycle: 1oo2)','1oo2',0.010],LP_LS,LP_XV100]},
- uvtrip:{name:'SIS trip solenoids on UV-103 / UV-108, partial-stroke tested every 3 months (recommended, HAZOP R11)',tag:'XY-103/108',T:0.25,rec:true,set:'on every I-1: both recycles to 100 %',hz:'N3.4, N5.6',lopa:'L5',
-  subs:[['SIS logic solver (I-1)','1oo1',0.001],['UV-103 + trip solenoid / UV-108 + trip solenoid (both must open: 2oo2 = series)','2oo2',0.024]]},
- sshhv:{name:'Overspeed on three own probes, 2oo3 (recommended, HAZOP R23)',tag:'SSHH-100V',T:1,rec:true,set:`≥ ${K.Nhh} %, 2 of 3 probes`,hz:'N8.3',lopa:'L7',
-  subs:[['Three own speed probes (2oo3)','2oo3',0.005],LP_LS,LP_XV100]},
- sealv:{name:'Dry-gas-seal primary vent high flow → I-2 trip and blowdown (recommended, HAZOP R26)',tag:'FSHH-SV',T:1,rec:true,set:'vent flow high (seal-gas panel sheet; assumed)',hz:'N9.6',lopa:'L8',
-  subs:[['Own flow transmitter on the primary vent','1oo1',0.010],LP_LS,LP_BDV]},
- fgd:{name:'Gas detection in the compressor module → ESD-2 (recommended, HAZOP R37)',tag:'F&G',T:1,rec:true,floor:0.1,set:'2ooN at 50 % LEL (assumed)',hz:'N6.7, N9.6',lopa:'L8, BT1',
-  subs:[['Point gas detectors, 2oo3 per zone','2oo3',0.02],['Fire-and-gas logic','1oo1',0.001],LP_BDV]}};
-function lpSifPfd(s){return s.subs.reduce((a,u)=>a+lpSub(u[1],u[2],s.T),0);}
-/* LOPA credit of a SIF: its block diagram, but never better than a floor (detector coverage, indirect detection, BPCS valve) */
-function lpSifCredit(k){const s=LP_SIF[k],p=lpSifPfd(s);return s.floor?Math.max(p,s.floor):p;}
-/* course method: equivalent failure rate of parallel systems from MTTF (inclusion–exclusion over subsets) */
-function lpParallel(ls){const n=ls.length;let inv=0;for(let m=1;m<(1<<n);m++){let s=0,k=0;for(let i=0;i<n;i++)if(m&(1<<i)){s+=ls[i];k++;}inv+=(k%2?1:-1)/s;}return 1/inv;}
-var LP_PAR=[['K-100: lube oil lost',1.41+0.2+2.0,1.41+0.2+1.0,0.005+0.001+0.024,'BPCS = P-150B auto-start: pressure sensor 1.41 + controller 0.2 + standby pump 2.0; alarm = PIAL-150 sensor 1.41 + DCS 0.2 + operator 1.0; SIS = PSLL-150 SIS grade: transmitter 0.005 + logic 0.001 + XV-100 with solenoid 0.024'],
- ['K-100: section 2 discharge over-temperature',0.52+0.2+0.6,0.52+0.2+1.0,0.002+0.001+0.024,'BPCS = TIC-106 loop: thermocouple 0.52 + controller 0.2 + TV-106 0.6; alarm = TIAH-109 thermocouple 0.52 + DCS 0.2 + operator 1.0; SIS = TSHH-109: TE 0.002 + logic 0.001 + XV-100 with solenoid 0.024'],
- ['Lecture example',1.94,2.61,0.031,'Values from the course lecture']];
-/* IPL credit library (CCPS typical PFD; SIF values from LP_SIF) */
-var LP_IPL={
- bpcs:['BPCS control loop or DCS action, independent of the initiating event',0.1],
- alarm:['Alarm with operator response (≥ 10 min from alarm to harm, shown by the model runs)',0.1],slow:['Alarm with less than 10 min from alarm to harm (model runs)',1],
- sby:['Standby pump with auto-start (a BPCS-type function; the Reliability tab gives 8.8 % of demands not taken over at a monthly test)',0.1],
- psv:['Relief valve (course λ 0.022 /yr, lift-tested every 2 yr: λT/2)',lpSub('1oo1',0.022,2)],
- rundown:['Lube-oil rundown tank: gravity oil for the coast-down (assumed)',0.1],
- vendor:['GT vendor power-turbine overspeed trip on its own probes and fuel valve (assumed)',0.1],
- proc:['Procedures, training, inspection, warnings from production (safeguards, not IPLs)',1]};
-function lpIplPfd(p){const t=String(p[1]);if(t.startsWith('sif:')){const v=lpSifCredit(t.slice(4));return p[2]!=null?Math.max(v,p[2]):v;}return p[2]!=null?p[2]:LP_IPL[t][1];}
-function lpSlow(p,k){return p[8]===true||(Array.isArray(p[8])&&p[8].includes(k));}
-/* ---- LOPA scenarios (HAZOP High rows and the HAZOP NOTES list of scenarios that need LOPA) ---- */
-var LP_IGN=(v,n)=>['Probability of ignition',v,n||'Assumed'];
-var LP_SC=(function(){const R=LP_R?LP_R.sc:null,L=LP_R?LP_R.lim:{};if(!R)return [];
- const a=(t,d)=>lpS(lpAl(t,d));
- return [
- {id:'L1',hz:'N6.1',dyn:'D5',title:'Blocked discharge: E-102 and the discharge header overpressured',S:5,
-  cons:`With the export blocked at full GT power the discharge side packs: with no trip the model passes ${K.Phh} barg after ${lpS(R.L1.t132)} s, 138 barg after ${lpS(R.L1.t138)} s and the assumed 110 % accumulation (${L.acc} barg of an assumed 138-barg design) after ${lpS(R.L1.tAcc)} s, ${lpS(R.L1.p300)} barg at 5 min: flange or E-102 failure, HP gas release, fire or explosion`,
-  ies:[['ESDV-113 closes spuriously at full load (solenoid or actuator fault)',0.42*0.3,'Course generic: solenoid valve 0.42 /yr × 0.3 that close the valve (share used on the Reliability tab, assumed)'],
-   ['Downstream block valve (riser or pig-launcher valve, locked open) closed in error',0.01,'Assumed (locked-open valve)'],
-   ['Export check valve NRV stuck shut',0.01,'Assumed']],
-  ipl:[['PIAH-112 + operator unloads the machine','alarm',null,`Model: PIAH-112 (${a('PI-112')} barg) ${lpS(R.L1.tAl)} s after the closure, the trip ${lpS(R.L1.alarmToTrip)} s later — no time for a person`,[],false,null,[],true],
-   ['PSHH-112 → I-1 (XV-100 and ESDV-101 shut, recycles open)','sif:pshh112',null,`Model: trips at ${lpS(R.L1.tTrip)} s and the discharge still overshoots to ${lpS(R.L1.peakOn)} barg. One final element is enough below ${L.acc} barg: XV-100 alone ${lpS(R.L1.only.xv100[0])}, ESDV-101 alone ${lpS(R.L1.only.esdv101[0])}, the recycle opening alone ${lpS(R.L1.only.uv[0])} barg`,[]],
-   ['PSV-112 at 138 barg on the discharge (R13; on HOLD on KC-PID-100)','psv',null,'Not drawn on KC-PID-100 (note 3): no credit until installed. Course PSV rate, λT/2, T = 2 yr',[],true]],
-  cm:[LP_IGN(0.3,'Assumed (large HP release on the module)')],rec:'Install PSV-112 (R13); review the PSHH-112 set point and delay (R14); redundant solenoids on ESDV-113 against spurious closure (R15, lowers the initiating frequency).',recIds:['R13','R14','R15']},
- {id:'L2',hz:'N2.1, N4.3',dyn:'D8',title:'Liquid carried into a compressor section',S:4,
-  cons:`Liquid fills a scrubber and is drawn into a running section (with no trip V-101 is full ${lpS(R.L2.slug.tFull)} s after the largest slug starts): impeller erosion or breakage, rotor imbalance, seal failure, gas release`,
-  ies:[['Liquid slug from production (well test, pigging)',0.5,'Assumed'],
-   ['LV-101 sticks shut or the closed drain is blocked',0.1,'Assumed (CCPS BPCS loop failure)'],
-   ['LV-107 sticks shut: V-102 fills with condensate',0.1,'Assumed (CCPS BPCS loop failure)']],
-  ipl:[['LIAH-101 + operator (LIC-101 measurement)','alarm',null,`Slug: ${lpS(R.L2.slug.alarmToHH)} s from LIAH-101 (${a('LIC-101')} %) to LSHH-101 — no credit (t). LV-101 shut: ${lpMm(R.L2.lv101.alarmToHH)} — credited`,[2],false,null,[],[0]],
-   ['LSHH-101 → I-1 (ESDV-101 stops the inflow)','sif:lshh101',null,`Own level taps, independent of LIC-101. Model: ESDV-101 is the element that matters — with XV-100 alone the section still turns at ${lpS(R.L2.only.xv100.Nfull)} % when V-101 is full (${lpS(R.L2.only.xv100.full)} s); with ESDV-101 alone the level stops at ${lpS(R.L2.only.esdv101.Lmax)} %`,[2]],
-   ['LIAH-107 + operator','alarm',null,`LV-107 shut: ${lpMm(R.L2.lv107.alarmToHH)} from LIAH-107 to LSHH-107 (model)`,[0,1]],
-   ['LSHH-107 → I-1 (XV-100 stops the machine)','sif:lshh107',null,'Own level taps, independent of LIC-107',[0,1]]],
-  cm:[['Liquid in a section breaks impellers or seals so that gas is released',0.3,'Assumed'],LP_IGN(0.1)],rec:'Slug handling: a slug warning from production and LV-101 / the closed drain checked against the largest slug (R04 — a procedure, no IPL credit); gas blow-by protection of the closed drain (R05).',recIds:['R04','R05']},
- {id:'L3',hz:'N10.1, N5.3',dyn:'D3',title:'Loss of cooling: section 2 discharge over-temperature',S:4,
-  cons:`No cooling of the interstage gas: section 2 discharge climbs within a minute — with no trip TI-109 passes the assumed ${L.seal} °C casing / seal limit after ${lpS(R.L3.cm.tSeal)} s and peaks at ${lpS(R.L3.cm.peakNoTrip)} °C: dry-gas seal failure, gas release`,
-  ies:[['Cooling-medium pump P-160 stops (no installed spare)',2,'Course generic: centrifugal pump fails while running 2 /yr (as the Reliability tab)'],
-   ['TIC-106 output fails low or TV-106 sticks shut',0.1,'Assumed (CCPS BPCS loop failure)']],
-  ipl:[['P-160 STOP / TIAH-109 + operator','alarm',null,`Model: ${lpS(R.L3.cm.alarmToSeal)} s from TIAH-109 (${a('TI-109')} °C) to ${L.seal} °C after P-160 stops (${lpS(R.L3.tv106.alarmToSeal)} s with TV-106 shut) — no credit. Shares TE-109 with the trip`,[],false,null,[],true],
-   ['TSHH-109 → I-1 (XV-100)','sif:tshh109',null,`Model: trips at ${lpS(R.L3.cm.tTrip)} s, TI-109 peaks at ${lpS(R.L3.cm.peakOn)} °C. XV-100 is the element that matters: XV-100 alone ${lpS(R.L3.only.xv100[0])} °C; ESDV-101 alone ${lpS(R.L3.only.esdv101[0])} °C and the recycles alone ${lpS(R.L3.only.uv[0])} °C (the machine keeps compressing hot recycled gas)`,[]],
-   ['Spare cooling-medium pump P-160B with auto-start (R27)','sby',null,'Removes the P-160 cause only',[1],true]],
-  cm:[['Over-temperature fails the dry gas seals so that gas is released',0.3,'Assumed'],LP_IGN(0.1)],rec:'Installed spare P-160B with auto-start (R27); cooler performance monitoring (R29, no IPL credit).',recIds:['R27','R29']},
- {id:'L4',hz:'N9.1, N9.2, N9.3',dyn:'D6',title:'Lube oil lost: bearing failure and fire',S:4,
-  cons:`Bearings without oil: with no trip TI-151 passes the assumed ${L.brg} °C white-metal limit ${lpS(R.L4.tBrg)} s after the oil is lost (peak ${lpS(R.L4.brgNoTrip)} °C); even after a trip the rotor needs ${lpMm(R.L4.tRest)} to stop. Wiped bearing, rotor rub, seal damage: oil and gas released, fire`,
-  ies:[['P-150A trips while running',2,'Course generic: centrifugal pump fails while running 2 /yr (as the Reliability tab)'],
-   ['Lube-oil console fault (filter blocked, pressure control valve, oil leak)',0.4*0.3,'Assumed: Reliability tab 0.4 /yr × 0.3 that drop the header pressure'],
-   ['P-150A trips; the trip acts but the rotor coasts down without oil',2*0.1,'Course pump 2 /yr × 0.1 that an unlubricated coast-down from full speed wipes a bearing (assumed)'],
-   ['Platform power failure: both AC oil pumps stop and the rotor coasts down without oil',0.5*0.1,'Reliability tab utilities 0.5 /yr (assumed) × 0.1 bearing damage in the coast-down (assumed)']],
-  ipl:[['P-150B auto-start on low pressure','sby',null,`Model: with the auto-start PI-150 dips only to ${lpS(R.L4.piMinAuto)} barg — no trip. Same AC supply as P-150A (no credit for a power failure); no help for a console fault`,[1,3]],
-   ['PSLL-150 → I-1 (XV-100)','sif:psll150',null,`Model: trips at ${lpS(R.L4.tTrip)} s; TI-151 then peaks at ${lpS(R.L4.brgOn)} °C. It cannot lubricate the coast-down (rows 3 and 4 struck: not a layer against that outcome)`,[2,3]],
-   ['TIAH-151 + operator','alarm',null,`Model: TI-151 HI (${a('TI-151')} °C) ${lpS(R.L4.tB95)} s after the oil is lost — no time`,[],false,null,[],true],
-   ['Rundown tank or DC emergency oil pump (R25)','rundown',null,'Lubricates the bearings whatever stopped the pumps, also through the coast-down',[],true]],
-  cm:[LP_IGN(0.1,'Assumed (oil and gas at a wiped bearing)')],rec:'Rundown tank or DC emergency oil pump for the coast-down, and a readiness alarm of the standby pump (R25).',recIds:['R25']},
- {id:'L5',hz:'N3.1, N3.2, N3.3, N5.2',dyn:'D2, D9',title:'Surge on a fast turndown or a trip: thrust-bearing and seal damage',S:4,
-  cons:`Repeated surge: the flow reverses every few seconds and the thrust reverses; with the anti-surge loop in MAN and a −55 % production cut the model reaches ${L.surgeN} cycles (assumed damage threshold) after ${lpS(R.L5.d9.s20)} s with no trip; a GT trip with a stuck recycle valve reaches it after ${lpS(R.L5.gtStuck.s20)} s (TI-104 ${lpS(R.L5.gtStuck.TI104)} °C). Thrust-bearing and seal damage, gas release`,
-  ies:[['Fast production cut at full load (well trip, wellhead ESD)',1,'Assumed'],
-   ['GT-100 trip: the train coasts down through the surge line',2.5,'Assumed (same as the Reliability tab)'],
-   ['Anti-surge loop does not act on a load change (flow reading wrong, valve stuck, controller left in MAN)',1.14*0.1+0.6*0.1+0.1,'Assumed: course flow sensor 1.14 × 10 % + control valve 0.6 × 10 % + human error 0.1 /yr']],
-  ipl:[['UIC-103 / UIC-108 anti-surge control (AUTO) → UV-103 / UV-108','bpcs',null,`Model: production −55 % with both loops in AUTO gives no surge (smallest margin ${lpS(R.L5.auto.minMargin)} %). Same valves as the trip opening: one credit`,[2],false,null,[1,5]],
-   ['Trip opening of UV-103 / UV-108 (both to 100 % on every I-1)','bpcs',null,`The SIS drives the recycle valves open through their DCS positioners — a BPCS final element, credited 0.1 at best. Model: no surge on a GT trip (${R.L5.gt.surges} cycles); with UV-103 stuck the coast-down surges from ${lpS(R.L5.gtStuck.s1)} s`,[0,2]],
-   ['UICAL / SURGE alarm + operator','alarm',null,`Model: ${lpS(R.L5.d9.alarmToHaz)} s from UICAL-103 (${a('UIC-103','lo')} %) to ${L.surgeN} cycles — no credit`,[],false,null,[],true],
-   ['TSHH-104 → I-1 (indirect: trips on the heat that surge builds up)','sif:tshh104',0.1,`Model: trips ${lpS(R.L5.d9.tTrip)} s after the cut, after ${R.L5.d9.cyclesAtTrip} cycles. Not designed for surge: credited 0.1 at best — a partial loss of anti-surge action surged ${R.L5.partial.surges} times in 5 min with no trip (TI-104 ${lpS(R.L5.partial.TI104)} °C). No use once the train has tripped`,[1]],
-   ['Surge counter → I-1 on 3 cycles in 30 s (R12)','sif:uzhh',null,`Acts on the cause: third cycle at ${lpS(R.L5.d9.s3)} s in the model, ${lpS(R.L5.d9.s20-R.L5.d9.s3)} s before the ${L.surgeN}th. Same logic and XV-100 as TSHH-104: replaces that credit`,[1],true,3],
-   ['SIS trip solenoids on UV-103 / UV-108, partial-stroke tested every 3 months (R11)','sif:uvtrip',null,'Makes the trip opening an SIS final element (assumed SIS-rated valves, T = 0.25 yr); replaces the BPCS-valve credit',[0,2],true,1],
-   ['Anti-surge validation alarms + operator (R09 flow deviation, R10 not in AUTO, R11 position deviation)','alarm',null,'Show a failed anti-surge loop before the next load change',[0,1],true]],
-  cm:[['Repeated surge damages the thrust bearing or the dry gas seals so that gas is released',0.3,'Assumed'],LP_IGN(0.1)],rec:'Surge counter trip (R12); SIS trip solenoids and partial-stroke tests on the recycle valves (R11); anti-surge validation and not-in-AUTO alarms (R09, R10); feed-forward of the production flow (R38, lowers the demand, no IPL credit).',recIds:['R12','R11','R09','R10','R38']},
- {id:'L6',hz:'N1.4',dyn:'D10',title:'Production header overpressure when K-100 trips',S:5,
-  cons:`Full production into a closed 150 m³ header: with PV-102 shut and PSHH-001 and PSV-001 out the model passes the assumed ${L.hdrAcc} barg (110 % of an assumed ${L.hdrDes}-barg header design = PSV-001 set) after ${lpS(R.L6.tAcc)} s and climbs to ${lpS(R.L6.peak30)} barg (the wells' shut-in pressure): flange or vessel failure, large gas release, fire or explosion`,
-  ies:[['K-100 trips at full production (any I-1 cause)',8.78,'Reliability tab: 8.78 unplanned stops /yr as built (assumed rates)']],
-  ipl:[['Trip feed-forward + PIC-102 → PV-102 to flare (fail open)','bpcs',null,`Model: with PV-102 working the header peaks at ${lpS(R.L6.peakPvOk)} barg on a GT trip. Fails when PIC-102 is in MAN at a low output, PV-102 sticks or the flare line is blocked`,[]],
-   ['PICAH-102 + operator','alarm',null,`Model (PV-102 shut, PSHH-001 and PSV-001 out): ${lpS(R.L6.alarmToHaz)} s from PICAH-102 (${a('PIC-102')} barg) to ${L.hdrAcc} barg — no credit`,[],false,null,[],true],
-   ['PSHH-001 → XV-001 shuts in the wells','sif:pshh001',null,`Shares PT-001 with PIC-102 (KC-PID-100): one transmitter failure defeats both, so only one is credited. Model: wells shut at ${lpS(R.L6.tShut)} s, header peaks at ${lpS(R.L6.peakOn)} barg`,[],false,null,[0]],
-   ['PSV-001 at 36 barg to flare','psv',null,`Model: with PSHH-001 out PSV-001 holds the header at ${lpS(R.L6.peakNoPshh)} barg`,[]],
-   ['PSHH-001 on its own transmitter PT-001B (R03)','sif:pshh001b',null,'Independent of PIC-102; replaces the PSHH-001 credit',[],true,2]],
-  cm:[LP_IGN(0.3,'Assumed (large release on the module)')],rec:'Own transmitter for PSHH-001 (R03); relief and flare study for the full blocked-outlet case (R01, confirms PSV-001; no new credit).',recIds:['R03','R01']},
- {id:'L7',hz:'N8.3',dyn:'—',title:'Overspeed on a load loss: rotor or impeller burst',S:5,
-  cons:`The GT drives an unloaded rotor: with the governor at full fuel and the suction lost the model reaches ${K.Nhh} % after ${lpS(R.L7.t110)} s and the assumed ${L.nDes} % design overspeed after ${lpS(R.L7.tHaz)} s (no trips). Full fuel alone at design load gives only ${lpS(R.L7.govMax)} %. Rotor or impeller burst, fragments through the casing`,
-  ies:[['Sudden load loss at full speed (ESDV-101 slams shut, coupling failure)',0.42*0.3+0.01,'Course solenoid 0.42 /yr × 0.3 (ESDV-101 spurious closure) + coupling failure 0.01 /yr (assumed)'],
-   ['Governor or FV-100 fails to full fuel, then a load loss before it is found',(0.6+0.2)*0.1*0.1,'Assumed: (control valve 0.6 + controller 0.2) × 10 % × 0.1 load loss before the fault is found'],
-   ['Speed pickup reads low (governor to full fuel, SSHH-100 blind), then a load loss',0.5*0.1*0.1,'Assumed: pickup 0.5 /yr × 10 % reading low × 0.1 load loss before it is found']],
-  ipl:[['Governor SIC-100 cuts the fuel on a load loss','bpcs',null,`Model: ESDV-101 slammed shut at full load with the governor in control → peak ${lpS(R.L7.lossAutoMax)} %. Shares the speed pickup with SSHH-100: one credit`,[1,2],false,null,[1]],
-   ['SSHH-100 → I-1 (XV-100)','sif:sshh100',null,`Reads the governor's own speed signal: blind when the pickup reads low. Model with the SIS on: PSLL-101 trips first on the collapsing suction (${lpS(R.L7.tTripOn)} s, speed peaks ${lpS(R.L7.peakOn)} %) — same logic and XV-100, so no extra credit`,[2]],
-   ['SICAH-100 + operator','alarm',null,`Model: ${lpS(R.L7.tHaz-R.L7.tAl)} s from SICAH-100 (${a('SIC-100')} %) to ${L.nDes} % — no credit`,[],false,null,[],true],
-   ['Overspeed on three own probes, 2oo3 (R23)','sif:sshhv',null,'Independent of the governor pickup; replaces SSHH-100 and frees the governor credit',[],true,1],
-   ['GT vendor power-turbine overspeed trip on its own probes and fuel valve (R23, confirm with the supplier)','vendor',null,'Normally part of the GT unit control panel but not on KC-PID-100: credited only when confirmed',[],true]],
-  cm:[['Rotor or impeller bursts at the design overspeed',0.1,'Assumed']],rec:'Overspeed protection on its own probes, 2oo3, proof-tested with the GT supplier, and confirmation of the GT vendor overspeed trip (R23).',recIds:['R23']},
- {id:'L8',hz:'N9.6, N9.7',dyn:'—',title:'Gas release from the dry gas seals into the module',S:4,
-  cons:'Process gas leaks past the shaft seals into the compressor house or the oil system: gas cloud in the module, fire or explosion (the seal-gas panel is on another sheet and not modelled)',
-  ies:[['Primary dry-gas seal fails (wear, contamination, reverse rotation)',0.6,'Assumed (same as the Reliability tab)'],
-   ['Seal-gas supply lost or contaminated (seal-gas panel)',0.1,'Assumed']],
-  ipl:[['Seal-gas panel alarms + operator (separate sheet)','proc',null,'Assumed to exist but outside this study (R26): no credit until reviewed',[]],
-   ['Primary-vent high flow → I-2 trip and blowdown (R26)','sif:sealv',null,'Own flow transmitter on the vent to flare; the blowdown removes the pressure that drives the leak (≈ 6 min to 6.9 barg, Safety layers tab)',[],true],
-   ['Gas detection in the module → ESD-2 (R37)','sif:fgd',null,'Credited 0.1 at most (detector coverage). Same BDVs as the vent trip: credited only when that is not',[],true,null,[1]]],
-  cm:[['Secondary seal also fails so that gas reaches the module (tandem seal)',0.1,'Assumed'],LP_IGN(0.1)],rec:'Extend the study to the seal-gas panel: primary-vent high-flow trip with blowdown (R26); gas detection with automatic ESD-2 (R37).',recIds:['R26','R37']}];})();
-/* evaluate a scenario; st = {ipl:[bool], cm:[values]}.  Per initiating event k an IPL is credited when it is selected, not excluded for k (i),
-   not too slow for an operator (t), not replaced by a selected recommendation (r), and not dependent on another IPL credited for k (d). */
-function lpEval(sc,st){
-  const tgt=LP_SEV[sc.S-1][2];let tot=0;
-  const repl=j=>sc.ipl.some((q,i)=>q[6]===j&&st.ipl[i]);
-  const base=(j,k)=>st.ipl[j]&&!sc.ipl[j][4].includes(k)&&!lpSlow(sc.ipl[j],k)&&!repl(j)&&lpIplPfd(sc.ipl[j])<1;
-  const cmv=(st.cm||sc.cm.map(c=>c[1])).reduce((a,b)=>a*b,1);
-  const rows=sc.ies.map((ie,k)=>{let pf=1;const used=[];
-    sc.ipl.forEach((p,j)=>{let why='';if(!st.ipl[j])why='off';else if(p[4].includes(k))why='excl';else if(lpSlow(p,k))why='slow';else if(repl(j))why='repl';else if((p[7]||[]).some(d=>base(d,k)))why='dep';
-      const c=why?1:lpIplPfd(p);used.push([p[0],why?null:c,why]);pf*=c;});
-    const f=ie[1]*pf*cmv;tot+=f;return {ie:ie[0],ief:ie[1],src:ie[2],pf,cm:cmv,f,used};});
-  const rrf=tot/tgt;return {rows,tot,tgt,rrf,need:rrf>1?1/rrf:null,L:lpLik(tot)};}
-function lpDefault(sc){return {ipl:sc.ipl.map(p=>!p[5]),cm:sc.cm.map(c=>c[1])};}
-function lpAllRec(sc){return {ipl:sc.ipl.map(()=>true),cm:sc.cm.map(c=>c[1])};}
-function lpIefSum(id){const sc=LP_SC.find(s=>s.id===id);return sc.ies.reduce((a,x)=>a+x[1],0);}
-if(typeof module!=='undefined')module.exports={LP_R,LP_LCOL,LP_RATES,LP_SEV,LP_LIK,LP_SIF,LP_SC,LP_IPL,LP_PAR,LP_DLY,lpSub,lpSil,lpSifPfd,lpSifCredit,lpParallel,lpEval,lpDefault,lpAllRec,lpLik,lpRiskCat,lpPfdExact,lpIplPfd,lpIefSum};
-/* ---- bow-ties: barriers coloured by safety layer ---- */
-var LP_BT=(function(){const R=LP_R||{},I=R.inv||{},D=R.design||{};
- return [
- {id:'BT1',name:'Loss of containment of HP gas from the compressor loop',hazard:`HP gas (MW ${K.MW}, 12 % CO₂) at 30–121 barg: ≈ ${lpS(I.loop)} t in the compressor loop, ${lpS(I.PL)} t in the export line behind ESDV-113 and the NRV (teaching volume)`,top:'HP gas released from the K-100 loop (casing, seals, E-102, discharge header)',
-  bar:{piah:['PIAH-112 + operator (5 s: no credit)',2,1],pshh:['PSHH-112 trip',3,'sif:pshh112'],psv112:['PSV-112 (R13, on HOLD)',4,lpSub('1oo1',0.022,2),true],
-   sgp:['Seal-gas panel alarms (other sheet: no credit)',7,1],seal2:['Tandem secondary seal holds',0,0.1],sealv:['Vent high-flow trip + blowdown (R26)',3,'sif:sealv',true],
-   uic:['UIC-103/108 anti-surge',1,0.1],tshh104:['TSHH-104 (indirect, ≤ 0.1)',3,0.1],uzhh:['Surge counter trip (R12)',3,'sif:uzhh',true,'tshh104'],dmg:['Surge reaches the seals (30 %)',0,0.3],
-   liah:['LIAH-101 + operator (slug: no credit)',2,1],lshh:['LSHH-101 → ESDV-101',3,'sif:lshh101'],dmg2:['Liquid breaks a seal (30 %)',0,0.3],
-   fgd:['Gas detection → ESD-2 (R37)',3,'sif:fgd',true],esdm:['Operator ESD-2 → blowdown',3,0.1],ign:['Ignition 10 %',0,0.1],
-   psv107:['PSV-107 fire case (R13, HOLD)',4,lpSub('1oo1',0.022,2),true],del:['Deluge on the module (R37)',6,0.1,true],
-   esdv113:['ESDV-113 + NRV isolate the export line',3,lpSub('1oo1',0.024,1)],sdvr:['Riser ESD valve (R18)',5,0.1,true]},
-  thr:[['Blocked discharge (LOPA L1)','sc:L1',['piah','pshh','psv112']],['Dry-gas seal failure (LOPA L8)','sc:L8',['sgp','seal2','sealv']],
-   ['Surge on a fast production cut (LOPA L5)',1,['uic','tshh104','uzhh','dmg']],['Liquid carry-over (LOPA L2)','sc:L2',['liah','lshh','dmg2']],
-   ['Flange or small-bore leak in the loop (assumed 0.05 /yr)',0.05,[]]],
-  con:[['Jet fire or explosion on the compressor module',5,['fgd','esdm','ign']],['Fire heats the blocked-in loop at settle-out: vessel rupture',5,['esdm','psv107','del','ign']],
-   ['Pipeline inventory feeds the release',5,['esdv113','sdvr','ign']]],
-  esc:[['PT-112 reads low (PIAH-112 and PSHH-112 share it)',['piah','pshh']],['PSV-112 / PSV-107 left on HOLD',['psv112','psv107']],['Gas detectors out of calibration or poor coverage',['fgd']],
-   ['BDV solenoids not proof-tested (blowdown fails)',['esdm','fgd','sealv']],['Recycle valve sticks (not stroke-tested)',['uic']]]},
- {id:'BT2',name:'Compressor surge or mechanical failure',hazard:`K-100 rotor at ${K.Nrpm} rpm (100 %), ${lpS(D.Pshaft)} MW on one shaft with two sections; the bearings need ${lpS(D.PI150)} barg of oil, also through the ${lpMm(R.sc?R.sc.L4.tRest:null)} coast-down`,top:'K-100 rotor damaged: sustained surge, overspeed, lost lubrication or liquid',
-  bar:{uic:['UIC-103/108 anti-surge',1,0.1],tshh104:['TSHH-104 (indirect, ≤ 0.1)',3,0.1],uzhh:['Surge counter trip (R12)',3,'sif:uzhh',true,'tshh104'],
-   uvt:['Trip opening of the recycles (BPCS valves)',1,0.1],uvsis:['SIS trip solenoids on UV-103/108 (R11)',3,'sif:uvtrip',true,'uvt'],
-   sby:['P-150B auto-start',1,0.1],psll:['PSLL-150 trip',3,'sif:psll150'],rund:['Rundown tank (R25)',5,0.1,true],
-   gov:['Governor SIC-100',1,0.1],sshh:['SSHH-100 (governor pickup)',3,'sif:sshh100'],sshhv:['Own probes 2oo3 (R23)',3,'sif:sshhv',true,'sshh'],vend:['GT vendor overspeed trip (R23)',3,0.1,true],
-   lshh:['LSHH-101 → ESDV-101',3,'sif:lshh101'],
-   dmg:['Damage reaches the seals (30 %)',0,0.3],ign:['Ignition 10 %',0,0.1],vsh:['VSHH-105/110 trip on the rub',3,'sif:vshh110'],lim:['Damage stays a bearing or seal change (70 %)',0,0.3]},
-  thr:[['Fast production cut',1,['uic','tshh104','uzhh']],['GT trip: coast-down through the surge line',2.5,['uvt','uvsis']],['Lube oil lost (LOPA L4)','sc:L4',['sby','psll','rund']],
-   ['Overspeed on a load loss (LOPA L7)','sc:L7',['gov','sshh','sshhv','vend']],['Liquid carry-over (LOPA L2)','sc:L2',['lshh']]],
-  con:[['Seal damage: gas released in the module',4,['dmg','ign']],['Rotor wrecked: months of lost export (> 1 M USD)',5,['vsh','lim']]],
-  esc:[['Recycle valve not stroke-tested (sticks)',['uic','uvt']],['Governor speed pickup reads low (governor and SSHH-100 share it)',['gov','sshh']],
-   ['Standby oil pump not ready (auto-start not armed)',['sby']],['Platform power failure (both AC oil pumps)',['sby']],['Anti-surge controller left in MAN',['uic']]]},
- {id:'BT3',name:'GT-100 enclosure fire',hazard:`Fuel gas ${lpS(D.FI100)} t/h from V-102 (LHV ${K.LHV/1e6} MJ/kg), exhaust ≈ ${lpS(D.TI100)} °C and lube oil inside the GT-100 acoustic enclosure`,top:'Fire in the GT-100 enclosure',
-  bar:{vent:['Enclosure ventilation dilutes the leak (vendor)',5,0.1],gdo:['Gas detection at the vent outlet → XV-100 (vendor)',3,0.1],hot:['Hot-surface insulation and spray shields',5,0.1],
-   purge:['30-s crank purge in the GT start sequence',1,0.1],fdx:['Fire detection → XV-100 shuts the fuel (vendor)',3,0.1],supp:['CO₂ / water-mist suppression (vendor)',5,0.1],
-   encl:['Enclosure walls as a fire barrier',5,0.1],del:['Deluge outside the enclosure (R37)',6,0.1,true],esdm:['Operator ESD-2 → blowdown',3,0.1],
-   occ:['Enclosure entered only with the GT stopped (≈ 5 %)',7,0.05]},
-  thr:[['Fuel-gas leak in the enclosure (flange, fitting, vibration)',0.05,['vent','gdo']],['Lube-oil spray onto the hot casing',0.05,['hot']],['Ignition without a complete purge at a start',0.009,['purge']]],
-  con:[['Fire contained in the enclosure: GT-100 damaged (≈ 1 M USD)',4,['fdx','supp']],['Fire escapes to the compressor module and the HP loop',5,['fdx','supp','encl','del','esdm']],
-   ['Person in the enclosure: burns or suppression-gas exposure',4,['occ']]],
-  esc:[['Ventilation fan stopped (the enclosure is not swept)',['vent']],['Gas detectors out of calibration',['gdo']],['Suppression inhibited for maintenance and not restored',['supp']],['Fire-water pumps without power',['del']]]}];})();
-function lpBarPfd(b){return typeof b[2]==='string'?lpSifCredit(b[2].slice(4)):b[2];}
-/* st: {off:[failed barrier ids], esc:[escalation indices], rec:bool} → threat, top-event and consequence frequencies */
-function lpBow(bt,st){
-  st=st||{};const failed=new Set(st.off||[]);(st.esc||[]).forEach(i=>bt.esc[i][1].forEach(b=>failed.add(b)));
-  const replaced=id=>!!st.rec&&Object.values(bt.bar).some(b=>b[3]&&b[4]===id);
-  const pf=id=>{const b=bt.bar[id];if(b[3]&&!st.rec)return 1;if(replaced(id))return 1;return failed.has(id)?1:lpBarPfd(b);};
-  const state=id=>{const b=bt.bar[id];if(b[3]&&!st.rec)return 'notfitted';if(replaced(id))return 'replaced';return failed.has(id)?'failed':'ok';};
-  const f0=t=>typeof t[1]==='string'?lpIefSum(t[1].slice(3)):t[1];
-  const thr=bt.thr.map(t=>{const p=t[2].reduce((a,id)=>a*pf(id),1),a=f0(t);return {name:t[0],f0:a,f:a*p};});
-  const top=thr.reduce((a,t)=>a+t.f,0);
-  const con=bt.con.map(c=>{const p=c[2].reduce((a,id)=>a*pf(id),1);const f=top*p;const tgt=LP_SEV[c[1]-1][2];return {name:c[0],S:c[1],f,tgt,rrf:f/tgt};});
-  return {thr,top,con,pf,state};}
-if(typeof module!=='undefined')Object.assign(module.exports,{LP_BT,lpBow,lpBarPfd});
-
-/* ---------- shared helpers for the pump-station topic decks ---------- */
-const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
-const f0 = x => isFinite(x) ? Math.round(x).toLocaleString('en-US') : '–';
-const fx = (x,d) => isFinite(x) ? x.toFixed(d) : '–';
-const fmtS = (x,d) => isFinite(x) ? (x<0?'−':'')+Math.abs(x).toFixed(d) : '–';
-function sci(x, d=1){ if(!isFinite(x)||x<=0) return '–'; const e=Math.floor(Math.log10(x)), m=x/Math.pow(10,e); const sup='⁰¹²³⁴⁵⁶⁷⁸⁹'; return m.toFixed(d)+'×10'+(e<0?'⁻':'')+String(Math.abs(e)).split('').map(c=>sup[c]).join(''); }
-/* ---------- tiny SVG plotter ---------- */
-const SVGN = 'http://www.w3.org/2000/svg';
-function svgEl(tag, at, p){ const e = document.createElementNS(SVGN, tag); for(const k in at) e.setAttribute(k, at[k]); if(p) p.appendChild(e); return e; }
-function plot(svg, o){
-  /* o: {W,H, xmin,xmax,ymin,ymax, xl,yl, xt:[...], yt:[...], bands:[{x1,x2,y1,y2,color,op}], lines:[{pts,color,w,dash}], dots:[{x,y,color,r,label}], segs:[{x1,y1,x2,y2,color,dash,w}], texts:[{x,y,t,color,anchor,size}]} */
-  const W=o.W||560, H=o.H||320, L=o.L||58, R=o.R||16, T=o.T||14, B=o.B||46;
-  svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.innerHTML='';
-  const X = v => L + (v-o.xmin)/(o.xmax-o.xmin)*(W-L-R), Y = v => H-B - (v-o.ymin)/(o.ymax-o.ymin)*(H-T-B);
-  (o.yt||[]).forEach(v => { svgEl('line',{x1:L,x2:W-R,y1:Y(v),y2:Y(v),stroke:'#E5E7EB','stroke-width':1},svg); const t=svgEl('text',{x:L-8,y:Y(v)+5,'font-size':14,fill:'#6B7280','text-anchor':'end'},svg); t.textContent=v; });
-  (o.xt||[]).forEach(v => { const t=svgEl('text',{x:X(v),y:H-B+20,'font-size':14,fill:'#6B7280','text-anchor':'middle'},svg); t.textContent=v; });
-  svgEl('line',{x1:L,x2:W-R,y1:H-B,y2:H-B,stroke:'#6B7280','stroke-width':1.5},svg); svgEl('line',{x1:L,x2:L,y1:T,y2:H-B,stroke:'#6B7280','stroke-width':1.5},svg);
-  if(o.xl){ const t=svgEl('text',{x:(L+W-R)/2,y:H-6,'font-size':15,fill:'#6B7280','text-anchor':'middle'},svg); t.textContent=o.xl; }
-  if(o.yl){ const t=svgEl('text',{x:15,y:(T+H-B)/2,'font-size':15,fill:'#6B7280','text-anchor':'middle',transform:`rotate(-90 15 ${(T+H-B)/2})`},svg); t.textContent=o.yl; }
-  (o.bands||[]).forEach(b => svgEl('rect',{x:X(b.x1),y:Y(b.y2),width:X(b.x2)-X(b.x1),height:Y(b.y1)-Y(b.y2),fill:b.color,opacity:b.op||.15},svg));
-  (o.lines||[]).forEach(l => { const pts=l.pts.filter(p=>isFinite(p[0])&&isFinite(p[1])).map(p=>X(clamp(p[0],o.xmin,o.xmax))+','+Y(clamp(p[1],o.ymin,o.ymax))).join(' '); svgEl('polyline',{points:pts,fill:'none',stroke:l.color,'stroke-width':l.w||3,'stroke-dasharray':l.dash||'none'},svg); });
-  (o.segs||[]).forEach(s => svgEl('line',{x1:X(s.x1),y1:Y(s.y1),x2:X(s.x2),y2:Y(s.y2),stroke:s.color||'#1F2937','stroke-width':s.w||2,'stroke-dasharray':s.dash||'none'},svg));
-  (o.dots||[]).forEach(d => { svgEl('circle',{cx:X(d.x),cy:Y(d.y),r:d.r||6,fill:d.color},svg); if(d.label){ const t=svgEl('text',{x:X(d.x)+(d.dx||9),y:Y(d.y)+(d.dy||-8),'font-size':14,fill:d.color,'text-anchor':d.anchor||'start','font-weight':600},svg); t.textContent=d.label; } });
-  (o.texts||[]).forEach(s => { const t=svgEl('text',{x:X(s.x),y:Y(s.y),'font-size':s.size||14,fill:s.color||'#6B7280','text-anchor':s.anchor||'start','font-weight':s.bold?700:400},svg); t.textContent=s.t; });
-  return {X,Y};
+/* ===== Incident cases deck: interactives read the tab's own case data IC, IC_BAR, IC_LOCAL (inc.data.js) ===== */
+(function () {
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const plain = h => String(h).replace(/<a [^>]*>(.*?)<\/a>/g, '<b>$1<\/b>');   /* tab links become bold names */
+const LAY = ['L1', 'L2', 'L3', 'L4', 'L5', 'L6'];
+const BN = Object.fromEntries(IC_BAR);
+const SHORT = { piper: 'Piper Alpha', longford: 'Longford', sonat: 'Sonat', mhn: 'Mumbai High N.', kleen: 'Kleen Energy', sanbruno: 'San Bruno', merrimack: 'Merrimack V.', abkatun: 'Abkatun-A' };
+const who = c => `${c.deadTxt} dead${c.injTxt ? ', ' + c.injTxt + ' injured' : ''}`;
+function chips(box, items, label, on, cb) {
+  const el = $(box); el.innerHTML = '';
+  items.forEach((it, i) => { const b = document.createElement('button'); b.className = 'chip' + (i === on ? ' on' : ''); b.textContent = label(it, i);
+    b.onclick = () => { [...el.children].forEach(x => x.classList.remove('on')); b.classList.add('on'); cb(it, i); }; el.appendChild(b); });
+  cb(items[on], on);
 }
-const C_NAVY='#1F497D', C_BLUE='#4F81BD', C_RED='#C00000', C_GREEN='#1A8038', C_ORANGE='#D97706', C_MUTED='#6B7280', C_PURPLE='#7C3AED';
-function sliders(ids, fn){ ids.forEach(id => { const e=el(id); if(e) e.addEventListener('input', fn); }); fn(); }
-const v = id => +el(id).value;
-const setT = (id, t) => { const e = el(id); if (e) e.textContent = t; };
-const setH = (id, t) => { const e = el(id); if (e) e.innerHTML = t; };
-/* chips: a container with the classes sim-controls and chips and a data-group attribute, holding button.chip elements with data-v; chips(group, fn(value), first) */
-function chips(group, fn, first){ const bs=[...document.querySelectorAll(`[data-group="${group}"] .chip`)]; const pick=b=>{bs.forEach(x=>x.classList.toggle('on',x===b)); fn(b.dataset.v);}; bs.forEach(b=>b.onclick=()=>pick(b)); if(bs.length) pick(first!=null?bs.find(b=>b.dataset.v==first)||bs[0]:bs[0]); }
-
-/* LOPA deck (K-100) · runs on the LOPA tab's pure block (lp_core.js = tabs/lopa/lopa.data.js with runs.json: LP_R, LP_SIF, LP_SC, LP_BT,
-   LP_SEV, LP_IPL, lpSub, lpSifPfd, lpEval, lpBow …) and data.js (K, ALM) — concatenated before this file */
-const esc2 = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const sciH = x => { if (!isFinite(x) || x <= 0) return '0'; const e = Math.floor(Math.log10(x)); if (e >= -1 && e <= 1) return (+x.toPrecision(3)).toString(); const m = x / 10 ** e; return m.toFixed(1) + '×10<sup>' + e + '</sup>'; };
-const sciT = x => { if (!isFinite(x) || x <= 0) return '0'; const e = Math.floor(Math.log10(x)); if (e >= -1 && e <= 1) return (+x.toPrecision(2)).toString(); const m = x / 10 ** e, sup = '⁰¹²³⁴⁵⁶⁷⁸⁹'; return m.toFixed(1) + '×10' + (e < 0 ? '⁻' : '') + String(Math.abs(e)).split('').map(c => sup[c]).join(''); };
-const bdg = (k, t) => `<span class="badge ${k === 'ok' ? 'b-ok' : k === 'gap' ? 'b-gap' : 'b-chk'}">${t}</span>`;
-const svgT = (x, y, t, o) => `<text x="${x}" y="${y}" font-size="${(o && o.s) || 14}" fill="${(o && o.c) || '#374151'}" text-anchor="${(o && o.a) || 'start'}"${o && o.b ? ' font-weight="700"' : ''}>${t}</text>`;
-const r1 = x => (Math.round(x * 10 + 1e-3) / 10).toFixed(1);   /* 135.85 → 135.9, as the tab quotes it */
-const rrfT = r => r < 10 ? fx(r, 2) : fx(r, 1);
-const IPL_SHORT = [[/^Spare cooling-medium pump/, 'P-160B spare'], [/^Rundown tank/, 'Rundown tank'], [/^Trip opening of UV/, 'Trip opening UV-103/108'],
-  [/^UICAL/, 'UICAL + operator'], [/^Anti-surge validation/, 'Validation alarms'], [/^Governor SIC-100/, 'Governor SIC-100'], [/^GT vendor/, 'GT vendor trip'],
-  [/^Trip feed-forward/, 'PV-102 + trip feed-forward'], [/^Seal-gas panel/, 'Seal-gas panel alarms'], [/^P-160 STOP/, 'TIAH-109 + operator']];
-const iplShort = p => { if (String(p[1]).startsWith('sif:')) return LP_SIF[p[1].slice(4)].tag; const o = IPL_SHORT.find(x => x[0].test(p[0])); if (o) return o[1];
-  const m = p[0].match(/^([A-Z]{2,}[A-Z0-9]*-\d+[A-Z]?(?:\s*\/\s*[A-Z]{2,}[A-Z0-9]*-\d+)?)/); return m ? m[1] : p[0].split(/ [+(:→]| with | on /)[0].replace(/,$/, '').slice(0, 30); };
-const R = LP_R.sc;
-
-/* ---------- Part 1 · population lab (100 dry gas seals at Weibull quantiles, seeded shuffle) ---------- */
-let pSeed = 11; const pR = () => { pSeed = (pSeed * 16807) % 2147483647; return pSeed / 2147483647; };
-const P_POS = [...Array(100).keys()]; for (let i = 99; i > 0; i--){ const j = Math.floor(pR() * (i + 1)); [P_POS[i], P_POS[j]] = [P_POS[j], P_POS[i]]; }
-function popUpd(){
-  const b = v('pb'), a = v('pa'), t = v('pt'), dt = 1; setT('pbV', fx(b, 1)); setT('paV', fx(a, 1) + ' yr'); setT('ptV', fx(t, 1) + ' yr');
-  const ti = [...Array(100).keys()].map(i => a * Math.pow(-Math.log(1 - (i + 0.5) / 100), 1 / b));
-  const Nf = ti.filter(x => x <= t).length, Ns = 100 - Nf, dN = ti.filter(x => x > t && x <= t + dt).length, lam = Ns ? dN / (Ns * dt) : NaN;
-  const h = q => b / a * Math.pow(Math.max(q, 1e-6) / a, b - 1), Rf = q => Math.exp(-Math.pow(q / a, b));
-  let g = '';
-  ti.forEach((x, i) => { const p = P_POS[i], cx = 22 + (p % 10) * 25, cy = 34 + Math.floor(p / 10) * 25, failed = x <= t, next = !failed && x <= t + dt;
-    g += `<circle cx="${cx}" cy="${cy}" r="9.5" fill="${failed ? '#DC2626' : next ? '#F59E0B' : '#15803D'}" opacity="${failed ? 0.85 : 1}"/>`; });
-  g += svgT(10, 300, `red failed by t: N<tspan baseline-shift="sub" font-size="70%">f</tspan> = ${Nf}`, { c: '#DC2626', s: 14, b: 1 }) + svgT(10, 320, `amber fail in the next year: ΔN<tspan baseline-shift="sub" font-size="70%">f</tspan> = ${dN}`, { c: '#B45309', s: 14, b: 1 }) + svgT(10, 340, `green survivors: N<tspan baseline-shift="sub" font-size="70%">s</tspan> = ${Ns}`, { c: '#15803D', s: 14, b: 1 });
-  const X0 = 330, X1 = 596, Y0 = 20, Y1 = 300, X = q => X0 + q / 15 * (X1 - X0), hm = Math.max(1, Math.min(3, h(15)));
-  const YR = q => Y1 - q * (Y1 - Y0), YH = q => Y1 - Math.min(q / hm, 1) * (Y1 - Y0);
-  let pr = '', ph = ''; for (let q = 0.05; q <= 15; q += 0.15){ pr += `${X(q)},${YR(Rf(q))} `; ph += `${X(q)},${YH(h(q))} `; }
-  g += `<line x1="${X0}" y1="${Y1}" x2="${X1}" y2="${Y1}" stroke="#6B7280"/><line x1="${X0}" y1="${Y0}" x2="${X0}" y2="${Y1}" stroke="#6B7280"/>`;
-  g += `<polyline points="${pr}" fill="none" stroke="#1F497D" stroke-width="3"/><polyline points="${ph}" fill="none" stroke="#DC2626" stroke-width="3" stroke-dasharray="7 4"/>`;
-  g += `<line x1="${X(t)}" y1="${Y0}" x2="${X(t)}" y2="${Y1}" stroke="#F59E0B" stroke-width="2"/>`;
-  g += svgT(X0 + 8, Y0 + 14, 'R(t)', { c: '#1F497D', b: 1 }) + svgT(X1 - 4, Y0 + 14, `h(t), top = ${fx(hm, 1)} /yr`, { c: '#DC2626', b: 1, a: 'end' });
-  [0, 5, 10, 15].forEach(q => g += svgT(X(q), Y1 + 18, q, { a: 'middle', c: '#6B7280', s: 13 })); g += svgT((X0 + X1) / 2, Y1 + 38, 'time, yr', { a: 'middle', c: '#6B7280', s: 13 });
-  el('pSvg').innerHTML = g;
-  const ph2 = b < 0.95 ? 'early failures (β < 1): the rate falls' : b > 1.05 ? 'wear-out (β > 1): the rate rises' : 'random failures (β = 1): the rate is constant';
-  setH('pTxt', `λ = ΔN<sub>f</sub> / (N<sub>s</sub> Δt) = ${dN} / (${Ns} × 1 yr) = <b>${Ns ? fx(lam, 3) : '–'} /yr</b><br>Model h(t) = ${fx(h(t), 3)} /yr · ${ph2}.`);
+/* 1 · timeline */
+function timeline(sel) {
+  const W = 640, H = 230, x0 = 40, x1 = 610, y0 = 1985, y1 = 2020, X = y => x0 + (y - y0) / (y1 - y0) * (x1 - x0), maxD = Math.max(...IC.map(c => c.dead));
+  let s = `<svg viewBox="0 0 ${W} ${H}"><line x1="${x0}" x2="${x1}" y1="190" y2="190" stroke="#1B2430" stroke-width="2"/>`;
+  for (let y = 1985; y <= 2020; y += 5) s += `<line x1="${X(y)}" x2="${X(y)}" y1="186" y2="194" stroke="#1B2430"/><text x="${X(y)}" y="214" font-size="14" text-anchor="middle" fill="#5F6B7A">${y}<\/text>`;
+  const used = {};
+  IC.forEach((c, k) => { const lane = used[c.year] = (used[c.year] || 0) + 1, r = 7 + 22 * Math.sqrt(c.dead / maxD), cx = X(c.year) + (lane - 1) * 22, cy = 150 - (k % 3) * 46;
+    s += `<line x1="${cx}" x2="${cx}" y1="${cy}" y2="190" stroke="#9AA4B2" stroke-dasharray="3 3"/><circle cx="${cx}" cy="${cy}" r="${r}" fill="${k === sel ? '#C8102E' : '#9DBEEA'}" fill-opacity="0.85" stroke="#fff" stroke-width="2"/><text x="${cx}" y="${cy + 5}" font-size="13" font-weight="700" text-anchor="middle" fill="#1B2430">${k + 1}<\/text>`; });
+  s += `<text x="${x0}" y="20" font-size="13" fill="#5F6B7A">circle area ∝ deaths<\/text><\/svg>`;
+  $('tlSvg').innerHTML = s;
 }
+chips('tlB', IC, (c, i) => `${i + 1} · ${SHORT[c.id]} ${c.year}`, 0, (c, i) => { timeline(i);
+  $('tlOut').innerHTML = `<b>${esc(c.title)}<\/b> · ${esc(c.date)} · ${who(c)}<br>${esc(c.cause)}`; });
+/* 2 · Piper Alpha step through */
+const PP = IC.find(c => c.id === 'piper');
+$('ppS').max = PP.steps.length;
+function piper() { const k = +$('ppS').value; $('ppSv').textContent = k + ' of ' + PP.steps.length;
+  const t = PP.steps[k - 1], m = t.match(/^([^-–]+?)\s+-\s+(.*)$/);
+  $('ppOut').innerHTML = m ? `<b>${esc(m[1])}<\/b><br>${esc(m[2])}` : esc(t);
+  const tags = ['permit', 'permit', 'L6', 'proc', 'permit', 'L5', 'L3', 'L6'];
+  $('ppTag').innerHTML = `Barrier at this step (author's reading): <b>${esc(BN[tags[k - 1]] || '')}<\/b>`; }
+$('ppS').addEventListener('input', piper); piper();
+/* 3 · Swiss cheese */
+function cheese(c) { const W = 640, H = 300, n = IC_BAR.length, sw = (W - 40) / n;
+  let s = `<svg viewBox="0 0 ${W} ${H}">`;
+  IC_BAR.forEach((b, k) => { const x = 20 + k * sw, v = c.bar[b[0]] || 0, col = v === 2 ? '#C8102E' : v === 1 ? '#E07B00' : null;
+    s += `<rect x="${x + 4}" y="40" width="${sw - 12}" height="200" rx="6" fill="${k < 6 ? '#FFE9A8' : '#DCE8F5'}" stroke="#B89B4A"/>`;
+    if (col) s += `<circle cx="${x + sw / 2 - 2}" cy="140" r="${v === 2 ? 14 : 9}" fill="#fff" stroke="${col}" stroke-width="3"/>`;
+    s += `<text x="${x + sw / 2 - 2}" y="262" font-size="12" text-anchor="middle" fill="#1B2430">${esc(b[0])}<\/text>`; });
+  s += `<text x="20" y="26" font-size="14" fill="#5F6B7A">hazard →<\/text><text x="20" y="292" font-size="13" fill="#5F6B7A">yellow: protection layers · blue: management system<\/text><\/svg>`;
+  $('chzSvg').innerHTML = s;
+  const f = IC_BAR.filter(b => c.bar[b[0]] === 2).map(b => b[1]), w = IC_BAR.filter(b => c.bar[b[0]] === 1).map(b => b[1]);
+  $('chzOut').innerHTML = `<b>${f.length}<\/b> failed · <b>${w.length}<\/b> weak<br><span class="mini">Failed: ${esc(f.join(', ') || 'none')}<\/span>`; }
+chips('chzB', IC, (c, i) => `${i + 1} · ${SHORT[c.id]}`, 0, c => cheese(c));
+/* 4 · barrier matrix */
+function mx(bi) { let h = `<thead><tr><th class="l">Case<\/th>${IC_BAR.map((b, k) => `<th class="v${k === bi ? ' on' : ''}">${esc(b[0])}<\/th>`).join('')}<\/tr><\/thead><tbody>`;
+  IC.forEach(c => { h += `<tr><td class="l">${esc(SHORT[c.id])}<\/td>${IC_BAR.map((b, k) => { const v = c.bar[b[0]]; return `<td class="icm${k === bi ? ' on' : ''}">${v === 2 ? '<span class="b2">●<\/span>' : v === 1 ? '<span class="b1">○<\/span>' : ''}<\/td>`; }).join('')}<\/tr>`; });
+  $('mxT').innerHTML = h + '<\/tbody>';
+  const b = IC_BAR[bi], F = IC.filter(c => c.bar[b[0]] === 2).map(c => SHORT[c.id]), Wk = IC.filter(c => c.bar[b[0]] === 1).map(c => SHORT[c.id]);
+  $('mxOut').innerHTML = `<b>${esc(b[1])}<\/b>: failed in ${F.length} (${esc(F.join(', ') || '–')}), weak in ${Wk.length}.`; }
+chips('mxB', IC_BAR, b => b[1], 0, (b, i) => mx(i));
+/* 5 · counting the holes */
+let CM = 'f';
+function count() { const rows = IC_BAR.map(b => [b, IC.filter(c => c.bar[b[0]] === 2).length, IC.filter(c => c.bar[b[0]] === 1).length]).map(r => [r[0], r[1], CM === 'f' ? 0 : r[2]]).sort((a, b) => (b[1] + b[2]) - (a[1] + a[2]) || b[1] - a[1]);
+  const W = 640, rh = 21, L = 200, H = rows.length * rh + 30, sc = (W - L - 40) / 8;
+  let s = `<svg viewBox="0 0 ${W} ${H}">`;
+  rows.forEach((r, k) => { const y = 8 + k * rh; s += `<text x="${L - 8}" y="${y + 14}" font-size="13" text-anchor="end" fill="#1B2430">${esc(r[0][1])}<\/text><rect x="${L}" y="${y + 2}" width="${r[1] * sc}" height="${rh - 6}" fill="#C8102E"/><rect x="${L + r[1] * sc}" y="${y + 2}" width="${r[2] * sc}" height="${rh - 6}" fill="#E07B00"/><text x="${L + (r[1] + r[2]) * sc + 6}" y="${y + 14}" font-size="13" fill="#1B2430">${r[1] + r[2]}<\/text>`; });
+  s += `<text x="${L}" y="${H - 4}" font-size="12" fill="#5F6B7A">cases (of ${IC.length})<\/text><\/svg>`; $('cnSvg').innerHTML = s;
+  const top = rows[0]; $('cnOut').innerHTML = `Top: <b>${esc(top[0][1])}<\/b>, ${top[1] + top[2]} of ${IC.length} cases.`; }
+document.querySelectorAll('#cnB .chip').forEach(b => b.onclick = () => { document.querySelectorAll('#cnB .chip').forEach(x => x.classList.remove('on')); b.classList.add('on'); CM = b.dataset.m; count(); });
+count();
+/* 6 · hardware or management */
+const ALL = { id: 'all' };
+chips('hmB', IC.concat([ALL]), (c, i) => c === ALL ? 'All eight cases' : `${i + 1} · ${SHORT[c.id]}`, 0, c => {
+  const set = c === ALL ? IC : [c], n = keys => set.reduce((a, x) => a + keys.filter(k => x.bar[k]).length, 0);
+  const lay = n(LAY), mg = n(IC_BAR.map(b => b[0]).filter(k => !LAY.includes(k)));
+  $('hmK').innerHTML = `<div class="kpi"><b>${lay}<\/b><span>layer holes<\/span><\/div><div class="kpi"><b>${mg}<\/b><span>management holes<\/span><\/div>`;
+  $('hmOut').innerHTML = c === ALL ? `Across all cases: ${lay} holes in L1–L6 against ${mg} in the management system.` : `<b>${esc(c.title)}<\/b>: ${esc(c.th.join(', '))}.`; });
+/* 7 · themes */
+const TH = {}; IC.forEach(c => c.th.forEach(t => (TH[t] = TH[t] || []).push(c)));
+const TK = Object.keys(TH).sort((a, b) => TH[b].length - TH[a].length || a.localeCompare(b));
+chips('thB', TK, t => `${t} (${TH[t].length})`, 0, t => { $('thOut').innerHTML = `<b>${esc(t)}<\/b><br>` + TH[t].map(c => `${IC.indexOf(c) + 1} · ${esc(c.title)} (${c.year}): ${esc(c.cause)}`).join('<br><br>'); });
+/* 8 · where on K-100 (same sketch and markers as the tab) */
+const MK = { piper: [612, 70], longford: [130, 40], sonat: [132, 180], mhn: [770, 150], kleen: [300, 40], sanbruno: [870, 284], merrimack: [196, 222], abkatun: [470, 250] };
+function sketch(sel) { const W = 960, H = 300; let s = `<svg viewBox="0 0 ${W} ${H}">`;
+  const ln = (d, c = '#E07B00', w = 3) => `<path d="${d}" fill="none" stroke="${c}" stroke-width="${w}"/>`, bx = (x, y, w, h, t) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="#F4F7FB" stroke="#1B2430" stroke-width="1.6"/><text x="${x + w / 2}" y="${y + h / 2 + 5}" text-anchor="middle" font-size="13" fill="#1B2430">${t}<\/text>`;
+  s += ln('M20 150 H150') + ln('M110 150 V60 H60', '#C62828', 2.5) + `<text x="20" y="54" font-size="12.5" fill="#C62828">PV-102 → flare<\/text><text x="20" y="140" font-size="12.5" fill="#5F6B7A">wells / header<\/text>`;
+  s += bx(150, 120, 56, 60, 'V-101') + ln('M206 150 H250') + `<path d="M250 125 L310 135 L310 165 L250 175 Z" fill="#fff" stroke="#1B2430" stroke-width="1.6"/><text x="280" y="196" text-anchor="middle" font-size="12.5" fill="#1B2430">K-100 sect. 1<\/text>`;
+  s += ln('M310 150 H340') + bx(340, 135, 60, 30, 'E-101') + ln('M400 150 H430') + bx(430, 120, 50, 60, 'V-102') + ln('M480 150 H520') + `<path d="M520 130 L570 138 L570 162 L520 170 Z" fill="#fff" stroke="#1B2430" stroke-width="1.6"/><text x="545" y="196" text-anchor="middle" font-size="12.5" fill="#1B2430">sect. 2<\/text>`;
+  s += ln('M570 150 H600') + bx(600, 135, 60, 30, 'E-102') + ln('M660 150 H740') + `<path d="M700 140 l14 10 l-14 10 z M728 140 l-14 10 l14 10 z" fill="#1B2430"/><text x="714" y="128" text-anchor="middle" font-size="12.5" fill="#1B2430">ESDV-113<\/text>`;
+  s += ln('M740 150 H790 V260 H940') + `<text x="798" y="248" font-size="12.5" fill="#5F6B7A">riser, subsea line to shore<\/text>`;
+  s += ln('M455 180 V250 H500', '#7E57C2', 2.5) + bx(500, 230, 90, 40, 'GT-100') + `<text x="380" y="268" font-size="12.5" fill="#7E57C2">fuel gas<\/text>`;
+  s += `<path d="M228 150 V210" stroke="#1B2430" stroke-width="1" stroke-dasharray="4 3"/><circle cx="228" cy="222" r="13" fill="#fff" stroke="#1B2430"/><text x="228" y="226" text-anchor="middle" font-size="8.5" fill="#1B2430">FT-103<\/text>`;
+  s += ln('M630 135 V95', '#1B2430', 1.6) + `<text x="636" y="100" font-size="12" fill="#1B2430">PSV-112<\/text>` + ln('M300 150 V70 H160', '#C62828', 2) + `<text x="300" y="64" font-size="12" fill="#C62828">HV-102 / BDV → flare header<\/text>`;
+  IC.forEach((c, k) => { const p = MK[c.id]; s += `<g data-sk="${k}" style="cursor:pointer"><circle cx="${p[0]}" cy="${p[1]}" r="${k === sel ? 17 : 13}" fill="${k === sel ? '#0B3D91' : '#C8102E'}" stroke="#fff" stroke-width="2"/><text x="${p[0]}" y="${p[1] + 5}" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">${k + 1}<\/text><\/g>`; });
+  $('skSvg').innerHTML = s + '<\/svg>';
+  $('skSvg').querySelectorAll('[data-sk]').forEach(g => g.onclick = () => sketch(+g.dataset.sk));
+  const c = IC[sel]; $('skOut').innerHTML = `<b>${sel + 1} · ${esc(c.title)}<\/b> — ${esc(c.th.join(', '))}<br>${plain((c.kcS || c.kc)[0])}`; }
+sketch(0);
+/* 9 · case → K-100 lesson */
+let KC = IC[0];
+function kcShow(p) { const L = KC.kcS || KC.kc; $('kcOut').innerHTML = `<p class="kcp"><b>${esc(KC.title)}<\/b><\/p><p class="kcp">${plain(L[p])}<\/p><p>${KC.th.map(t => `<span class="tagl">${esc(t)}<\/span>`).join('')}<\/p>`; }
+chips('kcB', IC, (c, i) => `${i + 1} · ${SHORT[c.id]}`, 0, c => { KC = c; chips('kcP', (c.kcS || c.kc).map((x, k) => k), k => 'Point ' + (k + 1), 0, k => kcShow(k)); });
+})();
 
-/* ---------- Part 1 · proof-test saw-tooth (start λ = XV-100 + solenoid, SIS grade) ---------- */
-function swUpd(){
-  const lam = 10 ** v('swL'), T = v('swT'); setT('swLv', fx(lam, lam < 0.01 ? 4 : 3) + ' /yr'); setT('swTv', fx(T, 2) + ' yr');
-  const tmax = 10, saw = [], nev = [];
-  for (let t = 0; t <= tmax + 1e-9; t += 0.02){ const tau = t - Math.floor(t / T + 1e-9) * T; saw.push([t, 1 - Math.exp(-lam * tau)]); nev.push([t, 1 - Math.exp(-lam * t)]); }
-  const ex = lpPfdExact(lam, T), ap = lam * T / 2, ym = Math.min(1, Math.max(1 - Math.exp(-lam * tmax), 1 - Math.exp(-lam * T)) * 1.12);
-  plot(el('swSvg'), { W: 600, H: 330, xmin: 0, xmax: tmax, ymin: 0, ymax: ym, xl: 'time, yr', yl: 'PFD(t)', xt: [0, 2, 4, 6, 8, 10], yt: [0, ym / 2, ym].map(q => +q.toPrecision(2)),
-    lines: [{ pts: nev, color: C_MUTED, w: 2, dash: '6 4' }, { pts: saw, color: C_RED, w: 2.5 }], segs: [{ x1: 0, y1: ex, x2: tmax, y2: ex, color: C_NAVY, w: 2, dash: '3 3' }],
-    texts: [{ x: 0.2, y: ex + ym * 0.07, t: 'PFDavg ' + sciT(ex), color: C_NAVY, bold: 1 }, { x: 6.2, y: Math.min(nev[nev.length - 1][1], ym) * 0.93, t: 'never tested', color: C_MUTED }] });
-  const rrf = 1 / ex;
-  setH('swTxt', `λT/2 = <b>${sciH(ap)}</b> · exact ${sciH(ex)}<br>risk reduction 1/PFD = ${rrf < 100 ? fx(rrf, 1) : f0(rrf)} · ${lpSil(ex)}${lam * T > 0.2 ? '<br>' + bdg('chk', 'λT not small') + ' use the exact form' : ''}`);
-}
-
-/* ---------- Part 1 · SIF calculator (LP_SIF, the tab's 19 functions) ---------- */
-let sfK = 'tshh109', sfV = 0;
-function sfBuild(){ const s = el('sfSel'); s.innerHTML = Object.keys(LP_SIF).map(k => `<option value="${k}"${k === sfK ? ' selected' : ''}>${LP_SIF[k].tag}${LP_SIF[k].rec ? ' (rec.)' : ''}</option>`).join(''); s.onchange = () => { sfK = s.value; el('sfT').value = LP_SIF[sfK].T; sfUpd(); }; }
-function sfUpd(){
-  const T = v('sfT'), base = LP_SIF[sfK]; setT('sfTv', fx(T, 2) + ' yr');
-  const subs = base.subs.map((u, i) => i === 0 && sfV && u[1] === '1oo1' && !/logic/i.test(u[0]) ? [u[0].replace(/ \(.*\)$/, '') + ' (× 2)', '1oo2', u[2]] : u);
-  const ps = subs.map(u => lpSub(u[1], u[2], T)), tot = ps.reduce((a, b) => a + b, 0), mx = Math.max(...ps);
-  let g = svgT(0, 18, esc2(base.name.length > 86 ? base.name.slice(0, 85) + '…' : base.name), { s: 14, b: 1, c: '#1F497D' });
-  subs.forEach((u, i) => { const y = 44 + i * 64, w = 420 * ps[i] / mx;
-    g += svgT(0, y + 14, esc2(u[0].length > 80 ? u[0].slice(0, 79) + '…' : u[0]), { s: 13 }) +
-      `<rect x="0" y="${y + 22}" width="${Math.max(3, w)}" height="22" rx="3" fill="${i === ps.indexOf(mx) ? '#DC2626' : '#4F81BD'}"/>` +
-      svgT(Math.max(3, w) + 8, y + 39, `${u[1]} · λ ${u[2]} /yr · ${sciT(ps[i])} · ${Math.round(100 * ps[i] / tot)} %`, { s: 13 }); });
-  el('sfSvg').setAttribute('viewBox', `0 0 700 ${50 + subs.length * 64}`); el('sfSvg').innerHTML = g;
-  const note = base.floor ? '<br>' + bdg('chk', 'credit floor ' + base.floor) + ' detector coverage limits the LOPA credit.' : base.rec ? '<br>Recommended addition.' : '';
-  setH('sfTxt', `PFD<sub>avg</sub> = Σ blocks = <b>${sciH(tot)}</b> · ${lpSil(tot)} · 1/PFD = ${f0(1 / tot)}${note}`);
-}
-
-/* ---------- Part 1 · which final element (LOPA-tab model runs: only one element acts at the trip time) ---------- */
-const FE = {
-  L1: { u: 'barg', what: 'PI-112 peak', lim: LP_R.lim.acc, limT: `110 % of the assumed design ${LP_R.lim.acc}`, lo: 120, hi: 190,
-    rows: [['XV-100 only', R.L1.only.xv100[0]], ['ESDV-101 only', R.L1.only.esdv101[0]], ['recycles only', R.L1.only.uv[0]], ['full I-1', R.L1.peakOn], ['no trip (at 5 min)', R.L1.p300]],
-    txt: 'Any one element unloads the discharge in time: the block diagram may take XV-100 <b>or</b> ESDV-101 (1oo2).' },
-  L2: { u: '%', what: 'V-101 level peak', lim: 100, limT: 'V-101 full', lo: 60, hi: 105,
-    rows: [['XV-100 only', R.L2.only.xv100.Lmax], ['ESDV-101 only', R.L2.only.esdv101.Lmax], ['recycles only', R.L2.only.uv.Lmax], ['full I-1', R.L2.slug.Lmax], ['no trip', 100]],
-    txt: `Only ESDV-101 stops the inflow. With XV-100 alone V-101 is full at ${R.L2.only.xv100.full} s while the section still turns at ${fx(R.L2.only.xv100.Nfull, 1)} % speed.` },
-  L3: { u: '°C', what: 'TI-109 peak', lim: LP_R.lim.seal, limT: `casing / seal limit ${LP_R.lim.seal} (assumed)`, lo: 100, hi: 330,
-    rows: [['XV-100 only', R.L3.only.xv100[0]], ['ESDV-101 only', R.L3.only.esdv101[0]], ['recycles only', R.L3.only.uv[0]], ['full I-1', R.L3.cm.peakOn], ['no trip', R.L3.cm.peakNoTrip]],
-    txt: 'Only stopping the driver helps: without XV-100 the machine keeps compressing hot recycled gas.' } };
-function feUpd(k){
-  const c = FE[k], X = q => 160 + (clamp(q, c.lo, c.hi) - c.lo) / (c.hi - c.lo) * 420; let g = '';
-  g += `<line x1="${X(c.lim)}" x2="${X(c.lim)}" y1="16" y2="300" stroke="#C00000" stroke-width="2.5" stroke-dasharray="7 4"/>` + svgT(Math.min(X(c.lim), 600), 318, c.limT, { a: 'end', c: '#C00000', s: 13, b: 1 });
-  c.rows.forEach((r, i) => { const y = 24 + i * 56, ok = r[1] < c.lim;
-    g += svgT(150, y + 24, r[0], { a: 'end', s: 14, b: 1 }) + `<rect x="160" y="${y + 8}" width="${X(r[1]) - 160}" height="24" rx="3" fill="${ok ? '#15803D' : '#DC2626'}" opacity=".85"/>` +
-      (X(r[1]) > 500 ? `<text x="${X(r[1]) - 8}" y="${y + 25}" font-size="13" font-weight="700" fill="#fff" text-anchor="end" style="stroke:none">${r1(r[1])} ${c.u}</text>` : svgT(X(r[1]) + 6, y + 25, r1(r[1]) + ' ' + c.u, { s: 13, b: 1, c: ok ? '#14532D' : '#7F1D1D' })); });
-  el('feSvg').innerHTML = g;
-  setH('feTxt', `<b>${c.what}</b>, model runs of the LOPA tab.<br>${c.txt}`);
-}
-
-/* ---------- Part 2 · RRF lab (start = scenario L1 as built) ---------- */
-const RF0 = { I: lpIefSum('L1'), A: 1, S: lpSifPfd(LP_SIF.pshh112), P: 1, C: LP_SC[0].cm[0][1] };
-function rfInit(){ el('rfI').value = Math.log10(RF0.I); el('rfA').value = 0; el('rfS').value = Math.log10(RF0.S); el('rfP').value = 0; el('rfC').value = Math.log10(RF0.C); }
-function rfUpd(){
-  const fi = 10 ** v('rfI'), pa = 10 ** v('rfA'), ps = 10 ** v('rfS'), pp = 10 ** v('rfP'), cm = 10 ** v('rfC'), tgt = LP_SEV[LP_SC[0].S - 1][2];
-  setH('rfIv', sciH(fi) + ' /yr'); setH('rfAv', sciH(pa)); setH('rfSv', sciH(ps)); setH('rfPv', sciH(pp)); setH('rfCv', sciH(cm));
-  const st = [['IE', fi], ['× PFD₁', fi * pa], ['× PFD₂', fi * pa * ps], ['× PFD₃', fi * pa * ps * pp], ['× CM', fi * pa * ps * pp * cm]], f = st[4][1], rrf = f / tgt;
-  const Y = q => 300 - (Math.log10(q) + 8) / 9 * 280; let g = '';
-  for (let e = -8; e <= 1; e++) g += `<line x1="70" x2="590" y1="${Y(10 ** e)}" y2="${Y(10 ** e)}" stroke="#E5E7EB"/>` + svgT(62, Y(10 ** e) + 5, `10<tspan baseline-shift="super" font-size="70%">${e}</tspan>`, { a: 'end', c: '#6B7280', s: 13 });
-  st.forEach((s, i) => { const x = 90 + i * 100, y = Y(clamp(s[1], 1e-8, 10)); g += `<rect x="${x}" y="${y}" width="62" height="${300 - y}" fill="${i === 4 ? (rrf <= 1 ? '#15803D' : '#DC2626') : '#4F81BD'}" opacity="${i === 4 ? 0.9 : 0.55}"/>` + svgT(x + 31, 322, s[0], { a: 'middle', s: 14, b: 1 }); });
-  g += `<line x1="70" x2="590" y1="${Y(tgt)}" y2="${Y(tgt)}" stroke="#C00000" stroke-width="2.5" stroke-dasharray="7 4"/>` + svgT(588, Y(tgt) - 7, 'target 10⁻⁴ /yr (S5)', { a: 'end', c: '#C00000', b: 1 });
-  el('rfSvg').innerHTML = g;
-  setH('rfTxt', `f<sub>C</sub> = <b>${sciH(f)} /yr</b> · RRF = ${rrf < 10 ? fx(rrf, 2) : f0(rrf)} ${rrf <= 1 ? bdg('ok', 'tolerable') : bdg('gap', 'needs PFD ≤ ' + sciT(1 / rrf) + ' more')}`);
-}
-
-/* ---------- Part 2 · criteria and IPL credits (LP_SEV, LP_IPL) ---------- */
-function sevBuild(){
-  el('sevTab').innerHTML = '<tr><th>S</th><th>Health and safety</th><th>f<sub>tgt</sub>, /yr</th></tr>' + LP_SEV.map(s => `<tr><td>${s[0]}</td><td>${esc2(s[3])}</td><td>${s[2] < 0.01 ? sciH(s[2]) : s[2]}</td></tr>`).join('');
-  setT('iplNote', `Typical credit: BPCS ${LP_IPL.bpcs[1]}, alarm + operator ${LP_IPL.alarm[1]}, relief valve ${+LP_IPL.psv[1].toPrecision(2)} (λT/2, T = 2 yr); procedures 1.`);
-}
-
-/* ---------- Part 2 · worksheet (lpEval on LP_SC) ---------- */
-let wsK = 0; const WS_ST = LP_SC.map(sc => lpDefault(sc));
-const WHY = { excl: 'i', slow: 't', dep: 'd', repl: 'r' };
-function wsBuild(){ el('wsChips').innerHTML = LP_SC.map((s, i) => `<button class="chip" data-v="${i}">${s.id}</button>`).join(''); }
-function wsSel(k){ wsK = +k; const sc = LP_SC[wsK];
-  el('wsIpl').innerHTML = sc.ipl.map((p, j) => `<label class="chk"><input type="checkbox" id="wsC${j}"${WS_ST[wsK].ipl[j] ? ' checked' : ''}> ${esc2(iplShort(p))}${p[5] ? ' <span class="badge b-chk">rec</span>' : ''}</label>`).join('');
-  sc.ipl.forEach((p, j) => el('wsC' + j).onchange = () => { WS_ST[wsK].ipl[j] = el('wsC' + j).checked; wsUpd(); }); wsUpd(); }
-function wsCase(m){ const sc = LP_SC[wsK]; WS_ST[wsK] = m === 'rec' ? lpAllRec(sc) : lpDefault(sc); sc.ipl.forEach((p, j) => { const c = el('wsC' + j); if (c) c.checked = WS_ST[wsK].ipl[j]; }); wsUpd(); }
-function wsUpd(){
-  const sc = LP_SC[wsK], r = lpEval(sc, WS_ST[wsK]);
-  let h = `<div class="wsh"><b>${sc.id} · ${esc2(sc.title)}</b> · severity ${sc.S}, target ${sciH(r.tgt)} /yr</div><table class="tbl ws"><tr><th>Initiating event</th><th class="num">/yr</th><th>Layers credited (struck: rule broken)</th><th class="num">f, /yr</th></tr>`;
-  r.rows.forEach(w => { h += `<tr><td>${esc2(w.ie.length > 52 ? w.ie.slice(0, 51) + '…' : w.ie)}</td><td class="num">${sciH(w.ief)}</td><td>${w.used.map((u, j) => [u, sc.ipl[j]]).filter(x => x[0][2] !== 'off').map(([u, p]) => u[2] ? `<s>${esc2(iplShort(p))}</s> <b>${WHY[u[2]]}</b>` : `${esc2(iplShort(p))} <b>${sciH(u[1])}</b>`).join(' · ') || '<i>none</i>'}</td><td class="num">${sciH(w.f)}</td></tr>`; });
-  h += `</table><p class="rd">CM ${sciH(r.rows[0].cm)} · total <b>${sciH(r.tot)} /yr</b> · RRF ${rrfT(r.rrf)} ${r.rrf <= 1 ? bdg('ok', 'tolerable') : bdg('gap', 'add PFD ≤ ' + sciT(r.need))}</p><p class="tagnote">i not independent of this cause · t under 10 min to harm (model) · d shares a part with a credited layer · r replaced by a recommendation</p>`;
-  el('wsOut').innerHTML = h;
-}
-
-/* ---------- Part 2 · time to act (alarm → harm, the LOPA tab's model runs) ---------- */
-const TM = [['L1 · PIAH-112 → ' + LP_R.lim.acc + ' barg', R.L1.tAcc - R.L1.tAl], ['L2 · LIAH-101 → V-101 full (slug)', R.L2.slug.alarmToFull], ['L2 · LIAH-101 → LSHH-101 (LV-101 shut)', R.L2.lv101.alarmToHH],
-  ['L3 · TIAH-109 → ' + LP_R.lim.seal + ' °C', R.L3.cm.alarmToSeal], ['L4 · PIAL-150 → bearing ' + LP_R.lim.brg + ' °C', R.L4.tBrg - R.L4.tAl], ['L5 · UICAL-103 → ' + LP_R.lim.surgeN + ' surge cycles', R.L5.d9.alarmToHaz],
-  ['L6 · PICAH-102 → ' + LP_R.lim.hdrAcc + ' barg', R.L6.alarmToHaz], ['L7 · SICAH-100 → ' + LP_R.lim.nDes + ' % speed', R.L7.tHaz - R.L7.tAl]].map(x => [x[0], x[1] / 60]);
-function tmUpd(){
-  const need = v('tm'); setT('tmV', need + ' min');
-  const X = m => 270 + (Math.log10(m) + 1) / 3 * 330; let g = '';
-  [0.1, 1, 10, 100].forEach(m => { g += `<line x1="${X(m)}" x2="${X(m)}" y1="10" y2="392" stroke="#E5E7EB"/>` + svgT(X(m), 412, m >= 1 ? m + ' min' : '6 s', { a: 'middle', c: '#6B7280', s: 13 }); });
-  TM.forEach((t, i) => { const y = 14 + i * 47, ok = t[1] >= need, w = Math.max(3, Math.min(X(t[1]), 625) - X(0.1));
-    g += svgT(262, y + 23, t[0], { s: 13, b: 1, a: 'end' }) + `<rect x="${X(0.1)}" y="${y + 9}" width="${w}" height="20" rx="3" fill="${ok ? '#15803D' : '#DC2626'}" opacity=".85"/>` + svgT(Math.min(X(0.1) + w + 6, 590), y + 24, t[1] >= 1 ? fx(t[1], 1) + ' min' : Math.round(t[1] * 60) + ' s', { s: 13, b: 1 }); });
-  g += `<line x1="${X(need)}" x2="${X(need)}" y1="10" y2="394" stroke="#1F497D" stroke-width="3" stroke-dasharray="6 4"/>`;
-  el('tmSvg').innerHTML = g;
-  const n = TM.filter(t => t[1] >= need).length; setH('tmTxt', `<b>${n} of ${TM.length}</b> alarms can be credited (PFD 0.1). The rest get PFD 1.<br>Times: LOPA-tab model runs, design state, no operator action.`);
-}
-
-/* ---------- Part 3 · Swiss cheese (BT1, the dry-gas-seal line) ---------- */
-const SWB = LP_BT[0], SWC = ['sgp', 'seal2', 'sealv', 'TOP', 'fgd', 'esdm', 'ign'], SWC_ON = { sgp: 1, seal2: 1, sealv: 0, fgd: 0, esdm: 1, ign: 1 };
-const SWC_F0 = lpIefSum('L8'), SWC_TGT = LP_SEV[SWB.con[0][1] - 1][2];
-function swcBuild(){ const B = SWB.bar; el('swcChips').innerHTML = SWC.filter(k => k !== 'TOP').map(k => `<button class="chip" data-k="${k}">${esc2(B[k][0])}</button>`).join('');
-  el('swcChips').querySelectorAll('.chip').forEach(b => b.onclick = () => { SWC_ON[b.dataset.k] ^= 1; swcUpd(); }); swcUpd(); }
-function swcUpd(){
-  const B = SWB.bar; let f = SWC_F0, g = '';
-  el('swcChips').querySelectorAll('.chip').forEach(b => { const on = !!SWC_ON[b.dataset.k], c = LP_LCOL[B[b.dataset.k][1]]; b.style.background = on ? c : '#fff'; b.style.color = on ? '#fff' : c; b.style.borderColor = c; b.style.borderStyle = B[b.dataset.k][3] ? 'dashed' : 'solid'; });
-  const xs = SWC.map((k, i) => 70 + i * 86), fs = [];
-  SWC.forEach((k, i) => { const x = xs[i];
-    if (k === 'TOP'){ g += `<ellipse cx="${x}" cy="160" rx="36" ry="62" fill="#FEE2E2" stroke="#DC2626" stroke-width="2.5"/>` + svgT(x, 152, 'gas', { a: 'middle', s: 12, b: 1, c: '#991B1B' }) + svgT(x, 168, 'released', { a: 'middle', s: 12, b: 1, c: '#991B1B' }); fs.push(f); return; }
-    const on = !!SWC_ON[k], c = LP_LCOL[B[k][1]], p = lpBarPfd(B[k]);
-    g += `<rect x="${x - 14}" y="60" width="28" height="200" rx="9" fill="${on ? c : '#fff'}" fill-opacity="${on ? 0.35 : 1}" stroke="${c}" stroke-width="2" ${on ? '' : 'stroke-dasharray="5 4"'}/>`;
-    [[0, 90], [6, 130], [-5, 205], [4, 235]].forEach(([dx, y]) => g += `<circle cx="${x + dx}" cy="${y}" r="${on && p < 1 ? 5 : 9}" fill="#fff" stroke="${c}"/>`);
-    if (on) f *= p; fs.push(f);
-    g += svgT(x, 52, on ? (p < 1 ? sciT(p) : 'no credit') : 'off', { a: 'middle', s: 12, c, b: 1 }); });
-  const wOf = q => clamp(2 + (Math.log10(q) + 8) * 1.6, 1.5, 16);
-  for (let i = 0; i < SWC.length; i++){ const xa = i ? xs[i - 1] + 16 : 20, xb = xs[i] - (SWC[i] === 'TOP' ? 36 : 16); g = `<line x1="${xa}" y1="160" x2="${xb}" y2="160" stroke="#991B1B" stroke-width="${wOf(i ? fs[i - 1] : SWC_F0)}" stroke-opacity=".75"/>` + g; }
-  const fe = fs[fs.length - 1], rrf = fe / SWC_TGT;
-  g += `<line x1="${xs[xs.length - 1] + 16}" y1="160" x2="650" y2="160" stroke="${rrf <= 1 ? '#15803D' : '#991B1B'}" stroke-width="${wOf(fe)}"/>`;
-  g += svgT(10, 300, `seal threats (LOPA L8): ${sciT(SWC_F0)} /yr`, { s: 14, b: 1 }) + svgT(650, 300, `jet fire: ${sciT(fe)} /yr`, { s: 14, b: 1, a: 'end', c: rrf <= 1 ? '#15803D' : '#C00000' });
-  g += svgT(10, 326, 'prevention ←  top event  → mitigation · slice label = PFD', { s: 12, c: '#6B7280' });
-  el('swcSvg').innerHTML = g;
-  setH('swcTxt', `Jet fire ${sciH(fe)} /yr vs target ${sciH(SWC_TGT)}: RRF <b>${rrfT(rrf)}</b> ${rrf <= 1 ? bdg('ok', 'tolerable') : bdg('gap', 'too frequent')}<br>Dashed chips: recommended, not fitted.`);
-}
-
-/* ---------- Part 3 · bow-tie (lpBow on LP_BT) ---------- */
-let btK = 0; const BT_ST = LP_BT.map(() => ({ off: [], esc: [], rec: false }));
-function btBuild(){ el('btChips').innerHTML = LP_BT.map((b, i) => `<button class="chip" data-v="${i}">${b.id}</button>`).join(''); }
-function btSel(k){ btK = +k; const bt = LP_BT[btK];
-  el('btEsc').innerHTML = bt.esc.map((e, i) => `<button class="chip${BT_ST[btK].esc.includes(i) ? ' on' : ''}" data-e="${i}" title="${esc2(e[0])}">⚡ ${esc2(e[0].replace(/ \(.*\)$/, ''))}</button>`).join('');
-  el('btEsc').querySelectorAll('.chip').forEach(b => b.onclick = () => { const s = BT_ST[btK], i = +b.dataset.e; s.esc = s.esc.includes(i) ? s.esc.filter(x => x !== i) : s.esc.concat(i); b.classList.toggle('on', s.esc.includes(i)); btUpd(); });
-  const rb = document.querySelector('[data-group="btR"] .chip[data-v="' + (BT_ST[btK].rec ? 1 : 0) + '"]'); document.querySelectorAll('[data-group="btR"] .chip').forEach(b => b.classList.toggle('on', b === rb));
-  btUpd(); }
-function wrapL(s, n){ const w = s.split(' '), L = ['']; w.forEach(x => { if ((L[L.length - 1] + ' ' + x).trim().length > n && L[L.length - 1]) L.push(x); else L[L.length - 1] = (L[L.length - 1] + ' ' + x).trim(); }); return L.slice(0, 4); }
-function btUpd(){
-  const bt = LP_BT[btK], st = BT_ST[btK], r = lpBow(bt, st), escB = new Set(); st.esc.forEach(i => bt.esc[i][1].forEach(b => escB.add(b)));
-  const TX = 520, TY = 186, BW = 68, BH = 60, STEP = 74; let g = '';
-  const box = (id, x, y) => { const b = bt.bar[id], s = r.state(id), c = s === 'replaced' ? '#9CA3AF' : LP_LCOL[b[1]], fail = s === 'failed', dash = s === 'notfitted' || s === 'replaced';
-    const lab = wrapL(b[0].replace(/ \(R\d+(, [^)]*)?\)/, '').replace(/ \(.*\)$/, ''), 10);
-    let h = `<g class="btb" data-id="${id}" style="cursor:pointer"><rect x="${x}" y="${y - BH / 2}" width="${BW}" height="${BH}" rx="6" fill="${dash ? '#fff' : c}" fill-opacity="${dash ? 1 : 0.16}" stroke="${c}" stroke-width="2" ${dash ? 'stroke-dasharray="5 3"' : ''}/>`;
-    lab.forEach((t, i) => h += svgT(x + BW / 2, y - BH / 2 + 14 + i * 12.5, esc2(t), { a: 'middle', s: 11, c: dash ? '#6B7280' : '#111827', b: i === 0 }));
-    if (fail) h += `<path d="M${x + 6},${y - BH / 2 + 6} L${x + BW - 6},${y + BH / 2 - 6} M${x + BW - 6},${y - BH / 2 + 6} L${x + 6},${y + BH / 2 - 6}" stroke="#DC2626" stroke-width="3.5"/>`;
-    if (escB.has(id)) h += svgT(x + BW - 4, y - BH / 2 - 4, '⚡', { a: 'end', s: 13, c: '#DC2626' });
-    return h + '</g>'; };
-  const nT = bt.thr.length, nC = bt.con.length;
-  bt.thr.forEach((t, i) => { const y = nT === 1 ? TY : 34 + i * (306 / Math.max(1, nT - 1)), ids = t[2];
-    g += `<path d="M110,${y} H${130 + 4 * STEP} L${TX - 62},${TY}" fill="none" stroke="#9CA3AF" stroke-width="2"/>`;
-    g += `<rect x="0" y="${y - 29}" width="110" height="52" rx="6" fill="#F3F4F6" stroke="#6B7280"/>` + wrapL(t[0].replace(/ \(LOPA L\d\)/, '').replace(/ \(assumed[^)]*\)/, ''), 16).slice(0, 3).map((q, k) => svgT(55, y - 13 + k * 13, esc2(q), { a: 'middle', s: 11, b: k === 0 })).join('');
-    g += svgT(55, y + 36, sciT(r.thr[i].f0) + ' → ' + sciT(r.thr[i].f), { a: 'middle', s: 11, c: '#1F497D', b: 1 });
-    ids.forEach((id, k) => g += box(id, 122 + k * STEP, y)); });
-  bt.con.forEach((c, i) => { const y = nC === 1 ? TY : 50 + i * (280 / Math.max(1, nC - 1)), ids = c[2], rc = r.con[i];
-    g += `<path d="M${TX + 62},${TY} L${590},${y} H${1000}" fill="none" stroke="#9CA3AF" stroke-width="2"/>`;
-    const ok = rc.rrf <= 1; g += `<rect x="1000" y="${y - 32}" width="140" height="64" rx="6" fill="${ok ? '#DCFCE7' : '#FEE2E2'}" stroke="${ok ? '#15803D' : '#DC2626'}"/>` +
-      wrapL(c[0].replace(/ \(.*\)/, ''), 22).slice(0, 3).map((q, k) => svgT(1070, y - 16 + k * 13, esc2(q), { a: 'middle', s: 10.5, b: k === 0 })).join('') + svgT(1070, y + 26, `S${c[1]} · RRF ${rrfT(rc.rrf)}`, { a: 'middle', s: 11, b: 1, c: ok ? '#15803D' : '#C00000' });
-    ids.forEach((id, k) => g += box(id, 598 + k * STEP, y)); });
-  g += `<ellipse cx="${TX}" cy="${TY}" rx="62" ry="44" fill="#FEE2E2" stroke="#DC2626" stroke-width="2.5"/>` + wrapL(bt.top.replace(/ \(.*\)/, ''), 16).slice(0, 4).map((q, k) => svgT(TX, TY - 14 + k * 13, esc2(q), { a: 'middle', s: 10.5, b: 1, c: '#991B1B' })).join('');
-  g += svgT(TX, TY + 62, 'top event ' + sciT(r.top) + ' /yr', { a: 'middle', s: 13, b: 1, c: '#991B1B' });
-  el('btSvg').innerHTML = g;
-  el('btSvg').querySelectorAll('.btb').forEach(b => b.onclick = () => { const id = b.dataset.id, s = st.off; st.off = s.includes(id) ? s.filter(x => x !== id) : s.concat(id); btUpd(); });
-  const worst = r.con.reduce((a, c) => c.rrf > a.rrf ? c : a, r.con[0]);
-  setH('btTxt', `<b>${esc2(bt.name)}</b> · top event ${sciH(r.top)} /yr · worst RRF ${rrfT(worst.rrf)} ${worst.rrf <= 1 ? bdg('ok', 'tolerable') : bdg('gap', 'too frequent')}${st.off.length ? ' · failed: ' + st.off.length + ' barrier(s)' : ''}`);
-}
-
-/* ---------- Part 3 · bow-tie vs LOPA (seal line) and BT2 ---------- */
-function cmpBuild(){
-  const B = SWB.bar, line = SWC.filter(k => k !== 'TOP'), f = line.reduce((a, k) => a * lpBarPfd(B[k]), SWC_F0);
-  const l8 = LP_SC.find(s => s.id === 'L8'), r = lpEval(l8, lpAllRec(l8));
-  setH('cmpBt', `${fx(SWC_F0, 1)} /yr × every barrier: vent trip, gas detection and operator ESD-2 all multiply. <b>${sciH(f)} /yr</b>`);
-  setH('cmpLp', `Gas detection uses the same BDVs as the vent trip: struck (d). <b>${sciH(r.tot)} /yr</b>, RRF ${rrfT(r.rrf)}`);
-  const b0 = lpBow(LP_BT[1], {}), b1 = lpBow(LP_BT[1], { rec: true });
-  setH('bt2Txt', `RRF <b>${rrfT(b0.con[1].rrf)}</b> as built → <b>${rrfT(b1.con[1].rrf)}</b> with every recommendation: still above 1.`);
-  setT('wrHaz', `≈ ${LP_R.inv.loop} t of HP gas in the loop`);
-  const e = LP_SIF.esd2, ps = e.subs.map(u => lpSub(u[1], u[2], e.T)), tot = ps.reduce((a, b) => a + b, 0);
-  setT('rbdNote', `ESD-2 must open both BDVs: 2oo2, ${Math.round(100 * ps[2] / tot)} % of its PFD.`);
-}
-
-function wireDeck(){
-  sliders(['pb', 'pa', 'pt'], popUpd);
-  el('swL').value = Math.log10(LP_XV100[2]); sliders(['swL', 'swT'], swUpd);
-  sfBuild(); chips('sfV', q => { sfV = +q; sfUpd(); }); sliders(['sfT'], sfUpd);
-  chips('feK', feUpd);
-  rfInit(); sliders(['rfI', 'rfA', 'rfS', 'rfP', 'rfC'], rfUpd);
-  sevBuild();
-  wsBuild(); chips('wsK', wsSel); chips('wsB', wsCase);
-  sliders(['tm'], tmUpd);
-  swcBuild(); cmpBuild();
-  btBuild(); chips('btK', btSel); chips('btR', q => { BT_ST[btK].rec = q === '1'; btUpd(); });
-}
-
-document.querySelectorAll('a[href^="#/"]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); Deck.goTo(+a.getAttribute('href').slice(2) - 1); }));
-(() => { const z = document.createElement('div'); z.id = 'zoomer'; z.innerHTML = '<img alt="">'; el('stage').appendChild(z);
-  document.querySelectorAll('img.zoomable').forEach(i => i.addEventListener('click', () => { z.firstChild.src = i.src; z.classList.add('open'); }));
-  z.addEventListener('click', () => z.classList.remove('open'));
-  addEventListener('keydown', e => { if (e.key === 'Escape') z.classList.remove('open'); }); })();
-if (typeof wireDeck === 'function') wireDeck();
 </script>
 </body>
 </html>
