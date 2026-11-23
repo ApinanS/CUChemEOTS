@@ -296,6 +296,14 @@ details.guide ul{margin:6px 0 4px;padding-left:18px;font-size:14px}
 #hazop .hzmx td b{font-size:16px}
 #hazop .hzmx .hzmr{position:absolute;left:4px;top:2px;font-size:10px;opacity:.75}
 
+/* ===== HAZOP Studio tab (prefix hzs) ===== */
+#hzs .doc{max-width:none}
+#hzs .hzlinks{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
+#hzs .hzdet{margin:8px 0;border:1px solid var(--edge);border-radius:6px;padding:4px 10px}
+#hzs .hzdet>summary{cursor:pointer;padding:4px 0}
+#hzs #hzsWrap{width:100%;border:1px solid var(--edge);border-radius:6px;overflow:hidden;background:#fff}
+#hzs #hzsFrame{display:block;width:100%;height:calc(100vh - 150px);min-height:640px;border:0;background:#fff}
+
 /* ===== Consequence analysis (prefix cq) ===== */
 #cq .doc{max-width:none}
 #cq .cqsvg{width:100%;height:auto;display:block;color:var(--ink)}
@@ -978,6 +986,7 @@ tr.hgrp th{background:var(--panel-2);text-align:left;padding-top:8px}
  <div class="subrow" data-group="gsafety">
   <button class="tab" role="tab" aria-selected="false" data-view="hazid">HAZID</button>
   <button class="tab" role="tab" aria-selected="false" data-view="hazop">HAZOP</button>
+  <button class="tab" role="tab" aria-selected="false" data-view="hzs">HAZOP Studio</button>
   <button class="tab" role="tab" aria-selected="false" data-view="cq">Consequence analysis</button>
   <button class="tab" role="tab" aria-selected="false" data-view="safety">Safety layers</button>
   <button class="tab" role="tab" aria-selected="false" data-view="lopa">LOPA</button>
@@ -1068,6 +1077,7 @@ tr.hgrp th{background:var(--panel-2);text-align:left;padding-top:8px}
    <tr class="hgrp"><th colspan="2">Safety · what can go wrong and what stops it</th></tr>
    <tr><td>HAZID</td><td>Hazard identification on the PFD: eight study areas with markers coloured by risk, a 12-category guideword checklist, the hazard register with area and MAH filters (CSV), the major accident hazards, and where each one goes next (HAZOP, LOPA, consequence analysis).</td></tr>
    <tr><td>HAZOP</td><td>IEC 61882 study on the P&amp;ID: method, team, ten nodes with a node map, guide words, the risk matrix with counts, filterable worksheets (CSV) whose safeguards quote the simulator&#39;s own alarm and trip limits, coverage, recommendations, a dynamic check of ten deviations on copies of the model, follow-up, and the HAZOP report PDF.</td></tr>
+   <tr><td>HAZOP Studio</td><td>PHA Studio inside the OTS: run your own HAZOP of the ten nodes in the Simple edition (six steps: set up the study, nodes, worksheet, risk, actions, check and report) or switch to Full for LOPA, scenario groups and the PHA administration pages. The safeguards of this OTS (alarms, trips, SIFs, relief) are a linked master list. A worked example of node N1 loads from <b>File → Worked example</b>; the link bar opens the program in its own window, as a standalone page or as an HTML file that works offline.</td></tr>
    <tr><td>Consequence analysis</td><td>Screening of six loss-of-containment scenarios (hot residue, naphtha, off-gas, transfer line / firebox, desalter burst, fuel gas) with the CCPS CHEF and RAST methods: method chain, overview, a worked calculation with every equation shown (Design or Live inputs, editable), effect circles on an assumed plot plan, sensitivity, checks, and the S that HAZID and LOPA should carry.</td></tr>
    <tr><td>Safety layers</td><td>Also listed under Process &amp; Design. Same page.</td></tr>
    <tr><td>LOPA</td><td>A · Reliability for safety: terms, a Weibull population lab, PFD and proof testing, block-diagram rules, a SIF calculator for the four heater trips (sensor → UY-105 → SDV-106/112) and the course parallel method. B · LOPA of scenarios L1–L7 with an interactive worksheet (independence per cause, conditional modifiers, RRF, required SIL, course risk matrix), a register and CSV. C · Bow-ties for coil rupture and firebox explosion: click a barrier to fail it, add escalation factors or fit the recommended barriers. All frequencies are assumed teaching values.</td></tr>
@@ -1840,6 +1850,7 @@ tr.hgrp th{background:var(--panel-2);text-align:left;padding-top:8px}
  <div class="panel doc">
   <h2>HAZOP · hazard and operability study of the atmospheric crude unit</h2>
   <div class="deckbox"><div><b>HAZOP report ACU-SA-HZP-001 rev A (PDF)</b><br><span class="small">The study written up as an EPC-style report: close-out summary, executive summary, scope and node map, method and risk matrix, sessions, findings, the worksheets of every node, drawings and one action close-out sheet per recommendation. Rev 0 · Issued for teaching.</span></div><a class="btn" href="ACU-HAZOP-Report.pdf" target="_blank" rel="noopener">Open the HAZOP report</a></div>
+  <div class="deckbox hzwsapp"><div><b>PHA Studio</b>: run your own HAZOP of this unit. The Simple edition is for the class workshop (six steps, worked example of node N1 from <i>File → Worked example</i>); switch to Full for LOPA, scenario groups and the administration pages of a real PHA.</div><a class="btn" href="#" onclick="showView('hzs');return false;">Open HAZOP Studio</a></div>
   <p class="small muted">A teaching HAZOP after IEC 61882, run on the P&amp;ID of this OTS with an example risk matrix. Alarm limits and trip settings in the safeguards are read from the simulator itself, and part 9 tests ten deviations on copies of the model.</p>
   <nav class="toc small"><a href="#hz1">1 Standard and method</a> · <a href="#hz2">2 Team and documents</a> · <a href="#hz3">3 Nodes</a> · <a href="#hz4">4 Guide words and parameters</a> · <a href="#hz5">5 Risk matrix</a> · <a href="#hz6">6 Worksheets</a> · <a href="#hz7">7 Coverage</a> · <a href="#hz8">8 Recommendations</a> · <a href="#hz9">9 Dynamic check</a> · <a href="#hz10">10 Follow-up</a></nav>
   <h3 id="hz1">1 · Standard and method</h3>
@@ -1875,6 +1886,30 @@ tr.hgrp th{background:var(--panel-2);text-align:left;padding-top:8px}
   <ul id="hzTell"></ul>
   <h3 id="hz10">10 · Follow-up and close-out</h3>
   <div id="hzFollow"></div>
+ </div>
+</section>
+
+<section class="view" id="hzs">
+ <div class="panel doc">
+  <h2>HAZOP Studio · run your own HAZOP of the atmospheric crude unit</h2>
+  <p class="small">PHA Studio is a team HAZOP and LOPA program set up for this unit: the ten nodes of the HAZOP tab, the node map and P&amp;ID sheet 001, the guide words, the S and L tables of the risk matrix, and the safeguards of this OTS (alarms, trips, SIFs and relief, with tag and PFD) as a master list. The <b>Simple</b> edition below walks a class workshop through six steps; switch to <b>Full</b> at the top right for LOPA, scenario groups and the administration pages of a real PHA. The study data stay when you switch.</p>
+  <p class="small hzlinks"><button class="btn small" id="hzsFull">Full screen</button> · <a href="hazop-studio.html" target="_blank" rel="noopener">Open in its own window ↗</a> · <a href="https://apinans.github.io/CUChemEOTS/Atmospheric%20Crude%20Unit/Student/PHA_Studio_V-1_Simple.html" target="_blank" rel="noopener">Standalone PHA Studio · Simple ↗</a> · <a href="https://apinans.github.io/CUChemEOTS/Atmospheric%20Crude%20Unit/Student/PHA_Studio_V-1_Full.html" target="_blank" rel="noopener">· Full ↗</a> · <a href="PHA_Studio_V-1_Simple.html" download>⬇ Download HTML · Simple</a> · <a href="PHA_Studio_V-1_Full.html" download>⬇ Download HTML · Full</a> · <a href="PHA_Studio_V-1_example_N1.json" download>⬇ Download example</a></p>
+  <p class="small muted">Worked example: node N1 (charge and cold preheat), load it from <i>File → Worked example</i>. It fills node N1 only and leaves your other nodes as they are; Undo takes it out again. The HTML file works offline on any computer. Workshop phone mode needs an http(s) copy (web server or GitHub Pages).</p>
+  <details class="hzdet"><summary class="small"><b>What it does, next to commercial PHA software</b></summary>
+   <div class="tscroll"><table class="tbl small"><thead><tr><th>Function</th><th>PHA-Pro</th><th>PHAWorks RA Edition</th><th>HAZOP Studio (this page)</th></tr></thead><tbody>
+    <tr><td>Study set-up: information, team, sessions, documents</td><td>✓</td><td>✓</td><td>✓ Simple step 1; Full Project pages</td></tr>
+    <tr><td>Nodes with intent, equipment and drawings</td><td>✓</td><td>✓</td><td>✓ ten nodes of this OTS, node map and P&amp;ID</td></tr>
+    <tr><td>Worksheet: deviation, causes, consequences, safeguards, S, L, risk</td><td>✓</td><td>✓</td><td>✓ guide word × parameter, risk matrix of this OTS</td></tr>
+    <tr><td>Safeguards and recommendations as linked entries</td><td>✓</td><td>✓</td><td>✓ master list from the OTS alarms, trips and SIFs</td></tr>
+    <tr><td>LOPA: IE frequency, enabling and modifiers, IPL PFD, TEL, RRR / RRF</td><td>✓</td><td>✓</td><td>✓ Full edition, steps shown</td></tr>
+    <tr><td>Scenario groups, analytics, data check, parking lot</td><td>part</td><td>✓</td><td>✓ Full edition</td></tr>
+    <tr><td>Report and export (Word, Excel, CSV, print)</td><td>✓</td><td>✓</td><td>✓</td></tr>
+    <tr><td>Projector workshop with phone ideas</td><td>–</td><td>–</td><td>✓ Workshop mode (needs http(s))</td></tr>
+   </tbody></table></div>
+   <p class="small muted">A teaching tool: it is not affiliated with, endorsed by or a copy of either product and reproduces none of their screens. PHA-Pro and PHAWorks are trademarks of their owners. Library values (IE frequencies, PFDs, TEL) are teaching defaults in the CCPS style.</p>
+  </details>
+  <p class="small muted" id="hzsMsg" aria-live="polite"></p>
+  <div id="hzsWrap"></div>
  </div>
 </section>
 
@@ -6551,6 +6586,21 @@ function hzBuild(){
   $('#hzDynBtn').onclick=hzDynRunAll;
   hzDynRunAll();}
 TB.tab('hazop',hzBuild,null);
+
+/* ===== HAZOP Studio tab (prefix hzs): PHA Studio Simple build beside this page as hazop-studio.html ===== */
+/* hooks the program uses when it runs inside this page (EMB): HZT, hztStart, hzsSave */
+var HZT={tests:[]};
+function hztStart(id){showView('operate');const m=$('#hzsMsg');if(m)m.textContent='Test '+id+' was asked for: this unit has no scripted HAZOP tests yet, so the DCS console opens as it is.';}
+async function hzsSave(name,blob){
+  try{if(dlNs===undefined)dlNs=(window.claude&&window.claude.use)?await window.claude.use('downloads'):null;}catch(e){dlNs=null;}
+  if(dlNs){try{await dlNs.save({filename:name,data:blob});return true;}catch(e){return false;}}
+  try{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1000);return true;}catch(e){return false;}}
+function hzsBuild(){
+  const f=document.createElement('iframe');f.id='hzsFrame';f.title='HAZOP Studio (PHA Studio, Simple edition)';f.src='hazop-studio.html';$('#hzsWrap').appendChild(f);
+  $('#hzsFull').onclick=()=>{const w=$('#hzsWrap');try{(w.requestFullscreen||w.webkitRequestFullscreen).call(w);}catch(e){window.open('hazop-studio.html','_blank');}};
+}
+TB.tab('hzs',hzsBuild,null);
+if(/^#hzt-/.test(location.hash))setTimeout(()=>hztStart(location.hash.slice(5)),500);
 
 /* ===== Consequence analysis: pure screening engine (prefix cq) =====
    Methods of the CCPS CHEF calculation aid (v4.5) and RAST (v4.6) defaults, written out step by step.
@@ -13750,7 +13800,7 @@ function vpMini(){const m=VP.mini;if(!m)return;const e=exState;let h='';
 
 
 /* Grouped tab navigation (ots-generation 8l), step 1.8. Seven groups; a tab may sit in two groups (same data-view, one section). */
-const TAB_GROUPS={"gstart": ["howto", "workbook"], "gdesign": ["process", "design", "bfd", "pfd", "control", "safety", "pid"], "goper": ["opwin", "flex", "trans", "relia", "effic", "sop"], "gsafety": ["hazid", "hazop", "cq", "safety", "lopa", "srs", "cem", "inc", "ems"], "gepc": ["eproj", "eproc", "lay", "emech", "erel", "einst", "eelec", "ecomm"], "grun": ["operate", "ems", "field", "v3d", "pid"], "gtrain": ["exercises", "sps", "sop", "debrief", "export", "instructor"]}, TAB_PRIMARY={"pid": "gdesign", "safety": "gsafety", "sop": "goper", "ems": "grun"};
+const TAB_GROUPS={"gstart": ["howto", "workbook"], "gdesign": ["process", "design", "bfd", "pfd", "control", "safety", "pid"], "goper": ["opwin", "flex", "trans", "relia", "effic", "sop"], "gsafety": ["hazid", "hazop", "hzs", "cq", "safety", "lopa", "srs", "cem", "inc", "ems"], "gepc": ["eproj", "eproc", "lay", "emech", "erel", "einst", "eelec", "ecomm"], "grun": ["operate", "ems", "field", "v3d", "pid"], "gtrain": ["exercises", "sps", "sop", "debrief", "export", "instructor"]}, TAB_PRIMARY={"pid": "gdesign", "safety": "gsafety", "sop": "goper", "ems": "grun"};
 let curGroup=null;const lastInGroup={};
 function gBtns(g){return [...document.querySelectorAll(`.subrow[data-group="${g}"] .tab`)].filter(b=>!b.hidden);}
 function groupsOf(v){return Object.keys(TAB_GROUPS).filter(g=>gBtns(g).some(b=>b.dataset.view===v));}
