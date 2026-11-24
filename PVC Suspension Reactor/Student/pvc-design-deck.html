@@ -628,7 +628,7 @@ section.dense .eq-note{margin-top:6px}
     <li><b>Order</b><span class="so">what is set first during a batch</span></li>
     <li><b>Window</b><span class="so">how far initiator dose and CW may move</span></li>
     <li><b>Design decisions</b><span class="so">the choices behind R-101</span></li>
-    <li><b>Sizing</b><span class="so">from 200 kt/y to 141 m³ and its cooling</span></li>
+    <li><b>Sizing</b><span class="so">from 178 kt/y to 141 m³ and its cooling</span></li>
   </ol></div>
 </section>
 
@@ -951,8 +951,8 @@ var DS_REF={"note":"Reference batch (pvBatch default: start of reaction, 57 °C,
 function dsSetRef(x){DS_REF=x;}  /* node tests only */
 /* calculator inputs: [group, key, label, unit, default, step] */
 var DS_IN=[
- ['P','cap','PVC capacity (all reactors)','kt/y',200,5],['P','hours','Operating hours','h/y',8000,100],['P','nR','Number of reactors','—',4,1],
- ['P','tRx','Reaction time to end point','h',5.3,0.1],['P','tOther','Other batch steps (evacuate, charge, heat-up, degas, discharge)','h',1.6,0.1],['P','X','Conversion at the end point','—',0.848,0.005],
+ ['P','cap','PVC capacity (all reactors)','kt/y',178,2],['P','hours','Operating hours','h/y',8000,100],['P','nR','Number of reactors','—',4,1],
+ ['P','tRx','Reaction time to end point','h',5.3,0.1],['P','tOther','Other batch steps (evacuate, charge, heat-up, degas, discharge)','h',2.45,0.05],['P','X','Conversion at the end point','—',0.848,0.005],
  ['V','ratio','Water : VCM charge ratio','t/t',1.18,0.01],['V','T','Reaction temperature','°C',57,0.5],['V','lvl','Fill level at charge (of total height)','%',83,0.5],
  ['V','LD','Tangent-to-tangent length / diameter','—',1.64,0.02],['V','jcov','Jacketed share of the straight side','%',95,1],['V','PV','Agitator power per volume','kW/m³',2.4,0.1],
  ['H','dHp','Heat of polymerisation','kJ/kg',1136,1],['H','peakAvg','Peak / average heat release','—',1.33,0.01],['H','Xpk','Conversion at the peak (gel effect ends at Xf)','—',0.72,0.01],

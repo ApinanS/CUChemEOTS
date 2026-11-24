@@ -371,8 +371,8 @@ svg text{font-family:'Montserrat',sans-serif}
   <div class="grow stack">
     <div class="eq-recall"><span class="rl">Definitions</span>$R(t)=e^{-\lambda t}\qquad MTBF=1/\lambda$</div>
     <div class="eq-step">$MTTF=1/2=0.5\ \text{yr}\approx 4380\ \text{h}$<span class="why">non-repairable view: time to the first failure</span></div>
-    <div class="eq-step">$4380/6.9\approx 635\ \text{batch cycles}$<span class="why">design cycle 6.9 h</span></div>
-    <div class="eq-step">$R(6.9\ \text{h})=e^{-2\times 6.9/8000}=99.83\ \%$<span class="why">t in years: 6.9 h of an 8000 h year</span></div>
+    <div class="eq-step">$4380/7.75\approx 565\ \text{batch cycles}$<span class="why">design cycle 7.75 h</span></div>
+    <div class="eq-step">$R(7.75\ \text{h})=e^{-2\times 7.75/8000}=99.81\ \%$<span class="why">t in years: 7.75 h of an 8000 h year</span></div>
   </div>
 </section>
 
@@ -511,14 +511,14 @@ svg text{font-family:'Montserrat',sans-serif}
   <div class="s-head"><p class="kicker">Cost of one lost batch (training prices)</p><h2>A lost batch costs more than one batch</h2></div>
   <div class="grow stack dense">
     <div class="symtab">
-      <div class="sy">$t_s$</div><div>reactor time spent: half-way through the reaction (assumed)</div><div class="un">4.27 h</div>
+      <div class="sy">$t_s$</div><div>reactor time spent: half-way through the reaction (assumed)</div><div class="un">5.12 h</div>
       <div class="sy">$t_w$</div><div>wash and inspection (assumed)</div><div class="un">4 h</div>
-      <div class="sy">$r$</div><div>PVC per reactor-hour: 43.2 t ÷ 6.9 h</div><div class="un">6.26 t/h</div>
+      <div class="sy">$r$</div><div>PVC per reactor-hour: 43.2 t ÷ 7.75 h</div><div class="un">5.57 t/h</div>
       <div class="sy">$M$</div><div>margin on PVC (assumed)</div><div class="un">280 USD/t</div>
     </div>
     <div class="eq-box compact">$$C=(t_s+t_w)\,r\,M+0.4\times 51\ \text{t}\times(1080-850)$$</div>
-    <div class="eq-step">$(4.27+4)\times 6.26=51.7\ \text{t PVC not made}$<span class="why">more than one 43.2 t batch</span></div>
-    <div class="eq-step">$C=14.5+4.7=19.2\ \text{k USD}$<span class="why">40 % of the VCM sold off-grade (assumed)</span></div>
+    <div class="eq-step">$(5.12+4)\times 5.57=50.8\ \text{t PVC not made}$<span class="why">more than one 43.2 t batch</span></div>
+    <div class="eq-step">$C=14.2+4.7=18.9\ \text{k USD}$<span class="why">40 % of the VCM sold off-grade (assumed)</span></div>
   </div>
 </section>
 
@@ -542,7 +542,7 @@ svg text{font-family:'Montserrat',sans-serif}
   <div class="grow"><ul class="clean">
     <li>FSLL-110 trips 35.75 s after the pump stops; window 34.2 s.</li>
     <li>A manual start inside it keeps the batch, but not reliably.</li>
-    <li>A lost batch ≈ 52 t PVC not made, ≈ 19 k USD.</li>
+    <li>A lost batch ≈ 51 t PVC not made, ≈ 19 k USD.</li>
     <li>Two pumps with auto-start give the lowest annual cost.</li>
   </ul></div>
 </section>
@@ -570,7 +570,7 @@ svg text{font-family:'Montserrat',sans-serif}
       <div class="sy">$\lambda_i$</div><div>failure rate of element i, all modes (course or assumed)</div><div class="un">1/yr</div>
       <div class="sy">$f_i$</div><div>share of those failures that loses a batch (assumed)</div><div class="un">–</div>
       <div class="sy">$L_i$</div><div>reactor-hours lost per event: spent + wash + repair</div><div class="un">h</div>
-      <div class="sy">$t_c$</div><div>batch cycle</div><div class="un">6.9 h</div>
+      <div class="sy">$t_c$</div><div>batch cycle</div><div class="un">7.75 h</div>
     </div>
     <div class="eq-box compact">$$\lambda_{sys}=\sum_i \lambda_i f_i$$</div>
     <div class="eq-step">$A=1-\dfrac{\sum_i\lambda_i f_i L_i}{H}$<span class="why">hours lost, summed over the elements</span></div>
@@ -626,7 +626,7 @@ svg text{font-family:'Montserrat',sans-serif}
     </div>
     <div class="sim-out tight"><svg id="fwSvg" style="width:100%"></svg></div>
   </div>
-  <p class="simsum">Best interval <b>42 batches, 6.82 t/h</b>: 8.9 % above the design recipe on a clean wall.</p>
+  <p class="simsum">Best interval <b>42 batches, 6.01 t/h</b>: 7.8 % above the design recipe on a clean wall.</p>
 </section>
 
 <section class="slide" data-title="Inventory reliability">
@@ -654,7 +654,7 @@ svg text{font-family:'Montserrat',sans-serif}
     </div>
     <div class="sim-out tight"><svg id="ivSvg" style="width:100%"></svg><div class="rd" id="ivTxt"></div></div>
   </div>
-  <p class="simsum">200 m³ is only 3 h at 66 m³/h; closing 90 % of the gap needs <b>≈ 18.5 h ≈ 1221 m³</b>.</p>
+  <p class="simsum">200 m³ is only 3.4 h at 59 m³/h; closing 90 % of the gap needs <b>≈ 18.5 h ≈ 1087 m³</b>.</p>
 </section>
 
 <section class="slide" data-title="Interactive · heat-removal audit" id="s-aud">
@@ -686,7 +686,7 @@ svg text{font-family:'Montserrat',sans-serif}
 <section class="slide" data-title="What part 3 settled">
   <div class="s-head"><p class="kicker">Part 3 · summary</p><h2>What part 3 settled</h2></div>
   <div class="grow"><ul class="clean">
-    <li>R-101 loses ≈ 6 batches a year; availability 98.89 %.</li>
+    <li>R-101 loses ≈ 6 batches a year; availability 98.82 %.</li>
     <li>The running pump and power dominate the Pareto.</li>
     <li>2oo3 voting is safer and loses fewer batches.</li>
     <li>Wash interval, buffer and CW temperature protect output.</li>
@@ -882,12 +882,12 @@ function bindSlider(id, fn){
 var PRICE={vcm:800,pvc:1080,pvcOff:850,lumpLoss:1,steam:20,cw:0.03,kwh:0.10};
 var RL_D={"standby":[{"d":null,"trip":35.75,"first":"FSLL-110 jacket circulation below 120 m³/h while reacting (30 s)","tFll":6,"tAlm":2,"minFI":0,"Tmax":57.098,"Tmin":46.953,"T5":54.988,"T30":46.953,"X30":0.265,"trace":[[-10,472.727,57.006],[-8,472.727,57.006],[-6,472.727,57.006],[-4,472.727,57.006],[-2,472.727,57.006],[0,472.727,57.006],[2,282.086,57.006],[4,168.326,57.005],[6,100.443,57.005],[8,59.937,57.005],[10,35.765,57.005],[12,21.342,57.006],[14,12.735,57.007],[16,7.599,57.008],[18,4.535,57.017],[20,2.706,57.027],[22,1.615,57.036],[24,0.964,57.045],[26,0.575,57.055],[28,0.343,57.064],[30,0.205,57.073],[32,0.122,57.082],[34,0.073,57.091],[36,0.043,57.098],[38,0.026,57.094],[40,0.015,57.084],[42,0.009,57.071],[44,0.006,57.057],[46,0.003,57.042],[48,0.002,57.026],[50,0.001,57.01],[52,0.001,56.994],[54,0,56.978],[56,0,56.961],[58,0,56.944],[60,0,56.927],[62,0,56.911],[64,0,56.894],[66,0,56.877],[68,0,56.86],[70,0,56.843],[72,0,56.826],[74,0,56.809],[76,0,56.792],[78,0,56.775],[80,0,56.758],[82,0,56.741],[84,0,56.725],[86,0,56.708],[88,0,56.691],[90,0,56.674]]},{"d":2,"trip":null,"first":"","tFll":null,"tAlm":2,"minFI":282.086,"Tmax":57.007,"Tmin":57.004,"T5":57.005,"T30":57.004,"X30":0.348,"trace":[[-10,472.727,57.006],[-8,472.727,57.006],[-6,472.727,57.006],[-4,472.727,57.006],[-2,472.727,57.006],[0,472.727,57.006],[2,282.086,57.006],[4,358.968,57.005],[6,404.845,57.006],[8,432.22,57.006],[10,448.556,57.006],[12,458.304,57.006],[14,464.121,57.006],[16,467.591,57.006],[18,469.663,57.006],[20,470.899,57.007],[22,471.636,57.007],[24,472.076,57.007],[26,472.339,57.007],[28,472.495,57.007],[30,472.589,57.007],[32,472.645,57.007],[34,472.678,57.007],[36,472.698,57.007],[38,472.71,57.007],[40,472.717,57.007],[42,472.721,57.007],[44,472.724,57.007],[46,472.725,57.007],[48,472.726,57.007],[50,472.726,57.007],[52,472.727,57.007],[54,472.727,57.007],[56,472.727,57.007],[58,472.727,57.007],[60,472.727,57.007],[62,472.727,57.007],[64,472.727,57.007],[66,472.727,57.007],[68,472.727,57.007],[70,472.727,57.007],[72,472.727,57.007],[74,472.727,57.007],[76,472.727,57.007],[78,472.727,57.007],[80,472.727,57.007],[82,472.727,57.007],[84,472.727,57.007],[86,472.727,57.007],[88,472.727,57.007],[90,472.727,57.007]]},{"d":10,"trip":null,"first":"","tFll":6,"tAlm":2,"minFI":35.765,"Tmax":57.018,"Tmin":57.002,"T5":57.003,"T30":57.004,"X30":0.348,"trace":[[-10,472.727,57.006],[-8,472.727,57.006],[-6,472.727,57.006],[-4,472.727,57.006],[-2,472.727,57.006],[0,472.727,57.006],[2,282.086,57.006],[4,168.326,57.005],[6,100.443,57.005],[8,59.937,57.005],[10,35.765,57.005],[12,211.984,57.007],[14,317.136,57.008],[16,379.883,57.009],[18,417.325,57.011],[20,439.668,57.012],[22,453,57.013],[24,460.956,57.014],[26,465.703,57.014],[28,468.536,57.015],[30,470.226,57.016],[32,471.235,57.016],[34,471.837,57.017],[36,472.196,57.017],[38,472.41,57.017],[40,472.538,57.017],[42,472.614,57.018],[44,472.66,57.018],[46,472.687,57.018],[48,472.703,57.018],[50,472.713,57.018],[52,472.719,57.018],[54,472.722,57.018],[56,472.724,57.018],[58,472.725,57.018],[60,472.726,57.018],[62,472.727,57.018],[64,472.727,57.018],[66,472.727,57.018],[68,472.727,57.018],[70,472.727,57.017],[72,472.727,57.017],[74,472.727,57.017],[76,472.727,57.017],[78,472.727,57.017],[80,472.727,57.017],[82,472.727,57.017],[84,472.727,57.017],[86,472.727,57.017],[88,472.727,57.016],[90,472.727,57.016]]},{"d":25,"trip":null,"first":"","tFll":6,"tAlm":2,"minFI":0.744,"Tmax":57.058,"Tmin":56.974,"T5":56.979,"T30":57.009,"X30":0.347,"trace":[[-10,472.727,57.006],[-8,472.727,57.006],[-6,472.727,57.006],[-4,472.727,57.006],[-2,472.727,57.006],[0,472.727,57.006],[2,282.086,57.006],[4,168.326,57.005],[6,100.443,57.005],[8,59.937,57.005],[10,35.765,57.005],[12,21.342,57.006],[14,12.735,57.007],[16,7.599,57.008],[18,4.535,57.017],[20,2.706,57.027],[22,1.615,57.036],[24,0.964,57.045],[26,108.132,57.051],[28,255.166,57.054],[30,342.904,57.056],[32,395.259,57.057],[34,426.501,57.058],[36,445.143,57.058],[38,456.267,57.058],[40,462.905,57.058],[42,466.866,57.058],[44,469.23,57.057],[46,470.64,57.057],[48,471.482,57.056],[50,471.984,57.055],[52,472.284,57.054],[54,472.463,57.053],[56,472.569,57.052],[58,472.633,57.051],[60,472.671,57.05],[62,472.694,57.049],[64,472.707,57.048],[66,472.715,57.047],[68,472.72,57.046],[70,472.723,57.045],[72,472.725,57.044],[74,472.726,57.043],[76,472.726,57.042],[78,472.727,57.041],[80,472.727,57.04],[82,472.727,57.039],[84,472.727,57.038],[86,472.727,57.037],[88,472.727,57.036],[90,472.727,57.035]]},{"d":40,"trip":35.75,"first":"FSLL-110 jacket circulation below 120 m³/h while reacting (30 s)","tFll":6,"tAlm":2,"minFI":0.015,"Tmax":57.098,"Tmin":43.505,"T5":54.192,"T30":43.505,"X30":0.265,"trace":[[-10,472.727,57.006],[-8,472.727,57.006],[-6,472.727,57.006],[-4,472.727,57.006],[-2,472.727,57.006],[0,472.727,57.006],[2,282.086,57.006],[4,168.326,57.005],[6,100.443,57.005],[8,59.937,57.005],[10,35.765,57.005],[12,21.342,57.006],[14,12.735,57.007],[16,7.599,57.008],[18,4.535,57.017],[20,2.706,57.027],[22,1.615,57.036],[24,0.964,57.045],[26,0.575,57.055],[28,0.343,57.064],[30,0.205,57.073],[32,0.122,57.082],[34,0.073,57.091],[36,0.043,57.098],[38,0.026,57.094],[40,0.015,57.084],[42,190.651,57.064],[44,304.407,57.044],[46,372.287,57.022],[48,412.793,57],[50,436.963,56.978],[52,451.386,56.956],[54,459.993,56.933],[56,465.128,56.91],[58,468.193,56.887],[60,470.021,56.864],[62,471.113,56.841],[64,471.764,56.818],[66,472.152,56.795],[68,472.384,56.772],[70,472.523,56.749],[72,472.605,56.726],[74,472.654,56.703],[76,472.684,56.68],[78,472.701,56.656],[80,472.712,56.633],[82,472.718,56.61],[84,472.722,56.587],[86,472.724,56.564],[88,472.725,56.541],[90,472.726,56.518]]}],"dCrit":34.229,"trips":[{"id":"agit_trip","trip":15.25,"first":"XS-101 agitator M-101 stopped while reacting (15 s)","X":0.268},{"id":"power_fail","trip":15.25,"first":"XS-101 agitator M-101 stopped while reacting (15 s)","X":0.268},{"id":"p101_trip","trip":35.75,"first":"FSLL-110 jacket circulation below 120 m³/h while reacting (30 s)","X":0.265}],"peakAt":4.276,"peakX":0.7,"peakQrx":3408.97,"capDesign":{"Qmax":4444.438,"Qrx":2382.805,"dT":-1.507},"capPeak":{"Qmax":4446.15,"Qrx":3171.861,"dT":-0.817},"capPeakFoul":{"Qmax":3904.062,"Qrx":3326.653,"dT":-0.31},"capPeakFoul50":{"Qmax":4189.751,"Qrx":3245.767,"dT":-0.573},"capPeakHot":{"Qmax":3498.181,"Qrx":3418.673,"dT":-0.019},"capPeakHot3":{"Qmax":3972.302,"Qrx":3292.92,"dT":-0.419},"dip":{"design":[{"sev":0.5,"d":60,"Tmax":57.021,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.5,"d":120,"Tmax":57.021,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.5,"d":300,"Tmax":57.042,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.5,"d":600,"Tmax":57.078,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.95,"d":60,"Tmax":57.122,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.95,"d":120,"Tmax":57.143,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.95,"d":300,"Tmax":57.266,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.95,"d":600,"Tmax":57.679,"trip":null,"first":"","t58":null,"t60":null}],"peak":[{"sev":0.5,"d":60,"Tmax":57.025,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.5,"d":120,"Tmax":57.025,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.5,"d":300,"Tmax":57.025,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.5,"d":600,"Tmax":57.025,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.95,"d":60,"Tmax":57.17,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.95,"d":120,"Tmax":57.291,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.95,"d":300,"Tmax":57.748,"trip":null,"first":"","t58":null,"t60":null},{"sev":0.95,"d":600,"Tmax":58.518,"trip":null,"first":"","t58":402,"t60":null}]},"loss":{"design":{"t58":362,"t60":802,"t63":1234},"peak":{"t58":246,"t60":650,"t63":1170}},"doses":[0.8,0.85,0.9,0.95,1,1.05,1.1,1.15,1.2,1.25,1.3,1.35,1.4],"fouls":[0,0.25,0.5,0.75,1],"wf":[[[6.475,54.718,0.563,43.148],[6.107,54.718,0.474,43.167],[5.791,54.718,0.397,43.196],[5.514,54.718,0.355,43.223],[5.267,54.718,0.333,43.235],[5.045,56.641,0.311,43.237],[4.847,60.106,0.29,43.242],[4.67,65.633,0.271,43.249],[4.509,74.761,0.315,43.248],[4.356,90.601,0.434,43.187],[4.205,100,0.58,43.066],[4.002,100,1.192,42.548],[3.776,100,1.882,42.415]],[[6.476,54.718,0.553,43.162],[6.112,54.718,0.458,43.194],[5.796,54.718,0.396,43.224],[5.516,54.718,0.37,43.236],[5.267,55.314,0.345,43.238],[5.045,58.204,0.321,43.242],[4.848,62.909,0.299,43.25],[4.673,70.896,0.281,43.262],[4.51,85.271,0.413,43.232],[4.348,100,0.567,43.101],[4.145,100,1.102,42.664],[3.888,100,1.781,42.387],[3.71,100,4.557,43.247]],[[6.482,54.718,0.536,43.194],[6.118,54.718,0.442,43.226],[5.798,54.718,0.411,43.235],[5.516,54.718,0.382,43.238],[5.267,56.62,0.355,43.241],[5.047,60.57,0.329,43.249],[4.852,67.466,0.303,43.266],[4.679,80.369,0.386,43.272],[4.502,100,0.565,43.136],[4.295,100,1.045,42.744],[4.008,100,1.735,42.382],[3.811,100,4.763,43.299],[3.576,100,10.42,44.381]],[[6.49,54.718,0.509,43.228],[6.119,54.718,0.456,43.233],[5.797,54.718,0.423,43.237],[5.516,55.327,0.391,43.24],[5.267,58.613,0.36,43.246],[5.049,64.486,0.33,43.263],[4.861,75.913,0.353,43.296],[4.673,100,0.569,43.18],[4.452,100,1.021,42.792],[4.137,100,1.76,42.406],[3.913,100,5.185,43.398],[3.648,100,11.738,44.562],[3.374,100,20.924,45.638]],[[6.489,54.718,0.503,43.23],[6.118,54.718,0.465,43.234],[5.797,54.718,0.428,43.239],[5.516,57.013,0.392,43.244],[5.269,61.951,0.357,43.256],[5.059,71.932,0.323,43.301],[4.864,95.536,0.577,43.244],[4.618,100,1.036,42.808],[4.274,100,1.886,42.468],[4.015,100,5.933,43.561],[3.71,100,13.706,44.807],[3.409,100,23.917,45.899],[3.147,100,33.412,46.547]]],"design":{"T":57.006,"P":8.617,"Qrx":2711.384,"Qj":1498.88,"Qb":400.921,"Qc":970.617,"tv":52.763,"f130":36.367,"FI110":472.727,"JI":290.121,"X":0.26},"ref":{"mW":82.023,"mP":43.235,"tEnd":5.267,"pvc":43.235,"X":0.848,"peakQ":3428.586,"peakP":8.692,"peakT":57.333,"tvMax":54.718,"f130":91.374},"K":{"Thh":63,"Phh":12.5,"Fll":120,"Ppsv":15,"Lhh":94,"TRIPDLY":[10,5,15,30,5]}};
 /* ===== Process reliability tab (relia): data and maths, node-testable. Globals prefixed rl / RL. ===== */
-/* Batch basis (model reference batch + design basis): reaction 5.27 h to the PD-100 end point, 43.2 t PVC; design cycle 6.9 h
-   (the rest, 1.63 h, is evacuation, charging, heat-up, degassing and discharge with overlapped charging); 8000 h/yr. */
-var RL_B={tRx:5.27,cycle:6.9,pvc:43.2,hours:8000,reactors:4,
+/* Batch basis (model reference batch + design basis): reaction 5.27 h to the PD-100 end point, 43.2 t PVC; design cycle 7.75 h
+   (the scripted cycle: the rest, 2.48 h, is evacuation, charging, heat-up, degassing and discharge); 8000 h/yr. */
+var RL_B={tRx:5.27,cycle:7.75,pvc:43.2,hours:8000,reactors:4,
   /* assumed consequence of a lost batch: on average killed half-way through the reaction, so the reactor time already spent is lost;
      then the short-stopped batch is degassed and discharged, and the reactor is washed and inspected before the next charge */
-  tSpent:1.63+5.27/2,tClean:4,Xkill:0.4};
+  tSpent:2.48+5.27/2,tClean:4,Xkill:0.4};
 RL_B.batchesYr=RL_B.hours/RL_B.cycle;RL_B.rate=RL_B.pvc/RL_B.cycle;   /* t PVC per reactor-hour of cycle */
 
 /* Series elements of R-101 for production.
