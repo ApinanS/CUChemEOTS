@@ -11841,12 +11841,12 @@ var EJ_EQ=[
 "subject": "Cycle-time basis",
 "finding": "The plant capacity (200 kt/y) uses a 6.9 h cycle (model card). The scripted cycle of this HMB is 7.7 h for steps 1–8 (Transition tab cold batch 7.75 h) plus the rinse, i.e. about 170 kt/y with four reactors at 8 000 h/y.",
 "raised_against": "Model card / RESUME basis; Transition and Process reliability tabs",
-"proposed": "Closed (Rev 17): the 6.9 h design cycle (model card) is the one basis for capacity, per-hour duties and reliability in every document; the scripted OTS batch (7.7 h, 8.25 h with the rinse) is a training run slower than design and is labelled as scripted. Earlier proposal: Fix one cycle-time basis for all documents (already an open item between Process reliability 6.9 h and Transition 7.75 h).",
+"proposed": "Fix one cycle-time basis for all documents (already an open item between Process reliability 6.9 h and Transition 7.75 h).",
 "no": "EQ-06",
 "tab": "eproc",
 "disc": "Process",
 "also": [],
-"status": "Closed"
+"status": "Open"
 },
 {
 "subject": "R-101 jacket design pressure",
@@ -20319,7 +20319,7 @@ const OV = {
   ['Heat-sink capacity at the peak','4.65 MW at 57 °C, CW 32 °C: 1.36 × the 3.41 MW release','Operating windows (part 5a), Flexibility (part 5)','Efficiency (dose limit), Process reliability (4446 kW, dynamic test)','The rule of thumb asks 1.25 ×; 4.65 ÷ 3.77 = 1.23 for the 56 t peak (computed here; capacity taken from the 51 t batch).','flex'],
   ['Peak TV-110B and E-101 water','54 % · 91 m³/h (51 t) → 56 % · 126 m³/h (56 t), of 540 m³/h','Flexibility (part 6)','SOP-R101-06 step 3 (55 %, 89 m³/h)','The jacket valve barely moves: VPC-130 sends the extra load to E-101.','flex'],
   ['Reaction, PVC, rate','5.27 h · 43.2 t · 6.27 t/h → 5.29 h · 47.7 t · 6.88 t/h','Flexibility (part 6)','Transition (load following), Efficiency, Process reliability','More PVC per batch for almost the same reactor time.','flex'],
-  ['Cycle, empty to empty','7.75 h scripted (8.25 h with a 30 min rinse, assumed) against the 6.9 h design basis','Transition operation','Efficiency and Process reliability (6.9 h), load following','The design basis is 6.9 h for every document (EQ-06 closed in Rev 17); figures from the scripted run say so.','trans'],
+  ['Cycle, empty to empty','7.75 h scripted (8.25 h with a 30 min rinse, assumed) against the 6.9 h design basis','Transition operation','Efficiency and Process reliability (6.9 h), load following','Two cycle bases are in use; every per-hour figure depends on which one.','trans'],
   ['Train output, 4 reactors, 8000 h/y','166.9 kt/y (43.05 t) → 185.0 kt/y (47.7 t) at 8.25 h; basis 200 kt/y','Transition operation (part 5)','Efficiency','Shows how much of the gap to the basis a recipe change can close.','trans'],
   ['Lost batches','6.07 /yr per reactor; 8.3 reactor-hours and ≈ 19.2 k USD each','Process reliability (part 4)','Efficiency (availability 98.9 %)','Its count does not depend on the charge; its cost does.','relia'],
   ['Value of time against energy','≈ 1755 USD per reactor-hour against ≈ 8.6 USD/t of energy','Efficiency (part 2)','Transition, Process reliability','Ten minutes off the cycle are worth more than the whole heat-up steam bill of a batch (36 USD).','effic']
@@ -20726,7 +20726,7 @@ const OV = {
  intro: 'The Engineering group is the document set an engineering contractor hands over for R-101, generated from the simulator model. Project &amp; deliverables is the map: the register, how the documents feed one another, and the 45 engineering queries found when they were checked against each other. Process engineering turns the model into numbers (heat and material balance, lines, pumps). Layout &amp; isometrics places the equipment and the pipes. Mechanical, Relief &amp; vent, Instrumentation &amp; control and Electrical each design to those numbers and check them. Procurement to commissioning buys, builds and proves the plant. Every document is "Rev 0 · Issued for teaching", not a design deliverable.',
  stageNote: 'Engineering is mostly the work of FEED and detailed engineering, but it starts earlier and ends later. The vessel size, the cycle time and the cooling concept are fixed at concept and only written down in FEED. The HMB, the equipment list, the plot plan, the relief philosophy and the load list belong to FEED; the datasheets, the relief load basis, the instrument list, the cables and the isometrics to detailed engineering. Long-lead equipment is ordered before detailed engineering ends, so some numbers (the R-101 package and the agitator motor) must be settled early. Commissioning proves the documents against the plant, and in operation every change moves the documents downstream again.',
  decisions: {
-  S1: 'One of four 141.5 m³ reactors; jacket, baffles and reflux condenser for the cooling; the cycle-time basis: 6.9 h design cycle for every document (EQ-06 closed in Rev 17; the scripted OTS batch takes ≈ 7.75 h).',
+  S1: 'One of four 141.5 m³ reactors; jacket, baffles and reflux condenser for the cooling; the cycle-time basis (6.9 h on the model card against 8.2 h in the HMB, EQ-06).',
   S2: 'HMB per batch and the moments that size each item; equipment list with motor ratings (M-101 450 kW, assumed); plot plan with 18 spacing rules and four floors; relief philosophy (PSV-100 to D-103); load list, maximum demand and the essential bus.',
   S3: 'Datasheets and wall thickness (shell 40 mm, external pressure governs); relief load basis (2 × R, two-phase still open); instrument list and I/O (66 tags, 97 points with spare); cables and hazardous area (IIA T2); isometrics with bills of materials; queries closed before issue for construction.',
   S4: 'Shop tests and FAT with the OTS as the emulator; mechanical completion per system; N₂ leak test at 9.0 bar g; SIF proof tests; motor solo runs; water batch; first VCM batch; performance test against the reference batch.',
@@ -20738,7 +20738,7 @@ const OV = {
    goal:'Show the R-101 document set, the order the documents are written in, the engineering queries raised between them and how a project controls its documents.',
    q:'Which documents does R-101 need, and where do they disagree?',
    inp:'The documents of the other seven Engineering tabs and of the Safety tabs (HAZOP report, SRS, C&E), and each tab\'s engineering queries.',
-   out:'Register PVC-V1-PM-DOC-001 (19 entries, 10 document flows), 45 engineering queries (5 closed in Rev 17, 40 open), 15 ✓ / 0 ✗ cross-checks between the documents.',
+   out:'Register PVC-V1-PM-DOC-001 (19 entries, 10 document flows), 45 engineering queries (4 closed in Rev 17, 41 open), 15 ✓ / 0 ✗ cross-checks between the documents.',
    m:'Numbering <unit>-<discipline>-<type>-<serial>; IFR → IFA → IFC; engineering-query register.',
    st:{S2:2,S3:2,S4:1,S5:1}, t:'≈1 h (estimate)', deck:'eproj'},
   {v:'eproc', label:'Process engineering', c:'#d62728',
@@ -20857,14 +20857,14 @@ const OV = {
   ['P-103 discharge route','rise 10 m, L-103 80 m assumed → 18.55 m, 120 m in the layout','Layout & isometrics','Process engineering hydraulics (FV-102 Δp 3.41 → 2.49 bar), load list','The layout comes after the HMB but changes it (EQ-37).','lay'],
   ['Instrument list size','66 tags; I/O 59 BPCS + 20 SIS, 97 with 20 % spare','Instrumentation & control','Procurement to commissioning (DCS and SIS packages, loop checks CS-04)','Sets the DCS and SIS card count and the loop-check scope.','einst'],
   ['Maximum demand','841 kVA (738 kW) in degassing; essential 535 kVA','Electrical','Project & deliverables (EQ-28: essential board ≥ 669 kVA)','Sizes the transformer and the standby supply for M-101 and P-101A/B.','eelec'],
-  ['Engineering queries','45 (2 raised twice and merged): 5 closed in Rev 17, 40 open','Project & deliverables','Every Engineering tab','The list to close before issue for construction; each one names its document.','eproj']
+  ['Engineering queries','45 (2 raised twice and merged): 4 closed in Rev 17, 41 open','Project & deliverables','Every Engineering tab','The list to close before issue for construction; each one names its document.','eproj']
  ],
  links: [
   ['Process & Design','Design of the unit operation','Takes the vessel (141.5 m³, D 4.5 m), the jacket, E-101 (UA 130 kW/K) and the reference batch that every Engineering tab starts from.','design'],
   ['Process & Design','PFD','Takes PFD-100 streams and equipment; gives back the queries on unnumbered utility streams (EQ-04) and the missing D-103 outlet (EQ-13).','pfd'],
   ['Process & Design','P&ID','Takes the tags, loops and fail positions of PVC-PID-001/002; gave back M-101 330 kW (EQ-27) and the SIS table (EQ-23), both corrected in Rev 17, and the energise-to-trip valves (EQ-21).','pid'],
   ['Operability','Transition','Takes the cold batch (7.75 h) and the ESD vent run used by the HMB steps and the emergency-vent check.','trans'],
-  ['Operability','Process reliability','Uses the same 6.9 h design cycle as every other tab (EQ-06 closed in Rev 17).','relia'],
+  ['Operability','Process reliability','Shares the cycle-time basis question: 6.9 h on the model card against 8.2 h in the HMB (EQ-06).','relia'],
   ['Safety','HAZOP','Takes recommendations R02 (essential power), R08 (two-phase relief), R35 (RD-100) and R39 (air receiver) into Electrical, Relief & vent and I&C.','hazop'],
   ['Safety','SRS of SIF','Takes the SIF list and trip settings into the instrument list and the SIF proof tests of CS-05; gives back EQ-17 and EQ-45 on the run windows.','srs'],
   ['Operate','Visual plant 3D','Gives layout.json: the 3-D plant, the 12-station route and the hand-valve positions are built from the layout.','v3d'],
@@ -22391,7 +22391,7 @@ table.tbl{width:100%; border-collapse:collapse; font-size:18px}
     <div class="sim-out"><div class="bignum" id="cOut"></div><p class="cap">plant capacity, kt/y</p>
       <div class="readout"><span>PVC per batch</span><b id="cB"></b><span>average heat, all reactors</span><b id="cQ"></b></div></div>
   </div>
-  <p class="simsum">The scripted OTS batch takes ≈ 7.7 h (charge 1.4 h + react 5.3 h + empty 1.1 h) against the 6.9 h design cycle: <b>shaving the cycle is worth as much as a bigger reactor</b>.</p>
+  <p class="simsum">The OTS runs a batch in ≈ 7.7 h (charge 1.4 h + react 5.3 h + empty 1.1 h): <b>shaving the cycle is worth as much as a bigger reactor</b>.</p>
 </section>
 
 <section class="slide" data-title="Average vs peak heat">
@@ -22674,7 +22674,7 @@ table.tbl{width:100%; border-collapse:collapse; font-size:18px}
   <div class="s-head"><p class="kicker">Part 3 &middot; summary</p><h2>What Part 3 settled</h2></div>
   <div class="grow">
     <ul class="clean">
-      <li>Scripted OTS cycle ≈ 7.7 h (design basis 6.9 h): 1.4 h charge and heat-up, 5.3 h reaction, 1.1 h to empty.</li>
+      <li>OTS cycle ≈ 7.7 h: 1.4 h charge and heat-up, 5.3 h reaction, 1.1 h to empty.</li>
       <li>Evacuate, water + PVA, agitate, then VCM; initiate hot with a cool jacket.</li>
       <li>E-101 on control from initiation; the foam clamp limits it early.</li>
       <li>Hold 57 °C by watching margin; short-stop before the SIS must.</li>
