@@ -1176,5 +1176,11 @@ Deck.onEnter('sl-wt',()=>{chips('wtChips',VS.map(v=>v.tag),i=>{const w=VS[i].w;c
 Deck.onEnter('sl-va',()=>{const V=EM_DATA.valves().concat(EM_DATA.psvs());chips('vaChips',V.map(v=>v.tag),i=>{const v=V[i];el('vaInfo').innerHTML=`<h3>${v.tag}</h3><p class="sm">${esc2(v.service)}</p>`+(v.set!=null?`<p class="sm"><b>Set</b> ${v.set} bar a · <b>inlet / outlet</b> ${v.inlet}" / ${v.outlet}"</p><p class="sm">${esc2(v.type)}</p>`:`<p class="sm"><b>Size</b> ${v.size}" class ${v.cls} · <b>fails</b> ${v.fail||'—'}</p><p class="sm"><b>Body</b> ${esc2(v.body||'')}</p><p class="sm"><b>Actuator</b> ${esc2(v.act||'')}</p>`);},0);},{once:true});
 
 </script>
+
+<!-- ots-copyright:start -->
+<!-- Copyright (c) 2026 Department of Chemical Engineering, Faculty of Engineering, Chulalongkorn University (ChemE Chula). All rights reserved. No copying, redistribution, re-hosting or modification without written permission. -->
+<div id="ots-copyright" title="Copyright (c) 2026 Department of Chemical Engineering, Faculty of Engineering, Chulalongkorn University (ChemE Chula). All rights reserved. No copying, redistribution, re-hosting or modification without written permission." aria-label="Copyright notice">&copy; 2026 ChemE Chula &middot; All rights reserved</div>
+<style>#ots-copyright{position:fixed;right:8px;bottom:3px;z-index:2147482999;pointer-events:none;font:500 10px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;color:#6b7280;opacity:.75;background:rgba(255,255,255,.6);padding:1px 6px;border-radius:4px;white-space:nowrap;letter-spacing:.01em}@media (prefers-color-scheme:dark){#ots-copyright{color:#cbd5e1;background:rgba(15,23,42,.5)}}@media print{#ots-copyright{opacity:1;background:none}}</style>
+<!-- ots-copyright:end -->
 </body>
 </html>

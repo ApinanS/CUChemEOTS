@@ -762,5 +762,11 @@ const EQ=[["T-201","Cooling tower basin",7.5,3.0,15.0,6.0],["E-201","Cell 1",2.5
 (()=>{const D=WK2;const up=()=>{const k=+el("wk2").value,r=D.r[k-1];el("wk2v").textContent=k+" of 13";el("wk2q").innerHTML="<b>"+r[1]+"</b>";
       el("wk2o").innerHTML=`<p style="font-size:26px;font-weight:700;color:#1F497D;margin-bottom:8px">${r[1]}</p><table>${D.c.map((c,i)=>i==1?"":`<tr><td style="text-align:left;white-space:nowrap;vertical-align:top">${c}</td><td style="text-align:left">${r[i]}</td></tr>`).join("")}</table>`;};el("wk2").addEventListener("input",up);up();})();
 </script>
+
+<!-- ots-copyright:start -->
+<!-- Copyright (c) 2026 Department of Chemical Engineering, Faculty of Engineering, Chulalongkorn University (ChemE Chula). All rights reserved. No copying, redistribution, re-hosting or modification without written permission. -->
+<div id="ots-copyright" title="Copyright (c) 2026 Department of Chemical Engineering, Faculty of Engineering, Chulalongkorn University (ChemE Chula). All rights reserved. No copying, redistribution, re-hosting or modification without written permission." aria-label="Copyright notice">&copy; 2026 ChemE Chula &middot; All rights reserved</div>
+<style>#ots-copyright{position:fixed;right:8px;bottom:3px;z-index:2147482999;pointer-events:none;font:500 10px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;color:#6b7280;opacity:.75;background:rgba(255,255,255,.6);padding:1px 6px;border-radius:4px;white-space:nowrap;letter-spacing:.01em}@media (prefers-color-scheme:dark){#ots-copyright{color:#cbd5e1;background:rgba(15,23,42,.5)}}@media print{#ots-copyright{opacity:1;background:none}}</style>
+<!-- ots-copyright:end -->
 </body>
 </html>
