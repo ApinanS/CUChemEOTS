@@ -605,12 +605,12 @@ svg text{font-family:'Montserrat',sans-serif}
     </div>
     <div class="eq-box compact">$$P=\frac{N\,m\,H}{t_c}$$</div>
     <div class="eq-step">$P=\dfrac{4\times 43.05\times 8000}{8.25}=167\ \text{kt/y}$<span class="why">scripted cycle 7.75 h + 0.5 h rinse (assumed)</span></div>
-    <div class="eq-step">$t_c=\dfrac{N\,m\,H}{200\ \text{kt/y}}=6.89\ \text{h}$<span class="why">cycle the 200 kt/y basis needs</span></div>
+    <div class="eq-step">$t_c=\dfrac{N\,m\,H}{178\ \text{kt/y}}=7.73\ \text{h}$<span class="why">cycle the 178 kt/y basis needs</span></div>
   </div>
 </section>
 
 <section class="slide" data-title="Interactive · load following" id="s-lf">
-  <div class="s-head"><p class="kicker">Interactive · reactors in service and cycle time</p><h2>Where does 200 kt/y come from?</h2></div>
+  <div class="s-head"><p class="kicker">Interactive · reactors in service and cycle time</p><h2>Where does 178 kt/y come from?</h2></div>
   <div class="sim">
     <div class="sim-controls">
       <div class="eq-recall"><span class="rl">Previous slide</span>$P=N\,m\,H/t_c$</div>
@@ -621,7 +621,7 @@ svg text{font-family:'Montserrat',sans-serif}
     </div>
     <div class="sim-out tight"><svg id="lfSvg" style="width:100%"></svg><div class="rd" id="lfTxt"></div></div>
   </div>
-  <p class="simsum">With four reactors the non-reaction steps must shrink from <b>2.49 h to 1.63 h</b>, or the recipe must speed up.</p>
+  <p class="simsum">With four reactors the scripted <b>2.49 h</b> of non-reaction steps just fits (2.46 h allowed); a rinse every batch must come out of them, or the recipe must speed up.</p>
 </section>
 
 <section class="slide" data-title="Interactive · staggering" id="s-stg">
@@ -700,7 +700,7 @@ svg text{font-family:'Montserrat',sans-serif}
 <section class="slide" data-title="What part 3 settled">
   <div class="s-head"><p class="kicker">Part 3 · summary</p><h2>What part 3 settled</h2></div>
   <div class="grow"><ul class="clean">
-    <li>Production = N m H / t<sub>c</sub>: 200 kt/y needs a 6.89 h cycle with four reactors.</li>
+    <li>Production = N m H / t<sub>c</sub>: 178 kt/y needs a 7.73 h cycle with four reactors.</li>
     <li>Stagger the reactors: shared cooling is sized for the train's peak.</li>
     <li>Build-up costs margin; wash at the interval that maximises t/h.</li>
     <li>D-102 decouples batches from the stripper; emergencies stop, cool, vent.</li>
@@ -1110,13 +1110,13 @@ function gwUpd(k){ const i = +k, W = TD.grade.within, g = W[i], svg = el('gwSvg'
 
 /* ---------- Part 3 · load following ---------- */
 function lfUpd(){ const N = v('lfN'), C = v('lfC'), m = v('lfM'), H = v('lfH'); setT('lfNv', N); setT('lfCv', fx(C, 2) + ' h'); setT('lfMv', fx(m, 1) + ' t'); setT('lfHv', f0(H) + ' h/y');
-  const P = trCap(N, C, m, H), need = trCycleFor(200, N, m, H), rx = (PH.end - PH.init) / 60; let s = '';
+  const P = trCap(N, C, m, H), need = trCycleFor(178, N, m, H), rx = (PH.end - PH.init) / 60; let s = '';
   const X = q => 40 + q / 300 * 540;
-  s += `<rect x="40" y="40" width="${X(Math.min(P, 300)) - 40}" height="44" fill="${P >= 200 ? C_GREEN : C_BLUE}"/><text x="${Math.min(Math.max(X(P), Math.abs(X(P) - X(200)) < 70 ? X(200) : 0), 470) + 8}" y="70" font-size="18" font-weight="700" fill="#1F2937">${fx(P, 1)} kt/y</text>`;
-  s += `<line x1="${X(200)}" x2="${X(200)}" y1="28" y2="96" stroke="${C_RED}" stroke-width="2.5" stroke-dasharray="5 3"/><text x="${X(200)}" y="22" font-size="13" text-anchor="middle" fill="${C_RED}">200 kt/y basis</text>`;
+  s += `<rect x="40" y="40" width="${X(Math.min(P, 300)) - 40}" height="44" fill="${P >= 178 ? C_GREEN : C_BLUE}"/><text x="${Math.min(Math.max(X(P), Math.abs(X(P) - X(178)) < 70 ? X(178) : 0), 470) + 8}" y="70" font-size="18" font-weight="700" fill="#1F2937">${fx(P, 1)} kt/y</text>`;
+  s += `<line x1="${X(178)}" x2="${X(178)}" y1="28" y2="96" stroke="${C_RED}" stroke-width="2.5" stroke-dasharray="5 3"/><text x="${X(178)}" y="22" font-size="13" text-anchor="middle" fill="${C_RED}">178 kt/y basis</text>`;
   [0, 100, 200, 300].forEach(q => { s += `<text x="${X(q)}" y="114" font-size="13" text-anchor="middle" fill="#6B7280">${q}</text>`; });
   const Y = h => 150 + h / 11 * 380; const sc = h => 40 + h / 11 * 540;
-  s += `<text x="40" y="150" font-size="14" fill="#374151">cycle needed for 200 kt/y vs the batch (h)</text>`;
+  s += `<text x="40" y="150" font-size="14" fill="#374151">cycle needed for 178 kt/y vs the batch (h)</text>`;
   s += `<rect x="40" y="160" width="${sc(rx) - 40}" height="26" fill="${C_RED}" opacity=".8"/><rect x="${sc(rx)}" y="160" width="${sc(rx + 2.49) - sc(rx)}" height="26" fill="#9CA3AF"/>`;
   s += `<text x="44" y="178" font-size="13" fill="#fff">reaction ${fx(rx, 2)}</text><text x="${sc(rx) + 4}" y="178" font-size="13" fill="#fff">other 2.49</text>`;
   s += `<line x1="${sc(Math.min(need, 11))}" x2="${sc(Math.min(need, 11))}" y1="152" y2="196" stroke="${C_GREEN}" stroke-width="3"/><text x="${Math.min(sc(Math.min(need, 11)), 520)}" y="214" font-size="13" text-anchor="middle" fill="${C_GREEN}">needed ${fx(need, 2)} h</text>`;

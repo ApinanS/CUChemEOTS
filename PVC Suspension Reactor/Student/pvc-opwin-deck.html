@@ -882,7 +882,7 @@ const K={
    A batch never lines out: its operating point is a trajectory. A batch is inside the window when every bound in OW_B holds over the
    whole reaction (from the initiator charge to the PD-100 end point). owBatch(cfg) runs one batch on a copy (pvBatch, SIS off so the
    limits are seen, not cut short) and records the worst value of every bounded quantity and when it happened. */
-var OW_TP=1.63;      /* h of the cycle outside the reaction step (evacuate, charge, heat-up, short-stop, degas, discharge): 6.9 − 5.27 h, RESUME.md */
+var OW_TP=2.48;      /* h of the cycle outside the reaction step (evacuate, charge, heat-up, short-stop, degas, discharge): 7.75 − 5.27 h, RESUME.md */
 var OW_TMAX=6.0;     /* h, reaction-time bound for throughput (assumed: cycle ≤ 7.6 h keeps R-101 within 10 % of nameplate) */
 var OW_TCW0=32;      /* °C, design CW supply (K.Tcw0) */
 /* one batch: cfg {dose, Tcw, wf (wall fouling severity 0–1), cf (E-101 fouling 0–1), vcm (t), Tsp (°C), inerts (extra kmol N2 at start),

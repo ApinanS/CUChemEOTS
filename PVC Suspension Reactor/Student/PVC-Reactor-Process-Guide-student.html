@@ -667,7 +667,7 @@ table.tbl{width:100%; border-collapse:collapse; font-size:18px}
   <div class="s-head"><p class="kicker">Part 2 &middot; the plan</p><h2>From a plant capacity to one reactor</h2></div>
   <div class="grow">
     <ol class="sec-outline">
-      <li><b>Capacity and batch cycle</b><span class="so">how 200 kt/y becomes four 140 m³ reactors</span></li>
+      <li><b>Capacity and batch cycle</b><span class="so">how 178 kt/y becomes four 140 m³ reactors</span></li>
       <li><b>Average versus peak heat</b><span class="so">which number sizes the cooling</span></li>
       <li><b>Scale-up and the jacket</b><span class="so">why the jacket runs out as the vessel grows</span></li>
       <li><b>Reflux condenser E-101</b><span class="so">how its duty depends on water flow and inerts</span></li>
@@ -695,8 +695,8 @@ table.tbl{width:100%; border-collapse:collapse; font-size:18px}
   <div class="grow stack">
     <div class="eq-recall"><span class="rl">From step 1</span>$P_a=N\,m_{PVC}\,H/t_c,\qquad m_{PVC}=X_{end}\,m_{VCM}$</div>
     <div class="eq-step">$m_{PVC}=0.848\times 51=43.2\ \mathrm{t}$ <span class="why">reference batch end point</span></div>
-    <div class="eq-step">$P_a=4\times43.2\times\dfrac{8000}{6.9}=200\ \mathrm{kt/y}$ <span class="why">design cycle assumed 6.9 h</span></div>
-    <div class="eq-step">$\bar Q=\dfrac{200\times10^6\times1136}{8000\times3600}=7.9\ \mathrm{MW}$ <span class="why">average heat, all four reactors</span></div>
+    <div class="eq-step">$P_a=4\times43.2\times\dfrac{8000}{7.75}=178\ \mathrm{kt/y}$ <span class="why">design cycle 7.75 h, the scripted batch</span></div>
+    <div class="eq-step">$\bar Q=\dfrac{178\times10^6\times1136}{8000\times3600}=7.0\ \mathrm{MW}$ <span class="why">average heat, all four reactors</span></div>
   </div>
 </section>
 
@@ -718,7 +718,7 @@ table.tbl{width:100%; border-collapse:collapse; font-size:18px}
 <section class="slide" data-title="Average vs peak heat">
   <div class="s-head"><p class="kicker">Which heat sizes the coolers?</p><h2>Design for the peak, not the average</h2></div>
   <div class="grow">
-    <p class="bridge">7.9 MW is shared by four reactors over a cycle. Coolers must carry <b>one reactor at its worst moment</b>.</p>
+    <p class="bridge">7.0 MW is shared by four reactors over a cycle. Coolers must carry <b>one reactor at its worst moment</b>.</p>
     <table class="compare">
       <tr><th>Basis (one reactor, reference batch)</th><th>Heat</th></tr>
       <tr><td>Plant average ÷ 4 reactors (whole cycle)</td><td>1.98 MW</td></tr>
@@ -818,7 +818,7 @@ table.tbl{width:100%; border-collapse:collapse; font-size:18px}
   <div class="s-head"><p class="kicker">Part 2 &middot; summary</p><h2>What Part 2 settled</h2></div>
   <div class="grow">
     <ul class="clean">
-      <li>4 × 140 m³ reactors, 43.2 t PVC per batch, 6.9 h cycle → 200 kt/y, 7.9 MW average.</li>
+      <li>4 × 140 m³ reactors, 43.2 t PVC per batch, 7.75 h cycle → 178 kt/y, 7.0 MW average.</li>
       <li>Coolers are sized for the peak: ≈ 3.7 MW per reactor.</li>
       <li>Jacket share falls as 1/D; above ≈ 20 m³ a reflux condenser is needed.</li>
       <li>E-101 duty is limited by water capacity and by inert blanketing.</li>
@@ -879,7 +879,7 @@ table.tbl{width:100%; border-collapse:collapse; font-size:18px}
       </g>
       <g font-size="13" fill="var(--ink)"><text x="345" y="152">initiator in at 1 h 22 min</text><text x="880" y="152" text-anchor="end">end point 5.27 h later</text></g>
     </svg>
-    <p class="eq-note orange">Cleaning and inspection add to this; the design basis assumed 6.9 h with overlapped charging.</p>
+    <p class="eq-note orange">Cleaning and inspection add to this; the design basis is this 7.75 h scripted cycle, with no rinse.</p>
   </div>
 </section>
 

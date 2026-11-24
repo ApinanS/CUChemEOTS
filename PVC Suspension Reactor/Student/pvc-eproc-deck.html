@@ -415,7 +415,7 @@ img.zoomable{cursor:zoom-in}
     </div>
     <div class="sim-out"><table class="tbl" id="utTab"></table></div>
   </div>
-  <p class="simsum">Four reactors on the 8.16 h cycle make <b>169 kt/y</b>, not the 200 kt/y of the 6.9 h card basis.</p>
+  <p class="simsum">Four reactors on the 8.16 h cycle make <b>169 kt/y</b>, not the 178 kt/y of the 7.75 h card basis.</p>
 </section>
 
 <section class="slide" data-title="What part 1 settled">
@@ -1196,7 +1196,7 @@ function utUpd(n) {
   n = +n; const rows = [['Cooling water', UT.cw, 'm³', 1], ['LP steam', UT.st, 't', 2], ['Electric power', UT.kWh, 'kWh', 0], ['N₂ for discharge', UT.n2, 'kmol', 1]];
   el('utTab').innerHTML = '<tr><th>Utility</th><th class="num">per batch</th><th class="num">per t PVC</th><th class="num">' + n + ' × per h</th></tr>' +
     rows.map(r => `<tr><td>${r[0]}</td><td class="num">${F(r[1], r[3])} ${r[2]}</td><td class="num">${F(r[1] / PVC, r[3] + 1)}</td><td class="num">${F(n * r[1] / CYC, r[3])}</td></tr>`).join('');
-  setH('utTxt', `Cycle = ${F(UT.hrs, 2)} h steps 1–8 + 0.5 h rinse (assumed) = <b>${F(CYC, 2)} h</b><br>${n} reactor${n > 1 ? 's' : ''}: <b>${F(n * PVC * 8000 / CYC / 1000, 1)} kt/y</b> PVC at 8 000 h/y<br>Card basis 6.9 h: ${F(n * PVC * 8000 / 6.9 / 1000, 1)} kt/y<br>CW peak ${f0(UT.cwPk)} m³/h per reactor`);
+  setH('utTxt', `Cycle = ${F(UT.hrs, 2)} h steps 1–8 + 0.5 h rinse (assumed) = <b>${F(CYC, 2)} h</b><br>${n} reactor${n > 1 ? 's' : ''}: <b>${F(n * PVC * 8000 / CYC / 1000, 1)} kt/y</b> PVC at 8 000 h/y<br>Card basis 7.75 h: ${F(n * PVC * 8000 / 7.75 / 1000, 1)} kt/y<br>CW peak ${f0(UT.cwPk)} m³/h per reactor`);
 }
 
 /* ---------- Part 2 · off-design batches (off.ser: t h, Qrx, tvB, f130, T) ---------- */

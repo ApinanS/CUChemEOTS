@@ -346,13 +346,13 @@ label.chk.esc{font-size:13.5px !important; margin:2px 0; line-height:1.3; align-
   <div class="s-head"><p class="kicker">A batch plant counts in batches</p><h2>Is 99.9 % reliability good enough?</h2></div>
   <div class="grow stack">
     <div class="symtab">
-      <div class="sy">$N_b$</div><div>batches per reactor-year; $t_{op}$ 8000 h, $t_{cycle}$ 6.9 h (model)</div><div class="un">1/yr</div>
+      <div class="sy">$N_b$</div><div>batches per reactor-year; $t_{op}$ 8000 h, $t_{cycle}$ 7.75 h (scripted cycle)</div><div class="un">1/yr</div>
       <div class="sy">$p$</div><div>chance of failure per batch</div><div class="un">–</div>
       <div class="sy">$f$</div><div>expected failures per reactor-year</div><div class="un">1/yr</div>
     </div>
     <div class="eq-box" style="padding:12px;font-size:26px">$N_b=t_{op}/t_{cycle}\qquad f=N_b\,p$</div>
-    <div class="eq-step">$N_b = 8000/6.9 = 1159$<span class="why">operating hours divided by the batch cycle</span></div>
-    <div class="eq-step">$f = N_b\,p = 1159\times10^{-3} = 1.16$<span class="why">one failure in a thousand batches</span></div>
+    <div class="eq-step">$N_b = 8000/7.75 = 1032$<span class="why">operating hours divided by the batch cycle</span></div>
+    <div class="eq-step">$f = N_b\,p = 1032\times10^{-3} = 1.03$<span class="why">one failure in a thousand batches</span></div>
     <p class="eq-note red">More than one event a year on one reactor: 99.9 % is not enough.</p>
   </div>
 </section>
@@ -876,8 +876,8 @@ function bindSlider(id, fn){
    LP_SIF   {key:{name, I (P&ID interlock), T (yr), rec, subs:[[subsystem, arch, λ_DU per channel /yr]]}}  sensor → logic → final element in series
    LP_SC    [{id, hz (HAZOP rows), title, cons, S, ies:[[cause, IEF /yr, source]], ipl:[[name, type|'sif:KEY', PFD, note, excludedIEs, recommended, replacesIndex, dependsOn]], cm:[[name, value, note]], rec}]
    LP_BT    [{id, name, hazard, top, bar:{id:[name, layer(0 grey = design/CM, 1–6 safety layer, 7 procedure), PFD|'sif:KEY', recommended, replacesId]}, thr:[[name, f0 /yr, [barrier ids]]], con:[[name, S, [barrier ids]]], esc:[[name, [barrier ids]]]}]
-   Batches per reactor-year from the model's design basis (cycle ≈ 6.9 h, 8000 h/yr: model.js header). */
-var LP_BATCH=8000/6.9;
+   Batches per reactor-year from the design basis (cycle 7.75 h, the scripted cycle, 8000 h/yr). */
+var LP_BATCH=8000/7.75;
 var LP_RATES=[
  ['Centrifugal pump','fail while running',2,null,'course generic'],['Control valve','all modes',0.6,null,'course generic'],['Pressure relief valve','all modes (fail to open on demand)',0.022,null,'course generic'],
  ['Solenoid valve','all modes',0.42,0.004,'course generic / SIS grade'],['Sensor (pressure)','all modes',1.41,0.005,'course generic / SIS grade'],['Sensor (flow)','all modes',1.14,0.010,'course generic / SIS grade'],

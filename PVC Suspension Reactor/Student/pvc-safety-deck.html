@@ -869,8 +869,8 @@ function slAlT(t){return D_SAFETY.alTxt[t];}
    LP_SIF   {key:{name, I (P&ID interlock), T (yr), rec, subs:[[subsystem, arch, λ_DU per channel /yr]]}}  sensor → logic → final element in series
    LP_SC    [{id, hz (HAZOP rows), title, cons, S, ies:[[cause, IEF /yr, source]], ipl:[[name, type|'sif:KEY', PFD, note, excludedIEs, recommended, replacesIndex, dependsOn]], cm:[[name, value, note]], rec}]
    LP_BT    [{id, name, hazard, top, bar:{id:[name, layer(0 grey = design/CM, 1–6 safety layer, 7 procedure), PFD|'sif:KEY', recommended, replacesId]}, thr:[[name, f0 /yr, [barrier ids]]], con:[[name, S, [barrier ids]]], esc:[[name, [barrier ids]]]}]
-   Batches per reactor-year from the model's design basis (cycle ≈ 6.9 h, 8000 h/yr: model.js header). */
-var LP_BATCH=8000/6.9;
+   Batches per reactor-year from the design basis (cycle 7.75 h, the scripted cycle, 8000 h/yr). */
+var LP_BATCH=8000/7.75;
 var LP_RATES=[
  ['Centrifugal pump','fail while running',2,null,'course generic'],['Control valve','all modes',0.6,null,'course generic'],['Pressure relief valve','all modes (fail to open on demand)',0.022,null,'course generic'],
  ['Solenoid valve','all modes',0.42,0.004,'course generic / SIS grade'],['Sensor (pressure)','all modes',1.41,0.005,'course generic / SIS grade'],['Sensor (flow)','all modes',1.14,0.010,'course generic / SIS grade'],
