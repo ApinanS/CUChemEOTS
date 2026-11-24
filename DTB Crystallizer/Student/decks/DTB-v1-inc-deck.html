@@ -1648,5 +1648,11 @@ chips('thChips', Object.keys(IX_TH).map(t => ({k: t, label: `${IX_TH[t]} (${CS.f
   el('thOut').innerHTML = `<div class="small" style="margin-bottom:4px"><b>${IX_TH[k]}</b></div><table class="data sm"><tr><th>Case</th><th>Cause</th><th>People</th></tr>` + cs.map(c => `<tr><td><b>${c.sh}</b> ${c.year}</td><td>${c.cause}</td><td>${hurt(c)}</td></tr>`).join('') + '</table>'; }, 'overpressure');
 
 </script>
+
+<!-- ots-copyright:start -->
+<!-- Copyright (c) 2026 Department of Chemical Engineering, Faculty of Engineering, Chulalongkorn University (ChemE Chula). All rights reserved. No copying, redistribution, re-hosting or modification without written permission. -->
+<div id="ots-copyright" title="Copyright (c) 2026 Department of Chemical Engineering, Faculty of Engineering, Chulalongkorn University (ChemE Chula). All rights reserved. No copying, redistribution, re-hosting or modification without written permission." aria-label="Copyright notice">&copy; 2026 ChemE Chula &middot; All rights reserved</div>
+<style>#ots-copyright{position:fixed;right:8px;bottom:3px;z-index:2147482999;pointer-events:none;font:500 10px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;color:#6b7280;opacity:.75;background:rgba(255,255,255,.6);padding:1px 6px;border-radius:4px;white-space:nowrap;letter-spacing:.01em}@media (prefers-color-scheme:dark){#ots-copyright{color:#cbd5e1;background:rgba(15,23,42,.5)}}@media print{#ots-copyright{opacity:1;background:none}}</style>
+<!-- ots-copyright:end -->
 </body>
 </html>
